@@ -1,0 +1,7 @@
+#+TITLE: Archive
+
+- [[file:20230508135531-mobilen_dergi_1.org][Mobilen Dergi 1]]
+- [[file:resources/OrgExportSettings/OrgExportMobilenHtmlSettings.org][OrgExportMobilenHtmlSettings]]
+- [[file:resources/OrgExportSettings/OrgExportMobilenLatexSettings.org][OrgExportMobilenLatexSettings]]
+- [[file:resources/OrgExportSettings/OrgExportLatexNextPage.org][OrgExportLatexNextPage]]
+- [[file:20230427104118-mobilen_dergi_0.org][Mobilen Dergi 0]]

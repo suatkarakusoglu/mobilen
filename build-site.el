@@ -30,7 +30,22 @@
              :with-creator t            ;; Include Emacs and Org versions in footer
              :with-toc t                ;; Include a table of contents
              :section-numbers nil
-             :time-stamp-file nil)
+             :time-stamp-file nil
+             :html-link-home "https://suatkarakusoglu.github.io/"
+             :html-extension "html"
+             :auto-sitemap t
+             :sitemap-filename "archive.org"
+             :sitemap-title "Archive"
+             :sitemap-sort-files 'anti-chronologically
+             :sitemap-style 'list
+             :recursive t
+             :section-numbers nil
+             :html-head-include-default-style nil
+             :html-head-include-scripts nil
+             :html-doctype "html5"
+             :html-html5-fancy t
+             :html-head-include-scripts nil
+             :html-head-include-default-style nil)
        (list "mobilen-statics"
              :base-directory "./content/"
              :base-extension "css\\|js\\|jpg\\|gif\\|png\\|pdf\\|mp3\\|ogg\\|swf"
@@ -42,6 +57,9 @@
 (setq org-html-validation-link nil            ;; Don't show validation link
       org-html-head-include-scripts nil       ;; Use our own scripts
       org-html-head-include-default-style nil ;; Use our own styles
-      org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
+      org-html-head "<link rel=\"stylesheet\" href=\"http://thomasf.github.io/solarized-css/solarized-light.min.css\"/>")
+
+(setq org-src-fontify-natively t)
+
 ;; Generate the site output
 (org-publish-all t)

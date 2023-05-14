@@ -1,36 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mobilen Dergi 1</title>
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+<link rel="stylesheet" href="http://thomasf.github.io/solarized-css/solarized-light.min.css"/>
 </head>
 <body>
-<div id="content" class="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="https://suatkarakusoglu.github.io/"> HOME </a>
+</div><div id="content" class="content">
+<header>
 <h1 class="title">Mobilen Dergi 1</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org97c1925">iOS SwiftUI Swipe Actions</a>
+<ul>
+<li><a href="#org86a88ab">Swipe Actions nedir?</a></li>
+<li><a href="#org4796e46">SwipeActions Kullanımı</a></li>
+<li><a href="#org16a2fe9">Kaynak Kod Okuma: <code>PreferenceKey</code> kullanımı</a></li>
+<li><a href="#orgc090fd7">Referanslar</a></li>
+</ul>
+</li>
+<li><a href="#orge687b0f">Netfox ile iOS uygulamalarda network izlemek</a>
+<ul>
+<li><a href="#org618b77f">Netfox Nedir?</a></li>
+<li><a href="#org59ab9e2">Netfox Nasıl Kullanılır?</a></li>
+<li><a href="#orgbae375d">Netfox'un Projeye Eklenmesi</a></li>
+<li><a href="#org7f7cea6">Netfox Özetle</a></li>
+<li><a href="#orgee4a00c">Referanslar</a></li>
+</ul>
+</li>
+<li><a href="#orgec5eb38">XCode Breakpoints</a></li>
+</ul>
+</div>
+</nav>
 
-<div id="outline-container-orgf4f0173" class="outline-2">
-<h2 id="orgf4f0173">iOS SwiftUI Swipe Actions</h2>
-<div class="outline-text-2" id="text-orgf4f0173">
+<div id="outline-container-org97c1925" class="outline-2">
+<h2 id="org97c1925">iOS SwiftUI Swipe Actions</h2>
+<div class="outline-text-2" id="text-org97c1925">
 <p>
 <span class="underline"><a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> tarafından yazıldı.</span>
 </p>
 
 
-<div id="orgf7d9d6e" class="figure">
-<p><img src="./resources/mobilen/dergi_1/SwipeActions.jpg" alt="SwipeActions.jpg" width="100%" />
-</p>
-<p><span class="figure-number">Şekil 1: </span>Örnek Swipe Actions</p>
-</div>
+<figure id="org26b7b59">
+<img src="./resources/mobilen/dergi_1/SwipeActions.jpg" alt="SwipeActions.jpg" width="100%">
+
+<figcaption><span class="figure-number">Figure 1: </span>Örnek Swipe Actions</figcaption>
+</figure>
 </div>
 
-<div id="outline-container-org50a7686" class="outline-3">
-<h3 id="org50a7686">Swipe Actions nedir?</h3>
-<div class="outline-text-3" id="text-org50a7686">
+<div id="outline-container-org86a88ab" class="outline-3">
+<h3 id="org86a88ab">Swipe Actions nedir?</h3>
+<div class="outline-text-3" id="text-org86a88ab">
 <p>
 Merhabalar, herhangi bir ui elemanının üzerinden <code>swipe</code> ile çıkan aksiyonlar iOS kullanıcı deneyiminde önemli rol oynuyor.
 </p>
@@ -63,11 +91,11 @@ Bu yazımızda <a href="https://github.com/aheze/SwipeActions">Açık Kaynak Swi
 </div>
 </div>
 
-<div id="outline-container-orgbd0b48d" class="outline-3">
-<h3 id="orgbd0b48d">SwipeActions Kullanımı</h3>
-<div class="outline-text-3" id="text-orgbd0b48d">
+<div id="outline-container-org4796e46" class="outline-3">
+<h3 id="org4796e46">SwipeActions Kullanımı</h3>
+<div class="outline-text-3" id="text-org4796e46">
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Program 1: </span>Örnek bir swipe aksiyon eklemesi</label><pre class="src src-swift">import SwiftUI
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Örnek bir swipe aksiyon eklemesi</label><pre class="src src-swift">import SwiftUI
 import SwipeActions
 
 struct ContentView: View {
@@ -91,9 +119,9 @@ struct ContentView: View {
 </div>
 </div>
 
-<div id="outline-container-org4f6d2d2" class="outline-3">
-<h3 id="org4f6d2d2">Kaynak Kod Okuma: <code>PreferenceKey</code> kullanımı</h3>
-<div class="outline-text-3" id="text-org4f6d2d2">
+<div id="outline-container-org16a2fe9" class="outline-3">
+<h3 id="org16a2fe9">Kaynak Kod Okuma: <code>PreferenceKey</code> kullanımı</h3>
+<div class="outline-text-3" id="text-org16a2fe9">
 <p>
 Veri iletişimi view componentleri arasında Environment Objeler uzerinden <code>Parent</code> → <code>Child</code> view yönünde olabiliyor.
 Veya data binding ile <code>@Binding</code> çift taraflı <code>reactive</code> şekilde sağlanabiliyor.
@@ -104,7 +132,7 @@ PreferenceKey ile olan bu veri iletişiminde ise diğer bir ihtiyaç olan ise <c
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Program 2: </span>Preference Key tanımlama</label><pre class="src src-swift">struct AllowSwipeToTriggerKey: PreferenceKey {
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>Preference Key tanımlama</label><pre class="src src-swift">struct AllowSwipeToTriggerKey: PreferenceKey {
     static var defaultValue: Bool? = nil
     static func reduce(value: inout Bool?, nextValue: () -&gt; Bool?)
     { value = nextValue() }
@@ -123,12 +151,12 @@ Kullanımı için 2 tane <code>modifier</code>'imiz mevcut: <code>preference</co
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Program 3: </span>Preference Key ile veriyi yukarı aktarma</label><pre class="src src-swift">view.preference(key: AllowSwipeToTriggerKey.self, value: allowSwipeToTrigger)
+<label class="org-src-name"><span class="listing-number">Listing 3: </span>Preference Key ile veriyi yukarı aktarma</label><pre class="src src-swift">view.preference(key: AllowSwipeToTriggerKey.self, value: allowSwipeToTrigger)
 </pre>
 </div>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Program 4: </span>Preference Key ile aşağıdan gelen veriyi okuma</label><pre class="src src-swift">view.onPreferenceChange(AllowSwipeToTriggerKey.self) { allow in
+<label class="org-src-name"><span class="listing-number">Listing 4: </span>Preference Key ile aşağıdan gelen veriyi okuma</label><pre class="src src-swift">view.onPreferenceChange(AllowSwipeToTriggerKey.self) { allow in
     /// Unwrap the value first (if it's not the edge action, `allow` is `nil`).
     if let allow {
 	swipeToTriggerLeadingEdge = allow
@@ -148,9 +176,9 @@ Daha detaylı anlamak için <a href="https://swiftwithmajid.com/2020/01/15/the-m
 </div>
 </div>
 
-<div id="outline-container-org3cd6bf7" class="outline-3">
-<h3 id="org3cd6bf7">Referanslar</h3>
-<div class="outline-text-3" id="text-org3cd6bf7">
+<div id="outline-container-orgc090fd7" class="outline-3">
+<h3 id="orgc090fd7">Referanslar</h3>
+<div class="outline-text-3" id="text-orgc090fd7">
 <ol class="org-ol">
 <li><a href="https://developer.apple.com/documentation/swiftui/preferences?changes=_7">Apple PreferenceKey Dokümantasyonu</a></li>
 <li><a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a></li>
@@ -159,19 +187,19 @@ Daha detaylı anlamak için <a href="https://swiftwithmajid.com/2020/01/15/the-m
 </div>
 </div>
 
-<div id="outline-container-org068af22" class="outline-2">
-<h2 id="org068af22">Netfox ile iOS uygulamalarda network izlemek</h2>
-<div class="outline-text-2" id="text-org068af22">
+<div id="outline-container-orge687b0f" class="outline-2">
+<h2 id="orge687b0f">Netfox ile iOS uygulamalarda network izlemek</h2>
+<div class="outline-text-2" id="text-orge687b0f">
 <p>
 <span class="underline"><a href="https://www.linkedin.com/in/ugurcan-durak/">Uğurcan Durak</a> tarafından yazıldı.</span>
 </p>
 
 
-<div id="org7e53982" class="figure">
-<p><img src="./resources/mobilen/dergi_1/NetFoxImage.jpg" alt="NetFoxImage.jpg" width="200px" />
-</p>
-<p><span class="figure-number">Şekil 2: </span><a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Netfox'u İzlemek için tıkla</a></p>
-</div>
+<figure id="org1086d11">
+<img src="./resources/mobilen/dergi_1/NetFoxImage.jpg" alt="NetFoxImage.jpg" width="200px">
+
+<figcaption><span class="figure-number">Figure 2: </span><a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Netfox'u İzlemek için tıkla</a></figcaption>
+</figure>
 
 <p>
 Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde görüntülemek için kullanılan faydalı olduğunu düşündüğüm <b><a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesinden bahsedicem.
@@ -182,9 +210,9 @@ Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde gör�
 </p>
 </div>
 
-<div id="outline-container-orgec96932" class="outline-3">
-<h3 id="orgec96932">Netfox Nedir?</h3>
-<div class="outline-text-3" id="text-orgec96932">
+<div id="outline-container-org618b77f" class="outline-3">
+<h3 id="org618b77f">Netfox Nedir?</h3>
+<div class="outline-text-3" id="text-org618b77f">
 <p>
 <b><a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesi, tüm network işlemlerini mobil cihaz üzerinden detaylı bir şekilde görüntüleyebileceğimiz <code>open source</code> bir kütüphanedir.
 </p>
@@ -199,11 +227,11 @@ Bu tarz kütüphanelerin en güzel yanı, mobil cihazımız bilgisayara bağlı 
 </div>
 </div>
 
-<div id="outline-container-org3589c88" class="outline-3">
-<h3 id="org3589c88">Netfox Nasıl Kullanılır?</h3>
-<div class="outline-text-3" id="text-org3589c88">
+<div id="outline-container-org59ab9e2" class="outline-3">
+<h3 id="org59ab9e2">Netfox Nasıl Kullanılır?</h3>
+<div class="outline-text-3" id="text-org59ab9e2">
 <p>
-Netflox'ın kullanımı ve projeye entegre edilmesi oldukça basittir.
+Netfox'ın kullanımı ve projeye entegre edilmesi oldukça basittir.
 </p>
 
 <p>
@@ -212,17 +240,17 @@ Varsayılan davranışı <b><b>shake</b></b> olarak belirlenmiş olsada custom b
 </div>
 </div>
 
-<div id="outline-container-orgc7294cf" class="outline-3">
-<h3 id="orgc7294cf">Netfox'un Projeye Eklenmesi</h3>
-<div class="outline-text-3" id="text-orgc7294cf">
+<div id="outline-container-orgbae375d" class="outline-3">
+<h3 id="orgbae375d">Netfox'un Projeye Eklenmesi</h3>
+<div class="outline-text-3" id="text-orgbae375d">
 <ol class="org-ol">
-<li>Netflox kütüphanesini <b><b>SPM</b></b>, <b><b>CocoaPods</b></b> ve <b><b>Carthage</b></b> olmak üzere üç ayrı yöntem ile projemize ekleyebiliriz. Bu yöntemlerden herhangi biriyle eklediğinizi varsayarak bir sonraki adıma geçiyorum.</li>
+<li>Netfox kütüphanesini <b><b>SPM</b></b>, <b><b>CocoaPods</b></b> ve <b><b>Carthage</b></b> olmak üzere üç ayrı yöntem ile projemize ekleyebiliriz. Bu yöntemlerden herhangi biriyle eklediğinizi varsayarak bir sonraki adıma geçiyorum.</li>
 
 <li>Kütüphaneyi projeye ekledik şimdi ise initiliaze edeceğiz. Bunun için AppDelegate class'ına gidip aşağıdaki gibi gerekli kodları ekliyoruz.</li>
 </ol>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Program 5: </span>Netfox Import</label><pre class="src src-swift">#if DEBUG
+<label class="org-src-name"><span class="listing-number">Listing 5: </span>Netfox Import</label><pre class="src src-swift">#if DEBUG
 import netfox
 #endif
 </pre>
@@ -233,7 +261,7 @@ Burada  <b><b>#if DEBUG</b></b> ve <b><b>#endif</b></b> kodlarını ekleyerek ko
 </p>
 
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Program 6: </span>Netfox başlatma</label><pre class="src src-swift">func application(
+<label class="org-src-name"><span class="listing-number">Listing 6: </span>Netfox başlatma</label><pre class="src src-swift">func application(
   _ application: UIApplication,
   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
 ) -&gt; Bool {
@@ -255,9 +283,9 @@ Varsayılan davranışı shake olduğundan özellikle belirtmenize gerek yok ör
 </div>
 </div>
 
-<div id="outline-container-org122a82a" class="outline-3">
-<h3 id="org122a82a">Netfox Özetle</h3>
-<div class="outline-text-3" id="text-org122a82a">
+<div id="outline-container-org7f7cea6" class="outline-3">
+<h3 id="org7f7cea6">Netfox Özetle</h3>
+<div class="outline-text-3" id="text-org7f7cea6">
 <p>
 Evet hepsi bu kadar :) Şimdi dilediğiniz gibi cihazı sallayarak ya da atamış olduğunuz bir buton ile Netfox'ı başlatabilir ve log'ları inceleyebilirsiniz.
 </p>
@@ -268,9 +296,9 @@ Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım 
 </div>
 </div>
 
-<div id="outline-container-org6106a0d" class="outline-3">
-<h3 id="org6106a0d">Referanslar</h3>
-<div class="outline-text-3" id="text-org6106a0d">
+<div id="outline-container-orgee4a00c" class="outline-3">
+<h3 id="orgee4a00c">Referanslar</h3>
+<div class="outline-text-3" id="text-orgee4a00c">
 <ol class="org-ol">
 <li><a href="https://github.com/kasketis/netfox">Netfox Github Kütüphanesi</a></li>
 <li><a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Örnek Kullanım Vidyosu</a></li>
@@ -279,17 +307,18 @@ Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım 
 </div>
 </div>
 
-<div id="outline-container-orgb70bafd" class="outline-2">
-<h2 id="orgb70bafd">XCode Breakpoints</h2>
-<div class="outline-text-2" id="text-orgb70bafd">
+<div id="outline-container-orgec5eb38" class="outline-2">
+<h2 id="orgec5eb38">XCode Breakpoints</h2>
+<div class="outline-text-2" id="text-orgec5eb38">
 <p>
 <span class="underline"><a href="https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8">Alper Cem Öztürk</a> tarafından yazıldı.</span>
+Son
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Tarih: 2023-05-15 Mon 00:00</p>
+<p class="date">Date: 2023-05-15 Mon 00:00</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 29.0.50 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 </div>
 </body>

@@ -1,3 +1,13 @@
 #+title: Mobilen Dergi
+#+OPTIONS: toc:nil
 
-[[file:20230508135531-mobilen_dergi_1.org][Mobilen Dergi 1]]
+Mobil yazılım ürünleri, kullanıcıların hayatlarında büyük bir öneme sahip araçlar haline geldi. Bir mobil yazılım ürünü, son kullanıcıya sunulmadan önce geliştirilme aşamasında ve geliştirildikten sonra birçok pratiği takip etmesi ve uygulaması gerekmektedir.
+
+Bu pratikleri takip eden kimseler teknik anlamda 'Mobil Yazılım Gelişticileri', öncesinde tasarımları ve deneyimi ortaya koyan 'Kullanıcı tasarım ve deneyim ekipleri', son kullanıcıya daha etkin erişmesini sağlamaya çalışan 'Pazarlama' ekipleri ve daha bir çok kimseden oluşuyor.
+
+Çok hızlı gelişen ve değişen bu pratikleri takip etmek, mümkün olduğunca geliştirme aşamalarında ortak bir jargon kullanarak daha iyi iletişimi sağlayabilmek için, bulunduğumuz ekosistemi ve yaklaşımları daha yakından takip edebilmek önemli hale geliyor.
+
+Bu nedenle, işlerimizi daha kaliteli bir noktaya taşımak amacıyla, mobil konulara odaklı periyodik yayınlanacak bir dergi hazırlamaktayız ve heyecanlıyız :).
+
+* Dergiler
+[[file:20230508135531-mobilen_dergi_1.org][Mobilen Dergi 1]] [2023-05-14 Sun]

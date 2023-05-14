@@ -2,34 +2,9 @@
 :ID:       20230427T104107.693300
 :END:
 #+title: Mobilen Dergi 0
-#+author: Suat Karakuşoğlu
-#+LANGUAGE: tr
-#+LATEX_CLASS: article
-#+OPTIONS: toc:nil
-#+LATEX_CLASS_OPTIONS: [a4paper, 16pt]
-#+LATEX_HEADER: \usepackage{babel}
-#+LATEX_HEADER: \renewcommand*{\contentsname}{İçindekiler}
-#+LATEX_HEADER: \usepackage{parskip}
-#+LATEX_HEADER: \setlength{\parindent}{15pt}
-#+LATEX_HEADER: \usepackage{indentfirst}
-#+LATEX_HEADER: \usepackage{setspace}
-#+LATEX_HEADER: \onehalfspacing
-#+LATEX_HEADER: \usepackage{libertine}
-#+LATEX_HEADER: \usepackage{unicode-math}
-#+LATEX_HEADER: \usepackage{tikz}
-#+LATEX_HEADER: \usepackage{qrcode}
+#+author: ---
 
-#+BEGIN_EXPORT latex
-\begin{center}
-\includegraphics[width=96px]{./resources/mobilen/common/mobilen_logo.jpg}
-\end{center}
-\tableofcontents
-#+END_EXPORT
-
-#+BEGIN_EXPORT latex
-\newpage
-\thispagestyle{empty}
-#+END_EXPORT
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
 
 * Mobilen Dergi
 Mobil yazılım ürünleri, kullanıcıların hayatlarında büyük bir öneme sahip araçlar haline geldi. Bir mobil yazılım ürünü, son kullanıcıya sunulmadan önce geliştirilme aşamasında ve geliştirildikten sonra birçok pratiği takip etmesi ve uygulaması gerekmektedir.

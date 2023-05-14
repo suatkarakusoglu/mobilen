@@ -5,7 +5,7 @@
 #+author: ---
 #+date: [2023-05-15]
 
-#+INCLUDE: ./resources/OrgExportSettings/OrgExportMobilenHtmlSettings.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
 
 * iOS SwiftUI Swipe Actions
 _[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._

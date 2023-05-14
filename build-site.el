@@ -1,7 +1,7 @@
 ;; Load the publishing system
 ;; https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
 ;; https://simplecss.org/
-;; run command: httpd-server-directory
+;; run httpd-server-directory
 
 (require 'ox-publish)
 (require 'package)
@@ -30,12 +30,18 @@
              :with-creator t            ;; Include Emacs and Org versions in footer
              :with-toc t                ;; Include a table of contents
              :section-numbers nil
-             :time-stamp-file nil)))
+             :time-stamp-file nil)
+       (list "mobilen-statics"
+             :base-directory "./content/"
+             :base-extension "css\\|js\\|jpg\\|gif\\|png\\|pdf\\|mp3\\|ogg\\|swf"
+             :publishing-directory "./public/"
+             :publishing-function 'org-publish-attachment
+             :recursive t)))
 
 ;; Customize the HTML output
 (setq org-html-validation-link nil            ;; Don't show validation link
       org-html-head-include-scripts nil       ;; Use our own scripts
       org-html-head-include-default-style nil ;; Use our own styles
-      org-html-head "<link rel=\"stylesheet\" href=\"http://thomasf.github.io/solarized-css/solarized-light.min.css\" />")
+      org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
 ;; Generate the site output
 (org-publish-all t)

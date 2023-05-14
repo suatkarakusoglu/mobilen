@@ -1,0 +1,71 @@
+:PROPERTIES:
+:ID:       20230427T104107.693300
+:END:
+#+title: Mobilen Dergi 0
+#+author: Suat Karakuşoğlu
+#+LANGUAGE: tr
+#+LATEX_CLASS: article
+#+OPTIONS: toc:nil
+#+LATEX_CLASS_OPTIONS: [a4paper, 16pt]
+#+LATEX_HEADER: \usepackage{babel}
+#+LATEX_HEADER: \renewcommand*{\contentsname}{İçindekiler}
+#+LATEX_HEADER: \usepackage{parskip}
+#+LATEX_HEADER: \setlength{\parindent}{15pt}
+#+LATEX_HEADER: \usepackage{indentfirst}
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \onehalfspacing
+#+LATEX_HEADER: \usepackage{libertine}
+#+LATEX_HEADER: \usepackage{unicode-math}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{qrcode}
+
+#+BEGIN_EXPORT latex
+\begin{center}
+\includegraphics[width=96px]{./resources/mobilen/common/mobilen_logo.jpg}
+\end{center}
+\tableofcontents
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\newpage
+\thispagestyle{empty}
+#+END_EXPORT
+
+* Mobilen Dergi
+Mobil yazılım ürünleri, kullanıcıların hayatlarında büyük bir öneme sahip araçlar haline geldi. Bir mobil yazılım ürünü, son kullanıcıya sunulmadan önce geliştirilme aşamasında ve geliştirildikten sonra birçok pratiği takip etmesi ve uygulaması gerekmektedir.
+
+Bu pratikleri takip eden kimseler teknik anlamda 'Mobil Yazılım Gelişticileri', öncesinde tasarımları ve deneyimi ortaya koyan 'Kullanıcı tasarım ve deneyim ekipleri', son kullanıcıya daha etkin erişmesini sağlamaya çalışan 'Pazarlama' ekipleri ve daha bir çok kimseden oluşuyor.
+
+Çok hızlı gelişen ve değişen bu pratikleri takip etmek, mümkün olduğunca geliştirme aşamalarında ortak bir jargon kullanarak daha iyi iletişimi sağlayabilmek için, bulunduğumuz ekosistemi ve yaklaşımları daha yakından takip edebilmek önemli hale geliyor.
+
+Bu nedenle, işlerimizi daha kaliteli bir noktaya taşımak amacıyla, mobil konulara odaklı periyodik yayınlanacak bir dergi hazırlamaktayız ve heyecanlıyız :).
+
+* Odaklanacağımız temel konular
+1. Mobil uygulama dilleri (Swift, Kotlin, Dart, JSX)
+2. Çoklu platform geliştirme ortamları (React Native, Flutter)
+3. Mobil uygulama mimari modelleri (MVC, MVP, MVVM, vb.)
+4. Mobil kullanıcı ara yüzü (UI) tasarım prensipleri ve araçları
+5. Mobil uygulama düzeni ve navigasyon teknikleri
+6. Mobil uygulama performans optimizasyonu
+7. Mobil uygulama test etme ve kalite kontrol
+8. Mobil uygulama yayınlama ve hazırlık
+9. Üçüncü taraf API'leri ve hizmetlerin mobil uygulama ile entegrasyonu
+10. Bildirimler
+11. Konum tabanlı hizmetler ve geofencing
+12. Sosyal medya entegrasyonu
+13. Mobil uygulama analizi ve ölçümlemesi
+14. Mobil uygulama para kazanma stratejileri (uygulama içi satın alım, abonelikler, reklamlar, vb.)
+15. Mobil uygulama güvenliği ve veri gizliliği
+16. Mobil uygulama erişilebilirliği
+17. Açık Kaynak örnek paylaşımlar
+18. Kullanılan araçlar
+19. Kitap veya başka kaynak önerileri
+
+* Bize Katılın
+Paylaşmak istediğiniz fikir ve önerileriniz için Mobilen adıyla Microsoft Teams üzerinde kurduğumuz kanala bekliyoruz. Buradaki paylaşımlarımızın da dergiyi zenginleştireceğine inanıyoruz.
+
+Beraber öğreneceğimiz *[[https://teams.microsoft.com/l/channel/19%3aYGj-N-TCRIbeJhaj3vV_HAPAjOR5m9txmrwfO9h9QTg1%40thread.tacv2/General?groupId=89638e61-9c4a-4f01-badd-d29842aae9df&tenantId=cc76235c-86ab-4979-bc0b-0e78c66edb7c][Mobilen Team]]*'e buyurun.
+
+#+begin_export latex
+\qrcode[height=1.5in]{https://teams.microsoft.com/l/channel/19%3aYGj-N-TCRIbeJhaj3vV_HAPAjOR5m9txmrwfO9h9QTg1%40thread.tacv2/General?groupId=89638e61-9c4a-4f01-badd-d29842aae9df&tenantId=cc76235c-86ab-4979-bc0b-0e78c66edb7c}
+#+end_export

@@ -295,3 +295,183 @@ Bu yazıda, "breakpoint"'leri ve kullanım senaryolarını ele aldık. Ardından
 
 ** Referanslar
 [[https://www.danijelavrzan.com/posts/2023/04/login-xcode-breakpoint][Login XCode Breakpoints]]
+
+* XCode Project Custom File Templates
+Geliştirme sürecinde her ayrıntının önemli olduğu bir dünyada yaşıyoruz. Bu karmaşık süreçte, verimliliği ve tutarlılığı artırmak için araçlardan en iyi şekilde yararlanmak gerekiyor.
+Bu yazıda, iOS uygulama geliştirme sürecini daha düzgün, hızlı ve hatasız hale getirmek için Xcode'un Custom File Template'lerinin nasıl kullanılacağını ele alacağız.
+
+Yeni başlayanlardan deneyimli geliştiricilere kadar herkesin işine yarayacak bu bilgilerle, projenizdeki geliştirme sürecini daha verimli hale getirebilirsiniz.
+
+- Xcode :: Apple'ın macOS, iOS, watchOS ve tvOS için uygulamalar geliştirmek için kullandığı bir Entegre Geliştirme Ortamı (IDE).
+- Template :: Önceden tanımlanmış bir dosya yapısı.
+- Custom Xcode Template :: Kullanıcı tarafından özelleştirilmiş Xcode Template'leri.
+- MVVM :: Model-View-ViewModel, bir yazılım mimarisi deseni.
+- .xctemplate :: Xcode Template'lerinin dosya türü.
+
+`File Templates`, Xcode'un özellikle iOS uygulamaları geliştirirken kullandığımız dosyaları oluşturma sürecinde kilit bir rol oynar. Her yeni dosya oluştururken, `Choose a template for your new file:` başlığı altında bir dizi template sunulur.
+
+#+CAPTION: Template Seçimi
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 200px
+[[file:./resources/mobilen/dergi_1/choose-template.png]]
+
+Bu template'ler, yeni oluşturulacak dosyaların belirli bir yapıya sahip olmasına yardımcı olur. Ancak, projeniz büyüdükçe ve daha fazla dosya eklemeniz gerektiğinde, aynı süreci tekrar tekrar uygulamak zaman kaybına ve tutarsızlıklara yol açabilir. İşte tam bu noktada Custom Xcode Templates devreye girer.
+
+** Custom Xcode Template Avantajları
+Custom Xcode Template, projenizin gereksinimlerine ve mimarisine uygun dosyaları hızlı ve tutarlı bir şekilde oluşturmanıza olanak sağlar. Örneğin, MVVM mimarisi gibi belirli bir mimariyi kullanırken, her sayfa için birden fazla dosya oluşturmanız gerekebilir. Bu süreci Custom Xcode Template kullanarak optimize edebilirsiniz.
+
+** Custom Xcode Template Nasıl Oluşturulur?
+
+İlk adım, Xcode'un template'leri barındırdığı dizini açmaktır. Bu klasör genellikle `~/Library/Developer/Xcode/Templates/File Templates` dizininde bulunur. Eğer bu dizin mevcut değilse, manuel olarak oluşturabilirsiniz.
+
+#+CAPTION: Templates dizinini açmak
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:./resources/mobilen/dergi_1/templates-folder.png]]
+
+#+CAPTION: Yeni klasör oluşturmak
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:./resources/mobilen/dergi_1/file-templates.png]]
+
+Kendi template'lerinizi barındıracak bir klasör oluşturmanız gerekmektedir. Bu klasörü adlandırırken istediğiniz ismi kullanabilirsiniz, örneğin "My Project Templates".
+
+#+CAPTION: Custom Template barındıracak klasörü oluşturmak
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:./resources/mobilen/dergi_1/my-project-templates.png]]
+
+Sonrasında, `.xctemplate` uzantılı bir dosya oluşturmalısınız. Bu dosya, oluşturacağınız asıl template'i temsil eder ve template'in nasıl görüneceğini ve hangi dosyaların oluşturulacağını belirler.
+
+#+CAPTION: Xctemplate dosyaları
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:./resources/mobilen/dergi_1/xctemplate.png]]
+
+`.xctemplate` dosyası genellikle aşağıdaki öğeleri içerir:
+
+- TemplateInfo.plist
+- Dosya template'leri (Örneğin; .swift dosyaları)
+- Diğer kaynak dosyaları (Örneğin; Template için icon dosyası)
+
+*** Örnek bir TemplateInfo dosyası;
+#+begin_src xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+  <plist version="1.0">
+    <dict>
+      <key>Platforms</key>
+      <array>
+        <string>com.apple.platform.iphoneos</string>
+      </array>
+      <key>DefaultCompletionName</key>
+      <string>MVVM-C</string>
+      <key>Description</key>
+      <string>MVVM-C Page Template</string>
+      <key>Kind</key>
+      <string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+      <key>SortOrder</key>
+      <integer>1</integer>
+      <key>Options</key>
+      <array>
+        <dict>
+          <key>Description</key>
+          <string></string>
+          <key>Default</key>
+          <string></string>
+          <key>Identifier</key>
+          <string>pageName</string>
+          <key>Name</key>
+          <string>New Page Name</string>
+          <key>Required</key>
+          <string>YES</string>
+          <key>Type</key>
+          <string>text</string>
+        </dict>
+        <dict>
+          <key>Default</key>
+          <string>___VARIABLE_pageName___</string>
+          <key>Identifier</key>
+          <string>productName</string>
+          <key>Type</key>
+          <string>static</string>
+        </dict>
+      </array>
+      <key>Template Author</key>
+      <string>Ali Mert</string>
+      <key>MainTemplateFile</key>
+      <string>___FILEBASENAME___</string>
+    </dict>
+  </plist>
+#+end_src
+
+TemplateInfo dosyasındaki önemli key'ler:
+
+=Platforms= key, bu template'in hangi platformlarda kullanılacağını belirtir. Bu örnekte, template sadece iOS (com.apple.platform.iphoneos) için kullanılabilir.
+
+=DefaultCompletionName= key, yeni template'in varsayılan adını belirtir. Bu örnekte, yeni template'in adı 'MVVM-C' olacaktır.
+
+=Description= key, template'in ne olduğunu ve ne için kullanıldığını açıklar. Bu durumda, template bir 'MVVM-C Page Template' olarak tanımlanmıştır.
+
+=Options= key, template oluşturulurken kullanıcıdan alınacak girdileri belirtir. Bu örnekte, kullanıcıdan yeni bir sayfa adı talep edilir. Bu bilgi, yeni oluşturulan dosyada kullanılır.
+
+=Template Author= key, template'in yazarını belirtir. Bu örnekte, template'in yazarı 'Ali Mert' olarak belirtilmiştir.
+
+=MainTemplateFile= key, bir template dosyasında birden fazla dosya bulunduğunda, hangi dosyanın varsayılan olarak açılacağını belirtir.
+
+*** Örnek bir dosya template'i;
+#+begin_src swift
+  // ___FILEHEADER___
+
+  import Combine
+  import Foundation
+  import SwiftUI
+
+  struct ___VARIABLE_pageName___ContentView: View {
+      // MARK: Observable Objects
+
+      @ObservedObject var viewStateData: ___VARIABLE_pageName___ViewStateData
+
+      // MARK: Properties
+
+      var onChangeEvent: (___VARIABLE_pageName___Event) -> Void
+
+      // MARK: Lifecycle
+
+      var body: some View {
+          self.content()
+      }
+  }
+
+  // MARK: - Views
+
+  extension ___VARIABLE_pageName___ContentView {
+      private func content() -> some View {
+          VStack {
+              // TODO: Add Views
+          }
+      }
+  }
+
+  #if DEBUG
+  struct ___VARIABLE_pageName___ContentView_Previews: PreviewProvider {
+      static var previews: some View {
+          let initialView = ___VARIABLE_pageName___ContentView(viewStateData: .init(), onChangeEvent: { _ in })
+
+          return Group {
+              initialView
+          }
+      }
+  }
+  #endif
+#+end_src
+
+Custom Template oluşturmak ve hazır template bulabileceğiniz birkaç kaynak aşağıdaki gibidir:
+
+*** Referenslar
+1. [[https://www.kodeco.com/26582967-xcode-project-and-file-templates][Kodeco]]: Bu kaynakta kapsamlı bir şekilde custom template oluşturma süreci anlatılıyor.
+
+2. [[https://github.com/topics/xcode-templates][Github Xcode Templates]]: Github'da "xcode-templates" topic'i ile genellikle proje mimarileri için oluşturulmuş template repolarına ulaşabilirsiniz.
+
+Özetle, bu adımlar, Custom File Template'lerinizi oluşturmak için iyi bir başlangıç noktası olabilir. Ancak, her projenin kendine özgü ihtiyaçları olduğunu ve bu adımların projenizin spesifik gereksinimlerine göre uyarlanması gerektiğini unutmamak önemlidir.
+Bu sayede, projenizin verimliliğini ve tutarlılığını artırarak, uygulama geliştirme sürecinizin kalitesini yükseltebilirsiniz.

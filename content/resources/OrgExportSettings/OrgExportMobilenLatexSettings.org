@@ -17,7 +17,7 @@
 
 #+BEGIN_EXPORT latex
 \begin{center}
-\includegraphics[width=96px]{./resources/mobilen/common/mobilen_logo.jpg}
+\includegraphics[width=96px]{./resources/mobilen/common/mobilen-logo.png}
 \end{center}
 \tableofcontents
 #+END_EXPORT

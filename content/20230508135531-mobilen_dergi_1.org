@@ -7,7 +7,7 @@
 
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
 
-* iOS SwiftUI Swipe Actions :noexport:
+* iOS SwiftUI Swipe Actions
 _[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._
 
 #+CAPTION: Örnek Swipe Actions
@@ -105,7 +105,7 @@ Daha detaylı anlamak için [[https://swiftwithmajid.com/2020/01/15/the-magic-of
 
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexNextPage.org
 
-* Netfox ile iOS uygulamalarda network izlemek :noexport:
+* Netfox ile iOS uygulamalarda network izlemek 
 _[[https://www.linkedin.com/in/ugurcan-durak/][Uğurcan Durak]] tarafından yazıldı._
 
 #+CAPTION: [[https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif][Netfox'u İzlemek için tıkla]]
@@ -173,7 +173,7 @@ Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım 
 
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexNextPage.org
 
-* Xcode Breakpoints İle Süreçlerinizi Otomatikleştirin :noexport:
+* Xcode Breakpoints İle Süreçlerinizi Otomatikleştirin 
 _[[https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8][Alper Cem Öztürk]] tarafından yazıldı._
 
 Uygulamanızı her test ettiğinizde oturum açma bilgilerinizi manuel olarak girmekten sıkıldıysanız ve geliştirme sırasında zaman kazanmak istiyorsanız, "xcode breakpoints" ihtiyacınız olan çözüm olabilir.
@@ -296,7 +296,11 @@ Bu yazıda, "breakpoint"'leri ve kullanım senaryolarını ele aldık. Ardından
 ** Kaynaklar
 [[https://www.danijelavrzan.com/posts/2023/04/login-xcode-breakpoint][Login XCode Breakpoints]]
 
-* XCode Project Custom File Templates :noexport:
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+* XCode Project Custom File Templates 
+_[[https://linkedin.com/in/alimerttekel][Ali Mert Tekel]] tarafından yazıldı._
+
 Geliştirme sürecinde her ayrıntının önemli olduğu bir dünyada yaşıyoruz. Bu karmaşık süreçte, verimliliği ve tutarlılığı artırmak için araçlardan en iyi şekilde yararlanmak gerekiyor.
 Bu yazıda, iOS uygulama geliştirme sürecini daha düzgün, hızlı ve hatasız hale getirmek için Xcode'un Custom File Template'lerinin nasıl kullanılacağını ele alacağız.
 
@@ -422,29 +426,22 @@ TemplateInfo dosyasındaki önemli key'ler:
 *** Örnek bir dosya template'i;
 #+begin_src swift
   // ___FILEHEADER___
-
   import Combine
   import Foundation
   import SwiftUI
 
   struct ___VARIABLE_pageName___ContentView: View {
       // MARK: Observable Objects
-
       @ObservedObject var viewStateData: ___VARIABLE_pageName___ViewStateData
-
       // MARK: Properties
-
       var onChangeEvent: (___VARIABLE_pageName___Event) -> Void
-
       // MARK: Lifecycle
-
       var body: some View {
           self.content()
       }
   }
 
   // MARK: - Views
-
   extension ___VARIABLE_pageName___ContentView {
       private func content() -> some View {
           VStack {
@@ -452,12 +449,10 @@ TemplateInfo dosyasındaki önemli key'ler:
           }
       }
   }
-
   #if DEBUG
   struct ___VARIABLE_pageName___ContentView_Previews: PreviewProvider {
       static var previews: some View {
           let initialView = ___VARIABLE_pageName___ContentView(viewStateData: .init(), onChangeEvent: { _ in })
-
           return Group {
               initialView
           }
@@ -476,8 +471,11 @@ Custom Template oluşturmak ve hazır template bulabileceğiniz birkaç kaynak a
 Özetle, bu adımlar, Custom File Template'lerinizi oluşturmak için iyi bir başlangıç noktası olabilir. Ancak, her projenin kendine özgü ihtiyaçları olduğunu ve bu adımların projenizin spesifik gereksinimlerine göre uyarlanması gerektiğini unutmamak önemlidir.
 Bu sayede, projenizin verimliliğini ve tutarlılığını artırarak, uygulama geliştirme sürecinizin kalitesini yükseltebilirsiniz.
 
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexNextPage.org
 
 * Deep Link: Mobil Uygulamaların Gizli Kahramanı
+_[[https://linkedin.com/in/egehan-kalaycı-736b4a238][Egehan Kalaycı]] tarafından yazıldı._
+
 Selam "Mobilen" okurları! Bugün sizinle çok önemli ve aslında fazlasıyla işlevsel bir konuyu konuşacağız: Deep Link'leri. Evet, belki ilk duyduğunuzda biraz karışık gelebilir ama emin olun, bu yazıyı okuduktan sonra onları tanıyan en iyi kişi siz olacaksınız.
 
 ** Deep Link Nedir?
@@ -556,7 +554,7 @@ Peki, bu durum neden oluşur? İşin aslı, iOS'un bir metni bağlantı olarak t
 [[file:./resources/mobilen/dergi_1/1.jpg]]
 Fakat, evet uygulamayı açtık ama henüz uygulama içerisinde bir yönlendirme yapmadık. Mesela uygulamanın "profil bilgilerim" sayfasına gitmek istiyoruz. Peki, bunu nasıl yapabiliriz?
 
-### URL Scheme ile Uygulama İçi Yönlendirme
+*** URL Scheme ile Uygulama İçi Yönlendirme
 Bu işlem için "AppDelegate.swift" dosyasını kullanacağız. Bu dosyada bulunan `open url: URL` metodu, başka bir uygulama veya sistem bileşeni tarafından gönderilen URL'yi yakalayıp işlememizi sağlar.
 
 Hatırlayalım, bir metnin bağlantı olabilmesi için "scheme://host" yapısına uyması gerektiğini belirtmiştik. Şimdi bu yapının bir örneğini inceleyelim. Örneğin, `com.myApp://content?contentID="1881"` şeklinde bir URL tanımlayalım.
@@ -644,3 +642,27 @@ Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha
 ** Kaynaklar
 1. [[https://medium.com/@ydemirkoparan/swift-ile-deep-linking-nas%C4%B1l-yap%C4%B1l%C4%B1r-e815fee93b97][Swift ile DeepLinking nasıl yapılır?]]
 2. [[https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97][iOS Deep Linking Scheme vs Universal Links]]
+
+* Evolution of the Medium iOS app architecture
+_[[https://linkedin.com/in/myusufka][Yusuf Kaya]] tarafından yazıldı._
+
+Her alanda olduğu gibi bir mobil projesinde de sürekli olarak gelişen teknolojik trendlere uyum sağlamak da büyük bir önem taşımaktadır.
+
+Yeni mimari geliştirmeler, bir projenin başarısı için hayati bir rol oynamaktadır. Bu geliştirmeler, uygulamanın performansını artırırken, güvenlik açıklarını kapatmak ve gelecekteki ihtiyaçlarını karşılamak için tasarlanır.
+
+Yeni mimari yaklaşımlar, yazılım mühendislerine daha etkili bir şekilde çalışabilmeleri için daha fazla esneklik ve verimlilik sağlamayı amaçlar. Ayrıca, proje ekibine, uygulamanın yaşam döngüsü boyunca sürekli iyileştirmeler yapma ve yeni özellikler eklemek için daha iyi bir temel sunmayı amaçlar. Modüler mimari de projelerin geliştirilmesinde önemli bir yer tutan yenilikçi bir yaklaşımdır.
+[[https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e][Evolution of the Medium iOS App Architecture]] yayınında da Medium'un iOS uygulamasının modüler mimari evrimini anlatmaktadır.
+
+** Modüler Mimari Nedir?
+Modüler mimari, projelerin geliştirilmesinde kullanılan bir mimari yaklaşımıdır. Bu yaklaşım, bir uygulamayı bağımsız bileşenlere veya modüllere ayırarak, her bir modülün kendi sorumluluk alanına odaklanmasını ve birbirleriyle minimum bağımlılık içinde çalışmasını sağlar.
+*** Modüler Mimarinin Faydaları
+Modüler mimarinin faydaları şunlardır:
+- Daha iyi organizasyon: Modüller arasında sorumluluk alanlarına odaklanarak projenin daha iyi organize edilmesi sağlanır.
+- Paralel geliştirme: Farklı modüller, ayrı ekipler tarafından aynı anda geliştirilebilir.
+- Yeniden kullanılabilirlik: Modüller, başka projelerde veya farklı parçalarda kolayca yeniden kullanılabilir.
+- Bakım kolaylığı: Bağımsız modüllerin yönetimi, hataların tespitini kolaylaştırır ve bakım sürecini iyileştirir.
+- Ölçeklenebilirlik: Projeyi büyütme veya değiştirme gerektiğinde, modüller arasındaki etkileşim minimum düzeyde olduğu için ölçeklenebilirlik sağlanır.
+** Medium Uygulamasının Evrimi
+Bu bilgiler ışığında Medium'un iOS uygulamasının mimarisinin evrim serüveninin inceleyebiliriz. Kullanılan yeni teknikler ve yaklaşımlar, bu süreçte yaşanan zorluklar ve çıkarılan dersler bakımından faydalı bir yayın olduğunu düşünüyorum. Keyifli okumalar dilerim.
+** Kaynaklar
+1. [[https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e][Evolution of the Medium iOS App Architecture]]

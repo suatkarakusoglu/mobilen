@@ -1,5 +1,5 @@
 #+LANGUAGE: tr
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil H:2 title:nil
 #+LATEX_CLASS_OPTIONS: [24pt]
 #+LATEX_HEADER: \usepackage{babel}
 #+LATEX_HEADER: \usepackage{parskip}
@@ -14,4 +14,11 @@
 #+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
 #+LATEX_HEADER: \hypersetup{colorlinks = true}
 #+LATEX_HEADER: \usepackage[export]{adjustbox}
+#+LATEX_HEADER: \usepackage{pdfpages}
 #+LATEX_HEADER: \renewcommand*{\contentsname}{İçindekiler}
+
+#+BEGIN_EXPORT latex
+\tableofcontents
+\newpage
+\thispagestyle{empty}
+#+END_EXPORT

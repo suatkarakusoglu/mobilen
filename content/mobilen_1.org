@@ -5,17 +5,11 @@
 #+author: ---
 #+date: Haziran 2023
 
-#+INCLUDE: ./resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
-
-#+CAPTION: Sayı 1: Haziran 2023
-#+ATTR_LATEX: :width \textwidth
-[[file:./resources/mobilen/dergi_1/MobilenSayi1Kapak.jpg]]
-
 #+BEGIN_EXPORT latex
-\tableofcontents
-\newpage
-\thispagestyle{empty}
+\includepdf[pages=1]{./resources/mobilen/dergi_1/mobilen-sayi-1-kapak.pdf}
 #+END_EXPORT
+
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
 
 * Merhaba Dünya
 Merhabalar, mobil uygulama geliştirme pratikleri ile ilgili gördüğümüz ve ilgimizi çeken gelişmeleri paylaşmak niyetiyle aylık dergi oluşturmaya niyet ettik.
@@ -23,19 +17,18 @@ Burada ilk sayımız ile karşınızdayız.
 
 İlerleyen sayılarımızda konularımızı biraz daha çeşitlendirip, gündemi daha yakından takip etmeye çalışacağız, faydalanmanız niyetiyle. Görüşmek üzere :).
 
-* WWDC 2023 geliyor!
+* WWDC 2023 geldi!
 _[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._
 
 [[https://developer.apple.com/wwdc23/][WWDC 2023]] sunum takvimi hazır.
 [[https://www.apple.com/newsroom/2023/05/apples-worldwide-developers-conference-to-kick-off-june-5-2023/][Apple WWDC 2023 konuları]] da belirlendi.
 
 Keynote sunumu Türkiye saati ile 5 Haziranda [2023-06-05 Mon 20:00] başlayacak.
-
-5-9 Haziran'da gerçekleşecek etkinlikten yeni bir ürün çıkması da muhtemel.
+[[https://www.youtube.com/watch?v=GYkq9Rgoj8E&ab_channel=Apple][Buradaki link]] üzerinden alarm kurup, açıp izleyebilirsiniz.
 
 iOS 17 ile beraber Apple duyurduğu [[https://www.apple.com/newsroom/2023/05/apple-previews-live-speech-personal-voice-and-more-new-accessibility-features/][erişilebilirlik]] yeteneklerini daha geliştirdiklerini görüyoruz.
 
-=One More Thing= VR gözlüğü konusundaki atılımların meyvesi bu toplantıda görücüye çıkabilir.
+- One More Thing! ::  VR gözlüğü konusundaki atılımların meyvesi bu toplantıda görücüye çıkabilir.
 
 * Navigation Desenleri
 _[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._

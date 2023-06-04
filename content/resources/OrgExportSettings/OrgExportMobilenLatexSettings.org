@@ -2,7 +2,6 @@
 #+OPTIONS: toc:nil
 #+LATEX_CLASS_OPTIONS: [24pt]
 #+LATEX_HEADER: \usepackage{babel}
-#+LATEX_HEADER: \renewcommand*{\contentsname}{İçindekiler}
 #+LATEX_HEADER: \usepackage{parskip}
 #+LATEX_HEADER: \setlength{\parindent}{15pt}
 #+LATEX_HEADER: \usepackage{setspace}
@@ -14,15 +13,5 @@
 #+LATEX_HEADER: \usepackage{geometry}
 #+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
 #+LATEX_HEADER: \hypersetup{colorlinks = true}
-
-#+BEGIN_EXPORT latex
-\begin{center}
-\includegraphics[width=96px]{./resources/mobilen/common/mobilen-logo.png}
-\end{center}
-\tableofcontents
-#+END_EXPORT
-
-#+BEGIN_EXPORT latex
-\newpage
-\thispagestyle{empty}
-#+END_EXPORT
+#+LATEX_HEADER: \usepackage[export]{adjustbox}
+#+LATEX_HEADER: \renewcommand*{\contentsname}{İçindekiler}

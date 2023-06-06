@@ -4,7 +4,17 @@
 #+title: Mobilen Dergi 2
 #+author: ---
 
+#+BEGIN_EXPORT latex
+\includepdf[pages=1]{./resources/mobilen/dergi_1/mobilen-sayi-1-kapak.pdf}
+#+END_EXPORT
+
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
+
+* TODO WWDC 2023 Gelişmeleri
+
+* TODO XCodes Versiyon Yönetim Uygulaması
+https://github.com/XcodesOrg/xcodes
+brew install xcodesorg/made/xcodes
 
 * iOS SwiftUI Swipe Actions
 _[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._
@@ -12,8 +22,7 @@ _[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından
 #+CAPTION: Örnek Swipe Actions
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/SwipeActions.jpg]]
-
+[[file:resources/mobilen/dergi_2/SwipeActions.jpg]]
 ** Swipe Actions nedir?
 Merhabalar, herhangi bir ui elemanının üzerinden =swipe= ile çıkan aksiyonlar iOS kullanıcı deneyiminde önemli rol oynuyor.
 

@@ -10,13 +10,16 @@
 
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
 
-* TODO WWDC 2023 Gelişmeleri
+* TODO WWDC 2023 Gelişmeleri :iOS:Apple:
+_Kim tarafindan yazilabilir_
 
-* TODO XCodes Versiyon Yönetim Uygulaması
+* TODO XCodes Versiyon Yönetim Uygulaması :xcode:iOS:
+_[[https://linkedin.com/in/egehan-kalaycı-736b4a238][Egehan Kalaycı]] tarafından yazılabilir._
+
 https://github.com/XcodesOrg/xcodes
 brew install xcodesorg/made/xcodes
 
-* iOS SwiftUI Swipe Actions
+* iOS SwiftUI Swipe Actions :SwiftUI:iOS:
 _[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._
 
 #+CAPTION: Örnek Swipe Actions
@@ -112,3 +115,24 @@ Daha detaylı anlamak için [[https://swiftwithmajid.com/2020/01/15/the-magic-of
 2. [[https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/][Magic of View Preferences in SwiftUI]]
 
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+
+* Instagram'in Hikayesi :Development_History:
+_[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._
+
+Sosyal hayatımızın en önemli aktörlerinden birisi olan Instagram'ın geçmişine dair kısa bir yazı.
+https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02
+
+Yazıda rastladığım konular:
+
+Burada Instagram'ın Foursquare gibi bir çok yetenek ve harici yetenekleri de yapmaya çalıştığı zamanlar olduğunu görüyoruz.
+** Zawinski's law
+#+begin_quote
+"Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can."
+
+"Her program email okuyucusu olana kadar gelişir, gelişmeyenler ise gelişenler ile değiştirilir."
+
+--- Jamie Zawinski
+#+end_quote
+
+Jamie Zawinski bu kurala "Law of Software Envelopment" diyor.

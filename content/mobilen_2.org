@@ -12,12 +12,15 @@
 
 * TODO WWDC 2023 Gelişmeleri :iOS:Apple:
 _Kim tarafindan yazilabilir_
+** TODO Watch Guide
+
 
 * TODO XCodes Versiyon Yönetim Uygulaması :xcode:iOS:
 _[[https://linkedin.com/in/egehan-kalaycı-736b4a238][Egehan Kalaycı]] tarafından yazılabilir._
 
 https://github.com/XcodesOrg/xcodes
 brew install xcodesorg/made/xcodes
+
 
 * iOS SwiftUI Swipe Actions :SwiftUI:iOS:
 _[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._
@@ -147,7 +150,8 @@ Burada işin içine elbette sunulan özelliklerin düzgün bir kullanıcı deney
 
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexNextPage.org
 
-* TODO Make Something Wonderful by Steve Jobs :Book:
+
+* Make Something Wonderful by Steve Jobs :Book:
 _[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._
 
 #+CAPTION: Bilgisayar zihnin bisikletidir.
@@ -159,5 +163,10 @@ Steve Jobs'un aramızdan ayrılışının üzerinden 12 sene geçmiş :/.
 
 İşlerinde ve ilişkilerinde hayatına dair daha derin bir bakış açısı yakalayabileceğimiz konuşmalarını, yazışmalarını ve hatıralarını
 biriktiren ve sanki kendisinin ağzından yazılmış bir kitap olarak ücretsiz yayınlanan bu kitabı zevkle okuyacağınıza inanıyorum.
+
+İçerisindeki konulara değinmek gerekirse:
+- Apple'dan ayrılışı, NeXT'in kuruluşu ve sonrasında tekrar Apple'a satılıp geri dönüşündeki hikayeler.
+- Pixar'da elde ettiği başarılar.
+- Teknolojiyi, sanatı, kullanıcı deneyimini iç içe görmesi ve kendi eğitim hayatındaki yaklaşımlarını bulabilirsiniz.
 
 [[http://apple.co/sja][Apple Books]] üzerinden veya [[https://stevejobsarchive.com/book/download][indirerek]] faydalanabilirsiniz.

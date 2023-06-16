@@ -1,0 +1,4 @@
+* Convert markdown to org mode
+#+begin_src sh
+  pandoc -f markdown -t org -o toBeCreated.org toBeConverted.md
+#+end_src

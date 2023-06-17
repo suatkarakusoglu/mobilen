@@ -1,5 +1,5 @@
 #+LANGUAGE: tr
-#+OPTIONS: toc:nil H:2 title:nil
+#+OPTIONS: toc:nil H:2 title:nil tags:nil
 #+LATEX_CLASS_OPTIONS: [24pt]
 #+LATEX_HEADER: \usepackage{babel}
 #+LATEX_HEADER: \usepackage{parskip}

@@ -10,11 +10,21 @@
 
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
 
-* TODO On Yazi :noexport:
-Burada sayiyla ilgili ufak bir bilgilendirme on yazisi eklenebilir.
+* Merhaba
+Herkese iyi bayramlar :)
+
+Bu sayımızda ünlü bir geliştiricinin macerasını, teknik bir component incelemesini, dünyanın en çok kullanılan uygulamalarından biri olan Instagram'ın ufak hikayesini bulabilirsiniz.
+Kullandığımız ve rastladığımız bazı geliştirme araçları hakkında linklerimizi yorumlarımızı da anlatmaya çalıştık.
+
+Bu ay ayrıca herkesin merakla beklediği etkinliklerden Apple WWDC'yi geçirdik.
+Mobil dünyanın yeni üyesi VisionPro ürününün tanıtımı oldu. '[[https://en.wikipedia.org/wiki/Spatial_computing][Spatial computing]]' gibi bir mecranin bu cihazların ucuzlaması sonrası önümüzdeki yıllarda daha çok gündemimizde olması olası.
+
+Sizin de mobil konularda paylaşmak istedikleriniz var ise dergimizin [[https://github.com/suatkarakusoglu/mobilen/issues][Mobilen Github]] sayfasında bir =issue= oluşturup =markdown= olarak bize iletebilirsiniz.
+
+Keyifli okumalar ;).
 
 * Aklımda Kalanlar: Jake Wharton ile Röportaj :Android:
-[[https://linkedin.com/in/betulsandikci][Betül Sandıkçı]] tarafından yazıldı.
+[[https://linkedin.com/in/betulsandikci][Betül Sandıkçı]] yazdı.
 #+CAPTION: Photo by [[https://unsplash.com/@goian][Ian Schneider]] on [[https://unsplash.com/?utm_source=medium&utm_medium=referral][Unsplash]]
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 200px

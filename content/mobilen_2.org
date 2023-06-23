@@ -190,13 +190,13 @@ Ayrıca ikinci olarak =reduce= fonksiyonu, bu fonksiyon dışarıdan sağlanan d
 
 Kullanımı için 2 tane =modifier='imiz mevcut: =preference= ve =onPreferenceChange=.
 
-Preference Key ile veriyi yukarı aktarma:
+Preference Key ile veriyi yukarı aktarma [[https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L328][burada]] gorebilirsiniz:
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift
   view.preference(key: AllowSwipeToTriggerKey.self, value: allowSwipeToTrigger)
 #+end_src
 
-Preference Key ile aşağıdan gelen veriyi okuma:
+Preference Key ile aşağıdan gelen veriyi [[https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L417][burada]] okuma:
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift
   view.onPreferenceChange(AllowSwipeToTriggerKey.self) { allow in
@@ -212,71 +212,27 @@ Ayrıca apple sdk'inde de =navigationTitle= modifier'i ile =preference key= kull
 Özetle hiyerarşide yukarı veri taşıyabilmek için kullanılan bu yapının kullanıldığını görüyoruz.
 Daha detaylı anlamak için [[https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/][Magic of View Preferences in SwiftUI]] yazısına göz atabilirsiniz.
 
-** Kaynaklar
-1. [[https://developer.apple.com/documentation/swiftui/preferences?changes=_7][Apple PreferenceKey Dokümantasyonu]]
-2. [[https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/][Magic of View Preferences in SwiftUI]]
+** Extension methodlara Generic Constraint Uygulamak
+=Generic= kullanarak =extension method='larının yalnızca ilgili tipler ile kullanılmasını derleme seviyesinde sağlamak tatlı bir özellik.
+[[https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L986][Burada]] ilgili örneği görebilirsiniz.
 
-#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexNextPage.org
-
-* Instagram'in Hikayesi :Development_History:
-_[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._
-
-Sosyal hayatımızın en önemli aktörlerinden birisi olan Instagram'ın geçmişine dair [[https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02][Burbn'in Instagram'a dönüşümü]] yazısına okudum.
-
-Yazıyı okumanızı tavsiye ederim.
-Bu yazıda rastladığım bir konu =feature bloat= konusundaki yaklaşımın aşılması ile ürün tanımının daha oturaklı bir çerçeveye çekilmesi.
-
-Instagram'ın Foursquare gibi bir çok yeteneğin yanına harici yetenekleri de yapmaya çalıştığı zamanlardan yalnızca =fotoğraf yayınlama= + =filtre uygulama= + =like= edebilmesine çevrilmesi.
-Zawinski'nin aşırı özellikle şişen uygulamalar hakkında alaycı bir ifadesi var:
-
-** Zawinski's Law
-#+begin_quote
-"Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can."
-
-"Her program email okuyucusu olana kadar gelişir, gelişmeyenler ise gelişenler ile değiştirilir."
-
---- [[https://www.jwz.org/about.html][Jamie Zawinski]]
-#+end_quote
-
-Jamie [[http://www.catb.org/jargon/html/Z/Zawinskis-Law.html][Zawinski's Law]] bu kurala "Law of Software Envelopment" diyor.
-Bu tuzağa çok yakalanmadan ürünlerin karakteristiğinin ve sınırlarının çizilmesi gerekiyor.
-Burada işin içine elbette sunulan özelliklerin düzgün bir kullanıcı deneyim tasarımı ile kullanıcının karşısına çıkması gibi derin konulara doğru ilerliyor.
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+begin_src swift
+  public extension SwipeAction where Label == Text, Background == Color {
+      // Buraya yazılan methodlar yalnızca
+      // Label Generic Parametresi Text olan ve Background'u Color olan 'SwipeAction'lara önerilir.
+  }
+#+end_src
 
 ** Kaynaklar
-- [[https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02][Burbn'in Instagram'a dönüşümü]]
-- [[http://www.catb.org/jargon/html/Z/Zawinskis-Law.html][Zawinski's law]]
-
-#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexNextPage.org
-
-* Kitap: Make Something Wonderful by Steve Jobs :Book:
-_[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] tarafından yazıldı._
-
-#+CAPTION: Bilgisayar zihnin bisikletidir.
-#+ATTR_LATEX: :width \textwidth
-#+ATTR_HTML: :width 100%
-[[file:resources/mobilen/dergi_2/stevejobs_with_bicycle.jpg]]
-
-Steve Jobs'un aramızdan ayrılışının üzerinden 12 sene geçmiş :/.
-
-İşlerinde ve ilişkilerinde hayatına dair daha derin bir bakış açısı yakalayabileceğimiz konuşmalarını, yazışmalarını ve hatıralarını
-biriktiren ve sanki kendisinin ağzından yazılmış bir kitap olarak ücretsiz yayınlanan bu kitabı zevkle okuyacağınıza inanıyorum.
-
-İçerisindeki konulara değinmek gerekirse:
-- Apple'dan ayrılışı, NeXT'in kuruluşu ve sonrasında tekrar Apple'a satılıp geri dönüşündeki hikayeler.
-- Pixar'da elde ettiği başarılar.
-- Teknolojiyi, sanatı, kullanıcı deneyimini iç içe görmesi ve kendi eğitim hayatındaki yaklaşımlarını bulabilirsiniz.
-
-[[http://apple.co/sja][Apple Books]] üzerinden veya [[https://stevejobsarchive.com/book/download][indirerek]] faydalanabilirsiniz
+1. [[https://github.com/aheze/SwipeActions][SwipeActions Repo]]
+2. [[https://developer.apple.com/documentation/swiftui/preferences?changes=_7][Apple PreferenceKey Dokümantasyonu]]
+3. [[https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/][Magic of View Preferences in SwiftUI]]
 
 #+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexNextPage.org
 
 * Android Studio Bot :Android:AI:
-:PROPERTIES:
-:CREATED:  [2023-06-16 Fri 13:50]
-:END:
-:LOGBOOK:
-- State "TODO"       from              [2023-06-16 Fri 13:50]
-:END:
+[[https://tr.linkedin.com/in/tu%C4%9Fbaberk][Tuğba Berk]] yazdı.
 Google IO etkinliği, 10 Mayıs 2023 tarihinde gerçekleşti. Bu etkinlikte Google'ın yapay zeka desteğini mevcut araçlarına entegre ettiğini gördük. =Google Play Store=, =Google Haritalar=, =Google Mail= ve =Android Studio= gibi birçok araç bu yenilikler arasında yer aldı.
 
 Yapay zekadaki bu gelişmeler, kod yazarken bize çeşitli faydalar sunmaya başladı bile. Bu yeni yapay zeka gelişmelerine ayak uydurabilen yazılımcılar olmak istiyorsak, Android Studio Bot'u hızlı bir şekilde öğrenmek önemli görünüyor. Kendi rollerimizi ve bu sistem içindeki araçlarımızı iyi anlamamız gerekebilir.

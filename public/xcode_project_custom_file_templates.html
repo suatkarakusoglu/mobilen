@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>XCode Project Custom File Templates</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<p><small>Son Güncelleme: 2023-07-11 Tue 15:13</small></p>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">XCode Project Custom File Templates</h1>
+</header><p>
+<a href="https://linkedin.com/in/alimerttekel">Ali Mert Tekel</a> yazdı.
+</p>
+
+<p>
+Geliştirme sürecinde her ayrıntının önemli olduğu bir dünyada yaşıyoruz. Bu karmaşık süreçte, verimliliği ve tutarlılığı artırmak için araçlardan en iyi şekilde yararlanmak gerekiyor.
+Bu yazıda, iOS uygulama geliştirme sürecini daha düzgün, hızlı ve hatasız hale getirmek için Xcode'un Custom File Template'lerinin nasıl kullanılacağını ele alacağız.
+</p>
+
+<p>
+Yeni başlayanlardan deneyimli geliştiricilere kadar herkesin işine yarayacak bu bilgilerle, projenizdeki geliştirme sürecini daha verimli hale getirebilirsiniz.
+</p>
+
+<dl class="org-dl">
+<dt>Xcode</dt><dd>Apple'ın macOS, iOS, watchOS ve tvOS için uygulamalar geliştirmek için kullandığı bir Entegre Geliştirme Ortamı (IDE).</dd>
+<dt>Template</dt><dd>Önceden tanımlanmış bir dosya yapısı.</dd>
+<dt>Custom Xcode Template</dt><dd>Kullanıcı tarafından özelleştirilmiş Xcode Template'leri.</dd>
+<dt>MVVM</dt><dd>Model-View-ViewModel, bir yazılım mimarisi deseni.</dd>
+<dt>.xctemplate</dt><dd>Xcode Template'lerinin dosya türü.</dd>
+</dl>
+
+<p>
+`File Templates`, Xcode'un özellikle iOS uygulamaları geliştirirken kullandığımız dosyaları oluşturma sürecinde kilit bir rol oynar. Her yeni dosya oluştururken, `Choose a template for your new file:` başlığı altında bir dizi template sunulur.
+</p>
+
+
+<figure id="org8a526be">
+<img src="../resources/mobilen/dergi_1/choose-template.png" alt="choose-template.png" width="200px">
+
+<figcaption><span class="figure-number">Figure 1: </span>Template Seçimi</figcaption>
+</figure>
+
+<p>
+Bu template'ler, yeni oluşturulacak dosyaların belirli bir yapıya sahip olmasına yardımcı olur. Ancak, projeniz büyüdükçe ve daha fazla dosya eklemeniz gerektiğinde, aynı süreci tekrar tekrar uygulamak zaman kaybına ve tutarsızlıklara yol açabilir. İşte tam bu noktada Custom Xcode Templates devreye girer.
+</p>
+
+<div id="outline-container-orgb475e81" class="outline-2">
+<h2 id="orgb475e81">Custom Xcode Template Avantajları</h2>
+<div class="outline-text-2" id="text-orgb475e81">
+<p>
+Custom Xcode Template, projenizin gereksinimlerine ve mimarisine uygun dosyaları hızlı ve tutarlı bir şekilde oluşturmanıza olanak sağlar. Örneğin, MVVM mimarisi gibi belirli bir mimariyi kullanırken, her sayfa için birden fazla dosya oluşturmanız gerekebilir. Bu süreci Custom Xcode Template kullanarak optimize edebilirsiniz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2f96775" class="outline-2">
+<h2 id="org2f96775">Custom Xcode Template Nasıl Oluşturulur?</h2>
+<div class="outline-text-2" id="text-org2f96775">
+<p>
+İlk adım, Xcode'un template'leri barındırdığı dizini açmaktır.
+</p>
+
+<p>
+Bu klasör genellikle `~/Library/Developer/Xcode/Templates/File Templates` dizininde bulunur. Eğer bu dizin mevcut değilse, manuel olarak oluşturabilirsiniz.
+</p>
+
+
+<figure id="org953d6ee">
+<img src="../resources/mobilen/dergi_1/templates-folder.png" alt="templates-folder.png" width="100%">
+
+<figcaption><span class="figure-number">Figure 2: </span>Templates dizinini açmak</figcaption>
+</figure>
+
+
+<figure id="org4c783ee">
+<img src="../resources/mobilen/dergi_1/file-templates.png" alt="file-templates.png" width="100%">
+
+<figcaption><span class="figure-number">Figure 3: </span>Yeni klasör oluşturmak</figcaption>
+</figure>
+
+<p>
+Kendi template'lerinizi barındıracak bir klasör oluşturmanız gerekmektedir. Bu klasörü adlandırırken istediğiniz ismi kullanabilirsiniz, örneğin "My Project Templates".
+</p>
+
+
+<figure id="org640065b">
+<img src="../resources/mobilen/dergi_1/my-project-templates.png" alt="my-project-templates.png" width="100%">
+
+<figcaption><span class="figure-number">Figure 4: </span>Custom Template barındıracak klasörü oluşturmak</figcaption>
+</figure>
+
+<p>
+Sonrasında, `.xctemplate` uzantılı bir dosya oluşturmalısınız. Bu dosya, oluşturacağınız asıl template'i temsil eder ve template'in nasıl görüneceğini ve hangi dosyaların oluşturulacağını belirler.
+</p>
+
+
+<figure id="orgd4d0708">
+<img src="../resources/mobilen/dergi_1/xctemplate.png" alt="xctemplate.png" width="100%">
+
+<figcaption><span class="figure-number">Figure 5: </span>Xctemplate dosyaları</figcaption>
+</figure>
+
+<p>
+`.xctemplate` dosyası genellikle aşağıdaki öğeleri içerir:
+</p>
+
+<ul class="org-ul">
+<li>TemplateInfo.plist</li>
+<li>Dosya template'leri (Örneğin; .swift dosyaları)</li>
+<li>Diğer kaynak dosyaları (Örneğin; Template için icon dosyası)</li>
+</ul>
+</div>
+
+<div id="outline-container-org95cc84b" class="outline-3">
+<h3 id="org95cc84b">Örnek bir dosya template'i;</h3>
+<div class="outline-text-3" id="text-org95cc84b">
+<div class="org-src-container">
+<pre class="src src-swift">// ___FILEHEADER___
+import Combine
+import Foundation
+import SwiftUI
+
+struct ___VARIABLE_pageName___ContentView: View {
+    // MARK: Observable Objects
+    @ObservedObject var viewStateData: ___VARIABLE_pageName___ViewStateData
+    // MARK: Properties
+    var onChangeEvent: (___VARIABLE_pageName___Event) -&gt; Void
+    // MARK: Lifecycle
+    var body: some View {
+	self.content()
+    }
+}
+
+// MARK: - Views
+extension ___VARIABLE_pageName___ContentView {
+    private func content() -&gt; some View {
+	VStack {
+	    // TODO: Add Views
+	}
+    }
+}
+#if DEBUG
+struct ___VARIABLE_pageName___ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+	let initialView = ___VARIABLE_pageName___ContentView(viewStateData: .init(), onChangeEvent: { _ in })
+	return Group {
+	    initialView
+	}
+    }
+}
+#endif
+</pre>
+</div>
+
+<p>
+Custom Template oluşturmak ve hazır template bulabileceğiniz birkaç kaynak aşağıdaki gibidir:
+</p>
+</div>
+</div>
+
+<div id="outline-container-org127314f" class="outline-3">
+<h3 id="org127314f">Referenslar</h3>
+<div class="outline-text-3" id="text-org127314f">
+<ol class="org-ol">
+<li><a href="https://www.kodeco.com/26582967-xcode-project-and-file-templates">Kodeco</a>: Bu kaynakta kapsamlı bir şekilde custom template oluşturma süreci anlatılıyor.</li>
+
+<li><a href="https://github.com/topics/xcode-templates">Github Xcode Templates</a>: Github'da "xcode-templates" topic'i ile genellikle proje mimarileri için oluşturulmuş template repolarına ulaşabilirsiniz.</li>
+</ol>
+
+<p>
+Özetle, bu adımlar, Custom File Template'lerinizi oluşturmak için iyi bir başlangıç noktası olabilir. Ancak, her projenin kendine özgü ihtiyaçları olduğunu ve bu adımların projenizin spesifik gereksinimlerine göre uyarlanması gerektiğini unutmamak önemlidir.
+Bu sayede, projenizin verimliliğini ve tutarlılığını artırarak, uygulama geliştirme sürecinizin kalitesini yükseltebilirsiniz.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+<footer>
+  <div class="copyright-container">
+    <div class="copyright">
+      Copyright &copy; 2023-2024 Mobilen some important rights reserved.<br/>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

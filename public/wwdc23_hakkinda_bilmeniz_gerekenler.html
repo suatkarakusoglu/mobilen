@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WWDC 23 Hakkında Bilmeniz Gerekenler</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<p><small>Son Güncelleme: 2023-07-11 Tue 14:52</small></p>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">WWDC 23 Hakkında Bilmeniz Gerekenler</h1>
+</header><p>
+<a href="https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8">Alper Cem Öztürk</a> yazdı.
+</p>
+
+<p>
+Apple'ın WWDC'si geçtiğimiz günlerde gerçekleşti ve hem kullanıcılar hem de geliştiriciler için bir ton yeni özellik ve geliştirmeden bahsedildi. Hatta hepimizin yıllardır sızıntılardan takip ettiği tamamen yeni bir cihaz ve beraberinde işletim sistemi bile duyuruldu.
+</p>
+
+<p>
+Bu yazıda, bir geliştiricinin bakış açısından bu yılın WWDC'sindeki favori güncellemelerimden bahsedeceğim. Bu yeniliklerle oynamak için çok fazla zamanım olmadığınından deneyimim çoğunlukla <a href="https://developer.apple.com/wwdc23/101">Keynote</a> ve <a href="https://developer.apple.com/wwdc23/102">Platforms State of the Union</a> sunumlarına dayandığını belirtmekte fayda var.
+</p>
+
+<div id="outline-container-org9c5a45b" class="outline-2">
+<h2 id="org9c5a45b">Vision Pro</h2>
+<div class="outline-text-2" id="text-org9c5a45b">
+
+<figure id="org6613aaa">
+<img src="../resources/mobilen/dergi_2/vision_pro.jpg" alt="vision_pro.jpg" width="100%">
+
+<figcaption><span class="figure-number">Figure 1: </span>Vision Pro</figcaption>
+</figure>
+
+<p>
+Etkinliğin en gözdesininden ilk bahsetmek en doğrusu olur diye düşünüyorum. Vision Pro, Apple'ın on yıldan uzun süredir geliştirilmekte olduğu artırılmış ve sanal gerçeklik cihazı. Çoğu kişi tarafından bu cihaz bir <b>headset</b> olarak isimlendirilse de Apple bu isimlendirmeyi kullanmaktan kaçınıyor. Bunun yerine sanal dünyayı gerçek dünya ile harmanlaması nedeniyle uzamsal bilgisayar (spatial computing) olarak adlandırıyor.
+</p>
+
+<p>
+Apple, artırılmış gerçeklik deneyimi için etrafınızdakileri haritalandıran ve bunu sanal öğelerle zenginleştirilmiş dijital bir görüntüye çeviren kameralar kullanıyor. Sanal gerçeklik deneyimi için ise, bu kameraları kapatıp ve etrafınızda olup bitenlerden tamamen izole edilmiş gibi görünmenizi sağlayarak, yalnızca cihazın ekranlarında görüntülenenlere odaklanmanızı sağlıyor.
+</p>
+
+<p>
+Vision Pro, Apple'ın cihaz için özel olarak tasarladığı bir işletim sistemi olan <b>visionOS</b>'u çalıştırıyor. VisionOS, kullanıcıyı çevreleyen alanda herhangi bir yere konumlandırılabilen uygulama pencereleriyle "sonsuz bir tuval" sağlamak üzere tasarlanmış.
+</p>
+
+<p>
+Apple, Vision OS için tercih edilen geliştirme ortamının SwiftUI olduğu konusunda oldukça net bir tavır sergiledi. Elbette mevcut UIKit kodunuz kullanılabilecek ancak yeni başlangıçlar için en iyi seçim SwiftUI olacaktır.
+</p>
+
+<p>
+Apple, SwiftUI desteğini daha çok arttırabilmek için Button, Toggle ve TabView gibi bir uygulamanın temel yapı taşlarından, Freeform'daki 3D panolar gibi yepyeni deneyimlere kadar tüm bunları ve çok daha fazlasını SwiftUI'ın desteklemesi için ayrıca çalıştığını belirtiyor.
+</p>
+
+<p>
+VisionOS için daha derinlemesine bir SwiftUI deneyimine ihtiyaç duyuyorsanız <a href="https://developer.apple.com/wwdc23/10109">Meet SwiftUI for Spatial Computing</a> videosuna bir göz atmanızda fayda var.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org06152bd" class="outline-2">
+<h2 id="org06152bd">Swift Macros</h2>
+<div class="outline-text-2" id="text-org06152bd">
+<p>
+Hepimizi heyecanlandıran bir diğer haber ise Swift Macros'un duyurulmasıydı. Daha önceden zaten property wrappers ve function builders gibi tool'lara sahiptik. Bu tool'lar, arka plandaki mantığı kapsüllememize ve boilerplate kod miktarını azaltmamıza olanak sağlayan özelliklerdi. Swift 5.9 ile birlikte, toolkit'e makrolar da ekleniyor. Makrolar, daha fazla esneklik sağlayarak kod yazma sürecinde daha fazla kontrol ve kolaylık sunmayı vadediyor. Bu yeni özellik, Swift geliştiricilerinin daha temiz ve okunabilir kod yazmalarına önemli bir katkı sağlayacağa benziyor.
+</p>
+
+<p>
+Swift makroları diğer tool'lardan oldukça farklı bir şekilde çalışır ve size farklı imkanlar sunar. Property wrappers'dan farklı olarak, Swift makroları derleme zamanında çalıştırılır. Bu da, kodunuzu derlemeye geçirmeden önce bile çalıştırarak hataları ve uyarıları tespit edebileceğiniz anlamına gelir. Bu özelliği sayesinde, Xcode'un sağladığı uyarıları kullanarak kodunuzu daha önceden doğrulayabilir ve olası hataları önleyebilirsiniz. Bu yönüyle, Swift makroları geliştiricilere daha güvenli ve hata ayıklamaya daha uygun bir ortam sunuyor.
+</p>
+
+<p>
+Swift makroları ile alakalı daha detaylı inceleme yapmak isterseniz, <a href="https://developer.apple.com/wwdc23/10167">Expand on Swift Macros</a>'a bir göz atmanızda fayda var.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb943861" class="outline-2">
+<h2 id="orgb943861">SwiftUI Yenilikleri</h2>
+<div class="outline-text-2" id="text-orgb943861">
+<p>
+Her yıl SwiftUI yenilik ve iyileştirmelerine UIKit'in yerini tamamen alabilir mi gözüyle bakıyoruz. Her ne kadar buna daha zaman var gibi dursa da, bu yılki SwiftUI yenilikleri de bir hayli göze çarpıyor.
+</p>
+
+
+<figure id="orgc97812c">
+<img src="../resources/mobilen/dergi_2/observable_macro.jpg" alt="observable_macro.jpg" width="100%">
+
+<figcaption><span class="figure-number">Figure 2: </span>SwiftUI için yeni macrolar</figcaption>
+</figure>
+
+<p>
+Bu yılki SwiftUI değişiklikleri, veri akışını daha da sadeleştirmeyi hedefliyor. <code>StateObject</code>, <code>@ObservedObject</code> ve <code>@EnvironmentObject</code> property wrapper'ları <code>@State</code> ve <code>@Environment</code> altında toplanmış.
+</p>
+
+
+<figure id="orgb67e79a">
+<img src="../resources/mobilen/dergi_2/macro_usage.jpg" alt="macro_usage.jpg" width="100%">
+
+<figcaption><span class="figure-number">Figure 3: </span>SwiftUI örnek macro</figcaption>
+</figure>
+
+<p>
+Ayrıca, artık nesne düzeyindeki <code>@Observable</code> macro sayesinde, <code>@Published</code> olarak parametreleri ayrı ayrı belirtmenize gerek kalmayacak.
+</p>
+
+<p>
+Bir diğer büyük gelişmelerinden biri, animasyonlar için verilen desteğin arttırılmasıdır. Animasyonlar etkin bir şekilde yapıldığında, uygulamanın kalitesini arttırıyor. Günümüzde rekabetin bu kadar yüksek olduğu günlerde, kullanıcılarının uygulamaları kullanmaya devam etmesi için arayüz iyi görünmeli ve iyi hissettirmelidir. Bunun için artık keyframing ve animasyon aşamaları aracılığıyla animasyonlar üzerinde daha fazla kontrol sağlayabiliyoruz. Buna ek olarak spring modifier'ı ve animasyonlu SF symbols aracılığıyla oyun alanımız artık daha fazla genişletilmiş.
+</p>
+
+<p>
+SwiftUI, artık element dönüşümlerinde ayrı aşamaları tanımlamanıza ve zaman içinde animasyonun özellikleri değiştirmek için keyframe'ler oluşturmanıza olanak tanıyor. Güncellenmiş SF symbols paketi, artık kodla tetikleyebileceğiniz önceden tanımlanmış animasyonlarla birlikte geliyor. Bu sayede, SwiftUI'de animasyonları daha kolay ve esnek bir şekilde kontrol edebileceğiz.
+</p>
+
+<p>
+Sonuç olarak, SwiftUI'ın popülerleşmesiyle birlikte, animasyon ve kullanıcı arayüzü tasarımı alanında daha fazla destek sunulmaya başlandı. Böylece, geliştiriciler uygulama kullanıcı deneyimini geliştirmek için daha fazla seçenek ve esnekliğe sahip olabilir. SwiftUI'nin bu güncellemeleri, geliştiricilerin iOS ve macOS uygulamalarında daha güçlü ve etkileyici kullanıcı arayüzleri oluşturmasına yardımcı olacağa benziyor.
+</p>
+
+<p>
+SwiftUI yeniliklerine daha yakından göz atmak isterseniz <a href="https://developer.apple.com/wwdc23/10148">What's new in SwiftUI</a> videosunun bu konuda yardımı dokunabilir.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org543c66d" class="outline-2">
+<h2 id="org543c66d">SwiftData</h2>
+<div class="outline-text-2" id="text-org543c66d">
+
+<figure id="orge1c13d1">
+<img src="../resources/mobilen/dergi_2/SwiftData.jpg" alt="SwiftData.jpg" width="120px">
+
+<figcaption><span class="figure-number">Figure 4: </span>SwiftData</figcaption>
+</figure>
+
+<p>
+Core Data ile tanışanlar, onun öğrenilmesi ve kullanılması en kolay framework olmadığını bilirler. Core Data genellikle string literal'e dayanır. Derleme zamanı doğrulamasından yoksundur ve potansiyel yazım hatalarına yer bırakır. Bu durumda eğer bir hata yaparsanız, sadece uygulamanız çöktüğünde bu hatayı öğrenebilirsiniz.
+</p>
+
+<p>
+SwiftData, Core Data'ya alternatif olarak Swift ile oluşturulmuş ve Swift için tasarlanmış bir veritabanı çözümüdür. Bu, Swift'in kendisiyle uyumlu olan aynı prensipleri takip ettiği anlamına gelir. SwiftData hızlı, modern ve güvenlidir. Zaten aşina olduğunuz teknolojilere dayanmaktadır. SwiftData, modeller için ayrı dosyalar kullanmadığından, aynı veri yapılarını iki kez tanımlamanız gerekmez.
+</p>
+
+<p>
+Apple, SwiftData'nın SwiftUI göz önünde bulundurularak tasarlandığını ve Core Data entegrasyonunun oldukça kolay olduğunu belirtiyor. Bunun yanı sıra Core Data ile aynı şekilde, SwiftData'nında <b>undo</b> ve <b>redo</b> gibi yaygın senaryoları desteklediğini söylemekte fayda var.
+</p>
+
+<p>
+SwiftData'nın en önemli dezavantajlarından biri, yalnızca yeni işletim sistemi sürümlerinde mevcut olmasıdır. Bu nedenle, eski sürümleri desteklemeyi bırakmanız veya birkaç yıl beklemeniz gerekebilir, ancak bu kararın birçok kullanıcıyı etkileyeceğini bilerek hareket etmek en doğrusu olacaktır.
+</p>
+
+<p>
+SwiftData ile ilgili daha derinlemesine bilgi sahibi olmak için <a href="https://developer.apple.com/wwdc23/10187">Meet SwiftData</a> videosuna göz atmak isteyebilirsiniz.
+</p>
+
+<hr>
+
+<p>
+WWDC 23, Apple'ın teknoloji ve tasarım yaklaşımının sınırlarını genişletmeye devam ettiğini gösterdi. Vision Pro, SwiftUI'nin gelişmiş yetenekleri ve SwiftData gibi yenilikler, hem geliştiriciler hem de kullanıcılar için çığır açan değişiklikler getirecek gibi görünüyor. Her yıl olduğu gibi, Apple'ın sunduğu yenilikler, geliştiricilerin araçları ve teknolojileri kullanma şekillerini dönüştürecek. Bu da, kullanıcıların ürün ve hizmetleri deneyimlemelerinde yeni ve heyecan verici değişikliklere yol açmaya devam edecek.
+</p>
+
+<p>
+Bu sayıda WWDC23 'ün önemli gelişmelerini sizlerle paylaştım. Umarım faydalı olmuştur. Sonraki sayıya kadar görüşmek üzere!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6924125" class="outline-2">
+<h2 id="org6924125">Kaynakça</h2>
+<div class="outline-text-2" id="text-org6924125">
+<ol class="org-ol">
+<li><a href="https://developer.apple.com/wwdc23/10167">Expand on Swift Macros</a></li>
+<li><a href="https://developer.apple.com/wwdc23/10148">What's new in SwiftUI</a></li>
+<li><a href="https://developer.apple.com/wwdc23/10187">Meet SwiftData</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+<footer>
+  <div class="copyright-container">
+    <div class="copyright">
+      Copyright &copy; 2023-2024 Mobilen some important rights reserved.<br/>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

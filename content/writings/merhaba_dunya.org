@@ -1,0 +1,5 @@
+#+title: Merhaba Dünya
+
+Merhabalar, mobil uygulama geliştirme pratikleri ile ilgili gördüğümüz ve ilgimizi çeken gelişmeleri paylaşmak amacıyla oluşturduğumuz dergimizin ilk sayısı ile karşınızdayız.
+
+İlerleyen sayılarımızda konularımızı biraz daha çeşitlendirip, gündemi daha yakından takip etmeye çalışacağız, faydalanmanız niyetiyle. Görüşmek üzere :).

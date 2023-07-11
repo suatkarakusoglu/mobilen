@@ -9,5 +9,9 @@ Bu pratikleri takip eden kimseler teknik anlamda 'Mobil Yazılım Gelişticileri
 
 Bu nedenle, işlerimizi daha kaliteli bir noktaya taşımak amacıyla, mobil konulara odaklı periyodik yayınlanacak bir dergi hazırlamaktayız ve heyecanlıyız :).
 
+[[file:archive.org][Tüm Yazılar]]
+
 * Dergiler
-[[file:mobilen_1.org][Mobilen Dergi 1]] - Haziran 2023
+[[file:magazines/mobilen_1.org][Mobilen Dergi 1]] - Haziran 2023
+
+[[file:magazines/mobilen_2.org][Mobilen Dergi 2]] - Temmuz 2023

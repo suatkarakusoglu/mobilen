@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>iOS SwiftUI Swipe Actions</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<p><small>Son Güncelleme: 2023-07-11 Tue 14:52</small></p>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">iOS SwiftUI Swipe Actions</h1>
+</header><p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+
+<figure id="org61477ed">
+<img src="../resources/mobilen/dergi_2/SwipeActions.jpg" alt="SwipeActions.jpg" width="100%">
+
+<figcaption><span class="figure-number">Figure 1: </span>Örnek Swipe Actions</figcaption>
+</figure>
+<div id="outline-container-org24ec89f" class="outline-2">
+<h2 id="org24ec89f">Swipe Actions nedir?</h2>
+<div class="outline-text-2" id="text-org24ec89f">
+<p>
+Merhabalar, herhangi bir ui elemanının üzerinden <code>swipe</code> ile çıkan aksiyonlar iOS kullanıcı deneyiminde önemli rol oynuyor.
+</p>
+
+<p>
+Kullanıcı deneyimi açısından view'ın altında gizli, sağından veya solundan çıkan bu aksiyonlar görünmüyor olsa bile özellikle iOS kullanıcıları bu davranışı listelerde arayabiliyor.
+</p>
+
+<p>
+Davranış olarak sağ ve sol demek yerine burada tercih edilen jargon <code>leading</code> ve <code>trailing</code>, bunun başlıca sebebi dillerin sağdan sola veya soldan sağa olarak 2 farklı şekilde yazılabilmesi.
+Soldan sağa yazılan dillerde sol-leading, sağ trailing iken, arapça-farsça gibi dillerde sol-trailing, sağ ise leading olmakta.
+</p>
+
+<p>
+Swipe aksiyonları yazabilmek için yardımcı araçlar mevcut.
+</p>
+
+<p>
+<code>Native</code> olarak SwiftUI tarafından iOS 15 ile SwiftUI List'elerine eklendi.
+<a href="https://developer.apple.com/documentation/swiftui/view/swipeactions(edge:allowsfullswipe:content:)">iOS 15 SwiftUI SwipeActions</a> adresinden native yöntem incelenebilir.
+</p>
+
+<p>
+Ancak iOS-14 destekliyorsanız veya herhangi bir SwiftUI view'e swipe aksiyonları eklemek isterseniz bunun için güzel bir SwiftUI component'i açık kaynak olarak geliştirilip github'a <code>spm</code> destekli olarak koyulmuş.
+</p>
+
+<p>
+Bu yazımızda <a href="https://github.com/aheze/SwipeActions">Açık Kaynak SwipeActions Reposu</a>'nu inceleyeceğiz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3560ea3" class="outline-2">
+<h2 id="org3560ea3">SwipeActions Kullanımı</h2>
+<div class="outline-text-2" id="text-org3560ea3">
+<div class="org-src-container">
+<pre class="src src-swift">import SwiftUI
+import SwipeActions
+
+struct ContentView: View {
+    var body: some View {
+	SwipeView {
+	    Text("Hello")
+	      .frame(maxWidth: .infinity)
+	      .padding(.vertical, 32)
+	      .background(Color.blue.opacity(0.1))
+	      .cornerRadius(32)
+	} trailingActions: { _ in
+	    SwipeAction("World") {
+		print("Tapped!")
+	    }
+	}
+	  .padding()
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org17ba6d3" class="outline-2">
+<h2 id="org17ba6d3">Kaynak Kod Okuma: <code>PreferenceKey</code> kullanımı</h2>
+<div class="outline-text-2" id="text-org17ba6d3">
+<p>
+Veri iletişimi view componentleri arasında Environment Objeler uzerinden <code>Parent</code> → <code>Child</code> view yönünde olabiliyor.
+Veya data binding ile <code>@Binding</code> çift taraflı <code>reactive</code> şekilde sağlanabiliyor.
+</p>
+
+<p>
+PreferenceKey ile olan bu veri iletişiminde ise diğer bir ihtiyaç olan ise <code>child</code> → <code>parent</code> arasında veri geçişi yapabiliyoruz.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift">struct AllowSwipeToTriggerKey: PreferenceKey {
+    static var defaultValue: Bool? = nil
+    static func reduce(value: inout Bool?, nextValue: () -&gt; Bool?)
+    { value = nextValue() }
+}
+</pre>
+</div>
+
+<p>
+Preference key tanımlarken ihtiyaç duyulan <code>PreferenceKey</code> protocol'unu <code>conform</code> etmek.
+Bunun için bir varsayılan değer <code>defaultValue</code> gerekiyor.
+Ayrıca ikinci olarak <code>reduce</code> fonksiyonu, bu fonksiyon dışarıdan sağlanan değerin preference olarak set edilmesine müdahale edilebilecek noktayı sağlıyor.
+</p>
+
+<p>
+Kullanımı için 2 tane <code>modifier</code>'imiz mevcut: <code>preference</code> ve <code>onPreferenceChange</code>.
+</p>
+
+<p>
+Preference Key ile veriyi yukarı aktarma <a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L328">burada</a> gorebilirsiniz:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">view.preference(key: AllowSwipeToTriggerKey.self, value: allowSwipeToTrigger)
+</pre>
+</div>
+
+<p>
+Preference Key ile aşağıdan gelen veriyi <a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L417">burada</a> okuma:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">view.onPreferenceChange(AllowSwipeToTriggerKey.self) { allow in
+    /// Unwrap the value first (if it's not the edge action, `allow` is `nil`).
+    if let allow {
+	swipeToTriggerLeadingEdge = allow
+    }
+}
+</pre>
+</div>
+
+<p>
+Ayrıca apple sdk'inde de <code>navigationTitle</code> modifier'i ile <code>preference key</code> kullanılarak <code>child</code> üzerinden çağırılan bir method ile üst view'deki <code>title</code>'i değiştirebiliyor.
+</p>
+
+<p>
+Özetle hiyerarşide yukarı veri taşıyabilmek için kullanılan bu yapının kullanıldığını görüyoruz.
+Daha detaylı anlamak için <a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a> yazısına göz atabilirsiniz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org25cb46d" class="outline-2">
+<h2 id="org25cb46d">Extension methodlara Generic Constraint Uygulamak</h2>
+<div class="outline-text-2" id="text-org25cb46d">
+<p>
+<code>Generic</code> kullanarak <code>extension method</code>'larının yalnızca ilgili tipler ile kullanılmasını derleme seviyesinde sağlamak tatlı bir özellik.
+<a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L986">Burada</a> ilgili örneği görebilirsiniz.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift">public extension SwipeAction where Label == Text, Background == Color {
+    // Buraya yazılan methodlar yalnızca
+    // Label Generic Parametresi Text olan ve Background'u Color olan 'SwipeAction'lara önerilir.
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6e34e29" class="outline-2">
+<h2 id="org6e34e29">Kaynaklar</h2>
+<div class="outline-text-2" id="text-org6e34e29">
+<ol class="org-ol">
+<li><a href="https://github.com/aheze/SwipeActions">SwipeActions Repo</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/preferences?changes=_7">Apple PreferenceKey Dokümantasyonu</a></li>
+<li><a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+<footer>
+  <div class="copyright-container">
+    <div class="copyright">
+      Copyright &copy; 2023-2024 Mobilen some important rights reserved.<br/>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Netfox ile iOS uygulamalarda network izlemek</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<p><small>Son Güncelleme: 2023-07-11 Tue 15:05</small></p>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Netfox ile iOS uygulamalarda network izlemek</h1>
+</header><p>
+<a href="https://www.linkedin.com/in/ugurcan-durak/">Uğurcan Durak</a> yazdı.
+</p>
+
+
+<figure id="org7348a79">
+<img src="../resources/mobilen/dergi_1/NetFoxImage.jpg" alt="NetFoxImage.jpg" width="200px">
+
+<figcaption><span class="figure-number">Figure 1: </span><a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Netfox'u İzlemek için tıkla</a></figcaption>
+</figure>
+
+<p>
+Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde görüntülemek için kullanılan faydalı olduğunu düşündüğüm <b><a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesinden bahsedicem.
+</p>
+
+<p>
+Çok detaya girmeden genel hatlarıyla nedir? nasıl kullanılır? gibi başlıklarla değineceğim. Hadi başlayalım :)
+</p>
+
+<div id="outline-container-org34e0f3a" class="outline-2">
+<h2 id="org34e0f3a">Netfox Nedir?</h2>
+<div class="outline-text-2" id="text-org34e0f3a">
+<p>
+<b><a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesi, tüm network işlemlerini mobil cihaz üzerinden detaylı bir şekilde görüntüleyebileceğimiz <code>open source</code> bir kütüphanedir.
+</p>
+
+<p>
+Netfox'u uygulama içerisinde istediğimiz bir anda başlatıp anlık olarak uygulamamızın yapmış olduğu tüm istekleri listeleyebilir ve detaylı bir şekilde <code>body</code>, <code>header</code>, <code>response</code> gibi tüm network etkileşimlerini inceleyebiliriz.
+</p>
+
+<p>
+Bu tarz kütüphanelerin en güzel yanı, mobil cihazımız bilgisayara bağlı olmadan da istediğimiz bir anda network log'larına bakabilmektir.
+Bu özellik testçiler için oldukça faydalıdır. Çünkü herhangi bir hata anında doğrudan developer'a bildirmek yerine log'ları inceleyip hata hakkında fikir sahibi olabilirler.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgab17e87" class="outline-2">
+<h2 id="orgab17e87">Netfox Nasıl Kullanılır?</h2>
+<div class="outline-text-2" id="text-orgab17e87">
+<p>
+<code>Netfox</code>'un kullanımı ve projeye entegre edilmesi oldukça basittir.
+</p>
+
+<p>
+Varsayılan davranışı <b><b>shake</b></b> olarak belirlenmiş olsada custom bir şekilde istediğimiz bir butona ya da bir view event'ine atayarak Netfox'u başlatabiliriz. Öncelikle projeye nasıl eklenir ona bakalım.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd21f673" class="outline-2">
+<h2 id="orgd21f673">Netfox'un Projeye Eklenmesi</h2>
+<div class="outline-text-2" id="text-orgd21f673">
+<ol class="org-ol">
+<li>Netfox kütüphanesini <b><b>SPM</b></b>, <b><b>CocoaPods</b></b> ve <b><b>Carthage</b></b> olmak üzere üç ayrı yöntem ile projemize ekleyebiliriz. Bu yöntemlerden herhangi biriyle eklediğinizi varsayarak bir sonraki adıma geçiyorum.</li>
+
+<li>Kütüphaneyi projeye ekledik şimdi ise <code>initiliaze</code> edeceğiz. Bunun için AppDelegate class'ına gidip aşağıdaki gibi gerekli kodları ekliyoruz.</li>
+</ol>
+
+<p>
+Netfox Import:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">#if DEBUG
+import netfox
+#endif
+</pre>
+</div>
+
+<p>
+Burada  <b>#if DEBUG</b> ve <b>#endif</b> kodlarını ekleyerek kodun sadece debug moddayken import olmasını sağlıyoruz. Daha sonra uygulama ilk başlatıldığında hazır hale gelmesini istediğim için aşağıdaki gibi başlatıcı fonksiyonun içerisine kodlarımızı ekliyoruz.
+</p>
+
+<p>
+Netfox başlatma:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">func application(
+  _ application: UIApplication,
+  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+) -&gt; Bool {
+    #if DEBUG
+    NFX.sharedInstance().start()
+    NFX.sharedInstance().setGesture(.shake)
+    #endif
+}
+</pre>
+</div>
+
+<p>
+Burada <b><b>start()</b></b> methodunu çağırarak Netfox'ı initiliaze ediyoruz ardından <b><b>setGesture()</b></b> ile Netfox'ın nasıl açılacağını belirliyoruz.
+</p>
+
+<p>
+Varsayılan davranışı shake olduğundan özellikle belirtmenize gerek yok örnek olması açısından ekledim. Siz dilerseniz <b><b>custom</b></b> parametresini geçip daha sonra dilediğiniz yerde <b><b>show()</b></b> methodu ile açılmasını sağlayabilirsiniz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc9a9270" class="outline-2">
+<h2 id="orgc9a9270">Netfox Özetle</h2>
+<div class="outline-text-2" id="text-orgc9a9270">
+<p>
+Evet hepsi bu kadar :) Şimdi dilediğiniz gibi cihazı sallayarak ya da atamış olduğunuz bir buton ile Netfox'ı başlatabilir ve log'ları inceleyebilirsiniz.
+</p>
+
+<p>
+Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım faydalı olur zaman ayırdığınız için teşekkürler.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org23f618a" class="outline-2">
+<h2 id="org23f618a">Kaynaklar</h2>
+<div class="outline-text-2" id="text-org23f618a">
+<ol class="org-ol">
+<li><a href="https://github.com/kasketis/netfox">Netfox Github Kütüphanesi</a></li>
+<li><a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Örnek Kullanım Vidyosu</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+<footer>
+  <div class="copyright-container">
+    <div class="copyright">
+      Copyright &copy; 2023-2024 Mobilen some important rights reserved.<br/>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

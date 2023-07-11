@@ -1,0 +1,43 @@
+:PROPERTIES:
+:ID:       20230508T135522.225628
+:END:
+#+title: Mobilen Dergi 1
+#+author: ---
+#+date: Haziran 2023
+
+#+BEGIN_EXPORT latex
+\includepdf[pages=1]{../../resources/mobilen/dergi_1/mobilen-sayi-1-kapak.pdf}
+#+END_EXPORT
+
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
+
+* Merhaba Dünya
+#+INCLUDE: ../merhaba_dunya.org
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+* WWDC 2023 geldi!
+#+INCLUDE: ../wwdc_2023_geldi.org
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+* Navigation Desenleri
+#+INCLUDE: ../navigation_desenleri.org
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+* Netfox ile iOS uygulamalarda network izlemek
+#+INCLUDE: ../netfox_ile_iOS_uygulamalarda_network.org
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+* Xcode Breakpoints ile Otomatizasyon
+#+INCLUDE: ../xcode_breakpoints_ile_otomatizasyon.org
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+* XCode Project Custom File Templates
+#+INCLUDE: ../xcode_project_custom_file_templates.org
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+* iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı
+#+INCLUDE: ../ios_deep_link.org
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+* Evolution of the Medium iOS app architecture
+#+INCLUDE: ../evolution_of_the_medium_ios_app.org

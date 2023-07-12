@@ -8,10 +8,11 @@
 <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"/>
 </head>
 <body>
-<div id="preamble" class="status">
-<p><small>Son Güncelleme: 2023-07-12 Wed 20:15</small></p>
-</div>
-<div id="content" class="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="https://suatkarakusoglu.github.io/mobilen/archive.html"> UP </a>
+ |
+ <a accesskey="H" href="https://suatkarakusoglu.github.io/mobilen"> HOME </a>
+</div><div id="content" class="content">
 <header>
 <h1 class="title">iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı</h1>
 </header><p>
@@ -22,17 +23,17 @@
 Selam "Mobilen" okurları! Bugün sizinle çok önemli ve aslında fazlasıyla işlevsel bir konuyu konuşacağız: Deep Link'leri. Evet, belki ilk duyduğunuzda biraz karışık gelebilir ama emin olun, bu yazıyı okuduktan sonra onları tanıyan en iyi kişi siz olacaksınız.
 </p>
 
-<div id="outline-container-orgc892b1f" class="outline-2">
-<h2 id="orgc892b1f">Deep Link Nedir?</h2>
-<div class="outline-text-2" id="text-orgc892b1f">
+<div id="outline-container-orgb4f4413" class="outline-2">
+<h2 id="orgb4f4413">Deep Link Nedir?</h2>
+<div class="outline-text-2" id="text-orgb4f4413">
 <p>
 Deep link, belirli bir sayfaya veya işleme mobil uygulama içinde doğrudan erişmenizi sağlayan bir tür bağlantıdır. Böylece, kullanıcıları uygulamanın belirli bir noktasına yönlendirerek, daha etkileşimli ve kullanıcı odaklı bir deneyim sunabiliriz.
 </p>
 </div>
 
-<div id="outline-container-org570f80c" class="outline-3">
-<h3 id="org570f80c">Biraz Daha Somutlaştıralım</h3>
-<div class="outline-text-3" id="text-org570f80c">
+<div id="outline-container-org0b5a4b4" class="outline-3">
+<h3 id="org0b5a4b4">Biraz Daha Somutlaştıralım</h3>
+<div class="outline-text-3" id="text-org0b5a4b4">
 <p>
 Örneğin, Instagram'da dolaşırken bir Petrol Ofisi kahve kampanyası gördünüz ve tıkladınız. İşte tam da burada devreye deep linkler giriyor. Tıkladığınızda, direkt olarak Petrol Ofisi'nin mobil uygulaması açılıyor ve sizi o özel kampanyaya yönlendiriyor. Kulağa hoş geliyor değil mi?
 </p>
@@ -44,18 +45,18 @@ Veya belki de şifrenizi sıfırlamanız gerekiyor ve bu durumda da gelen e-post
 </div>
 </div>
 
-<div id="outline-container-orgeddbd8f" class="outline-2">
-<h2 id="orgeddbd8f">Deep Link’in Küçük Detayları</h2>
-<div class="outline-text-2" id="text-orgeddbd8f">
+<div id="outline-container-org2446968" class="outline-2">
+<h2 id="org2446968">Deep Link’in Küçük Detayları</h2>
+<div class="outline-text-2" id="text-org2446968">
 <p>
 Deep linklerin kullanımı oldukça basit gibi görünse de, yönetilmesi gereken bazı durumlar vardır. Bu detaylar, uygulamanın nasıl ve ne zaman hangi deep linki kullanacağını belirler. Ama merak etmeyin, bu yazının ilerleyen bölümlerinde bunları ayrıntılı olarak ele alacağım.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8eaa79d" class="outline-2">
-<h2 id="org8eaa79d">Deep Link Çeşitleri</h2>
-<div class="outline-text-2" id="text-org8eaa79d">
+<div id="outline-container-orgb51ad3b" class="outline-2">
+<h2 id="orgb51ad3b">Deep Link Çeşitleri</h2>
+<div class="outline-text-2" id="text-orgb51ad3b">
 <p>
 <b><b>Dinamik Linkler:</b></b>
 Dinamik linkler, kullanıcıları belirli bir içeriğe veya uygulama içi konuma yönlendirmek için kullanılır. Bu linkler "dinamik" olarak adlandırılır çünkü onlar hem uygulama içi hem de web içeriğine yönlendirebilir. Örneğin, bir kullanıcı uygulamanızı henüz indirmediyse, dinamik bir link onları App Store veya Google Play'e yönlendirebilir. Eğer uygulama zaten yüklüyse, aynı link onları uygulama içindeki belirli bir konuma yönlendirebilir. Bu özellik, kullanıcının deneyimini optimize etmek için önemlidir.
@@ -72,18 +73,18 @@ Farklarına gelince, her ne kadar her iki tür link de uygulamanın indirilmesi 
 </div>
 </div>
 
-<div id="outline-container-orgd3dd0f2" class="outline-2">
-<h2 id="orgd3dd0f2">Deep Link Yönetim Yöntemleri</h2>
-<div class="outline-text-2" id="text-orgd3dd0f2">
+<div id="outline-container-orgb886d4f" class="outline-2">
+<h2 id="orgb886d4f">Deep Link Yönetim Yöntemleri</h2>
+<div class="outline-text-2" id="text-orgb886d4f">
 <p>
 Deep linklerinizi hem iOS hem Android uygulamalarınızda yönetebilmeniz için iki önemli yöntem bulunmaktadır: URL Scheme ve Universal Link (iOS) veya App Links (Android). Bu yöntemler, uygulamalarınızdaki deep linklerin yönetimini kolaylaştırır ve kullanıcı deneyimini artırır. Ancak her bir yöntemin kendine özgü özellikleri ve kullanım alanları vardır. Bu yüzden, hangi yöntemin sizin uygulamanız için en uygun olduğunu belirlemek önemlidir.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org826a5af" class="outline-2">
-<h2 id="org826a5af">Deep Link: URL Scheme ve Universal Link Karşılaştırması</h2>
-<div class="outline-text-2" id="text-org826a5af">
+<div id="outline-container-org4cb2028" class="outline-2">
+<h2 id="org4cb2028">Deep Link: URL Scheme ve Universal Link Karşılaştırması</h2>
+<div class="outline-text-2" id="text-org4cb2028">
 <p>
 Deep link yönetiminde kullanılan iki temel yöntem olan URL Scheme ve Universal Link, birbirinden farklı özelliklere sahiptir. Hem geliştiricilerin hem de kullanıcıların deneyimini doğrudan etkileyen bu özellikler, hangi yöntemin hangi durumda kullanılacağını belirler.
 </p>
@@ -93,9 +94,9 @@ URL Scheme ve Universal Link’in karşılaştırmalı tablosu:
 </p>
 </div>
 
-<div id="outline-container-orgf2ec743" class="outline-3">
-<h3 id="orgf2ec743">URL Scheme</h3>
-<div class="outline-text-3" id="text-orgf2ec743">
+<div id="outline-container-org9169d28" class="outline-3">
+<h3 id="org9169d28">URL Scheme</h3>
+<div class="outline-text-3" id="text-org9169d28">
 <ul class="org-ul">
 <li><b><b>Kurulumu Basittir:</b></b> URL Scheme'yi kullanmaya başlamak için karmaşık bir kurulum sürecine ihtiyaç duyulmaz.</li>
 <li><b><b>SSL Zorunluluğu Yoktur:</b></b> URL Scheme, SSL sertifikası zorunluluğu olmadan kullanılabilir.</li>
@@ -107,9 +108,9 @@ URL Scheme ve Universal Link’in karşılaştırmalı tablosu:
 </div>
 </div>
 
-<div id="outline-container-org976ef0e" class="outline-3">
-<h3 id="org976ef0e">Universal Link</h3>
-<div class="outline-text-3" id="text-org976ef0e">
+<div id="outline-container-org1ef924a" class="outline-3">
+<h3 id="org1ef924a">Universal Link</h3>
+<div class="outline-text-3" id="text-org1ef924a">
 <ul class="org-ul">
 <li><b><b>Kurulumu Komplekstir:</b></b> Universal Link'in kurulum süreci, URL Scheme'e göre daha karmaşıktır.</li>
 <li><b><b>SSL Zorunludur:</b></b> Universal Link kullanımı için SSL sertifikası zorunludur. Bu, uygulamanın güvenlik seviyesini artırır.</li>
@@ -130,17 +131,17 @@ Bu özellikler, URL Scheme ve Universal Link arasında önemli farklar olduğunu
 </div>
 </div>
 
-<div id="outline-container-org7349e09" class="outline-2">
-<h2 id="org7349e09">URL Scheme: Nedir ve Nasıl Kullanılır?</h2>
-<div class="outline-text-2" id="text-org7349e09">
+<div id="outline-container-orgb31f803" class="outline-2">
+<h2 id="orgb31f803">URL Scheme: Nedir ve Nasıl Kullanılır?</h2>
+<div class="outline-text-2" id="text-orgb31f803">
 <p>
 URL Scheme, iOS ve Android platformları için belirli bir URL şemasını kaydedip, diğer uygulamaların bu şema ile başlayan URL'leri açabilmesini sağlayan bir deep link yöntemidir. Peki, nasıl çalışır? Hadi gelin adım adım birlikte inceleyelim.
 </p>
 </div>
 
-<div id="outline-container-org200b99a" class="outline-3">
-<h3 id="org200b99a">URL Scheme: Nasıl Tanımlanır?</h3>
-<div class="outline-text-3" id="text-org200b99a">
+<div id="outline-container-org4ffd210" class="outline-3">
+<h3 id="org4ffd210">URL Scheme: Nasıl Tanımlanır?</h3>
+<div class="outline-text-3" id="text-org4ffd210">
 <p>
 URL Scheme'in kurulumu oldukça basittir. Örneğin, bir iOS uygulamasına URL Scheme nasıl tanımlanır, birlikte bakalım.
 </p>
@@ -166,9 +167,9 @@ Fakat, evet uygulamayı açtık ama henüz uygulama içerisinde bir yönlendirme
 </div>
 </div>
 
-<div id="outline-container-orgcd14d59" class="outline-3">
-<h3 id="orgcd14d59">URL Scheme ile Uygulama İçi Yönlendirme</h3>
-<div class="outline-text-3" id="text-orgcd14d59">
+<div id="outline-container-orgcf3d07c" class="outline-3">
+<h3 id="orgcf3d07c">URL Scheme ile Uygulama İçi Yönlendirme</h3>
+<div class="outline-text-3" id="text-orgcf3d07c">
 <p>
 Bu işlem için "AppDelegate.swift" dosyasını kullanacağız. Bu dosyada bulunan `open url: URL` metodu, başka bir uygulama veya sistem bileşeni tarafından gönderilen URL'yi yakalayıp işlememizi sağlar.
 </p>
@@ -196,9 +197,9 @@ olacaktır.
 </div>
 </div>
 
-<div id="outline-container-org1199e47" class="outline-3">
-<h3 id="org1199e47">URL Scheme: Sonuç</h3>
-<div class="outline-text-3" id="text-org1199e47">
+<div id="outline-container-org233ad92" class="outline-3">
+<h3 id="org233ad92">URL Scheme: Sonuç</h3>
+<div class="outline-text-3" id="text-org233ad92">
 <p>
 URL Scheme, tanımlanması ve uygulanması oldukça kolay bir deep link yöntemidir. Ancak, bu yöntemin en büyük dezavantajı, uygulamanın cihazda yüklü olmaması durumunda çalışmamasıdır. Bu durumda, kullanıcı boş bir web sayfasıyla karşılaşacaktır.
 </p>
@@ -209,9 +210,9 @@ URL Scheme, tanımlanması ve uygulanması oldukça kolay bir deep link yöntemi
 </div>
 </div>
 
-<div id="outline-container-orgd21ccc0" class="outline-3">
-<h3 id="orgd21ccc0">Universal Link/App Links: Nedir?</h3>
-<div class="outline-text-3" id="text-orgd21ccc0">
+<div id="outline-container-org3237dd8" class="outline-3">
+<h3 id="org3237dd8">Universal Link/App Links: Nedir?</h3>
+<div class="outline-text-3" id="text-org3237dd8">
 <p>
 Universal Link ve App Links, URL Scheme'in dezavantajlarını azaltmak için iOS 9/Android 6.0 ve sonraki sürümlerde kullanılabilen bir deep link yöntemidir.
 </p>
@@ -234,9 +235,9 @@ Ama burada bir sorun var mıdır? Örneğin, "myApp" adlı uygulamanızı Instag
 </div>
 </div>
 
-<div id="outline-container-orgcbed5f6" class="outline-3">
-<h3 id="orgcbed5f6">JSON Dosyası Yapısı</h3>
-<div class="outline-text-3" id="text-orgcbed5f6">
+<div id="outline-container-org2416183" class="outline-3">
+<h3 id="org2416183">JSON Dosyası Yapısı</h3>
+<div class="outline-text-3" id="text-org2416183">
 <p>
 JSON dosyası dedik. Peki bu JSON dosyasının yapısında neler var?
 Bu JSON dosyasının yapısı genellikle aşağıdaki gibidir:
@@ -263,9 +264,9 @@ Bu JSON dosyasının yapısı genellikle aşağıdaki gibidir:
 </div>
 </div>
 
-<div id="outline-container-org8d998e4" class="outline-3">
-<h3 id="org8d998e4">Universal Link/App Links: Nasıl Tanımlanır?</h3>
-<div class="outline-text-3" id="text-org8d998e4">
+<div id="outline-container-orgd0e449f" class="outline-3">
+<h3 id="orgd0e449f">Universal Link/App Links: Nasıl Tanımlanır?</h3>
+<div class="outline-text-3" id="text-orgd0e449f">
 <p>
 Universal Link veya App Links yeteneğini kullanmak için öncelikle "<a href="https://developer.apple.com/account/resources/identifiers/list">https://developer.apple.com/account/resources/identifiers/list</a>" adresine gidip, uygulamanızı seçmeniz gerekiyor. Daha sonra "Capabilities" sekmesi altından, "Associated Domains" özelliğini aktif hale getiriyorsunuz.
 </p>
@@ -279,16 +280,16 @@ Bu adımların ardından, Universal Link yeteneğiniz aktif hale gelmiş olacakt
 </p>
 
 
-<figure id="orga72a277">
+<figure id="org1530e5f">
 <img src="./resources/mobilen/dergi_1/4.jpg" alt="4.jpg" width="100%">
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org9ef14ce" class="outline-3">
-<h3 id="org9ef14ce">Uygulama İçi Yönlendirme</h3>
-<div class="outline-text-3" id="text-org9ef14ce">
+<div id="outline-container-orga9d1918" class="outline-3">
+<h3 id="orga9d1918">Uygulama İçi Yönlendirme</h3>
+<div class="outline-text-3" id="text-orga9d1918">
 <p>
 Universal Link yeteneğini ekledikten sonra, uygulamanızın belirli bir sayfasına yönlendirebilmek için URL'yi karşılayacak bir metot belirlememiz gerekiyor. Bu metot, genellikle AppDelegate dosyasında bulunur.
 </p>
@@ -323,7 +324,7 @@ Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha
 </p>
 
 
-<figure id="org20eb18a">
+<figure id="orgf84fb69">
 <img src="./resources/mobilen/dergi_1/6.jpg" alt="6.jpg" width="100%">
 
 </figure>
@@ -331,9 +332,9 @@ Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha
 </div>
 </div>
 
-<div id="outline-container-org5282ef0" class="outline-2">
-<h2 id="org5282ef0">Kaynaklar</h2>
-<div class="outline-text-2" id="text-org5282ef0">
+<div id="outline-container-orgf581697" class="outline-2">
+<h2 id="orgf581697">Kaynaklar</h2>
+<div class="outline-text-2" id="text-orgf581697">
 <ol class="org-ol">
 <li><a href="https://medium.com/@ydemirkoparan/swift-ile-deep-linking-nas%C4%B1l-yap%C4%B1l%C4%B1r-e815fee93b97">Swift ile DeepLinking nasıl yapılır?</a></li>
 <li><a href="https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97">iOS Deep Linking Scheme vs Universal Links</a></li>
@@ -342,6 +343,8 @@ Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha
 </div>
 </div>
 <div id="postamble" class="status">
+
+<p><small>Son Güncelleme: 2023-07-12 Wed 20:15</small></p>
 <hr/>
 <footer>
   <div class="copyright-container">

@@ -32,7 +32,8 @@
              :with-toc nil                ;; Include a table of contents
              :section-numbers nil
              :time-stamp-file nil
-             ;; :html-link-home "https://suatkarakusoglu.github.io/"
+             :html-link-home "https://suatkarakusoglu.github.io/mobilen"
+             :html-link-up "https://suatkarakusoglu.github.io/mobilen/archive.html"
              :html-extension "html"
              :auto-sitemap t
              :sitemap-filename "archive.org"
@@ -47,9 +48,11 @@
              :html-html5-fancy t
              :html-head-include-scripts nil
              :html-head-include-default-style nil
-             :html-preamble "<p><small>Son Güncelleme: %C</small></p>"
+             ;; :html-preamble "<p><small>Son Güncelleme: %C</small></p>"
              :html-postamble
-             "<hr/>
+             "
+<p><small>Son Güncelleme: %C</small></p>
+<hr/>
 <footer>
   <div class=\"copyright-container\">
     <div class=\"copyright\">
@@ -57,8 +60,7 @@
     </div>
     </br>
   </div>
-</footer>"
-             )
+</footer>")
        (list "mobilen-statics"
              :base-directory "./content/"
              :base-extension "css\\|js\\|jpg\\|gif\\|png\\|pdf\\|mp3\\|ogg\\|swf"

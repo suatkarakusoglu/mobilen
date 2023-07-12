@@ -25,7 +25,7 @@
              :recursive t
              :base-directory "./content/writings"
              :base-extension "org"
-             :publishing-directory "./public"
+             :publishing-directory "./docs"
              :publishing-function 'org-html-publish-to-html
              :with-author nil           ;; Don't include author name
              :with-creator t            ;; Include Emacs and Org versions in footer
@@ -62,7 +62,7 @@
        (list "mobilen-statics"
              :base-directory "./content/"
              :base-extension "css\\|js\\|jpg\\|gif\\|png\\|pdf\\|mp3\\|ogg\\|swf"
-             :publishing-directory "./public/"
+             :publishing-directory "./docs"
              :publishing-function 'org-publish-attachment
              :recursive t)))
 

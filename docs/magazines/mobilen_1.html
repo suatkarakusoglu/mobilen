@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mobilen Dergi 1 Merhaba Dünya WWDC 2023 geldi! Navigation Desenleri Netfox ile iOS uygulamalarda network izlemek Xcode Breakpoints ile Otomatizasyon XCode Project Custom File Templates iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı Evolution of the Medium iOS app architecture</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<p><small>Son Güncelleme: 2023-07-11 Tue 15:24</small></p>
+</div>
+<div id="content" class="content">
+
+<div id="outline-container-org89c7bc4" class="outline-2">
+<h2 id="org89c7bc4">Merhaba Dünya</h2>
+<div class="outline-text-2" id="text-org89c7bc4">
+<p>
+Merhabalar, mobil uygulama geliştirme pratikleri ile ilgili gördüğümüz ve ilgimizi çeken gelişmeleri paylaşmak amacıyla oluşturduğumuz dergimizin ilk sayısı ile karşınızdayız.
+</p>
+
+<p>
+İlerleyen sayılarımızda konularımızı biraz daha çeşitlendirip, gündemi daha yakından takip etmeye çalışacağız, faydalanmanız niyetiyle. Görüşmek üzere :).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdf0cc4d" class="outline-2">
+<h2 id="orgdf0cc4d">WWDC 2023 geldi!</h2>
+<div class="outline-text-2" id="text-orgdf0cc4d">
+<p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+<p>
+<a href="https://developer.apple.com/wwdc23/">WWDC 2023</a> sunum takvimi hazır.
+<a href="https://www.apple.com/newsroom/2023/05/apples-worldwide-developers-conference-to-kick-off-june-5-2023/">Apple WWDC 2023 konuları</a> da belirlendi.
+</p>
+
+<p>
+Keynote sunumu Türkiye saati ile 5 Haziranda <span class="timestamp-wrapper"><span class="timestamp">[2023-06-05 Mon 20:00] </span></span> başlayacak.
+<a href="https://www.youtube.com/watch?v=GYkq9Rgoj8E&amp;ab_channel=Apple">Buradaki link</a> üzerinden alarm kurup, açıp izleyebilirsiniz.
+</p>
+
+<p>
+iOS 17 ile beraber Apple duyurduğu <a href="https://www.apple.com/newsroom/2023/05/apple-previews-live-speech-personal-voice-and-more-new-accessibility-features/">erişilebilirlik</a> yeteneklerini daha geliştirdiklerini görüyoruz.
+</p>
+
+<dl class="org-dl">
+<dt>One More Thing!</dt><dd>VR gözlüğü konusundaki atılımların meyvesi bu toplantıda görücüye çıkabilir.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org37e1088" class="outline-2">
+<h2 id="org37e1088">Navigation Desenleri</h2>
+<div class="outline-text-2" id="text-org37e1088">
+<p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+<p>
+Selamlar, <code>navigation</code> mobil uygulamalarda kullanıcının ekranlar arasında nasıl dolaşması gerektiğine dair haritayı sağlamaktadır.
+Bu haritanın farklı yaklaşımları mevcut, görsel olarak Frank Rausch tarafından yazılan bu bloğu incelemenizi öneririm.
+</p>
+
+<p>
+<a href="https://frankrausch.com/ios-navigation">https://frankrausch.com/ios-navigation</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge4485eb" class="outline-2">
+<h2 id="orge4485eb">Netfox ile iOS uygulamalarda network izlemek</h2>
+<div class="outline-text-2" id="text-orge4485eb">
+<p>
+<a href="https://www.linkedin.com/in/ugurcan-durak/">Uğurcan Durak</a> yazdı.
+</p>
+
+
+<figure id="org6111d78">
+<img src="../../resources/mobilen/dergi_1/NetFoxImage.jpg" alt="NetFoxImage.jpg" width="200px">
+
+<figcaption><span class="figure-number">Şekil 1: </span><a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Netfox'u İzlemek için tıkla</a></figcaption>
+</figure>
+
+<p>
+Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde görüntülemek için kullanılan faydalı olduğunu düşündüğüm <b><a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesinden bahsedicem.
+</p>
+
+<p>
+Çok detaya girmeden genel hatlarıyla nedir? nasıl kullanılır? gibi başlıklarla değineceğim. Hadi başlayalım :)
+</p>
+</div>
+
+<div id="outline-container-orgf2bf96d" class="outline-3">
+<h3 id="orgf2bf96d">Netfox Nedir?</h3>
+<div class="outline-text-3" id="text-orgf2bf96d">
+<p>
+<b><a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesi, tüm network işlemlerini mobil cihaz üzerinden detaylı bir şekilde görüntüleyebileceğimiz <code>open source</code> bir kütüphanedir.
+</p>
+
+<p>
+Netfox'u uygulama içerisinde istediğimiz bir anda başlatıp anlık olarak uygulamamızın yapmış olduğu tüm istekleri listeleyebilir ve detaylı bir şekilde <code>body</code>, <code>header</code>, <code>response</code> gibi tüm network etkileşimlerini inceleyebiliriz.
+</p>
+
+<p>
+Bu tarz kütüphanelerin en güzel yanı, mobil cihazımız bilgisayara bağlı olmadan da istediğimiz bir anda network log'larına bakabilmektir.
+Bu özellik testçiler için oldukça faydalıdır. Çünkü herhangi bir hata anında doğrudan developer'a bildirmek yerine log'ları inceleyip hata hakkında fikir sahibi olabilirler.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgce1ff9b" class="outline-3">
+<h3 id="orgce1ff9b">Netfox Nasıl Kullanılır?</h3>
+<div class="outline-text-3" id="text-orgce1ff9b">
+<p>
+<code>Netfox</code>'un kullanımı ve projeye entegre edilmesi oldukça basittir.
+</p>
+
+<p>
+Varsayılan davranışı <b><b>shake</b></b> olarak belirlenmiş olsada custom bir şekilde istediğimiz bir butona ya da bir view event'ine atayarak Netfox'u başlatabiliriz. Öncelikle projeye nasıl eklenir ona bakalım.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1629d7a" class="outline-3">
+<h3 id="org1629d7a">Netfox'un Projeye Eklenmesi</h3>
+<div class="outline-text-3" id="text-org1629d7a">
+<ol class="org-ol">
+<li>Netfox kütüphanesini <b><b>SPM</b></b>, <b><b>CocoaPods</b></b> ve <b><b>Carthage</b></b> olmak üzere üç ayrı yöntem ile projemize ekleyebiliriz. Bu yöntemlerden herhangi biriyle eklediğinizi varsayarak bir sonraki adıma geçiyorum.</li>
+
+<li>Kütüphaneyi projeye ekledik şimdi ise <code>initiliaze</code> edeceğiz. Bunun için AppDelegate class'ına gidip aşağıdaki gibi gerekli kodları ekliyoruz.</li>
+</ol>
+
+<p>
+Netfox Import:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">#if DEBUG
+import netfox
+#endif
+</pre>
+</div>
+
+<p>
+Burada  <b>#if DEBUG</b> ve <b>#endif</b> kodlarını ekleyerek kodun sadece debug moddayken import olmasını sağlıyoruz. Daha sonra uygulama ilk başlatıldığında hazır hale gelmesini istediğim için aşağıdaki gibi başlatıcı fonksiyonun içerisine kodlarımızı ekliyoruz.
+</p>
+
+<p>
+Netfox başlatma:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">func application(
+  _ application: UIApplication,
+  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+) -&gt; Bool {
+    #if DEBUG
+    NFX.sharedInstance().start()
+    NFX.sharedInstance().setGesture(.shake)
+    #endif
+}
+</pre>
+</div>
+
+<p>
+Burada <b><b>start()</b></b> methodunu çağırarak Netfox'ı initiliaze ediyoruz ardından <b><b>setGesture()</b></b> ile Netfox'ın nasıl açılacağını belirliyoruz.
+</p>
+
+<p>
+Varsayılan davranışı shake olduğundan özellikle belirtmenize gerek yok örnek olması açısından ekledim. Siz dilerseniz <b><b>custom</b></b> parametresini geçip daha sonra dilediğiniz yerde <b><b>show()</b></b> methodu ile açılmasını sağlayabilirsiniz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd1d0800" class="outline-3">
+<h3 id="orgd1d0800">Netfox Özetle</h3>
+<div class="outline-text-3" id="text-orgd1d0800">
+<p>
+Evet hepsi bu kadar :) Şimdi dilediğiniz gibi cihazı sallayarak ya da atamış olduğunuz bir buton ile Netfox'ı başlatabilir ve log'ları inceleyebilirsiniz.
+</p>
+
+<p>
+Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım faydalı olur zaman ayırdığınız için teşekkürler.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org40ac5dc" class="outline-3">
+<h3 id="org40ac5dc">Kaynaklar</h3>
+<div class="outline-text-3" id="text-org40ac5dc">
+<ol class="org-ol">
+<li><a href="https://github.com/kasketis/netfox">Netfox Github Kütüphanesi</a></li>
+<li><a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Örnek Kullanım Vidyosu</a></li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1f1b9f4" class="outline-2">
+<h2 id="org1f1b9f4">Xcode Breakpoints ile Otomatizasyon</h2>
+<div class="outline-text-2" id="text-org1f1b9f4">
+<p>
+<a href="https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8">Alper Cem Öztürk</a> yazdı.
+</p>
+
+<p>
+Uygulamanızı her test ettiğinizde oturum açma bilgilerinizi manuel olarak girmekten sıkıldıysanız ve geliştirme sırasında zaman kazanmak istiyorsanız; <code>xcode breakpoints</code> ihtiyacınız olan çözüm olabilir.
+</p>
+</div>
+
+<div id="outline-container-org10804a1" class="outline-3">
+<h3 id="org10804a1">Breakpoints Nedir?</h3>
+<div class="outline-text-3" id="text-org10804a1">
+<p>
+<code>Breakpoint</code>, bir programın çalışması sırasında belirli bir kod satırında duraklamasını sağlayan ve geliştiricilere programın çalışmasını izleme ve <code>debug</code> imkanı veren bir araçtır. Bu, değişkenlerin değerlerini incelemenize, kodda satır satır ilerlemenize ve başka işlemler yapmanıza olanak tanır.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd5853f1" class="outline-3">
+<h3 id="orgd5853f1">Breakpoints Nasıl Oluşturulur?</h3>
+<div class="outline-text-3" id="text-orgd5853f1">
+<p>
+Bir "breakpoint" ayarlamak için, duraklatmak istediğiniz kod satırı numarasının yazılı olduğu alana tıklamanız yeterlidir. "Breakpoint"'i belirtmek için sistem ayarlarında seçili olan "accent color" renginde bir işaretçi görünecektir. Her ne kadar "line numbers" ayarı varsayılan olarak açık gelse de eğer açıkta kullanmıyosanız, ilgili satırın hemen yanına tıklayabilirsiniz veya text editing ayarlarından açabilirsiniz.
+</p>
+
+<p>
+Bir "breakpoint" belirledikten sonra kodunuzu çalıştırabilirsiniz. "Debugger" "breakpoint"'te duraklayacaktır. Daha sonra kodunuzu ve değişkenlerinizi incelemek için "debugger"'ın özelliklerini kullanabilirsiniz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga97857e" class="outline-3">
+<h3 id="orga97857e">Breakpoint'lerin Farklı Kullanım Senaryoları</h3>
+<div class="outline-text-3" id="text-orga97857e">
+<p>
+Geliştiriciler, "oturum açma" aşamalarını test etmek ve "debug" yapmak için zaman ve emek harcamalarını gerektiren birçok senaryo ile karşılaşabilirler. <code>Breakpoints</code> ve <code>Watchpoints</code>, bu amaç için oldukça kullanışlıdır. Bu kullanım senaryolarından birkaçına beraber bakalım.
+</p>
+
+<p>
+Mobil bir uygulamada birden fazla kullanıcı rolü olduğunu düşünelim. Her bir rol için farklı bir oturum açma işlemi gerekebilir. Örneğin, yönetici rolü için ayrı bir oturum açma işlemi, kullanıcı rolü için ayrı bir oturum açma işlemi vb. Bu durumda, oturum açma işlemlerini otomatikleştirmek amacıyla, her bir rol için ayrı bir "breakpoint" kullanabilirsiniz.
+</p>
+
+<p>
+Sadece belirli koşullar altında oturum açmayı otomatikleştirmek istiyorsanız, koşullu "breakpoint"'leri kullanabilirsiniz. Örneğin, yalnızca belirli bir kullanıcının oturum açmaya çalıştığı durumlarda oturum açmayı otomatikleştirmek isteyebilirsiniz. Bu durumda, istenen kullanıcı adı ile eşleştiğinde tetiklenen bir koşullu "breakpoint" ayarlamak işinizi görecektir.
+</p>
+
+<p>
+Watchpoint'ler, oturum açma işlemi sırasında değişkenlerin değerlerini izlemek için kullanılır. "Debug" işlemi sırasında bir değişkene watchpoint eklenmesiyle, değişkenin değeri değiştiğinde programın çalışması durdurulur. Bu, oturum açma işlemi sırasında belirli değişkenlerin değerlerini izlemek istediğiniz durumlarda faydalı olabilir. Örneğin, bir parola değişkeninin doğru bir şekilde "encrypt" edilip edilmediğini kontrol etmek isteyebilirsiniz. Bu değişken üzerinde bir watchpoint ayarlayarak, doğru bir şekilde "encrypt" edildiğinden emin olabilir ve potansiyel güvenlik sorunlarını önleyebilirsiniz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd7ecd67" class="outline-3">
+<h3 id="orgd7ecd67">Breakpoint Expressions</h3>
+<div class="outline-text-3" id="text-orgd7ecd67">
+<p>
+"Breakpoint expressions", "debug" yapmanın güçlü bir yoludur. Yalnızca programın yürütülmesini durdurup değişkenlerin değerini izlemenin yanı sıra belirli aksiyonlar alabilmenizi sağlar. Tam olarak bu yazının başlığında belirtildiği gibi, oturum açma işlemlerini otomatik hale getirmek buna örnek olarak verilebilir.
+</p>
+
+<p>
+Şimdi "breakpoint" expressions'ların nasıl çalıştığına göz atmak için, hep beraber <a href="https://www.danijelavrzan.com/posts/2023/04/login-xcode-breakpoint">Login XCode Breakpoints</a> blog yazısını inceleyelim.
+</p>
+
+<p>
+Öncelikle bu yazının başından beri konuştuğumuz oturum açma işlemlerini temsil edecek bir SwiftUI arayüzü tasarlayalım.
+</p>
+
+<p>
+Blog yazısında da bahsedildiği gibi "fullscreen modal" olarak sunulan iki "textfield" ile örnek bir login ekranı oluşturalım. Uygulama `launchLogin()` ile başladığında, "textfield"'lar doğru bilgileri içeriyorsa "modal screen" kapatılsın ve ContentView, başarılı login mesajıyla beraber görüntülensin.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift">struct LoginView: View {
+    @State private var username: String = ""
+    @State private var password: String = ""
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+	VStack(alignment: .center, spacing: 20) {
+	    HStack {
+		Image(systemName: "person")
+		TextField("Enter username", text: $username)
+	    }
+	    HStack {
+		Image(systemName: "key")
+		TextField("Enter password", text: $password)
+	    }
+	    Button("LOG IN") {
+		// BREAKPOINT HERE
+		initiateLogin()
+	    }
+	      .buttonStyle(.borderedProminent)
+	}
+	  .padding()
+	  .textFieldStyle(.roundedBorder)
+    }
+
+    // Login Function
+    func initiateLogin() {
+	if username == "mobilen" &amp;&amp; password == "dadada" {
+	    // Short pause - dismiss is too fast
+	    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+		dismiss()
+	    }
+	}
+    }
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-swift">import SwiftUI
+
+struct ContentView: View {
+    @State private var isPresented = true
+
+    var body: some View {
+	VStack {
+	    Text("Hello! You've successfully logged in.")
+	}
+	  .onAppear {
+	      isPresented = true
+	  }
+	  .fullScreenCover(isPresented: $isPresented) {
+	      LoginView()
+	  }
+    }
+}
+</pre>
+</div>
+
+<p>
+Oturum açma işlemini otomatik yapabilmek için öncelikle LoginView sayfasında ki buton'un "action"'ına bir "breakpoint" koymalıyız. Böylelikle program, çalışma sırasında kullanıcının buton aksiyonu ile beraber duraklayacaktır.
+Bizim istediğimiz ise, programın buton aksiyonu ile duraklamasından sonra oturum açma bilgilerimizle beraber tekrar yürütülmesi. Bunun için oluşturduğumuz "breakpoint"'e sağ tıklayarak "Edit breakpoint" seçeneğine tıklayalım.
+</p>
+
+
+<figure id="org73e7b06">
+<img src="../../resources/mobilen/dergi_1/edit-breakpoint-window.jpg" alt="edit-breakpoint-window.jpg" width="100%">
+
+<figcaption><span class="figure-number">Şekil 2: </span>Xcode edit breakpoint window</figcaption>
+</figure>
+
+<p>
+Açılan pencerede "breakpoint"'e isim verebilir, belli koşullar altında çalışmasını ayarlayabilir veya program durduktan sonra yapılacak bir aksiyon tanımlayabiliriz. Biz buton aksiyonu sonrasında "textfield"'ları geçerli bilgiler ile doldurup, programın çalışmasına devam etmesini sağlamalıyız.
+</p>
+
+<p>
+Bunu yapmak için aşağıdaki "Add Action" butonuna tıklayalım. "Action" tipinin "default" olarak "debugger command" geldiğini göreceğiz. Sonrasında ise hemen altındaki alana ise tanımlayacağımız aksiyonu `expr` komutuyla belirtelim.
+</p>
+
+<p>
+`expr` komutu, "expression" kelimesinin kısaltmasıdır ve "Breakpoint Actions" bölümünde kullanılan bir komuttur. `expr` komutuyla belirlediğiniz bir değişkenin değerini değiştirebilir veya bir fonksiyonu çağırabilirsiniz. Örneğin, `expr foo = 42` ile "foo" değişkeninin değerini 42 olarak değiştirebilirsiniz.
+</p>
+
+<p>
+Burada ilk action'da, <code>_username.wrappedValue</code> değişkeninin değerini "mobilen" ile değiştirmek için expr _username.wrappedValue = "mobilen" komutunu kullanıyoruz.
+</p>
+
+<p>
+İkinci action'da ise, <code>_password.wrappedValue</code> değişkenin değerini "dadada" ile değiştirmek için expr _password.wrappedValue = "dadada" komutunu kullanıyoruz.
+</p>
+
+<p>
+Ayrıca "Action" tipi olarak "Log Message" seçeneğini de kullanılabilir ve belirlediğiniz değişkenin değerini "Console" panelinde görüntüleyebilirsiniz.
+Yine "Action" tipi olarak "Sound" seçeneğini kullanabilir ve belirli bir işlem gerçekleştiğinde ses çalabilirsiniz.
+</p>
+
+<p>
+Son olarak en altta bulunan <code>Automatically continue after evaluating actions</code> seçeneğini işaretleyelim. Bu <code>textfield</code>'ları geçerli bilgiler ile doldurduktan sonra, programın çalışmasına devam etmesini belirlediğimiz kısımdır. Bu yüzden "checkbox"'ı işaretlemeyi atlamamalıyız.
+</p>
+
+<p>
+Tüm adımları gerçekleştirdikten sonra yapmanız gereken tek şey, kodunuzu çalıştırmak ve login butonuna tıklamak. Buton aksiyonu ile beraber "textfield"'ların geçerli bilgiler ile doldurulduğunu ve modal screen'in kapatıldığını görebilirsiniz.
+</p>
+
+<p>
+Bu yazıda, "breakpoint"'leri ve kullanım senaryolarını ele aldık. Ardından <a href="https://www.danijelavrzan.com/posts/2023/04/login-xcode-breakpoint">Login XCode Breakpoints</a> yazısındaki örneklerle uygulamalarımızdaki herhangi bir alanı nasıl otomatikleştirebileceğimizi öğrendik.
+</p>
+
+<p>
+"Breakpoints"’leri kullanmak geliştirme sırasında zaman kazanmanıza yardımcı olabilir ve uygulamanızı her test ettiğinizde oturum açma bilgilerinizi manuel yazmak zorunda kalmadan zaman kazanabilirsiniz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org888fe55" class="outline-3">
+<h3 id="org888fe55">Kaynaklar</h3>
+<div class="outline-text-3" id="text-org888fe55">
+<p>
+<a href="https://www.danijelavrzan.com/posts/2023/04/login-xcode-breakpoint">Login XCode Breakpoints</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org34b52cb" class="outline-2">
+<h2 id="org34b52cb">XCode Project Custom File Templates</h2>
+<div class="outline-text-2" id="text-org34b52cb">
+<p>
+<a href="https://linkedin.com/in/alimerttekel">Ali Mert Tekel</a> yazdı.
+</p>
+
+<p>
+Geliştirme sürecinde her ayrıntının önemli olduğu bir dünyada yaşıyoruz. Bu karmaşık süreçte, verimliliği ve tutarlılığı artırmak için araçlardan en iyi şekilde yararlanmak gerekiyor.
+Bu yazıda, iOS uygulama geliştirme sürecini daha düzgün, hızlı ve hatasız hale getirmek için Xcode'un Custom File Template'lerinin nasıl kullanılacağını ele alacağız.
+</p>
+
+<p>
+Yeni başlayanlardan deneyimli geliştiricilere kadar herkesin işine yarayacak bu bilgilerle, projenizdeki geliştirme sürecini daha verimli hale getirebilirsiniz.
+</p>
+
+<dl class="org-dl">
+<dt>Xcode</dt><dd>Apple'ın macOS, iOS, watchOS ve tvOS için uygulamalar geliştirmek için kullandığı bir Entegre Geliştirme Ortamı (IDE).</dd>
+<dt>Template</dt><dd>Önceden tanımlanmış bir dosya yapısı.</dd>
+<dt>Custom Xcode Template</dt><dd>Kullanıcı tarafından özelleştirilmiş Xcode Template'leri.</dd>
+<dt>MVVM</dt><dd>Model-View-ViewModel, bir yazılım mimarisi deseni.</dd>
+<dt>.xctemplate</dt><dd>Xcode Template'lerinin dosya türü.</dd>
+</dl>
+
+<p>
+`File Templates`, Xcode'un özellikle iOS uygulamaları geliştirirken kullandığımız dosyaları oluşturma sürecinde kilit bir rol oynar. Her yeni dosya oluştururken, `Choose a template for your new file:` başlığı altında bir dizi template sunulur.
+</p>
+
+
+<figure id="org27f180b">
+<img src="../../resources/mobilen/dergi_1/choose-template.png" alt="choose-template.png" width="200px">
+
+<figcaption><span class="figure-number">Şekil 3: </span>Template Seçimi</figcaption>
+</figure>
+
+<p>
+Bu template'ler, yeni oluşturulacak dosyaların belirli bir yapıya sahip olmasına yardımcı olur. Ancak, projeniz büyüdükçe ve daha fazla dosya eklemeniz gerektiğinde, aynı süreci tekrar tekrar uygulamak zaman kaybına ve tutarsızlıklara yol açabilir. İşte tam bu noktada Custom Xcode Templates devreye girer.
+</p>
+</div>
+
+<div id="outline-container-org2d0b9dd" class="outline-3">
+<h3 id="org2d0b9dd">Custom Xcode Template Avantajları</h3>
+<div class="outline-text-3" id="text-org2d0b9dd">
+<p>
+Custom Xcode Template, projenizin gereksinimlerine ve mimarisine uygun dosyaları hızlı ve tutarlı bir şekilde oluşturmanıza olanak sağlar. Örneğin, MVVM mimarisi gibi belirli bir mimariyi kullanırken, her sayfa için birden fazla dosya oluşturmanız gerekebilir. Bu süreci Custom Xcode Template kullanarak optimize edebilirsiniz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgefce59e" class="outline-3">
+<h3 id="orgefce59e">Custom Xcode Template Nasıl Oluşturulur?</h3>
+<div class="outline-text-3" id="text-orgefce59e">
+<p>
+İlk adım, Xcode'un template'leri barındırdığı dizini açmaktır.
+</p>
+
+<p>
+Bu klasör genellikle `~/Library/Developer/Xcode/Templates/File Templates` dizininde bulunur. Eğer bu dizin mevcut değilse, manuel olarak oluşturabilirsiniz.
+</p>
+
+
+<figure id="orgbf4ee28">
+<img src="../../resources/mobilen/dergi_1/templates-folder.png" alt="templates-folder.png" width="100%">
+
+<figcaption><span class="figure-number">Şekil 4: </span>Templates dizinini açmak</figcaption>
+</figure>
+
+
+<figure id="org07b153d">
+<img src="../../resources/mobilen/dergi_1/file-templates.png" alt="file-templates.png" width="100%">
+
+<figcaption><span class="figure-number">Şekil 5: </span>Yeni klasör oluşturmak</figcaption>
+</figure>
+
+<p>
+Kendi template'lerinizi barındıracak bir klasör oluşturmanız gerekmektedir. Bu klasörü adlandırırken istediğiniz ismi kullanabilirsiniz, örneğin "My Project Templates".
+</p>
+
+
+<figure id="orgfbd4dff">
+<img src="../../resources/mobilen/dergi_1/my-project-templates.png" alt="my-project-templates.png" width="100%">
+
+<figcaption><span class="figure-number">Şekil 6: </span>Custom Template barındıracak klasörü oluşturmak</figcaption>
+</figure>
+
+<p>
+Sonrasında, `.xctemplate` uzantılı bir dosya oluşturmalısınız. Bu dosya, oluşturacağınız asıl template'i temsil eder ve template'in nasıl görüneceğini ve hangi dosyaların oluşturulacağını belirler.
+</p>
+
+
+<figure id="orge39325c">
+<img src="../../resources/mobilen/dergi_1/xctemplate.png" alt="xctemplate.png" width="100%">
+
+<figcaption><span class="figure-number">Şekil 7: </span>Xctemplate dosyaları</figcaption>
+</figure>
+
+<p>
+`.xctemplate` dosyası genellikle aşağıdaki öğeleri içerir:
+</p>
+
+<ul class="org-ul">
+<li>TemplateInfo.plist</li>
+<li>Dosya template'leri (Örneğin; .swift dosyaları)</li>
+<li>Diğer kaynak dosyaları (Örneğin; Template için icon dosyası)</li>
+</ul>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgefd34cb"></a>Örnek bir dosya template'i;<br>
+<div class="outline-text-4" id="text-orgefd34cb">
+<div class="org-src-container">
+<pre class="src src-swift">// ___FILEHEADER___
+import Combine
+import Foundation
+import SwiftUI
+
+struct ___VARIABLE_pageName___ContentView: View {
+    // MARK: Observable Objects
+    @ObservedObject var viewStateData: ___VARIABLE_pageName___ViewStateData
+    // MARK: Properties
+    var onChangeEvent: (___VARIABLE_pageName___Event) -&gt; Void
+    // MARK: Lifecycle
+    var body: some View {
+	self.content()
+    }
+}
+
+// MARK: - Views
+extension ___VARIABLE_pageName___ContentView {
+    private func content() -&gt; some View {
+	VStack {
+	    // TODO: Add Views
+	}
+    }
+}
+#if DEBUG
+struct ___VARIABLE_pageName___ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+	let initialView = ___VARIABLE_pageName___ContentView(viewStateData: .init(), onChangeEvent: { _ in })
+	return Group {
+	    initialView
+	}
+    }
+}
+#endif
+</pre>
+</div>
+
+<p>
+Custom Template oluşturmak ve hazır template bulabileceğiniz birkaç kaynak aşağıdaki gibidir:
+</p>
+</div>
+</li>
+
+<li><a id="org6314558"></a>Referenslar<br>
+<div class="outline-text-4" id="text-org6314558">
+<ol class="org-ol">
+<li><a href="https://www.kodeco.com/26582967-xcode-project-and-file-templates">Kodeco</a>: Bu kaynakta kapsamlı bir şekilde custom template oluşturma süreci anlatılıyor.</li>
+
+<li><a href="https://github.com/topics/xcode-templates">Github Xcode Templates</a>: Github'da "xcode-templates" topic'i ile genellikle proje mimarileri için oluşturulmuş template repolarına ulaşabilirsiniz.</li>
+</ol>
+
+<p>
+Özetle, bu adımlar, Custom File Template'lerinizi oluşturmak için iyi bir başlangıç noktası olabilir. Ancak, her projenin kendine özgü ihtiyaçları olduğunu ve bu adımların projenizin spesifik gereksinimlerine göre uyarlanması gerektiğini unutmamak önemlidir.
+Bu sayede, projenizin verimliliğini ve tutarlılığını artırarak, uygulama geliştirme sürecinizin kalitesini yükseltebilirsiniz.
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3c91c88" class="outline-2">
+<h2 id="org3c91c88">iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı</h2>
+<div class="outline-text-2" id="text-org3c91c88">
+<p>
+<a href="https://linkedin.com/in/egehan-kalayc%C4%B1-736b4a238">Egehan Kalaycı</a> yazdı.
+</p>
+
+<p>
+Selam "Mobilen" okurları! Bugün sizinle çok önemli ve aslında fazlasıyla işlevsel bir konuyu konuşacağız: Deep Link'leri. Evet, belki ilk duyduğunuzda biraz karışık gelebilir ama emin olun, bu yazıyı okuduktan sonra onları tanıyan en iyi kişi siz olacaksınız.
+</p>
+</div>
+
+<div id="outline-container-org2d10fd7" class="outline-3">
+<h3 id="org2d10fd7">Deep Link Nedir?</h3>
+<div class="outline-text-3" id="text-org2d10fd7">
+<p>
+Deep link, belirli bir sayfaya veya işleme mobil uygulama içinde doğrudan erişmenizi sağlayan bir tür bağlantıdır. Böylece, kullanıcıları uygulamanın belirli bir noktasına yönlendirerek, daha etkileşimli ve kullanıcı odaklı bir deneyim sunabiliriz.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgdb3b417"></a>Biraz Daha Somutlaştıralım<br>
+<div class="outline-text-4" id="text-orgdb3b417">
+<p>
+Örneğin, Instagram'da dolaşırken bir Petrol Ofisi kahve kampanyası gördünüz ve tıkladınız. İşte tam da burada devreye deep linkler giriyor. Tıkladığınızda, direkt olarak Petrol Ofisi'nin mobil uygulaması açılıyor ve sizi o özel kampanyaya yönlendiriyor. Kulağa hoş geliyor değil mi?
+</p>
+
+<p>
+Veya belki de şifrenizi sıfırlamanız gerekiyor ve bu durumda da gelen e-postadaki linke tıkladığınızda, sizi bir web sayfasına yönlendirmek yerine direkt olarak uygulamada güzel ve kullanıcı dostu bir deneyim yaşamanızı sağlıyor. İşte bu, deep linklerin gücü!
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org4927a13" class="outline-3">
+<h3 id="org4927a13">Deep Link’in Küçük Detayları</h3>
+<div class="outline-text-3" id="text-org4927a13">
+<p>
+Deep linklerin kullanımı oldukça basit gibi görünse de, yönetilmesi gereken bazı durumlar vardır. Bu detaylar, uygulamanın nasıl ve ne zaman hangi deep linki kullanacağını belirler. Ama merak etmeyin, bu yazının ilerleyen bölümlerinde bunları ayrıntılı olarak ele alacağım.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org055595a" class="outline-3">
+<h3 id="org055595a">Deep Link Çeşitleri</h3>
+<div class="outline-text-3" id="text-org055595a">
+<p>
+<b><b>Dinamik Linkler:</b></b>
+Dinamik linkler, kullanıcıları belirli bir içeriğe veya uygulama içi konuma yönlendirmek için kullanılır. Bu linkler "dinamik" olarak adlandırılır çünkü onlar hem uygulama içi hem de web içeriğine yönlendirebilir. Örneğin, bir kullanıcı uygulamanızı henüz indirmediyse, dinamik bir link onları App Store veya Google Play'e yönlendirebilir. Eğer uygulama zaten yüklüyse, aynı link onları uygulama içindeki belirli bir konuma yönlendirebilir. Bu özellik, kullanıcının deneyimini optimize etmek için önemlidir.
+</p>
+
+<p>
+<b><b>Deferred Deep Linking:</b></b>
+Deferred Deep Linking, deep linking'in bir formudur ve uygulama önceden yüklenmemişse bile belirli bir içeriğe veya uygulama içi konuma yönlendirmeyi mümkün kılar. Eğer bir kullanıcı uygulamayı henüz indirmediyse, bu tür bir link önce onları App Store veya Google Play'e yönlendirir. Uygulama indirildikten ve açıldıktan sonra, kullanıcı otomatik olarak belirtilen içeriğe veya konuma yönlendirilir.
+</p>
+
+<p>
+Farklarına gelince, her ne kadar her iki tür link de uygulamanın indirilmesi ve belirli bir konuma yönlendirilmesi sürecini yönetse de, genellikle Dinamik Linkler daha geniş özelliklere sahip olup, kullanıcıları yönlendirme ve deneyimlerini özelleştirme konusunda daha fazla esneklik sunar. Örneğin, Dinamik Linkler genellikle linkin nereden geldiğini (örneğin, bir e-postadan, sosyal medyadan, bir reklamdan vb.) izleme ve bunun yanı sıra kullanıcının işletim sistemini ve cihazını algılama yeteneğine sahiptir, böylece en uygun deneyimi sunabilir. Bu nedenle, Dinamik Linkler genellikle pazarlama kampanyalarında ve kullanıcı etkileşimlerini artırmak için kullanılır.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4bf0965" class="outline-3">
+<h3 id="org4bf0965">Deep Link Yönetim Yöntemleri</h3>
+<div class="outline-text-3" id="text-org4bf0965">
+<p>
+Deep linklerinizi hem iOS hem Android uygulamalarınızda yönetebilmeniz için iki önemli yöntem bulunmaktadır: URL Scheme ve Universal Link (iOS) veya App Links (Android). Bu yöntemler, uygulamalarınızdaki deep linklerin yönetimini kolaylaştırır ve kullanıcı deneyimini artırır. Ancak her bir yöntemin kendine özgü özellikleri ve kullanım alanları vardır. Bu yüzden, hangi yöntemin sizin uygulamanız için en uygun olduğunu belirlemek önemlidir.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org66a6e0b" class="outline-3">
+<h3 id="org66a6e0b">Deep Link: URL Scheme ve Universal Link Karşılaştırması</h3>
+<div class="outline-text-3" id="text-org66a6e0b">
+<p>
+Deep link yönetiminde kullanılan iki temel yöntem olan URL Scheme ve Universal Link, birbirinden farklı özelliklere sahiptir. Hem geliştiricilerin hem de kullanıcıların deneyimini doğrudan etkileyen bu özellikler, hangi yöntemin hangi durumda kullanılacağını belirler.
+</p>
+
+<p>
+URL Scheme ve Universal Link’in karşılaştırmalı tablosu:
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org76dafff"></a>URL Scheme<br>
+<div class="outline-text-4" id="text-org76dafff">
+<ul class="org-ul">
+<li><b><b>Kurulumu Basittir:</b></b> URL Scheme'yi kullanmaya başlamak için karmaşık bir kurulum sürecine ihtiyaç duyulmaz.</li>
+<li><b><b>SSL Zorunluluğu Yoktur:</b></b> URL Scheme, SSL sertifikası zorunluluğu olmadan kullanılabilir.</li>
+<li><b><b>Kullanıcı Onayı İster:</b></b> URL Scheme, uygulamaya erişim izni almak için kullanıcıya bir pop-up gösterir. Bu, kullanıcıların uygulamayı açma konusunda daha bilinçli olmasını sağlar.</li>
+<li><b><b>Uygulama Yüklü Değilse Çalışmaz:</b></b> URL Scheme, uygulamanın cihazda yüklü olmasını gerektirir. Eğer uygulama yüklü değilse, URL Scheme çalışmaz.</li>
+<li><b><b>Aynı Tanımlar ve Kod Mantığı Gerekli:</b></b> URL Scheme'in hem iOS hem de Android platformlarında çalışabilmesi için, tanımlarının ve URL'i işleyen kod mantığının aynı olması gerekmektedir.</li>
+<li><b><b>Kullanıcı Dostu Değildir:</b></b> URL Scheme linkleri genellikle "myApp://page/profile" gibi görünürler ve bu da genellikle kullanıcılar için anlaşılması zor olabilir.</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org2b0b0ed"></a>Universal Link<br>
+<div class="outline-text-4" id="text-org2b0b0ed">
+<ul class="org-ul">
+<li><b><b>Kurulumu Komplekstir:</b></b> Universal Link'in kurulum süreci, URL Scheme'e göre daha karmaşıktır.</li>
+<li><b><b>SSL Zorunludur:</b></b> Universal Link kullanımı için SSL sertifikası zorunludur. Bu, uygulamanın güvenlik seviyesini artırır.</li>
+<li><b><b>Erişim İzni İstemez:</b></b> Universal Link, uygulamaya erişim izni almak için kullanıcıdan herhangi bir onay istemez.</li>
+<li><b><b>Uygulama Yüklü Değilse Yedek URL'ler Kullanır:</b></b> Eğer uygulama cihazda yüklü değilse, Universal Link yedek bir URL'ye yönlendirme yapar. Bu, kullanıcıların her zaman istedikleri içeriğe ulaşabilmesini sağlar.</li>
+<li><b><b>Oluşturulan Link Tüm Platformları Destekler:</b></b> Universal Link ile oluşturulan bir link, tüm platformlarda çalışabilir.</li>
+<li><b><b>Gündelik Kullanılan Linkler Gibidir:</b></b> Universal Linkler, kullanıcı dostudur ve gündelik internet kullanımında karşılaştığımız web adreslerine benzerler. Örneğin, "www.myapp.com/page/profile" gibi.</li>
+</ul>
+
+<p>
+Bu özellikler, URL Scheme ve Universal Link arasında önemli farklar olduğunu gösterir. Seçiminiz, uygulamanızın ihtiyaçlarına, hedeflerinize ve kullanıcı deneyiminizi nasıl şekillendirmek istediğinize bağlı olacaktır. Unutmayın, her iki yöntemin de kendi güçlü ve zayıf yanları vardır. Önemli olan, hangi yöntemin sizin ve kullanıcılarınızın ihtiyaçlarını en iyi şekilde karşılayacağını belirlemektir.
+</p>
+
+<p>
+Şimdi, daha fazla derine dalalım ve URL Scheme ve Universal Link'in nasıl çalıştığını inceleyelim&#x2026;
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org636e29f" class="outline-3">
+<h3 id="org636e29f">URL Scheme: Nedir ve Nasıl Kullanılır?</h3>
+<div class="outline-text-3" id="text-org636e29f">
+<p>
+URL Scheme, iOS ve Android platformları için belirli bir URL şemasını kaydedip, diğer uygulamaların bu şema ile başlayan URL'leri açabilmesini sağlayan bir deep link yöntemidir. Peki, nasıl çalışır? Hadi gelin adım adım birlikte inceleyelim.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org49b3799"></a>URL Scheme: Nasıl Tanımlanır?<br>
+<div class="outline-text-4" id="text-org49b3799">
+<p>
+URL Scheme'in kurulumu oldukça basittir. Örneğin, bir iOS uygulamasına URL Scheme nasıl tanımlanır, birlikte bakalım.
+</p>
+<ol class="org-ol">
+<li>Öncelikle, Xcode'u açıyoruz.</li>
+<li>Ardından, `Project Settings -&gt; Info` yolunu izliyoruz.</li>
+<li>Bu bölümde "URL Types" kısmına yeni bir URL Scheme tanımı yapabiliyoruz.</li>
+</ol>
+
+<p width="100%">
+<img src="../../resources/mobilen/dergi_1/0.jpg" alt="0.jpg" width="100%">
+Bu şekilde bir tanımlama yaptıktan sonra, telefonumuzdan bir tarayıcı veya notlar uygulamasına gidip bu linki test edebiliriz. "com.myApp" yazıp enter'a tıkladığımızda fark ederiz ki, bir şey olmamıştır.
+</p>
+
+<p>
+Peki, bu durum neden oluşur? İşin aslı, iOS'un bir metni bağlantı olarak tanıması için, URL formatına uygun olmamızı bekler. Yani linkimizi "com.myApp://main" olarak güncellemeliyiz. Bu formatı girdiğimizde, bir izin pop-up'ı ile karşılaşırız. Eğer burada "Aç" diyerek izin verirsek, linkin uygulamamızı açtığını görebiliriz.
+</p>
+
+<p width="100%">
+<img src="../../resources/mobilen/dergi_1/1.jpg" alt="1.jpg" width="100%">
+Fakat, evet uygulamayı açtık ama henüz uygulama içerisinde bir yönlendirme yapmadık. Mesela uygulamanın "profil bilgilerim" sayfasına gitmek istiyoruz. Peki, bunu nasıl yapabiliriz?
+</p>
+</div>
+</li>
+
+<li><a id="org6742a60"></a>URL Scheme ile Uygulama İçi Yönlendirme<br>
+<div class="outline-text-4" id="text-org6742a60">
+<p>
+Bu işlem için "AppDelegate.swift" dosyasını kullanacağız. Bu dosyada bulunan `open url: URL` metodu, başka bir uygulama veya sistem bileşeni tarafından gönderilen URL'yi yakalayıp işlememizi sağlar.
+</p>
+
+<p>
+Hatırlayalım, bir metnin bağlantı olabilmesi için "scheme://host" yapısına uyması gerektiğini belirtmiştik. Şimdi bu yapının bir örneğini inceleyelim. Örneğin, `com.myApp://content?contentID="1881"` şeklinde bir URL tanımlayalım.
+</p>
+
+<p>
+Bu URL'deki parametreleri elde etmek ve bunları kendi yönlendirme yapımıza göre işlemek için aşağıdaki gibi bir kod yapısına ihtiyacımız bulunmaktadır.
+</p>
+
+<p width="100%">
+<img src="../../resources/mobilen/dergi_1/2.jpg" alt="2.jpg" width="100%">
+Bu kod yapısında,
+</p>
+<ul class="org-ul">
+<li>`url.scheme` = "com.myApp"</li>
+<li>`url.host` = "content"</li>
+<li>`parameters` = ["contentID" : "1881"]</li>
+</ul>
+<p>
+olacaktır.
+</p>
+</div>
+</li>
+
+<li><a id="org09bc878"></a>URL Scheme: Sonuç<br>
+<div class="outline-text-4" id="text-org09bc878">
+<p>
+URL Scheme, tanımlanması ve uygulanması oldukça kolay bir deep link yöntemidir. Ancak, bu yöntemin en büyük dezavantajı, uygulamanın cihazda yüklü olmaması durumunda çalışmamasıdır. Bu durumda, kullanıcı boş bir web sayfasıyla karşılaşacaktır.
+</p>
+
+<p>
+İşte tam bu noktada Universal Link ve App Links yöntemleri devreye giriyor. Bu yöntemler, URL Scheme'in karşılaştığı bu sorunu çözerek kullanıcı deneyimini daha da iyileştirebilir. Şimdi biraz daha derinlere inelim ve Universal Link ve App Links yöntemlerini inceleyelim&#x2026;
+</p>
+</div>
+</li>
+
+<li><a id="orga9002da"></a>Universal Link/App Links: Nedir?<br>
+<div class="outline-text-4" id="text-orga9002da">
+<p>
+Universal Link ve App Links, URL Scheme'in dezavantajlarını azaltmak için iOS 9/Android 6.0 ve sonraki sürümlerde kullanılabilen bir deep link yöntemidir.
+</p>
+
+<p>
+Bu yöntem, URL Scheme'in dezavantajlarını giderirken, kurulumun daha karmaşık olmasını beraberinde getirir.
+</p>
+
+<p>
+Kurulum adımlarını ve örneklerimi iOS özelinde veriyor olacağım fakat konsepti anlamamız yeterli olacaktır. Çünkü Android’de de olaylar birbirine çok benzer.
+</p>
+
+<p>
+Özellikle, Universal Link'lerin en genel anlamıyla, bir web sayfası URL'sini iOS uygulamanızla ilişkilendirmenizi sağlar. Böylece o URL'yi açtığınızda iOS, mobil uygulamanızı tanır.
+</p>
+
+<p>
+Ama burada bir sorun var mıdır? Örneğin, "myApp" adlı uygulamanızı Instagram'ın URL'si ile ilişkilendirip, iPhone'dan Instagram'a giren herkesin sizin uygulamanıza yönlendirilmesini sağlayabilir misiniz? Tam bu sorunu çözmek için iOS, URL'lerin arkasına bir JSON dosyası eklemenizi ve bunu "/apple-app-site-association" yolunda yer almasını ister. Böylece kullanıcılar "<a href="https://www.instagram.com/egehannkalaycii">https://www.instagram.com/egehannkalaycii</a>" gibi bir linke tıkladığında, iOS öncelikle "<a href="https://www.instagram.com/apple-app-site-association">https://www.instagram.com/apple-app-site-association</a>" linkindeki JSON dosyasına bakar ve bu URL'in hangi uygulamayla ilişkili olduğuna bakar.
+</p>
+</div>
+</li>
+
+<li><a id="orgd5decad"></a>JSON Dosyası Yapısı<br>
+<div class="outline-text-4" id="text-orgd5decad">
+<p>
+JSON dosyası dedik. Peki bu JSON dosyasının yapısında neler var?
+Bu JSON dosyasının yapısı genellikle aşağıdaki gibidir:
+<img src="../../resources/mobilen/dergi_1/3.jpg" alt="3.jpg">
+</p>
+<ul class="org-ul">
+<li>applinks: Bu JSON'ın Universal Link olduğunu belirtir.</li>
+<li>apps: Apple dokümanına göre bu değer boş bırakılmalıdır.</li>
+<li>details: Uygulama listesi ve yolları içerir.</li>
+<li>appID: TeamID + BundleID değerlerinden oluşur.</li>
+<li>paths: Uygulamada gidilebilecek yolların tanımıdır.
+<ul class="org-ul">
+<li>`Path’leri tanımlarken bazı detaylar bulunur. Bunlar:
+<ul class="org-ul">
+<li>“/wwdc/news/”-&gt; Standart path tanımı.</li>
+<li>“NOT /videos/wwdc/2010/”-&gt; Başında <b><b><b><b>NOT</b></b></b></b> olanlar path’e dahil olmaz.</li>
+<li>“*” veya “/wwdc/2010/*"-&gt; WWDC’nin 2010 klasörü altındaki tüm yolları tanımlar.</li>
+<li>“/wwdc/201?/”-&gt; ? olan yere herhangi bir karakter gelebilir.</li>
+<li>Bu bilgiler ışığında aşağıdaki gibi bir path tanımı yapmak mümkün.</li>
+<li>“/wwdc/videos/201?/*”</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org598abf9"></a>Universal Link/App Links: Nasıl Tanımlanır?<br>
+<div class="outline-text-4" id="text-org598abf9">
+<p>
+Universal Link veya App Links yeteneğini kullanmak için öncelikle "<a href="https://developer.apple.com/account/resources/identifiers/list">https://developer.apple.com/account/resources/identifiers/list</a>" adresine gidip, uygulamanızı seçmeniz gerekiyor. Daha sonra "Capabilities" sekmesi altından, "Associated Domains" özelliğini aktif hale getiriyorsunuz.
+</p>
+
+<p>
+Xcode'da, sol menüden projenizi seçtikten sonra sırasıyla: Target -&gt; Signing &amp; Capabilities -&gt; Associated Domains sekmesine geliriz. Associated Domain ekleriz. Burada dikkat etmemiz gereken nokta, URL'nizin "applinks: domainName.com" şeklinde tanımlanmasıdır.
+</p>
+
+<p>
+Bu adımların ardından, Universal Link yeteneğiniz aktif hale gelmiş olacaktır. Bu yeteneği test etmek için, telefonunuzdan Safari'ye gidip uygulamanızın web sitesine giderseniz, iOS otomatik olarak bir öneri sunacaktır.
+</p>
+
+
+<figure id="org7d338bc">
+<img src="../../resources/mobilen/dergi_1/4.jpg" alt="4.jpg" width="100%">
+
+</figure>
+</div>
+</li>
+
+<li><a id="org072712f"></a>Uygulama İçi Yönlendirme<br>
+<div class="outline-text-4" id="text-org072712f">
+<p>
+Universal Link yeteneğini ekledikten sonra, uygulamanızın belirli bir sayfasına yönlendirebilmek için URL'yi karşılayacak bir metot belirlememiz gerekiyor. Bu metot, genellikle AppDelegate dosyasında bulunur.
+</p>
+
+<p>
+URL Scheme'de linklerimizi "open url: URL" metodunda handle ediyorduk, ancak Universal Link yönlendirmelerini "continue userActivity: NSUserActivity" metodunda handle ediyoruz.
+</p>
+
+<p width="80%">
+<img src="../../resources/mobilen/dergi_1/5.jpg" alt="5.jpg" width="80%">
+Örneğin, "www.myApp.com/app/profile" gibi bir linke tıkladığınızda bu metot handle edecektir.
+</p>
+
+<p>
+Bu kod yapısında,
+</p>
+<ul class="org-ul">
+<li>`url` = "www.myApp.com/app/profile?user=xKralTR"</li>
+<li>`view` = "profile"</li>
+<li>`parameters` = ["user" = "xKralTR"]</li>
+</ul>
+<p>
+olacaktır.
+</p>
+
+<p>
+Bu bilgilerin ışığında, uygulamanızın belirli bir sayfasına yönlendirebilme yeteneğine sahip olmuş olursunuz. Bu, uygulamanızın kullanıcı deneyimini önemli ölçüde geliştirebilir ve kullanıcıların uygulamanız içerisinde daha kolay bir şekilde gezinmelerini sağlar.
+</p>
+
+<p>
+Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha iyi anlamanızı sağlayabilir. Aşağıya bununla ilgili bir diyagram bırakıyorum. Yazımı okuduğunuz için teşekkürler, bir sonraki yazılarda görüşmek üzere.
+</p>
+
+
+<figure id="orga06170b">
+<img src="../../resources/mobilen/dergi_1/6.jpg" alt="6.jpg" width="100%">
+
+</figure>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org66e15ad" class="outline-3">
+<h3 id="org66e15ad">Kaynaklar</h3>
+<div class="outline-text-3" id="text-org66e15ad">
+<ol class="org-ol">
+<li><a href="https://medium.com/@ydemirkoparan/swift-ile-deep-linking-nas%C4%B1l-yap%C4%B1l%C4%B1r-e815fee93b97">Swift ile DeepLinking nasıl yapılır?</a></li>
+<li><a href="https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97">iOS Deep Linking Scheme vs Universal Links</a></li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org69c812d" class="outline-2">
+<h2 id="org69c812d">Evolution of the Medium iOS app architecture</h2>
+<div class="outline-text-2" id="text-org69c812d">
+<p>
+<a href="https://linkedin.com/in/myusufka">Yusuf Kaya</a> yazdı.
+</p>
+
+<p>
+Her alanda olduğu gibi bir mobil projesinde de sürekli olarak gelişen teknolojik trendlere uyum sağlamak da büyük bir önem taşımaktadır.
+</p>
+
+<p>
+Yeni mimari geliştirmeler, bir projenin başarısı için hayati bir rol oynamaktadır. Bu geliştirmeler, uygulamanın performansını artırırken, güvenlik açıklarını kapatmak ve gelecekteki ihtiyaçlarını karşılamak için tasarlanır.
+</p>
+
+<p>
+Yeni mimari yaklaşımlar, yazılım mühendislerine daha etkili bir şekilde çalışabilmeleri için daha fazla esneklik ve verimlilik sağlamayı amaçlar. Ayrıca, proje ekibine, uygulamanın yaşam döngüsü boyunca sürekli iyileştirmeler yapma ve yeni özellikler eklemek için daha iyi bir temel sunmayı amaçlar. Modüler mimari de projelerin geliştirilmesinde önemli bir yer tutan yenilikçi bir yaklaşımdır.
+</p>
+
+<p>
+<a href="https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e">Evolution of the Medium iOS App Architecture</a> yayınında da Medium'un iOS uygulamasının modüler mimari evrimini anlatmaktadır.
+</p>
+</div>
+
+<div id="outline-container-org9f91a8b" class="outline-3">
+<h3 id="org9f91a8b">Modüler Mimari Nedir?</h3>
+<div class="outline-text-3" id="text-org9f91a8b">
+<p>
+Modüler mimari, projelerin geliştirilmesinde kullanılan bir mimari yaklaşımıdır. Bu yaklaşım, bir uygulamayı bağımsız bileşenlere veya modüllere ayırarak, her bir modülün kendi sorumluluk alanına odaklanmasını ve birbirleriyle minimum bağımlılık içinde çalışmasını sağlar.
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org3d1a68d"></a>Modüler Mimarinin Faydaları<br>
+<div class="outline-text-4" id="text-org3d1a68d">
+<p>
+Modüler mimarinin faydaları şunlardır:
+</p>
+<ul class="org-ul">
+<li>Daha iyi organizasyon: Modüller arasında sorumluluk alanlarına odaklanarak projenin daha iyi organize edilmesi sağlanır.</li>
+<li>Paralel geliştirme: Farklı modüller, ayrı ekipler tarafından aynı anda geliştirilebilir.</li>
+<li>Yeniden kullanılabilirlik: Modüller, başka projelerde veya farklı parçalarda kolayca yeniden kullanılabilir.</li>
+<li>Bakım kolaylığı: Bağımsız modüllerin yönetimi, hataların tespitini kolaylaştırır ve bakım sürecini iyileştirir.</li>
+<li>Ölçeklenebilirlik: Projeyi büyütme veya değiştirme gerektiğinde, modüller arasındaki etkileşim minimum düzeyde olduğu için ölçeklenebilirlik sağlanır.</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org7408403" class="outline-3">
+<h3 id="org7408403">Medium Uygulamasının Evrimi</h3>
+<div class="outline-text-3" id="text-org7408403">
+<p>
+Bu bilgiler ışığında Medium'un iOS uygulamasının mimarisinin evrim serüveninin inceleyebiliriz. Kullanılan yeni teknikler ve yaklaşımlar, bu süreçte yaşanan zorluklar ve çıkarılan dersler bakımından faydalı bir yayın olduğunu düşünüyorum. Keyifli okumalar dilerim.
+</p>
+</div>
+</div>
+<div id="outline-container-org606ad6d" class="outline-3">
+<h3 id="org606ad6d">Kaynaklar</h3>
+<div class="outline-text-3" id="text-org606ad6d">
+<ol class="org-ol">
+<li><a href="https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e">Evolution of the Medium iOS App Architecture</a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+<footer>
+  <div class="copyright-container">
+    <div class="copyright">
+      &copy; 1071-20∞ Mobilen bazı hakları saklıdır.<br/>
+    </div>
+    </br>
+  </div>
+</footer>
+</div>
+</body>
+</html>

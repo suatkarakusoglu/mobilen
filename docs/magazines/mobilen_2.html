@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mobilen Dergi 2 Merhaba Temmuz 2023 Aklımda Kalanlar: Jake Wharton ile Röportaj Instagram'in Hikayesi iOS SwiftUI Swipe Actions Android Studio Bot Kitap: Make Something Wonderful WWDC 23 Hakkında Bilmeniz Gerekenler Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<p><small>Son Güncelleme: 2023-07-11 Tue 15:24</small></p>
+</div>
+<div id="content" class="content">
+
+<div id="outline-container-orgcbaa769" class="outline-2">
+<h2 id="orgcbaa769">Merhaba</h2>
+<div class="outline-text-2" id="text-orgcbaa769">
+<p>
+Herkese iyi bayramlar :)
+</p>
+
+<p>
+Bu sayımızda ünlü bir geliştiricinin macerasını, teknik bir component incelemesini, dünyanın en çok kullanılan uygulamalarından biri olan Instagram'ın ufak hikayesini bulabilirsiniz.
+Kullandığımız ve rastladığımız bazı geliştirme araçları hakkında linklerimizi yorumlarımızı da anlatmaya çalıştık.
+</p>
+
+<p>
+Bu ay ayrıca herkesin merakla beklediği etkinliklerden Apple WWDC'yi geçirdik.
+Mobil dünyanın yeni üyesi VisionPro ürününün tanıtımı oldu. '<a href="https://en.wikipedia.org/wiki/Spatial_computing">Spatial computing</a>' gibi bir mecranin bu cihazların ucuzlaması sonrası önümüzdeki yıllarda daha çok gündemimizde olması olası.
+</p>
+
+<p>
+Sizin de mobil konularda paylaşmak istedikleriniz var ise dergimizin <a href="https://github.com/suatkarakusoglu/mobilen/issues">Mobilen Github</a> sayfasında bir <code>issue</code> oluşturup <code>markdown</code> olarak bize iletebilirsiniz.
+</p>
+
+<p>
+Keyifli okumalar ;).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfa08ff0" class="outline-2">
+<h2 id="orgfa08ff0">Aklımda Kalanlar: Jake Wharton ile Röportaj</h2>
+<div class="outline-text-2" id="text-orgfa08ff0">
+<p>
+<a href="https://linkedin.com/in/betulsandikci">Betül Sandıkçı</a> yazdı.
+</p>
+
+
+<figure id="org87243ad">
+<img src="../../resources/mobilen/dergi_2/AklimdaKalanlarTitle.jpg" alt="AklimdaKalanlarTitle.jpg" width="200px">
+
+<figcaption><span class="figure-number">Şekil 1: </span>Photo by <a href="https://unsplash.com/@goian">Ian Schneider</a> on <a href="https://unsplash.com/?utm_source=medium&amp;utm_medium=referral">Unsplash</a></figcaption>
+</figure>
+
+<p>
+Merhabalar sevgili Mobilen okuyucuları, bu sayı için yazacağım yazıma tamamen tesadüf eseri Jorge Castillo'nun Jake Wharton'la yaptığı <a href="https://newsletter.jorgecastillo.dev/p/effective-interviews-jake-wharton">röportajı</a> okuyunca karar verdim.
+</p>
+
+<p>
+Röportaja ilk denk geldiğimde bir an durdum açıp okumadan önce. Çünkü bir Android Developer olarak malum topluluk içinde bir efsanedir kendisi. Bazıları abartıldığını düşünürken bazıları da hakkında kilise içindeki İsa'dır ve tartışmasızdır demektedir. Ama herkesin üzerinde mutabık olduğu bir konu varsa o da Jake'in üretkenliğidir.
+</p>
+
+<p>
+Topluluğu'u bir kenara bırakırsak onunla ilgili bildiklerim, duyumlarım, izlenimlerim neler? Bir çırpıda aklıma gelenleri özetlemek gerekirse; Androidle ilgili eksik ya da ağır işleyen ne varsa Jake'in düzenlemek için elini atıp yazdığı bir kütüphane var. Androidde güzel, kullanışlı ne varsa da Jake temellerini atmış ve sonunda Google da bu geliştirmeleri içeri almış, SDK'nın parçası haline getirmiş. Tüm bunların üstüne tabiki üretkenliği ve biraz da lafını sözünü sakınmayışı geliyor aklıma. Sakınmaması için sağlam gerekçeleri var ne de olsa :).
+</p>
+</div>
+
+<div id="outline-container-org4c75288" class="outline-3">
+<h3 id="org4c75288">Android'e Başlama Macerası</h3>
+<div class="outline-text-3" id="text-org4c75288">
+<p>
+JW ve Android hikayesi Google'ın 2007'de 10 milyon dolar ödüllü <a href="https://android-developers.googleblog.com/2007/11/posted-by-jason-chen-android-advocate.html">Android Developer Challange</a>'ı açıklamasıyla başlıyor. JW daha üniversitenin henüz başında ve <code>challange</code>'ı kazanarak gerçek hayatta bir işte çalışmak zorunda olmamak için denemelere başlıyor. <code>Challange</code> için tasarladığı uygulama bir çizim uygulaması. İşin içine girdikçe ve derinleştikçe kazın ayağının farklı olduğunu anlıyor. Bu 10 milyon basitçe kazanılabilecek bir miktar değil. Yeterince iyi olmadığını düşündüğü için projesini göndermekten vazgeçiyor. İyi ki bu tekrarlayan bir hastalık haline gelmemiş :D.
+</p>
+
+<p>
+Android Geliştirici olmaya karar verene değin daldan dala atlamış, başka alanlar denemiş. Ama en sonunda Androidde devam etmeye karar vermiş. Karar verme sebebi benimle ve birçok güncel Android Geliştirici ile aynı. Mac alacak kadar parası yok, Microsoft ölüyor ve gelecek mobilde. Gayet rasyonel. Romantik bir gerekçesi yok. Çünkü hiç kimse bir sabah uykusundan Android Android Android diyerek ya da başka bir teknolojiyi sayıklayarak uyanmıyor. Seçimlerimiz güncel gerçeklerimize ve bu gerçeklerle örtüşen tutkularımıza bağlı olarak şekilleniyor.
+</p>
+
+<p>
+JW'ın Android geliştici olma hikayesi tanıdık evet. Ama farklılaşan kısmı sonrası. JW'ın buraya kadarki hikayesinde beni düşündüren ve ibret aldığım şeyler var. Bir kez daha günceli takip etmenin önemi hemencik yakaladı beni. Sonunda bir ödül kazanılmayacak bile olsa bir müsabakaya girmek kendini, sınırlarını zorlamak çok önemli. Kaybetsen bile kazandıracak bir yöntem bu her şekilde. Tatmin edici bir deneyim. Burada Google'ın ve community'nin etkisinden de bahsetmek lazım. Sınırlarını zorlaman için birilerinin bir sınır koyması lazım doğal olarak önce. Community'ler ve teknoloji sahipleri de bu tür challangelar ile hem safları sıklaştırıyor hem teknolojilerini daha geniş çembere yayıyor hem de genç yeteneklerin ortaya çıkmasına vesile oluyor. Bence burada kökten uca kadar alınacak ibretler var. Çalışanların talepleri ve onları yönetenlerin vizyonu açısından. Takımlar arası müsabakalar keyifli, sıradışı ve eğlenceli olabilir mesela. Kim bilir eğer uslu çocuklar olurlarsa Şirinleri görmenin yanında nice JW'lar bile sıyrılabilir bu tür müsabakalarda.
+</p>
+
+<p>
+Hikayede dikkatimi çeken noktalardan diğer birisi de başlangıç için bir çizim uygulaması yapmayı seçmiş olması. Yeni birisi başlarken sonucu görmek istiyor. Çok doğru bir yerden başlamış kanaatimce. Artık ne haddimeyse JW'a doğru başlamış yanlış başlamış demek :), Ama dedim gitti işte. Mobile özel o ekranı tanımak açısından, yaptıklarının direk sonucunu görmek açısından aşırı doğru bir yöntem bence. Ben de <b>Compose</b>'u öğrenirken iç içe kareler çizerek başlamıştım. İnsan neyi doğru yapıp yapmadığını somut olarak, uğraşmadan görmek istiyor. Deneme yanılma şeklinde öğrenmede denedikten sonra yanılıp yanılmadığını anlayana kadar geçen süre kısalıyor ve verimlilik artıyor böylece. Bir konuyu yeni öğrenenlere UI'da kısa yoldan tepki alabilecekleri şekilde başlatmak güzel bir yöntem olabilir ve genç yetenekler için özellikle uygulanabilir.
+</p>
+
+<p>
+Jake ilk işine Android Developer olarak başlamıyor. Java miras kodlu bir server'da çalışarak başlıyor. Onun zamanında moda C# yazarak para kazanmak. Ama nedense talihin yardımıyla Java ile başlıyor mesleğe. Projeyi kurcalarken yeni şeyler keşfediyor. Projeyi <b>Git</b>'e geçiriyor. Projenin altyapısını farklı bir modele taşırken operasyonun her yönünü görüyor. Bu deneyimden sonra projenin altyapı görüntülemesini bir mobil uygulama üzerinden kontrol etme fikri aklına geliyor. Tam da bu anda ta taaa ilk açık kaynak kodlu kütüphanesini yayımlıyor ve bir Android Geliştiricisi oluveriyor. Sonrasında meşhur şirket <a href="https://github.com/square">Square</a>'e Android Geliştirici olarak geçiyor. Hikayesine ve üretmeye orada devam ediyor.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0b13b9c" class="outline-3">
+<h3 id="org0b13b9c">Açık Kaynak Koda Bakışı</h3>
+<div class="outline-text-3" id="text-org0b13b9c">
+<p>
+Açık kaynak koda geliştirme yapmaya tamamen bencilce bir yerden başlıyor. Kendi ihtiyaçlarını karşılamak için proje üretiyor ve bunu <a href="https://github.com/">Github</a>'a yüklüyor. O zamanlar private repolar ücretli olduğu için de private yapmaya gerek duymuyor. Böylelikle kod paylaşma serüveni doğal olarak duygusal sebeplerle başlamış oluyor :D. Bir kütüphaneyi ya da aracı yazarken community'nin ya da başkalarının ihtiyaçlarını gözeterek ve daha iyi olsunlar diyerek başlamıyor. Niyetinde kimseyi memnun etmek de yok. Kendi yazdığı ve paylaştığı projelere başkalarının dahil olması, birlikte üretmek zevkli, keyifli, güzel ama motivasyon kaynağı bu olamaz düşüncesinde.
+</p>
+
+<p>
+Bunalmamak ve motivasyon kaybına uğramamak için başkalarıyla gerektiğinde empati yapıyor gerektiğinde de onları görmezden geliyor. Motivasyonunu korumak için yaptığı şey çok basit. Temelde benim neye ihtiyacım var diye düşünmek ve ona göre hareket etmek. Sıfır noktasında düşüncelerle o kadar boğuşuyoruz ki başlamadan bırakıyoruz işlerimizi. Maskeyi önce kendimize takmalıyız.
+</p>
+
+<p>
+Açık kaynak kodlu yazılım üretmenin en faydalı yanı başka insanlarla yardımlaşmak. Profesyonel hayatta çalışamayacağın, imkanın olmayacak insanlarla aynı projede yer almak çok tatmin edici. Takip ettiğin, imrendiğin belki de onların yerinde olmak istediğin insanlarla bir anlamda iş arkadaşı olma şansı sunuyor açık kaynak koda destek vermek. Minimumda başkalarına yardım etme ve faydalı olma duygusu yaşatıyor insana. Maksimumda ise profesyonel olarak sonsuz ihtimallerin kapısını açıyor. Bu aralık zannımca fena bir aralık değil bir geliştirici için.
+</p>
+
+<p>
+Açık kaynak kodu geliştirirken Jake'in tavsiyesi kodu olabildiğince küçük ve odaklı tutmak. Her %15 fazla kod için aynı oranda geliştiriciye ihtiyaç var. Bu da bir süre sonra kar topu etkisi ile baş edilmez bir hale getiriyor projeyi. Herkesin ihtiyaçlarına kulak vermek ve ihtimallere göre geliştirme yapmak, sonrasında kodun sürdürülmesini imkansız hale getiriyor. Sürdürülemeyen kod da ölmeye mahkum oluyor. Çünkü bir süre sonra yapılması gereken hayati geliştirmeler bile yapılamayacak hale geliyor. Bu aslında sadece açık kaynak kod için değil herhangi bir yerde yazdığımız bir fonksiyon için de geçerli.
+</p>
+
+<p>
+İhtiyacı belirleyip bunun dışına çıkmamak anahtar nokta. <b>Solid'</b> in S'i olan <b>Single Responsibility</b> prensibi burada devreye giriyor. Ancak bunu uygulayabilmek prensibin anlamını bilmekten elbette çok çok daha zor. İster açık kaynak ister küçük bir method ne olduğu farketmeksizin baştan amacını iyi belirlemek ve sonrasında buna sadık kalmak ve en önemlisi Hayır demenin gücünü kullanmak. Doğru yerde ve zamanda "<i>Hayır diyebilmek</i>" çok önemli ve işlerin karmaşıklaşmasını engelliyor. Memnun edicilik değil iş bitiricilik önemli oluyor günün sonunda.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org87fa314" class="outline-3">
+<h3 id="org87fa314">JW'nin Google Macerası</h3>
+<div class="outline-text-3" id="text-org87fa314">
+<p>
+Gelelim Jake'in kimilerine göre yarıda bıraktığı Google tecrübesine. Tabiki doğası gereği magazinsel bir mevzu olduğu için dikkat çekmesi normal. Benim anladığım Square'den Google'a geçerken bir yapılacaklar listesi varmış elinde. Kaldığı süre boyunca da bunların yapılması için domino etkisi yaratmayı başarmış. Ancak günün sonunda fazla bürokrasi ve teknik sınırlamalardan dolayı yılmış, usanmış. Geliştiriciye geliştirmek ile gerçek dünya problemlerine çözüm geliştirmek arasında kalınca da gerçek dünya problemlerini tercih etmiş. Bu benim yolum benim tercihim diyor. Square'deki macerasına kaldığı yerden devam etmeye karar vermiş ve geri dönmüş.
+</p>
+
+<p>
+Verimli hissedemediği noktada bırakmaya karar vermesi oldukça ilham verici. Her ne kadar kolay gibi görünse de geldiğin yere geri dönmek cesaret gerektiren bir şey. Herşey bir kenara sadece egosal açıdan bile zor gelebilir. İçeride dışarıda olduğu kadar etkin olamadığını farkettiğinde gemiyi terketmeyi seçmiş. Ben mesela yapabilir miydim diye düşünüyorum? Bir yönüm çok yapılabilir dese de işin için de olduğumda bu kararı alırken oldukça zorlanacağımı, tüm cesaret toplamam gerekeceğini biliyorum. Neticede "<a href="https://medium.com/incerto/what-do-i-mean-by-skin-in-the-game-my-own-version-cc858dc73260">skin in the game</a>" diye bir şey var.
+</p>
+
+<p>
+Jake'in CashApp'teki günleri aşırı planlı, düzenli, moda mod geçmiyormuş. Genellikle zamanının büyük kısmını açık kaynak koda ayırıyormuş. Kalan zamanda da küçük işleri toparlamak, PR'ları kontrol etmek, işleri adımlamakla geçiyormuş. Square açık kaynak kodu mesai dışı bir iş gibi görmüyor aksine bizatihi işin kendisi olarak görüyor ve destekliyor. Çünkü yeteneği içeri almak kadar onu tutmak, beslemek ve parlatmak da çok önemli. Takımlara ve yöneticilere düşecek bir hisse de bu olabilir belki.
+</p>
+
+<p>
+Toplantı konusu teknik insanların profesyonel dünyada en sıkıcı bulduğu konuların başında geliyor. JW bu konuda kalabalık olanların seyrek olması en iyisi, bunun dışında bireysel bağlantılar daha verimli oluyor görüşünde çoğumuz gibi. Toplantı konusunda da <i>Solid</i>'in <i>S</i>'ini kullanmakta fayda var gibi :D .
+</p>
+
+<p>
+İşin başındakilere en önemli tavsiyelerinden birisi ürünün vizyonuna kendinizi aşırı kaptırmayın. Böyle olursa kişi kendi başarı duygusunu ürünün iniş çıkışlarına bağlayabiliyor. Ancak önemli olan zorlu teknik sorunları bulmak ve çözmeye odaklanmak. Ürünler geçicidir oysa bu yetkinlikler kalıcıdır. Özetle Jake ürünü önemseyin ama yeteri kadar, bir dengesi olsun görüşünde. Odaklılık konusunda denge bulunması gerektiği ve bıçağını bileylemenin en önemlisi olduğuna katılıyorum. Senin bıçağın keskinse gelen her şeyi kesersin. Ama bıçağı kütmemek için de neyi ne kadar keseceğini bilmelisin ;) .
+</p>
+
+<p>
+Üretkenliği korumak için Jake'in taktiklerinden birisi çok fazla çalışmaya gerek kalmadan yapılabilecek bir sürü kolay görevleri halletmek. Bu taktik zihinsel olarak gevşemeyi sağlarken, diğerleri gözünde de üretkenliğinizi korumayı sağlıyor . Aynı taktik tükenmişlik hissi yaşandıktan sonra ilerleme hissini yeniden kazanmaya yardımcı olmak için de kullanılabilir.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7309107" class="outline-3">
+<h3 id="org7309107">Zaman Yönetimi ve Çocuklu Hayat</h3>
+<div class="outline-text-3" id="text-org7309107">
+<p>
+Çocuklu hayata geçtikten sonra zamanın daha da önemli bir kaynak haline geldiğinden ve onu korumak ve boşa sarfetmemek için de elinden geleni yaptığından bahsediyor. Kimsenin bölemeyeceği, bildirimlerin kapalı olduğu büyük bloklu zaman dilimleri yaratmak, müsaitliğinin başkaları ile eşzamanlı olamayacağı konusunda beklentileri yönetmek, arta kalan yetişemediği küçük işlerde de başkalarına güvenmek; Jake'in hayatında uyguladığı bazı yöntemler. Yan projelerde çalışabilmek için az az küçük zaman parçalarını değerlendiriyormuş. Aralardaki küçük zaman dilimlerinde az az çalışarak işlere odaklanmak tek bir anda o işi bitirmeye çalışmaktan çok daha motive edici diyor.
+</p>
+
+<p>
+Ayrıca zaman kısıtının onu çok daha verimli hale getirdiğini çünkü hangi projelerin zamanını aldığını ve bunların onu gerçekten zaman ayırmaya değip değmeyeceğini düşünmeye zorladığından bahsediyor. Sınırsız beyin gücü ve zaman verildiğinde, aklımıza gelen her yeni şeyin peşine düşeriz. Gerçekten önemli olanın ne olduğunu unuturuz. Ancak sabahları ve akşamları tamamen ortadan kalktığında ve iyi bir uyku ihtiyacı arttığında, o gün sahip olabileceğimiz 2 saatin değeri 10 kat artacaktır. Zamanımız kıymetli, doğru şekilde doğru yerlere harcamalıyız. Zaman en önemli maaliyet kalemidir.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga169bbf" class="outline-3">
+<h3 id="orga169bbf">Teknik Yetiler, Yöneticilik ve Hobiler</h3>
+<div class="outline-text-3" id="text-orga169bbf">
+<p>
+Röportajın kalan kısımlarında Jake <a href="https://square.github.io/dagger/">Dagger</a> 1 ve 2 arasındaki farktan, hobisi olan araba yarışlarından ve arabalardan, şu anda üzerinde çalıştığı ve onu heyecanlandıran projelerden, ileride yönetici olmayı düşünüp düşünmediğinden ve daha başka küçük küçük bir çok detaydan bahsediyor.
+</p>
+
+<p>
+Jake kendisi hakkında <a href="https://developers.google.com/community/experts/directory/profile/profile-jake-wharton">Google Experts</a> sayfasında; "Temiz sınırlara, iyi soyutlamalara ve sezgisel API'lere sahip açık kaynak kodlu kütüphaneler ve araçlar üzerinde çalışan Android Geliştiricisi. Bazen. Ayrıca ara sıra bu kütüphanaleri kullanan bir uygulama üzerinde çalışır." şeklinde tanımlamış. Kendisini tanımlama şekli ve röportaj birleşince çok güzel örtüşüyor zihnimde. Açık kaynak koda odaklanmış motive bir hayatı ve arta kalan zamanlarda çalıştığı <a href="https://cash.app/">CashApp</a> diye bir gerçek hayat projesi var ve <a href="https://code.cash.app/">teknik blogu da</a> faydali.
+</p>
+
+<p>
+Nicedir bildiğim ama röportajdan sonra daha emin olduğum şey ise verimlilik ve motivasyon açısından Hayır demenin gücü. Bu yeti yoksa da öğrenilmeli. Neye hayır dediğimiz ve deme şeklimiz kariyer yolumuzu ve onun zorluklarını belirliyor neticede.
+</p>
+
+<p>
+Son olarak da Jake'in bir tavsiyesi ile sonlandıralım yazımızı. Takıldığınız yerde mutlaka mola verin, yürüyüş yapın, çay-kahve için, film izleyin, sonra geri gelin bir daha uğraşın. Çünkü programlama yaratıcılık isteyen bir şeydir, zorlamayın.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga9addad" class="outline-3">
+<h3 id="orga9addad">Kaynaklar</h3>
+<div class="outline-text-3" id="text-orga9addad">
+<p>
+<a href="https://newsletter.jorgecastillo.dev/p/effective-interviews-jake-wharton">Jack Wharton Röportajı</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8bfdf30" class="outline-2">
+<h2 id="org8bfdf30">Instagram'in Hikayesi</h2>
+<div class="outline-text-2" id="text-org8bfdf30">
+<p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+<p>
+Sosyal hayatımızın en önemli aktörlerinden birisi olan Instagram'ın geçmişine dair <a href="https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02">Burbn'in Instagram'a dönüşümü</a> yazısına okudum.
+</p>
+
+<p>
+Yazıyı okumanızı tavsiye ederim.
+Bu yazıda rastladığım bir konu <code>feature bloat</code> karmaşasına karşı yaklaşım.
+</p>
+
+<p>
+Instagram'ın Foursquare gibi bir çok yeteneğin yanına harici yetenekleri de yapmaya çalıştığı zamanlardan yalnızca <code>fotoğraf yayınlama</code> + <code>filtre uygulama</code> + <code>like</code> edebilme yeteneklerine odaklanması sayesinde ürün tanımı daha oturaklı bir çerçeveye çekilmiş ve bu Instagram'ın hızlı yükselişinde önemli rol oynamış.
+</p>
+
+<p>
+Bana Zawinski'nin aşırı özellikle şişen uygulamalar hakkındaki alaycı ifadesini hatırlattı:
+</p>
+</div>
+
+<div id="outline-container-orgce7e487" class="outline-3">
+<h3 id="orgce7e487">Zawinski's Law</h3>
+<div class="outline-text-3" id="text-orgce7e487">
+<blockquote>
+<p>
+"Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can."
+</p>
+
+<p>
+"Her program email okuyucusu olana kadar gelişir, gelişmeyenler ise gelişenler ile değiştirilir."
+&#x2014; <a href="https://www.jwz.org/about.html">Jamie Zawinski</a>
+</p>
+</blockquote>
+
+<p>
+Jamie <a href="http://www.catb.org/jargon/html/Z/Zawinskis-Law.html">Zawinski's Law</a> bu kurala "Law of Software Envelopment" diyor.
+Bu tuzağa çok yakalanmadan ürünlerin karakteristiğinin ve sınırlarının çizilmesi gerekiyor.
+Burada işin içine elbette sunulan özelliklerin düzgün bir kullanıcı deneyim tasarımı ile kullanıcının karşısına çıkması gibi derin konulara doğru ilerliyor.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgde9e131" class="outline-3">
+<h3 id="orgde9e131">Kaynaklar</h3>
+<div class="outline-text-3" id="text-orgde9e131">
+<ul class="org-ul">
+<li><a href="https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02">Burbn'in Instagram'a dönüşümü</a></li>
+<li><a href="http://www.catb.org/jargon/html/Z/Zawinskis-Law.html">Zawinski's law</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc69c111" class="outline-2">
+<h2 id="orgc69c111">iOS SwiftUI Swipe Actions</h2>
+<div class="outline-text-2" id="text-orgc69c111">
+<p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+
+<figure id="orgcc16378">
+<img src="../../resources/mobilen/dergi_2/SwipeActions.jpg" alt="SwipeActions.jpg" width="100%">
+
+<figcaption><span class="figure-number">Şekil 2: </span>Örnek Swipe Actions</figcaption>
+</figure>
+</div>
+<div id="outline-container-org96417a2" class="outline-3">
+<h3 id="org96417a2">Swipe Actions nedir?</h3>
+<div class="outline-text-3" id="text-org96417a2">
+<p>
+Merhabalar, herhangi bir ui elemanının üzerinden <code>swipe</code> ile çıkan aksiyonlar iOS kullanıcı deneyiminde önemli rol oynuyor.
+</p>
+
+<p>
+Kullanıcı deneyimi açısından view'ın altında gizli, sağından veya solundan çıkan bu aksiyonlar görünmüyor olsa bile özellikle iOS kullanıcıları bu davranışı listelerde arayabiliyor.
+</p>
+
+<p>
+Davranış olarak sağ ve sol demek yerine burada tercih edilen jargon <code>leading</code> ve <code>trailing</code>, bunun başlıca sebebi dillerin sağdan sola veya soldan sağa olarak 2 farklı şekilde yazılabilmesi.
+Soldan sağa yazılan dillerde sol-leading, sağ trailing iken, arapça-farsça gibi dillerde sol-trailing, sağ ise leading olmakta.
+</p>
+
+<p>
+Swipe aksiyonları yazabilmek için yardımcı araçlar mevcut.
+</p>
+
+<p>
+<code>Native</code> olarak SwiftUI tarafından iOS 15 ile SwiftUI List'elerine eklendi.
+<a href="https://developer.apple.com/documentation/swiftui/view/swipeactions(edge:allowsfullswipe:content:)">iOS 15 SwiftUI SwipeActions</a> adresinden native yöntem incelenebilir.
+</p>
+
+<p>
+Ancak iOS-14 destekliyorsanız veya herhangi bir SwiftUI view'e swipe aksiyonları eklemek isterseniz bunun için güzel bir SwiftUI component'i açık kaynak olarak geliştirilip github'a <code>spm</code> destekli olarak koyulmuş.
+</p>
+
+<p>
+Bu yazımızda <a href="https://github.com/aheze/SwipeActions">Açık Kaynak SwipeActions Reposu</a>'nu inceleyeceğiz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b3e9f1" class="outline-3">
+<h3 id="org9b3e9f1">SwipeActions Kullanımı</h3>
+<div class="outline-text-3" id="text-org9b3e9f1">
+<div class="org-src-container">
+<pre class="src src-swift">import SwiftUI
+import SwipeActions
+
+struct ContentView: View {
+    var body: some View {
+	SwipeView {
+	    Text("Hello")
+	      .frame(maxWidth: .infinity)
+	      .padding(.vertical, 32)
+	      .background(Color.blue.opacity(0.1))
+	      .cornerRadius(32)
+	} trailingActions: { _ in
+	    SwipeAction("World") {
+		print("Tapped!")
+	    }
+	}
+	  .padding()
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8f8cda5" class="outline-3">
+<h3 id="org8f8cda5">Kaynak Kod Okuma: <code>PreferenceKey</code> kullanımı</h3>
+<div class="outline-text-3" id="text-org8f8cda5">
+<p>
+Veri iletişimi view componentleri arasında Environment Objeler uzerinden <code>Parent</code> → <code>Child</code> view yönünde olabiliyor.
+Veya data binding ile <code>@Binding</code> çift taraflı <code>reactive</code> şekilde sağlanabiliyor.
+</p>
+
+<p>
+PreferenceKey ile olan bu veri iletişiminde ise diğer bir ihtiyaç olan ise <code>child</code> → <code>parent</code> arasında veri geçişi yapabiliyoruz.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift">struct AllowSwipeToTriggerKey: PreferenceKey {
+    static var defaultValue: Bool? = nil
+    static func reduce(value: inout Bool?, nextValue: () -&gt; Bool?)
+    { value = nextValue() }
+}
+</pre>
+</div>
+
+<p>
+Preference key tanımlarken ihtiyaç duyulan <code>PreferenceKey</code> protocol'unu <code>conform</code> etmek.
+Bunun için bir varsayılan değer <code>defaultValue</code> gerekiyor.
+Ayrıca ikinci olarak <code>reduce</code> fonksiyonu, bu fonksiyon dışarıdan sağlanan değerin preference olarak set edilmesine müdahale edilebilecek noktayı sağlıyor.
+</p>
+
+<p>
+Kullanımı için 2 tane <code>modifier</code>'imiz mevcut: <code>preference</code> ve <code>onPreferenceChange</code>.
+</p>
+
+<p>
+Preference Key ile veriyi yukarı aktarma <a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L328">burada</a> gorebilirsiniz:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">view.preference(key: AllowSwipeToTriggerKey.self, value: allowSwipeToTrigger)
+</pre>
+</div>
+
+<p>
+Preference Key ile aşağıdan gelen veriyi <a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L417">burada</a> okuma:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">view.onPreferenceChange(AllowSwipeToTriggerKey.self) { allow in
+    /// Unwrap the value first (if it's not the edge action, `allow` is `nil`).
+    if let allow {
+	swipeToTriggerLeadingEdge = allow
+    }
+}
+</pre>
+</div>
+
+<p>
+Ayrıca apple sdk'inde de <code>navigationTitle</code> modifier'i ile <code>preference key</code> kullanılarak <code>child</code> üzerinden çağırılan bir method ile üst view'deki <code>title</code>'i değiştirebiliyor.
+</p>
+
+<p>
+Özetle hiyerarşide yukarı veri taşıyabilmek için kullanılan bu yapının kullanıldığını görüyoruz.
+Daha detaylı anlamak için <a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a> yazısına göz atabilirsiniz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org76766a3" class="outline-3">
+<h3 id="org76766a3">Extension methodlara Generic Constraint Uygulamak</h3>
+<div class="outline-text-3" id="text-org76766a3">
+<p>
+<code>Generic</code> kullanarak <code>extension method</code>'larının yalnızca ilgili tipler ile kullanılmasını derleme seviyesinde sağlamak tatlı bir özellik.
+<a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L986">Burada</a> ilgili örneği görebilirsiniz.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-swift">public extension SwipeAction where Label == Text, Background == Color {
+    // Buraya yazılan methodlar yalnızca
+    // Label Generic Parametresi Text olan ve Background'u Color olan 'SwipeAction'lara önerilir.
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org55141c1" class="outline-3">
+<h3 id="org55141c1">Kaynaklar</h3>
+<div class="outline-text-3" id="text-org55141c1">
+<ol class="org-ol">
+<li><a href="https://github.com/aheze/SwipeActions">SwipeActions Repo</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/preferences?changes=_7">Apple PreferenceKey Dokümantasyonu</a></li>
+<li><a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a></li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4efafb1" class="outline-2">
+<h2 id="org4efafb1">Android Studio Bot</h2>
+<div class="outline-text-2" id="text-org4efafb1">
+<p>
+<a href="https://tr.linkedin.com/in/tu%C4%9Fbaberk">Tuğba Berk</a> yazdı.
+</p>
+
+<p>
+Google IO etkinliği, 10 Mayıs 2023 tarihinde gerçekleşti. Bu etkinlikte Google'ın yapay zeka desteğini mevcut araçlarına entegre ettiğini gördük. <code>Google Play Store</code>, <code>Google Haritalar</code>, <code>Google Mail</code> ve <code>Android Studio</code> gibi birçok araç bu yenilikler arasında yer aldı.
+</p>
+
+<p>
+Yapay zekadaki bu gelişmeler, kod yazarken bize çeşitli faydalar sunmaya başladı bile. Bu yeni yapay zeka gelişmelerine ayak uydurabilen yazılımcılar olmak istiyorsak, Android Studio Bot'u hızlı bir şekilde öğrenmek önemli görünüyor. Kendi rollerimizi ve bu sistem içindeki araçlarımızı iyi anlamamız gerekebilir.
+</p>
+
+<p>
+Peki, Android Studio Bot nedir? Kimler kullanır? Kullanmalı mıyız? Nasıl kuracağız? gibi sorulara cevap verelim.
+</p>
+</div>
+
+<div id="outline-container-org5d7ce22" class="outline-3">
+<h3 id="org5d7ce22">Android Studio Bot Nedir?</h3>
+<div class="outline-text-3" id="text-org5d7ce22">
+<p>
+<a href="https://developer.android.com/studio/preview/studio-bot">Android Studio Bot</a> bir yapay zeka asistanıdır.Android geliştiricilerin kod yazmalarına ve hatalarını çözmelerine yardımcı olmak için kullanabilecekleri bir araçtır. Android Studio Bot, <a href="https://blog.google/technology/developers/google-colab-ai-coding-features/">Codey</a> adlı yapay zeka asistanının AI yeteneklerini kullanarak geliştiricilere yardımcı olur. Codey, Google'ın temel dil modeli olan <a href="https://blog.google/technology/ai/google-palm-2-ai-large-language-model/">PaLM 2</a>'yi kullanarak geliştirilen bir yapay zeka asistanıdır. Aslında, Google Colab ile çalışabilen bir bot diyebiliriz. Kısacası, Studio Bot, Codey'in sunduğu yetenekleri Android Studio ortamında daha kolay ve erişilebilir hale getirmiştir.
+</p>
+
+<p>
+"ChatGPT" ve "Copilot" gibi araçlar mevcut olmasına rağmen, neden Studio Bot'a ihtiyaç duyacağımızı sorabilirsiniz. Benim cevabım şu: "Android Studio'dan çıkmadan kod araştırması yapmak ve sekme açmakla uğraşmamak daha pratik ve hoş olmaz mı?" Elbette, bu aracın sağladığı bilginin doğruluğu kullanmasında en önemli faktör olacaktır. Bu nedenle, doğruluğunu sağlamak için nasıl kullanmamız gerektiğini öğrenmeli ve deneyimlemeliyiz.
+</p>
+
+<p>
+Google, Studio Bot kullanımını kolaylaştıran kısayollar hakkında bilgi verdi. Bu kısayollar sayesinde önemli bir zaman tasarrufu sağlanacağını düşünüyorum. İşte bazı örnekler:
+</p>
+
+<ul class="org-ul">
+<li>Tek tık ile kod ekleme</li>
+</ul>
+
+<p>
+Studio Bot, oluşturduğu kodun yanında akıllı eylemler sunar. Bu eylemlerden biri, kodu hızlı bir şekilde açık editöre eklemenizi sağlar. Örneğin, bir internet izni kullanmanız gerektiği cevaplarda yer alıyorsa, "kod ekle" aksiyonunu tıkladığınızda Studio Bot, internet iznini manifest dosyasına ekler. Ayrıca, kodun nereye yazılması gerektiğini bilir, bu da bizi kopyala-yapıştır işlemlerinden kurtarır.
+</p>
+
+<ul class="org-ul">
+<li>Yardımcı kaynaklara erişmek</li>
+</ul>
+
+<p>
+Belirli konular için, Studio Bot ilgili belgelendirme sayfasını açarak daha fazla bilgi sağlama seçeneği sunar. Size kaynak linklerine erişim sağlar, yani "oku, öğren, daha çok soru sor" gibi bir şey =)
+</p>
+
+<ul class="org-ul">
+<li>Bot'a kod'un içinden direkt soru sormak</li>
+</ul>
+
+<p>
+Kod düzenleyicisinde metni seçip sağ tıklayarak ve "<code>Ask Studio Bot</code>" işlemini seçerek sohbet kutusunu seçilen kodla doldurabiliriz. Oradan, kodu gönderip göndermeme konusunda karar verebiliriz. Studio Bot, açık izniniz olmadan kod göndermeyecektir. "Ask Studio Bot" ayrıca kod düzenleyicisindeki uyarıları ve hataları gidermeniz için size yardımcı olabilir.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1011c46" class="outline-3">
+<h3 id="org1011c46">Android Studio Bot Nasıl Kurulur?</h3>
+<div class="outline-text-3" id="text-org1011c46">
+<p>
+Studio Bot'u kurma ve kullanma konusunda bazı sorular sormaya başladığınızı düşünerek size üzücü bir haber vermek istiyorum. Şu anda Google, Studio Bot'u yalnızca ABD'de kullanıma sunmuştur. Bu nedenle, sadece ABD'deki kullanıcılar ücretsiz olarak erişebilirler.
+</p>
+
+<p>
+Ancak, Studio Bot'u nasıl kuracağınızı bilmek isterseniz, aşağıdaki adımları takip edebilirsiniz:
+</p>
+
+<ol class="org-ol">
+<li>İlk olarak, en son sürüm olan Android Studio Hedgehog | 2023.1.1 Canary 4'ü indirmeniz gerekmektedir.</li>
+<li>Studio Bot'u daha etkin bir şekilde kullanmanız için veri paylaşma iznini onaylamanızı tavsiye ediyoruz. Bu izni etkinleştirmek için "Android Studio &gt; Ayarlar &gt; Görünüm ve Davranış &gt; Sistem Ayarları &gt; Veri Paylaşımı" yolunu izleyebilirsiniz.</li>
+<li>Var olan bir projeyi açın veya yeni bir proje oluşturun. Ardından "Görünüm &gt; Araç Pencereleri &gt; Studio Bot" seçeneğine tıklayın.</li>
+<li>Eğer istenirse, Google hesabınıza giriş yapın. Artık Studio Bot'u kullanmaya başlayabilirsiniz.</li>
+</ol>
+
+<p>
+Bu şekilde Studio Bot'u kurabilir ve kullanabilirsiniz. Ancak unutmayın, şu anda sadece ABD'deki kullanıcılar ücretsiz olarak erişilebilmektedir.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org956f465" class="outline-3">
+<h3 id="org956f465">Android Studio Bot'u Kullanmalı mıyız?</h3>
+<div class="outline-text-3" id="text-org956f465">
+<p>
+Gelin, Studio Bot'u kullanmalı mıyız konusuna değinelim. Şahsi fikrime göre, dünyada gelişen ve değişen şeylere katılmak ve bu dönüşümün bir parçası olmak, işimizin en keyifli yanıdır. Aslında, bu keyifli deneyimi kaçırmamak için hepinizi teşvik etmek isterim.
+</p>
+
+<p>
+Ancak, burada dikkat etmemiz gereken önemli bir nokta var: Studio Bot, öğrenmekte olan bir çocuğun sizin elinizde büyüyeceğinin bilincinde olmanızı gerektirir ve şirketinizin özel bilgilerini bu platform üzerinden paylaşmamalısınız. İyi olduğu kadar kötülerin de kod yazabileceğini unutmamamız önemlidir. Ve bu yeni dünyaya biraz daha kontrollü bir şekilde yaklaşmamız gerekmektedir.
+</p>
+
+<p>
+Sonuç olarak, yapay zeka teknolojileri ile olan etkileşimimiz artıyor ve gelişiyor. Studio Bot gibi araçlar, geliştiricilerin kod yazma sürecini kolaylaştırmayı ve verimliliği artırmayı hedefliyor. Bu nedenle, yeni teknolojilere ve araçlara açık olmak, gelişmeleri takip etmek ve deneyimlemek önemlidir. Ancak, her aracın avantajlarını ve dezavantajlarını anlamak ve doğru bir şekilde kullanmak da gereklidir.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgae1eb2a" class="outline-3">
+<h3 id="orgae1eb2a">Kaynaklar</h3>
+<div class="outline-text-3" id="text-orgae1eb2a">
+<p>
+<a href="https://developer.android.com/studio/preview/studio-bot">Android Studio Bot Preview</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org03b6d04" class="outline-2">
+<h2 id="org03b6d04">Kitap: Make Something Wonderful</h2>
+<div class="outline-text-2" id="text-org03b6d04">
+<p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+
+<figure id="org76924d5">
+<img src="../../resources/mobilen/dergi_2/stevejobs_with_bicycle.jpg" alt="stevejobs_with_bicycle.jpg" width="100%">
+
+<figcaption><span class="figure-number">Şekil 3: </span>Bilgisayar zihnin bisikletidir.</figcaption>
+</figure>
+
+<p>
+Steve Jobs'un aramızdan ayrılışının üzerinden 12 sene geçmiş :/.
+</p>
+
+<p>
+İşlerinde ve ilişkilerinde hayatına dair daha derin bir bakış açısı yakalayabileceğimiz konuşmalarını, yazışmalarını ve hatıralarını
+biriktiren ve sanki kendisinin ağzından yazılmış bir kitap olarak ücretsiz yayınlanan bu kitabı zevkle okuyacağınıza inanıyorum.
+</p>
+
+<p>
+İçerisindeki konulara değinmek gerekirse:
+</p>
+<ul class="org-ul">
+<li>Apple'dan ayrılışı, NeXT'in kuruluşu ve sonrasında tekrar Apple'a satılıp geri dönüşündeki hikayeler.</li>
+<li>Pixar'da elde ettiği başarılar.</li>
+<li>Teknolojiyi, sanatı, kullanıcı deneyimini iç içe görmesi ve kendi eğitim hayatındaki yaklaşımlarını bulabilirsiniz.</li>
+</ul>
+
+<p>
+<a href="http://apple.co/sja">Apple Books</a> üzerinden veya <a href="https://stevejobsarchive.com/book/download">indirerek</a> faydalanabilirsiniz
+</p>
+</div>
+</div>
+
+<div id="outline-container-org02ca332" class="outline-2">
+<h2 id="org02ca332">WWDC 23 Hakkında Bilmeniz Gerekenler</h2>
+<div class="outline-text-2" id="text-org02ca332">
+<p>
+<a href="https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8">Alper Cem Öztürk</a> yazdı.
+</p>
+
+<p>
+Apple'ın WWDC'si geçtiğimiz günlerde gerçekleşti ve hem kullanıcılar hem de geliştiriciler için bir ton yeni özellik ve geliştirmeden bahsedildi. Hatta hepimizin yıllardır sızıntılardan takip ettiği tamamen yeni bir cihaz ve beraberinde işletim sistemi bile duyuruldu.
+</p>
+
+<p>
+Bu yazıda, bir geliştiricinin bakış açısından bu yılın WWDC'sindeki favori güncellemelerimden bahsedeceğim. Bu yeniliklerle oynamak için çok fazla zamanım olmadığınından deneyimim çoğunlukla <a href="https://developer.apple.com/wwdc23/101">Keynote</a> ve <a href="https://developer.apple.com/wwdc23/102">Platforms State of the Union</a> sunumlarına dayandığını belirtmekte fayda var.
+</p>
+</div>
+
+<div id="outline-container-org4471d1c" class="outline-3">
+<h3 id="org4471d1c">Vision Pro</h3>
+<div class="outline-text-3" id="text-org4471d1c">
+
+<figure id="orgd65cf08">
+<img src="../../resources/mobilen/dergi_2/vision_pro.jpg" alt="vision_pro.jpg" width="100%">
+
+<figcaption><span class="figure-number">Şekil 4: </span>Vision Pro</figcaption>
+</figure>
+
+<p>
+Etkinliğin en gözdesininden ilk bahsetmek en doğrusu olur diye düşünüyorum. Vision Pro, Apple'ın on yıldan uzun süredir geliştirilmekte olduğu artırılmış ve sanal gerçeklik cihazı. Çoğu kişi tarafından bu cihaz bir <b>headset</b> olarak isimlendirilse de Apple bu isimlendirmeyi kullanmaktan kaçınıyor. Bunun yerine sanal dünyayı gerçek dünya ile harmanlaması nedeniyle uzamsal bilgisayar (spatial computing) olarak adlandırıyor.
+</p>
+
+<p>
+Apple, artırılmış gerçeklik deneyimi için etrafınızdakileri haritalandıran ve bunu sanal öğelerle zenginleştirilmiş dijital bir görüntüye çeviren kameralar kullanıyor. Sanal gerçeklik deneyimi için ise, bu kameraları kapatıp ve etrafınızda olup bitenlerden tamamen izole edilmiş gibi görünmenizi sağlayarak, yalnızca cihazın ekranlarında görüntülenenlere odaklanmanızı sağlıyor.
+</p>
+
+<p>
+Vision Pro, Apple'ın cihaz için özel olarak tasarladığı bir işletim sistemi olan <b>visionOS</b>'u çalıştırıyor. VisionOS, kullanıcıyı çevreleyen alanda herhangi bir yere konumlandırılabilen uygulama pencereleriyle "sonsuz bir tuval" sağlamak üzere tasarlanmış.
+</p>
+
+<p>
+Apple, Vision OS için tercih edilen geliştirme ortamının SwiftUI olduğu konusunda oldukça net bir tavır sergiledi. Elbette mevcut UIKit kodunuz kullanılabilecek ancak yeni başlangıçlar için en iyi seçim SwiftUI olacaktır.
+</p>
+
+<p>
+Apple, SwiftUI desteğini daha çok arttırabilmek için Button, Toggle ve TabView gibi bir uygulamanın temel yapı taşlarından, Freeform'daki 3D panolar gibi yepyeni deneyimlere kadar tüm bunları ve çok daha fazlasını SwiftUI'ın desteklemesi için ayrıca çalıştığını belirtiyor.
+</p>
+
+<p>
+VisionOS için daha derinlemesine bir SwiftUI deneyimine ihtiyaç duyuyorsanız <a href="https://developer.apple.com/wwdc23/10109">Meet SwiftUI for Spatial Computing</a> videosuna bir göz atmanızda fayda var.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0f857b6" class="outline-3">
+<h3 id="org0f857b6">Swift Macros</h3>
+<div class="outline-text-3" id="text-org0f857b6">
+<p>
+Hepimizi heyecanlandıran bir diğer haber ise Swift Macros'un duyurulmasıydı. Daha önceden zaten property wrappers ve function builders gibi tool'lara sahiptik. Bu tool'lar, arka plandaki mantığı kapsüllememize ve boilerplate kod miktarını azaltmamıza olanak sağlayan özelliklerdi. Swift 5.9 ile birlikte, toolkit'e makrolar da ekleniyor. Makrolar, daha fazla esneklik sağlayarak kod yazma sürecinde daha fazla kontrol ve kolaylık sunmayı vadediyor. Bu yeni özellik, Swift geliştiricilerinin daha temiz ve okunabilir kod yazmalarına önemli bir katkı sağlayacağa benziyor.
+</p>
+
+<p>
+Swift makroları diğer tool'lardan oldukça farklı bir şekilde çalışır ve size farklı imkanlar sunar. Property wrappers'dan farklı olarak, Swift makroları derleme zamanında çalıştırılır. Bu da, kodunuzu derlemeye geçirmeden önce bile çalıştırarak hataları ve uyarıları tespit edebileceğiniz anlamına gelir. Bu özelliği sayesinde, Xcode'un sağladığı uyarıları kullanarak kodunuzu daha önceden doğrulayabilir ve olası hataları önleyebilirsiniz. Bu yönüyle, Swift makroları geliştiricilere daha güvenli ve hata ayıklamaya daha uygun bir ortam sunuyor.
+</p>
+
+<p>
+Swift makroları ile alakalı daha detaylı inceleme yapmak isterseniz, <a href="https://developer.apple.com/wwdc23/10167">Expand on Swift Macros</a>'a bir göz atmanızda fayda var.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgda97b5a" class="outline-3">
+<h3 id="orgda97b5a">SwiftUI Yenilikleri</h3>
+<div class="outline-text-3" id="text-orgda97b5a">
+<p>
+Her yıl SwiftUI yenilik ve iyileştirmelerine UIKit'in yerini tamamen alabilir mi gözüyle bakıyoruz. Her ne kadar buna daha zaman var gibi dursa da, bu yılki SwiftUI yenilikleri de bir hayli göze çarpıyor.
+</p>
+
+
+<figure id="org74c827b">
+<img src="../../resources/mobilen/dergi_2/observable_macro.jpg" alt="observable_macro.jpg" width="100%">
+
+<figcaption><span class="figure-number">Şekil 5: </span>SwiftUI için yeni macrolar</figcaption>
+</figure>
+
+<p>
+Bu yılki SwiftUI değişiklikleri, veri akışını daha da sadeleştirmeyi hedefliyor. <code>StateObject</code>, <code>@ObservedObject</code> ve <code>@EnvironmentObject</code> property wrapper'ları <code>@State</code> ve <code>@Environment</code> altında toplanmış.
+</p>
+
+
+<figure id="orgcb8dd01">
+<img src="../../resources/mobilen/dergi_2/macro_usage.jpg" alt="macro_usage.jpg" width="100%">
+
+<figcaption><span class="figure-number">Şekil 6: </span>SwiftUI örnek macro</figcaption>
+</figure>
+
+<p>
+Ayrıca, artık nesne düzeyindeki <code>@Observable</code> macro sayesinde, <code>@Published</code> olarak parametreleri ayrı ayrı belirtmenize gerek kalmayacak.
+</p>
+
+<p>
+Bir diğer büyük gelişmelerinden biri, animasyonlar için verilen desteğin arttırılmasıdır. Animasyonlar etkin bir şekilde yapıldığında, uygulamanın kalitesini arttırıyor. Günümüzde rekabetin bu kadar yüksek olduğu günlerde, kullanıcılarının uygulamaları kullanmaya devam etmesi için arayüz iyi görünmeli ve iyi hissettirmelidir. Bunun için artık keyframing ve animasyon aşamaları aracılığıyla animasyonlar üzerinde daha fazla kontrol sağlayabiliyoruz. Buna ek olarak spring modifier'ı ve animasyonlu SF symbols aracılığıyla oyun alanımız artık daha fazla genişletilmiş.
+</p>
+
+<p>
+SwiftUI, artık element dönüşümlerinde ayrı aşamaları tanımlamanıza ve zaman içinde animasyonun özellikleri değiştirmek için keyframe'ler oluşturmanıza olanak tanıyor. Güncellenmiş SF symbols paketi, artık kodla tetikleyebileceğiniz önceden tanımlanmış animasyonlarla birlikte geliyor. Bu sayede, SwiftUI'de animasyonları daha kolay ve esnek bir şekilde kontrol edebileceğiz.
+</p>
+
+<p>
+Sonuç olarak, SwiftUI'ın popülerleşmesiyle birlikte, animasyon ve kullanıcı arayüzü tasarımı alanında daha fazla destek sunulmaya başlandı. Böylece, geliştiriciler uygulama kullanıcı deneyimini geliştirmek için daha fazla seçenek ve esnekliğe sahip olabilir. SwiftUI'nin bu güncellemeleri, geliştiricilerin iOS ve macOS uygulamalarında daha güçlü ve etkileyici kullanıcı arayüzleri oluşturmasına yardımcı olacağa benziyor.
+</p>
+
+<p>
+SwiftUI yeniliklerine daha yakından göz atmak isterseniz <a href="https://developer.apple.com/wwdc23/10148">What's new in SwiftUI</a> videosunun bu konuda yardımı dokunabilir.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgda457e8" class="outline-3">
+<h3 id="orgda457e8">SwiftData</h3>
+<div class="outline-text-3" id="text-orgda457e8">
+
+<figure id="org144a2a7">
+<img src="../../resources/mobilen/dergi_2/SwiftData.jpg" alt="SwiftData.jpg" width="120px">
+
+<figcaption><span class="figure-number">Şekil 7: </span>SwiftData</figcaption>
+</figure>
+
+<p>
+Core Data ile tanışanlar, onun öğrenilmesi ve kullanılması en kolay framework olmadığını bilirler. Core Data genellikle string literal'e dayanır. Derleme zamanı doğrulamasından yoksundur ve potansiyel yazım hatalarına yer bırakır. Bu durumda eğer bir hata yaparsanız, sadece uygulamanız çöktüğünde bu hatayı öğrenebilirsiniz.
+</p>
+
+<p>
+SwiftData, Core Data'ya alternatif olarak Swift ile oluşturulmuş ve Swift için tasarlanmış bir veritabanı çözümüdür. Bu, Swift'in kendisiyle uyumlu olan aynı prensipleri takip ettiği anlamına gelir. SwiftData hızlı, modern ve güvenlidir. Zaten aşina olduğunuz teknolojilere dayanmaktadır. SwiftData, modeller için ayrı dosyalar kullanmadığından, aynı veri yapılarını iki kez tanımlamanız gerekmez.
+</p>
+
+<p>
+Apple, SwiftData'nın SwiftUI göz önünde bulundurularak tasarlandığını ve Core Data entegrasyonunun oldukça kolay olduğunu belirtiyor. Bunun yanı sıra Core Data ile aynı şekilde, SwiftData'nında <b>undo</b> ve <b>redo</b> gibi yaygın senaryoları desteklediğini söylemekte fayda var.
+</p>
+
+<p>
+SwiftData'nın en önemli dezavantajlarından biri, yalnızca yeni işletim sistemi sürümlerinde mevcut olmasıdır. Bu nedenle, eski sürümleri desteklemeyi bırakmanız veya birkaç yıl beklemeniz gerekebilir, ancak bu kararın birçok kullanıcıyı etkileyeceğini bilerek hareket etmek en doğrusu olacaktır.
+</p>
+
+<p>
+SwiftData ile ilgili daha derinlemesine bilgi sahibi olmak için <a href="https://developer.apple.com/wwdc23/10187">Meet SwiftData</a> videosuna göz atmak isteyebilirsiniz.
+</p>
+
+<hr>
+
+<p>
+WWDC 23, Apple'ın teknoloji ve tasarım yaklaşımının sınırlarını genişletmeye devam ettiğini gösterdi. Vision Pro, SwiftUI'nin gelişmiş yetenekleri ve SwiftData gibi yenilikler, hem geliştiriciler hem de kullanıcılar için çığır açan değişiklikler getirecek gibi görünüyor. Her yıl olduğu gibi, Apple'ın sunduğu yenilikler, geliştiricilerin araçları ve teknolojileri kullanma şekillerini dönüştürecek. Bu da, kullanıcıların ürün ve hizmetleri deneyimlemelerinde yeni ve heyecan verici değişikliklere yol açmaya devam edecek.
+</p>
+
+<p>
+Bu sayıda WWDC23 'ün önemli gelişmelerini sizlerle paylaştım. Umarım faydalı olmuştur. Sonraki sayıya kadar görüşmek üzere!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e7eefa" class="outline-3">
+<h3 id="org2e7eefa">Kaynakça</h3>
+<div class="outline-text-3" id="text-org2e7eefa">
+<ol class="org-ol">
+<li><a href="https://developer.apple.com/wwdc23/10167">Expand on Swift Macros</a></li>
+<li><a href="https://developer.apple.com/wwdc23/10148">What's new in SwiftUI</a></li>
+<li><a href="https://developer.apple.com/wwdc23/10187">Meet SwiftData</a></li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc4b0c69" class="outline-2">
+<h2 id="orgc4b0c69">Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu</h2>
+<div class="outline-text-2" id="text-orgc4b0c69">
+<p>
+<a href="https://linkedin.com/in/egehan-kalayc%C4%B1-736b4a238">Egehan Kalaycı</a> yazdı.
+</p>
+
+<p>
+Merhaba Mobilen okurları, bugün sizlere Xcode'un farklı sürümlerini nasıl kolaylıkla yönetebileceğinizi anlatacağım.
+</p>
+
+
+<figure id="orgfba7721">
+<img src="../../resources/mobilen/dergi_2/xcode_naming.jpg" alt="xcode_naming.jpg" width="100%">
+
+<figcaption><span class="figure-number">Şekil 8: </span>Xcode Naming</figcaption>
+</figure>
+
+<p>
+Öncelikle, <b>Xcode</b>'un doğru yazımı konusunda bir anlaşma yapalım. İnsanlar bazen XCode, xCode gibi tuhaf kombinasyonlarla karşımıza çıkabilirler. Ancak gerçek şu ki, doğru yazımı <b>Xcode</b>'dur. Evet, büyük harfle "<b>X</b>" ile başlayıp ardından "<b>code</b>" olarak devam eder. Şimdi, bu konuda anlaştıysak <b>Xcode</b>'un farklı sürümlerini yönetme konusuna odaklanalım.
+</p>
+
+<p>
+Xcode, Apple platformlarında uygulama geliştirmek için kullanılan bir entegre geliştirme ortamıdır (IDE). Ancak, App Store'dan Xcode'u indirmenin bazı dezavantajları vardır. En güncel sürümleri bulmak veya yavaş bir indirme hızıyla karşılaşmakta sorun yaşayabilirsiniz. Daha da önemlisi, eski sürümlere geri dönmek veya birden fazla sürümü aynı anda kullanmak isterseniz, App Store bu özellikleri sunmamaktadır.
+</p>
+
+<p>
+İşte tam da bu noktada size bir çözüm sunmak istiyorum: Xcodes!
+</p>
+
+<p>
+Xcodes, Xcode'un farklı sürümlerini tek bir komutla indirmenizi sağlayan harika bir araçtır. Bu sayede istediğiniz sürümü, yüksek indirme hızlarıyla elde edebilirsiniz.
+Xcodes, indirme işlemlerini gerçekleştirmek için aria2 adlı bir komut satırı aracını kullanır. Bu araç, indirme hızınızı optimize etmek için çoklu bağlantılar ve paralel indirmeler kullanır. Böylece Xcode sürümlerini daha hızlı bir şekilde bilgisayarınıza indirebilirsiniz.
+</p>
+
+<p>
+Gelelim <code>Xcodes</code>'u kullanmaya. Bunun iki farklı yöntemi bulunmaktadır.
+</p>
+
+<p>
+İlk yöntem, Xcodes'un kullanıcı dostu bir arayüzü olan native uygulamasını indirip kullanmaktır. Bu sayede sürümleri görsel olarak kolaylıkla yönetebilirsiniz.
+</p>
+
+
+<figure id="orgafc8484">
+<img src="../../resources/mobilen/dergi_2/xcodes_gui.jpg" alt="xcodes_gui.jpg" width="100%">
+
+<figcaption><span class="figure-number">Şekil 9: </span>Xcodes Gui</figcaption>
+</figure>
+
+<p>
+İkinci yöntem ise terminal üzerinden Xcodes'u kullanmaktır. Eğer terminal üzerinden kullanmak isterseniz, <code>xcodes</code> komutunu kullanarak çeşitli işlemleri gerçekleştirebilirsiniz. Örneğin, mevcut sürümleri görüntülemek için <code>xcodes list</code> komutunu kullanabilir, indirmek istediğiniz sürümün yanındaki numarayı yazarak indirme işlemini başlatabilirsiniz. Ayrıca, indirdiğiniz sürümleri <code>xcodes installed</code> komutu ile görüntüleyebilir ve <code>xcodes select</code> komutuyla varsayılan sürümü belirleyebilirsiniz.
+</p>
+
+
+<figure id="orgc0f4d44">
+<img src="../../resources/mobilen/dergi_2/xcodes_terminal.jpg" alt="xcodes_terminal.jpg" width="100%">
+
+<figcaption><span class="figure-number">Şekil 10: </span>Xcodes Terminal</figcaption>
+</figure>
+
+<p>
+Artık Xcode'un farklı sürümlerini kolaylıkla yönetebilir, istediğiniz sürüme hızlıca erişebilir ve projelerinizde esnek bir şekilde çalışabilirsiniz. Bir sonraki yazıda tekrar buluşmak dileğiyle.
+</p>
+</div>
+
+<div id="outline-container-org5bf07d5" class="outline-3">
+<h3 id="org5bf07d5">Kaynaklar</h3>
+<div class="outline-text-3" id="text-org5bf07d5">
+<ol class="org-ol">
+<li><a href="https://www.xcodes.app/">https://www.xcodes.app/</a></li>
+<li><a href="https://github.com/XcodesOrg">https://github.com/XcodesOrg</a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+<footer>
+  <div class="copyright-container">
+    <div class="copyright">
+      &copy; 1071-20∞ Mobilen bazı hakları saklıdır.<br/>
+    </div>
+    </br>
+  </div>
+</footer>
+</div>
+</body>
+</html>

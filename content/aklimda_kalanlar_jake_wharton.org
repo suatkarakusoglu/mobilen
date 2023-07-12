@@ -5,7 +5,7 @@
 #+CAPTION: Photo by [[https://unsplash.com/@goian][Ian Schneider]] on [[https://unsplash.com/?utm_source=medium&utm_medium=referral][Unsplash]]
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 200px
-[[file:../resources/mobilen/dergi_2/AklimdaKalanlarTitle.jpg]]
+[[file:./resources/mobilen/dergi_2/AklimdaKalanlarTitle.jpg]]
 
 Merhabalar sevgili Mobilen okuyucuları, bu sayı için yazacağım yazıma tamamen tesadüf eseri Jorge Castillo'nun Jake Wharton'la yaptığı [[https://newsletter.jorgecastillo.dev/p/effective-interviews-jake-wharton][röportajı]] okuyunca karar verdim.
 

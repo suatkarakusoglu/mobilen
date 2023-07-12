@@ -5,7 +5,7 @@
 #+CAPTION: Örnek Swipe Actions
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:../resources/mobilen/dergi_2/SwipeActions.jpg]]
+[[file:./resources/mobilen/dergi_2/SwipeActions.jpg]]
 ** Swipe Actions nedir?
 Merhabalar, herhangi bir ui elemanının üzerinden =swipe= ile çıkan aksiyonlar iOS kullanıcı deneyiminde önemli rol oynuyor.
 
@@ -24,7 +24,7 @@ Ancak iOS-14 destekliyorsanız veya herhangi bir SwiftUI view'e swipe aksiyonlar
 Bu yazımızda [[https://github.com/aheze/SwipeActions][Açık Kaynak SwipeActions Reposu]]'nu inceleyeceğiz.
 
 ** SwipeActions Kullanımı
-#+INCLUDE: ../resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift
   import SwiftUI
   import SwipeActions
@@ -53,7 +53,7 @@ Veya data binding ile =@Binding= çift taraflı =reactive= şekilde sağlanabili
 
 PreferenceKey ile olan bu veri iletişiminde ise diğer bir ihtiyaç olan ise =child= → =parent= arasında veri geçişi yapabiliyoruz.
 
-#+INCLUDE: ../resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift
   struct AllowSwipeToTriggerKey: PreferenceKey {
       static var defaultValue: Bool? = nil
@@ -69,13 +69,13 @@ Ayrıca ikinci olarak =reduce= fonksiyonu, bu fonksiyon dışarıdan sağlanan d
 Kullanımı için 2 tane =modifier='imiz mevcut: =preference= ve =onPreferenceChange=.
 
 Preference Key ile veriyi yukarı aktarma [[https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L328][burada]] gorebilirsiniz:
-#+INCLUDE: ../resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift
   view.preference(key: AllowSwipeToTriggerKey.self, value: allowSwipeToTrigger)
 #+end_src
 
 Preference Key ile aşağıdan gelen veriyi [[https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L417][burada]] okuma:
-#+INCLUDE: ../resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift
   view.onPreferenceChange(AllowSwipeToTriggerKey.self) { allow in
       /// Unwrap the value first (if it's not the edge action, `allow` is `nil`).
@@ -94,7 +94,7 @@ Daha detaylı anlamak için [[https://swiftwithmajid.com/2020/01/15/the-magic-of
 =Generic= kullanarak =extension method='larının yalnızca ilgili tipler ile kullanılmasını derleme seviyesinde sağlamak tatlı bir özellik.
 [[https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L986][Burada]] ilgili örneği görebilirsiniz.
 
-#+INCLUDE: ../resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift
   public extension SwipeAction where Label == Text, Background == Color {
       // Buraya yazılan methodlar yalnızca

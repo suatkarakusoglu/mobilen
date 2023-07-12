@@ -22,8 +22,8 @@
 (setq org-publish-project-alist
       (list
        (list "mobilen-site"
-             :recursive t
-             :base-directory "./content/writings"
+             :recursive nil
+             :base-directory "./content"
              :base-extension "org"
              :publishing-directory "./docs"
              :publishing-function 'org-html-publish-to-html

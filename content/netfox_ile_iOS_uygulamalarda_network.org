@@ -5,7 +5,7 @@
 #+CAPTION: [[https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif][Netfox'u İzlemek için tıkla]]
 #+ATTR_LATEX: :width 200px
 #+ATTR_HTML: :width 200px
-[[file:../resources/mobilen/dergi_1/NetFoxImage.jpg]]
+[[file:./resources/mobilen/dergi_1/NetFoxImage.jpg]]
 
 Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde görüntülemek için kullanılan faydalı olduğunu düşündüğüm *[[https://github.com/kasketis/netfox][Netfox]]* kütüphanesinden bahsedicem.
 
@@ -30,7 +30,7 @@ Varsayılan davranışı **shake** olarak belirlenmiş olsada custom bir şekild
 2. Kütüphaneyi projeye ekledik şimdi ise =initiliaze= edeceğiz. Bunun için AppDelegate class'ına gidip aşağıdaki gibi gerekli kodları ekliyoruz.
 
 Netfox Import:
-#+INCLUDE: ../resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift
   #if DEBUG
   import netfox
@@ -40,7 +40,7 @@ Netfox Import:
 Burada  *#if DEBUG* ve *#endif* kodlarını ekleyerek kodun sadece debug moddayken import olmasını sağlıyoruz. Daha sonra uygulama ilk başlatıldığında hazır hale gelmesini istediğim için aşağıdaki gibi başlatıcı fonksiyonun içerisine kodlarımızı ekliyoruz.
 
 Netfox başlatma:
-#+INCLUDE: ../resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift
   func application(
     _ application: UIApplication,

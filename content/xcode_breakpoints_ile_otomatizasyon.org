@@ -29,7 +29,7 @@ Watchpoint'ler, oturum açma işlemi sırasında değişkenlerin değerlerini iz
 
 Blog yazısında da bahsedildiği gibi "fullscreen modal" olarak sunulan iki "textfield" ile örnek bir login ekranı oluşturalım. Uygulama `launchLogin()` ile başladığında, "textfield"'lar doğru bilgileri içeriyorsa "modal screen" kapatılsın ve ContentView, başarılı login mesajıyla beraber görüntülensin.
 
-#+INCLUDE: ../resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift :tangle yes
   struct LoginView: View {
       @State private var username: String = ""
@@ -68,7 +68,7 @@ Blog yazısında da bahsedildiği gibi "fullscreen modal" olarak sunulan iki "te
   }
 #+end_src
 
-#+INCLUDE: ../resources/OrgExportSettings/OrgExportLatexSourceBlock.org
+#+INCLUDE: ./resources/OrgExportSettings/OrgExportLatexSourceBlock.org
 #+begin_src swift :tangle yes
   import SwiftUI
 
@@ -95,7 +95,7 @@ Bizim istediğimiz ise, programın buton aksiyonu ile duraklamasından sonra otu
 #+CAPTION: Xcode edit breakpoint window
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:../resources/mobilen/dergi_1/edit-breakpoint-window.jpg]]
+[[file:./resources/mobilen/dergi_1/edit-breakpoint-window.jpg]]
 
 Açılan pencerede "breakpoint"'e isim verebilir, belli koşullar altında çalışmasını ayarlayabilir veya program durduktan sonra yapılacak bir aksiyon tanımlayabiliriz. Biz buton aksiyonu sonrasında "textfield"'ları geçerli bilgiler ile doldurup, programın çalışmasına devam etmesini sağlamalıyız.
 

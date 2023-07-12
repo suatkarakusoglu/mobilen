@@ -1,0 +1,16 @@
+#+title: Mobilen Dergi 3
+#+author: ---
+
+#+BEGIN_EXPORT latex
+\includepdf[pages=1]{../../resources/mobilen/dergi_2/volume_2_cover.pdf}
+#+END_EXPORT
+
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportMobilenLatexSettings.org
+
+* TODO Merhaba Agustos 2023 :noexport:
+#+INCLUDE: ../merhaba_agustos_2023.org
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportLatexNextPage.org
+
+* Belgesel: Steve Jobs The Man in The Machine
+#+INCLUDE: ../steve_jobs_the_man_in_the_machine.org
+#+INCLUDE: ../../resources/OrgExportSettings/OrgExportLatexNextPage.org

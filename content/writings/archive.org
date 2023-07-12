@@ -1,6 +1,10 @@
 #+TITLE: Mobilen İçerikler
 
+- [[file:steve_jobs_the_man_in_the_machine.org][Steve Jobs The Man in The Machine]]
 - [[file:index.org][Mobilen Dergi]]
+- [[file:magazines/mobilen_3.org][Mobilen Dergi 3]]
+- [[file:merhaba_agustos_2023.org][Merhaba Agustos 2023]]
+- [[file:aklimda_kalanlar_jake_wharton.org][Aklımda Kalanlar: Jake Wharton ile Röportaj]]
 - [[file:magazines/mobilen_2.org][Mobilen Dergi 2]]
 - [[file:magazines/mobilen_1.org][Mobilen Dergi 1]]
 - [[file:xcode_breakpoints_ile_otomatizasyon.org][Xcode Breakpoints ile Otomatizasyon]]
@@ -17,5 +21,4 @@
 - [[file:instagramin_hikayesi.org][Instagram'in Hikayesi]]
 - [[file:kitap_make_something_wonderful.org][Kitap: Make Something Wonderful]]
 - [[file:merhaba_temmuz_2023.org][Merhaba Temmuz 2023]]
-- [[file:aklimda_kalanlar_jake_wharton.org][Aklımda Kalanlar: Jake Wharton ile Röportaj]]
 - [[file:xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]

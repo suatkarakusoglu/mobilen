@@ -1,5 +1,7 @@
 #+TITLE: Mobilen İçerikler
 
+- [[file:mobilen_backlog.org][Mobilen Backlog]]
+- [[file:index.org][Mobilen Dergi]]
 - [[file:mobilen_3.org][Mobilen Dergi 3]]
 - [[file:mobilen_2.org][Mobilen Dergi 2]]
 - [[file:mobilen_1.org][Mobilen Dergi 1]]
@@ -13,9 +15,7 @@
 - [[file:ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]]
 - [[file:ios_deep_link.org][iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı]]
 - [[file:aklimda_kalanlar_jake_wharton.org][Aklımda Kalanlar: Jake Wharton ile Röportaj]]
-- [[file:index.org][Mobilen Dergi]]
 - [[file:merhaba_agustos_2023.org][Merhaba Agustos 2023]]
-- [[file:mobilen_backlog.org][mobilen_backlog]]
 - [[file:evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
 - [[file:navigation_desenleri.org][Navigation Desenleri]]
 - [[file:wwdc_2023_geldi.org][WWDC 2023 geldi!]]

@@ -12,8 +12,8 @@ Bu nedenle, işlerimizi daha kaliteli bir noktaya taşımak amacıyla, mobil kon
 [[file:archive.org][Mobilen Tüm Yazılar]]
 
 * Dergiler
-[[file:magazines/mobilen_3.org][Mobilen Dergi 3]] - Ağustos 2023
+[[file:mobilen_3.org][Mobilen Dergi 3]] - Ağustos 2023
 
-[[file:magazines/mobilen_2.org][Mobilen Dergi 2]] - Temmuz 2023
+[[file:mobilen_2.org][Mobilen Dergi 2]] - Temmuz 2023
 
-[[file:magazines/mobilen_1.org][Mobilen Dergi 1]] - Haziran 2023
+[[file:mobilen_1.org][Mobilen Dergi 1]] - Haziran 2023

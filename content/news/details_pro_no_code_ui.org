@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       20230724T113245.488053
+:END:
+#+title: DetailsPro: No-Code ile Swift Tasarımlarınızı Hayata Geçirin
+#+date: [2023-07-11 Tue]
+#+author: Ali Mert Tekel
+#+kind: news
+
+[[https://linkedin.com/in/alimerttekel][Ali Mert Tekel]] yazdı.
+
+#+CAPTION: DetailsPro ana ekranı
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:../../assets/img/20230724T113245.488053_details_pro_main_screen.jpg]]
+
+Merhaba, bu yazıda sizlerle, mobil geliştiricilerin dikkatini çekebilecek heyecan verici bir uygulamayı paylaşacağım: [[https://detailspro.app/][DetailsPro]].
+
+Apple uygulamaları için no-code tasarımlar oluşturmanıza imkan tanıyan bu uygulama aynı zamanda oluşturulan tasarımların Swift kaynak kodlarını da dışa aktarmanıza olanak sağlıyor. Tasarım yeteneklerinizin sınırlarına takılmadan istediğiniz tasarımı yapmaya hazır olun! 😄
+
+DetailsPro, uygulama içinde hem ücretsiz hem de ücretli abonelik seçenekleri sunuyor.
+
+Ücretsiz sürümde beş sayfaya kadar tasarım oluşturabilirsiniz. Ancak ücretli abonelikle birlikte sınırsız sayıda tasarım yapma imkanına sahip oluyorsunuz ve ek olarak MapKit gibi özelliklere de erişebilirsiniz.
+
+Uygulama, çeşitli hazır component'leri içeriyor ve topluluk desteği sayesinde diğer kullanıcıların oluşturduğu hazır template'leri kullanmanıza olanak tanıyor.
+
+Ayrıca, SFSymbols'u doğrudan tasarımlarda kullanabiliyorsunuz. Bu sayede, tasarım süreciniz daha hızlı ve verimli bir şekilde ilerliyor.
+
+#+CAPTION: Tasarım oluşturma ekranı
+#+ATTR_LATEX: :width 280px
+#+ATTR_HTML: :width 100%
+[[file:../../assets/img/20230724T113245.488053_details_pro_create_design.jpg]]
+
+Basit bir örnek template'i inceleyelim. Sol tarafta, sürükleyip bırakma menüsüyle kullanabileceğimiz item'ları görüyoruz. Sağ tarafta ise seçtiğimiz item'a özellikler ekleyebiliyoruz ve bunun yanı sıra uygulama kendi içerisinde modifier önerileride sunuyor.
+
+#+CAPTION: Export code menüsü
+#+ATTR_LATEX: :width 180px
+#+ATTR_HTML: :width 100%
+[[file:../../assets/img/20230724T113245.488053_details_pro_export.jpg]]
+
+Aşağı kaydırdığımızda, tasarımın kaynak koduna ulaşabileceğimiz seçeneklerle karşılaşıyoruz. Dilerseniz kodu kopyalayıp paylaşabilirsiniz. Uygulamanın genel kullanımı oldukça basit.
+
+DetailsPro, tasarımıcıların yanı sıra geliştiricilere de hitap eden bir uygulama. No-code yaklaşımıyla Swift syntax'ına oldukça yakın özelleştirmeler yaparak hızlı ve etkili tasarımlar oluşturabilirsiniz.
+
+Ayrıca, tasarımınızın kaynak kodunu dışa aktarabilme seçeneği, iOS geliştirme konusunda yeni olanlar için faydalı olabilir. Ücretsiz sürümüyle uygulamayı keşfedebilir ve ihtiyaçlarınıza göre ücretli aboneliği tercih edebilirsiniz. Umarım bu inceleme sizin için faydalı olmuştur. Bir sonraki sayımızda görüşmek üzere.
+
+** Kaynakça
+[[https://detailspro.app/][Details Pro App]]

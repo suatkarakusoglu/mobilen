@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       20230724T133855.759239
+:END:
+#+title: Android File Template
+#+date: [2023-07-11 Tue]
+#+author: Hasan Hüseyin Doğan
+#+kind: news
+
+[[https://www.linkedin.com/in/hasan-h%C3%BCseyin-do%C4%9Fan-861048187/][Hasan Hüseyin Doğan]] yazdı.
+
+#+CAPTION: Tek bir Template
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:../../assets/img/20230724T133855.759239_create_template_1.jpg]]
+
+Merhaba sevgili mobilen okuyucuları sizlerde tekrar eden kodlardan sıkılmadınız mı?
+
+Sizlere her ekran için fragment ve viewmodel oluşturup tekrar aynı yapıyı kurmak zorunda kalmakatan kurtarmaya geldim işte karşınızda file template.
+
+** File Template Nedir?
+File template, yazılım geliştirme sürecinde tekrarlanan işleri otomatize etmek için kullanılan şablonlardır. Özellikle Android uygulama geliştirmede, her yeni ekran eklediğinizde ve yeni bir bileşen oluşturduğunuzda, çoğu zaman aynı ya da benzer yapıları tekrar etmeniz gerekir. Bu durum zaman kaybına, hatalara ve bakım zorluklarına yol açabilir.
+
+File template'ler, başlangıçta yapılandırılmış dosya şablonlarıdır ve proje içinde farklı amaçlar için kullanılabilirler. Bir kez oluşturulduktan sonra, yeni bir ekran ya da bileşen eklemek istediğinizde, sadece template'i kullanarak o yapıyı hızlıca oluşturabilirsiniz. Bu sayede tekrarlayan kod yazma işlemlerinden kurtulur, verimliliği artırır ve aynı zamanda tutarlılık sağlamış olursunuz.
+
+File template oluşturmak, özellikle proje ekibinin bir parçası olarak çalıştığınızda, diğer geliştiricilerle ortak bir yapı ve standart oluşturmak için çok faydalıdır. Bu sayede, projedeki tüm ekranlar ve bileşenler, genel bir yapıya uygun olur ve ekibin işbirliği daha verimli hale gelir.
+
+Ayrıca, file template'ler güncellendiğinde ya da proje gereksinimleri değiştiğinde, tek bir değişiklikle tüm ekranları ve bileşenleri güncelleme avantajı sağlar. Bu, kod tutarlılığını ve bakım kolaylığını artırırken aynı zamanda hataları da azaltmaya yardımcı olur.
+
+Sonuç olarak, Android uygulama geliştirme sürecinde file template oluşturmak, proje başlangıcında ve geliştirme süreci boyunca zaman kazandırırken, daha organize bir kod tabanı oluşturarak ekranların ve bileşenlerin daha düzenli bir şekilde eklenmesini sağlar. Bu sayede geliştiriciler, daha az kod tekrarı ile daha verimli ve etkili bir şekilde çalışabilirler.
+
+** File tempate nasıl oluşturulur?
+Peki bize bu fayları sağlayacak file templatleri bir projede nasıl yararlanabileceğimizi anlatmak istiyorum.
+
+1. File > Setting > Editor > File and Code Templates menüsü açıyoruz.
+2. Template ye dönüştürmek istediğimiz dosyayı template haline getine getiriyoruz bu adımda [[https://dev.to/wilderminds/how-to-use-android-studio-file-templates-to-speed-up-development-4e93][bu adresten]] faydalanabilirsiniz.
+3. Bu adım birden fazla dosyayı tek bir template ile oluşturmak isteyenlere özel, template olmasını sağlayan nokta.
+
+Kırmızı ile işaretlenmiş butonu seçerek birden fazla template dosyasını birlikte oluştura bilir ve güzel kombinasyonlar yaratabilirsiniz.
+
+** Kaynakça:
+- [[https://riggaroo.dev/custom-file-templates-android-studio/][Custom file templates]]
+- [[https://dev.to/wilderminds/how-to-use-android-studio-file-templates-to-speed-up-development-4e93][How to use file templates in android?]]

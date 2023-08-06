@@ -1,0 +1,53 @@
+#+title: Android Studio Bot
+#+date: [2023-07-11 Tue]
+#+author: Tuğba Berk
+#+kind: news
+
+[[https://tr.linkedin.com/in/tu%C4%9Fbaberk][Tuğba Berk]] yazdı.
+
+Google IO etkinliği, 10 Mayıs 2023 tarihinde gerçekleşti. Bu etkinlikte Google'ın yapay zeka desteğini mevcut araçlarına entegre ettiğini gördük. =Google Play Store=, =Google Haritalar=, =Google Mail= ve =Android Studio= gibi birçok araç bu yenilikler arasında yer aldı.
+
+Yapay zekadaki bu gelişmeler, kod yazarken bize çeşitli faydalar sunmaya başladı bile. Bu yeni yapay zeka gelişmelerine ayak uydurabilen yazılımcılar olmak istiyorsak, Android Studio Bot'u hızlı bir şekilde öğrenmek önemli görünüyor. Kendi rollerimizi ve bu sistem içindeki araçlarımızı iyi anlamamız gerekebilir.
+
+Peki, Android Studio Bot nedir? Kimler kullanır? Kullanmalı mıyız? Nasıl kuracağız? gibi sorulara cevap verelim.
+
+** Android Studio Bot Nedir?
+[[https://developer.android.com/studio/preview/studio-bot][Android Studio Bot]] bir yapay zeka asistanıdır.Android geliştiricilerin kod yazmalarına ve hatalarını çözmelerine yardımcı olmak için kullanabilecekleri bir araçtır. Android Studio Bot, [[https://blog.google/technology/developers/google-colab-ai-coding-features/][Codey]] adlı yapay zeka asistanının AI yeteneklerini kullanarak geliştiricilere yardımcı olur. Codey, Google'ın temel dil modeli olan [[https://blog.google/technology/ai/google-palm-2-ai-large-language-model/][PaLM 2]]'yi kullanarak geliştirilen bir yapay zeka asistanıdır. Aslında, Google Colab ile çalışabilen bir bot diyebiliriz. Kısacası, Studio Bot, Codey'in sunduğu yetenekleri Android Studio ortamında daha kolay ve erişilebilir hale getirmiştir.
+
+"ChatGPT" ve "Copilot" gibi araçlar mevcut olmasına rağmen, neden Studio Bot'a ihtiyaç duyacağımızı sorabilirsiniz. Benim cevabım şu: "Android Studio'dan çıkmadan kod araştırması yapmak ve sekme açmakla uğraşmamak daha pratik ve hoş olmaz mı?" Elbette, bu aracın sağladığı bilginin doğruluğu kullanmasında en önemli faktör olacaktır. Bu nedenle, doğruluğunu sağlamak için nasıl kullanmamız gerektiğini öğrenmeli ve deneyimlemeliyiz.
+
+Google, Studio Bot kullanımını kolaylaştıran kısayollar hakkında bilgi verdi. Bu kısayollar sayesinde önemli bir zaman tasarrufu sağlanacağını düşünüyorum. İşte bazı örnekler:
+
+- Tek tık ile kod ekleme
+
+Studio Bot, oluşturduğu kodun yanında akıllı eylemler sunar. Bu eylemlerden biri, kodu hızlı bir şekilde açık editöre eklemenizi sağlar. Örneğin, bir internet izni kullanmanız gerektiği cevaplarda yer alıyorsa, "kod ekle" aksiyonunu tıkladığınızda Studio Bot, internet iznini manifest dosyasına ekler. Ayrıca, kodun nereye yazılması gerektiğini bilir, bu da bizi kopyala-yapıştır işlemlerinden kurtarır.
+
+- Yardımcı kaynaklara erişmek
+
+Belirli konular için, Studio Bot ilgili belgelendirme sayfasını açarak daha fazla bilgi sağlama seçeneği sunar. Size kaynak linklerine erişim sağlar, yani "oku, öğren, daha çok soru sor" gibi bir şey =)
+
+- Bot'a kod'un içinden direkt soru sormak
+
+Kod düzenleyicisinde metni seçip sağ tıklayarak ve "=Ask Studio Bot=" işlemini seçerek sohbet kutusunu seçilen kodla doldurabiliriz. Oradan, kodu gönderip göndermeme konusunda karar verebiliriz. Studio Bot, açık izniniz olmadan kod göndermeyecektir. "Ask Studio Bot" ayrıca kod düzenleyicisindeki uyarıları ve hataları gidermeniz için size yardımcı olabilir.
+
+** Android Studio Bot Nasıl Kurulur?
+Studio Bot'u kurma ve kullanma konusunda bazı sorular sormaya başladığınızı düşünerek size üzücü bir haber vermek istiyorum. Şu anda Google, Studio Bot'u yalnızca ABD'de kullanıma sunmuştur. Bu nedenle, sadece ABD'deki kullanıcılar ücretsiz olarak erişebilirler.
+
+Ancak, Studio Bot'u nasıl kuracağınızı bilmek isterseniz, aşağıdaki adımları takip edebilirsiniz:
+
+1. İlk olarak, en son sürüm olan Android Studio Hedgehog | 2023.1.1 Canary 4'ü indirmeniz gerekmektedir.
+2. Studio Bot'u daha etkin bir şekilde kullanmanız için veri paylaşma iznini onaylamanızı tavsiye ediyoruz. Bu izni etkinleştirmek için "Android Studio > Ayarlar > Görünüm ve Davranış > Sistem Ayarları > Veri Paylaşımı" yolunu izleyebilirsiniz.
+3. Var olan bir projeyi açın veya yeni bir proje oluşturun. Ardından "Görünüm > Araç Pencereleri > Studio Bot" seçeneğine tıklayın.
+4. Eğer istenirse, Google hesabınıza giriş yapın. Artık Studio Bot'u kullanmaya başlayabilirsiniz.
+
+Bu şekilde Studio Bot'u kurabilir ve kullanabilirsiniz. Ancak unutmayın, şu anda sadece ABD'deki kullanıcılar ücretsiz olarak erişilebilmektedir.
+
+** Android Studio Bot'u Kullanmalı mıyız?
+Gelin, Studio Bot'u kullanmalı mıyız konusuna değinelim. Şahsi fikrime göre, dünyada gelişen ve değişen şeylere katılmak ve bu dönüşümün bir parçası olmak, işimizin en keyifli yanıdır. Aslında, bu keyifli deneyimi kaçırmamak için hepinizi teşvik etmek isterim.
+
+Ancak, burada dikkat etmemiz gereken önemli bir nokta var: Studio Bot, öğrenmekte olan bir çocuğun sizin elinizde büyüyeceğinin bilincinde olmanızı gerektirir ve şirketinizin özel bilgilerini bu platform üzerinden paylaşmamalısınız. İyi olduğu kadar kötülerin de kod yazabileceğini unutmamamız önemlidir. Ve bu yeni dünyaya biraz daha kontrollü bir şekilde yaklaşmamız gerekmektedir.
+
+Sonuç olarak, yapay zeka teknolojileri ile olan etkileşimimiz artıyor ve gelişiyor. Studio Bot gibi araçlar, geliştiricilerin kod yazma sürecini kolaylaştırmayı ve verimliliği artırmayı hedefliyor. Bu nedenle, yeni teknolojilere ve araçlara açık olmak, gelişmeleri takip etmek ve deneyimlemek önemlidir. Ancak, her aracın avantajlarını ve dezavantajlarını anlamak ve doğru bir şekilde kullanmak da gereklidir.
+
+** Kaynaklar
+[[https://developer.android.com/studio/preview/studio-bot][Android Studio Bot Preview]]

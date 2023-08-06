@@ -161,10 +161,10 @@
 
     (if (string-match "\\/index.org\\|\\/404.org$" org-file)
         pub-dir
-        (progn
-          (unless (file-directory-p article-dir)
-            (make-directory article-dir t))
-          article-dir))))
+      (progn
+        (unless (file-directory-p article-dir)
+          (make-directory article-dir t))
+        article-dir))))
 
 (defun dw/get-commit-hash ()
   "Get the short hash of the latest commit in the current repository."
@@ -201,6 +201,7 @@
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/site.css"))))
+            (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code_highlighter_dark_theme.css"))))
             (script (@ (defer "defer")
                        (data-domain "systemcrafters.net")
                        (src "https://plausible.io/js/plausible.js"))
@@ -243,10 +244,13 @@
   (let ((exported-link (org-export-custom-protocol-maybe link contents 'html info)))
     (cond
      (exported-link exported-link)
-     ((equal contents nil)
-      (format "<a href=\"%s\">%s</a>"
-              (org-element-property :raw-link link)
-              (org-element-property :raw-link link)))
+     ((string-match-p "\\(.*\\.\\(jpg\\|png\\)\\)" (org-element-property :raw-link link))
+      (format "<img src=\"/img/%s\" width=\"%s\">"
+              (file-name-nondirectory (org-element-property :path link))
+              ;; (org-export-read-attribute :attr_html link)
+              ;; TODO Read from #+ATTR_HTML
+              "100%"
+              ))
      ((string-prefix-p "/" (org-element-property :raw-link link))
       (format "<a href=\"%s\">%s</a>"
               (org-element-property :raw-link link)
@@ -255,9 +259,9 @@
 
 (defun dw/make-heading-anchor-name (headline-text)
   (thread-last headline-text
-    (downcase)
-    (replace-regexp-in-string " " "-")
-    (replace-regexp-in-string "[^[:alnum:]_-]" "")))
+               (downcase)
+               (replace-regexp-in-string " " "-")
+               (replace-regexp-in-string "[^[:alnum:]_-]" "")))
 
 (defun dw/org-html-headline (headline contents info)
   (let* ((text (org-export-data (org-element-property :title headline) info))
@@ -291,10 +295,25 @@
      (when (and container (not (string= "" container)))
        (format "</%s>" (cl-subseq container 0 (cl-search " " container)))))))
 
-(defun dw/org-html-src-block (src-block _contents info)
-  (let* ((lang (org-element-property :language src-block))
-	       (code (org-html-format-code src-block info)))
-    (format "<pre>%s</pre>" (string-trim code))))
+;; Path for pygments or command name
+;; brew install pygments
+(defvar pygments-path "pygmentize")
+
+(defun pygments-org-html-code (code contents info)
+  ;; Generating tmp file path.
+  ;; Current date and time hash will ideally pass our needs.
+  (setq temp-source-file (format "/tmp/pygmentize-%s.txt"(md5 (current-time-string))))
+  ;; Writing block contents to the file.
+  (with-temp-file temp-source-file (insert (org-element-property :value code)))
+  (shell-command-to-string (format "%s -l \"%s\" -f html %s"
+                                   pygments-path
+                                   (or (org-element-property :language code) "")
+                                   temp-source-file)))
+
+;; (defun dw/org-html-src-block (src-block _contents info)
+;;   (let* ((lang (org-element-property :language src-block))
+;;          (code (org-html-format-code src-block info)))
+;;     (format "<pre>%s</pre>" (string-trim code))))
 
 (defun dw/org-html-special-block (special-block contents info)
   "Transcode a SPECIAL-BLOCK element from Org to HTML.
@@ -302,7 +321,7 @@ CONTENTS holds the contents of the block.  INFO is a plist
 holding contextual information."
   (let* ((block-type (org-element-property :type special-block))
          (attributes (org-export-read-attribute :attr_html special-block)))
-	  (format "<div class=\"%s center\">\n%s\n</div>"
+    (format "<div class=\"%s center\">\n%s\n</div>"
             block-type
             (or contents
                 (if (string= block-type "cta")
@@ -313,7 +332,7 @@ holding contextual information."
   :translate-alist
   '((template . dw/org-html-template)
     (link . dw/org-html-link)
-    (src-block . dw/org-html-src-block)
+    (src-block . pygments-org-html-code)
     (special-block . dw/org-html-special-block)
     (headline . dw/org-html-headline))
   :options-alist
@@ -428,8 +447,8 @@ holding contextual information."
       ;; NOTE: Hardcoding this at 8am for now
       (encode-time 0 0 8 day month year))))
 
-;(defun dw/rss-extract-summary (html-file)
-;  )
+                                        ;(defun dw/rss-extract-summary (html-file)
+                                        ;  )
 
 (setq webfeeder-title-function #'dw/rss-extract-title
       webfeeder-date-function #'dw/rss-extract-date)
@@ -514,9 +533,10 @@ holding contextual information."
 (defun dw/publish ()
   "Publish the entire site."
   (interactive)
-  (org-publish-all (string-equal (or (getenv "FORCE")
-                                     (getenv "CI"))
-                                 "true"))
+  ;; (org-publish-all (string-equal (or (getenv "FORCE")
+  ;;                                    (getenv "CI"))
+  ;;                                "true"))
+  (org-publish-all t)
 
   (webfeeder-build "rss/news.xml"
                    "./public"

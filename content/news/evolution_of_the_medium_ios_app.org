@@ -1,0 +1,28 @@
+#+title: Evolution of the Medium iOS app architecture
+#+date: [2023-07-11 Tue]
+#+author: Yusuf Kaya
+#+kind: news
+
+[[https://linkedin.com/in/myusufka][Yusuf Kaya]] yazdı.
+
+Her alanda olduğu gibi bir mobil projesinde de sürekli olarak gelişen teknolojik trendlere uyum sağlamak da büyük bir önem taşımaktadır.
+
+Yeni mimari geliştirmeler, bir projenin başarısı için hayati bir rol oynamaktadır. Bu geliştirmeler, uygulamanın performansını artırırken, güvenlik açıklarını kapatmak ve gelecekteki ihtiyaçlarını karşılamak için tasarlanır.
+
+Yeni mimari yaklaşımlar, yazılım mühendislerine daha etkili bir şekilde çalışabilmeleri için daha fazla esneklik ve verimlilik sağlamayı amaçlar. Ayrıca, proje ekibine, uygulamanın yaşam döngüsü boyunca sürekli iyileştirmeler yapma ve yeni özellikler eklemek için daha iyi bir temel sunmayı amaçlar. Modüler mimari de projelerin geliştirilmesinde önemli bir yer tutan yenilikçi bir yaklaşımdır.
+
+[[https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e][Evolution of the Medium iOS App Architecture]] yayınında da Medium'un iOS uygulamasının modüler mimari evrimini anlatmaktadır.
+
+** Modüler Mimari Nedir?
+Modüler mimari, projelerin geliştirilmesinde kullanılan bir mimari yaklaşımıdır. Bu yaklaşım, bir uygulamayı bağımsız bileşenlere veya modüllere ayırarak, her bir modülün kendi sorumluluk alanına odaklanmasını ve birbirleriyle minimum bağımlılık içinde çalışmasını sağlar.
+*** Modüler Mimarinin Faydaları
+Modüler mimarinin faydaları şunlardır:
+- Daha iyi organizasyon: Modüller arasında sorumluluk alanlarına odaklanarak projenin daha iyi organize edilmesi sağlanır.
+- Paralel geliştirme: Farklı modüller, ayrı ekipler tarafından aynı anda geliştirilebilir.
+- Yeniden kullanılabilirlik: Modüller, başka projelerde veya farklı parçalarda kolayca yeniden kullanılabilir.
+- Bakım kolaylığı: Bağımsız modüllerin yönetimi, hataların tespitini kolaylaştırır ve bakım sürecini iyileştirir.
+- Ölçeklenebilirlik: Projeyi büyütme veya değiştirme gerektiğinde, modüller arasındaki etkileşim minimum düzeyde olduğu için ölçeklenebilirlik sağlanır.
+** Medium Uygulamasının Evrimi
+Bu bilgiler ışığında Medium'un iOS uygulamasının mimarisinin evrim serüveninin inceleyebiliriz. Kullanılan yeni teknikler ve yaklaşımlar, bu süreçte yaşanan zorluklar ve çıkarılan dersler bakımından faydalı bir yayın olduğunu düşünüyorum. Keyifli okumalar dilerim.
+** Kaynaklar
+1. [[https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e][Evolution of the Medium iOS App Architecture]]

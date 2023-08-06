@@ -1,8 +1,11 @@
 #+TITLE: System Crafters News
 
-- [[file:crafted-emacs-july-2023.org][Crafted Emacs Update and New Teammate!]] - Jeff Bowman · July 20, 2023
-- [[file:instagramin_hikayesi.org][Instagram'in Hikayesi]] - David Wilson · July 11, 2023
-- [[file:crafted-emacs-v2-beta.org][Crafted Emacs v2 Beta Announcement]] - Jeff Bowman · June 08, 2023
-- [[file:changes-to-matrix-channels.org][Changes to the System Crafters Matrix Channels]] - David Wilson · May 23, 2023
-- [[file:moving-from-discord-to-matrix-irc.org][Community Chat is Moving From Discord to Matrix and IRC]] - David Wilson · May 18, 2023
-- [[file:new-systemcrafters-site.org][Unveiling the New System Crafters Site!]] - David Wilson · May 11, 2023
+- [[file:aklimda_kalanlar_jake_wharton.org][Aklımda Kalanlar: Jake Wharton ile Röportaj]] - Betül Sandıkçı · July 11, 2023
+- [[file:ios_app_push_certificate_yenileme.org][iOS uygulama bildirim sertifikası oluşturma/yenileme]] - Suat Karakuşoğlu · July 11, 2023
+- [[file:android_studio_bot.org][Android Studio Bot]] - Tuğba Berk · July 11, 2023
+- [[file:ios_deep_link.org][iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı]] - Egehan Kalaycı · July 11, 2023
+- [[file:instagramin_hikayesi.org][Instagram'in Hikayesi]] - Suat Karakuşoğlu · July 11, 2023
+- [[file:evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]] - Yusuf Kaya · July 11, 2023
+- [[file:ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]] - Suat Karakuşoğlu · July 11, 2023
+- [[file:android_file_template.org][Android File Template]] - Hasan Hüseyin Doğan · July 11, 2023
+- [[file:details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımlarınızı Hayata Geçirin]] - Ali Mert Tekel · July 11, 2023

@@ -1,0 +1,61 @@
+#+title: iOS uygulama bildirim sertifikası oluşturma/yenileme
+#+date: [2023-07-11 Tue]
+#+author: Suat Karakuşoğlu
+#+kind: news
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+Merhabalar, bugün hali hazırdaki uygulamamıza push sertifikası yenileme zamanı yaklaşınca yeni sertifika nasıl oluşturulur konusuna değinicem.
+
+iOS uygulamaları için =p12= push sertifikalarinin her yıl yenilenmesi gereklidir.
+
+Push sertifikası aslında uygulamanın bir parçası değildir, bu yüzden yeni sertifika, mevcut uygulamayı etkilemeden değiştirilebilir.
+
+Yenileme burada yanıltıcı bir kelime olabilir, burada yapılan sadece yeni bir sertifika oluşturup eski olanla değiştirmektir.
+
+Sertifikanın yenilemeye yardımcı olmak için, Apple aynı anda 2 aktif push sertifikası destekliyor, böylece 'yakında sona erecek' olan sertifikayı iptal etmeden ilerlenebiliyor.
+Bu yenileme döneminde her 2 sertifika ile aynı anda push gönderebiliyorsunuz.
+
+Bunun için izlenmesi gereken adımlar:
+** =certSigningRequest= dosyası oluşturmak:
+- =Keychain= uygulamasını açın
+- =Certificate Assistant='a menüden tıklayın
+- =Request a Certificate From a Certificate Authority= seçin
+- Sonrasinda disk'e kaydedin.
+
+** Edit Push Notifications
+https://developer.apple.com'u açın
+
+Certificates, identifiers & Profiles menüsüne gidin.
+
+=Identifiers= menüsünden ilgili uygulamanın =id='sini bulun.
+
+#+CAPTION: Certificates, identifiers & Profiles menüsü
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:./resources/mobilen/images/1_CertificatePushIdentifier.jpg]]
+
+#+CAPTION: =Edit= Push Notifications
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:./resources/mobilen/images/2_EditAppIdConfiguration.jpg]]
+
+** Push sertifikası oluşturma
+#+CAPTION: Push sertifikası oluşturma
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:./resources/mobilen/images/3_CreatePushCert.jpg]]
+
+Önceki adımdan certSigningRequest'i kullanın.
+=.cer= dosyasını indirin.
+
+Çift tıklayarak =keychain='e kurun.
+
+=My Certificates= altındaki yeni yüklenmiş sertifikaya sağ tıklayın ve =Export= (Dışa Aktar)'ı seçin.
+
+Sertifikayı korumak için şifre girin ve kaydedin.
+
+Bu adımlar sonrası =p12= dosyanız oluşur.
+Oluşturulan p12 sertifikası ile uygulamanıza push atabilirsiniz. Bu sertifika genelde push providerlara yüklenir.
+
+İyi çalışmalar :)

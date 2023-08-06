@@ -1,0 +1,2 @@
+* Generate 'public' website
+emacs --batch -l ./publish.el --funcall dw/publish

@@ -1,0 +1,324 @@
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+                                 Welcome to the
+                          System Crafters Newsletter!
+
+                           Issue #004 - June 15, 2023
+
+                                by David Wilson
+
+
+         --  This newsletter is best viewed with a monospace font!   --
+         --    If your e-mail client can't do that, use this URL:    --
+         --  https://systemcrafters.net/newsletter/sc-news-004.html  --
+         --            Read it in Emacs with `M-x eww`!              --
+
+== Contents ==
+
+1. Introduction
+2. Announcing Crafted Emacs v2 Beta!
+3. Call for Community Projects
+4. Tip of the Week
+5. Crafter News
+6. Friday's Stream - Crafting Streamlined Guix Configurations
+7. Closing
+
+== Introduction ==
+
+Welcome to the new issue of the System Crafters Newsletter!
+
+It's been a couple of weeks since the last newsletter due to big changes in my
+personal life, but now that things are mostly settled, we're back to our regular
+publishing schedule.
+
+I also just realized it's been an entire year since I posted a tutorial video
+on the System Crafters YouTube channel!  I've been having a lot of fun hacking
+on a variety of projects in that time, but I think I'm well overdue for another
+video on an interesting topic.
+
+I've got a huge backlog of video ideas to draw from, but if you've got a burning
+question that you'd like to see made into a video, please let me know!
+
+                                     -----
+
+     Are you interested in writing a tip or news entry for the newsletter?
+    Feel free to send drafts or recommendations to david@systemcrafters.net
+
+== Announcing Crafted Emacs v2 Beta! ==
+
+Jeff Bowman has recently announced the Crafted Emacs v2 Beta release both on
+his own blog and System Crafters News:
+
+  -> https://jeffbowman.writeas.com/crafted-emacs-v2-beta
+  -> https://systemcrafters.net/news/crafted-emacs-v2-beta
+
+The goal of these changes is to make it easier to adopt Crafted Emacs while
+building *your own* Emacs configuration, using only what you need and discarding
+it when you no longer need it!
+
+Jeff would love to get feedback on the current direction of the project before
+merging it back as the new mainline configuration, so please clone the repo and
+check out the `craftedv2beta` branch to give it a try.
+
+  -> https://github.com/SystemCrafters/crafted-emacs/tree/craftedv2beta
+
+== Call for Community Projects ==
+
+One thing I've been thinking about for a while is how to activate our community
+to collaborate on building new and useful things.  Emacs packages, Guix packages
+or configurations, Lisp-authored tools, really anything that would be useful to
+a system crafter!
+
+To that end, I've created a new channel on Matrix and IRC for community members
+to discuss projects that they would like to collaborate on:
+
+  Matrix: #systemcrafters-hacking:matrix.org / IRC: #systemcrafters-hacking
+
+A few of us are there already discussing a couple of projects that you might be
+interested to join:
+
+  - Fade is prototyping a new type of decentralized forum protocol based on NNTP
+    and IPFS, written in Common Lisp:
+
+    -> https://codeberg.org/fade/callisto
+
+  - David is doing early work on simplifying Guix configurations in Crafted Guix
+
+    -> https://codeberg.org/SystemCrafters/crafted-guix
+
+If you have your own idea for a project, please feel free to come discuss it
+with us!  These projects don't have to be under the "System Crafters" banner,
+but if you'd like to make it an official SC project, we can discuss giving you a
+repo under the System Crafters org on Codeberg.
+
+I'll be coming up a better community project listing soon so that it's easier
+for those interested to contribute to a suitable project.
+
+Even if you don't consider yourself a programmer, if you'd like to contribute to
+cool Free Software projects of interest to the community, join us and we'll find
+a way for you to help!
+
+== Tip of the Week ==
+
+* Simplified Emacs keymaps in Emacs 29 (and earlier!)
+
+One important part of crafting your own Emacs configuration is defining key
+bindings for commands that you use often.  To avoid using `global-set-key` to
+bind individual keys under some prefix (like a `C-c o` prefix for Org Mode
+commands), you have to learn how to define your own "keymap".
+
+Prior to Emacs 29, the way to do this is to use the `make-sparse-keymap`
+function to generate a keymap and then populate it using some initial bindings
+with `define-key`, like so:
+
+```
+(defvar my/org-key-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "a") #'org-agenda)
+    (define-key map (kbd "c") #'org-capture)
+    (define-key map (kbd "x") #'org-export-dispatch)
+    map))
+(fset 'my/org-key-map my/org-key-map)
+
+(global-set-key (kbd "C-c o") 'my/org-key-map)
+```
+
+This pattern is pretty terrible and basically impossible to remember!  That's
+why many people use packages like `use-package`, `general.el` or others to make
+it easier to define custom prefix maps.
+
+Luckily the Emacs contributors have solved this problem for us in Emacs 29!  In
+this release, we'll get access to a new function called `define-keymap` and a
+macro called `defvar-keymap` which make keymap definitions much easier.
+
+Let's re-implement the same keymap definition with `define-keymap`:
+
+```
+(global-set-key
+ (kbd "C-c o")
+ (define-keymap
+   :prefix 'my/org-key-map
+   "a" 'org-agenda
+   "c" 'org-capture
+   "x" 'org-export-dispatch))
+```
+
+Much cleaner!  In this example, `define-keymap` is defining a new prefix map
+called `my/org-key-map` and populating it with the same initial key bindings
+that we saw before.  We're also wrapping that call with the `global-set-key` for
+`C-c o` because `define-keymap` immediately returns the key map that it creates.
+
+Now what if you want to easily add more key bindings to this map somewhere else
+in your configuration?  Use `define-keymap` again!
+
+```
+(define-keymap
+  :keymap my/org-key-map
+  "n n" 'denote
+  "n s" 'denote-subdirectory
+  "n t" 'denote-type)
+```
+
+This example uses the `:keymap` parameter to say that the following bindings
+should be added to the `my/org-key-map` that we defined before.
+
+The `define-keymap` function has a few other options that might be interesting
+to you so use `C-h f` to read the documentation or check out the source code
+here:
+
+  -> https://git.savannah.gnu.org/cgit/emacs.git/tree/lisp/keymap.el#n478
+
+Now let's take a look at the new `defvar-keymap` macro.  It offers the same
+functionality as `define-keymap` with a couple of added bonuses:
+
+- It will define a variable for your keymap
+- It can also configure repeatable bindings with `repeat-mode`
+
+Here's an example of a window management keymap defined with `defvar-keymap`:
+
+```
+;; Make sure repeat-mode is turned on first!
+(repeat-mode 1)
+
+(defvar-keymap my/window-key-map
+  :doc "Bindings for managing windows, configured to be repeatable."
+  :repeat t
+  "c" 'delete-window
+  "s" 'split-window-horizontally
+  "v" 'split-window-vertically
+  "h" 'windmove-left
+  "j" 'windmove-down
+  "k" 'windmove-up
+  "l" 'windmove-right
+  "C-h" 'shrink-window-horizontally
+  "C-j" 'shrink-window
+  "C-k" 'enlarge-window
+  "C-l" 'enlarge-window-horizontally
+  "H" 'windmove-swap-states-left
+  "J" 'windmove-swap-states-down
+  "K" 'windmove-swap-states-up
+  "L" 'windmove-swap-states-right)
+
+(global-set-key (kbd "C-c w") my/window-key-map)
+```
+
+The beauty of this keymap is that once you enter it, you can press any of the
+keys inside of it as many times as you want!  This makes window navigation,
+movement, splitting, and resizing much more efficient because you don't have to
+keep pressing the entire key sequence for every action.
+
+Those of you still on Emacs 28 and below might be happy to learn that you don't
+need to wait until Emacs 29 to benefit from this new pattern.  These functions
+have been added to the `compat` package on GNU ELPA:
+
+https://elpa.gnu.org/packages/doc/compat.html
+
+Once you install this package using `package-install` or any other Emacs package
+manager, you can just `require` it to get access to the new keymap functions:
+
+```
+(require 'compat)
+
+(global-set-key
+ (kbd "C-c o")
+ (define-keymap
+   :prefix 'my/org-key-map
+   "a" 'org-agenda
+   "c" 'org-capture
+   "x" 'org-export-dispatch))
+```
+
+I hope you're as excited about these new functions as I am!
+
+== Crafter News ==
+
+Here are some interesting news items in the broader sphere of system crafting:
+
+* The ultimate guide to software development with Guix
+
+  This really excellent post by Guix founder Ludovic Courtès gives an excellent
+  breakdown for how you can use Guix to power your programming projects.
+
+  Not only does it explain how to create a guix.scm file for your repository,
+  it also explains how to turn your repository into a Guix channel so that
+  other people can try out development builds of your project!
+
+  It even covers using Guix for CI and other useful tasks, so I highly recommend
+  checking it out if you're interested to see how Guix can make hacking even
+  more awesome.
+
+  -> https://guix.gnu.org/en/blog/2023/from-development-environments-to-continuous-integrationthe-ultimate-guide-to-software-development-with-guix/
+
+* Read a legendary Lisp book in Emacs
+
+  The book "Structure and Interpretation of Computer Programs" is a classic
+  entry in computer science literature which teaches the fundamentals of
+  computer programming through the lens of the Scheme programming language.
+
+  This blog post by Konstantinos Chousos explains how you can read this book
+  and experiment with what you learn all from the comfort of Emacs!
+
+  -> https://kchousos.github.io/posts/sicp-in-emacs/
+
+* A new auth-source backend for 1Password
+
+  The `password-store` program is probably the best Free Software solution for
+  managing your passwords and other sensitive information, but what if you need
+  to use a proprietary solution like 1Password for work or because you need to
+  share passwords with family?
+
+  Traditionally it hasn't been possible to use 1Password entries from within
+  Emacs, but now you can!  The new `auth-source-1password` uses the official
+  1Password command-line tool `op` to pull your passwords into Emacs for
+  authentication with the `auth-source`
+
+  -> https://github.com/dlobraico/auth-source-1password
+
+  It shouldn't require much configuration to use this package as long as you
+  already have the `op` tool installed:
+
+  -> https://developer.1password.com/docs/cli/get-started/
+
+  I haven't had a chance to try this package yet, so let me know what you think
+  if you try it out!
+
+  By the way, if you don't much about `auth-source` or using encrypted passwords
+  in Emacs, check out this video I made a couple of years ago:
+
+  -> https://www.youtube.com/watch?v=nZ_T7Q49B8Y
+
+== Friday's Stream - Crafting Streamlined Guix Configurations ==
+
+In tomorrow's stream, we'll discuss some ideas I have for how we can simplify
+Guix configurations and share high quality, reusable configuration blocks!
+
+We'll also hack on an example of this to provide a pre-configured Sway desktop
+environment that someone can pull into their Guix configuration with a few lines
+of code.
+
+The stream will go live at Friday, June 16th at 6PM EEST (UTC+3),
+  check your local time on this page: https://time.is/compare/1800_in_Athens
+
+You can find the stream at these URLs:
+
+  -> https://youtube.com/live/u6WCnzKkKts
+  -> https://twitch.tv/SystemCrafters
+  -> https://systemcrafters.net/live-streams/june-16-2023/
+
+== Closing ==
+
+I hope you enjoyed this issue of the System Crafters Newsletter!  I always want
+to improve and streamline the content as time goes on so please send me your
+thoughts and feedback by replying directly to this e-mail!
+
+Until next time, Happy Hacking!
+
+        ---------------------------------------------------------------
+        --    If you enjoyed this newsletter and other content by    --
+        --       System Crafters, consider supporting my work!       --
+        --            More information can be found here:            --
+        --  https://systemcrafters.net/how-to-help/#support-my-work  --
+        ---------------------------------------------------------------
+
+--
+David Wilson
+david@systemcrafters.net

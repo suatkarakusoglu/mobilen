@@ -1,0 +1,38 @@
+#+title: A New Model for Crafted Emacs
+#+subtitle: System Crafters Live - June 9, 2023
+#+date: [2023-06-09 Fri]
+#+video: HuW4UvX1-uY
+
+* Updates
+
+- The newsletter will resume next week!
+
+  https://systemcrafters.net/newsletter
+
+* Trying out Crafted Emacs v2 Beta
+
+Today we'll be trying out the new v2 Beta release of Crafted Emacs, a community-authored Emacs configuration starter kit!
+
+We're joined by Crafted Emacs maintainer Jeff Bowman to discuss the changes and anything else we need to know.
+
+More information can be found in the new README and Jeff Bowman's latest blog post:
+
+- https://github.com/SystemCrafters/crafted-emacs/blob/craftedv2beta/README.org
+- https://jeffbowman.writeas.com/crafted-emacs-v2-beta
+
+
+Clone the repository to a local path somewhere:
+
+#+begin_src sh
+
+  git clone https://github.com/SystemCrafters/crafted-emacs --branch craftedv2beta
+
+#+end_src
+
+Pull it into your own =init.el= file:
+
+#+begin_src emacs-lisp
+
+  (load "~/crafted-emacs/modules/crafted-init-config")
+
+#+end_src

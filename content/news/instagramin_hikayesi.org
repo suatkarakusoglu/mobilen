@@ -1,0 +1,31 @@
+#+title: Instagram'in Hikayesi
+#+date: [2023-07-11 Tue]
+#+author: Suat Karakuşoğlu
+#+kind: news
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+Sosyal hayatımızın en önemli aktörlerinden birisi olan Instagram'ın geçmişine dair [[https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02][Burbn'in Instagram'a dönüşümü]] yazısına okudum.
+
+Yazıyı okumanızı tavsiye ederim.
+Bu yazıda rastladığım bir konu =feature bloat= karmaşasına karşı yaklaşım.
+
+Instagram'ın Foursquare gibi bir çok yeteneğin yanına harici yetenekleri de yapmaya çalıştığı zamanlardan yalnızca =fotoğraf yayınlama= + =filtre uygulama= + =like= edebilme yeteneklerine odaklanması sayesinde ürün tanımı daha oturaklı bir çerçeveye çekilmiş ve bu Instagram'ın hızlı yükselişinde önemli rol oynamış.
+
+Bana Zawinski'nin aşırı özellikle şişen uygulamalar hakkındaki alaycı ifadesini hatırlattı:
+
+** Zawinski's Law
+#+begin_quote
+"Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can."
+
+"Her program email okuyucusu olana kadar gelişir, gelişmeyenler ise gelişenler ile değiştirilir."
+--- [[https://www.jwz.org/about.html][Jamie Zawinski]]
+#+end_quote
+
+Jamie [[http://www.catb.org/jargon/html/Z/Zawinskis-Law.html][Zawinski's Law]] bu kurala "Law of Software Envelopment" diyor.
+Bu tuzağa çok yakalanmadan ürünlerin karakteristiğinin ve sınırlarının çizilmesi gerekiyor.
+Burada işin içine elbette sunulan özelliklerin düzgün bir kullanıcı deneyim tasarımı ile kullanıcının karşısına çıkması gibi derin konulara doğru ilerliyor.
+
+** Kaynaklar
+- [[https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02][Burbn'in Instagram'a dönüşümü]]
+- [[http://www.catb.org/jargon/html/Z/Zawinskis-Law.html][Zawinski's law]]

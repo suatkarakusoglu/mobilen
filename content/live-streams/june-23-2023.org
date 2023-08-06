@@ -1,0 +1,50 @@
+#+title: Taming Your Emacs Packages with Elpaca
+#+subtitle: System Crafters Live - June 23, 2023
+#+date: [2023-06-23 Fri]
+#+video: 11CO1vCpfrs
+
+* Updates
+
+** Progress on Crafted Guix
+
+This week I made a nice amount of progress on the early design of Crafted Guix!
+
+https://codeberg.org/SystemCrafters/crafted-guix/commit/d1a7d0ff62fc800d42832568ba93160043b35095
+
+Special thanks to *shtwzrd* who offered a lot of insightful comments and suggestions!
+
+Many of the core elements are now in place, so now begins the work of writing shared configuration elements that people might be interested to use in building their own Guix systems.  I'll be updating my personal configuration to use it as soon as I can!
+
+If you're interested to contribute, I've filed some issues on the Codeberg repo:
+
+https://codeberg.org/SystemCrafters/crafted-guix/issues
+
+Feel free to file your own issues with requests for window managers or other software that you would like to see added for easy configuration!
+
+** Subscribe to the Newsletter
+
+  https://systemcrafters.net/newsletter/
+
+  No new issue this week, unfortunately!
+
+** Support my work!
+
+  https://systemcrafters.net/how-to-help/#support-my-work
+
+* Trying out Elpaca
+
+Today we're going to try out the new(ish) package manager for Emacs called Elpaca!
+
+https://github.com/progfolio/elpaca
+
+It was written by Nicholas Vollmer ([[https://github.com/progfolio/][progfolio]] on GitHub, nv-elisp elsewhere), a contributor to Straight.el and a number of other Emacs packages.
+
+The GitHub repo lists the following features:
+
+- Installs packages asynchronously, in parallel for fast, non-blocking installations.
+- Includes a flexible UI for finding and operating on packages.
+- Downloads packages from their sources for convenient elisp development.
+- Supports thousands of elisp packages out of the box (MELPA, NonGNU/GNU ELPA, Org/org-contrib).
+- Makes it easy for users to create their own ELPAs.
+
+Let's try it out and see what we can learn about it!

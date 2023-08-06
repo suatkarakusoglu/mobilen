@@ -1,0 +1,11 @@
+#+title: Crafted Emacs Update and New Teammate!
+#+date: [2023-07-20 Thu]
+#+author: Jeff Bowman
+#+kind: news
+
+Hey Crafters!
+
+I have a new teammate on the Crafted Emacs project, Judy ([[https://github.com/jvdydev][@jvdydev]]) is now a co-maintainer!  I am so excited to be working with her on this project.  It has been a while since I posted an update, but there is continuing work on Crafted Emacs, and now with Judy's help, even more is being accomplished!  See my [[https://write.as/jeffbowman/crafted-emacs-update-for-july-and-new-teammate][blog post]] to get all the juicy bits! 
+
+Happy Crafting!
+- Jeff Bowman

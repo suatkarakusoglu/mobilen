@@ -1,0 +1,8 @@
+#+TITLE: System Crafters News
+
+- [[file:crafted-emacs-july-2023.org][Crafted Emacs Update and New Teammate!]] - Jeff Bowman · July 20, 2023
+- [[file:instagramin_hikayesi.org][Instagram'in Hikayesi]] - David Wilson · July 11, 2023
+- [[file:crafted-emacs-v2-beta.org][Crafted Emacs v2 Beta Announcement]] - Jeff Bowman · June 08, 2023
+- [[file:changes-to-matrix-channels.org][Changes to the System Crafters Matrix Channels]] - David Wilson · May 23, 2023
+- [[file:moving-from-discord-to-matrix-irc.org][Community Chat is Moving From Discord to Matrix and IRC]] - David Wilson · May 18, 2023
+- [[file:new-systemcrafters-site.org][Unveiling the New System Crafters Site!]] - David Wilson · May 11, 2023

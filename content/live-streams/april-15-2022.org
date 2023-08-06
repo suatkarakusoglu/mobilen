@@ -1,0 +1,19 @@
+#+title: Experimenting with Wayland Compositors
+#+date: [2022-04-15 Fri]
+#+video: yPiO0_ExeRA
+
+* Updates
+
+- Emacs 28.1 has been released!
+- No stream next week! (4/28/2022)
+
+* Experimenting with Wayland Compositors
+
+Some information about the [[https://wayland.freedesktop.org/architecture.html][Wayland architecture]]
+
+A more comprehensive list on [[https://wiki.archlinux.org/title/wayland#Compositors][ArchWiki]]
+
+- Sway
+- dwl
+- cagebreak
+- Qtile

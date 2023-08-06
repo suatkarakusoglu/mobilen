@@ -1,0 +1,74 @@
+#+title: Are Text-Centric Interfaces Better for Crafters?
+#+date: [2022-10-21 Fri]
+#+video: U8v32ChA-Rc
+
+*NOTE:* This stream was unfortunately cut short due to internet problems!
+
+* Updates
+
+- [[https://github.com/joaotavora/eglot][Eglot]] is now a part of Emacs 29 (devel): https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=83fbda715973f57dc49fe002d255ecaff8273154
+
+- Support the channel!  *Buy Mastering Emacs* with this link https://www.masteringemacs.org/r/systemcrafters
+
+* Are Text-Centric Interfaces Better for Crafters?
+
+Today I'd like to discuss something I've been thinking about a lot this week: are text-centric interfaces better for people like us?
+
+I'm sure we all have a similar opinion on this topic but I thought it would be interesting to go into a bit more detail to see if there are any unique advantages we haven't considered yet.
+
+Also, "interfaces" in this case is not just about user interfaces, it's also about protocols as they are another type of interface we care about!
+
+For each of these areas, I'd like us to discuss a few specific factors:
+
+- Effectiveness: Can you accomplish more or less with a text-based interace?
+- Efficiency: Can you work faster with a text-based interface?
+- Hackability: Can you build your own tools around the interface?
+- User-Friendliness: Not as much of a concern?
+
+** Code Collaboration
+
+GitHub vs Sourcehut
+
+GitHub has a full web UI for things like:
+
+- Issue management
+- Project management
+- Pull requests
+
+You become very dependent on that interface because much of the functionality can only be accessed through it.
+
+The question is: is an e-mail driven workflow better for crafters/hackers?
+
+*** Effectiveness
+
+Pros:
+
+- You can choose which mail client or interface you use to process your email about the project
+- Email is a very well-established standard
+- You can look at issue emails and patches offline
+- You already have access to the patches in the emails, easy to apply and review
+- It's easy to discuss specific aspects of a patch because you can just copy/paste parts of the patch into the reply and discuss there
+
+Cons:
+
+- Harder to include demonstration media like GIFs or videos, though you can add them as attachments to the email or use an upload service like 0x0.st
+- It's harder to get an idea of how "popular" or "used" that a project is on a site like SourceHut which doesn't have signals for that like stars or forks.  However, you could just as easily check the mailing list logs for the project on SourceHut to see how much activity there is.
+- Maybe it's harder to read mailing list discussion on mobile
+- It might be harder to stay up to date in a fast-moving project that uses diffs; the GitHub PR UI will tell you when your PR is out of date
+  - The maintainer can tell you if your patch is out of date
+  - The CI system will throw errors if your code doesn't build
+- Not as welcoming for newcomers
+
+** Chat
+
+Discord vs Matrix vs IRC
+
+** System and Programming Tools
+
+I don't just mean whether Emacs is better than a graphical IDE; this also relates to compilers, linting tools, service managers, system control applications, and many other tools you might use.
+
+** Creative Tools
+
+It's slightly harder to imagine a text-centric interface for creating images, videos, or music!
+
+** What else?

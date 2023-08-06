@@ -1,0 +1,41 @@
+#+title: Crafting a Guix Installer with Guile and GTK
+#+subtitle: System Crafters Live - June 30, 2023
+#+date: [2023-06-30 Fri]
+#+video: TuBy-0DmS4E
+
+* Updates
+
+- *EmacsConf 2023* has been announced!
+
+  Submit your talk proposals here: https://emacsconf.org/2023/cfp/
+
+* Guix needs a more user-friendly installer
+
+If you've ever tried to install the complete Guix system before, you've probably used its "graphical" installer.  It's actually not bad!  However, it isn't the best experience for new users, in my opinion.
+
+I've been thinking for a while about what it'd be like to write a true graphical installer for Guix.  I briefly investigated using the [[https://calamares.io/][Calamares]] installer framework for this purpose but it seems like that would need to be heavily customized to work well for Guix.
+
+Guix already has its own installation logic provided as a set of Guile modules.  Why not leverage that code and build a new GTK UI for it using Guile Scheme and [[https://spk121.github.io/guile-gi][Guile-GI]]?
+
+For now, my plan is to prototype this new installer specifically for Crafted Guix but with a larger goal to make it useful for the official Guix installer and other Guix-based distributions.
+
+To quickly learn how to use GTK 3 to prototype the UI, we'll be using the [[https://wiki.gnome.org/Apps/Glade][Glade]] UI designer tool to inspect its output.
+
+I've created a PR for this work on Codeberg, feel free to check it out and leave comments!
+
+https://codeberg.org/SystemCrafters/crafted-guix/pulls/14
+
+** Goals
+
+We probably won't get to all these, but it'd be nice to show that it is possible!
+
+- Create a basic installation wizard flow for all the steps of the install process
+- Minimally sketch out the first few pages of the installation flow
+- Produce a basic Crafted Guix configuration from whatever the user configured
+- Produce a minimal installer image which launches this installation UI in a Sway session
+
+** Resources
+
+- https://docs.gtk.org/gtk3/class.Assistant.html
+- https://github.com/RainMark/gtk3-tutorial/blob/master/_examples/assistant.c
+- https://spk121.github.io/guile-gi/GObject-Signals.html

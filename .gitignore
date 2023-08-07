@@ -9,3 +9,5 @@ public/
 
 ; Ignore Gemini output
 gemini/
+
+.DS_Store

@@ -1,5 +1,0 @@
-#+title: Advanced Emacs Package Management with straight.el
-
-* Episodes
-
-1. [[file:using-straight-el.org][Getting Started with straight.el]]

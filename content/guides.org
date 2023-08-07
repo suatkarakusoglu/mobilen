@@ -1,12 +1,8 @@
-#+title: Guides
+#+title: Mobilen Dergiler
 
-* Complete Guides
+* Mobilen Dergiler
 
-/Comprehensive written guides are coming soon!  Subscribe to the [[file:../newsletter.org][System Crafters Newsletter]] to be notified when new guides are released./
-
-* Video Series
-
-I've create a number of video tutorial series to help you learn GNU Emacs and GNU Guix in greater depth!
+/Mobilen Dergilerin sıralı listesi./
 
 ** GNU Emacs
 

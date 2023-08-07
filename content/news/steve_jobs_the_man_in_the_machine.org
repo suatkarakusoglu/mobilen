@@ -1,0 +1,27 @@
+#+title: Steve Jobs The Man in The Machine
+#+date: [2023-07-11 Tue]
+#+author: Suat Karakuşoğlu
+#+kind: news
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: The man in the Machine
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:./resources/mobilen/images/the_man_in_the_machine.jpg]]
+
+Merhabalar bu ay belgesel önerisi ile geliyoruz. [[file:kitap_make_something_wonderful.org][Geçen haftaki]] sayımızdaki tekrara düşmek istemiyordum ancak teknoloji ve mobile dünyanın en etkin isminin radikal yönlerini de ele alan [[https://www.youtube.com/watch?v=MnVI7xiY39k&t][Steve Jobs The Man in the Machine]] belgeselini izledim.
+
+Alex Gibney'in yönettiği bu belgeselde Steve Wozniak ile tanışmasını, sonrasında =Blue Box= ürününü nasıl yaptıklarını anlatarak başlıyor.
+
+#+begin_quote
+"When you learned you can mold the life, life will not be same again."
+
+"Hayatı şekillendirebileceğini öğrendiğinde, hayat bir daha eskisi gibi olmaz."
+
+--- Steve Jobs
+#+end_quote
+
+Hayatı kendi ideallerince şekillendirip bir çok sektörde büyük başarılar ortaya koyan, yaratıcı zihni tetikleyen bu duayen'i belgeselde daha objektif taraflarıyla tanıyabilirsiniz.
+
+Keyifli izlemeler.

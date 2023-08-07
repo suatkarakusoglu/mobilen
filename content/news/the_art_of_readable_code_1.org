@@ -1,0 +1,44 @@
+#+title: Okuma Notları: The Art Of Readable Code (Part 1)
+#+date: [2023-07-11 Tue]
+#+author: Yusuf Kaya
+#+kind: news
+
+[[https://linkedin.com/in/myusufka][Yusuf Kaya]] yazdı.
+
+Merhabalar, okumalarımdan çıkarttığım notları seri halinde paylaşmak istiyorum. Bu sayımızda [[https://www.goodreads.com/en/book/show/8677004][The Art of Readable Code]] kitabının notlarının ilk bölümünü inceleyeceğiz.
+
+Kod okunurluğu, yazılım geliştirme sürecinde oldukça önemli bir faktördür. Kodun okunabilir olması, geliştiricilerin kodu daha kolay anlamasını ve kodun bakımını ve genişletilmesini kolaylaştırır. Kodun daha okunabilir olması için bazı başlıkları inceleyeceğiz. İlerleyen sayılarda daha fazla başlık incelemeye çalışacağız.
+
+** İyi İsimler Seçmek
+Kodun okunurluğunu artırmanın önemli bir yolu, değişken, fonksiyon ve sınıflar için uygun ve açıklayıcı isimler seçmektir. İyi bir isim, o değişkenin veya fonksiyonun amacını ve kullanımını açık bir şekilde ifade eder. Örneğin, belirsiz veya genel isimler yerine, değişkenin değerini veya fonksiyonun amacını daha iyi yansıtan isimler tercih edilmelidir.
+
+Örneğin, "tmp" veya "get" gibi belirsiz isimler yerine, daha açıklayıcı isimler seçilmelidir. Örneğin, "FetchPage()" veya "DownloadPage()" gibi daha anlamlı isimler, "GetPage(url)" fonksiyonunun amacını daha iyi ifade eder.
+
+** Genel İsimler ve Kısaltmalardan Kaçınmalıyız
+Genel isimlerden kaçınılmalıdır. Örneğin, "tmp", "retval" veya "foo" gibi kısaltma isimler, kodun okunurluğunu azaltabilir ve kodun anlaşılmasını zorlaştırabilir. Bu tür isimler yerine, değişkenin değerini veya amacını açıklayan isimler tercih edilmelidir.
+
+#+begin_src swift
+  // Bunun gibi kısaltma kullanım yerine:
+  let retval = someFunction()
+
+  // Anlamlı isimlendirmeler tercih etmeliyiz:
+  let isEligibleForCampaign = someFunction()
+#+end_src
+
+** Somut İsimleri Soyut İsimlere Tercih Etmeliyiz
+İsimlendirme yaparken amacını doğrudan açıklayan somut isimler tercih edin. Amacı anlamak için daha fazla araştırmaya ihtiyaç duyabilecek soyut isimlerden kaçının. Örneğin, bir sunucunun belirli bir TCP/IP bağlantı noktasını dinleyip dinlemediğini test eden bir yöntem varsa, "ServerCanStart()" yerine "CanListenOnPort()" adını kullanmak daha açıklayıcı olacaktır.
+
+** İsim Uzunluğuna Dikkat Etmeliyiz
+Anlamlı isimler seçmek önemlidir, ancak aşırı uzun isimlerden kaçınmak da gereklidir. Kısa kapsama sahip değişkenler için kısa isimler kabul edilebilir, çünkü bağlam zaten yeterli bilgi sağlar. Ancak daha geniş kapsamlı değişkenler için daha uzun isimler, amacını anlamak açısından daha faydalı olacaktır.
+
+** Bazı İsimlendirme Önerileri
+- Değerlerin üst veya alt sınırlarını belirlerken =max_= ve =min_= ön eklerini kullanmak iyidir. Kapsayan aralıklar için =first= ve =last=, kapsayan/olamayan aralıklar için =begin= ve =end= terimleri tercih edilebilir.
+
+- Boolean değişkenlerin isimlendirmesinde =is=, =has=, =can=, veya =should= gibi kelimeler kullanarak anlamı açık hale getirmeliyiz ve olumsuz ifadelerden kaçınmalıyız.
+
+- İsimlerin yanıltıcı olabileceği durumlarda, kullanıcının beklentilerini karşılamak için ismi değiştirmeyi tercih etmeliyiz.
+
+Özetle, iyi isimler, okuyucunun niyetinizi doğru bir şekilde anlayacağı ve yanlış yorumlamalara neden olmayacağı isimlerdir. Dikkatli ve açıklayıcı isim seçimi, kodun anlaşılabilirliğini artıran önemli bir faktördür. Bir sonraki sayıda notlarımızın devamında görüşmek üzere :)
+
+** Kaynakça
+[[https://www.goodreads.com/en/book/show/8677004][The Art of Readable Code]]

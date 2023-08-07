@@ -1,0 +1,16 @@
+#+title: WWDC 2023 geldi!
+#+date: [2023-07-11 Tue]
+#+author: Suat Karakuşoğlu
+#+kind: news
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+[[https://developer.apple.com/wwdc23/][WWDC 2023]] sunum takvimi hazır.
+[[https://www.apple.com/newsroom/2023/05/apples-worldwide-developers-conference-to-kick-off-june-5-2023/][Apple WWDC 2023 konuları]] da belirlendi.
+
+Keynote sunumu Türkiye saati ile 5 Haziranda [2023-06-05 Mon 20:00] başlayacak.
+[[https://www.youtube.com/watch?v=GYkq9Rgoj8E&ab_channel=Apple][Buradaki link]] üzerinden alarm kurup, açıp izleyebilirsiniz.
+
+iOS 17 ile beraber Apple duyurduğu [[https://www.apple.com/newsroom/2023/05/apple-previews-live-speech-personal-voice-and-more-new-accessibility-features/][erişilebilirlik]] yeteneklerini daha geliştirdiklerini görüyoruz.
+
+- One More Thing! ::  VR gözlüğü konusundaki atılımların meyvesi bu toplantıda görücüye çıkabilir.

@@ -1,0 +1,23 @@
+#+title: Kitap: Make Something Wonderful
+#+date: [2023-07-11 Tue]
+#+author: Suat Karakuşoğlu
+#+kind: news
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Bilgisayar zihnin bisikletidir.
+#+ATTR_LATEX: :width \textwidth
+#+ATTR_HTML: :width 100%
+[[file:./resources/mobilen/dergi_2/stevejobs_with_bicycle.jpg]]
+
+Steve Jobs'un aramızdan ayrılışının üzerinden 12 sene geçmiş :/.
+
+İşlerinde ve ilişkilerinde hayatına dair daha derin bir bakış açısı yakalayabileceğimiz konuşmalarını, yazışmalarını ve hatıralarını
+biriktiren ve sanki kendisinin ağzından yazılmış bir kitap olarak ücretsiz yayınlanan bu kitabı zevkle okuyacağınıza inanıyorum.
+
+İçerisindeki konulara değinmek gerekirse:
+- Apple'dan ayrılışı, NeXT'in kuruluşu ve sonrasında tekrar Apple'a satılıp geri dönüşündeki hikayeler.
+- Pixar'da elde ettiği başarılar.
+- Teknolojiyi, sanatı, kullanıcı deneyimini iç içe görmesi ve kendi eğitim hayatındaki yaklaşımlarını bulabilirsiniz.
+
+[[http://apple.co/sja][Apple Books]] üzerinden veya [[https://stevejobsarchive.com/book/download][indirerek]] faydalanabilirsiniz

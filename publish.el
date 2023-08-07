@@ -78,9 +78,12 @@
 (setq user-full-name "Suat Karakuşoğlu")
 (setq user-mail-address "suatkarakusoglu@gmail.com")
 
-(defvar dw/site-url (if (string-equal (getenv "CI") "true")
-                        "https://systemcrafters.net"
-                      "http://localhost:8080")
+;; (defvar dw/site-url (if (string-equal (getenv "CI") "true")
+;;                         "https://systemcrafters.net"
+;;                       "http://localhost:8080")
+;;   "The URL for the site being generated.")
+
+(defvar dw/site-url "http://mobilen.art"
   "The URL for the site being generated.")
 
 (defun dw/embed-list-form ()

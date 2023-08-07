@@ -2,10 +2,9 @@
 
 Mobil yazılım ürünleri, kullanıcıların hayatlarında büyük bir öneme sahip araçlar haline geldi. Bir mobil yazılım ürünü, son kullanıcıya sunulmadan önce geliştirilme aşamasında ve geliştirildikten sonra birçok pratiği takip etmesi ve uygulaması gerekmektedir.
 
-Bu pratikleri takip eden kimseler teknik anlamda 'Mobil Yazılım Gelişticileri', öncesinde tasarımları ve deneyimi ortaya koyan 'Kullanıcı tasarım ve deneyim ekipleri', son kullanıcıya daha etkin erişmesini sağlamaya çalışan 'Pazarlama' ekipleri ve daha bir çok kimseden oluşuyor.
+Bu pratikleri daha yakından takip edebilmek için buradayız.
 
-Çok hızlı gelişen ve değişen bu pratikleri takip etmek, mümkün olduğunca geliştirme aşamalarında ortak bir jargon kullanarak daha iyi iletişimi sağlayabilmek için, bulunduğumuz ekosistemi ve yaklaşımları daha yakından takip edebilmek önemli hale geliyor.
+[[file:guides.org][Dergiler]] ve [[file:news.org][Tüm içerikler]]'e erişebilirsiniz
 
-Bu nedenle, işlerimizi daha kaliteli bir noktaya taşımak amacıyla, mobil konulara odaklı periyodik yayınlanacak bir dergi hazırlamaktayız ve heyecanlıyız :).
-
-Yazı eklemek isterseniz [[https://github.com/suatkarakusoglu/mobilen/issues][buradan issue]] açarak yazınızı gönderebilir katkıda bulunabilirsiniz :)
+#+begin_cta
+#+end_cta

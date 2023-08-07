@@ -14,7 +14,7 @@ Bu yazıda, bir geliştiricinin bakış açısından bu yılın WWDC'sindeki fav
 #+CAPTION: Vision Pro
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_2/vision_pro.jpg]]
+[[file:vision_pro.jpg]]
 
 Etkinliğin en gözdesininden ilk bahsetmek en doğrusu olur diye düşünüyorum. Vision Pro, Apple'ın on yıldan uzun süredir geliştirilmekte olduğu artırılmış ve sanal gerçeklik cihazı. Çoğu kişi tarafından bu cihaz bir *headset* olarak isimlendirilse de Apple bu isimlendirmeyi kullanmaktan kaçınıyor. Bunun yerine sanal dünyayı gerçek dünya ile harmanlaması nedeniyle uzamsal bilgisayar (spatial computing) olarak adlandırıyor.
 
@@ -41,14 +41,14 @@ Her yıl SwiftUI yenilik ve iyileştirmelerine UIKit'in yerini tamamen alabilir 
 #+CAPTION: SwiftUI için yeni macrolar
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_2/observable_macro.jpg]]
+[[file:observable_macro.jpg]]
 
 Bu yılki SwiftUI değişiklikleri, veri akışını daha da sadeleştirmeyi hedefliyor. =StateObject=, =@ObservedObject= ve =@EnvironmentObject= property wrapper'ları =@State= ve =@Environment= altında toplanmış.
 
 #+CAPTION: SwiftUI örnek macro
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_2/macro_usage.jpg]]
+[[file:macro_usage.jpg]]
 
 Ayrıca, artık nesne düzeyindeki =@Observable= macro sayesinde, =@Published= olarak parametreleri ayrı ayrı belirtmenize gerek kalmayacak.
 
@@ -65,7 +65,7 @@ SwiftUI yeniliklerine daha yakından göz atmak isterseniz [[https://developer.a
 #+CAPTION: SwiftData
 #+ATTR_LATEX: :width 120px
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_2/SwiftData.jpg]]
+[[file:SwiftData.jpg]]
 
 Core Data ile tanışanlar, onun öğrenilmesi ve kullanılması en kolay framework olmadığını bilirler. Core Data genellikle string literal'e dayanır. Derleme zamanı doğrulamasından yoksundur ve potansiyel yazım hatalarına yer bırakır. Bu durumda eğer bir hata yaparsanız, sadece uygulamanız çöktüğünde bu hatayı öğrenebilirsiniz.
 

@@ -8,7 +8,7 @@
 #+CAPTION: Bilgisayar zihnin bisikletidir.
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_2/stevejobs_with_bicycle.jpg]]
+[[file:stevejobs_with_bicycle.jpg]]
 
 Steve Jobs'un aramızdan ayrılışının üzerinden 12 sene geçmiş :/.
 

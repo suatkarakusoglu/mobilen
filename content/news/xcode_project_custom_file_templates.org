@@ -21,7 +21,7 @@ Yeni başlayanlardan deneyimli geliştiricilere kadar herkesin işine yarayacak 
 #+CAPTION: Template Seçimi
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 400px :style float:center;
-[[file:./resources/mobilen/dergi_1/choose-template.png]]
+[[file:choose-template.png]]
 
 Bu template'ler, yeni oluşturulacak dosyaların belirli bir yapıya sahip olmasına yardımcı olur. Ancak, projeniz büyüdükçe ve daha fazla dosya eklemeniz gerektiğinde, aynı süreci tekrar tekrar uygulamak zaman kaybına ve tutarsızlıklara yol açabilir. İşte tam bu noktada Custom Xcode Templates devreye girer.
 
@@ -37,26 +37,26 @@ Bu klasör genellikle `~/Library/Developer/Xcode/Templates/File Templates` dizin
 #+CAPTION: Templates dizinini açmak
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/templates-folder.png]]
+[[file:templates-folder.png]]
 
 #+CAPTION: Yeni klasör oluşturmak
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/file-templates.png]]
+[[file:file-templates.png]]
 
 Kendi template'lerinizi barındıracak bir klasör oluşturmanız gerekmektedir. Bu klasörü adlandırırken istediğiniz ismi kullanabilirsiniz, örneğin "My Project Templates".
 
 #+CAPTION: Custom Template barındıracak klasörü oluşturmak
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/my-project-templates.png]]
+[[file:my-project-templates.png]]
 
 Sonrasında, `.xctemplate` uzantılı bir dosya oluşturmalısınız. Bu dosya, oluşturacağınız asıl template'i temsil eder ve template'in nasıl görüneceğini ve hangi dosyaların oluşturulacağını belirler.
 
 #+CAPTION: Xctemplate dosyaları
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/xctemplate.png]]
+[[file:xctemplate.png]]
 
 `.xctemplate` dosyası genellikle aşağıdaki öğeleri içerir:
 

@@ -8,7 +8,7 @@
 #+CAPTION: Örnek Swipe Actions
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_2/SwipeActions.jpg]]
+[[file:SwipeActions.jpg]]
 ** Swipe Actions nedir?
 Merhabalar, herhangi bir ui elemanının üzerinden =swipe= ile çıkan aksiyonlar iOS kullanıcı deneyiminde önemli rol oynuyor.
 

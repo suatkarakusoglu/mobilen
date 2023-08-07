@@ -8,7 +8,7 @@
 #+CAPTION: The man in the Machine
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/images/the_man_in_the_machine.jpg]]
+[[file:the_man_in_the_machine.jpg]]
 
 Merhabalar bu ay belgesel önerisi ile geliyoruz. [[file:kitap_make_something_wonderful.org][Geçen haftaki]] sayımızdaki tekrara düşmek istemiyordum ancak teknoloji ve mobile dünyanın en etkin isminin radikal yönlerini de ele alan [[https://www.youtube.com/watch?v=MnVI7xiY39k&t][Steve Jobs The Man in the Machine]] belgeselini izledim.
 

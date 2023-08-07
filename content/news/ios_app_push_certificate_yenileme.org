@@ -33,18 +33,18 @@ Certificates, identifiers & Profiles menüsüne gidin.
 #+CAPTION: Certificates, identifiers & Profiles menüsü
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/images/1_CertificatePushIdentifier.jpg]]
+[[file:1_CertificatePushIdentifier.jpg]]
 
 #+CAPTION: =Edit= Push Notifications
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/images/2_EditAppIdConfiguration.jpg]]
+[[file:2_EditAppIdConfiguration.jpg]]
 
 ** Push sertifikası oluşturma
 #+CAPTION: Push sertifikası oluşturma
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/images/3_CreatePushCert.jpg]]
+[[file:3_CreatePushCert.jpg]]
 
 Önceki adımdan certSigningRequest'i kullanın.
 =.cer= dosyasını indirin.

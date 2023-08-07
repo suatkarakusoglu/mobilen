@@ -8,7 +8,7 @@
 #+CAPTION: [[https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif][Netfox'u İzlemek için tıkla]]
 #+ATTR_LATEX: :width 200px
 #+ATTR_HTML: :width 400px :style float:center;
-[[file:./resources/mobilen/dergi_1/NetFoxImage.jpg]]
+[[file:NetFoxImage.jpg]]
 
 Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde görüntülemek için kullanılan faydalı olduğunu düşündüğüm *[[https://github.com/kasketis/netfox][Netfox]]* kütüphanesinden bahsedicem.
 

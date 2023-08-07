@@ -73,14 +73,14 @@ URL Scheme'in kurulumu oldukça basittir. Örneğin, bir iOS uygulamasına URL S
 
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/0.jpg]]
+[[file:0.jpg]]
 Bu şekilde bir tanımlama yaptıktan sonra, telefonumuzdan bir tarayıcı veya notlar uygulamasına gidip bu linki test edebiliriz. "com.myApp" yazıp enter'a tıkladığımızda fark ederiz ki, bir şey olmamıştır.
 
 Peki, bu durum neden oluşur? İşin aslı, iOS'un bir metni bağlantı olarak tanıması için, URL formatına uygun olmamızı bekler. Yani linkimizi "com.myApp://main" olarak güncellemeliyiz. Bu formatı girdiğimizde, bir izin pop-up'ı ile karşılaşırız. Eğer burada "Aç" diyerek izin verirsek, linkin uygulamamızı açtığını görebiliriz.
 
 #+ATTR_LATEX: :width 0.5\textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/1.jpg]]
+[[file:1.jpg]]
 Fakat, evet uygulamayı açtık ama henüz uygulama içerisinde bir yönlendirme yapmadık. Mesela uygulamanın "profil bilgilerim" sayfasına gitmek istiyoruz. Peki, bunu nasıl yapabiliriz?
 
 *** URL Scheme ile Uygulama İçi Yönlendirme
@@ -92,7 +92,7 @@ Bu URL'deki parametreleri elde etmek ve bunları kendi yönlendirme yapımıza g
 
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/2.jpg]]
+[[file:2.jpg]]
 Bu kod yapısında,
 - `url.scheme` = "com.myApp"
 - `url.host` = "content"
@@ -118,7 +118,7 @@ Ama burada bir sorun var mıdır? Örneğin, "myApp" adlı uygulamanızı Instag
 *** JSON Dosyası Yapısı
 JSON dosyası dedik. Peki bu JSON dosyasının yapısında neler var?
 Bu JSON dosyasının yapısı genellikle aşağıdaki gibidir:
-[[file:./resources/mobilen/dergi_1/3.jpg]]
+[[file:3.jpg]]
 - applinks: Bu JSON'ın Universal Link olduğunu belirtir.
 - apps: Apple dokümanına göre bu değer boş bırakılmalıdır.
 - details: Uygulama listesi ve yolları içerir.
@@ -142,7 +142,7 @@ Bu adımların ardından, Universal Link yeteneğiniz aktif hale gelmiş olacakt
 
 #+ATTR_LATEX: :width 120px
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/4.jpg]]
+[[file:4.jpg]]
 
 *** Uygulama İçi Yönlendirme
 Universal Link yeteneğini ekledikten sonra, uygulamanızın belirli bir sayfasına yönlendirebilmek için URL'yi karşılayacak bir metot belirlememiz gerekiyor. Bu metot, genellikle AppDelegate dosyasında bulunur.
@@ -151,7 +151,7 @@ URL Scheme'de linklerimizi "open url: URL" metodunda handle ediyorduk, ancak Uni
 
 #+ATTR_LATEX: :width 340px
 #+ATTR_HTML: :width 80%
-[[file:./resources/mobilen/dergi_1/5.jpg]]
+[[file:5.jpg]]
 Örneğin, "www.myApp.com/app/profile" gibi bir linke tıkladığınızda bu metot handle edecektir.
 
 Bu kod yapısında,
@@ -166,7 +166,7 @@ Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha
 
 #+ATTR_LATEX: :width 0.6\textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/6.jpg]]
+[[file:6.jpg]]
 
 ** Kaynaklar
 1. [[https://medium.com/@ydemirkoparan/swift-ile-deep-linking-nas%C4%B1l-yap%C4%B1l%C4%B1r-e815fee93b97][Swift ile DeepLinking nasıl yapılır?]]

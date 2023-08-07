@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       20230724T113245.488053
 :END:
-#+title: DetailsPro: No-Code ile Swift Tasarımlarınızı Hayata Geçirin
+#+title: DetailsPro: No-Code ile Swift Tasarımları
 #+date: [2023-07-11 Tue]
 #+author: Ali Mert Tekel
 #+kind: news

@@ -97,7 +97,7 @@ Bizim istediğimiz ise, programın buton aksiyonu ile duraklamasından sonra otu
 #+CAPTION: Xcode edit breakpoint window
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
-[[file:./resources/mobilen/dergi_1/edit-breakpoint-window.jpg]]
+[[file:edit-breakpoint-window.jpg]]
 
 Açılan pencerede "breakpoint"'e isim verebilir, belli koşullar altında çalışmasını ayarlayabilir veya program durduktan sonra yapılacak bir aksiyon tanımlayabiliriz. Biz buton aksiyonu sonrasında "textfield"'ları geçerli bilgiler ile doldurup, programın çalışmasına devam etmesini sağlamalıyız.
 

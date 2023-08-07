@@ -11,6 +11,5 @@
 6. [[file:../../news/ios_deep_link.org][iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı]]
 7. [[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
 
-* Kapak
 #+ATTR_HTML: :width 100%
 [[volume_1_cover.jpg]]

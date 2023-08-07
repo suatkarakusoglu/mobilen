@@ -1,5 +1,5 @@
-#+title: RSS Feeds
+#+title: RSS Bülteni
 
-You can follow these RSS feeds to stay up to date on System Crafters news and releases:
+RSS linkine üye olarak *Mobilen* haberlerine daha hızlı erişebilirsin.
 
-- [[file:news.xml][Mobilen News]]
+- [[file:news.xml][Mobilen RSS]]

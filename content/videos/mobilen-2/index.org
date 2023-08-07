@@ -24,6 +24,5 @@ Keyifli okumalar ;).
 7. [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]
 
 
-* Kapak
 #+ATTR_HTML: :width 100%
 [[volume_2_cover.jpg]]

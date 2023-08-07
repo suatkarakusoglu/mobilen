@@ -131,21 +131,25 @@
                                 (a (@ (class "nav-link") (href "/guides/")) "Dergiler") " "
                                 (a (@ (class "nav-link") (href "/news/")) "İçerikler") " "
                                 (a (@ (class "nav-link") (href "/community/")) "Topluluk") " "
+                                (a (@ (class "nav-link") (href ,(concat dw/site-url "/rss/"))) "RSS Bülten") " "
                                 ;; (a (@ (class "nav-link") (href "https://github.com/suatkarakusoglu/mobilen")) "Github") " "
-                                (a (@ (class "nav-link") (href "/how-to-help/")) "Katkıda Bulun")))))))
+                                ;; (a (@ (class "nav-link") (href "/how-to-help/")) "Katkıda Bulun")
+                                ))))))
 
 (defun dw/site-footer ()
   (list `(footer (@ (class "site-footer"))
                  (div (@ (class "container"))
                       (div (@ (class "row"))
                            (div (@ (class "column"))
-                                (p (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Gizlilik Sözleşmesi")
-                                   " · "
-                                   (a (@ (href ,(concat dw/site-url "/credits/"))) "Krediler")
-                                   " · "
-                                   (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Bülten")
-                                   " · "
-                                   (a (@ (rel "me") (href "https://tr.linkedin.com/in/suat-karakusoglu")) "Suat"))
+                                (p
+                                 ;; TODO: Create Privacy policy.
+                                 ;; (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Gizlilik Sözleşmesi")
+                                 ;; " · "
+                                 (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Bülten")
+                                 " · "
+                                 (a (@ (href ,(concat dw/site-url "/credits/"))) "Atıflar")
+                                 " · "
+                                 (a (@ (rel "me") (href "https://tr.linkedin.com/in/suat-karakusoglu")) "s13u"))
                                 (p "© 2023-2024 Mobilen"))
                            (div (@ (class "column align-right"))
                                 (p (a (@ (href "https://github.com/suatkarakusoglu/mobilen"))
@@ -203,11 +207,12 @@
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/site.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/css/code_highlighter_dark_theme.css"))))
-            (script (@ (defer "defer")
-                       (data-domain "systemcrafters.net")
-                       (src "https://plausible.io/js/plausible.js"))
-                    ;; Empty string to cause a closing </script> tag
-                    "")
+            ;; TODO: Add different js for analytics.
+            ;; (script (@ (defer "defer")
+            ;;            (data-domain "systemcrafters.net")
+            ;;            (src "https://plausible.io/js/plausible.js"))
+            ;;         ;; Empty string to cause a closing </script> tag
+            ;;         "")
             ,(when head-extra head-extra)
             (title ,(concat title " - Mobilen")))
            (body ,@(unless exclude-header
@@ -332,7 +337,7 @@ holding contextual information."
             block-type
             (or contents
                 (if (string= block-type "cta")
-                    "If you find this guide helpful, please consider supporting Mobilen via the links on the <a href=\"/how-to-help/#support-my-work\">How to Help</a> page!"
+                    "Bilgi ve Kültür paylaştıkça değer kazanır; <a href=\"/community/\">Şimdi bize katılın</a> :)"
                   "")))))
 
 (org-export-define-derived-backend 'site-html 'html

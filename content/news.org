@@ -18,5 +18,5 @@
 - [[file:steve_jobs_the_man_in_the_machine.org][Steve Jobs The Man in The Machine]] - Suat Karakuşoğlu · July 11, 2023
 - [[file:ssl_pinning.org][SSL Pinning]] - Suat Karakuşoğlu · July 11, 2023
 - [[file:android_file_template.org][Android File Template]] - Hasan Hüseyin Doğan · July 11, 2023
-- [[file:details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımlarınızı Hayata Geçirin]] - Ali Mert Tekel · July 11, 2023
+- [[file:details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]] - Ali Mert Tekel · July 11, 2023
 - [[file:the_art_of_readable_code_1.org][Okuma Notları: The Art Of Readable Code (Part 1)]] - Yusuf Kaya · July 11, 2023

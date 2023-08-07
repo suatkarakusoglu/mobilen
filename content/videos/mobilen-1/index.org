@@ -3,10 +3,14 @@
 /Mobilen'in ilk dergisi./
 
 * Konular
-1. [[file:wwdc_2023_geldi.org][WWDC 2023 geldi!]]
-2. [[file:navigation_desenleri.org][Navigation Desenleri]]
-3. [[file:netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]
-4. [[file:xcode_breakpoints_ile_otomatizasyon.org][Xcode Breakpoints ile Otomatizasyon]]
-5. [[file:xcode_project_custom_file_templates.org][XCode Project Custom File Templates]]
-6. [[file:ios_deep_link.org][iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı]]
-7. [[file:evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
+1. [[file:../../news/wwdc_2023_geldi.org][WWDC 2023 geldi!]]
+2. [[file:../../news/navigation_desenleri.org][Navigation Desenleri]]
+3. [[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]
+4. [[file:../../news/xcode_breakpoints_ile_otomatizasyon.org][Xcode Breakpoints ile Otomatizasyon]]
+5. [[file:../../news/xcode_project_custom_file_templates.org][XCode Project Custom File Templates]]
+6. [[file:../../news/ios_deep_link.org][iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı]]
+7. [[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
+
+* Kapak
+#+ATTR_HTML: :width 100%
+[[volume_1_cover.jpg]]

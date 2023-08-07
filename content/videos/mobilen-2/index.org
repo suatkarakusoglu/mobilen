@@ -1,0 +1,29 @@
+#+title: Mobilen 1
+
+/Mobilen'in 2. dergisi./
+
+Herkese iyi bayramlar :)
+
+Bu sayımızda ünlü bir geliştiricinin macerasını, teknik bir component incelemesini, dünyanın en çok kullanılan uygulamalarından biri olan Instagram'ın ufak hikayesini bulabilirsiniz.
+Kullandığımız ve rastladığımız bazı geliştirme araçları hakkında linklerimizi yorumlarımızı da anlatmaya çalıştık.
+
+Bu ay ayrıca herkesin merakla beklediği etkinliklerden Apple WWDC'yi geçirdik.
+Mobil dünyanın yeni üyesi VisionPro ürününün tanıtımı oldu. '[[https://en.wikipedia.org/wiki/Spatial_computing][Spatial computing]]' gibi bir mecranin bu cihazların ucuzlaması sonrası önümüzdeki yıllarda daha çok gündemimizde olması olası.
+
+Sizin de mobil konularda paylaşmak istedikleriniz var ise dergimizin [[https://github.com/suatkarakusoglu/mobilen/issues][Mobilen Github]] sayfasında bir =issue= oluşturup =markdown= olarak bize iletebilirsiniz.
+
+Keyifli okumalar ;).
+
+* Konular
+1. [[file:../../news/aklimda_kalanlar_jake_wharton.org][Aklımda Kalanlar: Jake Wharton ile Röportaj]]
+2. [[file:../../news/instagramin_hikayesi.org][Instagram'in Hikayesi]]
+3. [[file:../../news/ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]]
+4. [[file:../../news/android_studio_bot.org][Android Studio Bot]]
+5. [[file:../../news/kitap_make_something_wonderful.org][Kitap: Make Something Wonderful]]
+6. [[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]]
+7. [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]
+
+
+* Kapak
+#+ATTR_HTML: :width 100%
+[[volume_2_cover.jpg]]

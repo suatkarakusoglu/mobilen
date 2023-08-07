@@ -149,7 +149,7 @@
                            (div (@ (class "column align-right"))
                                 (p (a (@ (href "https://github.com/suatkarakusoglu/mobilen"))
                                       (img (@ (src ,(concat dw/site-url "/img/site_github_icon.png"))
-                                              (style "width: 96px")
+                                              (style "width: 80px")
                                               (alt "Github'da Katkıda Bulun")))))))))))
 
 (defun get-article-output-path (org-file pub-dir)

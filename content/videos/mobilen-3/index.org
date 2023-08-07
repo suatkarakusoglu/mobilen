@@ -1,0 +1,14 @@
+#+title: Mobilen 3
+
+/Mobilen'in 3. dergisi./
+
+* Konular
+1. [[file:../../news/steve_jobs_the_man_in_the_machine.org][Belgesel: Steve Jobs The Man in The Machine]]
+2. [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımlarınızı Hayata Geçirin]]
+3. [[file:../../news/ios_app_push_certificate_yenileme.org][iOS uygulama bildirim sertifikası oluşturma/yenileme]]
+4. [[file:../../news/the_art_of_readable_code_1.org][Okuma Notları: The Art Of Readable Code (Part 1)]]
+5. [[file:../../news/android_file_template.org][Android File Template]]
+
+* Kapak
+#+ATTR_HTML: :width 100%
+[[volume_3_cover.jpg]]

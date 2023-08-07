@@ -2,14 +2,14 @@
 
 /Mobilen Dergilerin sıralı listesi./
 
-* Mobilen 1
+* Mobilen 3
 
-[[../mobilen-1/][Mobilen 1]] dergisinde bu hafta farkli bir cok konu var.
+[[../mobilen-3/][Mobilen 3]] dergisinde bu hafta farklı bir çok konu var.
 
 * Mobilen 2
 
-The [[../emacs-from-scratch/][Emacs From Scratch]] series is for users who know the basics and now want to create their own modern Emacs configuration.  I take you step by step through the process of building up a fully custom configuration using many packages that are either built-in or authored by the Emacs community.
+[[../mobilen-2/][Mobilen 2]] dergisinde bu hafta farklı bir çok konu var.
 
-* Mobilen 3
+* Mobilen 1
 
-The [[../emacs-desktop-environment/][Emacs Desktop Environment]] series is a more advanced course where I show you how to build an entire desktop environment with Emacs and EXWM on Linux.  If you want to truly "live" in Emacs, this is for you!
+[[../mobilen-1/][Mobilen 1]] dergisinde bu hafta farklı bir çok konu var.

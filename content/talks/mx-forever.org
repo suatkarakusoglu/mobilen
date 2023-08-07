@@ -1,6 +1,0 @@
-
-* TODO Notes
-
-TextMate -> Sublime -> Brackets -> Atom -> VS Code
-
-Discuss the commit/contributor stats from this article: https://lars.ingebrigtsen.no/2021/08/14/10x10/

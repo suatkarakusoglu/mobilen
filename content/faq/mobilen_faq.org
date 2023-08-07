@@ -1,0 +1,4 @@
+#+title: Mobilen SSS
+
+* Nasıl katkıda bulunabilirim?
+Github üzerinden issue açarak katkıda bulunabilirsiniz.

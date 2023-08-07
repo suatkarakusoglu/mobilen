@@ -1,0 +1,7 @@
+#+title: Effective Java 1.Bölüm
+#+date: [2023-04-14 Fri]
+#+video: QXp5nlMY5_8
+
+Effective Java kitabının 1.bölümü
+- Creating and Destroying Objects
+- Consider static factory methods instead of constructors

@@ -1,4 +1,4 @@
-#+TITLE: System Crafters News
+#+TITLE: Mobilen News
 
 - [[file:kitap_make_something_wonderful.org][Kitap: Make Something Wonderful]] - Suat Karakuşoğlu · July 11, 2023
 - [[file:wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]] - Alper Cem Öztürk · July 11, 2023

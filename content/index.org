@@ -1,39 +1,11 @@
-#+title: Welcome!
+#+title: Hoşgeldiniz!
 
-System Crafters is a community and learning resource for computer enthusiasts who are interested in crafting their computing experience to *increase their enjoyment and productivity*.
+Mobil yazılım ürünleri, kullanıcıların hayatlarında büyük bir öneme sahip araçlar haline geldi. Bir mobil yazılım ürünü, son kullanıcıya sunulmadan önce geliştirilme aşamasında ve geliştirildikten sonra birçok pratiği takip etmesi ve uygulaması gerekmektedir.
 
-This website is intended to be the /most comprehensive/ reference on the internet for learning how to leverage tools like [[https://www.gnu.org/software/emacs/][GNU Emacs]], [[https://guix.gnu.org/][GNU Guix]], and [[https://en.wikipedia.org/wiki/Linux][GNU/Linux]] to craft a fully customized workflow using Free Software tools!
+Bu pratikleri takip eden kimseler teknik anlamda 'Mobil Yazılım Gelişticileri', öncesinde tasarımları ve deneyimi ortaya koyan 'Kullanıcı tasarım ve deneyim ekipleri', son kullanıcıya daha etkin erişmesini sağlamaya çalışan 'Pazarlama' ekipleri ve daha bir çok kimseden oluşuyor.
 
-The [[https://youtube.com/@SystemCrafters][System Crafters YouTube channel]] also contains almost 200 videos and live stream recordings demonstrating and explaining these tools and broader topics!
+Çok hızlı gelişen ve değişen bu pratikleri takip etmek, mümkün olduğunca geliştirme aşamalarında ortak bir jargon kullanarak daha iyi iletişimi sağlayabilmek için, bulunduğumuz ekosistemi ve yaklaşımları daha yakından takip edebilmek önemli hale geliyor.
 
-* Start Here!
+Bu nedenle, işlerimizi daha kaliteli bir noktaya taşımak amacıyla, mobil konulara odaklı periyodik yayınlanacak bir dergi hazırlamaktayız ve heyecanlıyız :).
 
-If you are just getting started with *GNU Emacs* and want to learn the basics, check out [[file:emacs-essentials/absolute-beginners-guide-to-emacs.org][The Absolute Beginner's Guide to Emacs]]!
-
-From there, check out the [[file:emacs-essentials.org][Emacs Essentials]] series to learn more about the basics of using Emacs and then follow the [[file:emacs-from-scratch.org][Emacs From Scratch]] series to learn how to build a modern Emacs configuration that you understand!
-
-Once you're comfortable using Emacs, learn how to use *GNU Guix* to craft a complete, reproducible system configuration by checking out the [[file:craft-your-system-with-guix.org][Craft Your System with GNU Guix]] series!
-
-You can also check out the many [[file:videos.org][video series]] I've created to help you learn these tools in depth.
-
-* Need Help?
-
-If you need help on specific topics, there are a few resources to consider:
-
-- The FAQ pages for various topics like [[file:faq/emacs.org][Emacs]] and [[file:faq/guix.org][Guix]]
-- Join the [[file:community.org][System Crafters chat]] and discuss it with the community
-- [[/how-to-help/#support-my-work][Patrons]] at the $5 level or higher can ask questions on a private discussion list!
-
-* Live Streams
-
-Join us *every Friday* for our weekly show *[[file:live-streams.org][System Crafters Live!]]* The stream is broadcast on both [[https://youtube.com/@SystemCrafters][YouTube]] and [[https://twitch.tv/SystemCrafters][Twitch]].
-
-In these streams we usually experiment with new packages, configurations, and customizations to understand the pros and cons of using them.  Other times we have philosophical discussions about software, computing, and productivity.  It's always a good time!
-
-[[https://time.is/compare/1800_in_Athens][Click here]] to see the stream time in your local time zone!
-
-* Stay Up to Date!
-
-Check out new [[/news][News page]] to see the latest updates for the website and community.  You can also subscribe to [[/rss][RSS Feeds]] for various parts of the site.
-
-A much better option is to subscribe to the [[file:newsletter.org][System Crafters Newsletter]] below!
+Yazı eklemek isterseniz [[https://github.com/suatkarakusoglu/mobilen/issues][buradan issue]] açarak yazınızı gönderebilir katkıda bulunabilirsiniz :)

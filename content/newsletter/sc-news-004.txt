@@ -46,7 +46,7 @@ question that you'd like to see made into a video, please let me know!
 == Announcing Crafted Emacs v2 Beta! ==
 
 Jeff Bowman has recently announced the Crafted Emacs v2 Beta release both on
-his own blog and System Crafters News:
+his own blog and Mobilen News:
 
   -> https://jeffbowman.writeas.com/crafted-emacs-v2-beta
   -> https://systemcrafters.net/news/crafted-emacs-v2-beta

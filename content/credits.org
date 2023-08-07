@@ -9,7 +9,6 @@ Here is the attribution for these works:
 - *Site Header Background:* [[./samuel-ferrara-uOi3lg8fGl4-unsplash.jpg][samuel-ferrara-uOi3lg8fGl4-unsplash.jpg]] by [[https://unsplash.com/photos/uOi3lg8fGl4][Samuel Ferrara]] (Unsplash [[https://unsplash.com/license][license]])
 
 * Music
-
 - Coriolis Effect by logos feat. stefsax, licensed Creative Commons 3.0 CC-BY http://ccmixter.org/files/mseq/26296
 - reNovation by airtone, licensed Creative Commons 3.0 CC-BY http://ccmixter.org/files/airtone/60674
 - ukeSounds by airtone, licensed Creative Commons 3.0 CC-BY http://ccmixter.org/files/airtone/32655

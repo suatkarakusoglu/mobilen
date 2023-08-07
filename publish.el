@@ -84,14 +84,14 @@
 
 (defun dw/embed-list-form ()
   `(div (@ (class "list-form center"))
-        (div (@ (class "list-form-title")) "Subscribe to the System Crafters Newsletter!")
+        (div (@ (class "list-form-title")) "Subscribe to the Mobilen Newsletter!")
         (form (@ (method "POST")
                  (action "https://www.simplelists.com/subscribe.php"))
               (input (@ (type "hidden") (name "format") (value "text")))
               (input (@ (type "hidden") (name "action") (value "subscribe")))
               (input (@ (type "hidden") (name "list") (value "news@lists.systemcrafters.net")))
               (div (@ (class "list-form-message"))
-                   "Stay up to date with the latest System Crafters news and updates!  Read the "
+                   "Stay up to date with the latest Mobilen news and updates!  Read the "
                    (a (@ (href "/newsletter/")) "Newsletter")
                    " page for more information.")
               (div (@ (class "row"))
@@ -121,36 +121,36 @@
                  (div (@ (class "container"))
                       (div (@ (class "site-title"))
                            (img (@ (class "logo")
-                                   (src ,(concat dw/site-url "/img/sc_logo.png"))
-                                   (alt "System Crafters")))))
+                                   (src ,(concat dw/site-url "/img/site_header_logo.png"))
+                                   (alt "Mobilen News")))))
                  (div (@ (class "site-masthead"))
                       (div (@ (class "container"))
                            (nav (@ (class "nav"))
-                                (a (@ (class "nav-link") (href "/")) "Home") " "
-                                (a (@ (class "nav-link") (href "/guides/")) "Guides") " "
-                                (a (@ (class "nav-link") (href "/news/")) "News") " "
-                                (a (@ (class "nav-link") (href "/community/")) "Community") " "
-                                (a (@ (class "nav-link") (href "https://store.systemcrafters.net?utm_source=sc-site-nav")) "Store") " "
-                                (a (@ (class "nav-link") (href "/how-to-help/")) "How to Help")))))))
+                                (a (@ (class "nav-link") (href "/")) "Anasayfa") " "
+                                (a (@ (class "nav-link") (href "/guides/")) "Dergiler") " "
+                                (a (@ (class "nav-link") (href "/news/")) "İçerikler") " "
+                                (a (@ (class "nav-link") (href "/community/")) "Topluluk") " "
+                                ;; (a (@ (class "nav-link") (href "https://github.com/suatkarakusoglu/mobilen")) "Github") " "
+                                (a (@ (class "nav-link") (href "/how-to-help/")) "Katkıda Bulun")))))))
 
 (defun dw/site-footer ()
   (list `(footer (@ (class "site-footer"))
                  (div (@ (class "container"))
                       (div (@ (class "row"))
                            (div (@ (class "column"))
-                                (p (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Privacy Policy")
+                                (p (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Gizlilik Sözleşmesi")
                                    " · "
-                                   (a (@ (href ,(concat dw/site-url "/credits/"))) "Credits")
+                                   (a (@ (href ,(concat dw/site-url "/credits/"))) "Krediler")
                                    " · "
-                                   (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Feeds")
+                                   (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Bülten")
                                    " · "
-                                   (a (@ (rel "me") (href "https://fosstodon.org/@daviwil")) "Fediverse"))
-                                (p "© 2021-2023 System Crafters LLC"))
+                                   (a (@ (rel "me") (href "https://tr.linkedin.com/in/suat-karakusoglu")) "Suat"))
+                                (p "© 2023-2024 Mobilen"))
                            (div (@ (class "column align-right"))
-                                (p (a (@ (href "https://codeberg.org/SystemCrafters/systemcrafters.net"))
-                                      (img (@ (src ,(concat dw/site-url "/img/codeberg.png"))
-                                              (style "width: 120px")
-                                              (alt "Contribute on Codeberg")))))))))))
+                                (p (a (@ (href "https://github.com/suatkarakusoglu/mobilen"))
+                                      (img (@ (src ,(concat dw/site-url "/img/site_github_icon.png"))
+                                              (style "width: 96px")
+                                              (alt "Github'da Katkıda Bulun")))))))))))
 
 (defun get-article-output-path (org-file pub-dir)
   (let ((article-dir (concat pub-dir
@@ -189,13 +189,13 @@
     `(html (@ (lang "en"))
            (head
             (meta (@ (charset "utf-8")))
-            (meta (@ (author "System Crafters - David Wilson")))
+            (meta (@ (author "Mobilen - David Wilson")))
             (meta (@ (name "viewport")
                      (content "width=device-width, initial-scale=1, shrink-to-fit=no")))
             (link (@ (rel "icon") (type "image/png") (href "/img/favicon.png")))
             (link (@ (rel "alternative")
                      (type "application/rss+xml")
-                     (title "System Crafters News")
+                     (title "Mobilen News")
                      (href ,(concat dw/site-url "/rss/news.xml"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
@@ -208,7 +208,7 @@
                     ;; Empty string to cause a closing </script> tag
                     "")
             ,(when head-extra head-extra)
-            (title ,(concat title " - System Crafters")))
+            (title ,(concat title " - Mobilen")))
            (body ,@(unless exclude-header
                      (dw/site-header))
                  (div (@ (class "container"))
@@ -222,7 +222,9 @@
                            ,(when pre-content pre-content)
                            (div (@ (id "content"))
                                 ,content))
-                      ,(dw/embed-list-form))
+                      ;; Do not show subscription list form
+                      ;; ,(dw/embed-list-form)
+                      )
                  ,@(unless exclude-footer
                      (dw/site-footer)))))))
 
@@ -251,6 +253,10 @@
               ;; TODO Read from #+ATTR_HTML
               "100%"
               ))
+     ((equal contents nil)
+      (format "<a href=\"%s\">%s</a>"
+              (org-element-property :raw-link link)
+              (org-element-property :raw-link link)))
      ((string-prefix-p "/" (org-element-property :raw-link link))
       (format "<a href=\"%s\">%s</a>"
               (org-element-property :raw-link link)
@@ -325,18 +331,18 @@ holding contextual information."
             block-type
             (or contents
                 (if (string= block-type "cta")
-                    "If you find this guide helpful, please consider supporting System Crafters via the links on the <a href=\"/how-to-help/#support-my-work\">How to Help</a> page!"
+                    "If you find this guide helpful, please consider supporting Mobilen via the links on the <a href=\"/how-to-help/#support-my-work\">How to Help</a> page!"
                   "")))))
 
 (org-export-define-derived-backend 'site-html 'html
-  :translate-alist
-  '((template . dw/org-html-template)
-    (link . dw/org-html-link)
-    (src-block . pygments-org-html-code)
-    (special-block . dw/org-html-special-block)
-    (headline . dw/org-html-headline))
-  :options-alist
-  '((:video "VIDEO" nil nil)))
+                                   :translate-alist
+                                   '((template . dw/org-html-template)
+                                     (link . dw/org-html-link)
+                                     (src-block . pygments-org-html-code)
+                                     (special-block . dw/org-html-special-block)
+                                     (headline . dw/org-html-headline))
+                                   :options-alist
+                                   '((:video "VIDEO" nil nil)))
 
 (defun org-html-publish-to-html (plist filename pub-dir)
   "Publish an org file to HTML, using the FILENAME as the output directory."
@@ -494,7 +500,7 @@ holding contextual information."
               :publishing-function org-html-publish-to-html
               :auto-sitemap t
               :sitemap-filename "../news.org"
-              :sitemap-title "System Crafters News"
+              :sitemap-title "Mobilen News"
               :sitemap-format-entry dw/format-news-entry
               :sitemap-style list
               ;; :sitemap-function dw/news-sitemap
@@ -546,8 +552,8 @@ holding contextual information."
                              (directory-files-recursively "news"
                                                           ".*\\.html$")))
                    :builder 'webfeeder-make-rss
-                   :title "System Crafters News"
-                   :description "News and Insights from System Crafters!"
+                   :title "Mobilen News"
+                   :description "News and Insights from Mobilen!"
                    :author "David Wilson")
 
   (dw/generate-redirects '(("support-the-channel" . "how-to-help")

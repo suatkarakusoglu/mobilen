@@ -4,6 +4,7 @@
 
 ;; Author: David Wilson <david@systemcrafters.net>
 ;; Maintainer: David Wilson <david@systemcrafters.net>
+;; Mobilen-Maintainer: Suat Karakusoglu <suatkarakusoglu@gmail.com>
 ;; URL: https://codeberg.org/SystemCrafters/systemcrafters.net
 ;; Version: 0.0.1
 ;; Package-Requires: ((emacs "28.2"))
@@ -74,8 +75,8 @@
 (defun dw/embed-video (video-id)
   (format yt-iframe-format video-id))
 
-(setq user-full-name "David Wilson")
-(setq user-mail-address "david@systemcrafters.net")
+(setq user-full-name "Suat Karakuşoğlu")
+(setq user-mail-address "suatkarakusoglu@gmail.com")
 
 (defvar dw/site-url (if (string-equal (getenv "CI") "true")
                         "https://systemcrafters.net"
@@ -189,7 +190,7 @@
     `(html (@ (lang "en"))
            (head
             (meta (@ (charset "utf-8")))
-            (meta (@ (author "Mobilen - David Wilson")))
+            (meta (@ (author "Mobilen - Suat Karakuşoğlu")))
             (meta (@ (name "viewport")
                      (content "width=device-width, initial-scale=1, shrink-to-fit=no")))
             (link (@ (rel "icon") (type "image/png") (href "/img/favicon.png")))
@@ -554,7 +555,7 @@ holding contextual information."
                    :builder 'webfeeder-make-rss
                    :title "Mobilen News"
                    :description "News and Insights from Mobilen!"
-                   :author "David Wilson")
+                   :author "Suat Karakuşoğlu")
 
   (dw/generate-redirects '(("support-the-channel" . "how-to-help")
                            ("videos" . "guides")))

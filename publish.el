@@ -469,27 +469,27 @@ holding contextual information."
       (list '("systemcrafters:main"
               :base-directory "./content"
               :base-extension "org"
-              :publishing-directory "./public"
+              :publishing-directory "./docs"
               :publishing-function org-html-publish-to-html
               :with-title nil
               :with-timestamps nil)
             '("systemcrafters:faq"
               :base-directory "./content/faq"
               :base-extension "org"
-              :publishing-directory "./public/faq"
+              :publishing-directory "./docs/faq"
               :publishing-function org-html-publish-to-html
               :with-title nil
               :with-timestamps nil)
             '("systemcrafters:assets"
               :base-directory "./assets"
               :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|woff2\\|ttf"
-              :publishing-directory "./public"
+              :publishing-directory "./docs"
               :recursive t
               :publishing-function org-publish-attachment)
             '("systemcrafters:live-streams"
               :base-directory "./content/live-streams"
               :base-extension "org"
-              :publishing-directory "./public/live-streams"
+              :publishing-directory "./docs/live-streams"
               :publishing-function org-html-publish-to-html
               :auto-sitemap t
               :sitemap-filename "../live-streams.org"
@@ -502,7 +502,7 @@ holding contextual information."
             '("systemcrafters:news"
               :base-directory "./content/news"
               :base-extension "org"
-              :publishing-directory "./public/news"
+              :publishing-directory "./docs/news"
               :publishing-function org-html-publish-to-html
               :auto-sitemap t
               :sitemap-filename "../news.org"
@@ -516,13 +516,13 @@ holding contextual information."
             '("systemcrafters:newsletter"
               :base-directory "./content/newsletter"
               :base-extension "txt"
-              :publishing-directory "./public/newsletter"
+              :publishing-directory "./docs/newsletter"
               :publishing-function dw/publish-newsletter-page)
             '("systemcrafters:videos"
               :base-directory "./content/videos"
               :base-extension "org"
               :recursive t
-              :publishing-directory "./public"
+              :publishing-directory "./docs"
               :publishing-function org-html-publish-to-html
               :with-title nil
               :with-timestamps nil)))
@@ -530,7 +530,7 @@ holding contextual information."
 ;; TODO: Generate a _redirects file instead once Codeberg Pages releases a new version
 (defun dw/generate-redirects (redirects)
   (dolist (redirect redirects)
-    (let ((output-path (concat "./public/" (car redirect) "/index.html"))
+    (let ((output-path (concat "./docs/" (car redirect) "/index.html"))
           (redirect-url (concat dw/site-url "/" (cdr redirect) "/")))
       (make-directory (file-name-directory output-path) t)
       (with-temp-file output-path
@@ -551,9 +551,9 @@ holding contextual information."
   (org-publish-all t)
 
   (webfeeder-build "rss/news.xml"
-                   "./public"
+                   "./docs"
                    dw/site-url
-                   (let ((default-directory (expand-file-name "./public/")))
+                   (let ((default-directory (expand-file-name "./docs/")))
                      (remove "news/index.html"
                              (directory-files-recursively "news"
                                                           ".*\\.html$")))
@@ -566,11 +566,11 @@ holding contextual information."
                            ("videos" . "guides")))
 
   ;; Copy the domains file to ensure the custom domain resolves
-  (copy-file ".domains" "public/.domains" t)
+  (copy-file ".domains" "docs/.domains" t)
 
   ;; Copy the .well-known folder for Matrix
-  (unless (file-exists-p "public/.well-known")
-    (copy-directory ".well-known" "public/" t)))
+  (unless (file-exists-p "docs/.well-known")
+    (copy-directory ".well-known" "docs/" t)))
 
 (provide 'publish)
 ;;; publish.el ends here

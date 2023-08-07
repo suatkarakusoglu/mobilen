@@ -1,0 +1,104 @@
+<!-- Generated from 153a845 on 2023-08-07 @ 23:33 with Emacs 29.0.50 (Org mode 9.5.5) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen News" href="http://localhost:8080/rss/news.xml"/><link rel="stylesheet" href="http://localhost:8080/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="http://localhost:8080/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="http://localhost:8080/css/code.css"/><link rel="stylesheet" href="http://localhost:8080/css/site.css"/><link rel="stylesheet" href="http://localhost:8080/css/code_highlighter_dark_theme.css"/><title>Netfox ile iOS uygulamalarda network izlemek - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><img class="logo" src="http://localhost:8080/img/site_header_logo.png" alt="Mobilen News"/></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/guides/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="http://localhost:8080/rss/">RSS Bülten</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Netfox ile iOS uygulamalarda network izlemek</h1><p class="site-post-meta">July 11, 2023</p><div id="content"><p>
+<a href="https://www.linkedin.com/in/ugurcan-durak/">Uğurcan Durak</a> yazdı.
+</p>
+
+
+<div id="org1748f8b" class="figure">
+<p><img src="/img/NetFoxImage.jpg" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span><a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Netfox&rsquo;u İzlemek için tıkla</a></p>
+</div>
+
+<p>
+Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde görüntülemek için kullanılan faydalı olduğunu düşündüğüm <b><a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesinden bahsedicem.
+</p>
+
+<p>
+Çok detaya girmeden genel hatlarıyla nedir? nasıl kullanılır? gibi başlıklarla değineceğim. Hadi başlayalım :)
+</p>
+
+<h2><a id="netfox-nedir" class="anchor" href="#netfox-nedir">¶</a>Netfox Nedir?</h2><div class="outline-text-2" id="text-orgb7cd4b3">
+<p>
+<b><a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesi, tüm network işlemlerini mobil cihaz üzerinden detaylı bir şekilde görüntüleyebileceğimiz <code>open source</code> bir kütüphanedir.
+</p>
+
+<p>
+Netfox&rsquo;u uygulama içerisinde istediğimiz bir anda başlatıp anlık olarak uygulamamızın yapmış olduğu tüm istekleri listeleyebilir ve detaylı bir şekilde <code>body</code>, <code>header</code>, <code>response</code> gibi tüm network etkileşimlerini inceleyebiliriz.
+</p>
+
+<p>
+Bu tarz kütüphanelerin en güzel yanı, mobil cihazımız bilgisayara bağlı olmadan da istediğimiz bir anda network log&rsquo;larına bakabilmektir.
+Bu özellik testçiler için oldukça faydalıdır. Çünkü herhangi bir hata anında doğrudan developer&rsquo;a bildirmek yerine log&rsquo;ları inceleyip hata hakkında fikir sahibi olabilirler.
+</p>
+</div>
+
+<h2><a id="netfox-nasıl-kullanılır" class="anchor" href="#netfox-nasıl-kullanılır">¶</a>Netfox Nasıl Kullanılır?</h2><div class="outline-text-2" id="text-orgd2caad0">
+<p>
+<code>Netfox</code>&rsquo;un kullanımı ve projeye entegre edilmesi oldukça basittir.
+</p>
+
+<p>
+Varsayılan davranışı <b><b>shake</b></b> olarak belirlenmiş olsada custom bir şekilde istediğimiz bir butona ya da bir view event&rsquo;ine atayarak Netfox&rsquo;u başlatabiliriz. Öncelikle projeye nasıl eklenir ona bakalım.
+</p>
+</div>
+
+<h2><a id="netfoxrsquoun-projeye-eklenmesi" class="anchor" href="#netfoxrsquoun-projeye-eklenmesi">¶</a>Netfox&rsquo;un Projeye Eklenmesi</h2><div class="outline-text-2" id="text-org562e871">
+<ol class="org-ol">
+<li>Netfox kütüphanesini <b><b>SPM</b></b>, <b><b>CocoaPods</b></b> ve <b><b>Carthage</b></b> olmak üzere üç ayrı yöntem ile projemize ekleyebiliriz. Bu yöntemlerden herhangi biriyle eklediğinizi varsayarak bir sonraki adıma geçiyorum.</li>
+
+<li>Kütüphaneyi projeye ekledik şimdi ise <code>initiliaze</code> edeceğiz. Bunun için AppDelegate class&rsquo;ına gidip aşağıdaki gibi gerekli kodları ekliyoruz.</li>
+</ol>
+
+<p>
+Netfox Import:
+</p>
+<div class="highlight"><pre><span></span>  <span class="cp">#if</span> <span class="cp">DEBUG</span>
+  <span class="kd">import</span> <span class="nc">netfox</span>
+  <span class="cp">#endif</span>
+</pre></div>
+
+<p>
+Burada  <b>#if DEBUG</b> ve <b>#endif</b> kodlarını ekleyerek kodun sadece debug moddayken import olmasını sağlıyoruz. Daha sonra uygulama ilk başlatıldığında hazır hale gelmesini istediğim için aşağıdaki gibi başlatıcı fonksiyonun içerisine kodlarımızı ekliyoruz.
+</p>
+
+<p>
+Netfox başlatma:
+</p>
+<div class="highlight"><pre><span></span>  <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span>
+    <span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span>
+    <span class="n">didFinishLaunchingWithOptions</span> <span class="n">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="bp">UIApplication</span><span class="p">.</span><span class="n">LaunchOptionsKey</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]?</span>
+  <span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+      <span class="cp">#if</span> <span class="cp">DEBUG</span>
+      <span class="n">NFX</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">start</span><span class="p">()</span>
+      <span class="n">NFX</span><span class="p">.</span><span class="n">sharedInstance</span><span class="p">().</span><span class="n">setGesture</span><span class="p">(.</span><span class="n">shake</span><span class="p">)</span>
+      <span class="cp">#endif</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+Burada <b><b>start()</b></b> methodunu çağırarak Netfox&rsquo;ı initiliaze ediyoruz ardından <b><b>setGesture()</b></b> ile Netfox&rsquo;ın nasıl açılacağını belirliyoruz.
+</p>
+
+<p>
+Varsayılan davranışı shake olduğundan özellikle belirtmenize gerek yok örnek olması açısından ekledim. Siz dilerseniz <b><b>custom</b></b> parametresini geçip daha sonra dilediğiniz yerde <b><b>show()</b></b> methodu ile açılmasını sağlayabilirsiniz.
+</p>
+</div>
+
+<h2><a id="netfox-özetle" class="anchor" href="#netfox-özetle">¶</a>Netfox Özetle</h2><div class="outline-text-2" id="text-orgaf44ab8">
+<p>
+Evet hepsi bu kadar :) Şimdi dilediğiniz gibi cihazı sallayarak ya da atamış olduğunuz bir buton ile Netfox&rsquo;ı başlatabilir ve log&rsquo;ları inceleyebilirsiniz.
+</p>
+
+<p>
+Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım faydalı olur zaman ayırdığınız için teşekkürler.
+</p>
+</div>
+
+<h2><a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2><div class="outline-text-2" id="text-org9d17ee1">
+<ol class="org-ol">
+<li><a href="https://github.com/kasketis/netfox">Netfox Github Kütüphanesi</a></li>
+<li><a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Örnek Kullanım Vidyosu</a></li>
+</ol>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="http://localhost:8080/rss/">RSS Bülten</a> · <a href="http://localhost:8080/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="http://localhost:8080/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div></footer></body></html>

@@ -1,0 +1,96 @@
+<!-- Generated from 153a845 on 2023-08-07 @ 23:33 with Emacs 29.0.50 (Org mode 9.5.5) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen News" href="http://localhost:8080/rss/news.xml"/><link rel="stylesheet" href="http://localhost:8080/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="http://localhost:8080/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="http://localhost:8080/css/code.css"/><link rel="stylesheet" href="http://localhost:8080/css/site.css"/><link rel="stylesheet" href="http://localhost:8080/css/code_highlighter_dark_theme.css"/><title>Android Studio Bot - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><img class="logo" src="http://localhost:8080/img/site_header_logo.png" alt="Mobilen News"/></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/guides/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="http://localhost:8080/rss/">RSS Bülten</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Android Studio Bot</h1><p class="site-post-meta">July 11, 2023</p><div id="content"><p>
+<a href="https://tr.linkedin.com/in/tu%C4%9Fbaberk">Tuğba Berk</a> yazdı.
+</p>
+
+<p>
+Google IO etkinliği, 10 Mayıs 2023 tarihinde gerçekleşti. Bu etkinlikte Google&rsquo;ın yapay zeka desteğini mevcut araçlarına entegre ettiğini gördük. <code>Google Play Store</code>, <code>Google Haritalar</code>, <code>Google Mail</code> ve <code>Android Studio</code> gibi birçok araç bu yenilikler arasında yer aldı.
+</p>
+
+<p>
+Yapay zekadaki bu gelişmeler, kod yazarken bize çeşitli faydalar sunmaya başladı bile. Bu yeni yapay zeka gelişmelerine ayak uydurabilen yazılımcılar olmak istiyorsak, Android Studio Bot&rsquo;u hızlı bir şekilde öğrenmek önemli görünüyor. Kendi rollerimizi ve bu sistem içindeki araçlarımızı iyi anlamamız gerekebilir.
+</p>
+
+<p>
+Peki, Android Studio Bot nedir? Kimler kullanır? Kullanmalı mıyız? Nasıl kuracağız? gibi sorulara cevap verelim.
+</p>
+
+<h2><a id="android-studio-bot-nedir" class="anchor" href="#android-studio-bot-nedir">¶</a>Android Studio Bot Nedir?</h2><div class="outline-text-2" id="text-org926ca60">
+<p>
+<a href="https://developer.android.com/studio/preview/studio-bot">Android Studio Bot</a> bir yapay zeka asistanıdır.Android geliştiricilerin kod yazmalarına ve hatalarını çözmelerine yardımcı olmak için kullanabilecekleri bir araçtır. Android Studio Bot, <a href="https://blog.google/technology/developers/google-colab-ai-coding-features/">Codey</a> adlı yapay zeka asistanının AI yeteneklerini kullanarak geliştiricilere yardımcı olur. Codey, Google&rsquo;ın temel dil modeli olan <a href="https://blog.google/technology/ai/google-palm-2-ai-large-language-model/">PaLM 2</a>&rsquo;yi kullanarak geliştirilen bir yapay zeka asistanıdır. Aslında, Google Colab ile çalışabilen bir bot diyebiliriz. Kısacası, Studio Bot, Codey&rsquo;in sunduğu yetenekleri Android Studio ortamında daha kolay ve erişilebilir hale getirmiştir.
+</p>
+
+<p>
+&ldquo;ChatGPT&rdquo; ve &ldquo;Copilot&rdquo; gibi araçlar mevcut olmasına rağmen, neden Studio Bot&rsquo;a ihtiyaç duyacağımızı sorabilirsiniz. Benim cevabım şu: &ldquo;Android Studio&rsquo;dan çıkmadan kod araştırması yapmak ve sekme açmakla uğraşmamak daha pratik ve hoş olmaz mı?&rdquo; Elbette, bu aracın sağladığı bilginin doğruluğu kullanmasında en önemli faktör olacaktır. Bu nedenle, doğruluğunu sağlamak için nasıl kullanmamız gerektiğini öğrenmeli ve deneyimlemeliyiz.
+</p>
+
+<p>
+Google, Studio Bot kullanımını kolaylaştıran kısayollar hakkında bilgi verdi. Bu kısayollar sayesinde önemli bir zaman tasarrufu sağlanacağını düşünüyorum. İşte bazı örnekler:
+</p>
+
+<ul class="org-ul">
+<li>Tek tık ile kod ekleme</li>
+</ul>
+
+<p>
+Studio Bot, oluşturduğu kodun yanında akıllı eylemler sunar. Bu eylemlerden biri, kodu hızlı bir şekilde açık editöre eklemenizi sağlar. Örneğin, bir internet izni kullanmanız gerektiği cevaplarda yer alıyorsa, &ldquo;kod ekle&rdquo; aksiyonunu tıkladığınızda Studio Bot, internet iznini manifest dosyasına ekler. Ayrıca, kodun nereye yazılması gerektiğini bilir, bu da bizi kopyala-yapıştır işlemlerinden kurtarır.
+</p>
+
+<ul class="org-ul">
+<li>Yardımcı kaynaklara erişmek</li>
+</ul>
+
+<p>
+Belirli konular için, Studio Bot ilgili belgelendirme sayfasını açarak daha fazla bilgi sağlama seçeneği sunar. Size kaynak linklerine erişim sağlar, yani &ldquo;oku, öğren, daha çok soru sor&rdquo; gibi bir şey =)
+</p>
+
+<ul class="org-ul">
+<li>Bot&rsquo;a kod&rsquo;un içinden direkt soru sormak</li>
+</ul>
+
+<p>
+Kod düzenleyicisinde metni seçip sağ tıklayarak ve &ldquo;<code>Ask Studio Bot</code>&rdquo; işlemini seçerek sohbet kutusunu seçilen kodla doldurabiliriz. Oradan, kodu gönderip göndermeme konusunda karar verebiliriz. Studio Bot, açık izniniz olmadan kod göndermeyecektir. &ldquo;Ask Studio Bot&rdquo; ayrıca kod düzenleyicisindeki uyarıları ve hataları gidermeniz için size yardımcı olabilir.
+</p>
+</div>
+
+<h2><a id="android-studio-bot-nasıl-kurulur" class="anchor" href="#android-studio-bot-nasıl-kurulur">¶</a>Android Studio Bot Nasıl Kurulur?</h2><div class="outline-text-2" id="text-org4a52f24">
+<p>
+Studio Bot&rsquo;u kurma ve kullanma konusunda bazı sorular sormaya başladığınızı düşünerek size üzücü bir haber vermek istiyorum. Şu anda Google, Studio Bot&rsquo;u yalnızca ABD&rsquo;de kullanıma sunmuştur. Bu nedenle, sadece ABD&rsquo;deki kullanıcılar ücretsiz olarak erişebilirler.
+</p>
+
+<p>
+Ancak, Studio Bot&rsquo;u nasıl kuracağınızı bilmek isterseniz, aşağıdaki adımları takip edebilirsiniz:
+</p>
+
+<ol class="org-ol">
+<li>İlk olarak, en son sürüm olan Android Studio Hedgehog | 2023.1.1 Canary 4&rsquo;ü indirmeniz gerekmektedir.</li>
+<li>Studio Bot&rsquo;u daha etkin bir şekilde kullanmanız için veri paylaşma iznini onaylamanızı tavsiye ediyoruz. Bu izni etkinleştirmek için &ldquo;Android Studio &gt; Ayarlar &gt; Görünüm ve Davranış &gt; Sistem Ayarları &gt; Veri Paylaşımı&rdquo; yolunu izleyebilirsiniz.</li>
+<li>Var olan bir projeyi açın veya yeni bir proje oluşturun. Ardından &ldquo;Görünüm &gt; Araç Pencereleri &gt; Studio Bot&rdquo; seçeneğine tıklayın.</li>
+<li>Eğer istenirse, Google hesabınıza giriş yapın. Artık Studio Bot&rsquo;u kullanmaya başlayabilirsiniz.</li>
+</ol>
+
+<p>
+Bu şekilde Studio Bot&rsquo;u kurabilir ve kullanabilirsiniz. Ancak unutmayın, şu anda sadece ABD&rsquo;deki kullanıcılar ücretsiz olarak erişilebilmektedir.
+</p>
+</div>
+
+<h2><a id="android-studio-botrsquou-kullanmalı-mıyız" class="anchor" href="#android-studio-botrsquou-kullanmalı-mıyız">¶</a>Android Studio Bot&rsquo;u Kullanmalı mıyız?</h2><div class="outline-text-2" id="text-org41e6038">
+<p>
+Gelin, Studio Bot&rsquo;u kullanmalı mıyız konusuna değinelim. Şahsi fikrime göre, dünyada gelişen ve değişen şeylere katılmak ve bu dönüşümün bir parçası olmak, işimizin en keyifli yanıdır. Aslında, bu keyifli deneyimi kaçırmamak için hepinizi teşvik etmek isterim.
+</p>
+
+<p>
+Ancak, burada dikkat etmemiz gereken önemli bir nokta var: Studio Bot, öğrenmekte olan bir çocuğun sizin elinizde büyüyeceğinin bilincinde olmanızı gerektirir ve şirketinizin özel bilgilerini bu platform üzerinden paylaşmamalısınız. İyi olduğu kadar kötülerin de kod yazabileceğini unutmamamız önemlidir. Ve bu yeni dünyaya biraz daha kontrollü bir şekilde yaklaşmamız gerekmektedir.
+</p>
+
+<p>
+Sonuç olarak, yapay zeka teknolojileri ile olan etkileşimimiz artıyor ve gelişiyor. Studio Bot gibi araçlar, geliştiricilerin kod yazma sürecini kolaylaştırmayı ve verimliliği artırmayı hedefliyor. Bu nedenle, yeni teknolojilere ve araçlara açık olmak, gelişmeleri takip etmek ve deneyimlemek önemlidir. Ancak, her aracın avantajlarını ve dezavantajlarını anlamak ve doğru bir şekilde kullanmak da gereklidir.
+</p>
+</div>
+
+<h2><a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2><div class="outline-text-2" id="text-org8242cc8">
+<p>
+<a href="https://developer.android.com/studio/preview/studio-bot">Android Studio Bot Preview</a>
+</p>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="http://localhost:8080/rss/">RSS Bülten</a> · <a href="http://localhost:8080/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="http://localhost:8080/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div></footer></body></html>

@@ -1,0 +1,277 @@
+<!-- Generated from 153a845 on 2023-08-07 @ 23:33 with Emacs 29.0.50 (Org mode 9.5.5) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen News" href="http://localhost:8080/rss/news.xml"/><link rel="stylesheet" href="http://localhost:8080/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="http://localhost:8080/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="http://localhost:8080/css/code.css"/><link rel="stylesheet" href="http://localhost:8080/css/site.css"/><link rel="stylesheet" href="http://localhost:8080/css/code_highlighter_dark_theme.css"/><title>iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><img class="logo" src="http://localhost:8080/img/site_header_logo.png" alt="Mobilen News"/></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/guides/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="http://localhost:8080/rss/">RSS Bülten</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı</h1><p class="site-post-meta">July 11, 2023</p><div id="content"><p>
+<a href="https://linkedin.com/in/egehan-kalayc%C4%B1-736b4a238">Egehan Kalaycı</a> yazdı.
+</p>
+
+<p>
+Selam &ldquo;Mobilen&rdquo; okurları! Bugün sizinle çok önemli ve aslında fazlasıyla işlevsel bir konuyu konuşacağız: Deep Link&rsquo;leri. Evet, belki ilk duyduğunuzda biraz karışık gelebilir ama emin olun, bu yazıyı okuduktan sonra onları tanıyan en iyi kişi siz olacaksınız.
+</p>
+
+<h2><a id="deep-link-nedir" class="anchor" href="#deep-link-nedir">¶</a>Deep Link Nedir?</h2><div class="outline-text-2" id="text-org2faf31a">
+<p>
+Deep link, belirli bir sayfaya veya işleme mobil uygulama içinde doğrudan erişmenizi sağlayan bir tür bağlantıdır. Böylece, kullanıcıları uygulamanın belirli bir noktasına yönlendirerek, daha etkileşimli ve kullanıcı odaklı bir deneyim sunabiliriz.
+</p>
+</div>
+
+<h3><a id="biraz-daha-somutlaştıralım" class="anchor" href="#biraz-daha-somutlaştıralım">¶</a>Biraz Daha Somutlaştıralım</h3><div class="outline-text-3" id="text-orgd0952a0">
+<p>
+Örneğin, Instagram&rsquo;da dolaşırken bir Petrol Ofisi kahve kampanyası gördünüz ve tıkladınız. İşte tam da burada devreye deep linkler giriyor. Tıkladığınızda, direkt olarak Petrol Ofisi&rsquo;nin mobil uygulaması açılıyor ve sizi o özel kampanyaya yönlendiriyor. Kulağa hoş geliyor değil mi?
+</p>
+
+<p>
+Veya belki de şifrenizi sıfırlamanız gerekiyor ve bu durumda da gelen e-postadaki linke tıkladığınızda, sizi bir web sayfasına yönlendirmek yerine direkt olarak uygulamada güzel ve kullanıcı dostu bir deneyim yaşamanızı sağlıyor. İşte bu, deep linklerin gücü!
+</p>
+</div>
+
+<h2><a id="deep-linkin-küçük-detayları" class="anchor" href="#deep-linkin-küçük-detayları">¶</a>Deep Link’in Küçük Detayları</h2><div class="outline-text-2" id="text-org44c2ca8">
+<p>
+Deep linklerin kullanımı oldukça basit gibi görünse de, yönetilmesi gereken bazı durumlar vardır. Bu detaylar, uygulamanın nasıl ve ne zaman hangi deep linki kullanacağını belirler. Ama merak etmeyin, bu yazının ilerleyen bölümlerinde bunları ayrıntılı olarak ele alacağım.
+</p>
+</div>
+
+<h2><a id="deep-link-çeşitleri" class="anchor" href="#deep-link-çeşitleri">¶</a>Deep Link Çeşitleri</h2><div class="outline-text-2" id="text-orgb82b308">
+<p>
+<b><b>Dinamik Linkler:</b></b>
+Dinamik linkler, kullanıcıları belirli bir içeriğe veya uygulama içi konuma yönlendirmek için kullanılır. Bu linkler &ldquo;dinamik&rdquo; olarak adlandırılır çünkü onlar hem uygulama içi hem de web içeriğine yönlendirebilir. Örneğin, bir kullanıcı uygulamanızı henüz indirmediyse, dinamik bir link onları App Store veya Google Play&rsquo;e yönlendirebilir. Eğer uygulama zaten yüklüyse, aynı link onları uygulama içindeki belirli bir konuma yönlendirebilir. Bu özellik, kullanıcının deneyimini optimize etmek için önemlidir.
+</p>
+
+<p>
+<b><b>Deferred Deep Linking:</b></b>
+Deferred Deep Linking, deep linking&rsquo;in bir formudur ve uygulama önceden yüklenmemişse bile belirli bir içeriğe veya uygulama içi konuma yönlendirmeyi mümkün kılar. Eğer bir kullanıcı uygulamayı henüz indirmediyse, bu tür bir link önce onları App Store veya Google Play&rsquo;e yönlendirir. Uygulama indirildikten ve açıldıktan sonra, kullanıcı otomatik olarak belirtilen içeriğe veya konuma yönlendirilir.
+</p>
+
+<p>
+Farklarına gelince, her ne kadar her iki tür link de uygulamanın indirilmesi ve belirli bir konuma yönlendirilmesi sürecini yönetse de, genellikle Dinamik Linkler daha geniş özelliklere sahip olup, kullanıcıları yönlendirme ve deneyimlerini özelleştirme konusunda daha fazla esneklik sunar. Örneğin, Dinamik Linkler genellikle linkin nereden geldiğini (örneğin, bir e-postadan, sosyal medyadan, bir reklamdan vb.) izleme ve bunun yanı sıra kullanıcının işletim sistemini ve cihazını algılama yeteneğine sahiptir, böylece en uygun deneyimi sunabilir. Bu nedenle, Dinamik Linkler genellikle pazarlama kampanyalarında ve kullanıcı etkileşimlerini artırmak için kullanılır.
+</p>
+</div>
+
+<h2><a id="deep-link-yönetim-yöntemleri" class="anchor" href="#deep-link-yönetim-yöntemleri">¶</a>Deep Link Yönetim Yöntemleri</h2><div class="outline-text-2" id="text-org9b2d770">
+<p>
+Deep linklerinizi hem iOS hem Android uygulamalarınızda yönetebilmeniz için iki önemli yöntem bulunmaktadır: URL Scheme ve Universal Link (iOS) veya App Links (Android). Bu yöntemler, uygulamalarınızdaki deep linklerin yönetimini kolaylaştırır ve kullanıcı deneyimini artırır. Ancak her bir yöntemin kendine özgü özellikleri ve kullanım alanları vardır. Bu yüzden, hangi yöntemin sizin uygulamanız için en uygun olduğunu belirlemek önemlidir.
+</p>
+</div>
+
+<h2><a id="deep-link-url-scheme-ve-universal-link-karşılaştırması" class="anchor" href="#deep-link-url-scheme-ve-universal-link-karşılaştırması">¶</a>Deep Link: URL Scheme ve Universal Link Karşılaştırması</h2><div class="outline-text-2" id="text-org0a5fd6a">
+<p>
+Deep link yönetiminde kullanılan iki temel yöntem olan URL Scheme ve Universal Link, birbirinden farklı özelliklere sahiptir. Hem geliştiricilerin hem de kullanıcıların deneyimini doğrudan etkileyen bu özellikler, hangi yöntemin hangi durumda kullanılacağını belirler.
+</p>
+
+<p>
+URL Scheme ve Universal Link’in karşılaştırmalı tablosu:
+</p>
+</div>
+
+<h3><a id="url-scheme" class="anchor" href="#url-scheme">¶</a>URL Scheme</h3><div class="outline-text-3" id="text-orgdaf2f1e">
+<ul class="org-ul">
+<li><b><b>Kurulumu Basittir:</b></b> URL Scheme&rsquo;yi kullanmaya başlamak için karmaşık bir kurulum sürecine ihtiyaç duyulmaz.</li>
+<li><b><b>SSL Zorunluluğu Yoktur:</b></b> URL Scheme, SSL sertifikası zorunluluğu olmadan kullanılabilir.</li>
+<li><b><b>Kullanıcı Onayı İster:</b></b> URL Scheme, uygulamaya erişim izni almak için kullanıcıya bir pop-up gösterir. Bu, kullanıcıların uygulamayı açma konusunda daha bilinçli olmasını sağlar.</li>
+<li><b><b>Uygulama Yüklü Değilse Çalışmaz:</b></b> URL Scheme, uygulamanın cihazda yüklü olmasını gerektirir. Eğer uygulama yüklü değilse, URL Scheme çalışmaz.</li>
+<li><b><b>Aynı Tanımlar ve Kod Mantığı Gerekli:</b></b> URL Scheme&rsquo;in hem iOS hem de Android platformlarında çalışabilmesi için, tanımlarının ve URL&rsquo;i işleyen kod mantığının aynı olması gerekmektedir.</li>
+<li><b><b>Kullanıcı Dostu Değildir:</b></b> URL Scheme linkleri genellikle &ldquo;myApp://page/profile&rdquo; gibi görünürler ve bu da genellikle kullanıcılar için anlaşılması zor olabilir.</li>
+</ul>
+</div>
+
+<h3><a id="universal-link" class="anchor" href="#universal-link">¶</a>Universal Link</h3><div class="outline-text-3" id="text-org9155b99">
+<ul class="org-ul">
+<li><b><b>Kurulumu Komplekstir:</b></b> Universal Link&rsquo;in kurulum süreci, URL Scheme&rsquo;e göre daha karmaşıktır.</li>
+<li><b><b>SSL Zorunludur:</b></b> Universal Link kullanımı için SSL sertifikası zorunludur. Bu, uygulamanın güvenlik seviyesini artırır.</li>
+<li><b><b>Erişim İzni İstemez:</b></b> Universal Link, uygulamaya erişim izni almak için kullanıcıdan herhangi bir onay istemez.</li>
+<li><b><b>Uygulama Yüklü Değilse Yedek URL&rsquo;ler Kullanır:</b></b> Eğer uygulama cihazda yüklü değilse, Universal Link yedek bir URL&rsquo;ye yönlendirme yapar. Bu, kullanıcıların her zaman istedikleri içeriğe ulaşabilmesini sağlar.</li>
+<li><b><b>Oluşturulan Link Tüm Platformları Destekler:</b></b> Universal Link ile oluşturulan bir link, tüm platformlarda çalışabilir.</li>
+<li><b><b>Gündelik Kullanılan Linkler Gibidir:</b></b> Universal Linkler, kullanıcı dostudur ve gündelik internet kullanımında karşılaştığımız web adreslerine benzerler. Örneğin, &ldquo;www.myapp.com/page/profile&rdquo; gibi.</li>
+</ul>
+
+<p>
+Bu özellikler, URL Scheme ve Universal Link arasında önemli farklar olduğunu gösterir. Seçiminiz, uygulamanızın ihtiyaçlarına, hedeflerinize ve kullanıcı deneyiminizi nasıl şekillendirmek istediğinize bağlı olacaktır. Unutmayın, her iki yöntemin de kendi güçlü ve zayıf yanları vardır. Önemli olan, hangi yöntemin sizin ve kullanıcılarınızın ihtiyaçlarını en iyi şekilde karşılayacağını belirlemektir.
+</p>
+
+<p>
+Şimdi, daha fazla derine dalalım ve URL Scheme ve Universal Link&rsquo;in nasıl çalıştığını inceleyelim&#x2026;
+</p>
+</div>
+
+<h2><a id="url-scheme-nedir-ve-nasıl-kullanılır" class="anchor" href="#url-scheme-nedir-ve-nasıl-kullanılır">¶</a>URL Scheme: Nedir ve Nasıl Kullanılır?</h2><div class="outline-text-2" id="text-org01bfee3">
+<p>
+URL Scheme, iOS ve Android platformları için belirli bir URL şemasını kaydedip, diğer uygulamaların bu şema ile başlayan URL&rsquo;leri açabilmesini sağlayan bir deep link yöntemidir. Peki, nasıl çalışır? Hadi gelin adım adım birlikte inceleyelim.
+</p>
+</div>
+
+<h3><a id="url-scheme-nasıl-tanımlanır" class="anchor" href="#url-scheme-nasıl-tanımlanır">¶</a>URL Scheme: Nasıl Tanımlanır?</h3><div class="outline-text-3" id="text-orga0cc31b">
+<p>
+URL Scheme&rsquo;in kurulumu oldukça basittir. Örneğin, bir iOS uygulamasına URL Scheme nasıl tanımlanır, birlikte bakalım.
+</p>
+<ol class="org-ol">
+<li>Öncelikle, Xcode&rsquo;u açıyoruz.</li>
+<li>Ardından, `Project Settings -&gt; Info` yolunu izliyoruz.</li>
+<li>Bu bölümde &ldquo;URL Types&rdquo; kısmına yeni bir URL Scheme tanımı yapabiliyoruz.</li>
+</ol>
+
+<p width="100%">
+<img src="/img/0.jpg" width="100%">
+Bu şekilde bir tanımlama yaptıktan sonra, telefonumuzdan bir tarayıcı veya notlar uygulamasına gidip bu linki test edebiliriz. &ldquo;com.myApp&rdquo; yazıp enter&rsquo;a tıkladığımızda fark ederiz ki, bir şey olmamıştır.
+</p>
+
+<p>
+Peki, bu durum neden oluşur? İşin aslı, iOS&rsquo;un bir metni bağlantı olarak tanıması için, URL formatına uygun olmamızı bekler. Yani linkimizi &ldquo;com.myApp://main&rdquo; olarak güncellemeliyiz. Bu formatı girdiğimizde, bir izin pop-up&rsquo;ı ile karşılaşırız. Eğer burada &ldquo;Aç&rdquo; diyerek izin verirsek, linkin uygulamamızı açtığını görebiliriz.
+</p>
+
+<p width="100%">
+<img src="/img/1.jpg" width="100%">
+Fakat, evet uygulamayı açtık ama henüz uygulama içerisinde bir yönlendirme yapmadık. Mesela uygulamanın &ldquo;profil bilgilerim&rdquo; sayfasına gitmek istiyoruz. Peki, bunu nasıl yapabiliriz?
+</p>
+</div>
+
+<h3><a id="url-scheme-ile-uygulama-i̇çi-yönlendirme" class="anchor" href="#url-scheme-ile-uygulama-i̇çi-yönlendirme">¶</a>URL Scheme ile Uygulama İçi Yönlendirme</h3><div class="outline-text-3" id="text-org74bc08b">
+<p>
+Bu işlem için &ldquo;AppDelegate.swift&rdquo; dosyasını kullanacağız. Bu dosyada bulunan `open url: URL` metodu, başka bir uygulama veya sistem bileşeni tarafından gönderilen URL&rsquo;yi yakalayıp işlememizi sağlar.
+</p>
+
+<p>
+Hatırlayalım, bir metnin bağlantı olabilmesi için &ldquo;scheme://host&rdquo; yapısına uyması gerektiğini belirtmiştik. Şimdi bu yapının bir örneğini inceleyelim. Örneğin, `com.myApp://content?contentID=&ldquo;1881&rdquo;` şeklinde bir URL tanımlayalım.
+</p>
+
+<p>
+Bu URL&rsquo;deki parametreleri elde etmek ve bunları kendi yönlendirme yapımıza göre işlemek için aşağıdaki gibi bir kod yapısına ihtiyacımız bulunmaktadır.
+</p>
+
+<p width="100%">
+<img src="/img/2.jpg" width="100%">
+Bu kod yapısında,
+</p>
+<ul class="org-ul">
+<li>`url.scheme` = &ldquo;com.myApp&rdquo;</li>
+<li>`url.host` = &ldquo;content&rdquo;</li>
+<li>`parameters` = [&ldquo;contentID&rdquo; : &ldquo;1881&rdquo;]</li>
+</ul>
+<p>
+olacaktır.
+</p>
+</div>
+
+<h3><a id="url-scheme-sonuç" class="anchor" href="#url-scheme-sonuç">¶</a>URL Scheme: Sonuç</h3><div class="outline-text-3" id="text-org4883a1f">
+<p>
+URL Scheme, tanımlanması ve uygulanması oldukça kolay bir deep link yöntemidir. Ancak, bu yöntemin en büyük dezavantajı, uygulamanın cihazda yüklü olmaması durumunda çalışmamasıdır. Bu durumda, kullanıcı boş bir web sayfasıyla karşılaşacaktır.
+</p>
+
+<p>
+İşte tam bu noktada Universal Link ve App Links yöntemleri devreye giriyor. Bu yöntemler, URL Scheme&rsquo;in karşılaştığı bu sorunu çözerek kullanıcı deneyimini daha da iyileştirebilir. Şimdi biraz daha derinlere inelim ve Universal Link ve App Links yöntemlerini inceleyelim&#x2026;
+</p>
+</div>
+
+<h3><a id="universal-linkapp-links-nedir" class="anchor" href="#universal-linkapp-links-nedir">¶</a>Universal Link/App Links: Nedir?</h3><div class="outline-text-3" id="text-orga3fd96a">
+<p>
+Universal Link ve App Links, URL Scheme&rsquo;in dezavantajlarını azaltmak için iOS 9/Android 6.0 ve sonraki sürümlerde kullanılabilen bir deep link yöntemidir.
+</p>
+
+<p>
+Bu yöntem, URL Scheme&rsquo;in dezavantajlarını giderirken, kurulumun daha karmaşık olmasını beraberinde getirir.
+</p>
+
+<p>
+Kurulum adımlarını ve örneklerimi iOS özelinde veriyor olacağım fakat konsepti anlamamız yeterli olacaktır. Çünkü Android’de de olaylar birbirine çok benzer.
+</p>
+
+<p>
+Özellikle, Universal Link&rsquo;lerin en genel anlamıyla, bir web sayfası URL&rsquo;sini iOS uygulamanızla ilişkilendirmenizi sağlar. Böylece o URL&rsquo;yi açtığınızda iOS, mobil uygulamanızı tanır.
+</p>
+
+<p>
+Ama burada bir sorun var mıdır? Örneğin, &ldquo;myApp&rdquo; adlı uygulamanızı Instagram&rsquo;ın URL&rsquo;si ile ilişkilendirip, iPhone&rsquo;dan Instagram&rsquo;a giren herkesin sizin uygulamanıza yönlendirilmesini sağlayabilir misiniz? Tam bu sorunu çözmek için iOS, URL&rsquo;lerin arkasına bir JSON dosyası eklemenizi ve bunu &ldquo;/apple-app-site-association&rdquo; yolunda yer almasını ister. Böylece kullanıcılar &ldquo;<a href="https://www.instagram.com/egehannkalaycii">https://www.instagram.com/egehannkalaycii</a>&rdquo; gibi bir linke tıkladığında, iOS öncelikle &ldquo;<a href="https://www.instagram.com/apple-app-site-association">https://www.instagram.com/apple-app-site-association</a>&rdquo; linkindeki JSON dosyasına bakar ve bu URL&rsquo;in hangi uygulamayla ilişkili olduğuna bakar.
+</p>
+</div>
+
+<h3><a id="json-dosyası-yapısı" class="anchor" href="#json-dosyası-yapısı">¶</a>JSON Dosyası Yapısı</h3><div class="outline-text-3" id="text-orgc18093c">
+<p>
+JSON dosyası dedik. Peki bu JSON dosyasının yapısında neler var?
+Bu JSON dosyasının yapısı genellikle aşağıdaki gibidir:
+<img src="/img/3.jpg" width="100%">
+</p>
+<ul class="org-ul">
+<li>applinks: Bu JSON&rsquo;ın Universal Link olduğunu belirtir.</li>
+<li>apps: Apple dokümanına göre bu değer boş bırakılmalıdır.</li>
+<li>details: Uygulama listesi ve yolları içerir.</li>
+<li>appID: TeamID + BundleID değerlerinden oluşur.</li>
+<li>paths: Uygulamada gidilebilecek yolların tanımıdır.
+<ul class="org-ul">
+<li>`Path’leri tanımlarken bazı detaylar bulunur. Bunlar:
+<ul class="org-ul">
+<li>“/wwdc/news/”-&gt; Standart path tanımı.</li>
+<li>“NOT /videos/wwdc/2010/”-&gt; Başında <b><b><b><b>NOT</b></b></b></b> olanlar path’e dahil olmaz.</li>
+<li>“*” veya “/wwdc/2010/*&ldquo;-&gt; WWDC’nin 2010 klasörü altındaki tüm yolları tanımlar.</li>
+<li>“/wwdc/201?/”-&gt; ? olan yere herhangi bir karakter gelebilir.</li>
+<li>Bu bilgiler ışığında aşağıdaki gibi bir path tanımı yapmak mümkün.</li>
+<li>“/wwdc/videos/201?/*”</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<h3><a id="universal-linkapp-links-nasıl-tanımlanır" class="anchor" href="#universal-linkapp-links-nasıl-tanımlanır">¶</a>Universal Link/App Links: Nasıl Tanımlanır?</h3><div class="outline-text-3" id="text-org63d6499">
+<p>
+Universal Link veya App Links yeteneğini kullanmak için öncelikle &ldquo;<a href="https://developer.apple.com/account/resources/identifiers/list">https://developer.apple.com/account/resources/identifiers/list</a>&rdquo; adresine gidip, uygulamanızı seçmeniz gerekiyor. Daha sonra &ldquo;Capabilities&rdquo; sekmesi altından, &ldquo;Associated Domains&rdquo; özelliğini aktif hale getiriyorsunuz.
+</p>
+
+<p>
+Xcode&rsquo;da, sol menüden projenizi seçtikten sonra sırasıyla: Target -&gt; Signing &amp; Capabilities -&gt; Associated Domains sekmesine geliriz. Associated Domain ekleriz. Burada dikkat etmemiz gereken nokta, URL&rsquo;nizin &ldquo;applinks: domainName.com&rdquo; şeklinde tanımlanmasıdır.
+</p>
+
+<p>
+Bu adımların ardından, Universal Link yeteneğiniz aktif hale gelmiş olacaktır. Bu yeteneği test etmek için, telefonunuzdan Safari&rsquo;ye gidip uygulamanızın web sitesine giderseniz, iOS otomatik olarak bir öneri sunacaktır.
+</p>
+
+
+<div id="org869f3bf" class="figure">
+<p><img src="/img/4.jpg" width="100%">
+</p>
+</div>
+</div>
+
+<h3><a id="uygulama-i̇çi-yönlendirme" class="anchor" href="#uygulama-i̇çi-yönlendirme">¶</a>Uygulama İçi Yönlendirme</h3><div class="outline-text-3" id="text-orgf7ab689">
+<p>
+Universal Link yeteneğini ekledikten sonra, uygulamanızın belirli bir sayfasına yönlendirebilmek için URL&rsquo;yi karşılayacak bir metot belirlememiz gerekiyor. Bu metot, genellikle AppDelegate dosyasında bulunur.
+</p>
+
+<p>
+URL Scheme&rsquo;de linklerimizi &ldquo;open url: URL&rdquo; metodunda handle ediyorduk, ancak Universal Link yönlendirmelerini &ldquo;continue userActivity: NSUserActivity&rdquo; metodunda handle ediyoruz.
+</p>
+
+<p width="80%">
+<img src="/img/5.jpg" width="100%">
+Örneğin, &ldquo;www.myApp.com/app/profile&rdquo; gibi bir linke tıkladığınızda bu metot handle edecektir.
+</p>
+
+<p>
+Bu kod yapısında,
+</p>
+<ul class="org-ul">
+<li>`url` = &ldquo;www.myApp.com/app/profile?user=xKralTR&rdquo;</li>
+<li>`view` = &ldquo;profile&rdquo;</li>
+<li>`parameters` = [&ldquo;user&rdquo; = &ldquo;xKralTR&rdquo;]</li>
+</ul>
+<p>
+olacaktır.
+</p>
+
+<p>
+Bu bilgilerin ışığında, uygulamanızın belirli bir sayfasına yönlendirebilme yeteneğine sahip olmuş olursunuz. Bu, uygulamanızın kullanıcı deneyimini önemli ölçüde geliştirebilir ve kullanıcıların uygulamanız içerisinde daha kolay bir şekilde gezinmelerini sağlar.
+</p>
+
+<p>
+Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha iyi anlamanızı sağlayabilir. Aşağıya bununla ilgili bir diyagram bırakıyorum. Yazımı okuduğunuz için teşekkürler, bir sonraki yazılarda görüşmek üzere.
+</p>
+
+
+<div id="org7e71583" class="figure">
+<p><img src="/img/6.jpg" width="100%">
+</p>
+</div>
+</div>
+
+<h2><a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2><div class="outline-text-2" id="text-org09593e4">
+<ol class="org-ol">
+<li><a href="https://medium.com/@ydemirkoparan/swift-ile-deep-linking-nas%C4%B1l-yap%C4%B1l%C4%B1r-e815fee93b97">Swift ile DeepLinking nasıl yapılır?</a></li>
+<li><a href="https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97">iOS Deep Linking Scheme vs Universal Links</a></li>
+</ol>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="http://localhost:8080/rss/">RSS Bülten</a> · <a href="http://localhost:8080/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="http://localhost:8080/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div></footer></body></html>

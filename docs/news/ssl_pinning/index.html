@@ -1,0 +1,108 @@
+<!-- Generated from 153a845 on 2023-08-07 @ 23:33 with Emacs 29.0.50 (Org mode 9.5.5) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen News" href="http://localhost:8080/rss/news.xml"/><link rel="stylesheet" href="http://localhost:8080/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="http://localhost:8080/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="http://localhost:8080/css/code.css"/><link rel="stylesheet" href="http://localhost:8080/css/site.css"/><link rel="stylesheet" href="http://localhost:8080/css/code_highlighter_dark_theme.css"/><title>SSL Pinning - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><img class="logo" src="http://localhost:8080/img/site_header_logo.png" alt="Mobilen News"/></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/guides/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="http://localhost:8080/rss/">RSS Bülten</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">SSL Pinning</h1><p class="site-post-meta">July 11, 2023</p><div id="content"><p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+
+<div id="orge772724" class="figure">
+<p><img src="/img/ssl_and_pinning_certificate_topology.jpg" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span><a href="https://docs.wavemaker.com/learn/blog/2020/12/15/certificate-pinning/">SSL Pinleme</a></p>
+</div>
+
+<p>
+Merhabalar, bu yazımızda güvenliğe dokunan bir konudan bahsedeceğiz. Verinin güvenliği akış halinde, işlenirken veya saklanırken farklı yöntemler ile sağlanmakta.
+</p>
+
+<p>
+SSL Pinning verinin iki parti arasında iletim esnasındaki güvenliğini korumak için ortaya çıkmıştır. <code>SSL Pinning</code> dediğimizde iki kavram var birisi <code>SSL</code> diğeri ise <code>Pinning</code> işlemi. O nedenle ilk önce SSL hakkında ufak bir bilgi ile başlayalım.
+</p>
+
+<h2><a id="sslrsquoin-kısa-tarihçesi" class="anchor" href="#sslrsquoin-kısa-tarihçesi">¶</a>SSL&rsquo;in Kısa tarihçesi</h2><div class="outline-text-2" id="text-org3294e26">
+<p>
+Güvenli Geçiş Katmanları diye türkçeleştirebileceğimiz bir tabir olan SSL websitelerinin doğması ile beraber 1990&rsquo;ların ortasında bağlanılan sitelerin güvenliğini teyit etmek için kullandığı bir güvenlik yöntemidir.
+</p>
+
+<p>
+Burada <code>istemci (client)</code> <code>ssl</code> sayesinde <code>sunucu (server)</code> ile arasında olan iletişimi geçerli bir sertifikaya guvenerek yapmaktadir.
+</p>
+
+<p>
+Sertifika otoritelerinin (CA Authorities) verdiği sertifikalar ile (chain of certificate) üzerinden bu sağlanmaktadır. Ancak herhangi kötü niyetli birileride geçerli sertifikalara sahip olabilir; o nedenle bu riski düşürebilmek adına ilgili sertifikalar her iki partide (istemci/sunucu) önceden bulunarak, bağlantının gerçekten doğru istemci ve doğru sunucu ile olduğunu garantiler.
+</p>
+</div>
+
+<h2><a id="mi̇tm-man-in-the-middle-atağı" class="anchor" href="#mi̇tm-man-in-the-middle-atağı">¶</a>MİTM (Man in the Middle) Atağı</h2><div class="outline-text-2" id="text-org8380918">
+<p>
+SSL&rsquo;in eksik kaldığı noktada kötü niyetli birinin de sertifika sahibi olduğunda istemci ve sunucu arasında zaafiyet meydana gelebilir. İletişim&rsquo;in ortasına kendisini yerleştirip ortamı dinleyerek bilgi elde etmeye çalışan atak türüdür.
+</p>
+</div>
+
+<h2><a id="pinning-pinlemek-nedir" class="anchor" href="#pinning-pinlemek-nedir">¶</a>Pinning (Pinlemek) nedir?</h2><div class="outline-text-2" id="text-org99beb0e">
+<p>
+Pinlemenin ne olduğunu öğrenmeden önce neyi pinleyeceğimizden biraz bahsedelim.
+Pinlenecek olan dosyaya Sertifika (Certificate) diyoruz.
+</p>
+
+<p>
+Asimetrik şifrelemedeki Public/Private anahtar çiftleri, sertifika için önemli kavramlar.
+<code>Public Key</code> sunucuya gönderilecek olan bilgiyi başkaları okumasın diye şifrelemede kullanılıyor.
+Bu <code>public key</code> sertifikanın içinde bulunuyor ve istemci tarafında kullanılıyor.
+Private anahtar ise gönderilen veriyi server&rsquo;da çözümleyerek kullanıyor.
+</p>
+
+<p>
+Zaten <code>https</code> üzerinden bu bilgiler güvenli şekilde iletiliyor iken neden pinlemeye ihtiyaç duyuluyor sorusunun cevabını vermek gerekiyor.
+</p>
+
+<p>
+Normalde sertifikalar &ldquo;Certificate of Chain&rdquo; denilen bir zincir uzerinden iletisimi guvenli hale getiriyor. O nedenle tum zincir <code>root</code> sertifikaya kadar onaylandiktan sonra iki parti arasinda iletisim baslayabiliyor. Ama, uygulama sunucunun verdigi sertifikaya guvenirken bu sertifikanin kendi sunucusu mu yoksa bir baskasinin sunucusumu olduguna dair bilgiye sahip degildir. <code>MITM</code> saldirisina acik olan tarafi burasidir.
+</p>
+
+<p>
+Pinleme yaptiginiz vakit ise direkt olarak bu iletisim garantisini istemci/sunucu arasinda karsilikli guvenli hale getirebiliyorsunuz; herhangi bir baska otoriteye gerek duymuyorsunuz.
+</p>
+
+<p>
+Önceden istemciye gömülen sunucunun <code>public</code> anahtarı olursa, istemci sunucuyla iletişim kurmadan önce kendisinde olan anahtar ile sunucudaki anahtarı karşılaştırıp, eşleşmemesi durumunda direkt iletişimi kesiyor.
+</p>
+
+<p>
+Özellikle güvenliğin daha temelde olduğu uygulamalarda bankacılık ve finansal enstrüman olarak görev yapan uygulamalarda bu güvenlik önlemi tercih edilmektedir. Mobil uygulamalarda da yoğunluklu olarak kullanılan bir güvenlik tedbiridir.
+</p>
+</div>
+
+<h2><a id="mobil-uygulama-entegrasyonları" class="anchor" href="#mobil-uygulama-entegrasyonları">¶</a>Mobil Uygulama Entegrasyonları</h2><div class="outline-text-2" id="text-orgbb40345">
+<ol class="org-ol">
+<li>İlk adım olarak sunucunun <code>public</code> anahtarini veya SSL sertifikasını çıkarmanız gerekiyor.</li>
+
+<li>Bu anahtara sahip sertifikayı veya public anahtarı istemci uygulamaya pinlemek/gömmek gerekiyor. Istemci tarafindaki network katmanında <code>sunucuya</code> isteklerinde bu anahtarlarin eslesme kontrolünü yapacak kontrolü eklemek gerekiyor.</li>
+
+<li>Dikkat edilmesi gereken en önemli noktalardan bir tanesi sertifikanın süresi bittiğinde yenileme ihtiyacını takip edebilmek.
+<dl class="org-dl">
+<dt>Certificate Pinning</dt><dd>Tüm sertifikanın <code>client</code>&rsquo;a gömüldüğü ve sorguya cevap veren <code>server</code>&rsquo;in sertifikası ile karşılaştırıldığı pinleme yöntemi.
+Bu durumda <code>client</code>&rsquo;ların eski kalanlarının <code>force update</code> ile zorunlu güncellemeye tabii olması gerekiyor.</dd>
+
+<dt>Public Key Pinning</dt><dd>Sertifika&rsquo;da yer alan <code>public key</code>&rsquo;in veya <code>public key hash</code>&rsquo;inin istemciye konulmasi ve karşılaştırma için kullanılması durumunu ifade eder.
+Normalde sertifikalarin belli periyotlarda yenilenmesi gerekmektedir. Bu yenileme herhangi bir private key sizintisi durumlarinin onune gecmeyi amaclar.
+Public anahtari pinledigimiz takdirde istersek eski <code>public/private</code> anahtar cifti ile yeni sertifika olusturabiliriz.
+Public Key pinleme ise Bu durumda sunucu tarafında sertifika değişimlerinde yeni sertifika eski public/private key pair ile üretildiği durumda force update gerekmeden devam edilebilir. Ancak böyle devam etmesi sertifikanın yenilenme amacına aykırı olmaktadır.</dd>
+</dl></li>
+</ol>
+
+<p>
+Özet olarak, <code>SSL Pinning</code> dedigimiz olay istemci ile sunucu arasindaki iletisimi onceden belirlenen anahtar cifti ile disariya sizmasini engelleyen yontemdir.
+Sistem guvenligi konusunda arastirmalar yapan bagimsiz kurulus <a href="https://owasp.org/">OWASP</a>, <a href="https://tr.wikipedia.org/wiki/Man-in-the-middle_sald%C4%B1r%C4%B1s%C4%B1">MITM</a> turu ataklar icin onlem olarak bu yontemi tavsiye etmektedir.
+iOS tarafında <code>NSURLSession</code> veya <code>Alamofire</code> bağımlılıkları üzerinde bu pratikler rahatlikla uygulanabiliyor.
+Android tarafinda ise OKHttpClient ve Retrofit gibi populer kutuphanelerde bu pratiklerin nasil yapildigina dair bircok ornek bulubilirsiniz.
+</p>
+</div>
+
+<h2><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h2><div class="outline-text-2" id="text-org65b49b7">
+<ul class="org-ul">
+<li><a href="https://owasp.org/www-community/controls/Certificate_and_Public_Key_Pinning">OWASP SSL Pinleme</a></li>
+<li><a href="https://mas.owasp.org/MASTG/">OWASP Mobil Uygulama Güvenlik Test Kitabı</a></li>
+<li><a href="https://docs.wavemaker.com/learn/blog/2020/12/15/certificate-pinning/">Certificate Pinning</a></li>
+</ul>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="http://localhost:8080/rss/">RSS Bülten</a> · <a href="http://localhost:8080/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="http://localhost:8080/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div></footer></body></html>

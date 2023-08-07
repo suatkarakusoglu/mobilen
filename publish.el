@@ -83,7 +83,7 @@
 ;;                       "http://localhost:8080")
 ;;   "The URL for the site being generated.")
 
-(defvar dw/site-url "http://mobilen.art"
+(defvar dw/site-url "https://mobilen.art"
   "The URL for the site being generated.")
 
 (defun dw/embed-list-form ()

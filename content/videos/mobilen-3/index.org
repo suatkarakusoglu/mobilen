@@ -11,5 +11,3 @@
 
 #+ATTR_HTML: :width 100%
 [[volume_3_cover.jpg]]
-
-suatkarakusoglu

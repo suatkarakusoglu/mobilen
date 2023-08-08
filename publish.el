@@ -131,7 +131,7 @@
                       (div (@ (class "container"))
                            (nav (@ (class "nav"))
                                 (a (@ (class "nav-link") (href "/")) "Anasayfa") " "
-                                (a (@ (class "nav-link") (href "/guides/")) "Dergiler") " "
+                                (a (@ (class "nav-link") (href "/magazines/")) "Dergiler") " "
                                 (a (@ (class "nav-link") (href "/news/")) "İçerikler") " "
                                 (a (@ (class "nav-link") (href "/community/")) "Topluluk") " "
                                 (a (@ (class "nav-link") (href ,(concat dw/site-url "/rss/"))) "RSS Bülten") " "
@@ -521,8 +521,8 @@ holding contextual information."
               :base-extension "txt"
               :publishing-directory "./docs/newsletter"
               :publishing-function dw/publish-newsletter-page)
-            '("systemcrafters:videos"
-              :base-directory "./content/videos"
+            '("systemcrafters:magazines"
+              :base-directory "./content/magazines"
               :base-extension "org"
               :recursive t
               :publishing-directory "./docs"
@@ -565,8 +565,9 @@ holding contextual information."
                    :description "News and Insights from Mobilen!"
                    :author "Suat Karakuşoğlu")
 
-  (dw/generate-redirects '(("support-the-channel" . "how-to-help")
-                           ("videos" . "guides")))
+  ;; TODO: No redirects for now.
+  ;; (dw/generate-redirects '(("support-the-channel" . "how-to-help")
+  ;;                          ("guides" . "magazines")))
 
   ;; Copy the domains file to ensure the custom domain resolves
   (copy-file ".domains" "docs/.domains" t)

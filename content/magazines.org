@@ -2,6 +2,10 @@
 
 /Mobilen Dergilerin sıralı listesi./
 
+* Mobilen 4
+
+[[../mobilen-4/][file:volume_3_cover.jpg]]
+
 * Mobilen 3
 
 [[../mobilen-3/][file:volume_3_cover.jpg]]

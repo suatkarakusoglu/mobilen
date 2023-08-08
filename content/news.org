@@ -1,5 +1,6 @@
 #+TITLE: Mobilen News
 
+- [[file:ssl_pinning.org][SSL Pinning]] - Suat Karakuşoğlu · August 08, 2023
 - [[file:kitap_make_something_wonderful.org][Kitap: Make Something Wonderful]] - Suat Karakuşoğlu · July 11, 2023
 - [[file:wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]] - Alper Cem Öztürk · July 11, 2023
 - [[file:aklimda_kalanlar_jake_wharton.org][Aklımda Kalanlar: Jake Wharton ile Röportaj]] - Betül Sandıkçı · July 11, 2023
@@ -16,7 +17,6 @@
 - [[file:xcode_breakpoints_ile_otomatizasyon.org][Xcode Breakpoints ile Otomatizasyon]] - Alper Cem Öztürk · July 11, 2023
 - [[file:wwdc_2023_geldi.org][WWDC 2023 geldi!]] - Suat Karakuşoğlu · July 11, 2023
 - [[file:steve_jobs_the_man_in_the_machine.org][Steve Jobs The Man in The Machine]] - Suat Karakuşoğlu · July 11, 2023
-- [[file:ssl_pinning.org][SSL Pinning]] - Suat Karakuşoğlu · July 11, 2023
 - [[file:android_file_template.org][Android File Template]] - Hasan Hüseyin Doğan · July 11, 2023
 - [[file:details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]] - Ali Mert Tekel · July 11, 2023
 - [[file:the_art_of_readable_code_1.org][Okuma Notları: The Art Of Readable Code (Part 1)]] - Yusuf Kaya · July 11, 2023

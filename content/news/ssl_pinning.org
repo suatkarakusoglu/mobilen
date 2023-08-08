@@ -1,5 +1,5 @@
 #+title: SSL Pinning
-#+date: [2023-07-11 Tue]
+#+date: [2023-08-08 Tue]
 #+author: Suat Karakuşoğlu
 #+kind: news
 

@@ -1,0 +1,6 @@
+#+title: Mobilen 4
+
+/Mobilen'in 4. dergisi./
+
+* Konular
+1. [[file:../../news/ssl_pinning.org][SSL Pinning]]

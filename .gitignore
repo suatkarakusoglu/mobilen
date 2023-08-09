@@ -5,7 +5,8 @@
 .org-cache/
 
 ; Ignore shared content
-docs/
+; Do not ignore docs inside gh-pages
+; docs/
 
 ; Ignore Gemini output
 gemini/

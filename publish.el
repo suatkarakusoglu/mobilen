@@ -572,7 +572,7 @@ holding contextual information."
   ;; Copy the domains file to ensure the custom domain resolves
   (copy-file ".domains" "docs/.domains" t)
 
-  ;; Copy the .well-known folder for Matrix
+  ;; Copy the .well-known folder
   (unless (file-exists-p "docs/.well-known")
     (copy-directory ".well-known" "docs/" t)))
 

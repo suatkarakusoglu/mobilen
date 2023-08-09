@@ -1,2 +1,6 @@
-* Generate 'public' website
-emacs --batch -l ./publish.el --funcall dw/publish
+Makefile includes commands.
+
+* Generate Web-site
+#+begin_src shell
+  makefile generate-site
+#+end_src

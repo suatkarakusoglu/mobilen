@@ -1,4 +1,4 @@
-#+TITLE: Mobilen News
+#+TITLE: Yazılar
 
 - [[file:ssl_pinning.org][SSL Pinning]] - Suat Karakuşoğlu · August 08, 2023
 - [[file:kitap_make_something_wonderful.org][Kitap: Make Something Wonderful]] - Suat Karakuşoğlu · July 11, 2023

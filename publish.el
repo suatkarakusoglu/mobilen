@@ -83,6 +83,12 @@
 ;;                       "http://localhost:8080")
 ;;   "The URL for the site being generated.")
 
+;; TODO Automatise here later
+;; (defvar dw/site-url (if nil
+;;                         "https://mobilen.art"
+;;                       "http://localhost:8080")
+;;   "The URL for the site being generated.")
+
 (defvar dw/site-url "https://mobilen.art"
   "The URL for the site being generated.")
 
@@ -124,9 +130,12 @@
   (list `(header (@ (class "site-header"))
                  (div (@ (class "container"))
                       (div (@ (class "site-title"))
-                           (img (@ (class "logo")
-                                   (src ,(concat dw/site-url "/img/site_header_logo.png"))
-                                   (alt "Mobilen News")))))
+                           (h1 "Mobilen")
+                           ;; TODO: Add header later
+                           ;; (img (@ (class "logo")
+                           ;;         (src ,(concat dw/site-url "/img/site_header_logo.png"))
+                           ;;         (alt "Mobilen News")))
+                           ))
                  (div (@ (class "site-masthead"))
                       (div (@ (class "container"))
                            (nav (@ (class "nav"))
@@ -203,7 +212,7 @@
             (link (@ (rel "icon") (type "image/png") (href "/img/favicon.png")))
             (link (@ (rel "alternative")
                      (type "application/rss+xml")
-                     (title "Mobilen News")
+                     (title "Mobilen Yazılar")
                      (href ,(concat dw/site-url "/rss/news.xml"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/iosevka-aile/iosevka-aile.css"))))
             (link (@ (rel "stylesheet") (href ,(concat dw/site-url "/fonts/jetbrains-mono/jetbrains-mono.css"))))
@@ -509,7 +518,7 @@ holding contextual information."
               :publishing-function org-html-publish-to-html
               :auto-sitemap t
               :sitemap-filename "../news.org"
-              :sitemap-title "Mobilen News"
+              :sitemap-title "Yazılar"
               :sitemap-format-entry dw/format-news-entry
               :sitemap-style list
               ;; :sitemap-function dw/news-sitemap
@@ -561,8 +570,8 @@ holding contextual information."
                              (directory-files-recursively "news"
                                                           ".*\\.html$")))
                    :builder 'webfeeder-make-rss
-                   :title "Mobilen News"
-                   :description "News and Insights from Mobilen!"
+                   :title "Mobilen Yazılar"
+                   :description "Mobilen Dünyasından Bilgiler ..."
                    :author "Suat Karakuşoğlu")
 
   ;; TODO: No redirects for now.

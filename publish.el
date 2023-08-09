@@ -143,7 +143,7 @@
                                 (a (@ (class "nav-link") (href "/magazines/")) "Dergiler") " "
                                 (a (@ (class "nav-link") (href "/news/")) "İçerikler") " "
                                 (a (@ (class "nav-link") (href "/community/")) "Topluluk") " "
-                                (a (@ (class "nav-link") (href ,(concat dw/site-url "/rss/"))) "RSS Bülten") " "
+                                (a (@ (class "nav-link") (href ,(concat dw/site-url "/rss/"))) "RSS") " "
                                 ;; (a (@ (class "nav-link") (href "https://github.com/suatkarakusoglu/mobilen")) "Github") " "
                                 ;; (a (@ (class "nav-link") (href "/how-to-help/")) "Katkıda Bulun")
                                 ))))))
@@ -157,7 +157,7 @@
                                  ;; TODO: Create Privacy policy.
                                  ;; (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Gizlilik Sözleşmesi")
                                  ;; " · "
-                                 (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Bülten")
+                                 (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Bülteni")
                                  " · "
                                  (a (@ (href ,(concat dw/site-url "/credits/"))) "Atıflar")
                                  " · "

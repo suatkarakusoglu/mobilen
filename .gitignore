@@ -4,11 +4,14 @@
 ; Ignore the org-publish cache
 .org-cache/
 
-; Ignore shared content with daviwil.com
-public/
+; Ignore shared content
+docs/
 
 ; Ignore Gemini output
 gemini/
 
+; Ignore auto generated MacOS files.
 .DS_Store
+
+; Ignore emacs virtual comments file
 .evc

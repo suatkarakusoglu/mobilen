@@ -195,6 +195,7 @@
                             info
                             &key
                             (publish-date)
+                            (filetags)
                             (head-extra)
                             (pre-content)
                             (exclude-header)
@@ -233,6 +234,10 @@
                       (div (@ (class "site-post"))
                            (h1 (@ (class "site-post-title"))
                                ,title)
+                           ,@(when filetags
+                               (mapcar (lambda (tag)
+                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/" tag "/"))) ,tag))
+                                       filetags))
                            ,(when publish-date
                               `(p (@ (class "site-post-meta")) ,publish-date))
                            ,(if-let ((video-id (plist-get info :video)))
@@ -247,10 +252,12 @@
                      (dw/site-footer)))))))
 
 (defun dw/org-html-template (contents info)
+  ;; (message (plist-get info :filetags))
   (dw/generate-page (org-export-data (plist-get info :title) info)
                     contents
                     info
-                    :publish-date (org-export-data (org-export-get-date info "%B %e, %Y") info)))
+                    :publish-date (org-export-data (org-export-get-date info "%B %e, %Y") info)
+                    :filetags (plist-get info :filetags)))
 
 (defun dw/org-html-link (link contents info)
   "Removes file extension and changes the path into lowercase file:// links."
@@ -353,14 +360,14 @@ holding contextual information."
                   "")))))
 
 (org-export-define-derived-backend 'site-html 'html
-                                   :translate-alist
-                                   '((template . dw/org-html-template)
-                                     (link . dw/org-html-link)
-                                     (src-block . pygments-org-html-code)
-                                     (special-block . dw/org-html-special-block)
-                                     (headline . dw/org-html-headline))
-                                   :options-alist
-                                   '((:video "VIDEO" nil nil)))
+  :translate-alist
+  '((template . dw/org-html-template)
+    (link . dw/org-html-link)
+    (src-block . pygments-org-html-code)
+    (special-block . dw/org-html-special-block)
+    (headline . dw/org-html-headline))
+  :options-alist
+  '((:video "VIDEO" nil nil)))
 
 (defun org-html-publish-to-html (plist filename pub-dir)
   "Publish an org file to HTML, using the FILENAME as the output directory."
@@ -437,7 +444,8 @@ holding contextual information."
          (format "[[file:%s][%s]] - %s · %s"
                  entry
                  (org-publish-find-title entry project)
-                 (car (org-publish-find-property entry :author project))
+                 ;; (car (org-publish-find-property entry :author project))
+                 (org-publish-find-property entry :tags project)
                  (format-time-string "%B %d, %Y"
                                      (org-publish-find-date entry project))))
         ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))

@@ -2,6 +2,7 @@
 #+date: [2023-07-11 Tue]
 #+author: Yusuf Kaya
 #+kind: news
+#+filetags: :Kitap:Yazılım:
 
 [[https://linkedin.com/in/myusufka][Yusuf Kaya]] yazdı.
 

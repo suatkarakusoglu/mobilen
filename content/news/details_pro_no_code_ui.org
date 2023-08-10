@@ -5,6 +5,7 @@
 #+date: [2023-07-11 Tue]
 #+author: Ali Mert Tekel
 #+kind: news
+#+filetags: :iOS:Design:
 
 [[https://linkedin.com/in/alimerttekel][Ali Mert Tekel]] yazdı.
 

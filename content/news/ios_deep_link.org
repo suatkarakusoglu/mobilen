@@ -2,6 +2,7 @@
 #+date: [2023-07-11 Tue]
 #+author: Egehan Kalaycı
 #+kind: news
+#+filetags: :iOS:Development:
 
 [[https://linkedin.com/in/egehan-kalaycı-736b4a238][Egehan Kalaycı]] yazdı.
 

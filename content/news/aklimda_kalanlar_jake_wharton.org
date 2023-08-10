@@ -2,6 +2,7 @@
 #+date: [2023-07-11 Tue]
 #+author: Betül Sandıkçı
 #+kind: news
+#+filetags: :Android:
 
 [[https://linkedin.com/in/betulsandikci][Betül Sandıkçı]] yazdı.
 

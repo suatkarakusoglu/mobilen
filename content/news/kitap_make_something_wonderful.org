@@ -2,6 +2,7 @@
 #+date: [2023-07-11 Tue]
 #+author: Suat Karakuşoğlu
 #+kind: news
+#+filetags: :Kitap:Yazılım:Biyografi:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 

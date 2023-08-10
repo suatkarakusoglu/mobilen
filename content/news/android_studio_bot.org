@@ -2,6 +2,7 @@
 #+date: [2023-07-11 Tue]
 #+author: Tuğba Berk
 #+kind: news
+#+filetags: :Android:AI:
 
 [[https://tr.linkedin.com/in/tu%C4%9Fbaberk][Tuğba Berk]] yazdı.
 

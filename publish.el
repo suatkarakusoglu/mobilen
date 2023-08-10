@@ -444,8 +444,7 @@ holding contextual information."
          (format "[[file:%s][%s]] - %s · %s"
                  entry
                  (org-publish-find-title entry project)
-                 ;; (car (org-publish-find-property entry :author project))
-                 (org-publish-find-property entry :tags project)
+                 (car (org-publish-find-property entry :author project))
                  (format-time-string "%B %d, %Y"
                                      (org-publish-find-date entry project))))
         ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))

@@ -5,6 +5,7 @@
 
 [[https://linkedin.com/in/egehan-kalaycı-736b4a238][Egehan Kalaycı]] yazdı.
 
+* İçerik
 Merhaba Mobilen okurları, bugün sizlere Xcode'un farklı sürümlerini nasıl kolaylıkla yönetebileceğinizi anlatacağım.
 
 #+CAPTION: Xcode Naming

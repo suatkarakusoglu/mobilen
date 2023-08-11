@@ -5,6 +5,7 @@
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 
+* İçerik
 #+CAPTION: The man in the Machine
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%

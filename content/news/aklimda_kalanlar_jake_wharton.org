@@ -5,6 +5,7 @@
 
 [[https://linkedin.com/in/betulsandikci][Betül Sandıkçı]] yazdı.
 
+* İçerik
 #+CAPTION: Photo by [[https://unsplash.com/@goian][Ian Schneider]] on [[https://unsplash.com/?utm_source=medium&utm_medium=referral][Unsplash]]
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%

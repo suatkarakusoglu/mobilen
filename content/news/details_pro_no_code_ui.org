@@ -8,6 +8,7 @@
 
 [[https://linkedin.com/in/alimerttekel][Ali Mert Tekel]] yazdı.
 
+* İçerik
 #+CAPTION: DetailsPro ana ekranı
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%

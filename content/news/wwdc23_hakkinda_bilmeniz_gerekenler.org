@@ -5,6 +5,7 @@
 
 [[https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8][Alper Cem Öztürk]] yazdı.
 
+* İçerik
 Apple'ın WWDC'si geçtiğimiz günlerde gerçekleşti ve hem kullanıcılar hem de geliştiriciler için bir ton yeni özellik ve geliştirmeden bahsedildi. Hatta hepimizin yıllardır sızıntılardan takip ettiği tamamen yeni bir cihaz ve beraberinde işletim sistemi bile duyuruldu.
 
 Bu yazıda, bir geliştiricinin bakış açısından bu yılın WWDC'sindeki favori güncellemelerimden bahsedeceğim. Bu yeniliklerle oynamak için çok fazla zamanım olmadığınından deneyimim çoğunlukla [[https://developer.apple.com/wwdc23/101][Keynote]] ve [[https://developer.apple.com/wwdc23/102][Platforms State of the Union]] sunumlarına dayandığını belirtmekte fayda var.

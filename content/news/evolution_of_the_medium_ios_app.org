@@ -5,6 +5,7 @@
 
 [[https://linkedin.com/in/myusufka][Yusuf Kaya]] yazdı.
 
+* İçerik
 Her alanda olduğu gibi bir mobil projesinde de sürekli olarak gelişen teknolojik trendlere uyum sağlamak da büyük bir önem taşımaktadır.
 
 Yeni mimari geliştirmeler, bir projenin başarısı için hayati bir rol oynamaktadır. Bu geliştirmeler, uygulamanın performansını artırırken, güvenlik açıklarını kapatmak ve gelecekteki ihtiyaçlarını karşılamak için tasarlanır.

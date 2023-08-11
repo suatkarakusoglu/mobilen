@@ -5,6 +5,7 @@
 
 [[https://linkedin.com/in/alimerttekel][Ali Mert Tekel]] yazdı.
 
+* İçerik
 Geliştirme sürecinde her ayrıntının önemli olduğu bir dünyada yaşıyoruz. Bu karmaşık süreçte, verimliliği ve tutarlılığı artırmak için araçlardan en iyi şekilde yararlanmak gerekiyor.
 Bu yazıda, iOS uygulama geliştirme sürecini daha düzgün, hızlı ve hatasız hale getirmek için Xcode'un Custom File Template'lerinin nasıl kullanılacağını ele alacağız.
 

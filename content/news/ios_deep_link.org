@@ -5,6 +5,7 @@
 
 [[https://linkedin.com/in/egehan-kalaycı-736b4a238][Egehan Kalaycı]] yazdı.
 
+* İçerik
 Selam "Mobilen" okurları! Bugün sizinle çok önemli ve aslında fazlasıyla işlevsel bir konuyu konuşacağız: Deep Link'leri. Evet, belki ilk duyduğunuzda biraz karışık gelebilir ama emin olun, bu yazıyı okuduktan sonra onları tanıyan en iyi kişi siz olacaksınız.
 
 ** Deep Link Nedir?

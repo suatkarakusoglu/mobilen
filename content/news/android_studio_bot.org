@@ -5,6 +5,7 @@
 
 [[https://tr.linkedin.com/in/tu%C4%9Fbaberk][Tuğba Berk]] yazdı.
 
+* İçerik
 Google IO etkinliği, 10 Mayıs 2023 tarihinde gerçekleşti. Bu etkinlikte Google'ın yapay zeka desteğini mevcut araçlarına entegre ettiğini gördük. =Google Play Store=, =Google Haritalar=, =Google Mail= ve =Android Studio= gibi birçok araç bu yenilikler arasında yer aldı.
 
 Yapay zekadaki bu gelişmeler, kod yazarken bize çeşitli faydalar sunmaya başladı bile. Bu yeni yapay zeka gelişmelerine ayak uydurabilen yazılımcılar olmak istiyorsak, Android Studio Bot'u hızlı bir şekilde öğrenmek önemli görünüyor. Kendi rollerimizi ve bu sistem içindeki araçlarımızı iyi anlamamız gerekebilir.

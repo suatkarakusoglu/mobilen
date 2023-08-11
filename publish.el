@@ -55,6 +55,7 @@
 (require 'ox-publish)
 (require 'subr-x)
 (require 'cl-lib)
+(require 'org-element)
 
 ;; Install other dependencies
 (use-package esxml
@@ -91,9 +92,6 @@
 
 (defvar tags-files-directory "./content/tags/")
 
-(unless (file-directory-p tags-files-directory)
-  (make-directory tags-files-directory t))
-
 (defun remove-files-in-directory (directory)
   (dolist (file (directory-files directory t))
     (unless (or (string-equal "." (substring file -1))
@@ -104,6 +102,17 @@
 
 (remove-files-in-directory tags-files-directory)
 
+(defun get-org-title (org-file-path)
+  (let* ((buffer (find-file-noselect org-file-path))
+         (title (with-current-buffer buffer
+                  (org-element-map (org-element-parse-buffer) 'keyword
+                    (lambda (keyword)
+                      (when (string= (org-element-property :key keyword) "TITLE")
+                        (org-element-property :value keyword)))
+                    nil t))))
+    (kill-buffer buffer)
+    title))
+
 (defun generate-tag-files-filled (tag-list)
   (mapc (lambda (tag)
           (let ((file-name (concat tags-files-directory (downcase tag) ".org")))
@@ -112,8 +121,9 @@
                 (insert "#+TITLE: " tag "\n\n")
                 (dolist (org-file article-files)
                   (when (member tag (get-org-filetags (list org-file)))
-                    (let ((org-file-name (file-name-nondirectory org-file)))
-                      (insert (format "[[file:../../news/%s][%s]]\n\n" org-file-name org-file-name)))))
+                    (let ((org-file-name (file-name-nondirectory org-file))
+                          (org-file-title (get-org-title org-file)))
+                      (insert (format "[[file:../../news/%s][%s]]\n\n" org-file-name org-file-title)))))
                 (write-file file-name)))))
         tag-list))
 
@@ -136,6 +146,7 @@
 ;;                       "http://localhost:8080")
 ;;   "The URL for the site being generated.")
 
+;; TODO Automatise here later
 (defvar dw/site-url (if t
                         "https://mobilen.art"
                       "http://localhost:8080")

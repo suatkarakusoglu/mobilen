@@ -1,7 +1,6 @@
 #+title: Aklımda Kalanlar: Jake Wharton ile Röportaj
-#+date: [2023-07-11 Tue]
+#+date: [2023-06-02 Fri]
 #+author: Betül Sandıkçı
-#+kind: news
 #+filetags: :Android:
 
 [[https://linkedin.com/in/betulsandikci][Betül Sandıkçı]] yazdı.

@@ -1,7 +1,6 @@
 #+title: XCode Project Custom File Templates
 #+date: [2023-07-11 Tue]
 #+author: Ali Mert Tekel
-#+kind: news
 #+filetags: :iOS:Yazılım:Tüyo:
 
 [[https://linkedin.com/in/alimerttekel][Ali Mert Tekel]] yazdı.

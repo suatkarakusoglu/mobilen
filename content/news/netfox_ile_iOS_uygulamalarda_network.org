@@ -1,7 +1,6 @@
 #+title: Netfox ile iOS uygulamalarda network izlemek
-#+date: [2023-07-11 Tue]
+#+date: [2023-05-11 Thu]
 #+author: Uğurcan Durak
-#+kind: news
 #+filetags: :iOS:Yazılım:Araçlar:
 
 [[https://www.linkedin.com/in/ugurcan-durak/][Uğurcan Durak]] yazdı.

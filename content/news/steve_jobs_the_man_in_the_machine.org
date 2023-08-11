@@ -1,7 +1,6 @@
 #+title: Steve Jobs The Man in The Machine
 #+date: [2023-07-11 Tue]
 #+author: Suat Karakuşoğlu
-#+kind: news
 #+filetags: :Belgesel:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.

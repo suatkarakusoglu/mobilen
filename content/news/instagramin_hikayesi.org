@@ -1,7 +1,6 @@
 #+title: Instagram'in Hikayesi
-#+date: [2023-07-11 Tue]
+#+date: [2023-06-02 Fri]
 #+author: Suat Karakuşoğlu
-#+kind: news
 #+filetags: :iOS:Ürün Yönetimi:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.

@@ -1,7 +1,6 @@
 #+title: Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu
-#+date: [2023-07-11 Tue]
+#+date: [2023-06-02 Fri]
 #+author: Egehan Kalaycı
-#+kind: news
 #+filetags: :iOS:Yazılım:Xcode:Araçlar:
 
 [[https://linkedin.com/in/egehan-kalaycı-736b4a238][Egehan Kalaycı]] yazdı.

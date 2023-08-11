@@ -1,7 +1,6 @@
 #+title: Evolution of the Medium iOS app architecture
-#+date: [2023-07-11 Tue]
+#+date: [2023-05-11 Thu]
 #+author: Yusuf Kaya
-#+kind: news
 #+filetags: :iOS:Yazılım:
 
 [[https://linkedin.com/in/myusufka][Yusuf Kaya]] yazdı.

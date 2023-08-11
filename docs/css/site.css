@@ -219,10 +219,10 @@ a:focus {
 }
 
 .anchor {
-    color: #292d3e;
+    color: var(--bg-active);
     float: left;
     padding-right: 4px;
-    margin-left: -23px;
+    margin-left: -24px;
 }
 
 .anchor:hover {

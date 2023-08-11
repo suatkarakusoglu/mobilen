@@ -85,12 +85,31 @@
 (setq article-tags-vector (get-org-filetags article-files))
 (setq article-tags-list (mapcar #'substring-no-properties article-tags-vector))
 
-(defun remove-duplicates-from-list (word-list)
-  (cl-remove-duplicates word-list :test #'string-equal))
+;; -- Tag count
+(defun create-tag-count-map (article-tags-list)
+  "Create a map containing the count of each tag in ARTICLE-TAGS-LIST."
+  (let ((tag-map (make-hash-table :test 'equal))) ; create an empty hash table to store the counts
+    (cl-loop for tag in article-tags-list
+             do (puthash tag (1+ (gethash tag tag-map 0)) tag-map))
+    tag-map))
 
-(setq article-tags-unique-list (remove-duplicates-from-list article-tags-list))
+(setq tag-count-map (create-tag-count-map article-tags-list))
+
+;; Ordered unique tags
+(setq article-tags-unique-list
+      (sort (hash-table-keys tag-count-map)
+            (lambda (tag1 tag2)
+              (> (gethash tag1 tag-count-map 0)
+                 (gethash tag2 tag-count-map 0)))))
+
+;; Print number of article and tags
+(maphash (lambda (k v) (princ (format "%s: %d\n" k v))) tag-count-map)
+;; -- Tag count
 
 (defvar tags-files-directory "./content/tags/")
+
+(unless (file-exists-p tags-files-directory)
+  (make-directory tags-files-directory))
 
 (defun remove-files-in-directory (directory)
   (dolist (file (directory-files directory t))
@@ -232,7 +251,7 @@
                       (div (@ (class "row site-footer-tags"))
                            ,@(when article-tags-unique-list
                                (mapcar (lambda (tag)
-                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,tag))
+                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,(concat tag " #" (number-to-string (gethash tag tag-count-map 0)))))
                                        article-tags-unique-list)))))))
 
 (defun get-article-output-path (org-file pub-dir)
@@ -302,7 +321,7 @@
                                ,title)
                            ,@(when filetags
                                (mapcar (lambda (tag)
-                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,tag))
+                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,(concat tag " #" (number-to-string (gethash tag tag-count-map 0)))))
                                        filetags))
                            ,(when publish-date
                               `(p (@ (class "site-post-meta")) ,publish-date))

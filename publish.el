@@ -286,7 +286,7 @@
                                ,title)
                            ,@(when filetags
                                (mapcar (lambda (tag)
-                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" tag "/"))) ,tag))
+                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,tag))
                                        filetags))
                            ,(when publish-date
                               `(p (@ (class "site-post-meta")) ,publish-date))

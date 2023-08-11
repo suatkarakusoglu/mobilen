@@ -273,17 +273,18 @@ strong {
 .tag {
     padding: 0.5rem;
     margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    margin-right: 0.5rem;
+    margin-bottom: 0.8rem;
+    margin-right: 0.6rem;
     border: 1px solid var(--bg-alt);
-    border-radius: 12px;
-    color: var(--bg-alt);
+    border-radius: 8px;
+    color: white;
     background-color: var(--magenta);
     font-weight: 700;
     font-size: 1.1rem;
 }
 
-.tag:hover {
+.tag:hover,
+.tag:focus {
     color: white;
 }
 
@@ -380,9 +381,10 @@ strong {
 }
 
 .site-post-meta {
-    margin-top: 0.5rem;
-    margin-bottom: 1.25rem;
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
     color: #999;
+    font-size: 0.9rem;
 }
 
 .site-post-tags {

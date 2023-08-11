@@ -1,4 +1,4 @@
 #+TITLE: Güvenlik
 
-[[file:../../news/ssl_pinning.org][ssl_pinning.org]]
+[[file:../../news/ssl_pinning.org][SSL Pinning]]
 

@@ -1,4 +1,4 @@
 #+TITLE: Design
 
-[[file:../../news/details_pro_no_code_ui.org][details_pro_no_code_ui.org]]
+[[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 

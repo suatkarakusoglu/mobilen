@@ -1,4 +1,4 @@
 #+TITLE: SwiftUI
 
-[[file:../../news/ios_swiftui_swipe_actions.org][ios_swiftui_swipe_actions.org]]
+[[file:../../news/ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]]
 

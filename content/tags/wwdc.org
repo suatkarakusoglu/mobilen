@@ -1,4 +1,4 @@
 #+TITLE: WWDC
 
-[[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][wwdc23_hakkinda_bilmeniz_gerekenler.org]]
+[[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]]
 

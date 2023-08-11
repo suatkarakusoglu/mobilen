@@ -6,6 +6,7 @@
 
 ; Ignore shared content
 docs/
+tags/
 
 ; Ignore Gemini output
 gemini/

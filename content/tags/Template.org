@@ -1,4 +1,0 @@
-#+TITLE: Template
-
-[[file:../../news/android_file_template.org][android_file_template.org]]
-

@@ -1,4 +1,0 @@
-#+TITLE: AI
-
-[[file:../../news/android_studio_bot.org][android_studio_bot.org]]
-

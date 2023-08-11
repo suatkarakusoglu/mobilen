@@ -1,8 +1,0 @@
-#+TITLE: Android
-
-[[file:../../news/aklimda_kalanlar_jake_wharton.org][aklimda_kalanlar_jake_wharton.org]]
-
-[[file:../../news/android_file_template.org][android_file_template.org]]
-
-[[file:../../news/android_studio_bot.org][android_studio_bot.org]]
-

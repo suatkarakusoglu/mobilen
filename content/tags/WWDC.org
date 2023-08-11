@@ -1,4 +1,0 @@
-#+TITLE: WWDC
-
-[[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][wwdc23_hakkinda_bilmeniz_gerekenler.org]]
-

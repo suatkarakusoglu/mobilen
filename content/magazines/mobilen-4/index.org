@@ -4,3 +4,6 @@
 
 * Konular
 1. [[file:../../news/ssl_pinning.org][SSL Pinning]]
+
+#+begin_cta
+#+end_cta

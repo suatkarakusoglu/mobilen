@@ -91,6 +91,9 @@
 
 (defvar tags-files-directory "./content/tags/")
 
+(unless (file-directory-p tags-files-directory)
+  (make-directory tags-files-directory t))
+
 (defun remove-files-in-directory (directory)
   (dolist (file (directory-files directory t))
     (unless (or (string-equal "." (substring file -1))
@@ -133,13 +136,9 @@
 ;;                       "http://localhost:8080")
 ;;   "The URL for the site being generated.")
 
-;; TODO Automatise here later
-;; (defvar dw/site-url (if nil
-;;                         "https://mobilen.art"
-;;                       "http://localhost:8080")
-;;   "The URL for the site being generated.")
-
-(defvar dw/site-url "https://mobilen.art"
+(defvar dw/site-url (if t
+                        "https://mobilen.art"
+                      "http://localhost:8080")
   "The URL for the site being generated.")
 
 (defun dw/embed-list-form ()
@@ -410,14 +409,14 @@ holding contextual information."
                   "")))))
 
 (org-export-define-derived-backend 'site-html 'html
-  :translate-alist
-  '((template . dw/org-html-template)
-    (link . dw/org-html-link)
-    (src-block . pygments-org-html-code)
-    (special-block . dw/org-html-special-block)
-    (headline . dw/org-html-headline))
-  :options-alist
-  '((:video "VIDEO" nil nil)))
+                                   :translate-alist
+                                   '((template . dw/org-html-template)
+                                     (link . dw/org-html-link)
+                                     (src-block . pygments-org-html-code)
+                                     (special-block . dw/org-html-special-block)
+                                     (headline . dw/org-html-headline))
+                                   :options-alist
+                                   '((:video "VIDEO" nil nil)))
 
 (defun org-html-publish-to-html (plist filename pub-dir)
   "Publish an org file to HTML, using the FILENAME as the output directory."

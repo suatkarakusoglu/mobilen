@@ -1,0 +1,26 @@
+#+TITLE: iOS
+
+[[file:../../news/details_pro_no_code_ui.org][details_pro_no_code_ui.org]]
+
+[[file:../../news/evolution_of_the_medium_ios_app.org][evolution_of_the_medium_ios_app.org]]
+
+[[file:../../news/instagramin_hikayesi.org][instagramin_hikayesi.org]]
+
+[[file:../../news/ios_app_push_certificate_yenileme.org][ios_app_push_certificate_yenileme.org]]
+
+[[file:../../news/ios_deep_link.org][ios_deep_link.org]]
+
+[[file:../../news/ios_swiftui_swipe_actions.org][ios_swiftui_swipe_actions.org]]
+
+[[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][netfox_ile_iOS_uygulamalarda_network.org]]
+
+[[file:../../news/ssl_pinning.org][ssl_pinning.org]]
+
+[[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][wwdc23_hakkinda_bilmeniz_gerekenler.org]]
+
+[[file:../../news/xcode_breakpoints_ile_otomatizasyon.org][xcode_breakpoints_ile_otomatizasyon.org]]
+
+[[file:../../news/xcode_project_custom_file_templates.org][xcode_project_custom_file_templates.org]]
+
+[[file:../../news/xcodes_surum_yonetim.org][xcodes_surum_yonetim.org]]
+

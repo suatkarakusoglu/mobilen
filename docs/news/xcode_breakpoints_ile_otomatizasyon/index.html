@@ -1,4 +1,4 @@
-<!-- Generated from 9c15e01 on 2023-08-11 @ 03:34 with Emacs 29.0.50 (Org mode 9.5.5) -->
+<!-- Generated from c6b3795 on 2023-08-11 @ 03:48 with Emacs 29.0.50 (Org mode 9.5.5) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Xcode Breakpoints ile Otomatizasyon - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Xcode Breakpoints ile Otomatizasyon</h1><a class="tag" href="https://mobilen.art/tags/iOS/">iOS</a><a class="tag" href="https://mobilen.art/tags/Yazılım/">Yazılım</a><a class="tag" href="https://mobilen.art/tags/Xcode/">Xcode</a><a class="tag" href="https://mobilen.art/tags/Debugging/">Debugging</a><p class="site-post-meta">July 11, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8">Alper Cem Öztürk</a> yazdı.
 </p>
@@ -7,13 +7,13 @@
 Uygulamanızı her test ettiğinizde oturum açma bilgilerinizi manuel olarak girmekten sıkıldıysanız ve geliştirme sırasında zaman kazanmak istiyorsanız; <code>xcode breakpoints</code> ihtiyacınız olan çözüm olabilir.
 </p>
 
-<h2><a id="breakpoints-nedir" class="anchor" href="#breakpoints-nedir">¶</a>Breakpoints Nedir?</h2><div class="outline-text-2" id="text-org76c76f1">
+<h2><a id="breakpoints-nedir" class="anchor" href="#breakpoints-nedir">¶</a>Breakpoints Nedir?</h2><div class="outline-text-2" id="text-orgbd03a05">
 <p>
 <code>Breakpoint</code>, bir programın çalışması sırasında belirli bir kod satırında duraklamasını sağlayan ve geliştiricilere programın çalışmasını izleme ve <code>debug</code> imkanı veren bir araçtır. Bu, değişkenlerin değerlerini incelemenize, kodda satır satır ilerlemenize ve başka işlemler yapmanıza olanak tanır.
 </p>
 </div>
 
-<h2><a id="breakpoints-nasıl-oluşturulur" class="anchor" href="#breakpoints-nasıl-oluşturulur">¶</a>Breakpoints Nasıl Oluşturulur?</h2><div class="outline-text-2" id="text-orge00cd67">
+<h2><a id="breakpoints-nasıl-oluşturulur" class="anchor" href="#breakpoints-nasıl-oluşturulur">¶</a>Breakpoints Nasıl Oluşturulur?</h2><div class="outline-text-2" id="text-org96f7e51">
 <p>
 Bir &ldquo;breakpoint&rdquo; ayarlamak için, duraklatmak istediğiniz kod satırı numarasının yazılı olduğu alana tıklamanız yeterlidir. &ldquo;Breakpoint&rdquo;&rsquo;i belirtmek için sistem ayarlarında seçili olan &ldquo;accent color&rdquo; renginde bir işaretçi görünecektir. Her ne kadar &ldquo;line numbers&rdquo; ayarı varsayılan olarak açık gelse de eğer açıkta kullanmıyosanız, ilgili satırın hemen yanına tıklayabilirsiniz veya text editing ayarlarından açabilirsiniz.
 </p>
@@ -23,7 +23,7 @@ Bir &ldquo;breakpoint&rdquo; belirledikten sonra kodunuzu çalıştırabilirsini
 </p>
 </div>
 
-<h2><a id="breakpointrsquolerin-farklı-kullanım-senaryoları" class="anchor" href="#breakpointrsquolerin-farklı-kullanım-senaryoları">¶</a>Breakpoint&rsquo;lerin Farklı Kullanım Senaryoları</h2><div class="outline-text-2" id="text-orgcbd56bd">
+<h2><a id="breakpointrsquolerin-farklı-kullanım-senaryoları" class="anchor" href="#breakpointrsquolerin-farklı-kullanım-senaryoları">¶</a>Breakpoint&rsquo;lerin Farklı Kullanım Senaryoları</h2><div class="outline-text-2" id="text-org60d5179">
 <p>
 Geliştiriciler, &ldquo;oturum açma&rdquo; aşamalarını test etmek ve &ldquo;debug&rdquo; yapmak için zaman ve emek harcamalarını gerektiren birçok senaryo ile karşılaşabilirler. <code>Breakpoints</code> ve <code>Watchpoints</code>, bu amaç için oldukça kullanışlıdır. Bu kullanım senaryolarından birkaçına beraber bakalım.
 </p>
@@ -41,7 +41,7 @@ Watchpoint&rsquo;ler, oturum açma işlemi sırasında değişkenlerin değerler
 </p>
 </div>
 
-<h2><a id="breakpoint-expressions" class="anchor" href="#breakpoint-expressions">¶</a>Breakpoint Expressions</h2><div class="outline-text-2" id="text-orgc1a5cc2">
+<h2><a id="breakpoint-expressions" class="anchor" href="#breakpoint-expressions">¶</a>Breakpoint Expressions</h2><div class="outline-text-2" id="text-orgf95ac8a">
 <p>
 &ldquo;Breakpoint expressions&rdquo;, &ldquo;debug&rdquo; yapmanın güçlü bir yoludur. Yalnızca programın yürütülmesini durdurup değişkenlerin değerini izlemenin yanı sıra belirli aksiyonlar alabilmenizi sağlar. Tam olarak bu yazının başlığında belirtildiği gibi, oturum açma işlemlerini otomatik hale getirmek buna örnek olarak verilebilir.
 </p>
@@ -120,7 +120,7 @@ Bizim istediğimiz ise, programın buton aksiyonu ile duraklamasından sonra otu
 </p>
 
 
-<div id="orgce7469d" class="figure">
+<div id="org5642470" class="figure">
 <p><img src="/img/edit-breakpoint-window.jpg" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Xcode edit breakpoint window</p>
@@ -168,7 +168,7 @@ Bu yazıda, &ldquo;breakpoint&rdquo;&rsquo;leri ve kullanım senaryolarını ele
 </p>
 </div>
 
-<h2><a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2><div class="outline-text-2" id="text-org623f1bb">
+<h2><a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2><div class="outline-text-2" id="text-org9f5bd14">
 <p>
 <a href="https://www.danijelavrzan.com/posts/2023/04/login-xcode-breakpoint">Login XCode Breakpoints</a>
 </p>

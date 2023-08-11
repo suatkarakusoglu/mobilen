@@ -1,0 +1,4 @@
+#+TITLE: Kitap
+
+[[file:../../news/the_art_of_readable_code_1.org][the_art_of_readable_code_1.org]]
+

@@ -1,0 +1,4 @@
+#+TITLE: Architecture
+
+[[file:../../news/evolution_of_the_medium_ios_app.org][evolution_of_the_medium_ios_app.org]]
+

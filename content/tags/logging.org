@@ -1,4 +1,0 @@
-#+TITLE: Logging
-
-[[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]
-

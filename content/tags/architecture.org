@@ -1,4 +1,0 @@
-#+TITLE: Architecture
-
-[[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
-

@@ -1,5 +1,13 @@
 #+TITLE: Yazılım
 
+[[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
+
+[[file:../../news/ios_app_push_certificate_yenileme.org][iOS uygulama bildirim sertifikası oluşturma/yenileme]]
+
+[[file:../../news/ios_deep_link.org][iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı]]
+
+[[file:../../news/ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]]
+
 [[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]
 
 [[file:../../news/ssl_pinning.org][SSL Pinning]]

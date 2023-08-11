@@ -7,7 +7,7 @@
 <generator>Emacs webfeeder.el</generator>
 <link>https://mobilen.art</link>
 <atom:link href="https://mobilen.art/rss/news.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Fri, 11 Aug 2023 10:57:14 +0300</lastBuildDate>
+<lastBuildDate>Fri, 11 Aug 2023 12:29:00 +0300</lastBuildDate>
 <item>
   <title>SSL Pinning</title>
   <description><![CDATA[<div id="content"> <p>
@@ -15,7 +15,7 @@
 </p>
 
 
- <div id="orgd94e47f" class="figure">
+ <div id="org653dee2" class="figure">
  <p> <img src="/img/ssl_and_pinning_certificate_topology.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 1: </span> <a href="https://docs.wavemaker.com/learn/blog/2020/12/15/certificate-pinning/">SSL Pinleme</a></p>
 </div>
@@ -28,7 +28,7 @@ Merhabalar, bu yazımızda güvenliğe dokunan bir konudan bahsedeceğiz. Verini
 SSL Pinning verinin iki parti arasında iletim esnasındaki güvenliğini korumak için ortaya çıkmıştır.  <code>SSL Pinning</code> dediğimizde iki kavram var birisi  <code>SSL</code> diğeri ise  <code>Pinning</code> işlemi. O nedenle ilk önce SSL hakkında ufak bir bilgi ile başlayalım.
 </p>
 
- <h2> <a id="sslrsquoin-kısa-tarihçesi" class="anchor" href="#sslrsquoin-kısa-tarihçesi">¶</a>SSL’in Kısa tarihçesi</h2> <div class="outline-text-2" id="text-org5ef6806">
+ <h2> <a id="sslrsquoin-kısa-tarihçesi" class="anchor" href="#sslrsquoin-kısa-tarihçesi">¶</a>SSL’in Kısa tarihçesi</h2> <div class="outline-text-2" id="text-orgb7c45a3">
  <p>
 Güvenli Geçiş Katmanları diye türkçeleştirebileceğimiz bir tabir olan SSL websitelerinin doğması ile beraber 1990’ların ortasında bağlanılan sitelerin güvenliğini teyit etmek için kullandığı bir güvenlik yöntemidir.
 </p>
@@ -42,13 +42,13 @@ Sertifika otoritelerinin (CA Authorities) verdiği sertifikalar ile (chain of ce
 </p>
 </div>
 
- <h2> <a id="mi̇tm-man-in-the-middle-atağı" class="anchor" href="#mi̇tm-man-in-the-middle-atağı">¶</a>MİTM (Man in the Middle) Atağı</h2> <div class="outline-text-2" id="text-org694e5f0">
+ <h2> <a id="mi̇tm-man-in-the-middle-atağı" class="anchor" href="#mi̇tm-man-in-the-middle-atağı">¶</a>MİTM (Man in the Middle) Atağı</h2> <div class="outline-text-2" id="text-org370db86">
  <p>
 SSL’in eksik kaldığı noktada kötü niyetli birinin de sertifika sahibi olduğunda istemci ve sunucu arasında zaafiyet meydana gelebilir. İletişim’in ortasına kendisini yerleştirip ortamı dinleyerek bilgi elde etmeye çalışan atak türüdür.
 </p>
 </div>
 
- <h2> <a id="pinning-pinlemek-nedir" class="anchor" href="#pinning-pinlemek-nedir">¶</a>Pinning (Pinlemek) nedir?</h2> <div class="outline-text-2" id="text-org2fc8496">
+ <h2> <a id="pinning-pinlemek-nedir" class="anchor" href="#pinning-pinlemek-nedir">¶</a>Pinning (Pinlemek) nedir?</h2> <div class="outline-text-2" id="text-org69d0abc">
  <p>
 Pinlemenin ne olduğunu öğrenmeden önce neyi pinleyeceğimizden biraz bahsedelim.
 Pinlenecek olan dosyaya Sertifika (Certificate) diyoruz.
@@ -82,7 +82,7 @@ Pinleme yaptiginiz vakit ise direkt olarak bu iletisim garantisini istemci/sunuc
 </p>
 </div>
 
- <h2> <a id="mobil-uygulama-entegrasyonları" class="anchor" href="#mobil-uygulama-entegrasyonları">¶</a>Mobil Uygulama Entegrasyonları</h2> <div class="outline-text-2" id="text-org399a062">
+ <h2> <a id="mobil-uygulama-entegrasyonları" class="anchor" href="#mobil-uygulama-entegrasyonları">¶</a>Mobil Uygulama Entegrasyonları</h2> <div class="outline-text-2" id="text-org5bff413">
  <ol class="org-ol"> <li>İlk adım olarak sunucunun  <code>public</code> anahtarini veya SSL sertifikasını çıkarmanız gerekiyor.</li>
 
  <li>Bu anahtara sahip sertifikayı veya public anahtarı istemci uygulamaya pinlemek/gömmek gerekiyor. Istemci tarafindaki network katmanında  <code>sunucuya</code> isteklerinde bu anahtarlarin eslesme kontrolünü yapacak kontrolü eklemek gerekiyor.</li>
@@ -104,7 +104,7 @@ Android tarafinda ise OKHttpClient ve Retrofit gibi populer kutuphanelerde bu pr
 </p>
 </div>
 
- <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h2> <div class="outline-text-2" id="text-orgfc5fd94">
+ <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h2> <div class="outline-text-2" id="text-orgd569792">
  <ul class="org-ul"> <li> <a href="https://owasp.org/www-community/controls/Certificate_and_Public_Key_Pinning">OWASP SSL Pinleme</a></li>
  <li> <a href="https://mas.owasp.org/MASTG/">OWASP Mobil Uygulama Güvenlik Test Kitabı</a></li>
  <li> <a href="https://docs.wavemaker.com/learn/blog/2020/12/15/certificate-pinning/">Certificate Pinning</a></li>
@@ -115,145 +115,13 @@ Android tarafinda ise OKHttpClient ve Retrofit gibi populer kutuphanelerde bu pr
   <pubDate>Tue, 08 Aug 2023 08:00:00 +0300</pubDate>
 </item>
 <item>
-  <title>Aklımda Kalanlar: Jake Wharton ile Röportaj</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://linkedin.com/in/betulsandikci">Betül Sandıkçı</a> yazdı.
-</p>
-
-
- <div id="org6ff1d86" class="figure">
- <p> <img src="/img/AklimdaKalanlarTitle.jpg" width="100%"></img></p>
- <p> <span class="figure-number">Figure 1: </span>Photo by  <a href="https://unsplash.com/@goian">Ian Schneider</a> on  <a href="https://unsplash.com/?utm_source=medium&utm_medium=referral">Unsplash</a></p>
-</div>
-
- <p>
-Merhabalar sevgili Mobilen okuyucuları, bu sayı için yazacağım yazıma tamamen tesadüf eseri Jorge Castillo’nun Jake Wharton’la yaptığı  <a href="https://newsletter.jorgecastillo.dev/p/effective-interviews-jake-wharton">röportajı</a> okuyunca karar verdim.
-</p>
-
- <p>
-Röportaja ilk denk geldiğimde bir an durdum açıp okumadan önce. Çünkü bir Android Developer olarak malum topluluk içinde bir efsanedir kendisi. Bazıları abartıldığını düşünürken bazıları da hakkında kilise içindeki İsa’dır ve tartışmasızdır demektedir. Ama herkesin üzerinde mutabık olduğu bir konu varsa o da Jake’in üretkenliğidir.
-</p>
-
- <p>
-Topluluğu’u bir kenara bırakırsak onunla ilgili bildiklerim, duyumlarım, izlenimlerim neler? Bir çırpıda aklıma gelenleri özetlemek gerekirse; Androidle ilgili eksik ya da ağır işleyen ne varsa Jake’in düzenlemek için elini atıp yazdığı bir kütüphane var. Androidde güzel, kullanışlı ne varsa da Jake temellerini atmış ve sonunda Google da bu geliştirmeleri içeri almış, SDK’nın parçası haline getirmiş. Tüm bunların üstüne tabiki üretkenliği ve biraz da lafını sözünü sakınmayışı geliyor aklıma. Sakınmaması için sağlam gerekçeleri var ne de olsa :).
-</p>
-
- <h2> <a id="androidrsquoe-başlama-macerası" class="anchor" href="#androidrsquoe-başlama-macerası">¶</a>Android’e Başlama Macerası</h2> <div class="outline-text-2" id="text-orge332f7f">
- <p>
-JW ve Android hikayesi Google’ın 2007’de 10 milyon dolar ödüllü  <a href="https://android-developers.googleblog.com/2007/11/posted-by-jason-chen-android-advocate.html">Android Developer Challange</a>’ı açıklamasıyla başlıyor. JW daha üniversitenin henüz başında ve  <code>challange</code>’ı kazanarak gerçek hayatta bir işte çalışmak zorunda olmamak için denemelere başlıyor.  <code>Challange</code> için tasarladığı uygulama bir çizim uygulaması. İşin içine girdikçe ve derinleştikçe kazın ayağının farklı olduğunu anlıyor. Bu 10 milyon basitçe kazanılabilecek bir miktar değil. Yeterince iyi olmadığını düşündüğü için projesini göndermekten vazgeçiyor. İyi ki bu tekrarlayan bir hastalık haline gelmemiş :D.
-</p>
-
- <p>
-Android Geliştirici olmaya karar verene değin daldan dala atlamış, başka alanlar denemiş. Ama en sonunda Androidde devam etmeye karar vermiş. Karar verme sebebi benimle ve birçok güncel Android Geliştirici ile aynı. Mac alacak kadar parası yok, Microsoft ölüyor ve gelecek mobilde. Gayet rasyonel. Romantik bir gerekçesi yok. Çünkü hiç kimse bir sabah uykusundan Android Android Android diyerek ya da başka bir teknolojiyi sayıklayarak uyanmıyor. Seçimlerimiz güncel gerçeklerimize ve bu gerçeklerle örtüşen tutkularımıza bağlı olarak şekilleniyor.
-</p>
-
- <p>
-JW’ın Android geliştici olma hikayesi tanıdık evet. Ama farklılaşan kısmı sonrası. JW’ın buraya kadarki hikayesinde beni düşündüren ve ibret aldığım şeyler var. Bir kez daha günceli takip etmenin önemi hemencik yakaladı beni. Sonunda bir ödül kazanılmayacak bile olsa bir müsabakaya girmek kendini, sınırlarını zorlamak çok önemli. Kaybetsen bile kazandıracak bir yöntem bu her şekilde. Tatmin edici bir deneyim. Burada Google’ın ve community’nin etkisinden de bahsetmek lazım. Sınırlarını zorlaman için birilerinin bir sınır koyması lazım doğal olarak önce. Community’ler ve teknoloji sahipleri de bu tür challangelar ile hem safları sıklaştırıyor hem teknolojilerini daha geniş çembere yayıyor hem de genç yeteneklerin ortaya çıkmasına vesile oluyor. Bence burada kökten uca kadar alınacak ibretler var. Çalışanların talepleri ve onları yönetenlerin vizyonu açısından. Takımlar arası müsabakalar keyifli, sıradışı ve eğlenceli olabilir mesela. Kim bilir eğer uslu çocuklar olurlarsa Şirinleri görmenin yanında nice JW’lar bile sıyrılabilir bu tür müsabakalarda.
-</p>
-
- <p>
-Hikayede dikkatimi çeken noktalardan diğer birisi de başlangıç için bir çizim uygulaması yapmayı seçmiş olması. Yeni birisi başlarken sonucu görmek istiyor. Çok doğru bir yerden başlamış kanaatimce. Artık ne haddimeyse JW’a doğru başlamış yanlış başlamış demek :), Ama dedim gitti işte. Mobile özel o ekranı tanımak açısından, yaptıklarının direk sonucunu görmek açısından aşırı doğru bir yöntem bence. Ben de  <b>Compose</b>’u öğrenirken iç içe kareler çizerek başlamıştım. İnsan neyi doğru yapıp yapmadığını somut olarak, uğraşmadan görmek istiyor. Deneme yanılma şeklinde öğrenmede denedikten sonra yanılıp yanılmadığını anlayana kadar geçen süre kısalıyor ve verimlilik artıyor böylece. Bir konuyu yeni öğrenenlere UI’da kısa yoldan tepki alabilecekleri şekilde başlatmak güzel bir yöntem olabilir ve genç yetenekler için özellikle uygulanabilir.
-</p>
-
- <p>
-Jake ilk işine Android Developer olarak başlamıyor. Java miras kodlu bir server’da çalışarak başlıyor. Onun zamanında moda C# yazarak para kazanmak. Ama nedense talihin yardımıyla Java ile başlıyor mesleğe. Projeyi kurcalarken yeni şeyler keşfediyor. Projeyi  <b>Git</b>’e geçiriyor. Projenin altyapısını farklı bir modele taşırken operasyonun her yönünü görüyor. Bu deneyimden sonra projenin altyapı görüntülemesini bir mobil uygulama üzerinden kontrol etme fikri aklına geliyor. Tam da bu anda ta taaa ilk açık kaynak kodlu kütüphanesini yayımlıyor ve bir Android Geliştiricisi oluveriyor. Sonrasında meşhur şirket  <a href="https://github.com/square">Square</a>’e Android Geliştirici olarak geçiyor. Hikayesine ve üretmeye orada devam ediyor.
-</p>
-</div>
-
- <h2> <a id="açık-kaynak-koda-bakışı" class="anchor" href="#açık-kaynak-koda-bakışı">¶</a>Açık Kaynak Koda Bakışı</h2> <div class="outline-text-2" id="text-orgf00d4f7">
- <p>
-Açık kaynak koda geliştirme yapmaya tamamen bencilce bir yerden başlıyor. Kendi ihtiyaçlarını karşılamak için proje üretiyor ve bunu  <a href="https://github.com/">Github</a>’a yüklüyor. O zamanlar private repolar ücretli olduğu için de private yapmaya gerek duymuyor. Böylelikle kod paylaşma serüveni doğal olarak duygusal sebeplerle başlamış oluyor :D. Bir kütüphaneyi ya da aracı yazarken community’nin ya da başkalarının ihtiyaçlarını gözeterek ve daha iyi olsunlar diyerek başlamıyor. Niyetinde kimseyi memnun etmek de yok. Kendi yazdığı ve paylaştığı projelere başkalarının dahil olması, birlikte üretmek zevkli, keyifli, güzel ama motivasyon kaynağı bu olamaz düşüncesinde.
-</p>
-
- <p>
-Bunalmamak ve motivasyon kaybına uğramamak için başkalarıyla gerektiğinde empati yapıyor gerektiğinde de onları görmezden geliyor. Motivasyonunu korumak için yaptığı şey çok basit. Temelde benim neye ihtiyacım var diye düşünmek ve ona göre hareket etmek. Sıfır noktasında düşüncelerle o kadar boğuşuyoruz ki başlamadan bırakıyoruz işlerimizi. Maskeyi önce kendimize takmalıyız.
-</p>
-
- <p>
-Açık kaynak kodlu yazılım üretmenin en faydalı yanı başka insanlarla yardımlaşmak. Profesyonel hayatta çalışamayacağın, imkanın olmayacak insanlarla aynı projede yer almak çok tatmin edici. Takip ettiğin, imrendiğin belki de onların yerinde olmak istediğin insanlarla bir anlamda iş arkadaşı olma şansı sunuyor açık kaynak koda destek vermek. Minimumda başkalarına yardım etme ve faydalı olma duygusu yaşatıyor insana. Maksimumda ise profesyonel olarak sonsuz ihtimallerin kapısını açıyor. Bu aralık zannımca fena bir aralık değil bir geliştirici için.
-</p>
-
- <p>
-Açık kaynak kodu geliştirirken Jake’in tavsiyesi kodu olabildiğince küçük ve odaklı tutmak. Her %15 fazla kod için aynı oranda geliştiriciye ihtiyaç var. Bu da bir süre sonra kar topu etkisi ile baş edilmez bir hale getiriyor projeyi. Herkesin ihtiyaçlarına kulak vermek ve ihtimallere göre geliştirme yapmak, sonrasında kodun sürdürülmesini imkansız hale getiriyor. Sürdürülemeyen kod da ölmeye mahkum oluyor. Çünkü bir süre sonra yapılması gereken hayati geliştirmeler bile yapılamayacak hale geliyor. Bu aslında sadece açık kaynak kod için değil herhangi bir yerde yazdığımız bir fonksiyon için de geçerli.
-</p>
-
- <p>
-İhtiyacı belirleyip bunun dışına çıkmamak anahtar nokta.  <b>Solid’</b> in S’i olan  <b>Single Responsibility</b> prensibi burada devreye giriyor. Ancak bunu uygulayabilmek prensibin anlamını bilmekten elbette çok çok daha zor. İster açık kaynak ister küçük bir method ne olduğu farketmeksizin baştan amacını iyi belirlemek ve sonrasında buna sadık kalmak ve en önemlisi Hayır demenin gücünü kullanmak. Doğru yerde ve zamanda “ <i>Hayır diyebilmek</i>” çok önemli ve işlerin karmaşıklaşmasını engelliyor. Memnun edicilik değil iş bitiricilik önemli oluyor günün sonunda.
-</p>
-</div>
-
- <h2> <a id="jwrsquonin-google-macerası" class="anchor" href="#jwrsquonin-google-macerası">¶</a>JW’nin Google Macerası</h2> <div class="outline-text-2" id="text-org449fff8">
- <p>
-Gelelim Jake’in kimilerine göre yarıda bıraktığı Google tecrübesine. Tabiki doğası gereği magazinsel bir mevzu olduğu için dikkat çekmesi normal. Benim anladığım Square’den Google’a geçerken bir yapılacaklar listesi varmış elinde. Kaldığı süre boyunca da bunların yapılması için domino etkisi yaratmayı başarmış. Ancak günün sonunda fazla bürokrasi ve teknik sınırlamalardan dolayı yılmış, usanmış. Geliştiriciye geliştirmek ile gerçek dünya problemlerine çözüm geliştirmek arasında kalınca da gerçek dünya problemlerini tercih etmiş. Bu benim yolum benim tercihim diyor. Square’deki macerasına kaldığı yerden devam etmeye karar vermiş ve geri dönmüş.
-</p>
-
- <p>
-Verimli hissedemediği noktada bırakmaya karar vermesi oldukça ilham verici. Her ne kadar kolay gibi görünse de geldiğin yere geri dönmek cesaret gerektiren bir şey. Herşey bir kenara sadece egosal açıdan bile zor gelebilir. İçeride dışarıda olduğu kadar etkin olamadığını farkettiğinde gemiyi terketmeyi seçmiş. Ben mesela yapabilir miydim diye düşünüyorum? Bir yönüm çok yapılabilir dese de işin için de olduğumda bu kararı alırken oldukça zorlanacağımı, tüm cesaret toplamam gerekeceğini biliyorum. Neticede “ <a href="https://medium.com/incerto/what-do-i-mean-by-skin-in-the-game-my-own-version-cc858dc73260">skin in the game</a>” diye bir şey var.
-</p>
-
- <p>
-Jake’in CashApp’teki günleri aşırı planlı, düzenli, moda mod geçmiyormuş. Genellikle zamanının büyük kısmını açık kaynak koda ayırıyormuş. Kalan zamanda da küçük işleri toparlamak, PR’ları kontrol etmek, işleri adımlamakla geçiyormuş. Square açık kaynak kodu mesai dışı bir iş gibi görmüyor aksine bizatihi işin kendisi olarak görüyor ve destekliyor. Çünkü yeteneği içeri almak kadar onu tutmak, beslemek ve parlatmak da çok önemli. Takımlara ve yöneticilere düşecek bir hisse de bu olabilir belki.
-</p>
-
- <p>
-Toplantı konusu teknik insanların profesyonel dünyada en sıkıcı bulduğu konuların başında geliyor. JW bu konuda kalabalık olanların seyrek olması en iyisi, bunun dışında bireysel bağlantılar daha verimli oluyor görüşünde çoğumuz gibi. Toplantı konusunda da  <i>Solid</i>’in  <i>S</i>’ini kullanmakta fayda var gibi :D .
-</p>
-
- <p>
-İşin başındakilere en önemli tavsiyelerinden birisi ürünün vizyonuna kendinizi aşırı kaptırmayın. Böyle olursa kişi kendi başarı duygusunu ürünün iniş çıkışlarına bağlayabiliyor. Ancak önemli olan zorlu teknik sorunları bulmak ve çözmeye odaklanmak. Ürünler geçicidir oysa bu yetkinlikler kalıcıdır. Özetle Jake ürünü önemseyin ama yeteri kadar, bir dengesi olsun görüşünde. Odaklılık konusunda denge bulunması gerektiği ve bıçağını bileylemenin en önemlisi olduğuna katılıyorum. Senin bıçağın keskinse gelen her şeyi kesersin. Ama bıçağı kütmemek için de neyi ne kadar keseceğini bilmelisin ;) .
-</p>
-
- <p>
-Üretkenliği korumak için Jake’in taktiklerinden birisi çok fazla çalışmaya gerek kalmadan yapılabilecek bir sürü kolay görevleri halletmek. Bu taktik zihinsel olarak gevşemeyi sağlarken, diğerleri gözünde de üretkenliğinizi korumayı sağlıyor . Aynı taktik tükenmişlik hissi yaşandıktan sonra ilerleme hissini yeniden kazanmaya yardımcı olmak için de kullanılabilir.
-</p>
-</div>
-
- <h2> <a id="zaman-yönetimi-ve-çocuklu-hayat" class="anchor" href="#zaman-yönetimi-ve-çocuklu-hayat">¶</a>Zaman Yönetimi ve Çocuklu Hayat</h2> <div class="outline-text-2" id="text-orge973802">
- <p>
-Çocuklu hayata geçtikten sonra zamanın daha da önemli bir kaynak haline geldiğinden ve onu korumak ve boşa sarfetmemek için de elinden geleni yaptığından bahsediyor. Kimsenin bölemeyeceği, bildirimlerin kapalı olduğu büyük bloklu zaman dilimleri yaratmak, müsaitliğinin başkaları ile eşzamanlı olamayacağı konusunda beklentileri yönetmek, arta kalan yetişemediği küçük işlerde de başkalarına güvenmek; Jake’in hayatında uyguladığı bazı yöntemler. Yan projelerde çalışabilmek için az az küçük zaman parçalarını değerlendiriyormuş. Aralardaki küçük zaman dilimlerinde az az çalışarak işlere odaklanmak tek bir anda o işi bitirmeye çalışmaktan çok daha motive edici diyor.
-</p>
-
- <p>
-Ayrıca zaman kısıtının onu çok daha verimli hale getirdiğini çünkü hangi projelerin zamanını aldığını ve bunların onu gerçekten zaman ayırmaya değip değmeyeceğini düşünmeye zorladığından bahsediyor. Sınırsız beyin gücü ve zaman verildiğinde, aklımıza gelen her yeni şeyin peşine düşeriz. Gerçekten önemli olanın ne olduğunu unuturuz. Ancak sabahları ve akşamları tamamen ortadan kalktığında ve iyi bir uyku ihtiyacı arttığında, o gün sahip olabileceğimiz 2 saatin değeri 10 kat artacaktır. Zamanımız kıymetli, doğru şekilde doğru yerlere harcamalıyız. Zaman en önemli maaliyet kalemidir.
-</p>
-</div>
-
- <h2> <a id="teknik-yetiler-yöneticilik-ve-hobiler" class="anchor" href="#teknik-yetiler-yöneticilik-ve-hobiler">¶</a>Teknik Yetiler, Yöneticilik ve Hobiler</h2> <div class="outline-text-2" id="text-orgc4ae83d">
- <p>
-Röportajın kalan kısımlarında Jake  <a href="https://square.github.io/dagger/">Dagger</a> 1 ve 2 arasındaki farktan, hobisi olan araba yarışlarından ve arabalardan, şu anda üzerinde çalıştığı ve onu heyecanlandıran projelerden, ileride yönetici olmayı düşünüp düşünmediğinden ve daha başka küçük küçük bir çok detaydan bahsediyor.
-</p>
-
- <p>
-Jake kendisi hakkında  <a href="https://developers.google.com/community/experts/directory/profile/profile-jake-wharton">Google Experts</a> sayfasında; “Temiz sınırlara, iyi soyutlamalara ve sezgisel API’lere sahip açık kaynak kodlu kütüphaneler ve araçlar üzerinde çalışan Android Geliştiricisi. Bazen. Ayrıca ara sıra bu kütüphanaleri kullanan bir uygulama üzerinde çalışır.” şeklinde tanımlamış. Kendisini tanımlama şekli ve röportaj birleşince çok güzel örtüşüyor zihnimde. Açık kaynak koda odaklanmış motive bir hayatı ve arta kalan zamanlarda çalıştığı  <a href="https://cash.app/">CashApp</a> diye bir gerçek hayat projesi var ve  <a href="https://code.cash.app/">teknik blogu da</a> faydali.
-</p>
-
- <p>
-Nicedir bildiğim ama röportajdan sonra daha emin olduğum şey ise verimlilik ve motivasyon açısından Hayır demenin gücü. Bu yeti yoksa da öğrenilmeli. Neye hayır dediğimiz ve deme şeklimiz kariyer yolumuzu ve onun zorluklarını belirliyor neticede.
-</p>
-
- <p>
-Son olarak da Jake’in bir tavsiyesi ile sonlandıralım yazımızı. Takıldığınız yerde mutlaka mola verin, yürüyüş yapın, çay-kahve için, film izleyin, sonra geri gelin bir daha uğraşın. Çünkü programlama yaratıcılık isteyen bir şeydir, zorlamayın.
-</p>
-</div>
-
- <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-org2e62f30">
- <p>
- <a href="https://newsletter.jorgecastillo.dev/p/effective-interviews-jake-wharton">Jack Wharton Röportajı</a>
-</p>
-</div>
-</div>]]></description>
-  <link>https://mobilen.art/news/aklimda_kalanlar_jake_wharton/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/aklimda_kalanlar_jake_wharton/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
   <title>Android File Template</title>
   <description><![CDATA[<div id="content"> <p>
  <a href="https://www.linkedin.com/in/hasan-h%C3%BCseyin-do%C4%9Fan-861048187/">Hasan Hüseyin Doğan</a> yazdı.
 </p>
 
 
- <div id="org4b185c8" class="figure">
+ <div id="org3be5d4c" class="figure">
  <p> <img src="/img/20230724T133855.759239_create_template_1.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 1: </span>Tek bir Template</p>
 </div>
@@ -266,7 +134,7 @@ Merhaba sevgili mobilen okuyucuları sizlerde tekrar eden kodlardan sıkılmadı
 Sizlere her ekran için fragment ve viewmodel oluşturup tekrar aynı yapıyı kurmak zorunda kalmakatan kurtarmaya geldim işte karşınızda file template.
 </p>
 
- <h2> <a id="file-template-nedir" class="anchor" href="#file-template-nedir">¶</a>File Template Nedir?</h2> <div class="outline-text-2" id="text-org0509e93">
+ <h2> <a id="file-template-nedir" class="anchor" href="#file-template-nedir">¶</a>File Template Nedir?</h2> <div class="outline-text-2" id="text-org656bde9">
  <p>
 File template, yazılım geliştirme sürecinde tekrarlanan işleri otomatize etmek için kullanılan şablonlardır. Özellikle Android uygulama geliştirmede, her yeni ekran eklediğinizde ve yeni bir bileşen oluşturduğunuzda, çoğu zaman aynı ya da benzer yapıları tekrar etmeniz gerekir. Bu durum zaman kaybına, hatalara ve bakım zorluklarına yol açabilir.
 </p>
@@ -288,7 +156,7 @@ Sonuç olarak, Android uygulama geliştirme sürecinde file template oluşturmak
 </p>
 </div>
 
- <h2> <a id="file-tempate-nasıl-oluşturulur" class="anchor" href="#file-tempate-nasıl-oluşturulur">¶</a>File tempate nasıl oluşturulur?</h2> <div class="outline-text-2" id="text-org4bf82a6">
+ <h2> <a id="file-tempate-nasıl-oluşturulur" class="anchor" href="#file-tempate-nasıl-oluşturulur">¶</a>File tempate nasıl oluşturulur?</h2> <div class="outline-text-2" id="text-orgc1994a4">
  <p>
 Peki bize bu fayları sağlayacak file templatleri bir projede nasıl yararlanabileceğimizi anlatmak istiyorum.
 </p>
@@ -301,7 +169,7 @@ Kırmızı ile işaretlenmiş butonu seçerek birden fazla template dosyasını 
 </p>
 </div>
 
- <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça:</h2> <div class="outline-text-2" id="text-org4a563e1">
+ <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça:</h2> <div class="outline-text-2" id="text-org01ac763">
  <ul class="org-ul"> <li> <a href="https://riggaroo.dev/custom-file-templates-android-studio/">Custom file templates</a></li>
  <li> <a href="https://dev.to/wilderminds/how-to-use-android-studio-file-templates-to-speed-up-development-4e93">How to use file templates in android?</a></li>
 </ul></div>
@@ -311,102 +179,13 @@ Kırmızı ile işaretlenmiş butonu seçerek birden fazla template dosyasını 
   <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
 </item>
 <item>
-  <title>Android Studio Bot</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://tr.linkedin.com/in/tu%C4%9Fbaberk">Tuğba Berk</a> yazdı.
-</p>
-
- <p>
-Google IO etkinliği, 10 Mayıs 2023 tarihinde gerçekleşti. Bu etkinlikte Google’ın yapay zeka desteğini mevcut araçlarına entegre ettiğini gördük.  <code>Google Play Store</code>,  <code>Google Haritalar</code>,  <code>Google Mail</code> ve  <code>Android Studio</code> gibi birçok araç bu yenilikler arasında yer aldı.
-</p>
-
- <p>
-Yapay zekadaki bu gelişmeler, kod yazarken bize çeşitli faydalar sunmaya başladı bile. Bu yeni yapay zeka gelişmelerine ayak uydurabilen yazılımcılar olmak istiyorsak, Android Studio Bot’u hızlı bir şekilde öğrenmek önemli görünüyor. Kendi rollerimizi ve bu sistem içindeki araçlarımızı iyi anlamamız gerekebilir.
-</p>
-
- <p>
-Peki, Android Studio Bot nedir? Kimler kullanır? Kullanmalı mıyız? Nasıl kuracağız? gibi sorulara cevap verelim.
-</p>
-
- <h2> <a id="android-studio-bot-nedir" class="anchor" href="#android-studio-bot-nedir">¶</a>Android Studio Bot Nedir?</h2> <div class="outline-text-2" id="text-orgb56a802">
- <p>
- <a href="https://developer.android.com/studio/preview/studio-bot">Android Studio Bot</a> bir yapay zeka asistanıdır.Android geliştiricilerin kod yazmalarına ve hatalarını çözmelerine yardımcı olmak için kullanabilecekleri bir araçtır. Android Studio Bot,  <a href="https://blog.google/technology/developers/google-colab-ai-coding-features/">Codey</a> adlı yapay zeka asistanının AI yeteneklerini kullanarak geliştiricilere yardımcı olur. Codey, Google’ın temel dil modeli olan  <a href="https://blog.google/technology/ai/google-palm-2-ai-large-language-model/">PaLM 2</a>’yi kullanarak geliştirilen bir yapay zeka asistanıdır. Aslında, Google Colab ile çalışabilen bir bot diyebiliriz. Kısacası, Studio Bot, Codey’in sunduğu yetenekleri Android Studio ortamında daha kolay ve erişilebilir hale getirmiştir.
-</p>
-
- <p>
-“ChatGPT” ve “Copilot” gibi araçlar mevcut olmasına rağmen, neden Studio Bot’a ihtiyaç duyacağımızı sorabilirsiniz. Benim cevabım şu: “Android Studio’dan çıkmadan kod araştırması yapmak ve sekme açmakla uğraşmamak daha pratik ve hoş olmaz mı?” Elbette, bu aracın sağladığı bilginin doğruluğu kullanmasında en önemli faktör olacaktır. Bu nedenle, doğruluğunu sağlamak için nasıl kullanmamız gerektiğini öğrenmeli ve deneyimlemeliyiz.
-</p>
-
- <p>
-Google, Studio Bot kullanımını kolaylaştıran kısayollar hakkında bilgi verdi. Bu kısayollar sayesinde önemli bir zaman tasarrufu sağlanacağını düşünüyorum. İşte bazı örnekler:
-</p>
-
- <ul class="org-ul"> <li>Tek tık ile kod ekleme</li>
-</ul> <p>
-Studio Bot, oluşturduğu kodun yanında akıllı eylemler sunar. Bu eylemlerden biri, kodu hızlı bir şekilde açık editöre eklemenizi sağlar. Örneğin, bir internet izni kullanmanız gerektiği cevaplarda yer alıyorsa, “kod ekle” aksiyonunu tıkladığınızda Studio Bot, internet iznini manifest dosyasına ekler. Ayrıca, kodun nereye yazılması gerektiğini bilir, bu da bizi kopyala-yapıştır işlemlerinden kurtarır.
-</p>
-
- <ul class="org-ul"> <li>Yardımcı kaynaklara erişmek</li>
-</ul> <p>
-Belirli konular için, Studio Bot ilgili belgelendirme sayfasını açarak daha fazla bilgi sağlama seçeneği sunar. Size kaynak linklerine erişim sağlar, yani “oku, öğren, daha çok soru sor” gibi bir şey =)
-</p>
-
- <ul class="org-ul"> <li>Bot’a kod’un içinden direkt soru sormak</li>
-</ul> <p>
-Kod düzenleyicisinde metni seçip sağ tıklayarak ve “ <code>Ask Studio Bot</code>” işlemini seçerek sohbet kutusunu seçilen kodla doldurabiliriz. Oradan, kodu gönderip göndermeme konusunda karar verebiliriz. Studio Bot, açık izniniz olmadan kod göndermeyecektir. “Ask Studio Bot” ayrıca kod düzenleyicisindeki uyarıları ve hataları gidermeniz için size yardımcı olabilir.
-</p>
-</div>
-
- <h2> <a id="android-studio-bot-nasıl-kurulur" class="anchor" href="#android-studio-bot-nasıl-kurulur">¶</a>Android Studio Bot Nasıl Kurulur?</h2> <div class="outline-text-2" id="text-orgb10f662">
- <p>
-Studio Bot’u kurma ve kullanma konusunda bazı sorular sormaya başladığınızı düşünerek size üzücü bir haber vermek istiyorum. Şu anda Google, Studio Bot’u yalnızca ABD’de kullanıma sunmuştur. Bu nedenle, sadece ABD’deki kullanıcılar ücretsiz olarak erişebilirler.
-</p>
-
- <p>
-Ancak, Studio Bot’u nasıl kuracağınızı bilmek isterseniz, aşağıdaki adımları takip edebilirsiniz:
-</p>
-
- <ol class="org-ol"> <li>İlk olarak, en son sürüm olan Android Studio Hedgehog | 2023.1.1 Canary 4’ü indirmeniz gerekmektedir.</li>
- <li>Studio Bot’u daha etkin bir şekilde kullanmanız için veri paylaşma iznini onaylamanızı tavsiye ediyoruz. Bu izni etkinleştirmek için “Android Studio > Ayarlar > Görünüm ve Davranış > Sistem Ayarları > Veri Paylaşımı” yolunu izleyebilirsiniz.</li>
- <li>Var olan bir projeyi açın veya yeni bir proje oluşturun. Ardından “Görünüm > Araç Pencereleri > Studio Bot” seçeneğine tıklayın.</li>
- <li>Eğer istenirse, Google hesabınıza giriş yapın. Artık Studio Bot’u kullanmaya başlayabilirsiniz.</li>
-</ol> <p>
-Bu şekilde Studio Bot’u kurabilir ve kullanabilirsiniz. Ancak unutmayın, şu anda sadece ABD’deki kullanıcılar ücretsiz olarak erişilebilmektedir.
-</p>
-</div>
-
- <h2> <a id="android-studio-botrsquou-kullanmalı-mıyız" class="anchor" href="#android-studio-botrsquou-kullanmalı-mıyız">¶</a>Android Studio Bot’u Kullanmalı mıyız?</h2> <div class="outline-text-2" id="text-org75ed805">
- <p>
-Gelin, Studio Bot’u kullanmalı mıyız konusuna değinelim. Şahsi fikrime göre, dünyada gelişen ve değişen şeylere katılmak ve bu dönüşümün bir parçası olmak, işimizin en keyifli yanıdır. Aslında, bu keyifli deneyimi kaçırmamak için hepinizi teşvik etmek isterim.
-</p>
-
- <p>
-Ancak, burada dikkat etmemiz gereken önemli bir nokta var: Studio Bot, öğrenmekte olan bir çocuğun sizin elinizde büyüyeceğinin bilincinde olmanızı gerektirir ve şirketinizin özel bilgilerini bu platform üzerinden paylaşmamalısınız. İyi olduğu kadar kötülerin de kod yazabileceğini unutmamamız önemlidir. Ve bu yeni dünyaya biraz daha kontrollü bir şekilde yaklaşmamız gerekmektedir.
-</p>
-
- <p>
-Sonuç olarak, yapay zeka teknolojileri ile olan etkileşimimiz artıyor ve gelişiyor. Studio Bot gibi araçlar, geliştiricilerin kod yazma sürecini kolaylaştırmayı ve verimliliği artırmayı hedefliyor. Bu nedenle, yeni teknolojilere ve araçlara açık olmak, gelişmeleri takip etmek ve deneyimlemek önemlidir. Ancak, her aracın avantajlarını ve dezavantajlarını anlamak ve doğru bir şekilde kullanmak da gereklidir.
-</p>
-</div>
-
- <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-org26e9a41">
- <p>
- <a href="https://developer.android.com/studio/preview/studio-bot">Android Studio Bot Preview</a>
-</p>
-</div>
-</div>]]></description>
-  <link>https://mobilen.art/news/android_studio_bot/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/android_studio_bot/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
   <title>DetailsPro: No-Code ile Swift Tasarımları</title>
   <description><![CDATA[<div id="content"> <p>
  <a href="https://linkedin.com/in/alimerttekel">Ali Mert Tekel</a> yazdı.
 </p>
 
 
- <div id="org2e5a3eb" class="figure">
+ <div id="orgbe2497c" class="figure">
  <p> <img src="/img/20230724T113245.488053_details_pro_main_screen.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 1: </span>DetailsPro ana ekranı</p>
 </div>
@@ -436,7 +215,7 @@ Ayrıca, SFSymbols’u doğrudan tasarımlarda kullanabiliyorsunuz. Bu sayede, t
 </p>
 
 
- <div id="org84cc7c4" class="figure">
+ <div id="orgbe216a2" class="figure">
  <p> <img src="/img/20230724T113245.488053_details_pro_create_design.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 2: </span>Tasarım oluşturma ekranı</p>
 </div>
@@ -446,7 +225,7 @@ Basit bir örnek template’i inceleyelim. Sol tarafta, sürükleyip bırakma me
 </p>
 
 
- <div id="org49f22f8" class="figure">
+ <div id="org343ad8e" class="figure">
  <p> <img src="/img/20230724T113245.488053_details_pro_export.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 3: </span>Export code menüsü</p>
 </div>
@@ -463,7 +242,7 @@ DetailsPro, tasarımıcıların yanı sıra geliştiricilere de hitap eden bir u
 Ayrıca, tasarımınızın kaynak kodunu dışa aktarabilme seçeneği, iOS geliştirme konusunda yeni olanlar için faydalı olabilir. Ücretsiz sürümüyle uygulamayı keşfedebilir ve ihtiyaçlarınıza göre ücretli aboneliği tercih edebilirsiniz. Umarım bu inceleme sizin için faydalı olmuştur. Bir sonraki sayımızda görüşmek üzere.
 </p>
 
- <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h2> <div class="outline-text-2" id="text-org6cba9c4">
+ <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h2> <div class="outline-text-2" id="text-org81e7c9c">
  <p>
  <a href="https://detailspro.app/">Details Pro App</a>
 </p>
@@ -471,107 +250,6 @@ Ayrıca, tasarımınızın kaynak kodunu dışa aktarabilme seçeneği, iOS geli
 </div>]]></description>
   <link>https://mobilen.art/news/details_pro_no_code_ui/index.html</link>
   <guid isPermaLink="false">https://mobilen.art/news/details_pro_no_code_ui/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
-  <title>Evolution of the Medium iOS app architecture</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://linkedin.com/in/myusufka">Yusuf Kaya</a> yazdı.
-</p>
-
- <p>
-Her alanda olduğu gibi bir mobil projesinde de sürekli olarak gelişen teknolojik trendlere uyum sağlamak da büyük bir önem taşımaktadır.
-</p>
-
- <p>
-Yeni mimari geliştirmeler, bir projenin başarısı için hayati bir rol oynamaktadır. Bu geliştirmeler, uygulamanın performansını artırırken, güvenlik açıklarını kapatmak ve gelecekteki ihtiyaçlarını karşılamak için tasarlanır.
-</p>
-
- <p>
-Yeni mimari yaklaşımlar, yazılım mühendislerine daha etkili bir şekilde çalışabilmeleri için daha fazla esneklik ve verimlilik sağlamayı amaçlar. Ayrıca, proje ekibine, uygulamanın yaşam döngüsü boyunca sürekli iyileştirmeler yapma ve yeni özellikler eklemek için daha iyi bir temel sunmayı amaçlar. Modüler mimari de projelerin geliştirilmesinde önemli bir yer tutan yenilikçi bir yaklaşımdır.
-</p>
-
- <p>
- <a href="https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e">Evolution of the Medium iOS App Architecture</a> yayınında da Medium’un iOS uygulamasının modüler mimari evrimini anlatmaktadır.
-</p>
-
- <h2> <a id="modüler-mimari-nedir" class="anchor" href="#modüler-mimari-nedir">¶</a>Modüler Mimari Nedir?</h2> <div class="outline-text-2" id="text-org7616fd6">
- <p>
-Modüler mimari, projelerin geliştirilmesinde kullanılan bir mimari yaklaşımıdır. Bu yaklaşım, bir uygulamayı bağımsız bileşenlere veya modüllere ayırarak, her bir modülün kendi sorumluluk alanına odaklanmasını ve birbirleriyle minimum bağımlılık içinde çalışmasını sağlar.
-</p>
-</div>
- <h3> <a id="modüler-mimarinin-faydaları" class="anchor" href="#modüler-mimarinin-faydaları">¶</a>Modüler Mimarinin Faydaları</h3> <div class="outline-text-3" id="text-org9f8ee29">
- <p>
-Modüler mimarinin faydaları şunlardır:
-</p>
- <ul class="org-ul"> <li>Daha iyi organizasyon: Modüller arasında sorumluluk alanlarına odaklanarak projenin daha iyi organize edilmesi sağlanır.</li>
- <li>Paralel geliştirme: Farklı modüller, ayrı ekipler tarafından aynı anda geliştirilebilir.</li>
- <li>Yeniden kullanılabilirlik: Modüller, başka projelerde veya farklı parçalarda kolayca yeniden kullanılabilir.</li>
- <li>Bakım kolaylığı: Bağımsız modüllerin yönetimi, hataların tespitini kolaylaştırır ve bakım sürecini iyileştirir.</li>
- <li>Ölçeklenebilirlik: Projeyi büyütme veya değiştirme gerektiğinde, modüller arasındaki etkileşim minimum düzeyde olduğu için ölçeklenebilirlik sağlanır.</li>
-</ul></div>
- <h2> <a id="medium-uygulamasının-evrimi" class="anchor" href="#medium-uygulamasının-evrimi">¶</a>Medium Uygulamasının Evrimi</h2> <div class="outline-text-2" id="text-org292b4da">
- <p>
-Bu bilgiler ışığında Medium’un iOS uygulamasının mimarisinin evrim serüveninin inceleyebiliriz. Kullanılan yeni teknikler ve yaklaşımlar, bu süreçte yaşanan zorluklar ve çıkarılan dersler bakımından faydalı bir yayın olduğunu düşünüyorum. Keyifli okumalar dilerim.
-</p>
-</div>
- <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-orgbc70326">
- <ol class="org-ol"> <li> <a href="https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e">Evolution of the Medium iOS App Architecture</a></li>
-</ol></div>
-</div>]]></description>
-  <link>https://mobilen.art/news/evolution_of_the_medium_ios_app/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/evolution_of_the_medium_ios_app/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
-  <title>Instagram’in Hikayesi</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
-</p>
-
- <p>
-Sosyal hayatımızın en önemli aktörlerinden birisi olan Instagram’ın geçmişine dair  <a href="https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02">Burbn’in Instagram’a dönüşümü</a> yazısına okudum.
-</p>
-
- <p>
-Yazıyı okumanızı tavsiye ederim.
-Bu yazıda rastladığım bir konu  <code>feature bloat</code> karmaşasına karşı yaklaşım.
-</p>
-
- <p>
-Instagram’ın Foursquare gibi bir çok yeteneğin yanına harici yetenekleri de yapmaya çalıştığı zamanlardan yalnızca  <code>fotoğraf yayınlama</code> +  <code>filtre uygulama</code> +  <code>like</code> edebilme yeteneklerine odaklanması sayesinde ürün tanımı daha oturaklı bir çerçeveye çekilmiş ve bu Instagram’ın hızlı yükselişinde önemli rol oynamış.
-</p>
-
- <p>
-Bana Zawinski’nin aşırı özellikle şişen uygulamalar hakkındaki alaycı ifadesini hatırlattı:
-</p>
-
- <h2> <a id="zawinskirsquos-law" class="anchor" href="#zawinskirsquos-law">¶</a>Zawinski’s Law</h2> <div class="outline-text-2" id="text-org0b20f8b">
- <blockquote>
- <p>
-“Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can.”
-</p>
-
- <p>
-“Her program email okuyucusu olana kadar gelişir, gelişmeyenler ise gelişenler ile değiştirilir.”
-—  <a href="https://www.jwz.org/about.html">Jamie Zawinski</a>
-</p>
-</blockquote>
-
- <p>
-Jamie  <a href="http://www.catb.org/jargon/html/Z/Zawinskis-Law.html">Zawinski’s Law</a> bu kurala “Law of Software Envelopment” diyor.
-Bu tuzağa çok yakalanmadan ürünlerin karakteristiğinin ve sınırlarının çizilmesi gerekiyor.
-Burada işin içine elbette sunulan özelliklerin düzgün bir kullanıcı deneyim tasarımı ile kullanıcının karşısına çıkması gibi derin konulara doğru ilerliyor.
-</p>
-</div>
-
- <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-org7a7adbb">
- <ul class="org-ul"> <li> <a href="https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02">Burbn’in Instagram’a dönüşümü</a></li>
- <li> <a href="http://www.catb.org/jargon/html/Z/Zawinskis-Law.html">Zawinski’s law</a></li>
-</ul></div>
-</div>]]></description>
-  <link>https://mobilen.art/news/instagramin_hikayesi/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/instagramin_hikayesi/index.html</guid>
   <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
 </item>
 <item>
@@ -604,14 +282,14 @@ Bu yenileme döneminde her 2 sertifika ile aynı anda push gönderebiliyorsunuz.
  <p>
 Bunun için izlenmesi gereken adımlar:
 </p>
- <h2> <a id="codecertsigningrequestcode-dosyası-oluşturmak" class="anchor" href="#codecertsigningrequestcode-dosyası-oluşturmak">¶</a> <code>certSigningRequest</code> dosyası oluşturmak:</h2> <div class="outline-text-2" id="text-orgcba50e1">
+ <h2> <a id="codecertsigningrequestcode-dosyası-oluşturmak" class="anchor" href="#codecertsigningrequestcode-dosyası-oluşturmak">¶</a> <code>certSigningRequest</code> dosyası oluşturmak:</h2> <div class="outline-text-2" id="text-org2ad47c3">
  <ul class="org-ul"> <li> <code>Keychain</code> uygulamasını açın</li>
  <li> <code>Certificate Assistant</code>’a menüden tıklayın</li>
  <li> <code>Request a Certificate From a Certificate Authority</code> seçin</li>
  <li>Sonrasinda disk’e kaydedin.</li>
 </ul></div>
 
- <h2> <a id="edit-push-notifications" class="anchor" href="#edit-push-notifications">¶</a>Edit Push Notifications</h2> <div class="outline-text-2" id="text-orgfac9917">
+ <h2> <a id="edit-push-notifications" class="anchor" href="#edit-push-notifications">¶</a>Edit Push Notifications</h2> <div class="outline-text-2" id="text-org2b436eb">
  <p>
  <a href="https://developer.apple.com'u">https://developer.apple.com'u</a> açın
 </p>
@@ -625,21 +303,21 @@ Certificates, identifiers & Profiles menüsüne gidin.
 </p>
 
 
- <div id="org5dee36f" class="figure">
+ <div id="org609bb26" class="figure">
  <p> <img src="/img/1_CertificatePushIdentifier.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 1: </span>Certificates, identifiers & Profiles menüsü</p>
 </div>
 
 
- <div id="org5f4a483" class="figure">
+ <div id="orga04a3ca" class="figure">
  <p> <img src="/img/2_EditAppIdConfiguration.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 2: </span> <code>Edit</code> Push Notifications</p>
 </div>
 </div>
 
- <h2> <a id="push-sertifikası-oluşturma" class="anchor" href="#push-sertifikası-oluşturma">¶</a>Push sertifikası oluşturma</h2> <div class="outline-text-2" id="text-org36f3536">
+ <h2> <a id="push-sertifikası-oluşturma" class="anchor" href="#push-sertifikası-oluşturma">¶</a>Push sertifikası oluşturma</h2> <div class="outline-text-2" id="text-orgb6419a4">
 
- <div id="org15cb5a6" class="figure">
+ <div id="orge9b1963" class="figure">
  <p> <img src="/img/3_CreatePushCert.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 3: </span>Push sertifikası oluşturma</p>
 </div>
@@ -676,568 +354,13 @@ Oluşturulan p12 sertifikası ile uygulamanıza push atabilirsiniz. Bu sertifika
   <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
 </item>
 <item>
-  <title>iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://linkedin.com/in/egehan-kalayc%C4%B1-736b4a238">Egehan Kalaycı</a> yazdı.
-</p>
-
- <p>
-Selam “Mobilen” okurları! Bugün sizinle çok önemli ve aslında fazlasıyla işlevsel bir konuyu konuşacağız: Deep Link’leri. Evet, belki ilk duyduğunuzda biraz karışık gelebilir ama emin olun, bu yazıyı okuduktan sonra onları tanıyan en iyi kişi siz olacaksınız.
-</p>
-
- <h2> <a id="deep-link-nedir" class="anchor" href="#deep-link-nedir">¶</a>Deep Link Nedir?</h2> <div class="outline-text-2" id="text-orgc02c216">
- <p>
-Deep link, belirli bir sayfaya veya işleme mobil uygulama içinde doğrudan erişmenizi sağlayan bir tür bağlantıdır. Böylece, kullanıcıları uygulamanın belirli bir noktasına yönlendirerek, daha etkileşimli ve kullanıcı odaklı bir deneyim sunabiliriz.
-</p>
-</div>
-
- <h3> <a id="biraz-daha-somutlaştıralım" class="anchor" href="#biraz-daha-somutlaştıralım">¶</a>Biraz Daha Somutlaştıralım</h3> <div class="outline-text-3" id="text-org1bd6b26">
- <p>
-Örneğin, Instagram’da dolaşırken bir Petrol Ofisi kahve kampanyası gördünüz ve tıkladınız. İşte tam da burada devreye deep linkler giriyor. Tıkladığınızda, direkt olarak Petrol Ofisi’nin mobil uygulaması açılıyor ve sizi o özel kampanyaya yönlendiriyor. Kulağa hoş geliyor değil mi?
-</p>
-
- <p>
-Veya belki de şifrenizi sıfırlamanız gerekiyor ve bu durumda da gelen e-postadaki linke tıkladığınızda, sizi bir web sayfasına yönlendirmek yerine direkt olarak uygulamada güzel ve kullanıcı dostu bir deneyim yaşamanızı sağlıyor. İşte bu, deep linklerin gücü!
-</p>
-</div>
-
- <h2> <a id="deep-linkin-küçük-detayları" class="anchor" href="#deep-linkin-küçük-detayları">¶</a>Deep Link’in Küçük Detayları</h2> <div class="outline-text-2" id="text-orgb790b10">
- <p>
-Deep linklerin kullanımı oldukça basit gibi görünse de, yönetilmesi gereken bazı durumlar vardır. Bu detaylar, uygulamanın nasıl ve ne zaman hangi deep linki kullanacağını belirler. Ama merak etmeyin, bu yazının ilerleyen bölümlerinde bunları ayrıntılı olarak ele alacağım.
-</p>
-</div>
-
- <h2> <a id="deep-link-çeşitleri" class="anchor" href="#deep-link-çeşitleri">¶</a>Deep Link Çeşitleri</h2> <div class="outline-text-2" id="text-org64d21ed">
- <p>
- <b> <b>Dinamik Linkler:</b></b>
-Dinamik linkler, kullanıcıları belirli bir içeriğe veya uygulama içi konuma yönlendirmek için kullanılır. Bu linkler “dinamik” olarak adlandırılır çünkü onlar hem uygulama içi hem de web içeriğine yönlendirebilir. Örneğin, bir kullanıcı uygulamanızı henüz indirmediyse, dinamik bir link onları App Store veya Google Play’e yönlendirebilir. Eğer uygulama zaten yüklüyse, aynı link onları uygulama içindeki belirli bir konuma yönlendirebilir. Bu özellik, kullanıcının deneyimini optimize etmek için önemlidir.
-</p>
-
- <p>
- <b> <b>Deferred Deep Linking:</b></b>
-Deferred Deep Linking, deep linking’in bir formudur ve uygulama önceden yüklenmemişse bile belirli bir içeriğe veya uygulama içi konuma yönlendirmeyi mümkün kılar. Eğer bir kullanıcı uygulamayı henüz indirmediyse, bu tür bir link önce onları App Store veya Google Play’e yönlendirir. Uygulama indirildikten ve açıldıktan sonra, kullanıcı otomatik olarak belirtilen içeriğe veya konuma yönlendirilir.
-</p>
-
- <p>
-Farklarına gelince, her ne kadar her iki tür link de uygulamanın indirilmesi ve belirli bir konuma yönlendirilmesi sürecini yönetse de, genellikle Dinamik Linkler daha geniş özelliklere sahip olup, kullanıcıları yönlendirme ve deneyimlerini özelleştirme konusunda daha fazla esneklik sunar. Örneğin, Dinamik Linkler genellikle linkin nereden geldiğini (örneğin, bir e-postadan, sosyal medyadan, bir reklamdan vb.) izleme ve bunun yanı sıra kullanıcının işletim sistemini ve cihazını algılama yeteneğine sahiptir, böylece en uygun deneyimi sunabilir. Bu nedenle, Dinamik Linkler genellikle pazarlama kampanyalarında ve kullanıcı etkileşimlerini artırmak için kullanılır.
-</p>
-</div>
-
- <h2> <a id="deep-link-yönetim-yöntemleri" class="anchor" href="#deep-link-yönetim-yöntemleri">¶</a>Deep Link Yönetim Yöntemleri</h2> <div class="outline-text-2" id="text-orgd1c2929">
- <p>
-Deep linklerinizi hem iOS hem Android uygulamalarınızda yönetebilmeniz için iki önemli yöntem bulunmaktadır: URL Scheme ve Universal Link (iOS) veya App Links (Android). Bu yöntemler, uygulamalarınızdaki deep linklerin yönetimini kolaylaştırır ve kullanıcı deneyimini artırır. Ancak her bir yöntemin kendine özgü özellikleri ve kullanım alanları vardır. Bu yüzden, hangi yöntemin sizin uygulamanız için en uygun olduğunu belirlemek önemlidir.
-</p>
-</div>
-
- <h2> <a id="deep-link-url-scheme-ve-universal-link-karşılaştırması" class="anchor" href="#deep-link-url-scheme-ve-universal-link-karşılaştırması">¶</a>Deep Link: URL Scheme ve Universal Link Karşılaştırması</h2> <div class="outline-text-2" id="text-org6e59781">
- <p>
-Deep link yönetiminde kullanılan iki temel yöntem olan URL Scheme ve Universal Link, birbirinden farklı özelliklere sahiptir. Hem geliştiricilerin hem de kullanıcıların deneyimini doğrudan etkileyen bu özellikler, hangi yöntemin hangi durumda kullanılacağını belirler.
-</p>
-
- <p>
-URL Scheme ve Universal Link’in karşılaştırmalı tablosu:
-</p>
-</div>
-
- <h3> <a id="url-scheme" class="anchor" href="#url-scheme">¶</a>URL Scheme</h3> <div class="outline-text-3" id="text-org0a4e247">
- <ul class="org-ul"> <li> <b> <b>Kurulumu Basittir:</b></b> URL Scheme’yi kullanmaya başlamak için karmaşık bir kurulum sürecine ihtiyaç duyulmaz.</li>
- <li> <b> <b>SSL Zorunluluğu Yoktur:</b></b> URL Scheme, SSL sertifikası zorunluluğu olmadan kullanılabilir.</li>
- <li> <b> <b>Kullanıcı Onayı İster:</b></b> URL Scheme, uygulamaya erişim izni almak için kullanıcıya bir pop-up gösterir. Bu, kullanıcıların uygulamayı açma konusunda daha bilinçli olmasını sağlar.</li>
- <li> <b> <b>Uygulama Yüklü Değilse Çalışmaz:</b></b> URL Scheme, uygulamanın cihazda yüklü olmasını gerektirir. Eğer uygulama yüklü değilse, URL Scheme çalışmaz.</li>
- <li> <b> <b>Aynı Tanımlar ve Kod Mantığı Gerekli:</b></b> URL Scheme’in hem iOS hem de Android platformlarında çalışabilmesi için, tanımlarının ve URL’i işleyen kod mantığının aynı olması gerekmektedir.</li>
- <li> <b> <b>Kullanıcı Dostu Değildir:</b></b> URL Scheme linkleri genellikle “myApp://page/profile” gibi görünürler ve bu da genellikle kullanıcılar için anlaşılması zor olabilir.</li>
-</ul></div>
-
- <h3> <a id="universal-link" class="anchor" href="#universal-link">¶</a>Universal Link</h3> <div class="outline-text-3" id="text-org0019d68">
- <ul class="org-ul"> <li> <b> <b>Kurulumu Komplekstir:</b></b> Universal Link’in kurulum süreci, URL Scheme’e göre daha karmaşıktır.</li>
- <li> <b> <b>SSL Zorunludur:</b></b> Universal Link kullanımı için SSL sertifikası zorunludur. Bu, uygulamanın güvenlik seviyesini artırır.</li>
- <li> <b> <b>Erişim İzni İstemez:</b></b> Universal Link, uygulamaya erişim izni almak için kullanıcıdan herhangi bir onay istemez.</li>
- <li> <b> <b>Uygulama Yüklü Değilse Yedek URL’ler Kullanır:</b></b> Eğer uygulama cihazda yüklü değilse, Universal Link yedek bir URL’ye yönlendirme yapar. Bu, kullanıcıların her zaman istedikleri içeriğe ulaşabilmesini sağlar.</li>
- <li> <b> <b>Oluşturulan Link Tüm Platformları Destekler:</b></b> Universal Link ile oluşturulan bir link, tüm platformlarda çalışabilir.</li>
- <li> <b> <b>Gündelik Kullanılan Linkler Gibidir:</b></b> Universal Linkler, kullanıcı dostudur ve gündelik internet kullanımında karşılaştığımız web adreslerine benzerler. Örneğin, “www.myapp.com/page/profile” gibi.</li>
-</ul> <p>
-Bu özellikler, URL Scheme ve Universal Link arasında önemli farklar olduğunu gösterir. Seçiminiz, uygulamanızın ihtiyaçlarına, hedeflerinize ve kullanıcı deneyiminizi nasıl şekillendirmek istediğinize bağlı olacaktır. Unutmayın, her iki yöntemin de kendi güçlü ve zayıf yanları vardır. Önemli olan, hangi yöntemin sizin ve kullanıcılarınızın ihtiyaçlarını en iyi şekilde karşılayacağını belirlemektir.
-</p>
-
- <p>
-Şimdi, daha fazla derine dalalım ve URL Scheme ve Universal Link’in nasıl çalıştığını inceleyelim…
-</p>
-</div>
-
- <h2> <a id="url-scheme-nedir-ve-nasıl-kullanılır" class="anchor" href="#url-scheme-nedir-ve-nasıl-kullanılır">¶</a>URL Scheme: Nedir ve Nasıl Kullanılır?</h2> <div class="outline-text-2" id="text-org016a17f">
- <p>
-URL Scheme, iOS ve Android platformları için belirli bir URL şemasını kaydedip, diğer uygulamaların bu şema ile başlayan URL’leri açabilmesini sağlayan bir deep link yöntemidir. Peki, nasıl çalışır? Hadi gelin adım adım birlikte inceleyelim.
-</p>
-</div>
-
- <h3> <a id="url-scheme-nasıl-tanımlanır" class="anchor" href="#url-scheme-nasıl-tanımlanır">¶</a>URL Scheme: Nasıl Tanımlanır?</h3> <div class="outline-text-3" id="text-org3c81716">
- <p>
-URL Scheme’in kurulumu oldukça basittir. Örneğin, bir iOS uygulamasına URL Scheme nasıl tanımlanır, birlikte bakalım.
-</p>
- <ol class="org-ol"> <li>Öncelikle, Xcode’u açıyoruz.</li>
- <li>Ardından, `Project Settings -> Info` yolunu izliyoruz.</li>
- <li>Bu bölümde “URL Types” kısmına yeni bir URL Scheme tanımı yapabiliyoruz.</li>
-</ol> <p width="100%">
- <img src="/img/0.jpg" width="100%"></img>
-Bu şekilde bir tanımlama yaptıktan sonra, telefonumuzdan bir tarayıcı veya notlar uygulamasına gidip bu linki test edebiliriz. “com.myApp” yazıp enter’a tıkladığımızda fark ederiz ki, bir şey olmamıştır.
-</p>
-
- <p>
-Peki, bu durum neden oluşur? İşin aslı, iOS’un bir metni bağlantı olarak tanıması için, URL formatına uygun olmamızı bekler. Yani linkimizi “com.myApp://main” olarak güncellemeliyiz. Bu formatı girdiğimizde, bir izin pop-up’ı ile karşılaşırız. Eğer burada “Aç” diyerek izin verirsek, linkin uygulamamızı açtığını görebiliriz.
-</p>
-
- <p width="100%">
- <img src="/img/1.jpg" width="100%"></img>
-Fakat, evet uygulamayı açtık ama henüz uygulama içerisinde bir yönlendirme yapmadık. Mesela uygulamanın “profil bilgilerim” sayfasına gitmek istiyoruz. Peki, bunu nasıl yapabiliriz?
-</p>
-</div>
-
- <h3> <a id="url-scheme-ile-uygulama-i̇çi-yönlendirme" class="anchor" href="#url-scheme-ile-uygulama-i̇çi-yönlendirme">¶</a>URL Scheme ile Uygulama İçi Yönlendirme</h3> <div class="outline-text-3" id="text-org048744f">
- <p>
-Bu işlem için “AppDelegate.swift” dosyasını kullanacağız. Bu dosyada bulunan `open url: URL` metodu, başka bir uygulama veya sistem bileşeni tarafından gönderilen URL’yi yakalayıp işlememizi sağlar.
-</p>
-
- <p>
-Hatırlayalım, bir metnin bağlantı olabilmesi için “scheme://host” yapısına uyması gerektiğini belirtmiştik. Şimdi bu yapının bir örneğini inceleyelim. Örneğin, `com.myApp://content?contentID=“1881”` şeklinde bir URL tanımlayalım.
-</p>
-
- <p>
-Bu URL’deki parametreleri elde etmek ve bunları kendi yönlendirme yapımıza göre işlemek için aşağıdaki gibi bir kod yapısına ihtiyacımız bulunmaktadır.
-</p>
-
- <p width="100%">
- <img src="/img/2.jpg" width="100%"></img>
-Bu kod yapısında,
-</p>
- <ul class="org-ul"> <li>`url.scheme` = “com.myApp”</li>
- <li>`url.host` = “content”</li>
- <li>`parameters` = [“contentID” : “1881”]</li>
-</ul> <p>
-olacaktır.
-</p>
-</div>
-
- <h3> <a id="url-scheme-sonuç" class="anchor" href="#url-scheme-sonuç">¶</a>URL Scheme: Sonuç</h3> <div class="outline-text-3" id="text-org773e3ca">
- <p>
-URL Scheme, tanımlanması ve uygulanması oldukça kolay bir deep link yöntemidir. Ancak, bu yöntemin en büyük dezavantajı, uygulamanın cihazda yüklü olmaması durumunda çalışmamasıdır. Bu durumda, kullanıcı boş bir web sayfasıyla karşılaşacaktır.
-</p>
-
- <p>
-İşte tam bu noktada Universal Link ve App Links yöntemleri devreye giriyor. Bu yöntemler, URL Scheme’in karşılaştığı bu sorunu çözerek kullanıcı deneyimini daha da iyileştirebilir. Şimdi biraz daha derinlere inelim ve Universal Link ve App Links yöntemlerini inceleyelim…
-</p>
-</div>
-
- <h3> <a id="universal-linkapp-links-nedir" class="anchor" href="#universal-linkapp-links-nedir">¶</a>Universal Link/App Links: Nedir?</h3> <div class="outline-text-3" id="text-org8fe2e79">
- <p>
-Universal Link ve App Links, URL Scheme’in dezavantajlarını azaltmak için iOS 9/Android 6.0 ve sonraki sürümlerde kullanılabilen bir deep link yöntemidir.
-</p>
-
- <p>
-Bu yöntem, URL Scheme’in dezavantajlarını giderirken, kurulumun daha karmaşık olmasını beraberinde getirir.
-</p>
-
- <p>
-Kurulum adımlarını ve örneklerimi iOS özelinde veriyor olacağım fakat konsepti anlamamız yeterli olacaktır. Çünkü Android’de de olaylar birbirine çok benzer.
-</p>
-
- <p>
-Özellikle, Universal Link’lerin en genel anlamıyla, bir web sayfası URL’sini iOS uygulamanızla ilişkilendirmenizi sağlar. Böylece o URL’yi açtığınızda iOS, mobil uygulamanızı tanır.
-</p>
-
- <p>
-Ama burada bir sorun var mıdır? Örneğin, “myApp” adlı uygulamanızı Instagram’ın URL’si ile ilişkilendirip, iPhone’dan Instagram’a giren herkesin sizin uygulamanıza yönlendirilmesini sağlayabilir misiniz? Tam bu sorunu çözmek için iOS, URL’lerin arkasına bir JSON dosyası eklemenizi ve bunu “/apple-app-site-association” yolunda yer almasını ister. Böylece kullanıcılar “ <a href="https://www.instagram.com/egehannkalaycii">https://www.instagram.com/egehannkalaycii</a>” gibi bir linke tıkladığında, iOS öncelikle “ <a href="https://www.instagram.com/apple-app-site-association">https://www.instagram.com/apple-app-site-association</a>” linkindeki JSON dosyasına bakar ve bu URL’in hangi uygulamayla ilişkili olduğuna bakar.
-</p>
-</div>
-
- <h3> <a id="json-dosyası-yapısı" class="anchor" href="#json-dosyası-yapısı">¶</a>JSON Dosyası Yapısı</h3> <div class="outline-text-3" id="text-org3b95a9c">
- <p>
-JSON dosyası dedik. Peki bu JSON dosyasının yapısında neler var?
-Bu JSON dosyasının yapısı genellikle aşağıdaki gibidir:
- <img src="/img/3.jpg" width="100%"></img></p>
- <ul class="org-ul"> <li>applinks: Bu JSON’ın Universal Link olduğunu belirtir.</li>
- <li>apps: Apple dokümanına göre bu değer boş bırakılmalıdır.</li>
- <li>details: Uygulama listesi ve yolları içerir.</li>
- <li>appID: TeamID + BundleID değerlerinden oluşur.</li>
- <li>paths: Uygulamada gidilebilecek yolların tanımıdır.
- <ul class="org-ul"> <li>`Path’leri tanımlarken bazı detaylar bulunur. Bunlar:
- <ul class="org-ul"> <li>“/wwdc/news/”-> Standart path tanımı.</li>
- <li>“NOT /videos/wwdc/2010/”-> Başında  <b> <b> <b> <b>NOT</b></b></b></b> olanlar path’e dahil olmaz.</li>
- <li>“*” veya “/wwdc/2010/*“-> WWDC’nin 2010 klasörü altındaki tüm yolları tanımlar.</li>
- <li>“/wwdc/201?/”-> ? olan yere herhangi bir karakter gelebilir.</li>
- <li>Bu bilgiler ışığında aşağıdaki gibi bir path tanımı yapmak mümkün.</li>
- <li>“/wwdc/videos/201?/*”</li>
-</ul></li>
-</ul></li>
-</ul></div>
-
- <h3> <a id="universal-linkapp-links-nasıl-tanımlanır" class="anchor" href="#universal-linkapp-links-nasıl-tanımlanır">¶</a>Universal Link/App Links: Nasıl Tanımlanır?</h3> <div class="outline-text-3" id="text-org36d7afc">
- <p>
-Universal Link veya App Links yeteneğini kullanmak için öncelikle “ <a href="https://developer.apple.com/account/resources/identifiers/list">https://developer.apple.com/account/resources/identifiers/list</a>” adresine gidip, uygulamanızı seçmeniz gerekiyor. Daha sonra “Capabilities” sekmesi altından, “Associated Domains” özelliğini aktif hale getiriyorsunuz.
-</p>
-
- <p>
-Xcode’da, sol menüden projenizi seçtikten sonra sırasıyla: Target -> Signing & Capabilities -> Associated Domains sekmesine geliriz. Associated Domain ekleriz. Burada dikkat etmemiz gereken nokta, URL’nizin “applinks: domainName.com” şeklinde tanımlanmasıdır.
-</p>
-
- <p>
-Bu adımların ardından, Universal Link yeteneğiniz aktif hale gelmiş olacaktır. Bu yeteneği test etmek için, telefonunuzdan Safari’ye gidip uygulamanızın web sitesine giderseniz, iOS otomatik olarak bir öneri sunacaktır.
-</p>
-
-
- <div id="orgdc193bf" class="figure">
- <p> <img src="/img/4.jpg" width="100%"></img></p>
-</div>
-</div>
-
- <h3> <a id="uygulama-i̇çi-yönlendirme" class="anchor" href="#uygulama-i̇çi-yönlendirme">¶</a>Uygulama İçi Yönlendirme</h3> <div class="outline-text-3" id="text-orgf0943bc">
- <p>
-Universal Link yeteneğini ekledikten sonra, uygulamanızın belirli bir sayfasına yönlendirebilmek için URL’yi karşılayacak bir metot belirlememiz gerekiyor. Bu metot, genellikle AppDelegate dosyasında bulunur.
-</p>
-
- <p>
-URL Scheme’de linklerimizi “open url: URL” metodunda handle ediyorduk, ancak Universal Link yönlendirmelerini “continue userActivity: NSUserActivity” metodunda handle ediyoruz.
-</p>
-
- <p width="80%">
- <img src="/img/5.jpg" width="100%"></img>
-Örneğin, “www.myApp.com/app/profile” gibi bir linke tıkladığınızda bu metot handle edecektir.
-</p>
-
- <p>
-Bu kod yapısında,
-</p>
- <ul class="org-ul"> <li>`url` = “www.myApp.com/app/profile?user=xKralTR”</li>
- <li>`view` = “profile”</li>
- <li>`parameters` = [“user” = “xKralTR”]</li>
-</ul> <p>
-olacaktır.
-</p>
-
- <p>
-Bu bilgilerin ışığında, uygulamanızın belirli bir sayfasına yönlendirebilme yeteneğine sahip olmuş olursunuz. Bu, uygulamanızın kullanıcı deneyimini önemli ölçüde geliştirebilir ve kullanıcıların uygulamanız içerisinde daha kolay bir şekilde gezinmelerini sağlar.
-</p>
-
- <p>
-Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha iyi anlamanızı sağlayabilir. Aşağıya bununla ilgili bir diyagram bırakıyorum. Yazımı okuduğunuz için teşekkürler, bir sonraki yazılarda görüşmek üzere.
-</p>
-
-
- <div id="org47d13c8" class="figure">
- <p> <img src="/img/6.jpg" width="100%"></img></p>
-</div>
-</div>
-
- <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-org5842218">
- <ol class="org-ol"> <li> <a href="https://medium.com/@ydemirkoparan/swift-ile-deep-linking-nas%C4%B1l-yap%C4%B1l%C4%B1r-e815fee93b97">Swift ile DeepLinking nasıl yapılır?</a></li>
- <li> <a href="https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97">iOS Deep Linking Scheme vs Universal Links</a></li>
-</ol></div>
-</div>]]></description>
-  <link>https://mobilen.art/news/ios_deep_link/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/ios_deep_link/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
-  <title>iOS SwiftUI Swipe Actions</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
-</p>
-
-
- <div id="orgba52bb4" class="figure">
- <p> <img src="/img/SwipeActions.jpg" width="100%"></img></p>
- <p> <span class="figure-number">Figure 1: </span>Örnek Swipe Actions</p>
-</div>
- <h2> <a id="swipe-actions-nedir" class="anchor" href="#swipe-actions-nedir">¶</a>Swipe Actions nedir?</h2> <div class="outline-text-2" id="text-org8a4aa06">
- <p>
-Merhabalar, herhangi bir ui elemanının üzerinden  <code>swipe</code> ile çıkan aksiyonlar iOS kullanıcı deneyiminde önemli rol oynuyor.
-</p>
-
- <p>
-Kullanıcı deneyimi açısından view’ın altında gizli, sağından veya solundan çıkan bu aksiyonlar görünmüyor olsa bile özellikle iOS kullanıcıları bu davranışı listelerde arayabiliyor.
-</p>
-
- <p>
-Davranış olarak sağ ve sol demek yerine burada tercih edilen jargon  <code>leading</code> ve  <code>trailing</code>, bunun başlıca sebebi dillerin sağdan sola veya soldan sağa olarak 2 farklı şekilde yazılabilmesi.
-Soldan sağa yazılan dillerde sol-leading, sağ trailing iken, arapça-farsça gibi dillerde sol-trailing, sağ ise leading olmakta.
-</p>
-
- <p>
-Swipe aksiyonları yazabilmek için yardımcı araçlar mevcut.
-</p>
-
- <p>
- <code>Native</code> olarak SwiftUI tarafından iOS 15 ile SwiftUI List’elerine eklendi.
- <a href="https://developer.apple.com/documentation/swiftui/view/swipeactions(edge:allowsfullswipe:content:)">iOS 15 SwiftUI SwipeActions</a> adresinden native yöntem incelenebilir.
-</p>
-
- <p>
-Ancak iOS-14 destekliyorsanız veya herhangi bir SwiftUI view’e swipe aksiyonları eklemek isterseniz bunun için güzel bir SwiftUI component’i açık kaynak olarak geliştirilip github’a  <code>spm</code> destekli olarak koyulmuş.
-</p>
-
- <p>
-Bu yazımızda  <a href="https://github.com/aheze/SwipeActions">Açık Kaynak SwipeActions Reposu</a>’nu inceleyeceğiz.
-</p>
-</div>
-
- <h2> <a id="swipeactions-kullanımı" class="anchor" href="#swipeactions-kullanımı">¶</a>SwipeActions Kullanımı</h2> <div class="outline-text-2" id="text-org26ec690">
- <div class="highlight"> <pre> <span></span>   <span class="kd">import</span>  <span class="nc">SwiftUI</span>
-   <span class="kd">import</span>  <span class="nc">SwipeActions</span>
-
-   <span class="kd">struct</span>  <span class="nc">ContentView</span> <span class="p">:</span>  <span class="n">View</span>  <span class="p">{</span>
-       <span class="kd">var</span>  <span class="nv">body</span> <span class="p">:</span>  <span class="n">some</span>  <span class="n">View</span>  <span class="p">{</span>
-           <span class="n">SwipeView</span>  <span class="p">{</span>
-               <span class="n">Text</span> <span class="p">(</span> <span class="s">"Hello"</span> <span class="p">)</span>
-                 <span class="p">.</span> <span class="n">frame</span> <span class="p">(</span> <span class="n">maxWidth</span> <span class="p">:</span>  <span class="p">.</span> <span class="n">infinity</span> <span class="p">)</span>
-                 <span class="p">.</span> <span class="n">padding</span> <span class="p">(.</span> <span class="n">vertical</span> <span class="p">,</span>  <span class="mi">32</span> <span class="p">)</span>
-                 <span class="p">.</span> <span class="n">background</span> <span class="p">(</span> <span class="n">Color</span> <span class="p">.</span> <span class="n">blue</span> <span class="p">.</span> <span class="n">opacity</span> <span class="p">(</span> <span class="mf">0.1</span> <span class="p">))</span>
-                 <span class="p">.</span> <span class="n">cornerRadius</span> <span class="p">(</span> <span class="mi">32</span> <span class="p">)</span>
-           <span class="p">}</span>  <span class="n">trailingActions</span> <span class="p">:</span>  <span class="p">{</span>  <span class="kc">_</span>  <span class="k">in</span>
-               <span class="n">SwipeAction</span> <span class="p">(</span> <span class="s">"World"</span> <span class="p">)</span>  <span class="p">{</span>
-                   <span class="bp">print</span> <span class="p">(</span> <span class="s">"Tapped!"</span> <span class="p">)</span>
-               <span class="p">}</span>
-           <span class="p">}</span>
-             <span class="p">.</span> <span class="n">padding</span> <span class="p">()</span>
-       <span class="p">}</span>
-   <span class="p">}</span>
-</pre></div>
-</div>
-
- <h2> <a id="kaynak-kod-okuma-codepreferencekeycode-kullanımı" class="anchor" href="#kaynak-kod-okuma-codepreferencekeycode-kullanımı">¶</a>Kaynak Kod Okuma:  <code>PreferenceKey</code> kullanımı</h2> <div class="outline-text-2" id="text-org874a0ac">
- <p>
-Veri iletişimi view componentleri arasında Environment Objeler uzerinden  <code>Parent</code> →  <code>Child</code> view yönünde olabiliyor.
-Veya data binding ile  <code>@Binding</code> çift taraflı  <code>reactive</code> şekilde sağlanabiliyor.
-</p>
-
- <p>
-PreferenceKey ile olan bu veri iletişiminde ise diğer bir ihtiyaç olan ise  <code>child</code> →  <code>parent</code> arasında veri geçişi yapabiliyoruz.
-</p>
-
- <div class="highlight"> <pre> <span></span>   <span class="kd">struct</span>  <span class="nc">AllowSwipeToTriggerKey</span> <span class="p">:</span>  <span class="n">PreferenceKey</span>  <span class="p">{</span>
-       <span class="kd">static</span>  <span class="kd">var</span>  <span class="nv">defaultValue</span> <span class="p">:</span>  <span class="nb">Bool</span> <span class="p">?</span>  <span class="p">=</span>  <span class="kc">nil</span>
-       <span class="kd">static</span>  <span class="kd">func</span>  <span class="nf">reduce</span> <span class="p">(</span> <span class="n">value</span> <span class="p">:</span>  <span class="kr">inout</span>  <span class="nb">Bool</span> <span class="p">?,</span>  <span class="n">nextValue</span> <span class="p">:</span>  <span class="p">()</span>  <span class="p">-></span>  <span class="nb">Bool</span> <span class="p">?)</span>
-       <span class="p">{</span>  <span class="n">value</span>  <span class="p">=</span>  <span class="n">nextValue</span> <span class="p">()</span>  <span class="p">}</span>
-   <span class="p">}</span>
-</pre></div>
-
- <p>
-Preference key tanımlarken ihtiyaç duyulan  <code>PreferenceKey</code> protocol’unu  <code>conform</code> etmek.
-Bunun için bir varsayılan değer  <code>defaultValue</code> gerekiyor.
-Ayrıca ikinci olarak  <code>reduce</code> fonksiyonu, bu fonksiyon dışarıdan sağlanan değerin preference olarak set edilmesine müdahale edilebilecek noktayı sağlıyor.
-</p>
-
- <p>
-Kullanımı için 2 tane  <code>modifier</code>’imiz mevcut:  <code>preference</code> ve  <code>onPreferenceChange</code>.
-</p>
-
- <p>
-Preference Key ile veriyi yukarı aktarma  <a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L328">burada</a> gorebilirsiniz:
-</p>
- <div class="highlight"> <pre> <span></span>   <span class="n">view</span> <span class="p">.</span> <span class="n">onPreferenceChange</span> <span class="p">(</span> <span class="n">AllowSwipeToTriggerKey</span> <span class="p">.</span> <span class="kc">self</span> <span class="p">)</span>  <span class="p">{</span>  <span class="n">allow</span>  <span class="k">in</span>
-       <span class="c1">/// Unwrap the value first (if it's not the edge action, `allow` is `nil`).</span>
-       <span class="k">if</span>  <span class="kd">let</span>  <span class="nv">allow</span>  <span class="p">{</span>
-           <span class="n">swipeToTriggerLeadingEdge</span>  <span class="p">=</span>  <span class="n">allow</span>
-       <span class="p">}</span>
-   <span class="p">}</span>
-</pre></div>
-
- <p>
-Ayrıca apple sdk’inde de  <code>navigationTitle</code> modifier’i ile  <code>preference key</code> kullanılarak  <code>child</code> üzerinden çağırılan bir method ile üst view’deki  <code>title</code>’i değiştirebiliyor.
-</p>
-
- <p>
-Özetle hiyerarşide yukarı veri taşıyabilmek için kullanılan bu yapının kullanıldığını görüyoruz.
-Daha detaylı anlamak için  <a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a> yazısına göz atabilirsiniz.
-</p>
-</div>
-
- <h2> <a id="extension-methodlara-generic-constraint-uygulamak" class="anchor" href="#extension-methodlara-generic-constraint-uygulamak">¶</a>Extension methodlara Generic Constraint Uygulamak</h2> <div class="outline-text-2" id="text-org1375f64">
- <p>
- <code>Generic</code> kullanarak  <code>extension method</code>’larının yalnızca ilgili tipler ile kullanılmasını derleme seviyesinde sağlamak tatlı bir özellik.
- <a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L986">Burada</a> ilgili örneği görebilirsiniz.
-</p>
-
- <div class="highlight"> <pre> <span></span>   <span class="kd">public</span>  <span class="kd">extension</span>  <span class="nc">SwipeAction</span>  <span class="k">where</span>  <span class="n">Label</span>  <span class="p">==</span>  <span class="n">Text</span> <span class="p">,</span>  <span class="n">Background</span>  <span class="p">==</span>  <span class="n">Color</span>  <span class="p">{</span>
-       <span class="c1">// Buraya yazılan methodlar yalnızca</span>
-       <span class="c1">// Label Generic Parametresi Text olan ve Background'u Color olan 'SwipeAction'lara önerilir.</span>
-   <span class="p">}</span>
-</pre></div>
-</div>
-
- <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-org44afc16">
- <ol class="org-ol"> <li> <a href="https://github.com/aheze/SwipeActions">SwipeActions Repo</a></li>
- <li> <a href="https://developer.apple.com/documentation/swiftui/preferences?changes=_7">Apple PreferenceKey Dokümantasyonu</a></li>
- <li> <a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a></li>
-</ol></div>
-</div>]]></description>
-  <link>https://mobilen.art/news/ios_swiftui_swipe_actions/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/ios_swiftui_swipe_actions/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
-  <title>Kitap: Make Something Wonderful</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
-</p>
-
-
- <div id="orgddd60f3" class="figure">
- <p> <img src="/img/stevejobs_with_bicycle.jpg" width="100%"></img></p>
- <p> <span class="figure-number">Figure 1: </span>Bilgisayar zihnin bisikletidir.</p>
-</div>
-
- <p>
-Steve Jobs’un aramızdan ayrılışının üzerinden 12 sene geçmiş :/.
-</p>
-
- <p>
-İşlerinde ve ilişkilerinde hayatına dair daha derin bir bakış açısı yakalayabileceğimiz konuşmalarını, yazışmalarını ve hatıralarını
-biriktiren ve sanki kendisinin ağzından yazılmış bir kitap olarak ücretsiz yayınlanan bu kitabı zevkle okuyacağınıza inanıyorum.
-</p>
-
- <p>
-İçerisindeki konulara değinmek gerekirse:
-</p>
- <ul class="org-ul"> <li>Apple’dan ayrılışı, NeXT’in kuruluşu ve sonrasında tekrar Apple’a satılıp geri dönüşündeki hikayeler.</li>
- <li>Pixar’da elde ettiği başarılar.</li>
- <li>Teknolojiyi, sanatı, kullanıcı deneyimini iç içe görmesi ve kendi eğitim hayatındaki yaklaşımlarını bulabilirsiniz.</li>
-</ul> <p>
- <a href="http://apple.co/sja">Apple Books</a> üzerinden veya  <a href="https://stevejobsarchive.com/book/download">indirerek</a> faydalanabilirsiniz
-</p>
-</div>]]></description>
-  <link>https://mobilen.art/news/kitap_make_something_wonderful/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/kitap_make_something_wonderful/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
-  <title>Navigation Desenleri</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
-</p>
-
- <p>
-Selamlar,  <code>navigation</code> mobil uygulamalarda kullanıcının ekranlar arasında nasıl dolaşması gerektiğine dair haritayı sağlamaktadır.
-Bu haritanın farklı yaklaşımları mevcut, görsel olarak Frank Rausch tarafından yazılan bu bloğu incelemenizi öneririm.
-</p>
-
- <p>
- <a href="https://frankrausch.com/ios-navigation">https://frankrausch.com/ios-navigation</a>
-</p>
-</div>]]></description>
-  <link>https://mobilen.art/news/navigation_desenleri/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/navigation_desenleri/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
-  <title>Netfox ile iOS uygulamalarda network izlemek</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://www.linkedin.com/in/ugurcan-durak/">Uğurcan Durak</a> yazdı.
-</p>
-
-
- <div id="org16795b1" class="figure">
- <p> <img src="/img/NetFoxImage.jpg" width="100%"></img></p>
- <p> <span class="figure-number">Figure 1: </span> <a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Netfox’u İzlemek için tıkla</a></p>
-</div>
-
- <p>
-Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde görüntülemek için kullanılan faydalı olduğunu düşündüğüm  <b> <a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesinden bahsedicem.
-</p>
-
- <p>
-Çok detaya girmeden genel hatlarıyla nedir? nasıl kullanılır? gibi başlıklarla değineceğim. Hadi başlayalım :)
-</p>
-
- <h2> <a id="netfox-nedir" class="anchor" href="#netfox-nedir">¶</a>Netfox Nedir?</h2> <div class="outline-text-2" id="text-org0a6867f">
- <p>
- <b> <a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesi, tüm network işlemlerini mobil cihaz üzerinden detaylı bir şekilde görüntüleyebileceğimiz  <code>open source</code> bir kütüphanedir.
-</p>
-
- <p>
-Netfox’u uygulama içerisinde istediğimiz bir anda başlatıp anlık olarak uygulamamızın yapmış olduğu tüm istekleri listeleyebilir ve detaylı bir şekilde  <code>body</code>,  <code>header</code>,  <code>response</code> gibi tüm network etkileşimlerini inceleyebiliriz.
-</p>
-
- <p>
-Bu tarz kütüphanelerin en güzel yanı, mobil cihazımız bilgisayara bağlı olmadan da istediğimiz bir anda network log’larına bakabilmektir.
-Bu özellik testçiler için oldukça faydalıdır. Çünkü herhangi bir hata anında doğrudan developer’a bildirmek yerine log’ları inceleyip hata hakkında fikir sahibi olabilirler.
-</p>
-</div>
-
- <h2> <a id="netfox-nasıl-kullanılır" class="anchor" href="#netfox-nasıl-kullanılır">¶</a>Netfox Nasıl Kullanılır?</h2> <div class="outline-text-2" id="text-org80fdbac">
- <p>
- <code>Netfox</code>’un kullanımı ve projeye entegre edilmesi oldukça basittir.
-</p>
-
- <p>
-Varsayılan davranışı  <b> <b>shake</b></b> olarak belirlenmiş olsada custom bir şekilde istediğimiz bir butona ya da bir view event’ine atayarak Netfox’u başlatabiliriz. Öncelikle projeye nasıl eklenir ona bakalım.
-</p>
-</div>
-
- <h2> <a id="netfoxrsquoun-projeye-eklenmesi" class="anchor" href="#netfoxrsquoun-projeye-eklenmesi">¶</a>Netfox’un Projeye Eklenmesi</h2> <div class="outline-text-2" id="text-org5812102">
- <ol class="org-ol"> <li>Netfox kütüphanesini  <b> <b>SPM</b></b>,  <b> <b>CocoaPods</b></b> ve  <b> <b>Carthage</b></b> olmak üzere üç ayrı yöntem ile projemize ekleyebiliriz. Bu yöntemlerden herhangi biriyle eklediğinizi varsayarak bir sonraki adıma geçiyorum.</li>
-
- <li>Kütüphaneyi projeye ekledik şimdi ise  <code>initiliaze</code> edeceğiz. Bunun için AppDelegate class’ına gidip aşağıdaki gibi gerekli kodları ekliyoruz.</li>
-</ol> <p>
-Netfox Import:
-</p>
- <div class="highlight"> <pre> <span></span>   <span class="cp">#if</span>  <span class="cp">DEBUG</span>
-   <span class="kd">import</span>  <span class="nc">netfox</span>
-   <span class="cp">#endif</span>
-</pre></div>
-
- <p>
-Burada   <b>#if DEBUG</b> ve  <b>#endif</b> kodlarını ekleyerek kodun sadece debug moddayken import olmasını sağlıyoruz. Daha sonra uygulama ilk başlatıldığında hazır hale gelmesini istediğim için aşağıdaki gibi başlatıcı fonksiyonun içerisine kodlarımızı ekliyoruz.
-</p>
-
- <p>
-Netfox başlatma:
-</p>
- <div class="highlight"> <pre> <span></span>   <span class="kd">func</span>  <span class="nf">application</span> <span class="p">(</span>
-     <span class="kc">_</span>  <span class="n">application</span> <span class="p">:</span>  <span class="bp">UIApplication</span> <span class="p">,</span>
-     <span class="n">didFinishLaunchingWithOptions</span>  <span class="n">launchOptions</span> <span class="p">:</span>  <span class="p">[</span> <span class="bp">UIApplication</span> <span class="p">.</span> <span class="n">LaunchOptionsKey</span> <span class="p">:</span>  <span class="nb">Any</span> <span class="p">]?</span>
-   <span class="p">)</span>  <span class="p">-></span>  <span class="nb">Bool</span>  <span class="p">{</span>
-       <span class="cp">#if</span>  <span class="cp">DEBUG</span>
-       <span class="n">NFX</span> <span class="p">.</span> <span class="n">sharedInstance</span> <span class="p">().</span> <span class="n">start</span> <span class="p">()</span>
-       <span class="n">NFX</span> <span class="p">.</span> <span class="n">sharedInstance</span> <span class="p">().</span> <span class="n">setGesture</span> <span class="p">(.</span> <span class="n">shake</span> <span class="p">)</span>
-       <span class="cp">#endif</span>
-   <span class="p">}</span>
-</pre></div>
-
- <p>
-Burada  <b> <b>start()</b></b> methodunu çağırarak Netfox’ı initiliaze ediyoruz ardından  <b> <b>setGesture()</b></b> ile Netfox’ın nasıl açılacağını belirliyoruz.
-</p>
-
- <p>
-Varsayılan davranışı shake olduğundan özellikle belirtmenize gerek yok örnek olması açısından ekledim. Siz dilerseniz  <b> <b>custom</b></b> parametresini geçip daha sonra dilediğiniz yerde  <b> <b>show()</b></b> methodu ile açılmasını sağlayabilirsiniz.
-</p>
-</div>
-
- <h2> <a id="netfox-özetle" class="anchor" href="#netfox-özetle">¶</a>Netfox Özetle</h2> <div class="outline-text-2" id="text-orgcf9fe4e">
- <p>
-Evet hepsi bu kadar :) Şimdi dilediğiniz gibi cihazı sallayarak ya da atamış olduğunuz bir buton ile Netfox’ı başlatabilir ve log’ları inceleyebilirsiniz.
-</p>
-
- <p>
-Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım faydalı olur zaman ayırdığınız için teşekkürler.
-</p>
-</div>
-
- <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-org2eabb17">
- <ol class="org-ol"> <li> <a href="https://github.com/kasketis/netfox">Netfox Github Kütüphanesi</a></li>
- <li> <a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Örnek Kullanım Vidyosu</a></li>
-</ol></div>
-</div>]]></description>
-  <link>https://mobilen.art/news/netfox_ile_ios_uygulamalarda_network/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/netfox_ile_ios_uygulamalarda_network/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
   <title>Steve Jobs The Man in The Machine</title>
   <description><![CDATA[<div id="content"> <p>
  <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
- <div id="org5651cb6" class="figure">
+ <div id="orgf18a7c0" class="figure">
  <p> <img src="/img/the_man_in_the_machine.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 1: </span>The man in the Machine</p>
 </div>
@@ -1290,7 +413,7 @@ Merhabalar, okumalarımdan çıkarttığım notları seri halinde paylaşmak ist
 Kod okunurluğu, yazılım geliştirme sürecinde oldukça önemli bir faktördür. Kodun okunabilir olması, geliştiricilerin kodu daha kolay anlamasını ve kodun bakımını ve genişletilmesini kolaylaştırır. Kodun daha okunabilir olması için bazı başlıkları inceleyeceğiz. İlerleyen sayılarda daha fazla başlık incelemeye çalışacağız.
 </p>
 
- <h2> <a id="i̇yi-i̇simler-seçmek" class="anchor" href="#i̇yi-i̇simler-seçmek">¶</a>İyi İsimler Seçmek</h2> <div class="outline-text-2" id="text-org1954816">
+ <h2> <a id="i̇yi-i̇simler-seçmek" class="anchor" href="#i̇yi-i̇simler-seçmek">¶</a>İyi İsimler Seçmek</h2> <div class="outline-text-2" id="text-orgcf48b18">
  <p>
 Kodun okunurluğunu artırmanın önemli bir yolu, değişken, fonksiyon ve sınıflar için uygun ve açıklayıcı isimler seçmektir. İyi bir isim, o değişkenin veya fonksiyonun amacını ve kullanımını açık bir şekilde ifade eder. Örneğin, belirsiz veya genel isimler yerine, değişkenin değerini veya fonksiyonun amacını daha iyi yansıtan isimler tercih edilmelidir.
 </p>
@@ -1300,7 +423,7 @@ Kodun okunurluğunu artırmanın önemli bir yolu, değişken, fonksiyon ve sın
 </p>
 </div>
 
- <h2> <a id="genel-i̇simler-ve-kısaltmalardan-kaçınmalıyız" class="anchor" href="#genel-i̇simler-ve-kısaltmalardan-kaçınmalıyız">¶</a>Genel İsimler ve Kısaltmalardan Kaçınmalıyız</h2> <div class="outline-text-2" id="text-org8134df5">
+ <h2> <a id="genel-i̇simler-ve-kısaltmalardan-kaçınmalıyız" class="anchor" href="#genel-i̇simler-ve-kısaltmalardan-kaçınmalıyız">¶</a>Genel İsimler ve Kısaltmalardan Kaçınmalıyız</h2> <div class="outline-text-2" id="text-org0c9929c">
  <p>
 Genel isimlerden kaçınılmalıdır. Örneğin, “tmp”, “retval” veya “foo” gibi kısaltma isimler, kodun okunurluğunu azaltabilir ve kodun anlaşılmasını zorlaştırabilir. Bu tür isimler yerine, değişkenin değerini veya amacını açıklayan isimler tercih edilmelidir.
 </p>
@@ -1313,19 +436,19 @@ Genel isimlerden kaçınılmalıdır. Örneğin, “tmp”, “retval” veya �
 </pre></div>
 </div>
 
- <h2> <a id="somut-i̇simleri-soyut-i̇simlere-tercih-etmeliyiz" class="anchor" href="#somut-i̇simleri-soyut-i̇simlere-tercih-etmeliyiz">¶</a>Somut İsimleri Soyut İsimlere Tercih Etmeliyiz</h2> <div class="outline-text-2" id="text-org4ac99a4">
+ <h2> <a id="somut-i̇simleri-soyut-i̇simlere-tercih-etmeliyiz" class="anchor" href="#somut-i̇simleri-soyut-i̇simlere-tercih-etmeliyiz">¶</a>Somut İsimleri Soyut İsimlere Tercih Etmeliyiz</h2> <div class="outline-text-2" id="text-orgd097b0f">
  <p>
 İsimlendirme yaparken amacını doğrudan açıklayan somut isimler tercih edin. Amacı anlamak için daha fazla araştırmaya ihtiyaç duyabilecek soyut isimlerden kaçının. Örneğin, bir sunucunun belirli bir TCP/IP bağlantı noktasını dinleyip dinlemediğini test eden bir yöntem varsa, “ServerCanStart()” yerine “CanListenOnPort()” adını kullanmak daha açıklayıcı olacaktır.
 </p>
 </div>
 
- <h2> <a id="i̇sim-uzunluğuna-dikkat-etmeliyiz" class="anchor" href="#i̇sim-uzunluğuna-dikkat-etmeliyiz">¶</a>İsim Uzunluğuna Dikkat Etmeliyiz</h2> <div class="outline-text-2" id="text-orgd9d5f6d">
+ <h2> <a id="i̇sim-uzunluğuna-dikkat-etmeliyiz" class="anchor" href="#i̇sim-uzunluğuna-dikkat-etmeliyiz">¶</a>İsim Uzunluğuna Dikkat Etmeliyiz</h2> <div class="outline-text-2" id="text-orgb2f75b1">
  <p>
 Anlamlı isimler seçmek önemlidir, ancak aşırı uzun isimlerden kaçınmak da gereklidir. Kısa kapsama sahip değişkenler için kısa isimler kabul edilebilir, çünkü bağlam zaten yeterli bilgi sağlar. Ancak daha geniş kapsamlı değişkenler için daha uzun isimler, amacını anlamak açısından daha faydalı olacaktır.
 </p>
 </div>
 
- <h2> <a id="bazı-i̇simlendirme-önerileri" class="anchor" href="#bazı-i̇simlendirme-önerileri">¶</a>Bazı İsimlendirme Önerileri</h2> <div class="outline-text-2" id="text-org734880b">
+ <h2> <a id="bazı-i̇simlendirme-önerileri" class="anchor" href="#bazı-i̇simlendirme-önerileri">¶</a>Bazı İsimlendirme Önerileri</h2> <div class="outline-text-2" id="text-orgdb69ba7">
  <ul class="org-ul"> <li>Değerlerin üst veya alt sınırlarını belirlerken  <code>max_</code> ve  <code>min_</code> ön eklerini kullanmak iyidir. Kapsayan aralıklar için  <code>first</code> ve  <code>last</code>, kapsayan/olamayan aralıklar için  <code>begin</code> ve  <code>end</code> terimleri tercih edilebilir.</li>
 
  <li>Boolean değişkenlerin isimlendirmesinde  <code>is</code>,  <code>has</code>,  <code>can</code>, veya  <code>should</code> gibi kelimeler kullanarak anlamı açık hale getirmeliyiz ve olumsuz ifadelerden kaçınmalıyız.</li>
@@ -1336,7 +459,7 @@ Anlamlı isimler seçmek önemlidir, ancak aşırı uzun isimlerden kaçınmak d
 </p>
 </div>
 
- <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h2> <div class="outline-text-2" id="text-org7a904ea">
+ <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h2> <div class="outline-text-2" id="text-org9abdcf5">
  <p>
  <a href="https://www.goodreads.com/en/book/show/8677004">The Art of Readable Code</a>
 </p>
@@ -1345,6 +468,596 @@ Anlamlı isimler seçmek önemlidir, ancak aşırı uzun isimlerden kaçınmak d
   <link>https://mobilen.art/news/the_art_of_readable_code_1/index.html</link>
   <guid isPermaLink="false">https://mobilen.art/news/the_art_of_readable_code_1/index.html</guid>
   <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>XCode Project Custom File Templates</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://linkedin.com/in/alimerttekel">Ali Mert Tekel</a> yazdı.
+</p>
+
+ <p>
+Geliştirme sürecinde her ayrıntının önemli olduğu bir dünyada yaşıyoruz. Bu karmaşık süreçte, verimliliği ve tutarlılığı artırmak için araçlardan en iyi şekilde yararlanmak gerekiyor.
+Bu yazıda, iOS uygulama geliştirme sürecini daha düzgün, hızlı ve hatasız hale getirmek için Xcode’un Custom File Template’lerinin nasıl kullanılacağını ele alacağız.
+</p>
+
+ <p>
+Yeni başlayanlardan deneyimli geliştiricilere kadar herkesin işine yarayacak bu bilgilerle, projenizdeki geliştirme sürecini daha verimli hale getirebilirsiniz.
+</p>
+
+ <dl class="org-dl"> <dt>Xcode</dt> <dd>Apple’ın macOS, iOS, watchOS ve tvOS için uygulamalar geliştirmek için kullandığı bir Entegre Geliştirme Ortamı (IDE).</dd>
+ <dt>Template</dt> <dd>Önceden tanımlanmış bir dosya yapısı.</dd>
+ <dt>Custom Xcode Template</dt> <dd>Kullanıcı tarafından özelleştirilmiş Xcode Template’leri.</dd>
+ <dt>MVVM</dt> <dd>Model-View-ViewModel, bir yazılım mimarisi deseni.</dd>
+ <dt>.xctemplate</dt> <dd>Xcode Template’lerinin dosya türü.</dd>
+</dl> <p>
+`File Templates`, Xcode’un özellikle iOS uygulamaları geliştirirken kullandığımız dosyaları oluşturma sürecinde kilit bir rol oynar. Her yeni dosya oluştururken, `Choose a template for your new file:` başlığı altında bir dizi template sunulur.
+</p>
+
+
+ <div id="org01f74fd" class="figure">
+ <p> <img src="/img/choose-template.png" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 1: </span>Template Seçimi</p>
+</div>
+
+ <p>
+Bu template’ler, yeni oluşturulacak dosyaların belirli bir yapıya sahip olmasına yardımcı olur. Ancak, projeniz büyüdükçe ve daha fazla dosya eklemeniz gerektiğinde, aynı süreci tekrar tekrar uygulamak zaman kaybına ve tutarsızlıklara yol açabilir. İşte tam bu noktada Custom Xcode Templates devreye girer.
+</p>
+
+ <h2> <a id="custom-xcode-template-avantajları" class="anchor" href="#custom-xcode-template-avantajları">¶</a>Custom Xcode Template Avantajları</h2> <div class="outline-text-2" id="text-orga001806">
+ <p>
+Custom Xcode Template, projenizin gereksinimlerine ve mimarisine uygun dosyaları hızlı ve tutarlı bir şekilde oluşturmanıza olanak sağlar. Örneğin, MVVM mimarisi gibi belirli bir mimariyi kullanırken, her sayfa için birden fazla dosya oluşturmanız gerekebilir. Bu süreci Custom Xcode Template kullanarak optimize edebilirsiniz.
+</p>
+</div>
+
+ <h2> <a id="custom-xcode-template-nasıl-oluşturulur" class="anchor" href="#custom-xcode-template-nasıl-oluşturulur">¶</a>Custom Xcode Template Nasıl Oluşturulur?</h2> <div class="outline-text-2" id="text-org01dd2ee">
+ <p>
+İlk adım, Xcode’un template’leri barındırdığı dizini açmaktır.
+</p>
+
+ <p>
+Bu klasör genellikle `~/Library/Developer/Xcode/Templates/File Templates` dizininde bulunur. Eğer bu dizin mevcut değilse, manuel olarak oluşturabilirsiniz.
+</p>
+
+
+ <div id="orga910a49" class="figure">
+ <p> <img src="/img/templates-folder.png" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 2: </span>Templates dizinini açmak</p>
+</div>
+
+
+ <div id="orgcb40638" class="figure">
+ <p> <img src="/img/file-templates.png" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 3: </span>Yeni klasör oluşturmak</p>
+</div>
+
+ <p>
+Kendi template’lerinizi barındıracak bir klasör oluşturmanız gerekmektedir. Bu klasörü adlandırırken istediğiniz ismi kullanabilirsiniz, örneğin “My Project Templates”.
+</p>
+
+
+ <div id="org07ab17f" class="figure">
+ <p> <img src="/img/my-project-templates.png" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 4: </span>Custom Template barındıracak klasörü oluşturmak</p>
+</div>
+
+ <p>
+Sonrasında, `.xctemplate` uzantılı bir dosya oluşturmalısınız. Bu dosya, oluşturacağınız asıl template’i temsil eder ve template’in nasıl görüneceğini ve hangi dosyaların oluşturulacağını belirler.
+</p>
+
+
+ <div id="org182d409" class="figure">
+ <p> <img src="/img/xctemplate.png" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 5: </span>Xctemplate dosyaları</p>
+</div>
+
+ <p>
+`.xctemplate` dosyası genellikle aşağıdaki öğeleri içerir:
+</p>
+
+ <ul class="org-ul"> <li>TemplateInfo.plist</li>
+ <li>Dosya template’leri (Örneğin; .swift dosyaları)</li>
+ <li>Diğer kaynak dosyaları (Örneğin; Template için icon dosyası)</li>
+</ul></div>
+
+ <h3> <a id="örnek-bir-dosya-templatersquoi" class="anchor" href="#örnek-bir-dosya-templatersquoi">¶</a>Örnek bir dosya template’i;</h3> <div class="outline-text-3" id="text-org13cb3b2">
+ <div class="highlight"> <pre> <span></span>   <span class="c1">// ___FILEHEADER___</span>
+   <span class="kd">import</span>  <span class="nc">Combine</span>
+   <span class="kd">import</span>  <span class="nc">Foundation</span>
+   <span class="kd">import</span>  <span class="nc">SwiftUI</span>
+
+   <span class="kd">struct</span>  <span class="nc">___VARIABLE_pageName___ContentView</span> <span class="p">:</span>  <span class="n">View</span>  <span class="p">{</span>
+       <span class="c1">// </span> <span class="cs">MARK:</span> <span class="c1"> Observable Objects</span>
+       <span class="p">@</span> <span class="n">ObservedObject</span>  <span class="kd">var</span>  <span class="nv">viewStateData</span> <span class="p">:</span>  <span class="n">___VARIABLE_pageName___ViewStateData</span>
+       <span class="c1">// </span> <span class="cs">MARK:</span> <span class="c1"> Properties</span>
+       <span class="kd">var</span>  <span class="nv">onChangeEvent</span> <span class="p">:</span>  <span class="p">(</span> <span class="n">___VARIABLE_pageName___Event</span> <span class="p">)</span>  <span class="p">-></span>  <span class="nb">Void</span>
+       <span class="c1">// </span> <span class="cs">MARK:</span> <span class="c1"> Lifecycle</span>
+       <span class="kd">var</span>  <span class="nv">body</span> <span class="p">:</span>  <span class="n">some</span>  <span class="n">View</span>  <span class="p">{</span>
+           <span class="kc">self</span> <span class="p">.</span> <span class="n">content</span> <span class="p">()</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+
+   <span class="c1">// </span> <span class="cs">MARK:</span> <span class="c1"> - Views</span>
+   <span class="kd">extension</span>  <span class="nc">___VARIABLE_pageName___ContentView</span>  <span class="p">{</span>
+       <span class="kd">private</span>  <span class="kd">func</span>  <span class="nf">content</span> <span class="p">()</span>  <span class="p">-></span>  <span class="n">some</span>  <span class="n">View</span>  <span class="p">{</span>
+           <span class="n">VStack</span>  <span class="p">{</span>
+               <span class="c1">// </span> <span class="cs">TODO:</span> <span class="c1"> Add Views</span>
+           <span class="p">}</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="cp">#if</span>  <span class="cp">DEBUG</span>
+   <span class="kd">struct</span>  <span class="nc">___VARIABLE_pageName___ContentView_Previews</span> <span class="p">:</span>  <span class="n">PreviewProvider</span>  <span class="p">{</span>
+       <span class="kd">static</span>  <span class="kd">var</span>  <span class="nv">previews</span> <span class="p">:</span>  <span class="n">some</span>  <span class="n">View</span>  <span class="p">{</span>
+           <span class="kd">let</span>  <span class="nv">initialView</span>  <span class="p">=</span>  <span class="n">___VARIABLE_pageName___ContentView</span> <span class="p">(</span> <span class="n">viewStateData</span> <span class="p">:</span>  <span class="p">.</span> <span class="kd">init</span> <span class="p">(),</span>  <span class="n">onChangeEvent</span> <span class="p">:</span>  <span class="p">{</span>  <span class="kc">_</span>  <span class="k">in</span>  <span class="p">})</span>
+           <span class="k">return</span>  <span class="n">Group</span>  <span class="p">{</span>
+               <span class="n">initialView</span>
+           <span class="p">}</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="cp">#endif</span>
+</pre></div>
+
+ <p>
+Custom Template oluşturmak ve hazır template bulabileceğiniz birkaç kaynak aşağıdaki gibidir:
+</p>
+</div>
+
+ <h3> <a id="referenslar" class="anchor" href="#referenslar">¶</a>Referenslar</h3> <div class="outline-text-3" id="text-orgcc612db">
+ <ol class="org-ol"> <li> <a href="https://www.kodeco.com/26582967-xcode-project-and-file-templates">Kodeco</a>: Bu kaynakta kapsamlı bir şekilde custom template oluşturma süreci anlatılıyor.</li>
+
+ <li> <a href="https://github.com/topics/xcode-templates">Github Xcode Templates</a>: Github’da “xcode-templates” topic’i ile genellikle proje mimarileri için oluşturulmuş template repolarına ulaşabilirsiniz.</li>
+</ol> <p>
+Özetle, bu adımlar, Custom File Template’lerinizi oluşturmak için iyi bir başlangıç noktası olabilir. Ancak, her projenin kendine özgü ihtiyaçları olduğunu ve bu adımların projenizin spesifik gereksinimlerine göre uyarlanması gerektiğini unutmamak önemlidir.
+Bu sayede, projenizin verimliliğini ve tutarlılığını artırarak, uygulama geliştirme sürecinizin kalitesini yükseltebilirsiniz.
+</p>
+</div>
+</div>]]></description>
+  <link>https://mobilen.art/news/xcode_project_custom_file_templates/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/xcode_project_custom_file_templates/index.html</guid>
+  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>Aklımda Kalanlar: Jake Wharton ile Röportaj</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://linkedin.com/in/betulsandikci">Betül Sandıkçı</a> yazdı.
+</p>
+
+
+ <div id="org17b174a" class="figure">
+ <p> <img src="/img/AklimdaKalanlarTitle.jpg" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 1: </span>Photo by  <a href="https://unsplash.com/@goian">Ian Schneider</a> on  <a href="https://unsplash.com/?utm_source=medium&utm_medium=referral">Unsplash</a></p>
+</div>
+
+ <p>
+Merhabalar sevgili Mobilen okuyucuları, bu sayı için yazacağım yazıma tamamen tesadüf eseri Jorge Castillo’nun Jake Wharton’la yaptığı  <a href="https://newsletter.jorgecastillo.dev/p/effective-interviews-jake-wharton">röportajı</a> okuyunca karar verdim.
+</p>
+
+ <p>
+Röportaja ilk denk geldiğimde bir an durdum açıp okumadan önce. Çünkü bir Android Developer olarak malum topluluk içinde bir efsanedir kendisi. Bazıları abartıldığını düşünürken bazıları da hakkında kilise içindeki İsa’dır ve tartışmasızdır demektedir. Ama herkesin üzerinde mutabık olduğu bir konu varsa o da Jake’in üretkenliğidir.
+</p>
+
+ <p>
+Topluluğu’u bir kenara bırakırsak onunla ilgili bildiklerim, duyumlarım, izlenimlerim neler? Bir çırpıda aklıma gelenleri özetlemek gerekirse; Androidle ilgili eksik ya da ağır işleyen ne varsa Jake’in düzenlemek için elini atıp yazdığı bir kütüphane var. Androidde güzel, kullanışlı ne varsa da Jake temellerini atmış ve sonunda Google da bu geliştirmeleri içeri almış, SDK’nın parçası haline getirmiş. Tüm bunların üstüne tabiki üretkenliği ve biraz da lafını sözünü sakınmayışı geliyor aklıma. Sakınmaması için sağlam gerekçeleri var ne de olsa :).
+</p>
+
+ <h2> <a id="androidrsquoe-başlama-macerası" class="anchor" href="#androidrsquoe-başlama-macerası">¶</a>Android’e Başlama Macerası</h2> <div class="outline-text-2" id="text-org7943a5e">
+ <p>
+JW ve Android hikayesi Google’ın 2007’de 10 milyon dolar ödüllü  <a href="https://android-developers.googleblog.com/2007/11/posted-by-jason-chen-android-advocate.html">Android Developer Challange</a>’ı açıklamasıyla başlıyor. JW daha üniversitenin henüz başında ve  <code>challange</code>’ı kazanarak gerçek hayatta bir işte çalışmak zorunda olmamak için denemelere başlıyor.  <code>Challange</code> için tasarladığı uygulama bir çizim uygulaması. İşin içine girdikçe ve derinleştikçe kazın ayağının farklı olduğunu anlıyor. Bu 10 milyon basitçe kazanılabilecek bir miktar değil. Yeterince iyi olmadığını düşündüğü için projesini göndermekten vazgeçiyor. İyi ki bu tekrarlayan bir hastalık haline gelmemiş :D.
+</p>
+
+ <p>
+Android Geliştirici olmaya karar verene değin daldan dala atlamış, başka alanlar denemiş. Ama en sonunda Androidde devam etmeye karar vermiş. Karar verme sebebi benimle ve birçok güncel Android Geliştirici ile aynı. Mac alacak kadar parası yok, Microsoft ölüyor ve gelecek mobilde. Gayet rasyonel. Romantik bir gerekçesi yok. Çünkü hiç kimse bir sabah uykusundan Android Android Android diyerek ya da başka bir teknolojiyi sayıklayarak uyanmıyor. Seçimlerimiz güncel gerçeklerimize ve bu gerçeklerle örtüşen tutkularımıza bağlı olarak şekilleniyor.
+</p>
+
+ <p>
+JW’ın Android geliştici olma hikayesi tanıdık evet. Ama farklılaşan kısmı sonrası. JW’ın buraya kadarki hikayesinde beni düşündüren ve ibret aldığım şeyler var. Bir kez daha günceli takip etmenin önemi hemencik yakaladı beni. Sonunda bir ödül kazanılmayacak bile olsa bir müsabakaya girmek kendini, sınırlarını zorlamak çok önemli. Kaybetsen bile kazandıracak bir yöntem bu her şekilde. Tatmin edici bir deneyim. Burada Google’ın ve community’nin etkisinden de bahsetmek lazım. Sınırlarını zorlaman için birilerinin bir sınır koyması lazım doğal olarak önce. Community’ler ve teknoloji sahipleri de bu tür challangelar ile hem safları sıklaştırıyor hem teknolojilerini daha geniş çembere yayıyor hem de genç yeteneklerin ortaya çıkmasına vesile oluyor. Bence burada kökten uca kadar alınacak ibretler var. Çalışanların talepleri ve onları yönetenlerin vizyonu açısından. Takımlar arası müsabakalar keyifli, sıradışı ve eğlenceli olabilir mesela. Kim bilir eğer uslu çocuklar olurlarsa Şirinleri görmenin yanında nice JW’lar bile sıyrılabilir bu tür müsabakalarda.
+</p>
+
+ <p>
+Hikayede dikkatimi çeken noktalardan diğer birisi de başlangıç için bir çizim uygulaması yapmayı seçmiş olması. Yeni birisi başlarken sonucu görmek istiyor. Çok doğru bir yerden başlamış kanaatimce. Artık ne haddimeyse JW’a doğru başlamış yanlış başlamış demek :), Ama dedim gitti işte. Mobile özel o ekranı tanımak açısından, yaptıklarının direk sonucunu görmek açısından aşırı doğru bir yöntem bence. Ben de  <b>Compose</b>’u öğrenirken iç içe kareler çizerek başlamıştım. İnsan neyi doğru yapıp yapmadığını somut olarak, uğraşmadan görmek istiyor. Deneme yanılma şeklinde öğrenmede denedikten sonra yanılıp yanılmadığını anlayana kadar geçen süre kısalıyor ve verimlilik artıyor böylece. Bir konuyu yeni öğrenenlere UI’da kısa yoldan tepki alabilecekleri şekilde başlatmak güzel bir yöntem olabilir ve genç yetenekler için özellikle uygulanabilir.
+</p>
+
+ <p>
+Jake ilk işine Android Developer olarak başlamıyor. Java miras kodlu bir server’da çalışarak başlıyor. Onun zamanında moda C# yazarak para kazanmak. Ama nedense talihin yardımıyla Java ile başlıyor mesleğe. Projeyi kurcalarken yeni şeyler keşfediyor. Projeyi  <b>Git</b>’e geçiriyor. Projenin altyapısını farklı bir modele taşırken operasyonun her yönünü görüyor. Bu deneyimden sonra projenin altyapı görüntülemesini bir mobil uygulama üzerinden kontrol etme fikri aklına geliyor. Tam da bu anda ta taaa ilk açık kaynak kodlu kütüphanesini yayımlıyor ve bir Android Geliştiricisi oluveriyor. Sonrasında meşhur şirket  <a href="https://github.com/square">Square</a>’e Android Geliştirici olarak geçiyor. Hikayesine ve üretmeye orada devam ediyor.
+</p>
+</div>
+
+ <h2> <a id="açık-kaynak-koda-bakışı" class="anchor" href="#açık-kaynak-koda-bakışı">¶</a>Açık Kaynak Koda Bakışı</h2> <div class="outline-text-2" id="text-org77eb0f2">
+ <p>
+Açık kaynak koda geliştirme yapmaya tamamen bencilce bir yerden başlıyor. Kendi ihtiyaçlarını karşılamak için proje üretiyor ve bunu  <a href="https://github.com/">Github</a>’a yüklüyor. O zamanlar private repolar ücretli olduğu için de private yapmaya gerek duymuyor. Böylelikle kod paylaşma serüveni doğal olarak duygusal sebeplerle başlamış oluyor :D. Bir kütüphaneyi ya da aracı yazarken community’nin ya da başkalarının ihtiyaçlarını gözeterek ve daha iyi olsunlar diyerek başlamıyor. Niyetinde kimseyi memnun etmek de yok. Kendi yazdığı ve paylaştığı projelere başkalarının dahil olması, birlikte üretmek zevkli, keyifli, güzel ama motivasyon kaynağı bu olamaz düşüncesinde.
+</p>
+
+ <p>
+Bunalmamak ve motivasyon kaybına uğramamak için başkalarıyla gerektiğinde empati yapıyor gerektiğinde de onları görmezden geliyor. Motivasyonunu korumak için yaptığı şey çok basit. Temelde benim neye ihtiyacım var diye düşünmek ve ona göre hareket etmek. Sıfır noktasında düşüncelerle o kadar boğuşuyoruz ki başlamadan bırakıyoruz işlerimizi. Maskeyi önce kendimize takmalıyız.
+</p>
+
+ <p>
+Açık kaynak kodlu yazılım üretmenin en faydalı yanı başka insanlarla yardımlaşmak. Profesyonel hayatta çalışamayacağın, imkanın olmayacak insanlarla aynı projede yer almak çok tatmin edici. Takip ettiğin, imrendiğin belki de onların yerinde olmak istediğin insanlarla bir anlamda iş arkadaşı olma şansı sunuyor açık kaynak koda destek vermek. Minimumda başkalarına yardım etme ve faydalı olma duygusu yaşatıyor insana. Maksimumda ise profesyonel olarak sonsuz ihtimallerin kapısını açıyor. Bu aralık zannımca fena bir aralık değil bir geliştirici için.
+</p>
+
+ <p>
+Açık kaynak kodu geliştirirken Jake’in tavsiyesi kodu olabildiğince küçük ve odaklı tutmak. Her %15 fazla kod için aynı oranda geliştiriciye ihtiyaç var. Bu da bir süre sonra kar topu etkisi ile baş edilmez bir hale getiriyor projeyi. Herkesin ihtiyaçlarına kulak vermek ve ihtimallere göre geliştirme yapmak, sonrasında kodun sürdürülmesini imkansız hale getiriyor. Sürdürülemeyen kod da ölmeye mahkum oluyor. Çünkü bir süre sonra yapılması gereken hayati geliştirmeler bile yapılamayacak hale geliyor. Bu aslında sadece açık kaynak kod için değil herhangi bir yerde yazdığımız bir fonksiyon için de geçerli.
+</p>
+
+ <p>
+İhtiyacı belirleyip bunun dışına çıkmamak anahtar nokta.  <b>Solid’</b> in S’i olan  <b>Single Responsibility</b> prensibi burada devreye giriyor. Ancak bunu uygulayabilmek prensibin anlamını bilmekten elbette çok çok daha zor. İster açık kaynak ister küçük bir method ne olduğu farketmeksizin baştan amacını iyi belirlemek ve sonrasında buna sadık kalmak ve en önemlisi Hayır demenin gücünü kullanmak. Doğru yerde ve zamanda “ <i>Hayır diyebilmek</i>” çok önemli ve işlerin karmaşıklaşmasını engelliyor. Memnun edicilik değil iş bitiricilik önemli oluyor günün sonunda.
+</p>
+</div>
+
+ <h2> <a id="jwrsquonin-google-macerası" class="anchor" href="#jwrsquonin-google-macerası">¶</a>JW’nin Google Macerası</h2> <div class="outline-text-2" id="text-org4538c48">
+ <p>
+Gelelim Jake’in kimilerine göre yarıda bıraktığı Google tecrübesine. Tabiki doğası gereği magazinsel bir mevzu olduğu için dikkat çekmesi normal. Benim anladığım Square’den Google’a geçerken bir yapılacaklar listesi varmış elinde. Kaldığı süre boyunca da bunların yapılması için domino etkisi yaratmayı başarmış. Ancak günün sonunda fazla bürokrasi ve teknik sınırlamalardan dolayı yılmış, usanmış. Geliştiriciye geliştirmek ile gerçek dünya problemlerine çözüm geliştirmek arasında kalınca da gerçek dünya problemlerini tercih etmiş. Bu benim yolum benim tercihim diyor. Square’deki macerasına kaldığı yerden devam etmeye karar vermiş ve geri dönmüş.
+</p>
+
+ <p>
+Verimli hissedemediği noktada bırakmaya karar vermesi oldukça ilham verici. Her ne kadar kolay gibi görünse de geldiğin yere geri dönmek cesaret gerektiren bir şey. Herşey bir kenara sadece egosal açıdan bile zor gelebilir. İçeride dışarıda olduğu kadar etkin olamadığını farkettiğinde gemiyi terketmeyi seçmiş. Ben mesela yapabilir miydim diye düşünüyorum? Bir yönüm çok yapılabilir dese de işin için de olduğumda bu kararı alırken oldukça zorlanacağımı, tüm cesaret toplamam gerekeceğini biliyorum. Neticede “ <a href="https://medium.com/incerto/what-do-i-mean-by-skin-in-the-game-my-own-version-cc858dc73260">skin in the game</a>” diye bir şey var.
+</p>
+
+ <p>
+Jake’in CashApp’teki günleri aşırı planlı, düzenli, moda mod geçmiyormuş. Genellikle zamanının büyük kısmını açık kaynak koda ayırıyormuş. Kalan zamanda da küçük işleri toparlamak, PR’ları kontrol etmek, işleri adımlamakla geçiyormuş. Square açık kaynak kodu mesai dışı bir iş gibi görmüyor aksine bizatihi işin kendisi olarak görüyor ve destekliyor. Çünkü yeteneği içeri almak kadar onu tutmak, beslemek ve parlatmak da çok önemli. Takımlara ve yöneticilere düşecek bir hisse de bu olabilir belki.
+</p>
+
+ <p>
+Toplantı konusu teknik insanların profesyonel dünyada en sıkıcı bulduğu konuların başında geliyor. JW bu konuda kalabalık olanların seyrek olması en iyisi, bunun dışında bireysel bağlantılar daha verimli oluyor görüşünde çoğumuz gibi. Toplantı konusunda da  <i>Solid</i>’in  <i>S</i>’ini kullanmakta fayda var gibi :D .
+</p>
+
+ <p>
+İşin başındakilere en önemli tavsiyelerinden birisi ürünün vizyonuna kendinizi aşırı kaptırmayın. Böyle olursa kişi kendi başarı duygusunu ürünün iniş çıkışlarına bağlayabiliyor. Ancak önemli olan zorlu teknik sorunları bulmak ve çözmeye odaklanmak. Ürünler geçicidir oysa bu yetkinlikler kalıcıdır. Özetle Jake ürünü önemseyin ama yeteri kadar, bir dengesi olsun görüşünde. Odaklılık konusunda denge bulunması gerektiği ve bıçağını bileylemenin en önemlisi olduğuna katılıyorum. Senin bıçağın keskinse gelen her şeyi kesersin. Ama bıçağı kütmemek için de neyi ne kadar keseceğini bilmelisin ;) .
+</p>
+
+ <p>
+Üretkenliği korumak için Jake’in taktiklerinden birisi çok fazla çalışmaya gerek kalmadan yapılabilecek bir sürü kolay görevleri halletmek. Bu taktik zihinsel olarak gevşemeyi sağlarken, diğerleri gözünde de üretkenliğinizi korumayı sağlıyor . Aynı taktik tükenmişlik hissi yaşandıktan sonra ilerleme hissini yeniden kazanmaya yardımcı olmak için de kullanılabilir.
+</p>
+</div>
+
+ <h2> <a id="zaman-yönetimi-ve-çocuklu-hayat" class="anchor" href="#zaman-yönetimi-ve-çocuklu-hayat">¶</a>Zaman Yönetimi ve Çocuklu Hayat</h2> <div class="outline-text-2" id="text-org7780505">
+ <p>
+Çocuklu hayata geçtikten sonra zamanın daha da önemli bir kaynak haline geldiğinden ve onu korumak ve boşa sarfetmemek için de elinden geleni yaptığından bahsediyor. Kimsenin bölemeyeceği, bildirimlerin kapalı olduğu büyük bloklu zaman dilimleri yaratmak, müsaitliğinin başkaları ile eşzamanlı olamayacağı konusunda beklentileri yönetmek, arta kalan yetişemediği küçük işlerde de başkalarına güvenmek; Jake’in hayatında uyguladığı bazı yöntemler. Yan projelerde çalışabilmek için az az küçük zaman parçalarını değerlendiriyormuş. Aralardaki küçük zaman dilimlerinde az az çalışarak işlere odaklanmak tek bir anda o işi bitirmeye çalışmaktan çok daha motive edici diyor.
+</p>
+
+ <p>
+Ayrıca zaman kısıtının onu çok daha verimli hale getirdiğini çünkü hangi projelerin zamanını aldığını ve bunların onu gerçekten zaman ayırmaya değip değmeyeceğini düşünmeye zorladığından bahsediyor. Sınırsız beyin gücü ve zaman verildiğinde, aklımıza gelen her yeni şeyin peşine düşeriz. Gerçekten önemli olanın ne olduğunu unuturuz. Ancak sabahları ve akşamları tamamen ortadan kalktığında ve iyi bir uyku ihtiyacı arttığında, o gün sahip olabileceğimiz 2 saatin değeri 10 kat artacaktır. Zamanımız kıymetli, doğru şekilde doğru yerlere harcamalıyız. Zaman en önemli maaliyet kalemidir.
+</p>
+</div>
+
+ <h2> <a id="teknik-yetiler-yöneticilik-ve-hobiler" class="anchor" href="#teknik-yetiler-yöneticilik-ve-hobiler">¶</a>Teknik Yetiler, Yöneticilik ve Hobiler</h2> <div class="outline-text-2" id="text-orgd5fc33c">
+ <p>
+Röportajın kalan kısımlarında Jake  <a href="https://square.github.io/dagger/">Dagger</a> 1 ve 2 arasındaki farktan, hobisi olan araba yarışlarından ve arabalardan, şu anda üzerinde çalıştığı ve onu heyecanlandıran projelerden, ileride yönetici olmayı düşünüp düşünmediğinden ve daha başka küçük küçük bir çok detaydan bahsediyor.
+</p>
+
+ <p>
+Jake kendisi hakkında  <a href="https://developers.google.com/community/experts/directory/profile/profile-jake-wharton">Google Experts</a> sayfasında; “Temiz sınırlara, iyi soyutlamalara ve sezgisel API’lere sahip açık kaynak kodlu kütüphaneler ve araçlar üzerinde çalışan Android Geliştiricisi. Bazen. Ayrıca ara sıra bu kütüphanaleri kullanan bir uygulama üzerinde çalışır.” şeklinde tanımlamış. Kendisini tanımlama şekli ve röportaj birleşince çok güzel örtüşüyor zihnimde. Açık kaynak koda odaklanmış motive bir hayatı ve arta kalan zamanlarda çalıştığı  <a href="https://cash.app/">CashApp</a> diye bir gerçek hayat projesi var ve  <a href="https://code.cash.app/">teknik blogu da</a> faydali.
+</p>
+
+ <p>
+Nicedir bildiğim ama röportajdan sonra daha emin olduğum şey ise verimlilik ve motivasyon açısından Hayır demenin gücü. Bu yeti yoksa da öğrenilmeli. Neye hayır dediğimiz ve deme şeklimiz kariyer yolumuzu ve onun zorluklarını belirliyor neticede.
+</p>
+
+ <p>
+Son olarak da Jake’in bir tavsiyesi ile sonlandıralım yazımızı. Takıldığınız yerde mutlaka mola verin, yürüyüş yapın, çay-kahve için, film izleyin, sonra geri gelin bir daha uğraşın. Çünkü programlama yaratıcılık isteyen bir şeydir, zorlamayın.
+</p>
+</div>
+
+ <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-orgc94fbac">
+ <p>
+ <a href="https://newsletter.jorgecastillo.dev/p/effective-interviews-jake-wharton">Jack Wharton Röportajı</a>
+</p>
+</div>
+</div>]]></description>
+  <link>https://mobilen.art/news/aklimda_kalanlar_jake_wharton/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/aklimda_kalanlar_jake_wharton/index.html</guid>
+  <pubDate>Fri, 02 Jun 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>Android Studio Bot</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://tr.linkedin.com/in/tu%C4%9Fbaberk">Tuğba Berk</a> yazdı.
+</p>
+
+ <p>
+Google IO etkinliği, 10 Mayıs 2023 tarihinde gerçekleşti. Bu etkinlikte Google’ın yapay zeka desteğini mevcut araçlarına entegre ettiğini gördük.  <code>Google Play Store</code>,  <code>Google Haritalar</code>,  <code>Google Mail</code> ve  <code>Android Studio</code> gibi birçok araç bu yenilikler arasında yer aldı.
+</p>
+
+ <p>
+Yapay zekadaki bu gelişmeler, kod yazarken bize çeşitli faydalar sunmaya başladı bile. Bu yeni yapay zeka gelişmelerine ayak uydurabilen yazılımcılar olmak istiyorsak, Android Studio Bot’u hızlı bir şekilde öğrenmek önemli görünüyor. Kendi rollerimizi ve bu sistem içindeki araçlarımızı iyi anlamamız gerekebilir.
+</p>
+
+ <p>
+Peki, Android Studio Bot nedir? Kimler kullanır? Kullanmalı mıyız? Nasıl kuracağız? gibi sorulara cevap verelim.
+</p>
+
+ <h2> <a id="android-studio-bot-nedir" class="anchor" href="#android-studio-bot-nedir">¶</a>Android Studio Bot Nedir?</h2> <div class="outline-text-2" id="text-org328ee28">
+ <p>
+ <a href="https://developer.android.com/studio/preview/studio-bot">Android Studio Bot</a> bir yapay zeka asistanıdır.Android geliştiricilerin kod yazmalarına ve hatalarını çözmelerine yardımcı olmak için kullanabilecekleri bir araçtır. Android Studio Bot,  <a href="https://blog.google/technology/developers/google-colab-ai-coding-features/">Codey</a> adlı yapay zeka asistanının AI yeteneklerini kullanarak geliştiricilere yardımcı olur. Codey, Google’ın temel dil modeli olan  <a href="https://blog.google/technology/ai/google-palm-2-ai-large-language-model/">PaLM 2</a>’yi kullanarak geliştirilen bir yapay zeka asistanıdır. Aslında, Google Colab ile çalışabilen bir bot diyebiliriz. Kısacası, Studio Bot, Codey’in sunduğu yetenekleri Android Studio ortamında daha kolay ve erişilebilir hale getirmiştir.
+</p>
+
+ <p>
+“ChatGPT” ve “Copilot” gibi araçlar mevcut olmasına rağmen, neden Studio Bot’a ihtiyaç duyacağımızı sorabilirsiniz. Benim cevabım şu: “Android Studio’dan çıkmadan kod araştırması yapmak ve sekme açmakla uğraşmamak daha pratik ve hoş olmaz mı?” Elbette, bu aracın sağladığı bilginin doğruluğu kullanmasında en önemli faktör olacaktır. Bu nedenle, doğruluğunu sağlamak için nasıl kullanmamız gerektiğini öğrenmeli ve deneyimlemeliyiz.
+</p>
+
+ <p>
+Google, Studio Bot kullanımını kolaylaştıran kısayollar hakkında bilgi verdi. Bu kısayollar sayesinde önemli bir zaman tasarrufu sağlanacağını düşünüyorum. İşte bazı örnekler:
+</p>
+
+ <ul class="org-ul"> <li>Tek tık ile kod ekleme</li>
+</ul> <p>
+Studio Bot, oluşturduğu kodun yanında akıllı eylemler sunar. Bu eylemlerden biri, kodu hızlı bir şekilde açık editöre eklemenizi sağlar. Örneğin, bir internet izni kullanmanız gerektiği cevaplarda yer alıyorsa, “kod ekle” aksiyonunu tıkladığınızda Studio Bot, internet iznini manifest dosyasına ekler. Ayrıca, kodun nereye yazılması gerektiğini bilir, bu da bizi kopyala-yapıştır işlemlerinden kurtarır.
+</p>
+
+ <ul class="org-ul"> <li>Yardımcı kaynaklara erişmek</li>
+</ul> <p>
+Belirli konular için, Studio Bot ilgili belgelendirme sayfasını açarak daha fazla bilgi sağlama seçeneği sunar. Size kaynak linklerine erişim sağlar, yani “oku, öğren, daha çok soru sor” gibi bir şey =)
+</p>
+
+ <ul class="org-ul"> <li>Bot’a kod’un içinden direkt soru sormak</li>
+</ul> <p>
+Kod düzenleyicisinde metni seçip sağ tıklayarak ve “ <code>Ask Studio Bot</code>” işlemini seçerek sohbet kutusunu seçilen kodla doldurabiliriz. Oradan, kodu gönderip göndermeme konusunda karar verebiliriz. Studio Bot, açık izniniz olmadan kod göndermeyecektir. “Ask Studio Bot” ayrıca kod düzenleyicisindeki uyarıları ve hataları gidermeniz için size yardımcı olabilir.
+</p>
+</div>
+
+ <h2> <a id="android-studio-bot-nasıl-kurulur" class="anchor" href="#android-studio-bot-nasıl-kurulur">¶</a>Android Studio Bot Nasıl Kurulur?</h2> <div class="outline-text-2" id="text-org1a6abfe">
+ <p>
+Studio Bot’u kurma ve kullanma konusunda bazı sorular sormaya başladığınızı düşünerek size üzücü bir haber vermek istiyorum. Şu anda Google, Studio Bot’u yalnızca ABD’de kullanıma sunmuştur. Bu nedenle, sadece ABD’deki kullanıcılar ücretsiz olarak erişebilirler.
+</p>
+
+ <p>
+Ancak, Studio Bot’u nasıl kuracağınızı bilmek isterseniz, aşağıdaki adımları takip edebilirsiniz:
+</p>
+
+ <ol class="org-ol"> <li>İlk olarak, en son sürüm olan Android Studio Hedgehog | 2023.1.1 Canary 4’ü indirmeniz gerekmektedir.</li>
+ <li>Studio Bot’u daha etkin bir şekilde kullanmanız için veri paylaşma iznini onaylamanızı tavsiye ediyoruz. Bu izni etkinleştirmek için “Android Studio > Ayarlar > Görünüm ve Davranış > Sistem Ayarları > Veri Paylaşımı” yolunu izleyebilirsiniz.</li>
+ <li>Var olan bir projeyi açın veya yeni bir proje oluşturun. Ardından “Görünüm > Araç Pencereleri > Studio Bot” seçeneğine tıklayın.</li>
+ <li>Eğer istenirse, Google hesabınıza giriş yapın. Artık Studio Bot’u kullanmaya başlayabilirsiniz.</li>
+</ol> <p>
+Bu şekilde Studio Bot’u kurabilir ve kullanabilirsiniz. Ancak unutmayın, şu anda sadece ABD’deki kullanıcılar ücretsiz olarak erişilebilmektedir.
+</p>
+</div>
+
+ <h2> <a id="android-studio-botrsquou-kullanmalı-mıyız" class="anchor" href="#android-studio-botrsquou-kullanmalı-mıyız">¶</a>Android Studio Bot’u Kullanmalı mıyız?</h2> <div class="outline-text-2" id="text-orgfcd80d6">
+ <p>
+Gelin, Studio Bot’u kullanmalı mıyız konusuna değinelim. Şahsi fikrime göre, dünyada gelişen ve değişen şeylere katılmak ve bu dönüşümün bir parçası olmak, işimizin en keyifli yanıdır. Aslında, bu keyifli deneyimi kaçırmamak için hepinizi teşvik etmek isterim.
+</p>
+
+ <p>
+Ancak, burada dikkat etmemiz gereken önemli bir nokta var: Studio Bot, öğrenmekte olan bir çocuğun sizin elinizde büyüyeceğinin bilincinde olmanızı gerektirir ve şirketinizin özel bilgilerini bu platform üzerinden paylaşmamalısınız. İyi olduğu kadar kötülerin de kod yazabileceğini unutmamamız önemlidir. Ve bu yeni dünyaya biraz daha kontrollü bir şekilde yaklaşmamız gerekmektedir.
+</p>
+
+ <p>
+Sonuç olarak, yapay zeka teknolojileri ile olan etkileşimimiz artıyor ve gelişiyor. Studio Bot gibi araçlar, geliştiricilerin kod yazma sürecini kolaylaştırmayı ve verimliliği artırmayı hedefliyor. Bu nedenle, yeni teknolojilere ve araçlara açık olmak, gelişmeleri takip etmek ve deneyimlemek önemlidir. Ancak, her aracın avantajlarını ve dezavantajlarını anlamak ve doğru bir şekilde kullanmak da gereklidir.
+</p>
+</div>
+
+ <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-orgb83a822">
+ <p>
+ <a href="https://developer.android.com/studio/preview/studio-bot">Android Studio Bot Preview</a>
+</p>
+</div>
+</div>]]></description>
+  <link>https://mobilen.art/news/android_studio_bot/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/android_studio_bot/index.html</guid>
+  <pubDate>Fri, 02 Jun 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>Instagram’in Hikayesi</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+ <p>
+Sosyal hayatımızın en önemli aktörlerinden birisi olan Instagram’ın geçmişine dair  <a href="https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02">Burbn’in Instagram’a dönüşümü</a> yazısına okudum.
+</p>
+
+ <p>
+Yazıyı okumanızı tavsiye ederim.
+Bu yazıda rastladığım bir konu  <code>feature bloat</code> karmaşasına karşı yaklaşım.
+</p>
+
+ <p>
+Instagram’ın Foursquare gibi bir çok yeteneğin yanına harici yetenekleri de yapmaya çalıştığı zamanlardan yalnızca  <code>fotoğraf yayınlama</code> +  <code>filtre uygulama</code> +  <code>like</code> edebilme yeteneklerine odaklanması sayesinde ürün tanımı daha oturaklı bir çerçeveye çekilmiş ve bu Instagram’ın hızlı yükselişinde önemli rol oynamış.
+</p>
+
+ <p>
+Bana Zawinski’nin aşırı özellikle şişen uygulamalar hakkındaki alaycı ifadesini hatırlattı:
+</p>
+
+ <h2> <a id="zawinskirsquos-law" class="anchor" href="#zawinskirsquos-law">¶</a>Zawinski’s Law</h2> <div class="outline-text-2" id="text-org7d33cac">
+ <blockquote>
+ <p>
+“Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can.”
+</p>
+
+ <p>
+“Her program email okuyucusu olana kadar gelişir, gelişmeyenler ise gelişenler ile değiştirilir.”
+—  <a href="https://www.jwz.org/about.html">Jamie Zawinski</a>
+</p>
+</blockquote>
+
+ <p>
+Jamie  <a href="http://www.catb.org/jargon/html/Z/Zawinskis-Law.html">Zawinski’s Law</a> bu kurala “Law of Software Envelopment” diyor.
+Bu tuzağa çok yakalanmadan ürünlerin karakteristiğinin ve sınırlarının çizilmesi gerekiyor.
+Burada işin içine elbette sunulan özelliklerin düzgün bir kullanıcı deneyim tasarımı ile kullanıcının karşısına çıkması gibi derin konulara doğru ilerliyor.
+</p>
+</div>
+
+ <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-orgd573c9f">
+ <ul class="org-ul"> <li> <a href="https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02">Burbn’in Instagram’a dönüşümü</a></li>
+ <li> <a href="http://www.catb.org/jargon/html/Z/Zawinskis-Law.html">Zawinski’s law</a></li>
+</ul></div>
+</div>]]></description>
+  <link>https://mobilen.art/news/instagramin_hikayesi/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/instagramin_hikayesi/index.html</guid>
+  <pubDate>Fri, 02 Jun 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>iOS SwiftUI Swipe Actions</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+
+ <div id="org899e8d1" class="figure">
+ <p> <img src="/img/SwipeActions.jpg" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 1: </span>Örnek Swipe Actions</p>
+</div>
+ <h2> <a id="swipe-actions-nedir" class="anchor" href="#swipe-actions-nedir">¶</a>Swipe Actions nedir?</h2> <div class="outline-text-2" id="text-org24f2f36">
+ <p>
+Merhabalar, herhangi bir ui elemanının üzerinden  <code>swipe</code> ile çıkan aksiyonlar iOS kullanıcı deneyiminde önemli rol oynuyor.
+</p>
+
+ <p>
+Kullanıcı deneyimi açısından view’ın altında gizli, sağından veya solundan çıkan bu aksiyonlar görünmüyor olsa bile özellikle iOS kullanıcıları bu davranışı listelerde arayabiliyor.
+</p>
+
+ <p>
+Davranış olarak sağ ve sol demek yerine burada tercih edilen jargon  <code>leading</code> ve  <code>trailing</code>, bunun başlıca sebebi dillerin sağdan sola veya soldan sağa olarak 2 farklı şekilde yazılabilmesi.
+Soldan sağa yazılan dillerde sol-leading, sağ trailing iken, arapça-farsça gibi dillerde sol-trailing, sağ ise leading olmakta.
+</p>
+
+ <p>
+Swipe aksiyonları yazabilmek için yardımcı araçlar mevcut.
+</p>
+
+ <p>
+ <code>Native</code> olarak SwiftUI tarafından iOS 15 ile SwiftUI List’elerine eklendi.
+ <a href="https://developer.apple.com/documentation/swiftui/view/swipeactions(edge:allowsfullswipe:content:)">iOS 15 SwiftUI SwipeActions</a> adresinden native yöntem incelenebilir.
+</p>
+
+ <p>
+Ancak iOS-14 destekliyorsanız veya herhangi bir SwiftUI view’e swipe aksiyonları eklemek isterseniz bunun için güzel bir SwiftUI component’i açık kaynak olarak geliştirilip github’a  <code>spm</code> destekli olarak koyulmuş.
+</p>
+
+ <p>
+Bu yazımızda  <a href="https://github.com/aheze/SwipeActions">Açık Kaynak SwipeActions Reposu</a>’nu inceleyeceğiz.
+</p>
+</div>
+
+ <h2> <a id="swipeactions-kullanımı" class="anchor" href="#swipeactions-kullanımı">¶</a>SwipeActions Kullanımı</h2> <div class="outline-text-2" id="text-org5176427">
+ <div class="highlight"> <pre> <span></span>   <span class="kd">import</span>  <span class="nc">SwiftUI</span>
+   <span class="kd">import</span>  <span class="nc">SwipeActions</span>
+
+   <span class="kd">struct</span>  <span class="nc">ContentView</span> <span class="p">:</span>  <span class="n">View</span>  <span class="p">{</span>
+       <span class="kd">var</span>  <span class="nv">body</span> <span class="p">:</span>  <span class="n">some</span>  <span class="n">View</span>  <span class="p">{</span>
+           <span class="n">SwipeView</span>  <span class="p">{</span>
+               <span class="n">Text</span> <span class="p">(</span> <span class="s">"Hello"</span> <span class="p">)</span>
+                 <span class="p">.</span> <span class="n">frame</span> <span class="p">(</span> <span class="n">maxWidth</span> <span class="p">:</span>  <span class="p">.</span> <span class="n">infinity</span> <span class="p">)</span>
+                 <span class="p">.</span> <span class="n">padding</span> <span class="p">(.</span> <span class="n">vertical</span> <span class="p">,</span>  <span class="mi">32</span> <span class="p">)</span>
+                 <span class="p">.</span> <span class="n">background</span> <span class="p">(</span> <span class="n">Color</span> <span class="p">.</span> <span class="n">blue</span> <span class="p">.</span> <span class="n">opacity</span> <span class="p">(</span> <span class="mf">0.1</span> <span class="p">))</span>
+                 <span class="p">.</span> <span class="n">cornerRadius</span> <span class="p">(</span> <span class="mi">32</span> <span class="p">)</span>
+           <span class="p">}</span>  <span class="n">trailingActions</span> <span class="p">:</span>  <span class="p">{</span>  <span class="kc">_</span>  <span class="k">in</span>
+               <span class="n">SwipeAction</span> <span class="p">(</span> <span class="s">"World"</span> <span class="p">)</span>  <span class="p">{</span>
+                   <span class="bp">print</span> <span class="p">(</span> <span class="s">"Tapped!"</span> <span class="p">)</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+             <span class="p">.</span> <span class="n">padding</span> <span class="p">()</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</pre></div>
+</div>
+
+ <h2> <a id="kaynak-kod-okuma-codepreferencekeycode-kullanımı" class="anchor" href="#kaynak-kod-okuma-codepreferencekeycode-kullanımı">¶</a>Kaynak Kod Okuma:  <code>PreferenceKey</code> kullanımı</h2> <div class="outline-text-2" id="text-org5c1ca28">
+ <p>
+Veri iletişimi view componentleri arasında Environment Objeler uzerinden  <code>Parent</code> →  <code>Child</code> view yönünde olabiliyor.
+Veya data binding ile  <code>@Binding</code> çift taraflı  <code>reactive</code> şekilde sağlanabiliyor.
+</p>
+
+ <p>
+PreferenceKey ile olan bu veri iletişiminde ise diğer bir ihtiyaç olan ise  <code>child</code> →  <code>parent</code> arasında veri geçişi yapabiliyoruz.
+</p>
+
+ <div class="highlight"> <pre> <span></span>   <span class="kd">struct</span>  <span class="nc">AllowSwipeToTriggerKey</span> <span class="p">:</span>  <span class="n">PreferenceKey</span>  <span class="p">{</span>
+       <span class="kd">static</span>  <span class="kd">var</span>  <span class="nv">defaultValue</span> <span class="p">:</span>  <span class="nb">Bool</span> <span class="p">?</span>  <span class="p">=</span>  <span class="kc">nil</span>
+       <span class="kd">static</span>  <span class="kd">func</span>  <span class="nf">reduce</span> <span class="p">(</span> <span class="n">value</span> <span class="p">:</span>  <span class="kr">inout</span>  <span class="nb">Bool</span> <span class="p">?,</span>  <span class="n">nextValue</span> <span class="p">:</span>  <span class="p">()</span>  <span class="p">-></span>  <span class="nb">Bool</span> <span class="p">?)</span>
+       <span class="p">{</span>  <span class="n">value</span>  <span class="p">=</span>  <span class="n">nextValue</span> <span class="p">()</span>  <span class="p">}</span>
+   <span class="p">}</span>
+</pre></div>
+
+ <p>
+Preference key tanımlarken ihtiyaç duyulan  <code>PreferenceKey</code> protocol’unu  <code>conform</code> etmek.
+Bunun için bir varsayılan değer  <code>defaultValue</code> gerekiyor.
+Ayrıca ikinci olarak  <code>reduce</code> fonksiyonu, bu fonksiyon dışarıdan sağlanan değerin preference olarak set edilmesine müdahale edilebilecek noktayı sağlıyor.
+</p>
+
+ <p>
+Kullanımı için 2 tane  <code>modifier</code>’imiz mevcut:  <code>preference</code> ve  <code>onPreferenceChange</code>.
+</p>
+
+ <p>
+Preference Key ile veriyi yukarı aktarma  <a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L328">burada</a> gorebilirsiniz:
+</p>
+ <div class="highlight"> <pre> <span></span>   <span class="n">view</span> <span class="p">.</span> <span class="n">onPreferenceChange</span> <span class="p">(</span> <span class="n">AllowSwipeToTriggerKey</span> <span class="p">.</span> <span class="kc">self</span> <span class="p">)</span>  <span class="p">{</span>  <span class="n">allow</span>  <span class="k">in</span>
+       <span class="c1">/// Unwrap the value first (if it's not the edge action, `allow` is `nil`).</span>
+       <span class="k">if</span>  <span class="kd">let</span>  <span class="nv">allow</span>  <span class="p">{</span>
+           <span class="n">swipeToTriggerLeadingEdge</span>  <span class="p">=</span>  <span class="n">allow</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</pre></div>
+
+ <p>
+Ayrıca apple sdk’inde de  <code>navigationTitle</code> modifier’i ile  <code>preference key</code> kullanılarak  <code>child</code> üzerinden çağırılan bir method ile üst view’deki  <code>title</code>’i değiştirebiliyor.
+</p>
+
+ <p>
+Özetle hiyerarşide yukarı veri taşıyabilmek için kullanılan bu yapının kullanıldığını görüyoruz.
+Daha detaylı anlamak için  <a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a> yazısına göz atabilirsiniz.
+</p>
+</div>
+
+ <h2> <a id="extension-methodlara-generic-constraint-uygulamak" class="anchor" href="#extension-methodlara-generic-constraint-uygulamak">¶</a>Extension methodlara Generic Constraint Uygulamak</h2> <div class="outline-text-2" id="text-orgafc43b2">
+ <p>
+ <code>Generic</code> kullanarak  <code>extension method</code>’larının yalnızca ilgili tipler ile kullanılmasını derleme seviyesinde sağlamak tatlı bir özellik.
+ <a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L986">Burada</a> ilgili örneği görebilirsiniz.
+</p>
+
+ <div class="highlight"> <pre> <span></span>   <span class="kd">public</span>  <span class="kd">extension</span>  <span class="nc">SwipeAction</span>  <span class="k">where</span>  <span class="n">Label</span>  <span class="p">==</span>  <span class="n">Text</span> <span class="p">,</span>  <span class="n">Background</span>  <span class="p">==</span>  <span class="n">Color</span>  <span class="p">{</span>
+       <span class="c1">// Buraya yazılan methodlar yalnızca</span>
+       <span class="c1">// Label Generic Parametresi Text olan ve Background'u Color olan 'SwipeAction'lara önerilir.</span>
+   <span class="p">}</span>
+</pre></div>
+</div>
+
+ <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-orgd082248">
+ <ol class="org-ol"> <li> <a href="https://github.com/aheze/SwipeActions">SwipeActions Repo</a></li>
+ <li> <a href="https://developer.apple.com/documentation/swiftui/preferences?changes=_7">Apple PreferenceKey Dokümantasyonu</a></li>
+ <li> <a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a></li>
+</ol></div>
+</div>]]></description>
+  <link>https://mobilen.art/news/ios_swiftui_swipe_actions/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/ios_swiftui_swipe_actions/index.html</guid>
+  <pubDate>Fri, 02 Jun 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>Kitap: Make Something Wonderful</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+
+ <div id="orgf706a44" class="figure">
+ <p> <img src="/img/stevejobs_with_bicycle.jpg" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 1: </span>Bilgisayar zihnin bisikletidir.</p>
+</div>
+
+ <p>
+Steve Jobs’un aramızdan ayrılışının üzerinden 12 sene geçmiş :/.
+</p>
+
+ <p>
+İşlerinde ve ilişkilerinde hayatına dair daha derin bir bakış açısı yakalayabileceğimiz konuşmalarını, yazışmalarını ve hatıralarını
+biriktiren ve sanki kendisinin ağzından yazılmış bir kitap olarak ücretsiz yayınlanan bu kitabı zevkle okuyacağınıza inanıyorum.
+</p>
+
+ <p>
+İçerisindeki konulara değinmek gerekirse:
+</p>
+ <ul class="org-ul"> <li>Apple’dan ayrılışı, NeXT’in kuruluşu ve sonrasında tekrar Apple’a satılıp geri dönüşündeki hikayeler.</li>
+ <li>Pixar’da elde ettiği başarılar.</li>
+ <li>Teknolojiyi, sanatı, kullanıcı deneyimini iç içe görmesi ve kendi eğitim hayatındaki yaklaşımlarını bulabilirsiniz.</li>
+</ul> <p>
+ <a href="http://apple.co/sja">Apple Books</a> üzerinden veya  <a href="https://stevejobsarchive.com/book/download">indirerek</a> faydalanabilirsiniz
+</p>
+</div>]]></description>
+  <link>https://mobilen.art/news/kitap_make_something_wonderful/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/kitap_make_something_wonderful/index.html</guid>
+  <pubDate>Fri, 02 Jun 2023 08:00:00 +0300</pubDate>
 </item>
 <item>
   <title>WWDC 23 Hakkında Bilmeniz Gerekenler</title>
@@ -1360,9 +1073,9 @@ Apple’ın WWDC’si geçtiğimiz günlerde gerçekleşti ve hem kullanıcılar
 Bu yazıda, bir geliştiricinin bakış açısından bu yılın WWDC’sindeki favori güncellemelerimden bahsedeceğim. Bu yeniliklerle oynamak için çok fazla zamanım olmadığınından deneyimim çoğunlukla  <a href="https://developer.apple.com/wwdc23/101">Keynote</a> ve  <a href="https://developer.apple.com/wwdc23/102">Platforms State of the Union</a> sunumlarına dayandığını belirtmekte fayda var.
 </p>
 
- <h2> <a id="vision-pro" class="anchor" href="#vision-pro">¶</a>Vision Pro</h2> <div class="outline-text-2" id="text-org4dea9aa">
+ <h2> <a id="vision-pro" class="anchor" href="#vision-pro">¶</a>Vision Pro</h2> <div class="outline-text-2" id="text-org3fd8230">
 
- <div id="org6721442" class="figure">
+ <div id="orgbe9fa95" class="figure">
  <p> <img src="/img/vision_pro.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 1: </span>Vision Pro</p>
 </div>
@@ -1392,7 +1105,7 @@ VisionOS için daha derinlemesine bir SwiftUI deneyimine ihtiyaç duyuyorsanız 
 </p>
 </div>
 
- <h2> <a id="swift-macros" class="anchor" href="#swift-macros">¶</a>Swift Macros</h2> <div class="outline-text-2" id="text-orge915b6f">
+ <h2> <a id="swift-macros" class="anchor" href="#swift-macros">¶</a>Swift Macros</h2> <div class="outline-text-2" id="text-org3de76b7">
  <p>
 Hepimizi heyecanlandıran bir diğer haber ise Swift Macros’un duyurulmasıydı. Daha önceden zaten property wrappers ve function builders gibi tool’lara sahiptik. Bu tool’lar, arka plandaki mantığı kapsüllememize ve boilerplate kod miktarını azaltmamıza olanak sağlayan özelliklerdi. Swift 5.9 ile birlikte, toolkit’e makrolar da ekleniyor. Makrolar, daha fazla esneklik sağlayarak kod yazma sürecinde daha fazla kontrol ve kolaylık sunmayı vadediyor. Bu yeni özellik, Swift geliştiricilerinin daha temiz ve okunabilir kod yazmalarına önemli bir katkı sağlayacağa benziyor.
 </p>
@@ -1406,13 +1119,13 @@ Swift makroları ile alakalı daha detaylı inceleme yapmak isterseniz,  <a href
 </p>
 </div>
 
- <h2> <a id="swiftui-yenilikleri" class="anchor" href="#swiftui-yenilikleri">¶</a>SwiftUI Yenilikleri</h2> <div class="outline-text-2" id="text-org532c10a">
+ <h2> <a id="swiftui-yenilikleri" class="anchor" href="#swiftui-yenilikleri">¶</a>SwiftUI Yenilikleri</h2> <div class="outline-text-2" id="text-org3cedde1">
  <p>
 Her yıl SwiftUI yenilik ve iyileştirmelerine UIKit’in yerini tamamen alabilir mi gözüyle bakıyoruz. Her ne kadar buna daha zaman var gibi dursa da, bu yılki SwiftUI yenilikleri de bir hayli göze çarpıyor.
 </p>
 
 
- <div id="org00ff06c" class="figure">
+ <div id="org2763ada" class="figure">
  <p> <img src="/img/observable_macro.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 2: </span>SwiftUI için yeni macrolar</p>
 </div>
@@ -1422,7 +1135,7 @@ Bu yılki SwiftUI değişiklikleri, veri akışını daha da sadeleştirmeyi hed
 </p>
 
 
- <div id="orgfd33a64" class="figure">
+ <div id="orge3673e0" class="figure">
  <p> <img src="/img/macro_usage.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 3: </span>SwiftUI örnek macro</p>
 </div>
@@ -1448,9 +1161,9 @@ SwiftUI yeniliklerine daha yakından göz atmak isterseniz  <a href="https://dev
 </p>
 </div>
 
- <h2> <a id="swiftdata" class="anchor" href="#swiftdata">¶</a>SwiftData</h2> <div class="outline-text-2" id="text-org6c90ebd">
+ <h2> <a id="swiftdata" class="anchor" href="#swiftdata">¶</a>SwiftData</h2> <div class="outline-text-2" id="text-orgb38a608">
 
- <div id="orgcad1a8a" class="figure">
+ <div id="org8c8609d" class="figure">
  <p> <img src="/img/SwiftData.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 4: </span>SwiftData</p>
 </div>
@@ -1484,7 +1197,7 @@ Bu sayıda WWDC23 ’ün önemli gelişmelerini sizlerle paylaştım. Umarım fa
 </p>
 </div>
 
- <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h2> <div class="outline-text-2" id="text-org35f446c">
+ <h2> <a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h2> <div class="outline-text-2" id="text-org400379c">
  <ol class="org-ol"> <li> <a href="https://developer.apple.com/wwdc23/10167">Expand on Swift Macros</a></li>
  <li> <a href="https://developer.apple.com/wwdc23/10148">What’s new in SwiftUI</a></li>
  <li> <a href="https://developer.apple.com/wwdc23/10187">Meet SwiftData</a></li>
@@ -1492,7 +1205,510 @@ Bu sayıda WWDC23 ’ün önemli gelişmelerini sizlerle paylaştım. Umarım fa
 </div>]]></description>
   <link>https://mobilen.art/news/wwdc23_hakkinda_bilmeniz_gerekenler/index.html</link>
   <guid isPermaLink="false">https://mobilen.art/news/wwdc23_hakkinda_bilmeniz_gerekenler/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
+  <pubDate>Fri, 02 Jun 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>Xcodes: Xcode’un Sürümlerini Yönetmenin Etkin Yolu</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://linkedin.com/in/egehan-kalayc%C4%B1-736b4a238">Egehan Kalaycı</a> yazdı.
+</p>
+
+ <p>
+Merhaba Mobilen okurları, bugün sizlere Xcode’un farklı sürümlerini nasıl kolaylıkla yönetebileceğinizi anlatacağım.
+</p>
+
+
+ <div id="org5f94402" class="figure">
+ <p> <img src="/img/xcode_naming.jpg" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 1: </span>Xcode Naming</p>
+</div>
+
+ <p>
+Öncelikle,  <b>Xcode</b>’un doğru yazımı konusunda bir anlaşma yapalım. İnsanlar bazen XCode, xCode gibi tuhaf kombinasyonlarla karşımıza çıkabilirler. Ancak gerçek şu ki, doğru yazımı  <b>Xcode</b>’dur. Evet, büyük harfle “ <b>X</b>” ile başlayıp ardından “ <b>code</b>” olarak devam eder. Şimdi, bu konuda anlaştıysak  <b>Xcode</b>’un farklı sürümlerini yönetme konusuna odaklanalım.
+</p>
+
+ <p>
+Xcode, Apple platformlarında uygulama geliştirmek için kullanılan bir entegre geliştirme ortamıdır (IDE). Ancak, App Store’dan Xcode’u indirmenin bazı dezavantajları vardır. En güncel sürümleri bulmak veya yavaş bir indirme hızıyla karşılaşmakta sorun yaşayabilirsiniz. Daha da önemlisi, eski sürümlere geri dönmek veya birden fazla sürümü aynı anda kullanmak isterseniz, App Store bu özellikleri sunmamaktadır.
+</p>
+
+ <p>
+İşte tam da bu noktada size bir çözüm sunmak istiyorum: Xcodes!
+</p>
+
+ <p>
+Xcodes, Xcode’un farklı sürümlerini tek bir komutla indirmenizi sağlayan harika bir araçtır. Bu sayede istediğiniz sürümü, yüksek indirme hızlarıyla elde edebilirsiniz.
+Xcodes, indirme işlemlerini gerçekleştirmek için aria2 adlı bir komut satırı aracını kullanır. Bu araç, indirme hızınızı optimize etmek için çoklu bağlantılar ve paralel indirmeler kullanır. Böylece Xcode sürümlerini daha hızlı bir şekilde bilgisayarınıza indirebilirsiniz.
+</p>
+
+ <p>
+Gelelim  <code>Xcodes</code>’u kullanmaya. Bunun iki farklı yöntemi bulunmaktadır.
+</p>
+
+ <p>
+İlk yöntem, Xcodes’un kullanıcı dostu bir arayüzü olan native uygulamasını indirip kullanmaktır. Bu sayede sürümleri görsel olarak kolaylıkla yönetebilirsiniz.
+</p>
+
+
+ <div id="org09b3698" class="figure">
+ <p> <img src="/img/xcodes_gui.jpg" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 2: </span>Xcodes Gui</p>
+</div>
+
+ <p>
+İkinci yöntem ise terminal üzerinden Xcodes’u kullanmaktır. Eğer terminal üzerinden kullanmak isterseniz,  <code>xcodes</code> komutunu kullanarak çeşitli işlemleri gerçekleştirebilirsiniz. Örneğin, mevcut sürümleri görüntülemek için  <code>xcodes list</code> komutunu kullanabilir, indirmek istediğiniz sürümün yanındaki numarayı yazarak indirme işlemini başlatabilirsiniz. Ayrıca, indirdiğiniz sürümleri  <code>xcodes installed</code> komutu ile görüntüleyebilir ve  <code>xcodes select</code> komutuyla varsayılan sürümü belirleyebilirsiniz.
+</p>
+
+
+ <div id="org9d2aa62" class="figure">
+ <p> <img src="/img/xcodes_terminal.jpg" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 3: </span>Xcodes Terminal</p>
+</div>
+
+ <p>
+Artık Xcode’un farklı sürümlerini kolaylıkla yönetebilir, istediğiniz sürüme hızlıca erişebilir ve projelerinizde esnek bir şekilde çalışabilirsiniz. Bir sonraki yazıda tekrar buluşmak dileğiyle.
+</p>
+
+ <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-org3211bc2">
+ <ol class="org-ol"> <li> <a href="https://www.xcodes.app/">https://www.xcodes.app/</a></li>
+ <li> <a href="https://github.com/XcodesOrg">https://github.com/XcodesOrg</a></li>
+</ol></div>
+</div>]]></description>
+  <link>https://mobilen.art/news/xcodes_surum_yonetim/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/xcodes_surum_yonetim/index.html</guid>
+  <pubDate>Fri, 02 Jun 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>Evolution of the Medium iOS app architecture</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://linkedin.com/in/myusufka">Yusuf Kaya</a> yazdı.
+</p>
+
+ <p>
+Her alanda olduğu gibi bir mobil projesinde de sürekli olarak gelişen teknolojik trendlere uyum sağlamak da büyük bir önem taşımaktadır.
+</p>
+
+ <p>
+Yeni mimari geliştirmeler, bir projenin başarısı için hayati bir rol oynamaktadır. Bu geliştirmeler, uygulamanın performansını artırırken, güvenlik açıklarını kapatmak ve gelecekteki ihtiyaçlarını karşılamak için tasarlanır.
+</p>
+
+ <p>
+Yeni mimari yaklaşımlar, yazılım mühendislerine daha etkili bir şekilde çalışabilmeleri için daha fazla esneklik ve verimlilik sağlamayı amaçlar. Ayrıca, proje ekibine, uygulamanın yaşam döngüsü boyunca sürekli iyileştirmeler yapma ve yeni özellikler eklemek için daha iyi bir temel sunmayı amaçlar. Modüler mimari de projelerin geliştirilmesinde önemli bir yer tutan yenilikçi bir yaklaşımdır.
+</p>
+
+ <p>
+ <a href="https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e">Evolution of the Medium iOS App Architecture</a> yayınında da Medium’un iOS uygulamasının modüler mimari evrimini anlatmaktadır.
+</p>
+
+ <h2> <a id="modüler-mimari-nedir" class="anchor" href="#modüler-mimari-nedir">¶</a>Modüler Mimari Nedir?</h2> <div class="outline-text-2" id="text-orgcfbba88">
+ <p>
+Modüler mimari, projelerin geliştirilmesinde kullanılan bir mimari yaklaşımıdır. Bu yaklaşım, bir uygulamayı bağımsız bileşenlere veya modüllere ayırarak, her bir modülün kendi sorumluluk alanına odaklanmasını ve birbirleriyle minimum bağımlılık içinde çalışmasını sağlar.
+</p>
+</div>
+ <h3> <a id="modüler-mimarinin-faydaları" class="anchor" href="#modüler-mimarinin-faydaları">¶</a>Modüler Mimarinin Faydaları</h3> <div class="outline-text-3" id="text-org208a368">
+ <p>
+Modüler mimarinin faydaları şunlardır:
+</p>
+ <ul class="org-ul"> <li>Daha iyi organizasyon: Modüller arasında sorumluluk alanlarına odaklanarak projenin daha iyi organize edilmesi sağlanır.</li>
+ <li>Paralel geliştirme: Farklı modüller, ayrı ekipler tarafından aynı anda geliştirilebilir.</li>
+ <li>Yeniden kullanılabilirlik: Modüller, başka projelerde veya farklı parçalarda kolayca yeniden kullanılabilir.</li>
+ <li>Bakım kolaylığı: Bağımsız modüllerin yönetimi, hataların tespitini kolaylaştırır ve bakım sürecini iyileştirir.</li>
+ <li>Ölçeklenebilirlik: Projeyi büyütme veya değiştirme gerektiğinde, modüller arasındaki etkileşim minimum düzeyde olduğu için ölçeklenebilirlik sağlanır.</li>
+</ul></div>
+ <h2> <a id="medium-uygulamasının-evrimi" class="anchor" href="#medium-uygulamasının-evrimi">¶</a>Medium Uygulamasının Evrimi</h2> <div class="outline-text-2" id="text-org9e321c4">
+ <p>
+Bu bilgiler ışığında Medium’un iOS uygulamasının mimarisinin evrim serüveninin inceleyebiliriz. Kullanılan yeni teknikler ve yaklaşımlar, bu süreçte yaşanan zorluklar ve çıkarılan dersler bakımından faydalı bir yayın olduğunu düşünüyorum. Keyifli okumalar dilerim.
+</p>
+</div>
+ <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-orgb162362">
+ <ol class="org-ol"> <li> <a href="https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e">Evolution of the Medium iOS App Architecture</a></li>
+</ol></div>
+</div>]]></description>
+  <link>https://mobilen.art/news/evolution_of_the_medium_ios_app/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/evolution_of_the_medium_ios_app/index.html</guid>
+  <pubDate>Thu, 11 May 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://linkedin.com/in/egehan-kalayc%C4%B1-736b4a238">Egehan Kalaycı</a> yazdı.
+</p>
+
+ <p>
+Selam “Mobilen” okurları! Bugün sizinle çok önemli ve aslında fazlasıyla işlevsel bir konuyu konuşacağız: Deep Link’leri. Evet, belki ilk duyduğunuzda biraz karışık gelebilir ama emin olun, bu yazıyı okuduktan sonra onları tanıyan en iyi kişi siz olacaksınız.
+</p>
+
+ <h2> <a id="deep-link-nedir" class="anchor" href="#deep-link-nedir">¶</a>Deep Link Nedir?</h2> <div class="outline-text-2" id="text-org081addd">
+ <p>
+Deep link, belirli bir sayfaya veya işleme mobil uygulama içinde doğrudan erişmenizi sağlayan bir tür bağlantıdır. Böylece, kullanıcıları uygulamanın belirli bir noktasına yönlendirerek, daha etkileşimli ve kullanıcı odaklı bir deneyim sunabiliriz.
+</p>
+</div>
+
+ <h3> <a id="biraz-daha-somutlaştıralım" class="anchor" href="#biraz-daha-somutlaştıralım">¶</a>Biraz Daha Somutlaştıralım</h3> <div class="outline-text-3" id="text-orgf2659f3">
+ <p>
+Örneğin, Instagram’da dolaşırken bir Petrol Ofisi kahve kampanyası gördünüz ve tıkladınız. İşte tam da burada devreye deep linkler giriyor. Tıkladığınızda, direkt olarak Petrol Ofisi’nin mobil uygulaması açılıyor ve sizi o özel kampanyaya yönlendiriyor. Kulağa hoş geliyor değil mi?
+</p>
+
+ <p>
+Veya belki de şifrenizi sıfırlamanız gerekiyor ve bu durumda da gelen e-postadaki linke tıkladığınızda, sizi bir web sayfasına yönlendirmek yerine direkt olarak uygulamada güzel ve kullanıcı dostu bir deneyim yaşamanızı sağlıyor. İşte bu, deep linklerin gücü!
+</p>
+</div>
+
+ <h2> <a id="deep-linkin-küçük-detayları" class="anchor" href="#deep-linkin-küçük-detayları">¶</a>Deep Link’in Küçük Detayları</h2> <div class="outline-text-2" id="text-orgb1a69bd">
+ <p>
+Deep linklerin kullanımı oldukça basit gibi görünse de, yönetilmesi gereken bazı durumlar vardır. Bu detaylar, uygulamanın nasıl ve ne zaman hangi deep linki kullanacağını belirler. Ama merak etmeyin, bu yazının ilerleyen bölümlerinde bunları ayrıntılı olarak ele alacağım.
+</p>
+</div>
+
+ <h2> <a id="deep-link-çeşitleri" class="anchor" href="#deep-link-çeşitleri">¶</a>Deep Link Çeşitleri</h2> <div class="outline-text-2" id="text-org41594ff">
+ <p>
+ <b> <b>Dinamik Linkler:</b></b>
+Dinamik linkler, kullanıcıları belirli bir içeriğe veya uygulama içi konuma yönlendirmek için kullanılır. Bu linkler “dinamik” olarak adlandırılır çünkü onlar hem uygulama içi hem de web içeriğine yönlendirebilir. Örneğin, bir kullanıcı uygulamanızı henüz indirmediyse, dinamik bir link onları App Store veya Google Play’e yönlendirebilir. Eğer uygulama zaten yüklüyse, aynı link onları uygulama içindeki belirli bir konuma yönlendirebilir. Bu özellik, kullanıcının deneyimini optimize etmek için önemlidir.
+</p>
+
+ <p>
+ <b> <b>Deferred Deep Linking:</b></b>
+Deferred Deep Linking, deep linking’in bir formudur ve uygulama önceden yüklenmemişse bile belirli bir içeriğe veya uygulama içi konuma yönlendirmeyi mümkün kılar. Eğer bir kullanıcı uygulamayı henüz indirmediyse, bu tür bir link önce onları App Store veya Google Play’e yönlendirir. Uygulama indirildikten ve açıldıktan sonra, kullanıcı otomatik olarak belirtilen içeriğe veya konuma yönlendirilir.
+</p>
+
+ <p>
+Farklarına gelince, her ne kadar her iki tür link de uygulamanın indirilmesi ve belirli bir konuma yönlendirilmesi sürecini yönetse de, genellikle Dinamik Linkler daha geniş özelliklere sahip olup, kullanıcıları yönlendirme ve deneyimlerini özelleştirme konusunda daha fazla esneklik sunar. Örneğin, Dinamik Linkler genellikle linkin nereden geldiğini (örneğin, bir e-postadan, sosyal medyadan, bir reklamdan vb.) izleme ve bunun yanı sıra kullanıcının işletim sistemini ve cihazını algılama yeteneğine sahiptir, böylece en uygun deneyimi sunabilir. Bu nedenle, Dinamik Linkler genellikle pazarlama kampanyalarında ve kullanıcı etkileşimlerini artırmak için kullanılır.
+</p>
+</div>
+
+ <h2> <a id="deep-link-yönetim-yöntemleri" class="anchor" href="#deep-link-yönetim-yöntemleri">¶</a>Deep Link Yönetim Yöntemleri</h2> <div class="outline-text-2" id="text-org72490d9">
+ <p>
+Deep linklerinizi hem iOS hem Android uygulamalarınızda yönetebilmeniz için iki önemli yöntem bulunmaktadır: URL Scheme ve Universal Link (iOS) veya App Links (Android). Bu yöntemler, uygulamalarınızdaki deep linklerin yönetimini kolaylaştırır ve kullanıcı deneyimini artırır. Ancak her bir yöntemin kendine özgü özellikleri ve kullanım alanları vardır. Bu yüzden, hangi yöntemin sizin uygulamanız için en uygun olduğunu belirlemek önemlidir.
+</p>
+</div>
+
+ <h2> <a id="deep-link-url-scheme-ve-universal-link-karşılaştırması" class="anchor" href="#deep-link-url-scheme-ve-universal-link-karşılaştırması">¶</a>Deep Link: URL Scheme ve Universal Link Karşılaştırması</h2> <div class="outline-text-2" id="text-org7c444ce">
+ <p>
+Deep link yönetiminde kullanılan iki temel yöntem olan URL Scheme ve Universal Link, birbirinden farklı özelliklere sahiptir. Hem geliştiricilerin hem de kullanıcıların deneyimini doğrudan etkileyen bu özellikler, hangi yöntemin hangi durumda kullanılacağını belirler.
+</p>
+
+ <p>
+URL Scheme ve Universal Link’in karşılaştırmalı tablosu:
+</p>
+</div>
+
+ <h3> <a id="url-scheme" class="anchor" href="#url-scheme">¶</a>URL Scheme</h3> <div class="outline-text-3" id="text-orgbff2c3a">
+ <ul class="org-ul"> <li> <b> <b>Kurulumu Basittir:</b></b> URL Scheme’yi kullanmaya başlamak için karmaşık bir kurulum sürecine ihtiyaç duyulmaz.</li>
+ <li> <b> <b>SSL Zorunluluğu Yoktur:</b></b> URL Scheme, SSL sertifikası zorunluluğu olmadan kullanılabilir.</li>
+ <li> <b> <b>Kullanıcı Onayı İster:</b></b> URL Scheme, uygulamaya erişim izni almak için kullanıcıya bir pop-up gösterir. Bu, kullanıcıların uygulamayı açma konusunda daha bilinçli olmasını sağlar.</li>
+ <li> <b> <b>Uygulama Yüklü Değilse Çalışmaz:</b></b> URL Scheme, uygulamanın cihazda yüklü olmasını gerektirir. Eğer uygulama yüklü değilse, URL Scheme çalışmaz.</li>
+ <li> <b> <b>Aynı Tanımlar ve Kod Mantığı Gerekli:</b></b> URL Scheme’in hem iOS hem de Android platformlarında çalışabilmesi için, tanımlarının ve URL’i işleyen kod mantığının aynı olması gerekmektedir.</li>
+ <li> <b> <b>Kullanıcı Dostu Değildir:</b></b> URL Scheme linkleri genellikle “myApp://page/profile” gibi görünürler ve bu da genellikle kullanıcılar için anlaşılması zor olabilir.</li>
+</ul></div>
+
+ <h3> <a id="universal-link" class="anchor" href="#universal-link">¶</a>Universal Link</h3> <div class="outline-text-3" id="text-orge11a7c4">
+ <ul class="org-ul"> <li> <b> <b>Kurulumu Komplekstir:</b></b> Universal Link’in kurulum süreci, URL Scheme’e göre daha karmaşıktır.</li>
+ <li> <b> <b>SSL Zorunludur:</b></b> Universal Link kullanımı için SSL sertifikası zorunludur. Bu, uygulamanın güvenlik seviyesini artırır.</li>
+ <li> <b> <b>Erişim İzni İstemez:</b></b> Universal Link, uygulamaya erişim izni almak için kullanıcıdan herhangi bir onay istemez.</li>
+ <li> <b> <b>Uygulama Yüklü Değilse Yedek URL’ler Kullanır:</b></b> Eğer uygulama cihazda yüklü değilse, Universal Link yedek bir URL’ye yönlendirme yapar. Bu, kullanıcıların her zaman istedikleri içeriğe ulaşabilmesini sağlar.</li>
+ <li> <b> <b>Oluşturulan Link Tüm Platformları Destekler:</b></b> Universal Link ile oluşturulan bir link, tüm platformlarda çalışabilir.</li>
+ <li> <b> <b>Gündelik Kullanılan Linkler Gibidir:</b></b> Universal Linkler, kullanıcı dostudur ve gündelik internet kullanımında karşılaştığımız web adreslerine benzerler. Örneğin, “www.myapp.com/page/profile” gibi.</li>
+</ul> <p>
+Bu özellikler, URL Scheme ve Universal Link arasında önemli farklar olduğunu gösterir. Seçiminiz, uygulamanızın ihtiyaçlarına, hedeflerinize ve kullanıcı deneyiminizi nasıl şekillendirmek istediğinize bağlı olacaktır. Unutmayın, her iki yöntemin de kendi güçlü ve zayıf yanları vardır. Önemli olan, hangi yöntemin sizin ve kullanıcılarınızın ihtiyaçlarını en iyi şekilde karşılayacağını belirlemektir.
+</p>
+
+ <p>
+Şimdi, daha fazla derine dalalım ve URL Scheme ve Universal Link’in nasıl çalıştığını inceleyelim…
+</p>
+</div>
+
+ <h2> <a id="url-scheme-nedir-ve-nasıl-kullanılır" class="anchor" href="#url-scheme-nedir-ve-nasıl-kullanılır">¶</a>URL Scheme: Nedir ve Nasıl Kullanılır?</h2> <div class="outline-text-2" id="text-org39cb213">
+ <p>
+URL Scheme, iOS ve Android platformları için belirli bir URL şemasını kaydedip, diğer uygulamaların bu şema ile başlayan URL’leri açabilmesini sağlayan bir deep link yöntemidir. Peki, nasıl çalışır? Hadi gelin adım adım birlikte inceleyelim.
+</p>
+</div>
+
+ <h3> <a id="url-scheme-nasıl-tanımlanır" class="anchor" href="#url-scheme-nasıl-tanımlanır">¶</a>URL Scheme: Nasıl Tanımlanır?</h3> <div class="outline-text-3" id="text-org5e56e41">
+ <p>
+URL Scheme’in kurulumu oldukça basittir. Örneğin, bir iOS uygulamasına URL Scheme nasıl tanımlanır, birlikte bakalım.
+</p>
+ <ol class="org-ol"> <li>Öncelikle, Xcode’u açıyoruz.</li>
+ <li>Ardından, `Project Settings -> Info` yolunu izliyoruz.</li>
+ <li>Bu bölümde “URL Types” kısmına yeni bir URL Scheme tanımı yapabiliyoruz.</li>
+</ol> <p width="100%">
+ <img src="/img/0.jpg" width="100%"></img>
+Bu şekilde bir tanımlama yaptıktan sonra, telefonumuzdan bir tarayıcı veya notlar uygulamasına gidip bu linki test edebiliriz. “com.myApp” yazıp enter’a tıkladığımızda fark ederiz ki, bir şey olmamıştır.
+</p>
+
+ <p>
+Peki, bu durum neden oluşur? İşin aslı, iOS’un bir metni bağlantı olarak tanıması için, URL formatına uygun olmamızı bekler. Yani linkimizi “com.myApp://main” olarak güncellemeliyiz. Bu formatı girdiğimizde, bir izin pop-up’ı ile karşılaşırız. Eğer burada “Aç” diyerek izin verirsek, linkin uygulamamızı açtığını görebiliriz.
+</p>
+
+ <p width="100%">
+ <img src="/img/1.jpg" width="100%"></img>
+Fakat, evet uygulamayı açtık ama henüz uygulama içerisinde bir yönlendirme yapmadık. Mesela uygulamanın “profil bilgilerim” sayfasına gitmek istiyoruz. Peki, bunu nasıl yapabiliriz?
+</p>
+</div>
+
+ <h3> <a id="url-scheme-ile-uygulama-i̇çi-yönlendirme" class="anchor" href="#url-scheme-ile-uygulama-i̇çi-yönlendirme">¶</a>URL Scheme ile Uygulama İçi Yönlendirme</h3> <div class="outline-text-3" id="text-org0aadd74">
+ <p>
+Bu işlem için “AppDelegate.swift” dosyasını kullanacağız. Bu dosyada bulunan `open url: URL` metodu, başka bir uygulama veya sistem bileşeni tarafından gönderilen URL’yi yakalayıp işlememizi sağlar.
+</p>
+
+ <p>
+Hatırlayalım, bir metnin bağlantı olabilmesi için “scheme://host” yapısına uyması gerektiğini belirtmiştik. Şimdi bu yapının bir örneğini inceleyelim. Örneğin, `com.myApp://content?contentID=“1881”` şeklinde bir URL tanımlayalım.
+</p>
+
+ <p>
+Bu URL’deki parametreleri elde etmek ve bunları kendi yönlendirme yapımıza göre işlemek için aşağıdaki gibi bir kod yapısına ihtiyacımız bulunmaktadır.
+</p>
+
+ <p width="100%">
+ <img src="/img/2.jpg" width="100%"></img>
+Bu kod yapısında,
+</p>
+ <ul class="org-ul"> <li>`url.scheme` = “com.myApp”</li>
+ <li>`url.host` = “content”</li>
+ <li>`parameters` = [“contentID” : “1881”]</li>
+</ul> <p>
+olacaktır.
+</p>
+</div>
+
+ <h3> <a id="url-scheme-sonuç" class="anchor" href="#url-scheme-sonuç">¶</a>URL Scheme: Sonuç</h3> <div class="outline-text-3" id="text-org5057805">
+ <p>
+URL Scheme, tanımlanması ve uygulanması oldukça kolay bir deep link yöntemidir. Ancak, bu yöntemin en büyük dezavantajı, uygulamanın cihazda yüklü olmaması durumunda çalışmamasıdır. Bu durumda, kullanıcı boş bir web sayfasıyla karşılaşacaktır.
+</p>
+
+ <p>
+İşte tam bu noktada Universal Link ve App Links yöntemleri devreye giriyor. Bu yöntemler, URL Scheme’in karşılaştığı bu sorunu çözerek kullanıcı deneyimini daha da iyileştirebilir. Şimdi biraz daha derinlere inelim ve Universal Link ve App Links yöntemlerini inceleyelim…
+</p>
+</div>
+
+ <h3> <a id="universal-linkapp-links-nedir" class="anchor" href="#universal-linkapp-links-nedir">¶</a>Universal Link/App Links: Nedir?</h3> <div class="outline-text-3" id="text-org5bffd24">
+ <p>
+Universal Link ve App Links, URL Scheme’in dezavantajlarını azaltmak için iOS 9/Android 6.0 ve sonraki sürümlerde kullanılabilen bir deep link yöntemidir.
+</p>
+
+ <p>
+Bu yöntem, URL Scheme’in dezavantajlarını giderirken, kurulumun daha karmaşık olmasını beraberinde getirir.
+</p>
+
+ <p>
+Kurulum adımlarını ve örneklerimi iOS özelinde veriyor olacağım fakat konsepti anlamamız yeterli olacaktır. Çünkü Android’de de olaylar birbirine çok benzer.
+</p>
+
+ <p>
+Özellikle, Universal Link’lerin en genel anlamıyla, bir web sayfası URL’sini iOS uygulamanızla ilişkilendirmenizi sağlar. Böylece o URL’yi açtığınızda iOS, mobil uygulamanızı tanır.
+</p>
+
+ <p>
+Ama burada bir sorun var mıdır? Örneğin, “myApp” adlı uygulamanızı Instagram’ın URL’si ile ilişkilendirip, iPhone’dan Instagram’a giren herkesin sizin uygulamanıza yönlendirilmesini sağlayabilir misiniz? Tam bu sorunu çözmek için iOS, URL’lerin arkasına bir JSON dosyası eklemenizi ve bunu “/apple-app-site-association” yolunda yer almasını ister. Böylece kullanıcılar “ <a href="https://www.instagram.com/egehannkalaycii">https://www.instagram.com/egehannkalaycii</a>” gibi bir linke tıkladığında, iOS öncelikle “ <a href="https://www.instagram.com/apple-app-site-association">https://www.instagram.com/apple-app-site-association</a>” linkindeki JSON dosyasına bakar ve bu URL’in hangi uygulamayla ilişkili olduğuna bakar.
+</p>
+</div>
+
+ <h3> <a id="json-dosyası-yapısı" class="anchor" href="#json-dosyası-yapısı">¶</a>JSON Dosyası Yapısı</h3> <div class="outline-text-3" id="text-org007a723">
+ <p>
+JSON dosyası dedik. Peki bu JSON dosyasının yapısında neler var?
+Bu JSON dosyasının yapısı genellikle aşağıdaki gibidir:
+ <img src="/img/3.jpg" width="100%"></img></p>
+ <ul class="org-ul"> <li>applinks: Bu JSON’ın Universal Link olduğunu belirtir.</li>
+ <li>apps: Apple dokümanına göre bu değer boş bırakılmalıdır.</li>
+ <li>details: Uygulama listesi ve yolları içerir.</li>
+ <li>appID: TeamID + BundleID değerlerinden oluşur.</li>
+ <li>paths: Uygulamada gidilebilecek yolların tanımıdır.
+ <ul class="org-ul"> <li>`Path’leri tanımlarken bazı detaylar bulunur. Bunlar:
+ <ul class="org-ul"> <li>“/wwdc/news/”-> Standart path tanımı.</li>
+ <li>“NOT /videos/wwdc/2010/”-> Başında  <b> <b> <b> <b>NOT</b></b></b></b> olanlar path’e dahil olmaz.</li>
+ <li>“*” veya “/wwdc/2010/*“-> WWDC’nin 2010 klasörü altındaki tüm yolları tanımlar.</li>
+ <li>“/wwdc/201?/”-> ? olan yere herhangi bir karakter gelebilir.</li>
+ <li>Bu bilgiler ışığında aşağıdaki gibi bir path tanımı yapmak mümkün.</li>
+ <li>“/wwdc/videos/201?/*”</li>
+</ul></li>
+</ul></li>
+</ul></div>
+
+ <h3> <a id="universal-linkapp-links-nasıl-tanımlanır" class="anchor" href="#universal-linkapp-links-nasıl-tanımlanır">¶</a>Universal Link/App Links: Nasıl Tanımlanır?</h3> <div class="outline-text-3" id="text-orgf7a8170">
+ <p>
+Universal Link veya App Links yeteneğini kullanmak için öncelikle “ <a href="https://developer.apple.com/account/resources/identifiers/list">https://developer.apple.com/account/resources/identifiers/list</a>” adresine gidip, uygulamanızı seçmeniz gerekiyor. Daha sonra “Capabilities” sekmesi altından, “Associated Domains” özelliğini aktif hale getiriyorsunuz.
+</p>
+
+ <p>
+Xcode’da, sol menüden projenizi seçtikten sonra sırasıyla: Target -> Signing & Capabilities -> Associated Domains sekmesine geliriz. Associated Domain ekleriz. Burada dikkat etmemiz gereken nokta, URL’nizin “applinks: domainName.com” şeklinde tanımlanmasıdır.
+</p>
+
+ <p>
+Bu adımların ardından, Universal Link yeteneğiniz aktif hale gelmiş olacaktır. Bu yeteneği test etmek için, telefonunuzdan Safari’ye gidip uygulamanızın web sitesine giderseniz, iOS otomatik olarak bir öneri sunacaktır.
+</p>
+
+
+ <div id="org458e89b" class="figure">
+ <p> <img src="/img/4.jpg" width="100%"></img></p>
+</div>
+</div>
+
+ <h3> <a id="uygulama-i̇çi-yönlendirme" class="anchor" href="#uygulama-i̇çi-yönlendirme">¶</a>Uygulama İçi Yönlendirme</h3> <div class="outline-text-3" id="text-orgc35f252">
+ <p>
+Universal Link yeteneğini ekledikten sonra, uygulamanızın belirli bir sayfasına yönlendirebilmek için URL’yi karşılayacak bir metot belirlememiz gerekiyor. Bu metot, genellikle AppDelegate dosyasında bulunur.
+</p>
+
+ <p>
+URL Scheme’de linklerimizi “open url: URL” metodunda handle ediyorduk, ancak Universal Link yönlendirmelerini “continue userActivity: NSUserActivity” metodunda handle ediyoruz.
+</p>
+
+ <p width="80%">
+ <img src="/img/5.jpg" width="100%"></img>
+Örneğin, “www.myApp.com/app/profile” gibi bir linke tıkladığınızda bu metot handle edecektir.
+</p>
+
+ <p>
+Bu kod yapısında,
+</p>
+ <ul class="org-ul"> <li>`url` = “www.myApp.com/app/profile?user=xKralTR”</li>
+ <li>`view` = “profile”</li>
+ <li>`parameters` = [“user” = “xKralTR”]</li>
+</ul> <p>
+olacaktır.
+</p>
+
+ <p>
+Bu bilgilerin ışığında, uygulamanızın belirli bir sayfasına yönlendirebilme yeteneğine sahip olmuş olursunuz. Bu, uygulamanızın kullanıcı deneyimini önemli ölçüde geliştirebilir ve kullanıcıların uygulamanız içerisinde daha kolay bir şekilde gezinmelerini sağlar.
+</p>
+
+ <p>
+Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha iyi anlamanızı sağlayabilir. Aşağıya bununla ilgili bir diyagram bırakıyorum. Yazımı okuduğunuz için teşekkürler, bir sonraki yazılarda görüşmek üzere.
+</p>
+
+
+ <div id="orgee60fdd" class="figure">
+ <p> <img src="/img/6.jpg" width="100%"></img></p>
+</div>
+</div>
+
+ <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-org43a3057">
+ <ol class="org-ol"> <li> <a href="https://medium.com/@ydemirkoparan/swift-ile-deep-linking-nas%C4%B1l-yap%C4%B1l%C4%B1r-e815fee93b97">Swift ile DeepLinking nasıl yapılır?</a></li>
+ <li> <a href="https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97">iOS Deep Linking Scheme vs Universal Links</a></li>
+</ol></div>
+</div>]]></description>
+  <link>https://mobilen.art/news/ios_deep_link/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/ios_deep_link/index.html</guid>
+  <pubDate>Thu, 11 May 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>Navigation Desenleri</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+ <p>
+Selamlar,  <code>navigation</code> mobil uygulamalarda kullanıcının ekranlar arasında nasıl dolaşması gerektiğine dair haritayı sağlamaktadır.
+Bu haritanın farklı yaklaşımları mevcut, görsel olarak Frank Rausch tarafından yazılan bu bloğu incelemenizi öneririm.
+</p>
+
+ <p>
+ <a href="https://frankrausch.com/ios-navigation">https://frankrausch.com/ios-navigation</a>
+</p>
+</div>]]></description>
+  <link>https://mobilen.art/news/navigation_desenleri/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/navigation_desenleri/index.html</guid>
+  <pubDate>Thu, 11 May 2023 08:00:00 +0300</pubDate>
+</item>
+<item>
+  <title>Netfox ile iOS uygulamalarda network izlemek</title>
+  <description><![CDATA[<div id="content"> <p>
+ <a href="https://www.linkedin.com/in/ugurcan-durak/">Uğurcan Durak</a> yazdı.
+</p>
+
+
+ <div id="orge8ad1f4" class="figure">
+ <p> <img src="/img/NetFoxImage.jpg" width="100%"></img></p>
+ <p> <span class="figure-number">Figure 1: </span> <a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Netfox’u İzlemek için tıkla</a></p>
+</div>
+
+ <p>
+Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde görüntülemek için kullanılan faydalı olduğunu düşündüğüm  <b> <a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesinden bahsedicem.
+</p>
+
+ <p>
+Çok detaya girmeden genel hatlarıyla nedir? nasıl kullanılır? gibi başlıklarla değineceğim. Hadi başlayalım :)
+</p>
+
+ <h2> <a id="netfox-nedir" class="anchor" href="#netfox-nedir">¶</a>Netfox Nedir?</h2> <div class="outline-text-2" id="text-org772e887">
+ <p>
+ <b> <a href="https://github.com/kasketis/netfox">Netfox</a></b> kütüphanesi, tüm network işlemlerini mobil cihaz üzerinden detaylı bir şekilde görüntüleyebileceğimiz  <code>open source</code> bir kütüphanedir.
+</p>
+
+ <p>
+Netfox’u uygulama içerisinde istediğimiz bir anda başlatıp anlık olarak uygulamamızın yapmış olduğu tüm istekleri listeleyebilir ve detaylı bir şekilde  <code>body</code>,  <code>header</code>,  <code>response</code> gibi tüm network etkileşimlerini inceleyebiliriz.
+</p>
+
+ <p>
+Bu tarz kütüphanelerin en güzel yanı, mobil cihazımız bilgisayara bağlı olmadan da istediğimiz bir anda network log’larına bakabilmektir.
+Bu özellik testçiler için oldukça faydalıdır. Çünkü herhangi bir hata anında doğrudan developer’a bildirmek yerine log’ları inceleyip hata hakkında fikir sahibi olabilirler.
+</p>
+</div>
+
+ <h2> <a id="netfox-nasıl-kullanılır" class="anchor" href="#netfox-nasıl-kullanılır">¶</a>Netfox Nasıl Kullanılır?</h2> <div class="outline-text-2" id="text-org04695bc">
+ <p>
+ <code>Netfox</code>’un kullanımı ve projeye entegre edilmesi oldukça basittir.
+</p>
+
+ <p>
+Varsayılan davranışı  <b> <b>shake</b></b> olarak belirlenmiş olsada custom bir şekilde istediğimiz bir butona ya da bir view event’ine atayarak Netfox’u başlatabiliriz. Öncelikle projeye nasıl eklenir ona bakalım.
+</p>
+</div>
+
+ <h2> <a id="netfoxrsquoun-projeye-eklenmesi" class="anchor" href="#netfoxrsquoun-projeye-eklenmesi">¶</a>Netfox’un Projeye Eklenmesi</h2> <div class="outline-text-2" id="text-org981f804">
+ <ol class="org-ol"> <li>Netfox kütüphanesini  <b> <b>SPM</b></b>,  <b> <b>CocoaPods</b></b> ve  <b> <b>Carthage</b></b> olmak üzere üç ayrı yöntem ile projemize ekleyebiliriz. Bu yöntemlerden herhangi biriyle eklediğinizi varsayarak bir sonraki adıma geçiyorum.</li>
+
+ <li>Kütüphaneyi projeye ekledik şimdi ise  <code>initiliaze</code> edeceğiz. Bunun için AppDelegate class’ına gidip aşağıdaki gibi gerekli kodları ekliyoruz.</li>
+</ol> <p>
+Netfox Import:
+</p>
+ <div class="highlight"> <pre> <span></span>   <span class="cp">#if</span>  <span class="cp">DEBUG</span>
+   <span class="kd">import</span>  <span class="nc">netfox</span>
+   <span class="cp">#endif</span>
+</pre></div>
+
+ <p>
+Burada   <b>#if DEBUG</b> ve  <b>#endif</b> kodlarını ekleyerek kodun sadece debug moddayken import olmasını sağlıyoruz. Daha sonra uygulama ilk başlatıldığında hazır hale gelmesini istediğim için aşağıdaki gibi başlatıcı fonksiyonun içerisine kodlarımızı ekliyoruz.
+</p>
+
+ <p>
+Netfox başlatma:
+</p>
+ <div class="highlight"> <pre> <span></span>   <span class="kd">func</span>  <span class="nf">application</span> <span class="p">(</span>
+     <span class="kc">_</span>  <span class="n">application</span> <span class="p">:</span>  <span class="bp">UIApplication</span> <span class="p">,</span>
+     <span class="n">didFinishLaunchingWithOptions</span>  <span class="n">launchOptions</span> <span class="p">:</span>  <span class="p">[</span> <span class="bp">UIApplication</span> <span class="p">.</span> <span class="n">LaunchOptionsKey</span> <span class="p">:</span>  <span class="nb">Any</span> <span class="p">]?</span>
+   <span class="p">)</span>  <span class="p">-></span>  <span class="nb">Bool</span>  <span class="p">{</span>
+       <span class="cp">#if</span>  <span class="cp">DEBUG</span>
+       <span class="n">NFX</span> <span class="p">.</span> <span class="n">sharedInstance</span> <span class="p">().</span> <span class="n">start</span> <span class="p">()</span>
+       <span class="n">NFX</span> <span class="p">.</span> <span class="n">sharedInstance</span> <span class="p">().</span> <span class="n">setGesture</span> <span class="p">(.</span> <span class="n">shake</span> <span class="p">)</span>
+       <span class="cp">#endif</span>
+   <span class="p">}</span>
+</pre></div>
+
+ <p>
+Burada  <b> <b>start()</b></b> methodunu çağırarak Netfox’ı initiliaze ediyoruz ardından  <b> <b>setGesture()</b></b> ile Netfox’ın nasıl açılacağını belirliyoruz.
+</p>
+
+ <p>
+Varsayılan davranışı shake olduğundan özellikle belirtmenize gerek yok örnek olması açısından ekledim. Siz dilerseniz  <b> <b>custom</b></b> parametresini geçip daha sonra dilediğiniz yerde  <b> <b>show()</b></b> methodu ile açılmasını sağlayabilirsiniz.
+</p>
+</div>
+
+ <h2> <a id="netfox-özetle" class="anchor" href="#netfox-özetle">¶</a>Netfox Özetle</h2> <div class="outline-text-2" id="text-org8bbd340">
+ <p>
+Evet hepsi bu kadar :) Şimdi dilediğiniz gibi cihazı sallayarak ya da atamış olduğunuz bir buton ile Netfox’ı başlatabilir ve log’ları inceleyebilirsiniz.
+</p>
+
+ <p>
+Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım faydalı olur zaman ayırdığınız için teşekkürler.
+</p>
+</div>
+
+ <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-orgb7feffe">
+ <ol class="org-ol"> <li> <a href="https://github.com/kasketis/netfox">Netfox Github Kütüphanesi</a></li>
+ <li> <a href="https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif">Örnek Kullanım Vidyosu</a></li>
+</ol></div>
+</div>]]></description>
+  <link>https://mobilen.art/news/netfox_ile_ios_uygulamalarda_network/index.html</link>
+  <guid isPermaLink="false">https://mobilen.art/news/netfox_ile_ios_uygulamalarda_network/index.html</guid>
+  <pubDate>Thu, 11 May 2023 08:00:00 +0300</pubDate>
 </item>
 <item>
   <title>WWDC 2023 geldi!</title>
@@ -1518,7 +1734,7 @@ iOS 17 ile beraber Apple duyurduğu  <a href="https://www.apple.com/newsroom/202
 </dl></div>]]></description>
   <link>https://mobilen.art/news/wwdc_2023_geldi/index.html</link>
   <guid isPermaLink="false">https://mobilen.art/news/wwdc_2023_geldi/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
+  <pubDate>Thu, 11 May 2023 08:00:00 +0300</pubDate>
 </item>
 <item>
   <title>Xcode Breakpoints ile Otomatizasyon</title>
@@ -1530,13 +1746,13 @@ iOS 17 ile beraber Apple duyurduğu  <a href="https://www.apple.com/newsroom/202
 Uygulamanızı her test ettiğinizde oturum açma bilgilerinizi manuel olarak girmekten sıkıldıysanız ve geliştirme sırasında zaman kazanmak istiyorsanız;  <code>xcode breakpoints</code> ihtiyacınız olan çözüm olabilir.
 </p>
 
- <h2> <a id="breakpoints-nedir" class="anchor" href="#breakpoints-nedir">¶</a>Breakpoints Nedir?</h2> <div class="outline-text-2" id="text-org1a4200c">
+ <h2> <a id="breakpoints-nedir" class="anchor" href="#breakpoints-nedir">¶</a>Breakpoints Nedir?</h2> <div class="outline-text-2" id="text-org723fcea">
  <p>
  <code>Breakpoint</code>, bir programın çalışması sırasında belirli bir kod satırında duraklamasını sağlayan ve geliştiricilere programın çalışmasını izleme ve  <code>debug</code> imkanı veren bir araçtır. Bu, değişkenlerin değerlerini incelemenize, kodda satır satır ilerlemenize ve başka işlemler yapmanıza olanak tanır.
 </p>
 </div>
 
- <h2> <a id="breakpoints-nasıl-oluşturulur" class="anchor" href="#breakpoints-nasıl-oluşturulur">¶</a>Breakpoints Nasıl Oluşturulur?</h2> <div class="outline-text-2" id="text-org372e459">
+ <h2> <a id="breakpoints-nasıl-oluşturulur" class="anchor" href="#breakpoints-nasıl-oluşturulur">¶</a>Breakpoints Nasıl Oluşturulur?</h2> <div class="outline-text-2" id="text-org2b6a9b7">
  <p>
 Bir “breakpoint” ayarlamak için, duraklatmak istediğiniz kod satırı numarasının yazılı olduğu alana tıklamanız yeterlidir. “Breakpoint”’i belirtmek için sistem ayarlarında seçili olan “accent color” renginde bir işaretçi görünecektir. Her ne kadar “line numbers” ayarı varsayılan olarak açık gelse de eğer açıkta kullanmıyosanız, ilgili satırın hemen yanına tıklayabilirsiniz veya text editing ayarlarından açabilirsiniz.
 </p>
@@ -1546,7 +1762,7 @@ Bir “breakpoint” belirledikten sonra kodunuzu çalıştırabilirsiniz. “De
 </p>
 </div>
 
- <h2> <a id="breakpointrsquolerin-farklı-kullanım-senaryoları" class="anchor" href="#breakpointrsquolerin-farklı-kullanım-senaryoları">¶</a>Breakpoint’lerin Farklı Kullanım Senaryoları</h2> <div class="outline-text-2" id="text-org74b5d39">
+ <h2> <a id="breakpointrsquolerin-farklı-kullanım-senaryoları" class="anchor" href="#breakpointrsquolerin-farklı-kullanım-senaryoları">¶</a>Breakpoint’lerin Farklı Kullanım Senaryoları</h2> <div class="outline-text-2" id="text-org6f64bd8">
  <p>
 Geliştiriciler, “oturum açma” aşamalarını test etmek ve “debug” yapmak için zaman ve emek harcamalarını gerektiren birçok senaryo ile karşılaşabilirler.  <code>Breakpoints</code> ve  <code>Watchpoints</code>, bu amaç için oldukça kullanışlıdır. Bu kullanım senaryolarından birkaçına beraber bakalım.
 </p>
@@ -1564,7 +1780,7 @@ Watchpoint’ler, oturum açma işlemi sırasında değişkenlerin değerlerini 
 </p>
 </div>
 
- <h2> <a id="breakpoint-expressions" class="anchor" href="#breakpoint-expressions">¶</a>Breakpoint Expressions</h2> <div class="outline-text-2" id="text-org40c7a3d">
+ <h2> <a id="breakpoint-expressions" class="anchor" href="#breakpoint-expressions">¶</a>Breakpoint Expressions</h2> <div class="outline-text-2" id="text-org3cdb759">
  <p>
 “Breakpoint expressions”, “debug” yapmanın güçlü bir yoludur. Yalnızca programın yürütülmesini durdurup değişkenlerin değerini izlemenin yanı sıra belirli aksiyonlar alabilmenizi sağlar. Tam olarak bu yazının başlığında belirtildiği gibi, oturum açma işlemlerini otomatik hale getirmek buna örnek olarak verilebilir.
 </p>
@@ -1643,7 +1859,7 @@ Bizim istediğimiz ise, programın buton aksiyonu ile duraklamasından sonra otu
 </p>
 
 
- <div id="orgc2a83a2" class="figure">
+ <div id="orgb8c897f" class="figure">
  <p> <img src="/img/edit-breakpoint-window.jpg" width="100%"></img></p>
  <p> <span class="figure-number">Figure 1: </span>Xcode edit breakpoint window</p>
 </div>
@@ -1690,7 +1906,7 @@ Bu yazıda, “breakpoint”’leri ve kullanım senaryolarını ele aldık. Ard
 </p>
 </div>
 
- <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-orgb8f7c57">
+ <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-org0016b1f">
  <p>
  <a href="https://www.danijelavrzan.com/posts/2023/04/login-xcode-breakpoint">Login XCode Breakpoints</a>
 </p>
@@ -1698,223 +1914,7 @@ Bu yazıda, “breakpoint”’leri ve kullanım senaryolarını ele aldık. Ard
 </div>]]></description>
   <link>https://mobilen.art/news/xcode_breakpoints_ile_otomatizasyon/index.html</link>
   <guid isPermaLink="false">https://mobilen.art/news/xcode_breakpoints_ile_otomatizasyon/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
-  <title>XCode Project Custom File Templates</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://linkedin.com/in/alimerttekel">Ali Mert Tekel</a> yazdı.
-</p>
-
- <p>
-Geliştirme sürecinde her ayrıntının önemli olduğu bir dünyada yaşıyoruz. Bu karmaşık süreçte, verimliliği ve tutarlılığı artırmak için araçlardan en iyi şekilde yararlanmak gerekiyor.
-Bu yazıda, iOS uygulama geliştirme sürecini daha düzgün, hızlı ve hatasız hale getirmek için Xcode’un Custom File Template’lerinin nasıl kullanılacağını ele alacağız.
-</p>
-
- <p>
-Yeni başlayanlardan deneyimli geliştiricilere kadar herkesin işine yarayacak bu bilgilerle, projenizdeki geliştirme sürecini daha verimli hale getirebilirsiniz.
-</p>
-
- <dl class="org-dl"> <dt>Xcode</dt> <dd>Apple’ın macOS, iOS, watchOS ve tvOS için uygulamalar geliştirmek için kullandığı bir Entegre Geliştirme Ortamı (IDE).</dd>
- <dt>Template</dt> <dd>Önceden tanımlanmış bir dosya yapısı.</dd>
- <dt>Custom Xcode Template</dt> <dd>Kullanıcı tarafından özelleştirilmiş Xcode Template’leri.</dd>
- <dt>MVVM</dt> <dd>Model-View-ViewModel, bir yazılım mimarisi deseni.</dd>
- <dt>.xctemplate</dt> <dd>Xcode Template’lerinin dosya türü.</dd>
-</dl> <p>
-`File Templates`, Xcode’un özellikle iOS uygulamaları geliştirirken kullandığımız dosyaları oluşturma sürecinde kilit bir rol oynar. Her yeni dosya oluştururken, `Choose a template for your new file:` başlığı altında bir dizi template sunulur.
-</p>
-
-
- <div id="orgf417a33" class="figure">
- <p> <img src="/img/choose-template.png" width="100%"></img></p>
- <p> <span class="figure-number">Figure 1: </span>Template Seçimi</p>
-</div>
-
- <p>
-Bu template’ler, yeni oluşturulacak dosyaların belirli bir yapıya sahip olmasına yardımcı olur. Ancak, projeniz büyüdükçe ve daha fazla dosya eklemeniz gerektiğinde, aynı süreci tekrar tekrar uygulamak zaman kaybına ve tutarsızlıklara yol açabilir. İşte tam bu noktada Custom Xcode Templates devreye girer.
-</p>
-
- <h2> <a id="custom-xcode-template-avantajları" class="anchor" href="#custom-xcode-template-avantajları">¶</a>Custom Xcode Template Avantajları</h2> <div class="outline-text-2" id="text-orge5ba5ea">
- <p>
-Custom Xcode Template, projenizin gereksinimlerine ve mimarisine uygun dosyaları hızlı ve tutarlı bir şekilde oluşturmanıza olanak sağlar. Örneğin, MVVM mimarisi gibi belirli bir mimariyi kullanırken, her sayfa için birden fazla dosya oluşturmanız gerekebilir. Bu süreci Custom Xcode Template kullanarak optimize edebilirsiniz.
-</p>
-</div>
-
- <h2> <a id="custom-xcode-template-nasıl-oluşturulur" class="anchor" href="#custom-xcode-template-nasıl-oluşturulur">¶</a>Custom Xcode Template Nasıl Oluşturulur?</h2> <div class="outline-text-2" id="text-org4e195ad">
- <p>
-İlk adım, Xcode’un template’leri barındırdığı dizini açmaktır.
-</p>
-
- <p>
-Bu klasör genellikle `~/Library/Developer/Xcode/Templates/File Templates` dizininde bulunur. Eğer bu dizin mevcut değilse, manuel olarak oluşturabilirsiniz.
-</p>
-
-
- <div id="orgaeb8831" class="figure">
- <p> <img src="/img/templates-folder.png" width="100%"></img></p>
- <p> <span class="figure-number">Figure 2: </span>Templates dizinini açmak</p>
-</div>
-
-
- <div id="orgbfa2f9a" class="figure">
- <p> <img src="/img/file-templates.png" width="100%"></img></p>
- <p> <span class="figure-number">Figure 3: </span>Yeni klasör oluşturmak</p>
-</div>
-
- <p>
-Kendi template’lerinizi barındıracak bir klasör oluşturmanız gerekmektedir. Bu klasörü adlandırırken istediğiniz ismi kullanabilirsiniz, örneğin “My Project Templates”.
-</p>
-
-
- <div id="org6011ce4" class="figure">
- <p> <img src="/img/my-project-templates.png" width="100%"></img></p>
- <p> <span class="figure-number">Figure 4: </span>Custom Template barındıracak klasörü oluşturmak</p>
-</div>
-
- <p>
-Sonrasında, `.xctemplate` uzantılı bir dosya oluşturmalısınız. Bu dosya, oluşturacağınız asıl template’i temsil eder ve template’in nasıl görüneceğini ve hangi dosyaların oluşturulacağını belirler.
-</p>
-
-
- <div id="org4ff22f3" class="figure">
- <p> <img src="/img/xctemplate.png" width="100%"></img></p>
- <p> <span class="figure-number">Figure 5: </span>Xctemplate dosyaları</p>
-</div>
-
- <p>
-`.xctemplate` dosyası genellikle aşağıdaki öğeleri içerir:
-</p>
-
- <ul class="org-ul"> <li>TemplateInfo.plist</li>
- <li>Dosya template’leri (Örneğin; .swift dosyaları)</li>
- <li>Diğer kaynak dosyaları (Örneğin; Template için icon dosyası)</li>
-</ul></div>
-
- <h3> <a id="örnek-bir-dosya-templatersquoi" class="anchor" href="#örnek-bir-dosya-templatersquoi">¶</a>Örnek bir dosya template’i;</h3> <div class="outline-text-3" id="text-org445b414">
- <div class="highlight"> <pre> <span></span>   <span class="c1">// ___FILEHEADER___</span>
-   <span class="kd">import</span>  <span class="nc">Combine</span>
-   <span class="kd">import</span>  <span class="nc">Foundation</span>
-   <span class="kd">import</span>  <span class="nc">SwiftUI</span>
-
-   <span class="kd">struct</span>  <span class="nc">___VARIABLE_pageName___ContentView</span> <span class="p">:</span>  <span class="n">View</span>  <span class="p">{</span>
-       <span class="c1">// </span> <span class="cs">MARK:</span> <span class="c1"> Observable Objects</span>
-       <span class="p">@</span> <span class="n">ObservedObject</span>  <span class="kd">var</span>  <span class="nv">viewStateData</span> <span class="p">:</span>  <span class="n">___VARIABLE_pageName___ViewStateData</span>
-       <span class="c1">// </span> <span class="cs">MARK:</span> <span class="c1"> Properties</span>
-       <span class="kd">var</span>  <span class="nv">onChangeEvent</span> <span class="p">:</span>  <span class="p">(</span> <span class="n">___VARIABLE_pageName___Event</span> <span class="p">)</span>  <span class="p">-></span>  <span class="nb">Void</span>
-       <span class="c1">// </span> <span class="cs">MARK:</span> <span class="c1"> Lifecycle</span>
-       <span class="kd">var</span>  <span class="nv">body</span> <span class="p">:</span>  <span class="n">some</span>  <span class="n">View</span>  <span class="p">{</span>
-           <span class="kc">self</span> <span class="p">.</span> <span class="n">content</span> <span class="p">()</span>
-       <span class="p">}</span>
-   <span class="p">}</span>
-
-   <span class="c1">// </span> <span class="cs">MARK:</span> <span class="c1"> - Views</span>
-   <span class="kd">extension</span>  <span class="nc">___VARIABLE_pageName___ContentView</span>  <span class="p">{</span>
-       <span class="kd">private</span>  <span class="kd">func</span>  <span class="nf">content</span> <span class="p">()</span>  <span class="p">-></span>  <span class="n">some</span>  <span class="n">View</span>  <span class="p">{</span>
-           <span class="n">VStack</span>  <span class="p">{</span>
-               <span class="c1">// </span> <span class="cs">TODO:</span> <span class="c1"> Add Views</span>
-           <span class="p">}</span>
-       <span class="p">}</span>
-   <span class="p">}</span>
-   <span class="cp">#if</span>  <span class="cp">DEBUG</span>
-   <span class="kd">struct</span>  <span class="nc">___VARIABLE_pageName___ContentView_Previews</span> <span class="p">:</span>  <span class="n">PreviewProvider</span>  <span class="p">{</span>
-       <span class="kd">static</span>  <span class="kd">var</span>  <span class="nv">previews</span> <span class="p">:</span>  <span class="n">some</span>  <span class="n">View</span>  <span class="p">{</span>
-           <span class="kd">let</span>  <span class="nv">initialView</span>  <span class="p">=</span>  <span class="n">___VARIABLE_pageName___ContentView</span> <span class="p">(</span> <span class="n">viewStateData</span> <span class="p">:</span>  <span class="p">.</span> <span class="kd">init</span> <span class="p">(),</span>  <span class="n">onChangeEvent</span> <span class="p">:</span>  <span class="p">{</span>  <span class="kc">_</span>  <span class="k">in</span>  <span class="p">})</span>
-           <span class="k">return</span>  <span class="n">Group</span>  <span class="p">{</span>
-               <span class="n">initialView</span>
-           <span class="p">}</span>
-       <span class="p">}</span>
-   <span class="p">}</span>
-   <span class="cp">#endif</span>
-</pre></div>
-
- <p>
-Custom Template oluşturmak ve hazır template bulabileceğiniz birkaç kaynak aşağıdaki gibidir:
-</p>
-</div>
-
- <h3> <a id="referenslar" class="anchor" href="#referenslar">¶</a>Referenslar</h3> <div class="outline-text-3" id="text-orgeb2d6dc">
- <ol class="org-ol"> <li> <a href="https://www.kodeco.com/26582967-xcode-project-and-file-templates">Kodeco</a>: Bu kaynakta kapsamlı bir şekilde custom template oluşturma süreci anlatılıyor.</li>
-
- <li> <a href="https://github.com/topics/xcode-templates">Github Xcode Templates</a>: Github’da “xcode-templates” topic’i ile genellikle proje mimarileri için oluşturulmuş template repolarına ulaşabilirsiniz.</li>
-</ol> <p>
-Özetle, bu adımlar, Custom File Template’lerinizi oluşturmak için iyi bir başlangıç noktası olabilir. Ancak, her projenin kendine özgü ihtiyaçları olduğunu ve bu adımların projenizin spesifik gereksinimlerine göre uyarlanması gerektiğini unutmamak önemlidir.
-Bu sayede, projenizin verimliliğini ve tutarlılığını artırarak, uygulama geliştirme sürecinizin kalitesini yükseltebilirsiniz.
-</p>
-</div>
-</div>]]></description>
-  <link>https://mobilen.art/news/xcode_project_custom_file_templates/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/xcode_project_custom_file_templates/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
-</item>
-<item>
-  <title>Xcodes: Xcode’un Sürümlerini Yönetmenin Etkin Yolu</title>
-  <description><![CDATA[<div id="content"> <p>
- <a href="https://linkedin.com/in/egehan-kalayc%C4%B1-736b4a238">Egehan Kalaycı</a> yazdı.
-</p>
-
- <p>
-Merhaba Mobilen okurları, bugün sizlere Xcode’un farklı sürümlerini nasıl kolaylıkla yönetebileceğinizi anlatacağım.
-</p>
-
-
- <div id="org338c141" class="figure">
- <p> <img src="/img/xcode_naming.jpg" width="100%"></img></p>
- <p> <span class="figure-number">Figure 1: </span>Xcode Naming</p>
-</div>
-
- <p>
-Öncelikle,  <b>Xcode</b>’un doğru yazımı konusunda bir anlaşma yapalım. İnsanlar bazen XCode, xCode gibi tuhaf kombinasyonlarla karşımıza çıkabilirler. Ancak gerçek şu ki, doğru yazımı  <b>Xcode</b>’dur. Evet, büyük harfle “ <b>X</b>” ile başlayıp ardından “ <b>code</b>” olarak devam eder. Şimdi, bu konuda anlaştıysak  <b>Xcode</b>’un farklı sürümlerini yönetme konusuna odaklanalım.
-</p>
-
- <p>
-Xcode, Apple platformlarında uygulama geliştirmek için kullanılan bir entegre geliştirme ortamıdır (IDE). Ancak, App Store’dan Xcode’u indirmenin bazı dezavantajları vardır. En güncel sürümleri bulmak veya yavaş bir indirme hızıyla karşılaşmakta sorun yaşayabilirsiniz. Daha da önemlisi, eski sürümlere geri dönmek veya birden fazla sürümü aynı anda kullanmak isterseniz, App Store bu özellikleri sunmamaktadır.
-</p>
-
- <p>
-İşte tam da bu noktada size bir çözüm sunmak istiyorum: Xcodes!
-</p>
-
- <p>
-Xcodes, Xcode’un farklı sürümlerini tek bir komutla indirmenizi sağlayan harika bir araçtır. Bu sayede istediğiniz sürümü, yüksek indirme hızlarıyla elde edebilirsiniz.
-Xcodes, indirme işlemlerini gerçekleştirmek için aria2 adlı bir komut satırı aracını kullanır. Bu araç, indirme hızınızı optimize etmek için çoklu bağlantılar ve paralel indirmeler kullanır. Böylece Xcode sürümlerini daha hızlı bir şekilde bilgisayarınıza indirebilirsiniz.
-</p>
-
- <p>
-Gelelim  <code>Xcodes</code>’u kullanmaya. Bunun iki farklı yöntemi bulunmaktadır.
-</p>
-
- <p>
-İlk yöntem, Xcodes’un kullanıcı dostu bir arayüzü olan native uygulamasını indirip kullanmaktır. Bu sayede sürümleri görsel olarak kolaylıkla yönetebilirsiniz.
-</p>
-
-
- <div id="orga807545" class="figure">
- <p> <img src="/img/xcodes_gui.jpg" width="100%"></img></p>
- <p> <span class="figure-number">Figure 2: </span>Xcodes Gui</p>
-</div>
-
- <p>
-İkinci yöntem ise terminal üzerinden Xcodes’u kullanmaktır. Eğer terminal üzerinden kullanmak isterseniz,  <code>xcodes</code> komutunu kullanarak çeşitli işlemleri gerçekleştirebilirsiniz. Örneğin, mevcut sürümleri görüntülemek için  <code>xcodes list</code> komutunu kullanabilir, indirmek istediğiniz sürümün yanındaki numarayı yazarak indirme işlemini başlatabilirsiniz. Ayrıca, indirdiğiniz sürümleri  <code>xcodes installed</code> komutu ile görüntüleyebilir ve  <code>xcodes select</code> komutuyla varsayılan sürümü belirleyebilirsiniz.
-</p>
-
-
- <div id="orge16f7af" class="figure">
- <p> <img src="/img/xcodes_terminal.jpg" width="100%"></img></p>
- <p> <span class="figure-number">Figure 3: </span>Xcodes Terminal</p>
-</div>
-
- <p>
-Artık Xcode’un farklı sürümlerini kolaylıkla yönetebilir, istediğiniz sürüme hızlıca erişebilir ve projelerinizde esnek bir şekilde çalışabilirsiniz. Bir sonraki yazıda tekrar buluşmak dileğiyle.
-</p>
-
- <h2> <a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h2> <div class="outline-text-2" id="text-orgebff727">
- <ol class="org-ol"> <li> <a href="https://www.xcodes.app/">https://www.xcodes.app/</a></li>
- <li> <a href="https://github.com/XcodesOrg">https://github.com/XcodesOrg</a></li>
-</ol></div>
-</div>]]></description>
-  <link>https://mobilen.art/news/xcodes_surum_yonetim/index.html</link>
-  <guid isPermaLink="false">https://mobilen.art/news/xcodes_surum_yonetim/index.html</guid>
-  <pubDate>Tue, 11 Jul 2023 08:00:00 +0300</pubDate>
+  <pubDate>Thu, 11 May 2023 08:00:00 +0300</pubDate>
 </item>
 </channel>
 </rss>

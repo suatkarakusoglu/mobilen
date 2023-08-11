@@ -1,8 +1,0 @@
-#+TITLE: Development
-
-[[file:../../news/ios_app_push_certificate_yenileme.org][iOS uygulama bildirim sertifikası oluşturma/yenileme]]
-
-[[file:../../news/ios_deep_link.org][iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı]]
-
-[[file:../../news/ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]]
-

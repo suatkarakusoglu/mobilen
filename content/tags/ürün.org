@@ -1,0 +1,4 @@
+#+TITLE: Ürün
+
+[[file:../../news/instagramin_hikayesi.org][Instagram'in Hikayesi]]
+

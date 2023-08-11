@@ -1,4 +1,4 @@
-#+TITLE: Design
+#+TITLE: Tasarım
 
 [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 

@@ -1,4 +1,0 @@
-#+TITLE: Debugging
-
-[[file:../../news/xcode_breakpoints_ile_otomatizasyon.org][Xcode Breakpoints ile Otomatizasyon]]
-

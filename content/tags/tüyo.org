@@ -1,0 +1,6 @@
+#+TITLE: Tüyo
+
+[[file:../../news/android_file_template.org][Android File Template]]
+
+[[file:../../news/xcode_project_custom_file_templates.org][XCode Project Custom File Templates]]
+

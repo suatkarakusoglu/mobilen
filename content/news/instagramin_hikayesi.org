@@ -2,7 +2,7 @@
 #+date: [2023-07-11 Tue]
 #+author: Suat Karakuşoğlu
 #+kind: news
-#+filetags: :iOS:Story:
+#+filetags: :iOS:Ürün Yönetimi:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 

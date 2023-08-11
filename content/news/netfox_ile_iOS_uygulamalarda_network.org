@@ -2,7 +2,7 @@
 #+date: [2023-07-11 Tue]
 #+author: Uğurcan Durak
 #+kind: news
-#+filetags: :iOS:Yazılım:Logging:
+#+filetags: :iOS:Yazılım:Araçlar:
 
 [[https://www.linkedin.com/in/ugurcan-durak/][Uğurcan Durak]] yazdı.
 

@@ -2,7 +2,7 @@
 #+date: [2023-07-11 Tue]
 #+author: Alper Cem Öztürk
 #+kind: news
-#+filetags: :iOS:Yazılım:Xcode:Debugging:
+#+filetags: :iOS:Yazılım:Xcode:
 
 [[https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8][Alper Cem Öztürk]] yazdı.
 

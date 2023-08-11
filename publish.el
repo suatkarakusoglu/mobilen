@@ -103,7 +103,7 @@
 
 (defun generate-tag-files-filled (tag-list)
   (mapc (lambda (tag)
-          (let ((file-name (concat tags-files-directory tag ".org")))
+          (let ((file-name (concat tags-files-directory (downcase tag) ".org")))
             (unless (file-exists-p file-name)
               (with-temp-buffer
                 (insert "#+TITLE: " tag "\n\n")

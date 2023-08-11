@@ -1,4 +1,4 @@
-#+TITLE: Yönetimi
+#+TITLE: Ürün_Yönetimi
 
 [[file:../../news/instagramin_hikayesi.org][Instagram'in Hikayesi]]
 

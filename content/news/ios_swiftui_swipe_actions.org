@@ -1,8 +1,7 @@
 #+title: iOS SwiftUI Swipe Actions
-#+date: [2023-07-11 Tue]
+#+date: [2023-06-02 Fri]
 #+author: Suat Karakuşoğlu
-#+kind: news
-#+filetags: :iOS:Development:SwiftUI:
+#+filetags: :iOS:Yazılım:SwiftUI:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 

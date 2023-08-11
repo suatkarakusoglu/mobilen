@@ -4,8 +4,7 @@
 #+title: Android File Template
 #+date: [2023-07-11 Tue]
 #+author: Hasan Hüseyin Doğannn
-#+kind: news
-#+filetags: :Android:Template:
+#+filetags: :Android:Template:Tüyo:
 
 [[https://www.linkedin.com/in/hasan-h%C3%BCseyin-do%C4%9Fan-861048187/][Hasan Hüseyin Doğan]] yazdı.
 

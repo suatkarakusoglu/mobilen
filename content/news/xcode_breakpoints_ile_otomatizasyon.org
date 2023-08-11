@@ -1,8 +1,7 @@
 #+title: Xcode Breakpoints ile Otomatizasyon
-#+date: [2023-07-11 Tue]
+#+date: [2023-05-11 Thu]
 #+author: Alper Cem Öztürk
-#+kind: news
-#+filetags: :iOS:Yazılım:Xcode:Debugging:
+#+filetags: :iOS:Yazılım:Xcode:
 
 [[https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8][Alper Cem Öztürk]] yazdı.
 

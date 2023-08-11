@@ -1,7 +1,6 @@
 #+title: Android Studio Bot
-#+date: [2023-07-11 Tue]
+#+date: [2023-06-02 Fri]
 #+author: Tuğba Berk
-#+kind: news
 #+filetags: :Android:AI:
 
 [[https://tr.linkedin.com/in/tu%C4%9Fbaberk][Tuğba Berk]] yazdı.

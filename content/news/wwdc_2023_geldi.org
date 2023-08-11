@@ -1,7 +1,6 @@
 #+title: WWDC 2023 geldi!
-#+date: [2023-07-11 Tue]
+#+date: [2023-05-11 Thu]
 #+author: Suat Karakuşoğlu
-#+kind: news
 #+filetags: :WWDC:Yazılım:iOS:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.

@@ -1,7 +1,6 @@
 #+title: SSL Pinning
 #+date: [2023-08-08 Tue]
 #+author: Suat Karakuşoğlu
-#+kind: news
 #+filetags: :iOS:Yazılım:Güvenlik:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.

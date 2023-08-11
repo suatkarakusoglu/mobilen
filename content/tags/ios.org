@@ -12,11 +12,15 @@
 
 [[file:../../news/ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]]
 
+[[file:../../news/navigation_desenleri.org][Navigation Desenleri]]
+
 [[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]
 
 [[file:../../news/ssl_pinning.org][SSL Pinning]]
 
 [[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]]
+
+[[file:../../news/wwdc_2023_geldi.org][WWDC 2023 geldi!]]
 
 [[file:../../news/xcode_breakpoints_ile_otomatizasyon.org][Xcode Breakpoints ile Otomatizasyon]]
 

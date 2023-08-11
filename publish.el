@@ -227,7 +227,13 @@
                                 (p (a (@ (href "https://github.com/suatkarakusoglu/mobilen"))
                                       (img (@ (src ,(concat dw/site-url "/img/site_github_icon.png"))
                                               (style "width: 80px")
-                                              (alt "Github'da Katkıda Bulun")))))))))))
+                                              (alt "Github'da Katkıda Bulun"))))))))
+                 (div (@ (class "container"))
+                      (div (@ (class "row site-footer-tags"))
+                           ,@(when article-tags-unique-list
+                               (mapcar (lambda (tag)
+                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,tag))
+                                       article-tags-unique-list)))))))
 
 (defun get-article-output-path (org-file pub-dir)
   (let ((article-dir (concat pub-dir

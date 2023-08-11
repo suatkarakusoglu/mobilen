@@ -398,6 +398,11 @@ strong {
  * Footer
  */
 
+.site-footer-tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .site-footer {
     padding: 1.3rem 0;
     margin-top: 1rem;

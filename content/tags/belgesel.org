@@ -1,0 +1,4 @@
+#+TITLE: Belgesel
+
+[[file:../../news/steve_jobs_the_man_in_the_machine.org][Steve Jobs The Man in The Machine]]
+

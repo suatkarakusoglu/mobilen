@@ -1,0 +1,4 @@
+#+TITLE: Biyografi
+
+[[file:../../news/kitap_make_something_wonderful.org][Kitap: Make Something Wonderful]]
+

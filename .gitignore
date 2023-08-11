@@ -4,9 +4,11 @@
 ; Ignore the org-publish cache
 .org-cache/
 
-; Ignore shared content
 ; Do not ignore docs inside gh-pages
 ; docs/
+
+; Do not ignore docs inside gh-pages
+; tags/
 
 ; Ignore Gemini output
 gemini/

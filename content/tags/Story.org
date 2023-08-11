@@ -1,4 +1,0 @@
-#+TITLE: Story
-
-[[file:../../news/instagramin_hikayesi.org][instagramin_hikayesi.org]]
-

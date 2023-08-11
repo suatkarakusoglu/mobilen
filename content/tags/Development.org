@@ -1,8 +1,0 @@
-#+TITLE: Development
-
-[[file:../../news/ios_app_push_certificate_yenileme.org][ios_app_push_certificate_yenileme.org]]
-
-[[file:../../news/ios_deep_link.org][ios_deep_link.org]]
-
-[[file:../../news/ios_swiftui_swipe_actions.org][ios_swiftui_swipe_actions.org]]
-

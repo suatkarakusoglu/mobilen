@@ -67,6 +67,56 @@
 (use-package webfeeder
   :ensure t)
 
+;; Generate tags
+(defun get-org-filetags (org-files)
+  (let ((filetags '()))
+    (dolist (org-file org-files)
+      (with-current-buffer (find-file-noselect org-file)
+        (org-mode)
+        (org-map-entries
+         (lambda ()
+           (let ((tags (org-get-tags)))
+             (setq filetags (append filetags tags))))
+         nil 'file)))
+    (cl-remove-duplicates filetags)))
+
+(setq article-files (directory-files "./content/news/" t "\\.org$"))
+(setq article-tags-vector (get-org-filetags article-files))
+(setq article-tags-list (mapcar #'substring-no-properties article-tags-vector))
+
+(defun remove-duplicates-from-list (word-list)
+  (cl-remove-duplicates word-list :test #'string-equal))
+
+(setq article-tags-unique-list (remove-duplicates-from-list article-tags-list))
+
+(defvar tags-files-directory "./content/tags/")
+
+(defun remove-files-in-directory (directory)
+  (dolist (file (directory-files directory t))
+    (unless (or (string-equal "." (substring file -1))
+                (string-equal ".." (substring file -2)))
+      (if (file-directory-p file)
+          (remove-files-in-directory file)
+        (delete-file file)))))
+
+(remove-files-in-directory tags-files-directory)
+
+(defun generate-tag-files-filled (tag-list)
+  (mapc (lambda (tag)
+          (let ((file-name (concat tags-files-directory tag ".org")))
+            (unless (file-exists-p file-name)
+              (with-temp-buffer
+                (insert "#+TITLE: " tag "\n\n")
+                (dolist (org-file article-files)
+                  (when (member tag (get-org-filetags (list org-file)))
+                    (let ((org-file-name (file-name-nondirectory org-file)))
+                      (insert (format "[[file:../../news/%s][%s]]\n\n" org-file-name org-file-name)))))
+                (write-file file-name)))))
+        tag-list))
+
+(generate-tag-files-filled article-tags-unique-list)
+;; Generate tags
+
 (defvar yt-iframe-format
   (concat "<div class=\"video\">"
           "  <iframe src=\"https://www.youtube.com/embed/%s\" allowfullscreen></iframe>"
@@ -236,7 +286,7 @@
                                ,title)
                            ,@(when filetags
                                (mapcar (lambda (tag)
-                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/" tag "/"))) ,tag))
+                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" tag "/"))) ,tag))
                                        filetags))
                            ,(when publish-date
                               `(p (@ (class "site-post-meta")) ,publish-date))
@@ -444,8 +494,7 @@ holding contextual information."
          (format "[[file:%s][%s]] - %s · %s"
                  entry
                  (org-publish-find-title entry project)
-                 ;; (car (org-publish-find-property entry :author project))
-                 (org-publish-find-property entry :tags project)
+                 (car (org-publish-find-property entry :author project))
                  (format-time-string "%B %d, %Y"
                                      (org-publish-find-date entry project))))
         ((eq style 'tree) (file-name-nondirectory (directory-file-name entry)))
@@ -531,6 +580,13 @@ holding contextual information."
               :sitemap-style list
               ;; :sitemap-function dw/news-sitemap
               :sitemap-sort-files anti-chronologically
+              :with-title nil
+              :with-timestamps nil)
+            '("systemcrafters:tags"
+              :base-directory "./content/tags"
+              :base-extension "org"
+              :publishing-directory "./docs/tags"
+              :publishing-function org-html-publish-to-html
               :with-title nil
               :with-timestamps nil)
             '("systemcrafters:newsletter"

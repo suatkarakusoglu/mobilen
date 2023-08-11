@@ -1,0 +1,6 @@
+#+TITLE: Xcode
+
+[[file:../../news/xcode_breakpoints_ile_otomatizasyon.org][xcode_breakpoints_ile_otomatizasyon.org]]
+
+[[file:../../news/xcodes_surum_yonetim.org][xcodes_surum_yonetim.org]]
+

@@ -5,6 +5,7 @@
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 
+* İçerik
 Merhabalar, bugün hali hazırdaki uygulamamıza push sertifikası yenileme zamanı yaklaşınca yeni sertifika nasıl oluşturulur konusuna değinicem.
 
 iOS uygulamaları için =p12= push sertifikalarinin her yıl yenilenmesi gereklidir.

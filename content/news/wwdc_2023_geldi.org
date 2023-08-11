@@ -5,6 +5,7 @@
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 
+* İçerik
 [[https://developer.apple.com/wwdc23/][WWDC 2023]] sunum takvimi hazır.
 [[https://www.apple.com/newsroom/2023/05/apples-worldwide-developers-conference-to-kick-off-june-5-2023/][Apple WWDC 2023 konuları]] da belirlendi.
 

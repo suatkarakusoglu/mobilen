@@ -5,6 +5,7 @@
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 
+* İçerik
 #+CAPTION: [[https://docs.wavemaker.com/learn/blog/2020/12/15/certificate-pinning/][SSL Pinleme]]
 #+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%

@@ -5,6 +5,7 @@
 
 [[https://linkedin.com/in/myusufka][Yusuf Kaya]] yazdı.
 
+* İçerik
 Merhabalar, okumalarımdan çıkarttığım notları seri halinde paylaşmak istiyorum. Bu sayımızda [[https://www.goodreads.com/en/book/show/8677004][The Art of Readable Code]] kitabının notlarının ilk bölümünü inceleyeceğiz.
 
 Kod okunurluğu, yazılım geliştirme sürecinde oldukça önemli bir faktördür. Kodun okunabilir olması, geliştiricilerin kodu daha kolay anlamasını ve kodun bakımını ve genişletilmesini kolaylaştırır. Kodun daha okunabilir olması için bazı başlıkları inceleyeceğiz. İlerleyen sayılarda daha fazla başlık incelemeye çalışacağız.

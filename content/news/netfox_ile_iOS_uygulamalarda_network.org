@@ -5,6 +5,7 @@
 
 [[https://www.linkedin.com/in/ugurcan-durak/][Uğurcan Durak]] yazdı.
 
+* İçerik
 #+CAPTION: [[https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif][Netfox'u İzlemek için tıkla]]
 #+ATTR_LATEX: :width 200px
 #+ATTR_HTML: :width 400px :style float:center;

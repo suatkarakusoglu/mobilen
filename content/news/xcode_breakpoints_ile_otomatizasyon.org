@@ -5,6 +5,7 @@
 
 [[https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8][Alper Cem Öztürk]] yazdı.
 
+* İçerik
 Uygulamanızı her test ettiğinizde oturum açma bilgilerinizi manuel olarak girmekten sıkıldıysanız ve geliştirme sırasında zaman kazanmak istiyorsanız; =xcode breakpoints= ihtiyacınız olan çözüm olabilir.
 
 ** Breakpoints Nedir?

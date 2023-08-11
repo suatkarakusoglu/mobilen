@@ -357,7 +357,7 @@
     (cond
      (exported-link exported-link)
      ((string-match-p "\\(.*\\.\\(jpg\\|png\\)\\)" (org-element-property :raw-link link))
-      (format "<img src=\"/img/%s\" width=\"%s\">"
+      (format "<img src=\"/img/%s\" style=\"border-radius: 8px\" width=\"%s\">"
               (file-name-nondirectory (org-element-property :path link))
               ;; (org-export-read-attribute :attr_html link)
               ;; TODO Read from #+ATTR_HTML

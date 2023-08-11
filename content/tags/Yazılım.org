@@ -1,0 +1,16 @@
+#+TITLE: Yazılım
+
+[[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][netfox_ile_iOS_uygulamalarda_network.org]]
+
+[[file:../../news/ssl_pinning.org][ssl_pinning.org]]
+
+[[file:../../news/the_art_of_readable_code_1.org][the_art_of_readable_code_1.org]]
+
+[[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][wwdc23_hakkinda_bilmeniz_gerekenler.org]]
+
+[[file:../../news/xcode_breakpoints_ile_otomatizasyon.org][xcode_breakpoints_ile_otomatizasyon.org]]
+
+[[file:../../news/xcode_project_custom_file_templates.org][xcode_project_custom_file_templates.org]]
+
+[[file:../../news/xcodes_surum_yonetim.org][xcodes_surum_yonetim.org]]
+

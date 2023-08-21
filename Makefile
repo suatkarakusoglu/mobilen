@@ -8,7 +8,7 @@ generate-local-site:
 
 publish-production-site:
 	git checkout gh-pages
-	git merge main
+	git merge --quiet main
 	make generate-production-site
 	git add .
 	git commit -m "Publish site."

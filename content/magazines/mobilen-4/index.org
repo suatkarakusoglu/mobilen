@@ -4,6 +4,7 @@
 
 * Konular
 1. [[file:../../news/ssl_pinning.org][SSL Pinning]]
+2. [[file:../../news/xcrun_komutu.org][Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi]]
 
 #+begin_cta
 #+end_cta

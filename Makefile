@@ -7,8 +7,10 @@ generate-local-site:
 	emacs --batch -l ./publish.el --funcall dw/publish
 
 publish-production-site:
-	make generate-production-site
 	git checkout gh-pages
 	git merge main
+	make generate-production-site
+	git add .
+	git commit -m "Publish site."
 	git push origin gh-pages
 	git checkout main

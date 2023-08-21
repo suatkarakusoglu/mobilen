@@ -316,7 +316,7 @@
                            (h1 (@ (class "site-post-title"))
                                ,title)
                            ,@(when filetags
-                               (generate-tags-html article-tags-unique-list))
+                               (generate-tags-html filetags))
                            ,(when publish-date
                               `(p (@ (class "site-post-meta")) ,publish-date))
                            ,(if-let ((video-id (plist-get info :video)))

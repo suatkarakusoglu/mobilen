@@ -223,9 +223,13 @@
                                 (a (@ (class "nav-link") (href "/news/")) "İçerikler") " "
                                 (a (@ (class "nav-link") (href "/community/")) "Topluluk") " "
                                 (a (@ (class "nav-link") (href ,(concat dw/site-url "/rss/"))) "RSS") " "
-                                ;; (a (@ (class "nav-link") (href "https://github.com/suatkarakusoglu/mobilen")) "Github") " "
-                                ;; (a (@ (class "nav-link") (href "/how-to-help/")) "Katkıda Bulun")
                                 ))))))
+
+(defun generate-tags-html (tags)
+  (mapcar (lambda (tag)
+            `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/")))
+                ,(concat (replace-regexp-in-string "_" " " tag) " #" (number-to-string (gethash tag tag-count-map 0)))))
+          tags))
 
 (defun dw/site-footer ()
   (list `(footer (@ (class "site-footer"))
@@ -250,9 +254,7 @@
                  (div (@ (class "container"))
                       (div (@ (class "row site-footer-tags"))
                            ,@(when article-tags-unique-list
-                               (mapcar (lambda (tag)
-                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,(concat tag " #" (number-to-string (gethash tag tag-count-map 0)))))
-                                       article-tags-unique-list)))))))
+                               (generate-tags-html article-tags-unique-list)))))))
 
 (defun get-article-output-path (org-file pub-dir)
   (let ((article-dir (concat pub-dir
@@ -320,9 +322,7 @@
                            (h1 (@ (class "site-post-title"))
                                ,title)
                            ,@(when filetags
-                               (mapcar (lambda (tag)
-                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,(concat tag " #" (number-to-string (gethash tag tag-count-map 0)))))
-                                       filetags))
+                               (generate-tags-html article-tags-unique-list))
                            ,(when publish-date
                               `(p (@ (class "site-post-meta")) ,publish-date))
                            ,(if-let ((video-id (plist-get info :video)))

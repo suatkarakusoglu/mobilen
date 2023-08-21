@@ -18,7 +18,7 @@ SSL Pinning verinin iki parti arasında iletim esnasındaki güvenliğini koruma
 ** SSL'in Kısa tarihçesi
 Güvenli Geçiş Katmanları diye türkçeleştirebileceğimiz bir tabir olan SSL websitelerinin doğması ile beraber 1990'ların ortasında bağlanılan sitelerin güvenliğini teyit etmek için kullandığı bir güvenlik yöntemidir.
 
-Burada =istemci (client)= =ssl= sayesinde =sunucu (server)= ile arasında olan iletişimi geçerli bir sertifikaya guvenerek yapmaktadir.
+Burada =istemci (client)= =ssl= sayesinde =sunucu (server)= ile arasında olan iletişimi geçerli bir sertifikaya güvenerek yapmaktadır.
 
 Sertifika otoritelerinin (CA Authorities) verdiği sertifikalar ile (chain of certificate) üzerinden bu sağlanmaktadır. Ancak herhangi kötü niyetli birileride geçerli sertifikalara sahip olabilir; o nedenle bu riski düşürebilmek adına ilgili sertifikalar her iki partide (istemci/sunucu) önceden bulunarak, bağlantının gerçekten doğru istemci ve doğru sunucu ile olduğunu garantiler.
 
@@ -32,36 +32,40 @@ Pinlenecek olan dosyaya Sertifika (Certificate) diyoruz.
 Asimetrik şifrelemedeki Public/Private anahtar çiftleri, sertifika için önemli kavramlar.
 =Public Key= sunucuya gönderilecek olan bilgiyi başkaları okumasın diye şifrelemede kullanılıyor.
 Bu =public key= sertifikanın içinde bulunuyor ve istemci tarafında kullanılıyor.
-Private anahtar ise gönderilen veriyi server'da çözümleyerek kullanıyor.
+Private anahtar ise gönderilen veriyi sunucuda çözümleyebilmek için kullanılıyor.
 
-Zaten =https= üzerinden bu bilgiler güvenli şekilde iletiliyor iken neden pinlemeye ihtiyaç duyuluyor sorusunun cevabını vermek gerekiyor.
+Zaten =https= üzerinden bu bilgiler güvenli şekilde iletiliyorken neden pinlemeye ihtiyaç duyuluyor sorusunun cevaplayalım.
 
-Normalde sertifikalar "Certificate of Chain" denilen bir zincir uzerinden iletisimi guvenli hale getiriyor. O nedenle tum zincir =root= sertifikaya kadar onaylandiktan sonra iki parti arasinda iletisim baslayabiliyor. Ama, uygulama sunucunun verdigi sertifikaya guvenirken bu sertifikanin kendi sunucusu mu yoksa bir baskasinin sunucusumu olduguna dair bilgiye sahip degildir. =MITM= saldirisina acik olan tarafi burasidir.
+Normalde sertifikalar "Certificate of Chain" denilen bir zincir üzerinden iletişimi güvenli hale getiriyor. O nedenle tüm zincir =root= sertifikaya kadar onaylandıktan sonra iki parti arasında iletişim başlayabiliyor. Ama, uygulama sunucunun verdiği sertifikaya güvenirken bu sertifikanın kendi sunucusu mu yoksa bir başkasının sunucusu mu olduğuna dair bilgiye sahip değildir.
 
-Pinleme yaptiginiz vakit ise direkt olarak bu iletisim garantisini istemci/sunucu arasinda karsilikli guvenli hale getirebiliyorsunuz; herhangi bir baska otoriteye gerek duymuyorsunuz.
+Pinleme yaptığınız vakit ise direkt olarak bu iletişim garantisini istemci/sunucu arasında karşılıklı güvenli hale getirebiliyorsunuz; herhangi bir başka otoriteye gerek duymuyorsunuz.
 
-Önceden istemciye gömülen sunucunun =public= anahtarı olursa, istemci sunucuyla iletişim kurmadan önce kendisinde olan anahtar ile sunucudaki anahtarı karşılaştırıp, eşleşmemesi durumunda direkt iletişimi kesiyor.
+Önceden istemciye gömülen sunucunun =public= anahtarı olursa, istemci sunucuyla iletişim kurmadan önce kendisinde olan anahtar ile sunucudaki anahtarı karşılaştırıp, eşleş*meme*si durumunda direkt iletişimi kesiyor.
 
 Özellikle güvenliğin daha temelde olduğu uygulamalarda bankacılık ve finansal enstrüman olarak görev yapan uygulamalarda bu güvenlik önlemi tercih edilmektedir. Mobil uygulamalarda da yoğunluklu olarak kullanılan bir güvenlik tedbiridir.
 
 ** Mobil Uygulama Entegrasyonları
 1. İlk adım olarak sunucunun =public= anahtarini veya SSL sertifikasını çıkarmanız gerekiyor.
 
-2. Bu anahtara sahip sertifikayı veya public anahtarı istemci uygulamaya pinlemek/gömmek gerekiyor. Istemci tarafindaki network katmanında =sunucuya= isteklerinde bu anahtarlarin eslesme kontrolünü yapacak kontrolü eklemek gerekiyor.
+2. Bu anahtara sahip sertifikayı veya public anahtarı istemci uygulamaya pinlemek/gömmek gerekiyor. İstemci tarafındaki network katmanında =sunucuya= isteklerinde bu anahtarların eşleşme kontrolünü yapacak kontrolü eklemek gerekiyor.
 
 3. Dikkat edilmesi gereken en önemli noktalardan bir tanesi sertifikanın süresi bittiğinde yenileme ihtiyacını takip edebilmek.
    - Certificate Pinning :: Tüm sertifikanın =client='a gömüldüğü ve sorguya cevap veren =server='in sertifikası ile karşılaştırıldığı pinleme yöntemi.
-     Bu durumda =client='ların eski kalanlarının =force update= ile zorunlu güncellemeye tabii olması gerekiyor.
+     Bu durumda =client='ların eski kalanlarının =force update= ile zorunlu güncellemeye gitmesi gerekiyor.
 
-   - Public Key Pinning :: Sertifika'da yer alan =public key='in veya =public key hash='inin istemciye konulmasi ve karşılaştırma için kullanılması durumunu ifade eder.
-     Normalde sertifikalarin belli periyotlarda yenilenmesi gerekmektedir. Bu yenileme herhangi bir private key sizintisi durumlarinin onune gecmeyi amaclar.
-     Public anahtari pinledigimiz takdirde istersek eski =public/private= anahtar cifti ile yeni sertifika olusturabiliriz.
-     Public Key pinleme ise Bu durumda sunucu tarafında sertifika değişimlerinde yeni sertifika eski public/private key pair ile üretildiği durumda force update gerekmeden devam edilebilir. Ancak böyle devam etmesi sertifikanın yenilenme amacına aykırı olmaktadır.
+   - Public Key Pinning :: Sertifika'da yer alan =public key='in veya =public key hash='inin istemciye konulması ve karşılaştırma için kullanılması durumunu ifade eder.
+     Normalde sertifikaların belli periyotlarda yenilenmesi gerekmektedir. Bu yenileme herhangi bir private key sızıntısı durumlarının önüne geçmeyi amaçlar.
 
-Özet olarak, =SSL Pinning= dedigimiz olay istemci ile sunucu arasindaki iletisimi onceden belirlenen anahtar cifti ile disariya sizmasini engelleyen yontemdir.
-Sistem guvenligi konusunda arastirmalar yapan bagimsiz kurulus [[https://owasp.org/][OWASP]], [[https://tr.wikipedia.org/wiki/Man-in-the-middle_sald%C4%B1r%C4%B1s%C4%B1][MITM]] turu ataklar icin onlem olarak bu yontemi tavsiye etmektedir.
-iOS tarafında =NSURLSession= veya =Alamofire= bağımlılıkları üzerinde bu pratikler rahatlikla uygulanabiliyor.
-Android tarafinda ise OKHttpClient ve Retrofit gibi populer kutuphanelerde bu pratiklerin nasil yapildigina dair bircok ornek bulubilirsiniz.
+     Public anahtarı pinlediğimiz takdirde istersek eski =public/private= anahtar çifti ile yeni sertifika oluşturabiliriz.
+     Public Key pinleme ise bu durumda sunucu tarafında sertifika değişimlerinde yeni sertifika eski public/private key pair ile üretildiği durumda force update gerekmeden devam edilebilir. Ancak böyle devam etmesi sertifikanın yenilenme amacına aykırı olmaktadır.
+
+Özet olarak, =SSL Pinning= dediğimiz olay istemci ile sunucu arasındaki iletişimi önceden belirlenen anahtar çifti ile dışarıya sızmasını engelleyen yöntemdir.
+
+Sistem güvenliği konusunda araştırmalar yapan bağımsız kuruluş [[https://owasp.org/][OWASP]], [[https://tr.wikipedia.org/wiki/Man-in-the-middle_sald%C4%B1r%C4%B1s%C4%B1][MITM]] türü ataklar için önlem olarak bu yöntemi tavsiye etmektedir.
+
+iOS tarafında =NSURLSession= veya =Alamofire= bağımlılıkları üzerinde [[https://medium.com/@greenSyntax/ssl-pinning-in-ios-f508b5860ead][bu pratikler]] bu pratikler rahatlıkla uygulanabiliyor.
+
+Android tarafında ise OKHttpClient ve Retrofit gibi popüler kütüphanelerde bu pratiklerin nasıl yapıldığına dair birçok [[https://medium.com/@eniz.bilgin/android-ssl-certificate-pinning-7fd236243f2b][örnek]] bulabilirsiniz.
 
 ** Kaynakça
 - [[https://owasp.org/www-community/controls/Certificate_and_Public_Key_Pinning][OWASP SSL Pinleme]]

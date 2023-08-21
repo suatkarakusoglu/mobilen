@@ -63,7 +63,7 @@ Pinleme yaptığınız vakit ise direkt olarak bu iletişim garantisini istemci/
 
 Sistem güvenliği konusunda araştırmalar yapan bağımsız kuruluş [[https://owasp.org/][OWASP]], [[https://tr.wikipedia.org/wiki/Man-in-the-middle_sald%C4%B1r%C4%B1s%C4%B1][MITM]] türü ataklar için önlem olarak bu yöntemi tavsiye etmektedir.
 
-iOS tarafında =NSURLSession= veya =Alamofire= bağımlılıkları üzerinde [[https://medium.com/@greenSyntax/ssl-pinning-in-ios-f508b5860ead][bu pratikler]] bu pratikler rahatlıkla uygulanabiliyor.
+iOS tarafında =NSURLSession= veya =Alamofire= bağımlılıkları üzerinde [[https://medium.com/@greenSyntax/ssl-pinning-in-ios-f508b5860ead][bu pratikler]] rahatlıkla uygulanabiliyor.
 
 Android tarafında ise OKHttpClient ve Retrofit gibi popüler kütüphanelerde bu pratiklerin nasıl yapıldığına dair birçok [[https://medium.com/@eniz.bilgin/android-ssl-certificate-pinning-7fd236243f2b][örnek]] bulabilirsiniz.
 

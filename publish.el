@@ -160,13 +160,7 @@
 (setq user-full-name "Suat Karakuşoğlu")
 (setq user-mail-address "suatkarakusoglu@gmail.com")
 
-;; (defvar dw/site-url (if (string-equal (getenv "CI") "true")
-;;                         "https://systemcrafters.net"
-;;                       "http://localhost:8080")
-;;   "The URL for the site being generated.")
-
-;; TODO Automatise here later
-(defvar dw/site-url (if t
+(defvar dw/site-url (if (string-equal (getenv "PRODUCTION") "true")
                         "https://mobilen.art"
                       "http://localhost:8080")
   "The URL for the site being generated.")
@@ -445,14 +439,14 @@ holding contextual information."
                   "")))))
 
 (org-export-define-derived-backend 'site-html 'html
-                                   :translate-alist
-                                   '((template . dw/org-html-template)
-                                     (link . dw/org-html-link)
-                                     (src-block . pygments-org-html-code)
-                                     (special-block . dw/org-html-special-block)
-                                     (headline . dw/org-html-headline))
-                                   :options-alist
-                                   '((:video "VIDEO" nil nil)))
+  :translate-alist
+  '((template . dw/org-html-template)
+    (link . dw/org-html-link)
+    (src-block . pygments-org-html-code)
+    (special-block . dw/org-html-special-block)
+    (headline . dw/org-html-headline))
+  :options-alist
+  '((:video "VIDEO" nil nil)))
 
 (defun org-html-publish-to-html (plist filename pub-dir)
   "Publish an org file to HTML, using the FILENAME as the output directory."
@@ -656,9 +650,6 @@ holding contextual information."
 (defun dw/publish ()
   "Publish the entire site."
   (interactive)
-  ;; (org-publish-all (string-equal (or (getenv "FORCE")
-  ;;                                    (getenv "CI"))
-  ;;                                "true"))
   (org-publish-all t)
 
   (webfeeder-build "rss/news.xml"

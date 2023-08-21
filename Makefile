@@ -14,3 +14,9 @@ publish-production-site:
 	git commit -m "Publish site."
 	git push origin gh-pages
 	git checkout main
+
+see-production-site:
+	open https://mobilen.art
+
+see-local-site:
+	open http://localhost:8080

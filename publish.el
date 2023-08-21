@@ -137,7 +137,7 @@
           (let ((file-name (concat tags-files-directory (downcase tag) ".org")))
             (unless (file-exists-p file-name)
               (with-temp-buffer
-                (insert "#+TITLE: " tag "\n\n")
+                (insert "#+TITLE: " (replace-regexp-in-string "_" " " tag) "\n\n")
                 (dolist (org-file article-files)
                   (when (member tag (get-org-filetags (list org-file)))
                     (let ((org-file-name (file-name-nondirectory org-file))

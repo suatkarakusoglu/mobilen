@@ -1,7 +1,7 @@
 #+title: Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu
 #+date: [2023-06-02 Fri]
 #+author: Egehan Kalaycı
-#+filetags: :iOS:Yazılım:Xcode:Araçlar:
+#+filetags: :iOS:Yazılım:Xcode:Araçlar:Terminal_Komutları:
 
 [[https://linkedin.com/in/egehan-kalaycı-736b4a238][Egehan Kalaycı]] yazdı.
 

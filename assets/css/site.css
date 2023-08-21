@@ -410,7 +410,7 @@ strong {
     color: var(--fg-main);
     font-size: 1rem;
     background-color: var(--bg-main);
-    border-top: 0.05rem solid #c3e88d;
+    border-top: 0.05rem solid var(--bg-alt);
 }
 
 .site-footer p:last-child {

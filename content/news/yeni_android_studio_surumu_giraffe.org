@@ -32,7 +32,8 @@ Daha fazla bilgiyi [[https://android-developers.googleblog.com/2023/07/deep-dive
 ** Yeni Bir Arayüz 'Beta New UI' Geliştiriciler için sürekli
 kullandığını bir geliştirme ortamının yenilenmesi bazıları için keyif verici bazıları için ise zor olabiliyor. Android Studio son sürümünde beta olark yeni bir arayüzü kullanıcıları sundu.
 
-[[https://github.com/suatkarakusoglu/mobilen/assets/26549014/d81760ce-c03c-47b4-9708-4e6fc762735f]]
+#+CAPTION: Beta New UI
+[[file:android_studio_giraffe_beta_ui.jpg]]
 
 - IntelliJ arayüzünü tamamen değiştirebileceğinden emin olmak için kullanıcılardan ve diğer IntelliJ tabanlı IDE'lerden geri bildirim toplamak için 2022.2'de erken bir önizleme olarak ilk kez [[https://youtrack.jetbrains.com/issues/IDEA?q=tag:%20newUI%20%20sort%20by:%20votes%20desc][yayınlandı]]. O zamandan beri, IntelliJ 2022.3'te beta'ya ilerledi, birçok hata düzeltmesi ve iyileştirme yaptı
 - Android için varsayılan ana araç çubuğu ve araç pencereleri yapılandırmalarını optimize ederek ve stildeki simgelerde yenilenmeler yapıldı.
@@ -46,30 +47,40 @@ Kendi görüşlerimi ifade edersem, ben son derece hoş buldum bu yeni arayüzü
 ** Jetpack Compose UI için Yeni API Animasyon
 Preview Animasyon Preview Android Studio Giraffe'deki başka bir heyecan verici özelliktir.
 
-[[https://github.com/suatkarakusoglu/mobilen/assets/26549014/2b866172-a3c9-4657-a74b-56e350ba2204]]
+#+CAPTION: Animation Preview
+[[file:yeni_android_studio_surumu_animation_preview.jpg]]
 
-Geliştiriciler animasyonları kare kare ön izleyebilir ve istenen davranışa uygun olduklarından emin olabilirler.
+- Geliştiriciler animasyonları kare kare ön izleyebilir ve istenen davranışa uygun olduklarından emin olabilirler.
 
-Animasyonları hata ayıklarken, Compose animasyon ön izlemeleri özelliği son derece yararlı olabilir. Geliştiriciler animasyonların doğru şekilde ayarlandığından emin olabilirler.
-Compose animasyon ön izlemeleri özelliği, geliştiricilerin animasyonların istenen davranışa uygun olduklarını doğrulamalarına yardımcı olur.
-Bu uygulamanın genel kullanıcı deneyimini geliştirmeye yardımcı olabilir. Bu özelliği kullanmak için Android Studio Giraffe Canary 3 ve Compose 1.4.0-alpha04 ya da üzeri bir sürüm gerekiyor.
+- Animasyonları hata ayıklarken, Compose animasyon ön izlemeleri özelliği son derece yararlı olabilir. Geliştiriciler animasyonların doğru şekilde ayarlandığından emin olabilirler.
+
+- Compose animasyon ön izlemeleri özelliği, geliştiricilerin animasyonların istenen davranışa uygun olduklarını doğrulamalarına yardımcı olur.
+
+- Bu uygulamanın genel kullanıcı deneyimini geliştirmeye yardımcı olabilir. Bu özelliği kullanmak için Android Studio Giraffe Canary 3 ve Compose 1.4.0-alpha04 ya da üzeri bir sürüm gerekiyor.
 
 ** Device Explorer
 Android Studio'nun önceki sürümlerinde bulunan Device File Explorer'nin güncellenmiş bir sürümüdür.
 
-[[https://github.com/suatkarakusoglu/mobilen/assets/26549014/c2486b17-602b-42bf-8e92-27d3656f5684]]
+#+CAPTION: Device Explorer
+[[file://device_explorer.png]]
+
 Hata ayıklayıcıyı bir işleme sonlandırma, zorla durdurma veya ekleme seçenekleri Logcat'ten Aygıt Gezgini'ne taşındı.
 
 ** Android SDK Upgrade Asistanı
 API seviyesini doğrudan IDE'de yükseltmek için gerekli adımları görmenize olanak tanır
 
-[[https://github.com/suatkarakusoglu/mobilen/assets/26549014/e532b9fe-3acc-4b86-b154-bd108c9f781f]]
-Uygulamalarının targetSdkVersion'unu veya uygulamanın hedeflediği API seviyesini yükseltmelerine yardımcı olan bir araçtır. Kulanmak için yolunun takip edin ### Tools > Android SDK Upgrade Assistant > Uyarı: Google Play uygulamaları için 31 Ağustos 2023'ten itibaren, Wear OS uygulamaları dışındaki yeni uygulamalar, Android 13 (API düzeyi 33) veya sonraki sürümleri hedeflemelidir. Wear OS uygulamaları ise Android 11'i (API düzeyi 30) veya Android 13'e (API düzeyi 33) kadarki sürümleri hedeflemelidir. Daha fazla bilgi [[https://developer.android.com/google/play/requirements/target-sdk][buraya]] tıklayınız.
+#+CAPTION: Upgrade Asistanı
+[[file://upgrade_assistant.png]]
+
+Uygulamalarının targetSdkVersion'unu veya uygulamanın hedeflediği API seviyesini yükseltmelerine yardımcı olan bir araçtır.
+Kulanmak için Tools > Android SDK Upgrade Assistant > Uyarı: Google Play uygulamaları için 31 Ağustos 2023'ten itibaren, Wear OS uygulamaları dışındaki yeni uygulamalar, Android 13 (API düzeyi 33) veya sonraki sürümleri hedeflemelidir.
+Wear OS uygulamaları ise Android 11'i (API düzeyi 30) veya Android 13'e (API düzeyi 33) kadarki sürümleri hedeflemelidir. Daha fazla bilgi [[https://developer.android.com/google/play/requirements/target-sdk][buraya]] tıklayınız.
 
 ** Kotlin DSL Uygun Şekilde Proje Oluşturma Android Studio
 Giraffe'den itibaren yeni projeler veya modüller oluştururken, varsayılan olarak projeyi Kotlin DSL ile oluşturabileceğiniz.
 
-[[https://github.com/suatkarakusoglu/mobilen/assets/26549014/e3b98e09-480f-46e3-8a5a-53e58ae6b83b]]
+#+CAPTION: Kotlin DSL Ayarları
+[[file://kotlin_dsl_settings.png]]
 
 Android Studio Giraffe geliştirici deneyimini artırmayı amaçlayan birçok yeni özellik ve iyileştirme ile hayatımıza girdi. Canlı Düzenleme iyileştirmelerinden Compose animasyon preview, yeni Device Explorer'nden SDK yükseltme asistanına kadar pek çok araç mevcuttur; bu araçlar geliştiricilerin Android uygulamalarını oluştururken daha üretken ve verimli olmalarına yardımcı olabilirler. Bu özelliklerin yanı sıra diğer birçok özellik, Android geliştiricileri için heyecan verici bir sürüm haline getirir Android Studio Giraffe'yi.
 

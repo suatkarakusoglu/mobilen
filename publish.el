@@ -351,7 +351,7 @@
     (cond
      (exported-link exported-link)
      ((string-match-p "\\(.*\\.\\(jpg\\|png\\)\\)" (org-element-property :raw-link link))
-      (format "<img src=\"/img/%s\" style=\"border-radius: 8px\" width=\"%s\">"
+      (format "<img src=\"/img/%s\" class=\"content-image\" width=\"%s\">"
               (file-name-nondirectory (org-element-property :path link))
               ;; (org-export-read-attribute :attr_html link)
               ;; TODO Read from #+ATTR_HTML
@@ -439,14 +439,14 @@ holding contextual information."
                   "")))))
 
 (org-export-define-derived-backend 'site-html 'html
-  :translate-alist
-  '((template . dw/org-html-template)
-    (link . dw/org-html-link)
-    (src-block . pygments-org-html-code)
-    (special-block . dw/org-html-special-block)
-    (headline . dw/org-html-headline))
-  :options-alist
-  '((:video "VIDEO" nil nil)))
+                                   :translate-alist
+                                   '((template . dw/org-html-template)
+                                     (link . dw/org-html-link)
+                                     (src-block . pygments-org-html-code)
+                                     (special-block . dw/org-html-special-block)
+                                     (headline . dw/org-html-headline))
+                                   :options-alist
+                                   '((:video "VIDEO" nil nil)))
 
 (defun org-html-publish-to-html (plist filename pub-dir)
   "Publish an org file to HTML, using the FILENAME as the output directory."

@@ -271,6 +271,11 @@ strong {
     max-width: 60rem;
 }
 
+.content-image {
+    border-radius: 8px;
+    border: 1px solid var(--bg-alt);
+}
+
 .tag {
     padding: 0.5rem;
     margin-top: 0.5rem;

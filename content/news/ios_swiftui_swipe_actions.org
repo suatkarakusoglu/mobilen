@@ -7,7 +7,6 @@
 
 * İçerik
 #+CAPTION: Örnek Swipe Actions
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:SwipeActions.jpg]]
 ** Swipe Actions nedir?

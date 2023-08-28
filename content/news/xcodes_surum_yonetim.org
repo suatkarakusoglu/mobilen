@@ -9,7 +9,6 @@
 Merhaba Mobilen okurları, bugün sizlere Xcode'un farklı sürümlerini nasıl kolaylıkla yönetebileceğinizi anlatacağım.
 
 #+CAPTION: Xcode Naming
-#+ATTR_LATEX: :width 120px
 #+ATTR_HTML: :width 100%
 [[file:xcode_naming.jpg]]
 
@@ -27,14 +26,12 @@ Gelelim =Xcodes='u kullanmaya. Bunun iki farklı yöntemi bulunmaktadır.
 İlk yöntem, Xcodes'un kullanıcı dostu bir arayüzü olan native uygulamasını indirip kullanmaktır. Bu sayede sürümleri görsel olarak kolaylıkla yönetebilirsiniz.
 
 #+CAPTION: Xcodes Gui
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:xcodes_gui.jpg]]
 
 İkinci yöntem ise terminal üzerinden Xcodes'u kullanmaktır. Eğer terminal üzerinden kullanmak isterseniz, =xcodes= komutunu kullanarak çeşitli işlemleri gerçekleştirebilirsiniz. Örneğin, mevcut sürümleri görüntülemek için =xcodes list= komutunu kullanabilir, indirmek istediğiniz sürümün yanındaki numarayı yazarak indirme işlemini başlatabilirsiniz. Ayrıca, indirdiğiniz sürümleri =xcodes installed= komutu ile görüntüleyebilir ve =xcodes select= komutuyla varsayılan sürümü belirleyebilirsiniz.
 
 #+CAPTION: Xcodes Terminal
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:xcodes_terminal.jpg]]
 

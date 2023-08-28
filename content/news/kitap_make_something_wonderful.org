@@ -7,7 +7,6 @@
 
 * İçerik
 #+CAPTION: Bilgisayar zihnin bisikletidir.
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:stevejobs_with_bicycle.jpg]]
 

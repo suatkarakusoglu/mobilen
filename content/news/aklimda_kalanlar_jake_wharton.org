@@ -7,7 +7,6 @@
 
 * İçerik
 #+CAPTION: Photo by [[https://unsplash.com/@goian][Ian Schneider]] on [[https://unsplash.com/?utm_source=medium&utm_medium=referral][Unsplash]]
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:../../assets/img/AklimdaKalanlarTitle.jpg]]
 

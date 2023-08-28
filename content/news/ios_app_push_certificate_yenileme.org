@@ -32,18 +32,15 @@ Certificates, identifiers & Profiles menüsüne gidin.
 =Identifiers= menüsünden ilgili uygulamanın =id='sini bulun.
 
 #+CAPTION: Certificates, identifiers & Profiles menüsü
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:1_CertificatePushIdentifier.jpg]]
 
 #+CAPTION: =Edit= Push Notifications
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:2_EditAppIdConfiguration.jpg]]
 
 ** Push sertifikası oluşturma
 #+CAPTION: Push sertifikası oluşturma
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:3_CreatePushCert.jpg]]
 

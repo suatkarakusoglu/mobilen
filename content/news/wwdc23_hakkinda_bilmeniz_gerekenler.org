@@ -13,7 +13,6 @@ Bu yazıda, bir geliştiricinin bakış açısından bu yılın WWDC'sindeki fav
 ** Vision Pro
 
 #+CAPTION: Vision Pro
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:vision_pro.jpg]]
 
@@ -40,14 +39,12 @@ Swift makroları ile alakalı daha detaylı inceleme yapmak isterseniz, [[https:
 Her yıl SwiftUI yenilik ve iyileştirmelerine UIKit'in yerini tamamen alabilir mi gözüyle bakıyoruz. Her ne kadar buna daha zaman var gibi dursa da, bu yılki SwiftUI yenilikleri de bir hayli göze çarpıyor.
 
 #+CAPTION: SwiftUI için yeni macrolar
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:observable_macro.jpg]]
 
 Bu yılki SwiftUI değişiklikleri, veri akışını daha da sadeleştirmeyi hedefliyor. =StateObject=, =@ObservedObject= ve =@EnvironmentObject= property wrapper'ları =@State= ve =@Environment= altında toplanmış.
 
 #+CAPTION: SwiftUI örnek macro
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:macro_usage.jpg]]
 
@@ -64,7 +61,6 @@ SwiftUI yeniliklerine daha yakından göz atmak isterseniz [[https://developer.a
 ** SwiftData
 
 #+CAPTION: SwiftData
-#+ATTR_LATEX: :width 120px
 #+ATTR_HTML: :width 100%
 [[file:SwiftData.jpg]]
 

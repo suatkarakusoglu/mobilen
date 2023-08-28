@@ -10,7 +10,6 @@
 
 * İçerik
 #+CAPTION: Tek bir Template
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:../../assets/img/20230724T133855.759239_create_template_1.jpg]]
 

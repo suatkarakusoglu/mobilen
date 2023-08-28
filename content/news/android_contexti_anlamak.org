@@ -36,12 +36,12 @@ Bağlamlar başka bağlamlarla hiyerarşi içindedir. Kalabalık örneğinde old
 *** Androidde Context
 Androidde Context anlamca yukarıda bahsedilen bağlamdan farklı değildir. Android sisteminde kullanılan componentları bir çerçeveye oturtmak ve anlam kazandırmak için vardır. Tutarlılığı sağlar. Androidde temel şeyleri yapabilmek için gereklidir.Ancak bu kavramı Android'e yeni başlayanlar genellikle anlamazlar. Hatta biraz deneyimliler bile tam olarak context'in ne olduğu ve neden kullanıldığı konusunu yeterince bilmezler. =Application (uygulama)= olarak bildiğimiz sınıfın çerçevesini yani onu oluşturan, onun veya Android sisteminin kaynaklarına erişilmesini ve ona ait bilgileri ihtiyacı olan yerlere sağlayan =arayüzdür= Context. Context arayüzü bilgileri Android sisteminden alır. Özetle uygulamanın ya da activity'nin yeteneklerini, kaynaklarını ve bilgilerini soyutlayan sınıftır. Uygulama kapsamını belirler.
 
-Context arayüz olarak Android sistemi ve uygulama arasında köprü görevi görür. Diğer bir deyişle Android sisteminin uygulama ile konuşma yoludur. İletişimi sağlar. =String resource, color resource=gibi uygulamaya ait herhangi bir resource'a erişebilmeyi, =activity'den activity'e navigasyonu=,=toast mesajı göstermeyi=, =yeni bir activity= oluşturmayı, =xml view='lerini oluşturmayı > Jetpack Compose ile birlikte bu durum değişti. UI'ın işletim sisteminden bağımsız çizilmesini sağladı bu durum. Detaylar için bkz. [[https://medium.com/androiddevelopers/understanding-jetpack-compose-part-1-of-2-ca316fe39050]] ve daha birçok başka şeyi yapabilmemizi sağlar.
+Context arayüz olarak Android sistemi ve uygulama arasında köprü görevi görür. Diğer bir deyişle Android sisteminin uygulama ile konuşma yoludur. İletişimi sağlar. =String resource, color resource= gibi uygulamaya ait herhangi bir resource'a erişebilmeyi, =activity'den activity'e navigasyonu=, =toast mesajı göstermeyi=, =yeni bir activity= oluşturmayı, =xml view='lerini oluşturmayı > Jetpack Compose ile birlikte bu durum değişti. UI'ın işletim sisteminden bağımsız çizilmesini sağladı bu durum. Detaylar için bkz. [[https://medium.com/androiddevelopers/understanding-jetpack-compose-part-1-of-2-ca316fe39050]] ve daha birçok başka şeyi yapabilmemizi sağlar.
 
 *** Context'i kim nasıl implement ediyor?
 Elbette insani olarak uygulama contextini yani bir uygulamanın kapsamını,bağlamını biz insanlar kolaylıkla algılayabiliyoruz. Ancak bunu işletim sistemi nasıl yapıyor, Context'i nasıl belirliyor ? Bu sorunun cevabı için biraz detaya inmek lazım.
 
-=AMS (Activity Manager System)=denilen Android işletim sistemi tarafından yönetilen sistem süreci çalışan Activitylerin ve diğer componentların =state'lerini ( t anındaki durumları)= implement eder. Uygulama başlatıldığında AMS uygulama ile iletişime geçer. Uygulama izinlerini ve uygulamanın ihtiyacı olabilecek başka contextleri de hesaba katarak ve kontrolü elinde tutarak Contexti implement eder.
+=AMS (Activity Manager System)= denilen Android işletim sistemi tarafından yönetilen sistem süreci çalışan Activitylerin ve diğer componentların =state'lerini ( t anındaki durumları)= implement eder. Uygulama başlatıldığında AMS uygulama ile iletişime geçer. Uygulama izinlerini ve uygulamanın ihtiyacı olabilecek başka contextleri de hesaba katarak ve kontrolü elinde tutarak Contexti implement eder.
 
 *** Neden bu kadar çok context var ?
 Context sınıfını yakından incelediğimizde birden fazla context olduğunu görürüz. Context context içindedir. Bu durum kafa karışıklığına neden olur. Hangi contexti kullanacağımızı bilemeyebiliriz. Contextlerin doğru yerde ve şekilde kullanılması oluşabilecek büyük problemlerin önüne geçer. Bu sebeple context çeşitlerini ve nerelerde kullanılması gerektiğini bilmek Android geliştiriciler için azami ölçüde önemlidir. Devamındaki görsel context hiyerarşisini gösterir.
@@ -65,34 +65,30 @@ Diagramdan görüleceği üzere *Activity*, *Service* ve *Application* dolaylı 
 Temelde farklı contextlerin olması tema olup olmamasına yani UI içerip içermemesine bağlıdır denilebilir. Ancak bundan da öte bu farklılıkta mimari seçiminin etkisi vardır. Bu seçim beraberinde problemler de getirmiştir. Özellikle Context sınıfının alt sınıflarının *farklı scope*'da olmasından ötürü. Çünkü activity ve application sınıfları farklı scopedadırlar. Detay için bkz. [[https://www.youtube.com/watch?v=S22NlX4iXJU&t=611s][Context in Android - A Deep Dive Video]]
 
 *** Context Çeşitleri
-- =ApplicationContext= : *Global* contextir. Yani uygulamanın kapsamı hakkındaki *tüm bilgilere* bu context aracılığı ile erişiriz. *Uygulama scopuna* bağlıdır.Yani uygulama hayatta olduğu sürece vardır. Uygulama içinde bu contexte 2 şekilde erişebiliriz. =context.getApplicationContext()= ve/ya =activity.getApplication()=. İkisinin biribirinden farkı yoktur, aynı şekilde ve aynı niyet ile kullanılabilirler. ApplicationContext ile yapılabilecekler listesine örnek olarak:
+=ApplicationContext= : *Global* contextir. Yani uygulamanın kapsamı hakkındaki *tüm bilgilere* bu context aracılığı ile erişiriz. *Uygulama scopuna* bağlıdır.Yani uygulama hayatta olduğu sürece vardır. Uygulama içinde bu contexte 2 şekilde erişebiliriz. =context.getApplicationContext()= ve/ya =activity.getApplication()=. İkisinin biribirinden farkı yoktur, aynı şekilde ve aynı niyet ile kullanılabilirler. ApplicationContext ile yapılabilecekler listesine örnek olarak:
 
-#+begin_example
-Load Resource Values,
-Start a Service,
-Bind to a Service,
-Send a Broadcast,
-Register BroadcastReceiver
-#+end_example
+- Load Resource Values,
+- Start a Service,
+- Bind to a Service,
+- Send a Broadcast,
+- Register BroadcastReceiver
 
-- =ActivityContext=: *temaya sahip context*'tir diyebiliriz kendileri için. Application contexte dahildir ve herşeyine erişir ek olarak UI'a tema verilmesini sağlar. Activity scopuna bağlıdır. Activity içinden =getContext()= ve/ya =this= ile erişilir. *Activity hayatta olduğu sürece vardır*. Yani activity ölünce bu context de ölür. Genellikle UI ile alakalı context gereken işlerde kullanılır. Bu context ile yapılabilecek şeylere örnek olarak:
+=ActivityContext=: *temaya sahip context*'tir diyebiliriz kendileri için. Application contexte dahildir ve herşeyine erişir ek olarak UI'a tema verilmesini sağlar. Activity scopuna bağlıdır. Activity içinden =getContext()= ve/ya =this= ile erişilir. *Activity hayatta olduğu sürece vardır*. Yani activity ölünce bu context de ölür. Genellikle UI ile alakalı context gereken işlerde kullanılır. Bu context ile yapılabilecek şeylere örnek olarak:
 
-#+begin_example
-Load Resource Values,
-Layout Inflation,
-Start an Activity,
-Show a Dialog,
-Start a Service,
-Bind to a Service,
-Send a Broadcast,
-Register BroadcastReceiver
-#+end_example
+- Load Resource Values,
+- Layout Inflation,
+- Start an Activity,
+- Show a Dialog,
+- Start a Service,
+- Bind to a Service,
+- Send a Broadcast,
+- Register BroadcastReceiver
 
 Farkedildiği üzere ApplicationContextin yapabildiği şeylere ek olarak UI ile alakalı işlemleri yapabiliyor.
 
-- =ServiceContext=: service sınıfı için kullanılan contextir. Arka planda süren veri indirme yahut müzik oynatma gibi işlemleri yapmak için gerekir. Service öldüğünde context'de ölür.
+=ServiceContext=: service sınıfı için kullanılan contextir. Arka planda süren veri indirme yahut müzik oynatma gibi işlemleri yapmak için gerekir. Service öldüğünde context'de ölür.
 
-- =BaseContext=: ContextWrapper sınıfı için vardır denilebilir. Yukarıda detaylıca bahsedilen hiyerarşide kullanılır. Kısaca, ContextImp'da AMS tarafından imlement edilen context instance'ını ContextWrapper sınıfı bu fonksiyon ile alır ve gerekirse davranış değişikliği yapabilir. Bu fonksiyon uygulama genelinde =getBaseContext()= ile erişilebilir olsa da temelde kullanılmasının gereği ya da anlamı yoktur.
+=BaseContext=: ContextWrapper sınıfı için vardır denilebilir. Yukarıda detaylıca bahsedilen hiyerarşide kullanılır. Kısaca, ContextImp'da AMS tarafından imlement edilen context instance'ını ContextWrapper sınıfı bu fonksiyon ile alır ve gerekirse davranış değişikliği yapabilir. Bu fonksiyon uygulama genelinde =getBaseContext()= ile erişilebilir olsa da temelde kullanılmasının gereği ya da anlamı yoktur.
 
 *** Contextin Maaliyeti
 Yukarıda birkaç kez bahsedildiği gibi farklı *contextler* farklı *scope'lar* da çalışırlar. Hatalı kullanımında kolayca *memory leak*'e sebep olabilirler. Bu da uygulamanın crash etmesi, gerektiği şekilde çalışmaması gibi üzücü sonuçlara neden olur. Örneğin, ActivityContexti kendi yaşam sürecinden daha uzun yaşayan bir objeye verildi. Activity öldüğünde yaratılan obje yaşamaya devam edeceği için geçirilen ActivityContexti =garbage collector= temizlemeyecektir. Bu da memory leak'e sebep olacaktır.
@@ -100,15 +96,15 @@ Yukarıda birkaç kez bahsedildiği gibi farklı *contextler* farklı *scope'lar
 *** Context'e Karar Vermek
 Hangi contexti nerede kullanacağımıza devamındaki kriterlere göre karar verebiliriz.
 
-- =ActivityContext yerine ApplicationContext geçirmek UI da bazı gösterim sorunlarına yol açacaktır. Özellikle tema bazlı kaynaklara erişim olmadığı için onlar gösterilmeyecektir. Örneğin, LayoutInflater kullanıyoruz, kod içinde temayı da atıyoruz ancak bir türlü tema UI'da uygulanmıyor. Bunun nedeni çok yüksek ihitimalle ActivityContext yerine ApplicationContext geçirmemizdir.=
+- ActivityContext yerine ApplicationContext geçirmek UI da bazı gösterim sorunlarına yol açacaktır. Özellikle tema bazlı kaynaklara erişim olmadığı için onlar gösterilmeyecektir. Örneğin, LayoutInflater kullanıyoruz, kod içinde temayı da atıyoruz ancak bir türlü tema UI'da uygulanmıyor. Bunun nedeni çok yüksek ihitimalle ActivityContext yerine ApplicationContext geçirmemizdir.
 
-- =ActivityContext yalnıca UI ile ilgili context gerektiren işlemlerde ve activity sonlanınca sonlanmasını istediğimiz şeylerde kullanılabilir.  Aksi takdirde memory leake sebep olacaktır. En yaygın yanlış kullanım Viewmodel classlarına ActivityContext geçirmektir. Bundan kaçınmak gerekir.=
+- ActivityContext yalnıca UI ile ilgili context gerektiren işlemlerde ve activity sonlanınca sonlanmasını istediğimiz şeylerde kullanılabilir.  Aksi takdirde memory leake sebep olacaktır. En yaygın yanlış kullanım Viewmodel classlarına ActivityContext geçirmektir. Bundan kaçınmak gerekir.
 
-- =ApplicationContext UI ile alakalı işlemler dışındaki her şeyi yapabilir. Güvenli ve banko context'imizdir kendisi. Eğer uygulama içinde nerede olursak olalım hangi context'i kullanacağımızdan emin olamıyorsak ApplicationContext kullanmak en güvenli yoldur.=
+- ApplicationContext UI ile alakalı işlemler dışındaki her şeyi yapabilir. Güvenli ve banko context'imizdir kendisi. Eğer uygulama içinde nerede olursak olalım hangi context'i kullanacağımızdan emin olamıyorsak ApplicationContext kullanmak en güvenli yoldur.
 
-- =Singleton'larda activityContext geçirmek memory leak'e sebep olur. Onun yerine ApplicationContext kullanılmalıdır.=
+- Singleton'larda activityContext geçirmek memory leak'e sebep olur. Onun yerine ApplicationContext kullanılmalıdır.
 
-- =BaseContext sadece kodda erişebildiğimiz ama kullanmamız gerekmeyen fonksiyondur. Kendisine günlük yaşamımızda lüzum yok. Gerek olmayan şeye neden erişebildiğimiz ayrı bir yazı ve sohbet konusudur. Çok kısaca bunun nedeni yukarıda çok minik bahsedilen Context hiyerarşisinin mimari seçiminden kaynaklıdır.=
+- BaseContext sadece kodda erişebildiğimiz ama kullanmamız gerekmeyen fonksiyondur. Kendisine günlük yaşamımızda lüzum yok. Gerek olmayan şeye neden erişebildiğimiz ayrı bir yazı ve sohbet konusudur. Çok kısaca bunun nedeni yukarıda çok minik bahsedilen Context hiyerarşisinin mimari seçiminden kaynaklıdır.
 
 *** Son Olarak
 Uygulamaların kapsamını belirleyen Android Context'i doğru anlamak ve doğru şekilde kullanmak stabil ve verimli uygulamalar geliştirebilmenin mihenk taşıdır. Contextin yanlış kullanımı ve/ya yönetimi kolaylıkla memory leak'e neden olur. En iyi ihtimalle kullanıcı deneyimi etkilenir ve uygulamanın kullanılamamasına kadar giden yolu açar. Unutmayın ActivityContext sadece activity yaşam döngüsü içinde ve UI'da gösterilecek şeyler için. Onun dışında kalan her şeyde ApplicationContext kullanılmalı.
@@ -118,14 +114,9 @@ Umarım bu yazı ile genel olarak context nedir, Android bağlamında context ne
 Huzur, sağlık, mutluluk içeren hayat bağlamında kalın. Selametle.
 
 ** Kaynakça
-https://medium.com/@banmarkovic/what-is-context-in-android-and-which-one-should-you-use-e1a8c6529652
-
-https://medium.com/@ali.muzaffar/which-context-should-i-use-in-android-e3133d00772c
-
-https://www.youtube.com/watch?v=JzewiQixgRI
-
-Context kavramını derinlemesine inceleyen akademik makale https://files.eric.ed.gov/fulltext/EJ1200789.pdf
-
-https://www.freecodecamp.org/news/mastering-android-context-7055c8478a22/
-
-https://vtsen.hashnode.dev/android-context-101-with-class-diagram
+- [[https://medium.com/@banmarkovic/what-is-context-in-android-and-which-one-should-you-use-e1a8c6529652][What is context in android and which one should you use?]]
+- [[https://medium.com/@ali.muzaffar/which-context-should-i-use-in-android-e3133d00772c][Which context should i use in android?]]
+- [[https://www.youtube.com/watch?v=JzewiQixgRI][What does context mean in Android Studio?]]
+- [[https://files.eric.ed.gov/fulltext/EJ1200789.pdf][Context kavramını derinlemesine inceleyen akademik makale]]
+- [[https://www.freecodecamp.org/news/mastering-android-context-7055c8478a22/][Mastering android context]]
+- [[https://vtsen.hashnode.dev/android-context-101-with-class-diagram][Android Context Class Diagram]]

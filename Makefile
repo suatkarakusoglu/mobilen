@@ -1,10 +1,13 @@
 .PHONY: publish-production-site
 
+.generate-site:
+	emacs --batch -l ./publish.el --funcall dw/publish
+
 generate-production-site:
-	PRODUCTION=true emacs --batch -l ./publish.el --funcall dw/publish
+	PRODUCTION=true make .generate-site
 
 generate-local-site:
-	emacs --batch -l ./publish.el --funcall dw/publish
+	PRODUCTION=false make .generate-site
 
 publish-production-site:
 	git checkout gh-pages

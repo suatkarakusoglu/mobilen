@@ -1,7 +1,7 @@
 #+title: Android Context'i Anlamak : Çarpıcı Başlıklar ve ClickBait
 #+date: [2023-08-25 Fri]
 #+author: Betül Sandıkçı
-#+filetags: :Android:
+#+filetags: :Android:Yazılım:
 
 [[https://linkedin.com/in/betulsandikci][Betül Sandıkçı]] yazdı.
 
@@ -9,42 +9,50 @@
 [[file://android_contexti_anlamak_cover.jpg]]
 
 * İçerik
-Merhaba Mobilen okurları, Hepimizin malumu olduğu üzere, çağımız =içerik= çağı. Gün boyu çokça ulaşılabilir içeriğe maruz kalıyoruz, içerikten içeriğe sürükleniyoruz, hayatımızı şekillendirmelerine izin veriyoruz. Artık her birerimiz /*profesyonel içerik tüketicileriyiz*/. Bu seviyeye kolay gelmedik elbette. Çokça zaman harcayarak, sonsuz aşağı kaydırmalarla, odaklarımızı ve irademizi feda ederek geldik. İşin profesyonelleri olarak sonsuza yakın seçenek arasından nasıl karar veriyoruz neyi tüketip tüketmeyeceğimize?
+Merhaba Mobilen okurları, Hepimizin malumu olduğu üzere, çağımız =içerik= çağı. Gün boyu çokça ulaşılabilir içeriğe maruz kalıyoruz, içerikten içeriğe sürükleniyoruz, hayatımızı şekillendirmelerine izin veriyoruz. Artık her birimiz /*profesyonel içerik tüketicileriyiz*/. Bu seviyeye kolay gelmedik elbette. Çokça zaman harcayarak, sonsuz aşağı kaydırmalarla, odaklarımızı ve irademizi feda ederek geldik. İşin profesyonelleri olarak sonsuza yakın seçenek arasından nasıl karar veriyoruz neyi tüketip tüketmeyeceğimize?
 
 Soru biraz ironik elbette. Sonsuz kaydırma esnasında gerçek ve bilinçli bir karar verebiliyor muyuz emin değilim. Emin olmadığım konu ehlileştiremediğimiz merakımız. Çünkü bu kuvvetli ve itici duygu bizi yönlendirmelere açık hale getirebiliyor. Bu kadar çok seçenek arasında da merakımızı en çok çekebileni tüketmeye karar veriyoruz elbette. İlk gözümüze çarpan şey çoğunlukla içeriğin başlığı. Görsel içeriklerde ise başlık artı kapak resmi denilebilir belki. Ama yine de çarpıcı bir başlık kapak resminin önüne geçiyor çoğunlukla. Başlık bizi anında kavrarsa ve merakımızı celbederse o içeriğe bir göz atmak istiyoruz.
 
 *** Çarpıcı Başlıklar
-Çarpıcı başlıklar merakımızı gıdıklıyor. İddalı o birkaç kelimenin arkasındaki hikayeyi merak ediyoruz. Dürtüsel olarak oraya çekiliyoruz. Çünkü merak duygumuzun tatmin olmasına ihtiyacımız var. Bazen içeriğe tıklayıp tüketmeye başlayınca başlık ile içeriğin örtüşmediğini anlıyoruz. Sırf içerik öne çıksın, kulanıcılar içeriğe tıklasın diye içerikten bağımsız atılan başlıkların neticesi bu durum. Eğer tatmin olmazsak kandırılmış hissediyoruz. Hissedene kadar elbette birkaç saniye geçiyor. Çünkü başlık ile içeriğin alakasını anlamamız gerekiyor. Konuyu anlamak ve bağlantıyı kurmak istiyoruz. Bağlantıyı kuramayınca ve bir de beğenmediysek saliseler içinde o içerikten hemencik başkasına geçiyoruz. Bu kararımızın ardındaki motivasyonu derinlemesine düşünmüyoruz elbette. Sadece içgüdüsel olarak kendimizi oltaya takılan balık gibi hissedince orayı terketmeyi seçiyoruz.
+Çarpıcı başlıklar merakımızı gıdıklıyor. İddialı o birkaç kelimenin arkasındaki hikayeyi merak ediyoruz. Dürtüsel olarak oraya çekiliyoruz. Çünkü merak duygumuzun tatmin olmasına ihtiyacımız var. Bazen içeriğe tıklayıp tüketmeye başlayınca başlık ile içeriğin örtüşmediğini anlıyoruz. Sırf içerik öne çıksın, kulanıcılar içeriğe tıklasın diye içerikten bağımsız atılan başlıkların neticesi bu durum. Eğer tatmin olmazsak kandırılmış hissediyoruz. Hissedene kadar elbette birkaç saniye geçiyor. Çünkü başlık ile içeriğin alakasını anlamamız gerekiyor. Konuyu anlamak ve bağlantıyı kurmak istiyoruz. Bağlantıyı kuramayınca ve bir de beğenmediysek saliseler içinde o içerikten hemencik başkasına geçiyoruz. Bu kararımızın ardındaki motivasyonu derinlemesine düşünmüyoruz elbette. Sadece içgüdüsel olarak kendimizi oltaya takılan balık gibi hissedince orayı terketmeyi seçiyoruz.
 
 *** Clickbait
-Bahsettiğim tüm bu süreç yani bir içeriğin clickbait olup olmadığını anlama süreci içeriğin içine girmeden ve biraz vakit geçirmeden kesin olarak anlaşılabilecek bir şey değil elbette. Kandırıldığımızı anlayabilmek için bile saniyeler yahut dakikalar harcamamız lazım. Çünkü içeriğin konusu ile başlık arasındaki bağlantıyı kurmaya ihtiyacımız var. Alakayı anlamak istiyoruz. Başlığın ardındaki motivasyonu, hikayeyi. Çünkü ancak merak duygumuz öyle ehlileşebiliyor. Hikayenin başı sonu belli olduğu zaman da içeriğe devam edip etmeyeye dair kararımızı veriyoruz.
+Bahsettiğim tüm bu süreç yani bir içeriğin clickbait olup olmadığını anlama süreci içeriğin içine girmeden ve biraz vakit geçirmeden kesin olarak anlaşılabilecek bir şey değil elbette. Kandırıldığımızı anlayabilmek için bile saniyeler yahut dakikalar harcamamız lazım. Çünkü içeriğin konusu ile başlık arasındaki bağlantıyı kurmaya ihtiyacımız var. Alakayı anlamak istiyoruz. Başlığın ardındaki motivasyonu, hikayeyi. Çünkü ancak merak duygumuz öyle ehlileşebiliyor. Hikayenin başı sonu belli olduğu zaman da içeriğe devam edip etmemeye dair kararımızı veriyoruz.
 
 *** Bağlama gelirsek, nedir ne değildir ?
-Karar verebilmek, anlayabilmek için bağlama yani contexte ihtiyacımız var. Kelimelerin salt kendi anlamlarının ötesinde kullanıldıkları cümleye göre anlam kazanması gibi. Herkesin başına gelen gündelik örnek; herhangi bir yazılı şey okuyan birisi bilmediğimiz ya da doğrudan anlamını söyleyemeyeceğimiz bir kelimenin anlamını sorduğunda kelimenin içinde bulunduğu cümleyi sormamız gibi. Çünkü kelimeyi bilmesek bile cümleden kelimenin anlamını çıkarabiliriz. Sadece cümle de yeterli olmuyorsa cümlenin içinde bulunduğu paragrafa göz atmak isteyebiliriz. Bağlantıyı kurmak çıkarım yapmamızı sağlıyor. Çıkarımlarımız da karar vermemizi.
+Karar verebilmek, anlayabilmek için =bağlam=a yani context'e ihtiyacımız var. Kelimelerin salt kendi anlamlarının ötesinde kullanıldıkları cümleye göre anlam kazanması gibi. Herkesin başına gelen gündelik örnek; herhangi bir yazılı şey okuyan birisi bilmediğimiz ya da doğrudan anlamını söyleyemeyeceğimiz bir kelimenin anlamını sorduğunda kelimenin içinde bulunduğu cümleyi sormamız gibi. Çünkü kelimeyi bilmesek bile cümleden kelimenin anlamını çıkarabiliriz. Sadece cümle de yeterli olmuyorsa cümlenin içinde bulunduğu paragrafa göz atmak isteyebiliriz. Bağlantıyı kurmak çıkarım yapmamızı sağlıyor. Çıkarımlarımız da karar vermemizi.
 
-Özetle bağlam, varolan her bir şeyin ait olduğu bütünün parçası olarak ait olduğu yere, zamana, fiziksel- sosyal çevresine, vs bağlı olarak ona farklı anlamlar kazadıran değerler bütünüdür.
+Özetle bağlam, varolan her bir şeyin ait olduğu bütünün parçası olarak ait olduğu yere, zamana, fiziksel-sosyal çevresine, vs bağlı olarak ona farklı anlamlar kazadıran değerler bütünüdür.
 
 Bağlam değerler bütünü olarak soyut bir kavram elbette. İçinde bulunduğumuz dünyayı anlamlandırmak için bize gereken =arayüzü= sağlayarak bu dünyayı somutlaştırıyor. Kelimeler cümle içinde kullanıldığı zaman bir şeyi kastedebiliyor örneğin. Cümleler birleşince ve bağlantı halinde olunca yazılar oluşuyor. Birkaç kişi bir araya gelince topluluk aynı birkaç kişi aynı soyadı taşıyıp, kan bağları olunca aile deniyor mesela. Bu değişkenliği ve =duruma, ortama= göre anlam kazanmayı hatta etiketlenmeyi sağlayan şey bize sunulan arayüz. Kalabalık için herhangi bir insan olmanın yeterli olması öte yandan aile denilmesi için insan olmaktan başka şeylere de ihtiyaç duyulması gibi. Ait olunan çerçeve her şeyiyle bize bağlamı sunuyor. Bağlamı tutarlı yapan da bu çerçeveyi oluşturan kural setleri.
 
 Bağlam konusunu tümden gelimden değil tüme varımdan anlatalım. Yani konuya tam tersi istikametten yaklaşalım. Az sayılmayacak insanlardan oluşan bir topluluk aynı yerde ve zamanda bir arada bulunuyor. Tek tek sayılamayacak ya da sayılması uzun sürecekse bunu anlatmak için kalabalık çerçevesi çiziliyor. Yani herkesin insan olması, sayılamayacak kadar çok olması gibi tekil nedenler kalabalık kelimesi ile soyutlanıyor. Bu soyutlama da bir bağlam oluşturuyor. O insan topluluğuna anlam kazandırıyor.
 
-*** Bağlam bağlam İçinde
+*** Bağlam bağlam içinde
 Bağlamlar başka bağlamlarla hiyerarşi içindedir. Kalabalık örneğinde olduğu gibi. Kalabalığın daha da iyi anlaşılması için neden bu kadar insanın toplandığı yani amaçları, nerede ve ne zaman toplanıldığı gibi sorular sorulur. Normal bir sohbet esnasında falanca bir yere gittim kalabalıktı denirse elbette bu detaylara ihtiyaç olmayabilir. Ama mesela bu bir polis soruşturmasıysa bunun gibi bir sürü detaya inen sorular çok önemli olacaktır. Yani her bağlam kendi içinde başka küçük bağlamları barındırır.
 
-İletişimizi sağlayan şeyler de yine bağlamlardır. Öylesine konuştuğumuz tutarsız şeyler için bile /havadan sudan/ deriz. Çünkü bir başkası gelip ne hakkında konuştuğumuzu sorduğunda ona anlatabilmenin başka yolu yoktur. /Hiiiiiiiiiiiççççç/ demek de bir cevap olabilir belki ama bu da bağlamı oluşturmadığı için soran kişinin merakını körükleyecek ve anlamak için belki de detaya inen sorular sormasına sebep olacaktır. Çünkü merakı depreşmiştir bir kez. Halbuki /havadan sudan/ cevabı geçerliliği olan ve bir konu olmadan öylesine boş boş konuşuyoruz demenin soyutlamasıdır. Bu cevabı alan kişi /hiiiiiiiiçççç/ cevabını alan kişiden daha çok anlama sahip olacaktır. Antropolog Bateson boşuna> without context, there is no communication (bağlam olmadan, iletişim yoktur) dememiş.
+İletişimizi sağlayan şeyler de yine bağlamlardır. Öylesine konuştuğumuz tutarsız şeyler için bile /havadan sudan/ deriz. Çünkü bir başkası gelip ne hakkında konuştuğumuzu sorduğunda ona anlatabilmenin başka yolu yoktur. /Hiiiiiiiiiiiççççç/ demek de bir cevap olabilir belki ama bu da bağlamı oluşturmadığı için soran kişinin merakını körükleyecek ve anlamak için belki de detaya inen sorular sormasına sebep olacaktır. Çünkü merakı depreşmiştir bir kez. Halbuki /havadan sudan/ cevabı geçerliliği olan ve bir konu olmadan öylesine boş boş konuşuyoruz demenin soyutlamasıdır. Bu cevabı alan kişi /hiiiiiiiiçççç/ cevabını alan kişiden daha çok anlama sahip olacaktır.
 
-*** Androidde Context
+#+begin_quote
+Without context, words and actions have no meaning at all.
+
+Bağlam olmadan, kelimelerin ve eylemlerin hiçbir anlamı yoktur.
+
+--- [[https://en.wikipedia.org/wiki/Gregory_Bateson][Antropolog Gregory Bateson]]
+#+end_quote
+
+*** Android için Context
 Androidde Context anlamca yukarıda bahsedilen bağlamdan farklı değildir. Android sisteminde kullanılan componentları bir çerçeveye oturtmak ve anlam kazandırmak için vardır. Tutarlılığı sağlar. Androidde temel şeyleri yapabilmek için gereklidir.Ancak bu kavramı Android'e yeni başlayanlar genellikle anlamazlar. Hatta biraz deneyimliler bile tam olarak context'in ne olduğu ve neden kullanıldığı konusunu yeterince bilmezler. =Application (uygulama)= olarak bildiğimiz sınıfın çerçevesini yani onu oluşturan, onun veya Android sisteminin kaynaklarına erişilmesini ve ona ait bilgileri ihtiyacı olan yerlere sağlayan =arayüzdür= Context. Context arayüzü bilgileri Android sisteminden alır. Özetle uygulamanın ya da activity'nin yeteneklerini, kaynaklarını ve bilgilerini soyutlayan sınıftır. Uygulama kapsamını belirler.
 
-Context arayüz olarak Android sistemi ve uygulama arasında köprü görevi görür. Diğer bir deyişle Android sisteminin uygulama ile konuşma yoludur. İletişimi sağlar. =String resource, color resource= gibi uygulamaya ait herhangi bir resource'a erişebilmeyi, =activity'den activity'e navigasyonu=, =toast mesajı göstermeyi=, =yeni bir activity= oluşturmayı, =xml view='lerini oluşturmayı > Jetpack Compose ile birlikte bu durum değişti. UI'ın işletim sisteminden bağımsız çizilmesini sağladı bu durum. Detaylar için bkz. [[https://medium.com/androiddevelopers/understanding-jetpack-compose-part-1-of-2-ca316fe39050]] ve daha birçok başka şeyi yapabilmemizi sağlar.
+Context arayüz olarak Android sistemi ve uygulama arasında köprü görevi görür. Diğer bir deyişle Android sisteminin uygulama ile konuşma yoludur. İletişimi sağlar. =String resource, color resource= gibi uygulamaya ait herhangi bir resource'a erişebilmeyi, =activity'den activity'e navigasyonu=, =toast mesajı göstermeyi=, =yeni bir activity= oluşturmayı, =xml view='lerini oluşturmayı. Jetpack Compose ile birlikte bu durum değişti. UI'ın işletim sisteminden bağımsız çizilmesini sağladı bu durum. Detaylar için [[https://medium.com/androiddevelopers/understanding-jetpack-compose-part-1-of-2-ca316fe39050][understanding jetpack compose]]'a göz atabilirsiniz.
 
 *** Context'i kim nasıl implement ediyor?
-Elbette insani olarak uygulama contextini yani bir uygulamanın kapsamını,bağlamını biz insanlar kolaylıkla algılayabiliyoruz. Ancak bunu işletim sistemi nasıl yapıyor, Context'i nasıl belirliyor ? Bu sorunun cevabı için biraz detaya inmek lazım.
+Elbette insani olarak uygulama contextini yani bir uygulamanın kapsamını, bağlamını biz insanlar kolaylıkla algılayabiliyoruz. Ancak bunu işletim sistemi nasıl yapıyor, Context'i nasıl belirliyor ? Bu sorunun cevabı için biraz detaya inmek lazım.
 
-=AMS (Activity Manager System)= denilen Android işletim sistemi tarafından yönetilen sistem süreci çalışan Activitylerin ve diğer componentların =state'lerini ( t anındaki durumları)= implement eder. Uygulama başlatıldığında AMS uygulama ile iletişime geçer. Uygulama izinlerini ve uygulamanın ihtiyacı olabilecek başka contextleri de hesaba katarak ve kontrolü elinde tutarak Contexti implement eder.
+=AMS (Activity Manager System)= denilen Android işletim sistemi tarafından yönetilen sistem süreci çalışan Activitylerin ve diğer componentların =state'lerini (t anındaki durumları)= oluşturur. Uygulama başlatıldığında AMS uygulama ile iletişime geçer. Uygulama izinlerini ve uygulamanın ihtiyacı olabilecek başka contextleri de hesaba katarak ve kontrolü elinde tutarak Contexti oluşturur.
 
 *** Neden bu kadar çok context var ?
-Context sınıfını yakından incelediğimizde birden fazla context olduğunu görürüz. Context context içindedir. Bu durum kafa karışıklığına neden olur. Hangi contexti kullanacağımızı bilemeyebiliriz. Contextlerin doğru yerde ve şekilde kullanılması oluşabilecek büyük problemlerin önüne geçer. Bu sebeple context çeşitlerini ve nerelerde kullanılması gerektiğini bilmek Android geliştiriciler için azami ölçüde önemlidir. Devamındaki görsel context hiyerarşisini gösterir.
+Context sınıfını yakından incelediğimizde birden fazla context olduğunu görürüz. Context context içindedir. Bu durum kafa karışıklığına neden olur. Hangi contexti kullanacağımızı bilemeyebiliriz. Contextlerin doğru yerde ve şekilde kullanılması oluşabilecek büyük problemlerin önüne geçer. Bu sebeple context çeşitlerini ve nerelerde kullanılması gerektiğini bilmek Android geliştiriciler için oldukça önemlidir.
 
 #+CAPTION: Context Hierarchy
 [[file://context_hierarchy.png]]
@@ -52,13 +60,8 @@ Context sınıfını yakından incelediğimizde birden fazla context olduğunu g
 Diagramdan görüleceği üzere *Activity*, *Service* ve *Application* dolaylı olarak Contexti implement ederler. Hiyerarşi ağacının tepesinden başlayarak aşağılara doğru inersek:
 
 - =Contex=: En tepededir. Bizim interface yani =arayüz= sınıfımızdır. *Uygulama bağlamını soyutlar*.
-- =ContextImlp=: Contexte ait soyut tüm fonksiyonların implement edildiği sınıftır. Soyut context fonksiyonları *AMS tarafından* burada imlement edilir.
-- =ContextWrapper=: Context'ten türer. Ancak implement etmez. Contexte
-  ait tüm fonksiyonları sarmalar ve implementasyonlarını da
-  ContextImpl'dan alır. Bunu yaparken de *decorator pattern* kullanır.
-  bkz. [[https://medium.com/@denisrebrof/decorator-pattern-in-android-development-5dd1637710fa][Decorator pattern in Android.]]
-
-  Bu pattern ile contextin sadece bir kez attach olmasını sağlayan bir davranış kazanır. Bir uygulama tek bir *bağlamın yani contextin* içindedir tutarlılığını sağlar.
+- =ContextImpl=: Contexte ait soyut tüm fonksiyonların implement edildiği sınıftır. Soyut context fonksiyonları *AMS tarafından* burada imlement edilir.
+- =ContextWrapper=: Context'ten türer. Ancak implement etmez. Contexte ait tüm fonksiyonları sarmalar ve implementasyonlarını da ContextImpl'dan alır. Bunu yaparken de *decorator pattern* kullanır. bkz. [[https://medium.com/@denisrebrof/decorator-pattern-in-android-development-5dd1637710fa][Decorator pattern in Android.]] Bu pattern ile contextin sadece bir kez attach olmasını sağlayan bir davranış kazanır. Bir uygulama tek bir *bağlamın yani contextin* içindedir tutarlılığını sağlar.
 - =ContextThemeWrapper=: Context içindeki context diyebiliriz. *Theme* denilen ve *Android manifest* dosyasında belirtilen uygulama içindeki activitylerin temasını UI'da uygulayan classdır. Theme bir activity için bağlamın bir parçasıdır. O yüzden uygulama bağlamının kapsamı içinde; temaya sahip olma özelliği de bulunan bir *alt bağlamdır*.
 - *Application ve Service* her ikisi de UI'a ihtiyaçları olmadığı için doğrudan context'i ContextWrapper yardımı ile alabilirler.
 
@@ -96,9 +99,9 @@ Yukarıda birkaç kez bahsedildiği gibi farklı *contextler* farklı *scope'lar
 *** Context'e Karar Vermek
 Hangi contexti nerede kullanacağımıza devamındaki kriterlere göre karar verebiliriz.
 
-- ActivityContext yerine ApplicationContext geçirmek UI da bazı gösterim sorunlarına yol açacaktır. Özellikle tema bazlı kaynaklara erişim olmadığı için onlar gösterilmeyecektir. Örneğin, LayoutInflater kullanıyoruz, kod içinde temayı da atıyoruz ancak bir türlü tema UI'da uygulanmıyor. Bunun nedeni çok yüksek ihitimalle ActivityContext yerine ApplicationContext geçirmemizdir.
+- ActivityContext yerine ApplicationContext geçirmek UI da bazı gösterim sorunlarına yol açacaktır. Özellikle tema bazlı kaynaklara erişim olmadığı için onlar gösterilmeyecektir. Örneğin, LayoutInflater kullanıyoruz, kod içinde temayı da atıyoruz ancak bir türlü tema UI'da uygulanmıyor. Bunun nedeni çok yüksek ihtimal ActivityContext yerine ApplicationContext geçirmemizdir.
 
-- ActivityContext yalnıca UI ile ilgili context gerektiren işlemlerde ve activity sonlanınca sonlanmasını istediğimiz şeylerde kullanılabilir.  Aksi takdirde memory leake sebep olacaktır. En yaygın yanlış kullanım Viewmodel classlarına ActivityContext geçirmektir. Bundan kaçınmak gerekir.
+- ActivityContext yalnıca UI ile ilgili context gerektiren işlemlerde ve activity sonlanınca sonlanmasını istediğimiz şeylerde kullanılabilir. Aksi takdirde memory leake sebep olacaktır. En yaygın yanlış kullanım Viewmodel classlarına ActivityContext geçirmektir. Bundan kaçınmak gerekir.
 
 - ApplicationContext UI ile alakalı işlemler dışındaki her şeyi yapabilir. Güvenli ve banko context'imizdir kendisi. Eğer uygulama içinde nerede olursak olalım hangi context'i kullanacağımızdan emin olamıyorsak ApplicationContext kullanmak en güvenli yoldur.
 

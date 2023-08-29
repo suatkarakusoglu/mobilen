@@ -1,7 +1,7 @@
 #+title: Mobilen 4
 
 #+ATTR_HTML: :width 100%
-[[volume_3_cover.jpg]]
+[[volume_4_cover.jpg]]
 
 Merhabalar,
 

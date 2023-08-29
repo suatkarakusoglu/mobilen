@@ -1,0 +1,91 @@
+#+title: Yeni Android Studio sürümü "Giraffe"
+#+date: [2023-08-26 Sat]
+#+author: Özkan Tuncel
+#+filetags: :Android:Araçlar:Android_Studio:
+
+[[https://www.linkedin.com/in/ozkantuncel][Özkan Tuncel]] yazdı.
+
+* İçerik
+Merhabalar! Sizlere yeni Android Studio sürümünde öne çıkan önemli özelliklerini inceleyeceğiz.
+
+#+CAPTION: Yeni Android Studio sürümü "Giraffe"
+#+ATTR_HTML: :width 100%
+[[file:yeni_android_studio_surumu_giraffe_image_1.png]]
+
+Android Studio, sürekli olarak geliştirilmekte ve yeni özellikler eklenmektedir. Bu yazımda, Live Edit iyileştirmelerini, Compose animasyon preview, yeni bir Device Explorer'ı, SDK yükseltme asistanını, Gradle derleme komut dosyalarında Kotlin DSL kullanma yeteneğini ve diğer önemli özellikleri tek tek birlikte bakalım.
+
+Önce benim en çok ilgimi çeken, kod değişikliklerini fiziksel bir cihazda veya emülatörde çalışan Jetpack Compose UI'sini düzenlemenin yeni bir yol sunan Live Edit' e göz atalım.
+
+** Jetpack Compose UI için Live Edit
+#+CAPTION: Live Edit
+#+ATTR_HTML: :width 100%
+[[file:yeni_android_studio_surumu_live_edit.png]]
+
+Emülatörler de ve fiziksel cihazlarda gerçek zamanlı olarak güncellenmenize izin verir. Bu işlevsellik, uygulamanızı yazma ve oluşturma arasındaki bağlam değişimlerini en aza indirir; böylece kod yazmaya daha uzun süre odaklanabilirsiniz. Peki Compose Preview' den farkları nedir? 🤔
+
+- Compose öğelerini Android Studio'nun Preview sekmesinde görselleştirmenize ve kod değişiklikleri yaparken otomatik olarak yenilenmelerini görmenize olanak tanır. Öte yandan, Live Edit, emülatörlerde ve fiziksel cihazlarda gerçek zamanlı olarak güncellenmenize olanak sağlar.
+
+- Composables'ı düzenleyin ve UI değişikliklerini tekrardan build etmeden görmemizi sağlar Live Edit denemek için AGP 8.1 veya daha yüksek ve Compose 1.3.0 veya daha yüksek sürümünü kullanmanız gerekiyor.
+
+Daha fazla bilgiyi [[https://android-developers.googleblog.com/2023/07/deep-dive-into-live-edit-for-jetpack-compose-ui.html][buradan]] ulaşabilirsiniz.
+
+** Yeni Bir Arayüz 'Beta New UI' Geliştiriciler için sürekli
+kullandığını bir geliştirme ortamının yenilenmesi bazıları için keyif verici bazıları için ise zor olabiliyor. Android Studio son sürümünde beta olark yeni bir arayüzü kullanıcıları sundu.
+
+#+CAPTION: Beta New UI
+[[file:android_studio_giraffe_beta_ui.jpg]]
+
+- IntelliJ arayüzünü tamamen değiştirebileceğinden emin olmak için kullanıcılardan ve diğer IntelliJ tabanlı IDE'lerden geri bildirim toplamak için 2022.2'de erken bir önizleme olarak ilk kez [[https://youtrack.jetbrains.com/issues/IDEA?q=tag:%20newUI%20%20sort%20by:%20votes%20desc][yayınlandı]]. O zamandan beri, IntelliJ 2022.3'te beta'ya ilerledi, birçok hata düzeltmesi ve iyileştirme yaptı
+- Android için varsayılan ana araç çubuğu ve araç pencereleri yapılandırmalarını optimize ederek ve stildeki simgelerde yenilenmeler yapıldı.
+- Bu yeni tasarım [[https://developer.android.com/studio/preview][Hedgehog]] sürümü ve sonrasında benimsemeye devam edeceğini geliştiriciler tarafından söyleniyor.
+
+Bu arayüzü uygulamak için şu yolu takip edin:
+Android Studio > Settings > Appearance & Behavior>New UI
+
+Kendi görüşlerimi ifade edersem, ben son derece hoş buldum bu yeni arayüzü. Fakat ilk seferinde biraz kayboldum diyebilirim, zamanla buna alışacağız. 😅
+
+** Jetpack Compose UI için Yeni API Animasyon
+Preview Animasyon Preview Android Studio Giraffe'deki başka bir heyecan verici özelliktir.
+
+#+CAPTION: Animation Preview
+[[file:yeni_android_studio_surumu_animation_preview.jpg]]
+
+- Geliştiriciler animasyonları kare kare ön izleyebilir ve istenen davranışa uygun olduklarından emin olabilirler.
+
+- Animasyonları hata ayıklarken, Compose animasyon ön izlemeleri özelliği son derece yararlı olabilir. Geliştiriciler animasyonların doğru şekilde ayarlandığından emin olabilirler.
+
+- Compose animasyon ön izlemeleri özelliği, geliştiricilerin animasyonların istenen davranışa uygun olduklarını doğrulamalarına yardımcı olur.
+
+- Bu uygulamanın genel kullanıcı deneyimini geliştirmeye yardımcı olabilir. Bu özelliği kullanmak için Android Studio Giraffe Canary 3 ve Compose 1.4.0-alpha04 ya da üzeri bir sürüm gerekiyor.
+
+** Device Explorer
+Android Studio'nun önceki sürümlerinde bulunan Device File Explorer'nin güncellenmiş bir sürümüdür.
+
+#+CAPTION: Device Explorer
+[[file://device_explorer.png]]
+
+Hata ayıklayıcıyı bir işleme sonlandırma, zorla durdurma veya ekleme seçenekleri Logcat'ten Aygıt Gezgini'ne taşındı.
+
+** Android SDK Upgrade Asistanı
+API seviyesini doğrudan IDE'de yükseltmek için gerekli adımları görmenize olanak tanır
+
+#+CAPTION: Upgrade Asistanı
+[[file://upgrade_assistant.png]]
+
+Uygulamalarının targetSdkVersion'unu veya uygulamanın hedeflediği API seviyesini yükseltmelerine yardımcı olan bir araçtır.
+Kulanmak için Tools > Android SDK Upgrade Assistant > Uyarı: Google Play uygulamaları için 31 Ağustos 2023'ten itibaren, Wear OS uygulamaları dışındaki yeni uygulamalar, Android 13 (API düzeyi 33) veya sonraki sürümleri hedeflemelidir.
+Wear OS uygulamaları ise Android 11'i (API düzeyi 30) veya Android 13'e (API düzeyi 33) kadarki sürümleri hedeflemelidir. Daha fazla bilgi [[https://developer.android.com/google/play/requirements/target-sdk][buraya]] tıklayınız.
+
+** Kotlin DSL Uygun Şekilde Proje Oluşturma Android Studio
+Giraffe'den itibaren yeni projeler veya modüller oluştururken, varsayılan olarak projeyi Kotlin DSL ile oluşturabileceğiniz.
+
+#+CAPTION: Kotlin DSL Ayarları
+[[file://kotlin_dsl_settings.png]]
+
+Android Studio Giraffe geliştirici deneyimini artırmayı amaçlayan birçok yeni özellik ve iyileştirme ile hayatımıza girdi. Canlı Düzenleme iyileştirmelerinden Compose animasyon preview, yeni Device Explorer'nden SDK yükseltme asistanına kadar pek çok araç mevcuttur; bu araçlar geliştiricilerin Android uygulamalarını oluştururken daha üretken ve verimli olmalarına yardımcı olabilirler. Bu özelliklerin yanı sıra diğer birçok özellik, Android geliştiricileri için heyecan verici bir sürüm haline getirir Android Studio Giraffe'yi.
+
+** Kaynakça
+- [[https://developer.android.com/studio/releases][Android Releases]]
+- [[https://android-developers.googleblog.com/2023/07/android-studio-giraffe-is-stable.html][Stable Giraffe Version]]
+- [[https://www.jetbrains.com/help/idea/new-ui.html][New UI]]
+- [[https://developer.android.com/studio/run#live-edit][Live Editing]]

@@ -1,4 +1,7 @@
-#+title: Mobilen 1
+#+title: Mobilen 2
+
+#+ATTR_HTML: :width 100%
+[[volume_2_cover.jpg]]
 
 /Mobilen'in 2. dergisi./
 
@@ -23,6 +26,5 @@ Keyifli okumalar ;).
 6. [[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]]
 7. [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]
 
-
-#+ATTR_HTML: :width 100%
-[[volume_2_cover.jpg]]
+#+begin_cta
+#+end_cta

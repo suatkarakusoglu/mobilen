@@ -7,7 +7,6 @@
 
 * İçerik
 #+CAPTION: The man in the Machine
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:the_man_in_the_machine.jpg]]
 

@@ -7,7 +7,6 @@
 
 * İçerik
 #+CAPTION: [[https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif][Netfox'u İzlemek için tıkla]]
-#+ATTR_LATEX: :width 200px
 #+ATTR_HTML: :width 400px :style float:center;
 [[file:NetFoxImage.jpg]]
 
@@ -64,6 +63,6 @@ Evet hepsi bu kadar :) Şimdi dilediğiniz gibi cihazı sallayarak ya da atamı�
 
 Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım faydalı olur zaman ayırdığınız için teşekkürler.
 
-** Kaynaklar
+** Kaynakça
 1. [[https://github.com/kasketis/netfox][Netfox Github Kütüphanesi]]
 2. [[https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif][Örnek Kullanım Vidyosu]]

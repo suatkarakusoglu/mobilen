@@ -1,0 +1,139 @@
+#+title: Okuma Notları: The Art Of Readable Code (2)
+#+date: [2023-08-26 Sat]
+#+author: Yusuf Kaya
+#+filetags: :Kitap:Yazılım:
+
+[[https://linkedin.com/in/myusufka][Yusuf Kaya]] yazdı.
+
+* İçerik
+Merhabalar, geçtiğimiz sayıda *The Art Of Readable Code* kitabının okuma
+notlarının ilk bölümünü paylaşmıştım. Bu sayıda da ikinci bölümünü
+paylaşacağım.
+
+*** Koşullardaki Argüman Sırası
+Koşullu ifadelerde ve döngülerde, argüman sırasını mantıklı bir şekilde
+düzenlemek okunabilirliği artırır. Örneğin, *length >= 10* gibi
+değişkenin sol tarafta olması daha okunabilirdir. Ancak iki tarafın da
+değişken oladuğu durumlarda ifadelerde daha değişken olanın solda olması
+okunabilirliği artırır.
+
+#+begin_src swift
+  let length = 10
+  if lengthOfUser >= length {
+      ...
+  }
+#+end_src
+
+*** if/else Bloklarının Sırası
+if/else ifadelerini kullanırken, genellikle pozitif senaryoları önce ele
+almak ve daha basit durumları önceden kontrol etmek kodun
+okunabilirliğini artırabilir.
+
+*** Ternary Operator
+Ternary Operator, tek satırda koşullu bir ifade yazmak için kullanılır.
+Ancak, karmaşık durumları tek bir satırda ifade etmek, okunabilirliği
+azaltabilir.
+
+#+begin_src swift
+  let firstCard = 11
+  let secondCard = 10
+  print(firstCard == secondCard ? "Kartlar Aynı" : "Kartlar Farklı")
+#+end_src
+
+*** Fonksiyonlardan Erken Dönme
+Fonksiyonun içinde erken return ederek kodun karmaşıklığını azaltabilir ve koruyucu ifadeler kullanarak kodun okunabilirliği arttırılabilir.
+
+#+begin_src swift
+  func calculateXY(x: Int, y: Int) {
+      if x != y {
+          return
+      }
+           ...
+  }
+#+end_src
+
+Swift dilinde =early return= edebilmek için özellikle =guard= anahtar kelime olarak bulunmaktadır.
+
+#+begin_src swift
+  func greet(_ name: String?) -> String {
+      guard let name = name else { return "Hello, Stranger" }
+
+      return "Hello, \(name)"
+  }
+#+end_src
+
+
+*** İç İçe Geçmiş Kod Bloklarını Azaltma
+Derinlemesine iç içe geçmiş kod blokları okunabilirliği azaltır. Kodumuzu düzgün ve lineer bir şekilde düzenlemek, İç içe geçmeyi önleyebilir.
+
+*** Değişkenleri Açıklamak
+Anlaşılması zor ifadeler için daha açıklayıcı alt değişkenler tanımlayarak okunabilirliği arttırabiliriz.
+Örneğin:
+
+#+begin_src swift
+  if line.split(separator: ":")[0].trimmingCharacters(in: .whitespaces) == "root" {
+      // ...
+  }
+
+  // YERİNE
+  let username = line.split(separator: ":")[0].trimmingCharacters(in: .whitespaces)
+  if username == "root" {
+      // ...
+  }
+#+end_src
+
+*** Değişkenleri Özetlemek
+Bir ifadenin açıklamaya ihtiyacı olmasa bile, ifadeyi daha yönetilebilir ve anlaşılır bir isimle temsil eden özet değişkenleri oluşturmak faydalı olabilir.
+
+#+begin_src swift
+  let userOwnsDocument = request.user.id == document.ownerId
+  if userOwnsDocument {
+      // ...
+  } else {
+      // ...
+  }
+#+end_src
+
+*** Gereksiz Değişkenlerden Kurtulmak
+Yukarıdaki başlıklarda "açıklayıcı" veya "özet" değişkenlerin kodu dahaokunabilir hale getirebileceğini gördük. Bu tür değişkenler, devasaifadeleri parçalayarak ve okunabilirliği arttırdığı için faydalıydı.
+
+Ancak bu başlıkta, okunabilirliği artırmayan değişkenleri ortadankaldırmaya odaklanıyoruz. Bu tür bir değişken kaldırıldığında, yeni koddaha kısa ve aynı derecede anlaşılır hale gelir.İhtiyaç duyulmayan ara değişkenleri ortadan kaldırmak, kodun dahaanlaşılır hale gelmesini sağlar.
+
+Örneğin:
+
+#+begin_src swift
+  func removeOne(array: [Int], valueToRemove: Int) {
+      var indexToRemove: Int? = nil
+      for i in 0..<array.count {
+          if array[i] == valueToRemove {
+              indexToRemove = i
+              break
+          }
+      }
+      if let index = indexToRemove {
+          array.remove(at: index)
+      }
+  }
+#+end_src
+
+indexToRemove değişkeni sadece ara bir sonucu tutmak için kullanılır. Bu
+tür değişkenler bazen hemen elde edildiğinde sonucu ele alarak ortadan
+kaldırılabilir:
+
+#+begin_src swift
+  func removeOne(array: [Int], valueToRemove: Int) {
+      for i in 0..<array.count {
+          if array[i] == valueToRemove {
+              array.remove(at: i)
+              return
+          }
+      }
+  }
+#+end_src
+
+Fonksiyon erken dönerek, indexToRemove tamamen ortadan kalktı ve kod
+oldukça basitleşti. Genel olarak, işi mümkün olan en kısa sürede
+tamamlamak iyi bir stratejidir.
+
+*** Kaynakça
+[[https://www.goodreads.com/en/book/show/8677004][The Art of Readable Code]]

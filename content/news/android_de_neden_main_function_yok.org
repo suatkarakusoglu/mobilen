@@ -1,0 +1,50 @@
+#+title: Android'de Neden Bir Main Function Yok ?
+#+date: [2023-08-25 Fri]
+#+author: Sevban Bayır
+#+filetags: :Android:Yazılım:
+
+[[https://tr.linkedin.com/in/sevban-bayir][Sevban Bayır]] yazdı.
+
+#+CAPTION: Android
+[[file://android_cover.png]]
+
+* İçerik
+Başlamadan önce, aslında var ama alışık olduğumuz gibi değil :), [[https://android.googlesource.com/platform/frameworks/base.git/+/master/core/java/com/android/internal/os/ZygoteInit.java#798][buradan]] kaynak kodlarına bakabilirsiniz.
+
+Android Java dilini kullanır fakat onu standart Java uygulamarının çalıştığı standart JVM üzerinde değil de kendi özel runtime ortamı olan Android 5.0' a kadar Dalvik Virtual Machine, 5.0'dan sonra ise Android Runtime üzerinde çalıştırır. Bu özelleştirilmiş runtime ortamları program başlarken bir main() fonksiyonu yerine, AndroidManifest.xml dosyasında Launcher olarak işaretlenmiş bir Activity'i ve onun onCreate() methodunu aramak üzere tasarlanmıştır dolayısıyla bir main fonksiyonuna ihtiyaç yoktur.
+
+Çoğumuz programlamayı ilk öğrendiğimizde genelde öğrendiğimiz yazılım dilinden bağımsız bir şekilde kodlarımızı IDE ilk açıldığında karşımıza çıkan o fonksiyona, main, fonksiyonuna yazarız. O ya da bu şekilde öğreniriz ki burası çalıştığımız dilin giriş noktasıdır. Kendimiz main fonksiyonundan ayrı fonksiyonlar oluştursak da o fonksiyonları main fonksiyonu içerisinden çağırmadığımız sürece hiçbir anlamları olmaz, çalışmazlar. Android geliştirmeye gelince işler biraz karışır. İlk kez bir Android projesi oluşturan bir kişi MainActivity classıyla ve onun onCreate() methoduyla karşılaşır. İçerisindeki setContent() methodundan ipucu alarak da anlayabileceğimiz üzere Activity ve onun onCreate methodu standart olarak alıştığımız main fonksiyon gibi çalışırlar. Android uygulamalarının ve hatta komple Android işletim sisteminin entry point( giriş noktası) olarak Activity'leri seçmesinin belli başlı nedenleri var elbet ve ben bunları size Android ilk yazılırkenki olayları çok geniş ve anlaşılır bir biçimde aktaran [[https://www.amazon.com/Androids-Built-Android-Operating-System/dp/B0B6YDQJW2/ref=tmm_aud_swatch_0?_encoding=UTF8&qid=&sr=][Androids - The Team That Built Android Operating System]] kitabından alıntılar da yaparak anlatmaya çalışacağım.
+
+#+begin_quote
+"Daha geleneksel bir işletim sisteminde; bir uygulama başlar, main() methodunu çağırır, sonrasında yapması gerekenleri(UI çizmek, gerekli hesaplamaları yapmak, çevre bileşenlerini kontrol etmek vs.) bir döngü içerisinde yapmaya başlar fakat Android'de uygulamalar main fonksiyonlar yerine herbiri kendisine ait bir UI'a sahip olan bir yada daha fazla Activity'lere ayrılırlar, bunların açık bir şekilde main fonksiyonları yoktur bunun yerine işletim sistemi Activity'leri; kullanıcı girdisi veya dolaylı yoldan kullanıcı girdilerine cevap olarak çağırır."
+#+end_quote
+
+İlk nedenimiz son cümlede gizli aslında. İşletim sistemi Activity'leri çağırır derken aslında kullanıcı girdisine karşılık gelen lifecycle methodlarından bahsediyoruz. Android'in geleneksel işletim sistemleri gibi basit bir main fonksiyon üzerinden yürümemesinin sebeplerinden biri uygulamanın lifecycle'ını yönetebilmektir. Activity'ler olmasa uygulamanın lifecycle'ını yönetemez miydik ? Elbette yönetebilirdik fakat tüm bunlar yazılımcıya bırakılmış olur ve hataya dolaylı yoldan da çökmeler ve memory leaklere yol açabilirdi. Üstelik karmaşık uygulamalarda lifecycle'ı manuel yönetmek iyice kontrolden çıkabilir ve bu kısım için neredeyse app'in kendisi kadar efor harcanması gerekebilirdi.
+
+#+begin_quote
+"Activity'lerin diğer bir önemli özelliği uygulamaya özel belirli bir giriş noktası sunmalarıdır. Bu giriş noktaları diğer uygulamalardan (bildirimler, kısayollar, veya tamamen farklı bir uygulama) çağırılabilir ve kullanıcıyı o uygulama içerisine almaya yarar."
+
+--- Chat Haase
+#+end_quote
+
+** Intentler
+Android'le ilgileniyorsanız mutlak surette karşılaşacağınız bir kavram da Intentlerdir. Bu alıntıda =Chat Haase= Intentlerin öneminden bahsediyor. Intentler sayesinde uygulamalar arasında haberleşebiliyoruz. Eğer bu sistem olmasaydı, linux ve diğer UNIX-like sistemlerde normalde kullanıldığı gibi processler arası iletişimi kendimiz sağlamak zorunda kalabilirdik. Mesela, basit bir string göndermek için bitwise operatörlerle o stringi byte byte göndermek zorunda kalabilirdik. Elbette Activity'ler ve Intentler yok diye bu kadar ilkel bir çözüme mecbur kalmayacağız ama buradan işlerin ne kadar low-level'a gidebileceğini ve hataya açıklaştığını, güvensiz olduğunu anlayabiliriz. Android bunun yerine [[https://developer.android.com/reference/android/os/Binder][Binder]] denen bir IPC (Inter Process Communication) kullanıyor ve Binder aslında Intent'lerin low level versiyonu. Gönderilecek objelerin sadece referanslarını göndrerek daha verimli bir iletişim sağlıyor.
+
+** Palm OS'ten esinlenmeler
+Android frameworkünün yaratıcılarından, Dianne Hackborne'dan:
+
+#+begin_quote
+"Palm OS mobil cihazlarla ilgili iyi bir anlayışa sahipti, oradan aldığımız derslerden biri de mobil uygulamarın masaüstü uygulamardan temelde farklı olduklarıydı. Kullanıcı aynı anda sadece bir uygulamada bulunabilir ve bu uygulamalar genelde spesifik bir iş yapmak için özelleşmiş olma eğilimindedirler. Bu durum uygulamarın birlikte çalışabilmesi ihtiyacını doğurur."
+
+---Dianne Hackborne
+#+end_quote
+
+Palm OS, çoğu Android mühendisinin Android ortaya çıkmadan önce çalıştığı projeydi. Android'deki birçok kişi önceden yine işletim sistemi işinde olan Be ve Palm OS'te çalışmıştı ve bu sayede mobil işletim sistemleri hakkında kümülatif tecrübe sahibiydiler.
+
+** Özet
+Yazımın başında da bahsettiğim üzere Activity'ler Android uygulamarının giriş noktalarıdır ve sıradan bir main() fonksiyona göre çok daha gelişmiş bir giriş noktası mekanizması sunarlar. Bu sayede uygulamamızın diğer uygulamalarla ve işletim sisteminin kendisiyle etkileşimi daha efektif bir hal almış olur. Her ne kadar şu an genel mimari Single Activity tarzına dönmüşse de ortaya çıktığı dönem göz önüne alındığında Activity'ler ile bir uygulama için birden fazla entry point sunma fikri şu an Androidin gelebildiği nokta itibarıyla kendi kendini kanıtlamış bir kehanet örneği diyebiliriz :).
+
+** Kaynakça:
+- [[https://stackoverflow.com/questions/9293329/where-is-main-in-android/9293488#9293488][Where is main?]]
+- [[https://www.vogella.com/tutorials/AndroidInternals/article.html#internals][Android Internals about Main Function]]
+- [[https://android.googlesource.com/platform/frameworks/base.git/+/master/core/java/com/android/internal/os/ZygoteInit.java#798][Zygote Init]]

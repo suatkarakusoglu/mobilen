@@ -1,0 +1,122 @@
+#+title: Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi
+#+date: [2023-08-22 Tue]
+#+author: Suat Karakuşoğlu
+#+filetags: :iOS:Yazılım:Xcode:Araçlar:Terminal_Komutları:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+* İçerik
+Merhabalar, iOS uygulaması geliştirirken bazen Xcode'un komut satırı üzerinden terminal komutlarını kullanmaya ihtiyaç duyarız. =xcrun= komutu bize çatı bir komut olarak altında bir çok yardımcı komuta erişim sağlar, bunlardan en kullanışlılarından =simctl= üzerine inceleme yapacağız.
+
+** =xcrun= komutu nedir?
+Xcode'un kullandığı bir çok komuta erişim için kullanılan çatı =wrapper= bir komuttur.
+
+** =simctl= komutu ne işe yarar?
+Xcode'un sağladığı simülatörlere erişimi ve yönetimi kolaylaştıran bir araçtır. Aktif olarak kullanılan Xcode'un toolchain'ini kullanarak iOS veya macOS simülatörleri ayağa kaldırılabilir.
+
+*** Simulator listeleme
+#+begin_src sh
+  # Tüm simülatörleri listeleme
+  xcrun simctl list
+#+end_src
+
+Bu listeden farklı filtrelemeler yapabiliyoruz, misal tıp filtreleme seçenekleri =devices=, =devicetypes=, =runtimes= ve =pairs= gibi.
+
+=Tip filtresi= sonrası listeden yine daha filtreleme yapabiliyoruz. =booted= listelenen cihazlardan açıklamada booted içeren cihazları filtrelemeye yarıyor.
+
+#+begin_src sh
+  # Yalnizca =booted= cihazlari listeleme
+  xcrun simctl list devices booted
+#+end_src
+
+#+begin_src text
+  == Devices ==
+  -- iOS 16.2 --
+  iPhone 14 (FF33309C-DC41-41EF-B853-4BE58E8CDE6B) (Booted)
+  iPhone 14 Pro (C08CC68E-CF2B-445F-8701-C21AC86F9785) (Booted)
+#+end_src
+
+*** Simülatör ayağa kaldırma
+Yeni bir simülatör ayağa kaldırmak için:
+#+begin_src sh
+  # Simülatör ayağa kaldırma
+  xcrun simctl boot "iPhone 14 Pro"
+#+end_src
+
+*** Link açma
+Çoğu zaman bir [[file:ios_deep_link.org][universal link]] veya =custom-scheme= açmayı denemek isteyebiliyoruz simülatörde o durumda şöyle bir komut bize yardımcı oluyor:
+
+#+begin_src sh
+  xcrun simctl openurl booted https://news.ycombinator.com/
+#+end_src
+
+*** Uygulama yükleme
+Eğer elimizde bir ipa var işe bunu yüklemek için:
+#+begin_src sh
+  # Simulatore 'ipa' yuklemek
+  xcrun simctl install <device-uuid> <app-path>
+
+  xcrun simctl install  FF33309C-DC41-41EF-B853-4BE58E8CDE6B "~/me/app.ipa"
+#+end_src
+
+*** Lokasyon simule etme
+Lokasyon testleri yapıyor isek:
+#+begin_src sh
+  # Lokasyon ayarlama
+  xcrun simctl location <device-uuid> <lat,long>
+
+  xcrun simctl location FF33309C-DC41-41EF-B853-4BE58E8CDE6B set 44.5,46.2
+#+end_src
+
+*** Diğer =simctl= komutlarını keşfetme
+Burada üzerinden geçemeyeceğimiz kadar çok yardımcı alt komutlar sağlıyor =xcrun simctl=.
+
+Bu komutların neler olduğunu keşfetmek için:
+#+begin_src sh
+  xcrun simctl --help
+#+end_src
+
+#+begin_src text
+  addmedia            Add photos, live photos, videos, or contacts to the library of a device.
+  boot                Boot a device or device pair.
+  clone               Clone an existing device.
+  create              Create a new device.
+  delete              Delete specified devices, unavailable devices, or all devices.
+  diagnose            Collect diagnostic information and logs.
+  erase               Erase a device's contents and settings.
+  get_app_container   Print the path of the installed app's container
+  getenv              Print an environment variable from a running device.
+  help                Prints the usage for a given subcommand.
+  icloud_sync         Trigger iCloud sync on a device. install             Install an app on a device. install_app_data    Install an xcappdata package to a device, replacing the current contents of the container.
+  io                  Set up a device IO operation.
+  keychain            Manipulate a device's keychain
+  launch              Launch an application by identifier on a device.
+  list                List available devices, device types, runtimes, or device pairs.
+  location            Control a device's simulated location
+  logverbose          enable or disable verbose logging for a device
+  openurl             Open a URL in a device.
+  pair                Create a new watch and phone pair.
+  pair_activate       Set a given pair as active.
+  pbcopy              Copy standard input onto the device pasteboard.
+  pbpaste             Print the contents of the device's pasteboard to standard output.
+  pbsync              Sync the pasteboard content from one pasteboard to another.
+  privacy             Grant, revoke, or reset privacy and permissions
+  push                Send a simulated push notification
+  rename              Rename a device.
+  runtime             Perform operations on runtimes
+  shutdown            Shutdown a device.
+  spawn               Spawn a process by executing a given executable on a device.
+  status_bar          Set or clear status bar overrides
+  terminate           Terminate an application by identifier on a device.
+  ui                  Get or Set UI options
+  uninstall           Uninstall an app from a device.
+  unpair              Unpair a watch and phone pair.
+  upgrade             Upgrade a device to a newer runtime.
+#+end_src
+
+** Sonuç
+Bu komutları üstünkörü bile olsa denemeniz, yaptığınız geliştirmeleri simülatörde test ederken daha atik olmanıza yardımcı olabilir.
+
+Bir çok işlem simülatör /gui/'si üzerinden sağlanmış olsada hem daha geniş seçenekleri kullanıp hem de shell üzerinde otomatik işlemler tanımlayabilecek bir dağarcığa sahip olabilirsiniz.
+
+Görüşmek üzere!

@@ -72,14 +72,12 @@ URL Scheme'in kurulumu oldukça basittir. Örneğin, bir iOS uygulamasına URL S
 2. Ardından, `Project Settings -> Info` yolunu izliyoruz.
 3. Bu bölümde "URL Types" kısmına yeni bir URL Scheme tanımı yapabiliyoruz.
 
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:0.jpg]]
 Bu şekilde bir tanımlama yaptıktan sonra, telefonumuzdan bir tarayıcı veya notlar uygulamasına gidip bu linki test edebiliriz. "com.myApp" yazıp enter'a tıkladığımızda fark ederiz ki, bir şey olmamıştır.
 
 Peki, bu durum neden oluşur? İşin aslı, iOS'un bir metni bağlantı olarak tanıması için, URL formatına uygun olmamızı bekler. Yani linkimizi "com.myApp://main" olarak güncellemeliyiz. Bu formatı girdiğimizde, bir izin pop-up'ı ile karşılaşırız. Eğer burada "Aç" diyerek izin verirsek, linkin uygulamamızı açtığını görebiliriz.
 
-#+ATTR_LATEX: :width 0.5\textwidth
 #+ATTR_HTML: :width 100%
 [[file:1.jpg]]
 Fakat, evet uygulamayı açtık ama henüz uygulama içerisinde bir yönlendirme yapmadık. Mesela uygulamanın "profil bilgilerim" sayfasına gitmek istiyoruz. Peki, bunu nasıl yapabiliriz?
@@ -91,7 +89,6 @@ Hatırlayalım, bir metnin bağlantı olabilmesi için "scheme://host" yapısın
 
 Bu URL'deki parametreleri elde etmek ve bunları kendi yönlendirme yapımıza göre işlemek için aşağıdaki gibi bir kod yapısına ihtiyacımız bulunmaktadır.
 
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:2.jpg]]
 Bu kod yapısında,
@@ -141,7 +138,6 @@ Xcode'da, sol menüden projenizi seçtikten sonra sırasıyla: Target -> Signing
 
 Bu adımların ardından, Universal Link yeteneğiniz aktif hale gelmiş olacaktır. Bu yeteneği test etmek için, telefonunuzdan Safari'ye gidip uygulamanızın web sitesine giderseniz, iOS otomatik olarak bir öneri sunacaktır.
 
-#+ATTR_LATEX: :width 120px
 #+ATTR_HTML: :width 100%
 [[file:4.jpg]]
 
@@ -150,7 +146,6 @@ Universal Link yeteneğini ekledikten sonra, uygulamanızın belirli bir sayfas�
 
 URL Scheme'de linklerimizi "open url: URL" metodunda handle ediyorduk, ancak Universal Link yönlendirmelerini "continue userActivity: NSUserActivity" metodunda handle ediyoruz.
 
-#+ATTR_LATEX: :width 340px
 #+ATTR_HTML: :width 80%
 [[file:5.jpg]]
 Örneğin, "www.myApp.com/app/profile" gibi bir linke tıkladığınızda bu metot handle edecektir.
@@ -165,10 +160,9 @@ Bu bilgilerin ışığında, uygulamanızın belirli bir sayfasına yönlendireb
 
 Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha iyi anlamanızı sağlayabilir. Aşağıya bununla ilgili bir diyagram bırakıyorum. Yazımı okuduğunuz için teşekkürler, bir sonraki yazılarda görüşmek üzere.
 
-#+ATTR_LATEX: :width 0.6\textwidth
 #+ATTR_HTML: :width 100%
 [[file:6.jpg]]
 
-** Kaynaklar
+** Kaynakça
 1. [[https://medium.com/@ydemirkoparan/swift-ile-deep-linking-nas%C4%B1l-yap%C4%B1l%C4%B1r-e815fee93b97][Swift ile DeepLinking nasıl yapılır?]]
 2. [[https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97][iOS Deep Linking Scheme vs Universal Links]]

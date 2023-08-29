@@ -137,7 +137,7 @@
           (let ((file-name (concat tags-files-directory (downcase tag) ".org")))
             (unless (file-exists-p file-name)
               (with-temp-buffer
-                (insert "#+TITLE: " tag "\n\n")
+                (insert "#+TITLE: " (replace-regexp-in-string "_" " " tag) "\n\n")
                 (dolist (org-file article-files)
                   (when (member tag (get-org-filetags (list org-file)))
                     (let ((org-file-name (file-name-nondirectory org-file))
@@ -160,13 +160,7 @@
 (setq user-full-name "Suat Karakuşoğlu")
 (setq user-mail-address "suatkarakusoglu@gmail.com")
 
-;; (defvar dw/site-url (if (string-equal (getenv "CI") "true")
-;;                         "https://systemcrafters.net"
-;;                       "http://localhost:8080")
-;;   "The URL for the site being generated.")
-
-;; TODO Automatise here later
-(defvar dw/site-url (if t
+(defvar dw/site-url (if (string-equal (getenv "PRODUCTION") "true")
                         "https://mobilen.art"
                       "http://localhost:8080")
   "The URL for the site being generated.")
@@ -223,9 +217,13 @@
                                 (a (@ (class "nav-link") (href "/news/")) "İçerikler") " "
                                 (a (@ (class "nav-link") (href "/community/")) "Topluluk") " "
                                 (a (@ (class "nav-link") (href ,(concat dw/site-url "/rss/"))) "RSS") " "
-                                ;; (a (@ (class "nav-link") (href "https://github.com/suatkarakusoglu/mobilen")) "Github") " "
-                                ;; (a (@ (class "nav-link") (href "/how-to-help/")) "Katkıda Bulun")
                                 ))))))
+
+(defun generate-tags-html (tags)
+  (mapcar (lambda (tag)
+            `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/")))
+                ,(concat (replace-regexp-in-string "_" " " tag) " #" (number-to-string (gethash tag tag-count-map 0)))))
+          tags))
 
 (defun dw/site-footer ()
   (list `(footer (@ (class "site-footer"))
@@ -250,9 +248,7 @@
                  (div (@ (class "container"))
                       (div (@ (class "row site-footer-tags"))
                            ,@(when article-tags-unique-list
-                               (mapcar (lambda (tag)
-                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,(concat tag " #" (number-to-string (gethash tag tag-count-map 0)))))
-                                       article-tags-unique-list)))))))
+                               (generate-tags-html article-tags-unique-list)))))))
 
 (defun get-article-output-path (org-file pub-dir)
   (let ((article-dir (concat pub-dir
@@ -320,9 +316,7 @@
                            (h1 (@ (class "site-post-title"))
                                ,title)
                            ,@(when filetags
-                               (mapcar (lambda (tag)
-                                         `(a (@ (class "tag") (href ,(concat dw/site-url "/tags/" (downcase tag) "/"))) ,(concat tag " #" (number-to-string (gethash tag tag-count-map 0)))))
-                                       filetags))
+                               (generate-tags-html filetags))
                            ,(when publish-date
                               `(p (@ (class "site-post-meta")) ,publish-date))
                            ,(if-let ((video-id (plist-get info :video)))
@@ -357,7 +351,7 @@
     (cond
      (exported-link exported-link)
      ((string-match-p "\\(.*\\.\\(jpg\\|png\\)\\)" (org-element-property :raw-link link))
-      (format "<img src=\"/img/%s\" style=\"border-radius: 8px\" width=\"%s\">"
+      (format "<img src=\"/img/%s\" class=\"content-image\" width=\"%s\">"
               (file-name-nondirectory (org-element-property :path link))
               ;; (org-export-read-attribute :attr_html link)
               ;; TODO Read from #+ATTR_HTML
@@ -656,9 +650,6 @@ holding contextual information."
 (defun dw/publish ()
   "Publish the entire site."
   (interactive)
-  ;; (org-publish-all (string-equal (or (getenv "FORCE")
-  ;;                                    (getenv "CI"))
-  ;;                                "true"))
   (org-publish-all t)
 
   (webfeeder-build "rss/news.xml"

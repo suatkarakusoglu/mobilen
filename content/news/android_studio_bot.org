@@ -1,7 +1,7 @@
 #+title: Android Studio Bot
 #+date: [2023-06-02 Fri]
 #+author: Tuğba Berk
-#+filetags: :Android:AI:
+#+filetags: :Android:AI:Android_Studio:
 
 [[https://tr.linkedin.com/in/tu%C4%9Fbaberk][Tuğba Berk]] yazdı.
 
@@ -50,5 +50,5 @@ Ancak, burada dikkat etmemiz gereken önemli bir nokta var: Studio Bot, öğrenm
 
 Sonuç olarak, yapay zeka teknolojileri ile olan etkileşimimiz artıyor ve gelişiyor. Studio Bot gibi araçlar, geliştiricilerin kod yazma sürecini kolaylaştırmayı ve verimliliği artırmayı hedefliyor. Bu nedenle, yeni teknolojilere ve araçlara açık olmak, gelişmeleri takip etmek ve deneyimlemek önemlidir. Ancak, her aracın avantajlarını ve dezavantajlarını anlamak ve doğru bir şekilde kullanmak da gereklidir.
 
-** Kaynaklar
+** Kaynakça
 [[https://developer.android.com/studio/preview/studio-bot][Android Studio Bot Preview]]

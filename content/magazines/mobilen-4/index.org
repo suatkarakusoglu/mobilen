@@ -1,6 +1,31 @@
 #+title: Mobilen 4
 
-/Mobilen'in 4. dergisi./
+#+ATTR_HTML: :width 100%
+[[volume_4_cover.jpg]]
+
+Merhabalar,
+
+/Mobilen'in 4. sayısı./ ile beraber sitemize tasarım giydirdik :).
+
+[[https://mobilen.art/rss/][RSS]] dahi ekledik.
+
+Yetmedi /etiket/'ler ile artık sitede daha rahat gezinebiliyoruz.
+
+Bu sayımızda apple tasarım ödüllerinden, güvenlik konularına, yardımcı araçlardan yeni android sürümüne kadar bir çok içerikten oluşuyor.
+
+🇹🇷  Zafer bayramımız kutlu olsun 🇹🇷
+
+Herkese iyi okumalar.
 
 * Konular
 1. [[file:../../news/ssl_pinning.org][SSL Pinning]]
+2. [[file:../../news/xcrun_komutu.org][Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi]]
+3. [[file:../../news/android_contexti_anlamak.org][Android Context’i Anlamak : Çarpıcı Başlıklar ve ClickBait]]
+4. [[file:../../news/android_de_neden_main_function_yok.org][Android’de Neden Bir Main Function Yok?]]
+5. [[file:../../news/apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]]
+6. [[file:../../news/flutter_3_13_version.org][Flutter 3.13 ile Gelen Yenilikler]]
+7. [[file:../../news/the_art_of_readable_code_2.org][Okuma Notları: The Art Of Readable Code (2)]]
+8. [[file:../../news/yeni_android_studio_surumu_giraffe.org][Yeni Android Studio sürümü “Giraffe”]]
+
+#+begin_cta
+#+end_cta

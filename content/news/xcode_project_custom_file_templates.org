@@ -20,7 +20,6 @@ Yeni başlayanlardan deneyimli geliştiricilere kadar herkesin işine yarayacak 
 `File Templates`, Xcode'un özellikle iOS uygulamaları geliştirirken kullandığımız dosyaları oluşturma sürecinde kilit bir rol oynar. Her yeni dosya oluştururken, `Choose a template for your new file:` başlığı altında bir dizi template sunulur.
 
 #+CAPTION: Template Seçimi
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 400px :style float:center;
 [[file:choose-template.png]]
 
@@ -36,26 +35,22 @@ Custom Xcode Template, projenizin gereksinimlerine ve mimarisine uygun dosyalar�
 Bu klasör genellikle `~/Library/Developer/Xcode/Templates/File Templates` dizininde bulunur. Eğer bu dizin mevcut değilse, manuel olarak oluşturabilirsiniz.
 
 #+CAPTION: Templates dizinini açmak
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:templates-folder.png]]
 
 #+CAPTION: Yeni klasör oluşturmak
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:file-templates.png]]
 
 Kendi template'lerinizi barındıracak bir klasör oluşturmanız gerekmektedir. Bu klasörü adlandırırken istediğiniz ismi kullanabilirsiniz, örneğin "My Project Templates".
 
 #+CAPTION: Custom Template barındıracak klasörü oluşturmak
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:my-project-templates.png]]
 
 Sonrasında, `.xctemplate` uzantılı bir dosya oluşturmalısınız. Bu dosya, oluşturacağınız asıl template'i temsil eder ve template'in nasıl görüneceğini ve hangi dosyaların oluşturulacağını belirler.
 
 #+CAPTION: Xctemplate dosyaları
-#+ATTR_LATEX: :width \textwidth
 #+ATTR_HTML: :width 100%
 [[file:xctemplate.png]]
 

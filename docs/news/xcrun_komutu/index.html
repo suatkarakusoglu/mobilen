@@ -1,0 +1,150 @@
+<!-- Generated from 021f4a7 on 2023-08-29 @ 16:16 with Emacs 29.0.50 (Org mode 9.5.5) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #16</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #19</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #3</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #5</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #2</a><p class="site-post-meta">August 22, 2023</p><div id="content"><p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgd6bcc2d">
+<p>
+Merhabalar, iOS uygulaması geliştirirken bazen Xcode&rsquo;un komut satırı üzerinden terminal komutlarını kullanmaya ihtiyaç duyarız. <code>xcrun</code> komutu bize çatı bir komut olarak altında bir çok yardımcı komuta erişim sağlar, bunlardan en kullanışlılarından <code>simctl</code> üzerine inceleme yapacağız.
+</p>
+</div>
+
+<h3><a id="codexcruncode-komutu-nedir" class="anchor" href="#codexcruncode-komutu-nedir">¶</a><code>xcrun</code> komutu nedir?</h3><div class="outline-text-3" id="text-org7b1515d">
+<p>
+Xcode&rsquo;un kullandığı bir çok komuta erişim için kullanılan çatı <code>wrapper</code> bir komuttur.
+</p>
+</div>
+
+<h3><a id="codesimctlcode-komutu-ne-işe-yarar" class="anchor" href="#codesimctlcode-komutu-ne-işe-yarar">¶</a><code>simctl</code> komutu ne işe yarar?</h3><div class="outline-text-3" id="text-org95e0d47">
+<p>
+Xcode&rsquo;un sağladığı simülatörlere erişimi ve yönetimi kolaylaştıran bir araçtır. Aktif olarak kullanılan Xcode&rsquo;un toolchain&rsquo;ini kullanarak iOS veya macOS simülatörleri ayağa kaldırılabilir.
+</p>
+</div>
+
+<h4><a id="simulator-listeleme" class="anchor" href="#simulator-listeleme">¶</a>Simulator listeleme</h4><div class="outline-text-4" id="text-org75c73b3">
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># Tüm simülatörleri listeleme</span>
+<span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>list
+</pre></div>
+
+<p>
+Bu listeden farklı filtrelemeler yapabiliyoruz, misal tıp filtreleme seçenekleri <code>devices</code>, <code>devicetypes</code>, <code>runtimes</code> ve <code>pairs</code> gibi.
+</p>
+
+<p>
+<code>Tip filtresi</code> sonrası listeden yine daha filtreleme yapabiliyoruz. <code>booted</code> listelenen cihazlardan açıklamada booted içeren cihazları filtrelemeye yarıyor.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># Yalnizca =booted= cihazlari listeleme</span>
+<span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>list<span class="w"> </span>devices<span class="w"> </span>booted
+</pre></div>
+
+<div class="highlight"><pre><span></span>  == Devices ==
+  -- iOS 16.2 --
+  iPhone 14 (FF33309C-DC41-41EF-B853-4BE58E8CDE6B) (Booted)
+  iPhone 14 Pro (C08CC68E-CF2B-445F-8701-C21AC86F9785) (Booted)
+</pre></div>
+</div>
+
+<h4><a id="simülatör-ayağa-kaldırma" class="anchor" href="#simülatör-ayağa-kaldırma">¶</a>Simülatör ayağa kaldırma</h4><div class="outline-text-4" id="text-orgb201968">
+<p>
+Yeni bir simülatör ayağa kaldırmak için:
+</p>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># Simülatör ayağa kaldırma</span>
+<span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>boot<span class="w"> </span><span class="s2">&quot;iPhone 14 Pro&quot;</span>
+</pre></div>
+</div>
+
+<h4><a id="link-açma" class="anchor" href="#link-açma">¶</a>Link açma</h4><div class="outline-text-4" id="text-org0cc0ad8">
+<p>
+Çoğu zaman bir <a href="ios_deep_link">universal link</a> veya <code>custom-scheme</code> açmayı denemek isteyebiliyoruz simülatörde o durumda şöyle bir komut bize yardımcı oluyor:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>openurl<span class="w"> </span>booted<span class="w"> </span>https://news.ycombinator.com/
+</pre></div>
+</div>
+
+<h4><a id="uygulama-yükleme" class="anchor" href="#uygulama-yükleme">¶</a>Uygulama yükleme</h4><div class="outline-text-4" id="text-org0e31a05">
+<p>
+Eğer elimizde bir ipa var işe bunu yüklemek için:
+</p>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># Simulatore &#39;ipa&#39; yuklemek</span>
+<span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>install<span class="w"> </span>&lt;device-uuid&gt;<span class="w"> </span>&lt;app-path&gt;
+
+<span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>install<span class="w">  </span>FF33309C-DC41-41EF-B853-4BE58E8CDE6B<span class="w"> </span><span class="s2">&quot;~/me/app.ipa&quot;</span>
+</pre></div>
+</div>
+
+<h4><a id="lokasyon-simule-etme" class="anchor" href="#lokasyon-simule-etme">¶</a>Lokasyon simule etme</h4><div class="outline-text-4" id="text-org290613f">
+<p>
+Lokasyon testleri yapıyor isek:
+</p>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># Lokasyon ayarlama</span>
+<span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>location<span class="w"> </span>&lt;device-uuid&gt;<span class="w"> </span>&lt;lat,long&gt;
+
+<span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>location<span class="w"> </span>FF33309C-DC41-41EF-B853-4BE58E8CDE6B<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="m">44</span>.5,46.2
+</pre></div>
+</div>
+
+<h4><a id="diğer-codesimctlcode-komutlarını-keşfetme" class="anchor" href="#diğer-codesimctlcode-komutlarını-keşfetme">¶</a>Diğer <code>simctl</code> komutlarını keşfetme</h4><div class="outline-text-4" id="text-org171a6a7">
+<p>
+Burada üzerinden geçemeyeceğimiz kadar çok yardımcı alt komutlar sağlıyor <code>xcrun simctl</code>.
+</p>
+
+<p>
+Bu komutların neler olduğunu keşfetmek için:
+</p>
+<div class="highlight"><pre><span></span><span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>--help
+</pre></div>
+
+<div class="highlight"><pre><span></span>  addmedia            Add photos, live photos, videos, or contacts to the library of a device.
+  boot                Boot a device or device pair.
+  clone               Clone an existing device.
+  create              Create a new device.
+  delete              Delete specified devices, unavailable devices, or all devices.
+  diagnose            Collect diagnostic information and logs.
+  erase               Erase a device&#39;s contents and settings.
+  get_app_container   Print the path of the installed app&#39;s container
+  getenv              Print an environment variable from a running device.
+  help                Prints the usage for a given subcommand.
+  icloud_sync         Trigger iCloud sync on a device. install             Install an app on a device. install_app_data    Install an xcappdata package to a device, replacing the current contents of the container.
+  io                  Set up a device IO operation.
+  keychain            Manipulate a device&#39;s keychain
+  launch              Launch an application by identifier on a device.
+  list                List available devices, device types, runtimes, or device pairs.
+  location            Control a device&#39;s simulated location
+  logverbose          enable or disable verbose logging for a device
+  openurl             Open a URL in a device.
+  pair                Create a new watch and phone pair.
+  pair_activate       Set a given pair as active.
+  pbcopy              Copy standard input onto the device pasteboard.
+  pbpaste             Print the contents of the device&#39;s pasteboard to standard output.
+  pbsync              Sync the pasteboard content from one pasteboard to another.
+  privacy             Grant, revoke, or reset privacy and permissions
+  push                Send a simulated push notification
+  rename              Rename a device.
+  runtime             Perform operations on runtimes
+  shutdown            Shutdown a device.
+  spawn               Spawn a process by executing a given executable on a device.
+  status_bar          Set or clear status bar overrides
+  terminate           Terminate an application by identifier on a device.
+  ui                  Get or Set UI options
+  uninstall           Uninstall an app from a device.
+  unpair              Unpair a watch and phone pair.
+  upgrade             Upgrade a device to a newer runtime.
+</pre></div>
+</div>
+
+<h3><a id="sonuç" class="anchor" href="#sonuç">¶</a>Sonuç</h3><div class="outline-text-3" id="text-org227fda7">
+<p>
+Bu komutları üstünkörü bile olsa denemeniz, yaptığınız geliştirmeleri simülatörde test ederken daha atik olmanıza yardımcı olabilir.
+</p>
+
+<p>
+Bir çok işlem simülatör <i>gui</i>&rsquo;si üzerinden sağlanmış olsada hem daha geniş seçenekleri kullanıp hem de shell üzerinde otomatik işlemler tanımlayabilecek bir dağarcığa sahip olabilirsiniz.
+</p>
+
+<p>
+Görüşmek üzere!
+</p>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #19</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #16</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #5</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #3</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #2</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #2</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #1</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

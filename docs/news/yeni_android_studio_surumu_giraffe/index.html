@@ -1,0 +1,162 @@
+<!-- Generated from 021f4a7 on 2023-08-29 @ 16:16 with Emacs 29.0.50 (Org mode 9.5.5) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Yeni Android Studio sürümü &ldquo;Giraffe&rdquo; - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Yeni Android Studio sürümü &ldquo;Giraffe&rdquo;</h1><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #5</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><p class="site-post-meta">August 26, 2023</p><div id="content"><p>
+<a href="https://www.linkedin.com/in/ozkantuncel">Özkan Tuncel</a> yazdı.
+</p>
+
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org6030e82">
+<p>
+Merhabalar! Sizlere yeni Android Studio sürümünde öne çıkan önemli özelliklerini inceleyeceğiz.
+</p>
+
+
+<div id="org1617937" class="figure">
+<p><img src="/img/yeni_android_studio_surumu_giraffe_image_1.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span>Yeni Android Studio sürümü &ldquo;Giraffe&rdquo;</p>
+</div>
+
+<p>
+Android Studio, sürekli olarak geliştirilmekte ve yeni özellikler eklenmektedir. Bu yazımda, Live Edit iyileştirmelerini, Compose animasyon preview, yeni bir Device Explorer&rsquo;ı, SDK yükseltme asistanını, Gradle derleme komut dosyalarında Kotlin DSL kullanma yeteneğini ve diğer önemli özellikleri tek tek birlikte bakalım.
+</p>
+
+<p>
+Önce benim en çok ilgimi çeken, kod değişikliklerini fiziksel bir cihazda veya emülatörde çalışan Jetpack Compose UI&rsquo;sini düzenlemenin yeni bir yol sunan Live Edit&rsquo; e göz atalım.
+</p>
+</div>
+
+<h3><a id="jetpack-compose-ui-için-liveedit" class="anchor" href="#jetpack-compose-ui-için-liveedit">¶</a>Jetpack Compose UI için Live Edit</h3><div class="outline-text-3" id="text-orgc7fc0db">
+
+<div id="orga3eb4d4" class="figure">
+<p><img src="/img/yeni_android_studio_surumu_live_edit.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 2: </span>Live Edit</p>
+</div>
+
+<p>
+Emülatörler de ve fiziksel cihazlarda gerçek zamanlı olarak güncellenmenize izin verir. Bu işlevsellik, uygulamanızı yazma ve oluşturma arasındaki bağlam değişimlerini en aza indirir; böylece kod yazmaya daha uzun süre odaklanabilirsiniz. Peki Compose Preview&rsquo; den farkları nedir? 🤔
+</p>
+
+<ul class="org-ul">
+<li>Compose öğelerini Android Studio&rsquo;nun Preview sekmesinde görselleştirmenize ve kod değişiklikleri yaparken otomatik olarak yenilenmelerini görmenize olanak tanır. Öte yandan, Live Edit, emülatörlerde ve fiziksel cihazlarda gerçek zamanlı olarak güncellenmenize olanak sağlar.</li>
+
+<li>Composables&rsquo;ı düzenleyin ve UI değişikliklerini tekrardan build etmeden görmemizi sağlar Live Edit denemek için AGP 8.1 veya daha yüksek ve Compose 1.3.0 veya daha yüksek sürümünü kullanmanız gerekiyor.</li>
+</ul>
+
+<p>
+Daha fazla bilgiyi <a href="https://android-developers.googleblog.com/2023/07/deep-dive-into-live-edit-for-jetpack-compose-ui.html">buradan</a> ulaşabilirsiniz.
+</p>
+</div>
+
+<h3><a id="yeni-bir-arayüz-rsquobeta-newuirsquo-geliştiriciler-için-sürekli" class="anchor" href="#yeni-bir-arayüz-rsquobeta-newuirsquo-geliştiriciler-için-sürekli">¶</a>Yeni Bir Arayüz &rsquo;Beta New UI&rsquo; Geliştiriciler için sürekli</h3><div class="outline-text-3" id="text-orgda703c4">
+<p>
+kullandığını bir geliştirme ortamının yenilenmesi bazıları için keyif verici bazıları için ise zor olabiliyor. Android Studio son sürümünde beta olark yeni bir arayüzü kullanıcıları sundu.
+</p>
+
+
+<div id="orgf3a2a9d" class="figure">
+<p><img src="/img/android_studio_giraffe_beta_ui.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 3: </span>Beta New UI</p>
+</div>
+
+<ul class="org-ul">
+<li>IntelliJ arayüzünü tamamen değiştirebileceğinden emin olmak için kullanıcılardan ve diğer IntelliJ tabanlı IDE&rsquo;lerden geri bildirim toplamak için 2022.2&rsquo;de erken bir önizleme olarak ilk kez <a href="https://youtrack.jetbrains.com/issues/IDEA?q=tag:%20newUI%20%20sort%20by:%20votes%20desc">yayınlandı</a>. O zamandan beri, IntelliJ 2022.3&rsquo;te beta&rsquo;ya ilerledi, birçok hata düzeltmesi ve iyileştirme yaptı</li>
+<li>Android için varsayılan ana araç çubuğu ve araç pencereleri yapılandırmalarını optimize ederek ve stildeki simgelerde yenilenmeler yapıldı.</li>
+<li>Bu yeni tasarım <a href="https://developer.android.com/studio/preview">Hedgehog</a> sürümü ve sonrasında benimsemeye devam edeceğini geliştiriciler tarafından söyleniyor.</li>
+</ul>
+
+<p>
+Bu arayüzü uygulamak için şu yolu takip edin:
+Android Studio &gt; Settings &gt; Appearance &amp; Behavior&gt;New UI
+</p>
+
+<p>
+Kendi görüşlerimi ifade edersem, ben son derece hoş buldum bu yeni arayüzü. Fakat ilk seferinde biraz kayboldum diyebilirim, zamanla buna alışacağız. 😅
+</p>
+</div>
+
+<h3><a id="jetpack-compose-ui-için-yeni-api-animasyon" class="anchor" href="#jetpack-compose-ui-için-yeni-api-animasyon">¶</a>Jetpack Compose UI için Yeni API Animasyon</h3><div class="outline-text-3" id="text-orge38cd8e">
+<p>
+Preview Animasyon Preview Android Studio Giraffe&rsquo;deki başka bir heyecan verici özelliktir.
+</p>
+
+
+<div id="org7d143b3" class="figure">
+<p><img src="/img/yeni_android_studio_surumu_animation_preview.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 4: </span>Animation Preview</p>
+</div>
+
+<ul class="org-ul">
+<li>Geliştiriciler animasyonları kare kare ön izleyebilir ve istenen davranışa uygun olduklarından emin olabilirler.</li>
+
+<li>Animasyonları hata ayıklarken, Compose animasyon ön izlemeleri özelliği son derece yararlı olabilir. Geliştiriciler animasyonların doğru şekilde ayarlandığından emin olabilirler.</li>
+
+<li>Compose animasyon ön izlemeleri özelliği, geliştiricilerin animasyonların istenen davranışa uygun olduklarını doğrulamalarına yardımcı olur.</li>
+
+<li>Bu uygulamanın genel kullanıcı deneyimini geliştirmeye yardımcı olabilir. Bu özelliği kullanmak için Android Studio Giraffe Canary 3 ve Compose 1.4.0-alpha04 ya da üzeri bir sürüm gerekiyor.</li>
+</ul>
+</div>
+
+<h3><a id="device-explorer" class="anchor" href="#device-explorer">¶</a>Device Explorer</h3><div class="outline-text-3" id="text-orgd8dccdc">
+<p>
+Android Studio&rsquo;nun önceki sürümlerinde bulunan Device File Explorer&rsquo;nin güncellenmiş bir sürümüdür.
+</p>
+
+
+<div id="org0e62925" class="figure">
+<p><img src="/img/device_explorer.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 5: </span>Device Explorer</p>
+</div>
+
+<p>
+Hata ayıklayıcıyı bir işleme sonlandırma, zorla durdurma veya ekleme seçenekleri Logcat&rsquo;ten Aygıt Gezgini&rsquo;ne taşındı.
+</p>
+</div>
+
+<h3><a id="android-sdk-upgradeasistanı" class="anchor" href="#android-sdk-upgradeasistanı">¶</a>Android SDK Upgrade Asistanı</h3><div class="outline-text-3" id="text-orgf569965">
+<p>
+API seviyesini doğrudan IDE&rsquo;de yükseltmek için gerekli adımları görmenize olanak tanır
+</p>
+
+
+<div id="orgf10fea8" class="figure">
+<p><img src="/img/upgrade_assistant.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 6: </span>Upgrade Asistanı</p>
+</div>
+
+<p>
+Uygulamalarının targetSdkVersion&rsquo;unu veya uygulamanın hedeflediği API seviyesini yükseltmelerine yardımcı olan bir araçtır.
+Kulanmak için Tools &gt; Android SDK Upgrade Assistant &gt; Uyarı: Google Play uygulamaları için 31 Ağustos 2023&rsquo;ten itibaren, Wear OS uygulamaları dışındaki yeni uygulamalar, Android 13 (API düzeyi 33) veya sonraki sürümleri hedeflemelidir.
+Wear OS uygulamaları ise Android 11&rsquo;i (API düzeyi 30) veya Android 13&rsquo;e (API düzeyi 33) kadarki sürümleri hedeflemelidir. Daha fazla bilgi <a href="https://developer.android.com/google/play/requirements/target-sdk">buraya</a> tıklayınız.
+</p>
+</div>
+
+<h3><a id="kotlin-dsl-uygun-şekilde-proje-oluşturma-android-studio" class="anchor" href="#kotlin-dsl-uygun-şekilde-proje-oluşturma-android-studio">¶</a>Kotlin DSL Uygun Şekilde Proje Oluşturma Android Studio</h3><div class="outline-text-3" id="text-org8a4cf4e">
+<p>
+Giraffe&rsquo;den itibaren yeni projeler veya modüller oluştururken, varsayılan olarak projeyi Kotlin DSL ile oluşturabileceğiniz.
+</p>
+
+
+<div id="orgde18706" class="figure">
+<p><img src="/img/kotlin_dsl_settings.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 7: </span>Kotlin DSL Ayarları</p>
+</div>
+
+<p>
+Android Studio Giraffe geliştirici deneyimini artırmayı amaçlayan birçok yeni özellik ve iyileştirme ile hayatımıza girdi. Canlı Düzenleme iyileştirmelerinden Compose animasyon preview, yeni Device Explorer&rsquo;nden SDK yükseltme asistanına kadar pek çok araç mevcuttur; bu araçlar geliştiricilerin Android uygulamalarını oluştururken daha üretken ve verimli olmalarına yardımcı olabilirler. Bu özelliklerin yanı sıra diğer birçok özellik, Android geliştiricileri için heyecan verici bir sürüm haline getirir Android Studio Giraffe&rsquo;yi.
+</p>
+</div>
+
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org6dab0f7">
+<ul class="org-ul">
+<li><a href="https://developer.android.com/studio/releases">Android Releases</a></li>
+<li><a href="https://android-developers.googleblog.com/2023/07/android-studio-giraffe-is-stable.html">Stable Giraffe Version</a></li>
+<li><a href="https://www.jetbrains.com/help/idea/new-ui.html">New UI</a></li>
+<li><a href="https://developer.android.com/studio/run#live-edit">Live Editing</a></li>
+</ul>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #19</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #16</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #5</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #3</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #2</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #2</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #1</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

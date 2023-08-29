@@ -1,5 +1,7 @@
 #+TITLE: iOS
 
+[[file:../../news/apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]]
+
 [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 
 [[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
@@ -27,4 +29,6 @@
 [[file:../../news/xcode_project_custom_file_templates.org][XCode Project Custom File Templates]]
 
 [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]
+
+[[file:../../news/xcrun_komutu.org][Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi]]
 

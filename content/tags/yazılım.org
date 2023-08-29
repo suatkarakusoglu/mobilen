@@ -1,5 +1,11 @@
 #+TITLE: Yazılım
 
+[[file:../../news/android_contexti_anlamak.org][Android Context'i Anlamak : Çarpıcı Başlıklar ve ClickBait]]
+
+[[file:../../news/android_de_neden_main_function_yok.org][Android'de Neden Bir Main Function Yok ?]]
+
+[[file:../../news/apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]]
+
 [[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
 
 [[file:../../news/ios_app_push_certificate_yenileme.org][iOS uygulama bildirim sertifikası oluşturma/yenileme]]
@@ -16,7 +22,9 @@
 
 [[file:../../news/ssl_pinning.org][SSL Pinning]]
 
-[[file:../../news/the_art_of_readable_code_1.org][Okuma Notları: The Art Of Readable Code (Part 1)]]
+[[file:../../news/the_art_of_readable_code_1.org][Okuma Notları: The Art Of Readable Code (1)]]
+
+[[file:../../news/the_art_of_readable_code_2.org][Okuma Notları: The Art Of Readable Code (2)]]
 
 [[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]]
 
@@ -27,4 +35,6 @@
 [[file:../../news/xcode_project_custom_file_templates.org][XCode Project Custom File Templates]]
 
 [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]
+
+[[file:../../news/xcrun_komutu.org][Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi]]
 

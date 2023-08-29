@@ -1,12 +1,19 @@
 #+TITLE: Yazılar
 
+- [[file:apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]] - Alper Cem Öztürk · August 29, 2023
+- [[file:yeni_android_studio_surumu_giraffe.org][Yeni Android Studio sürümü "Giraffe"]] - Özkan Tuncel · August 26, 2023
+- [[file:the_art_of_readable_code_2.org][Okuma Notları: The Art Of Readable Code (2)]] - Yusuf Kaya · August 26, 2023
+- [[file:android_de_neden_main_function_yok.org][Android'de Neden Bir Main Function Yok ?]] - Sevban Bayır · August 25, 2023
+- [[file:android_contexti_anlamak.org][Android Context'i Anlamak : Çarpıcı Başlıklar ve ClickBait]] - Betül Sandıkçı · August 25, 2023
+- [[file:flutter_3_13_version.org][Flutter 3.13 ile Gelen Yenilikler]] - Mehmet Güven · August 23, 2023
+- [[file:xcrun_komutu.org][Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi]] - Suat Karakuşoğlu · August 22, 2023
 - [[file:ssl_pinning.org][SSL Pinning]] - Suat Karakuşoğlu · August 08, 2023
 - [[file:ios_app_push_certificate_yenileme.org][iOS uygulama bildirim sertifikası oluşturma/yenileme]] - Suat Karakuşoğlu · July 11, 2023
 - [[file:xcode_project_custom_file_templates.org][XCode Project Custom File Templates]] - Ali Mert Tekel · July 11, 2023
 - [[file:steve_jobs_the_man_in_the_machine.org][Steve Jobs The Man in The Machine]] - Suat Karakuşoğlu · July 11, 2023
 - [[file:android_file_template.org][Android File Template]] - Hasan Hüseyin Doğannn · July 11, 2023
 - [[file:details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]] - Ali Mert Tekel · July 11, 2023
-- [[file:the_art_of_readable_code_1.org][Okuma Notları: The Art Of Readable Code (Part 1)]] - Yusuf Kaya · July 11, 2023
+- [[file:the_art_of_readable_code_1.org][Okuma Notları: The Art Of Readable Code (1)]] - Yusuf Kaya · July 11, 2023
 - [[file:kitap_make_something_wonderful.org][Kitap: Make Something Wonderful]] - Suat Karakuşoğlu · June 02, 2023
 - [[file:wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]] - Alper Cem Öztürk · June 02, 2023
 - [[file:aklimda_kalanlar_jake_wharton.org][Aklımda Kalanlar: Jake Wharton ile Röportaj]] - Betül Sandıkçı · June 02, 2023

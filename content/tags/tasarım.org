@@ -1,4 +1,6 @@
 #+TITLE: Tasarım
 
+[[file:../../news/apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]]
+
 [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 

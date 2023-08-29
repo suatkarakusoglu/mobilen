@@ -1,0 +1,8 @@
+#+TITLE: Android Studio
+
+[[file:../../news/android_file_template.org][Android File Template]]
+
+[[file:../../news/android_studio_bot.org][Android Studio Bot]]
+
+[[file:../../news/yeni_android_studio_surumu_giraffe.org][Yeni Android Studio sürümü "Giraffe"]]
+

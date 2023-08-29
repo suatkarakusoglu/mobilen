@@ -1,0 +1,86 @@
+<!-- Generated from 021f4a7 on 2023-08-29 @ 16:16 with Emacs 29.0.50 (Org mode 9.5.5) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Android&rsquo;de Neden Bir Main Function Yok ? - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Android&rsquo;de Neden Bir Main Function Yok ?</h1><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #19</a><p class="site-post-meta">August 25, 2023</p><div id="content"><p>
+<a href="https://tr.linkedin.com/in/sevban-bayir">Sevban Bayır</a> yazdı.
+</p>
+
+
+<div id="org2a10553" class="figure">
+<p><img src="/img/android_cover.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span>Android</p>
+</div>
+
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org915e0ce">
+<p>
+Başlamadan önce, aslında var ama alışık olduğumuz gibi değil :), <a href="https://android.googlesource.com/platform/frameworks/base.git/+/master/core/java/com/android/internal/os/ZygoteInit.java#798">buradan</a> kaynak kodlarına bakabilirsiniz.
+</p>
+
+<p>
+Android Java dilini kullanır fakat onu standart Java uygulamarının çalıştığı standart JVM üzerinde değil de kendi özel runtime ortamı olan Android 5.0&rsquo; a kadar Dalvik Virtual Machine, 5.0&rsquo;dan sonra ise Android Runtime üzerinde çalıştırır. Bu özelleştirilmiş runtime ortamları program başlarken bir main() fonksiyonu yerine, AndroidManifest.xml dosyasında Launcher olarak işaretlenmiş bir Activity&rsquo;i ve onun onCreate() methodunu aramak üzere tasarlanmıştır dolayısıyla bir main fonksiyonuna ihtiyaç yoktur.
+</p>
+
+<p>
+Çoğumuz programlamayı ilk öğrendiğimizde genelde öğrendiğimiz yazılım dilinden bağımsız bir şekilde kodlarımızı IDE ilk açıldığında karşımıza çıkan o fonksiyona, main, fonksiyonuna yazarız. O ya da bu şekilde öğreniriz ki burası çalıştığımız dilin giriş noktasıdır. Kendimiz main fonksiyonundan ayrı fonksiyonlar oluştursak da o fonksiyonları main fonksiyonu içerisinden çağırmadığımız sürece hiçbir anlamları olmaz, çalışmazlar. Android geliştirmeye gelince işler biraz karışır. İlk kez bir Android projesi oluşturan bir kişi MainActivity classıyla ve onun onCreate() methoduyla karşılaşır. İçerisindeki setContent() methodundan ipucu alarak da anlayabileceğimiz üzere Activity ve onun onCreate methodu standart olarak alıştığımız main fonksiyon gibi çalışırlar. Android uygulamalarının ve hatta komple Android işletim sisteminin entry point( giriş noktası) olarak Activity&rsquo;leri seçmesinin belli başlı nedenleri var elbet ve ben bunları size Android ilk yazılırkenki olayları çok geniş ve anlaşılır bir biçimde aktaran <a href="https://www.amazon.com/Androids-Built-Android-Operating-System/dp/B0B6YDQJW2/ref=tmm_aud_swatch_0?_encoding=UTF8&amp;qid=&amp;sr=">Androids - The Team That Built Android Operating System</a> kitabından alıntılar da yaparak anlatmaya çalışacağım.
+</p>
+
+<blockquote>
+<p>
+&ldquo;Daha geleneksel bir işletim sisteminde; bir uygulama başlar, main() methodunu çağırır, sonrasında yapması gerekenleri(UI çizmek, gerekli hesaplamaları yapmak, çevre bileşenlerini kontrol etmek vs.) bir döngü içerisinde yapmaya başlar fakat Android&rsquo;de uygulamalar main fonksiyonlar yerine herbiri kendisine ait bir UI&rsquo;a sahip olan bir yada daha fazla Activity&rsquo;lere ayrılırlar, bunların açık bir şekilde main fonksiyonları yoktur bunun yerine işletim sistemi Activity&rsquo;leri; kullanıcı girdisi veya dolaylı yoldan kullanıcı girdilerine cevap olarak çağırır.&rdquo;
+</p>
+</blockquote>
+
+<p>
+İlk nedenimiz son cümlede gizli aslında. İşletim sistemi Activity&rsquo;leri çağırır derken aslında kullanıcı girdisine karşılık gelen lifecycle methodlarından bahsediyoruz. Android&rsquo;in geleneksel işletim sistemleri gibi basit bir main fonksiyon üzerinden yürümemesinin sebeplerinden biri uygulamanın lifecycle&rsquo;ını yönetebilmektir. Activity&rsquo;ler olmasa uygulamanın lifecycle&rsquo;ını yönetemez miydik ? Elbette yönetebilirdik fakat tüm bunlar yazılımcıya bırakılmış olur ve hataya dolaylı yoldan da çökmeler ve memory leaklere yol açabilirdi. Üstelik karmaşık uygulamalarda lifecycle&rsquo;ı manuel yönetmek iyice kontrolden çıkabilir ve bu kısım için neredeyse app&rsquo;in kendisi kadar efor harcanması gerekebilirdi.
+</p>
+
+<blockquote>
+<p>
+&ldquo;Activity&rsquo;lerin diğer bir önemli özelliği uygulamaya özel belirli bir giriş noktası sunmalarıdır. Bu giriş noktaları diğer uygulamalardan (bildirimler, kısayollar, veya tamamen farklı bir uygulama) çağırılabilir ve kullanıcıyı o uygulama içerisine almaya yarar.&rdquo;
+</p>
+
+<p>
+&#x2014; Chat Haase
+</p>
+</blockquote>
+</div>
+
+<h3><a id="intentler" class="anchor" href="#intentler">¶</a>Intentler</h3><div class="outline-text-3" id="text-orgef64b07">
+<p>
+Android&rsquo;le ilgileniyorsanız mutlak surette karşılaşacağınız bir kavram da Intentlerdir. Bu alıntıda <code>Chat Haase</code> Intentlerin öneminden bahsediyor. Intentler sayesinde uygulamalar arasında haberleşebiliyoruz. Eğer bu sistem olmasaydı, linux ve diğer UNIX-like sistemlerde normalde kullanıldığı gibi processler arası iletişimi kendimiz sağlamak zorunda kalabilirdik. Mesela, basit bir string göndermek için bitwise operatörlerle o stringi byte byte göndermek zorunda kalabilirdik. Elbette Activity&rsquo;ler ve Intentler yok diye bu kadar ilkel bir çözüme mecbur kalmayacağız ama buradan işlerin ne kadar low-level&rsquo;a gidebileceğini ve hataya açıklaştığını, güvensiz olduğunu anlayabiliriz. Android bunun yerine <a href="https://developer.android.com/reference/android/os/Binder">Binder</a> denen bir IPC (Inter Process Communication) kullanıyor ve Binder aslında Intent&rsquo;lerin low level versiyonu. Gönderilecek objelerin sadece referanslarını göndrerek daha verimli bir iletişim sağlıyor.
+</p>
+</div>
+
+<h3><a id="palm-osrsquoten-esinlenmeler" class="anchor" href="#palm-osrsquoten-esinlenmeler">¶</a>Palm OS&rsquo;ten esinlenmeler</h3><div class="outline-text-3" id="text-org771ecc7">
+<p>
+Android frameworkünün yaratıcılarından, Dianne Hackborne&rsquo;dan:
+</p>
+
+<blockquote>
+<p>
+&ldquo;Palm OS mobil cihazlarla ilgili iyi bir anlayışa sahipti, oradan aldığımız derslerden biri de mobil uygulamarın masaüstü uygulamardan temelde farklı olduklarıydı. Kullanıcı aynı anda sadece bir uygulamada bulunabilir ve bu uygulamalar genelde spesifik bir iş yapmak için özelleşmiş olma eğilimindedirler. Bu durum uygulamarın birlikte çalışabilmesi ihtiyacını doğurur.&rdquo;
+</p>
+
+<p>
+&#x2014;Dianne Hackborne
+</p>
+</blockquote>
+
+<p>
+Palm OS, çoğu Android mühendisinin Android ortaya çıkmadan önce çalıştığı projeydi. Android&rsquo;deki birçok kişi önceden yine işletim sistemi işinde olan Be ve Palm OS&rsquo;te çalışmıştı ve bu sayede mobil işletim sistemleri hakkında kümülatif tecrübe sahibiydiler.
+</p>
+</div>
+
+<h3><a id="özet" class="anchor" href="#özet">¶</a>Özet</h3><div class="outline-text-3" id="text-org3d82216">
+<p>
+Yazımın başında da bahsettiğim üzere Activity&rsquo;ler Android uygulamarının giriş noktalarıdır ve sıradan bir main() fonksiyona göre çok daha gelişmiş bir giriş noktası mekanizması sunarlar. Bu sayede uygulamamızın diğer uygulamalarla ve işletim sisteminin kendisiyle etkileşimi daha efektif bir hal almış olur. Her ne kadar şu an genel mimari Single Activity tarzına dönmüşse de ortaya çıktığı dönem göz önüne alındığında Activity&rsquo;ler ile bir uygulama için birden fazla entry point sunma fikri şu an Androidin gelebildiği nokta itibarıyla kendi kendini kanıtlamış bir kehanet örneği diyebiliriz :).
+</p>
+</div>
+
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça:</h3><div class="outline-text-3" id="text-org2c101fe">
+<ul class="org-ul">
+<li><a href="https://stackoverflow.com/questions/9293329/where-is-main-in-android/9293488#9293488">Where is main?</a></li>
+<li><a href="https://www.vogella.com/tutorials/AndroidInternals/article.html#internals">Android Internals about Main Function</a></li>
+<li><a href="https://android.googlesource.com/platform/frameworks/base.git/+/master/core/java/com/android/internal/os/ZygoteInit.java#798">Zygote Init</a></li>
+</ul>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #19</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #16</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #5</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #3</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #2</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #2</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #1</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

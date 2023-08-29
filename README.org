@@ -1,4 +1,4 @@
-Merhabalar,
+/Merhabalar/;
 
 Mobil yazılım ürünleri, kullanıcıların hayatlarında büyük bir öneme sahip araçlar haline geldi. Bir mobil yazılım ürünü, son kullanıcıya sunulmadan önce geliştirilme aşamasında ve geliştirildikten sonra birçok pratiği takip etmesi ve uygulaması gerekmektedir.
 

@@ -1,8 +1,6 @@
 #+title: Atıflar
 
 - Bu site [[https://systemcrafters.net][System Crafters]]'dan hayli miktarda esinlenmiştir.
-- This site is highly benefited from  [[https://systemcrafters.net][System Crafters]] website.
-- Coriolis Effect by logos feat. stefsax, licensed Creative Commons 3.0 CC-BY http://ccmixter.org/files/mseq/26296
-- reNovation by airtone, licensed Creative Commons 3.0 CC-BY http://ccmixter.org/files/airtone/60674
-- ukeSounds by airtone, licensed Creative Commons 3.0 CC-BY http://ccmixter.org/files/airtone/32655
-- Between Worlds (Instrumental) by Aussens@iter, licensed Creative Commons 3.0 CC-BY http://ccmixter.org/files/tobias_weber/56664
+- This site is highly benefited from [[https://systemcrafters.net][System Crafters]] website.
+- Site teması [[https://elpa.gnu.org/packages/doc/ef-themes.html][ef-themes]] 'ef-summer' temasından faydalanılmıştır.
+- Theme is highly benefited from [[https://elpa.gnu.org/packages/doc/ef-themes.html][ef-themes]] 'ef-summer' theme.

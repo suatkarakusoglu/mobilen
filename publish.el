@@ -3,12 +3,9 @@
 ;; Copyright (C) 2021, 2023 David Wilson <david@systemcrafters.net>
 
 ;; Author: David Wilson <david@systemcrafters.net>
-;; Maintainer: David Wilson <david@systemcrafters.net>
 ;; Mobilen-Maintainer: Suat Karakusoglu <suatkarakusoglu@gmail.com>
-;; URL: https://codeberg.org/SystemCrafters/systemcrafters.net
 ;; Version: 0.0.1
 ;; Package-Requires: ((emacs "28.2"))
-;; Keywords: hypermedia, blog, feed, rss
 
 ;; This file is not part of GNU Emacs.
 
@@ -27,8 +24,6 @@
 
 ;;; Usage:
 ;; emacs -Q --batch -l ./publish.el --funcall dw/publish
-
-;;; Code:
 
 ;; Initialize package sources
 (require 'package)

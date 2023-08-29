@@ -5,13 +5,13 @@
 
 Merhabalar,
 
-/Mobilen'in 4. sayısı./ ile beraber sitemize tasarım giydirdik :).
+/Mobilen'in 4. sayısı/ ile beraber sitemize tasarım giydirdik :).
 
 [[https://mobilen.art/rss/][RSS]] dahi ekledik.
 
 Yetmedi /etiket/'ler ile artık sitede daha rahat gezinebiliyoruz.
 
-Bu sayımızda apple tasarım ödüllerinden, güvenlik konularına, yardımcı araçlardan yeni android sürümüne kadar bir çok içerikten oluşuyor.
+Bu sayımızda apple tasarım ödüllerinden, güvenlik konularına, yardımcı araçlardan yeni android studio sürümüne kadar bir çok içerikten oluşuyor.
 
 🇹🇷  Zafer bayramımız kutlu olsun 🇹🇷
 

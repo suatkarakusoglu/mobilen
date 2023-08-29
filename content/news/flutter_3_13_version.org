@@ -1,0 +1,98 @@
+#+title: Flutter 3.13 ile Gelen Yenilikler
+#+date: [2023-08-23 Wed]
+#+author: Mehmet Güven
+
+#+filetags: :Flutter:
+
+[[https://tr.linkedin.com/in/mehmetguvenn][Mehmet Güven]] yazdı.
+
+* İçerik
+#+CAPTION: Flutter 3.13
+[[file://flutter_3_13.png]]
+
+Flutter 3.13 ile birlikte, pek çok yeni özellik ve geliştirme sunuldu. Bu yazımızda, Flutter 3.13 ile gelen başlıca özellikleri kısaca özetleyeceğiz.
+
+Detaylı bilgi için [[https://docs.flutter.dev/release/release-notes/release-notes-3.13.0][Flutter 3.13.0 sürüm notlarını]] inceleyebilirsiniz.
+
+** Impeller: Yeni Nesil Grafik İşleyici ve Motor Geliştirmeleri
+Impeller, katlanabilir cihazlar için tasarlanmış yeni bir grafik işleyici ve motorun adıdır. Bu yeni gelişmeler, Impeller'ın getirdiği önemli iyileştirmeleri ve özellikleri içeriyor. İşte Impeller hakkındaki ana noktalar:
+
+*** iOS Performans İyileştirmeleri:
+Flutter kullanıcılarından gelen geri bildirimlere dayanarak, Impeller ekibi iOS platformunda performans iyileştirmeleri yaptı. Bu iyileştirmeler, Impeller'ın iOS üzerindeki performansını artırmayı hedefliyor. Gecikme süresini azaltmanın yanı sıra, derleme sorunlarını ortadan kaldırarak daha düşük gecikme süreleri elde edilmiştir. Aynı zamanda, kıyaslamalara göre daha yüksek ortalama verim sağlanmıştır. Flutter/galeri geçişleri performansında da Skia ile kıyaslandığında ortalama kare rasterleştirme sürelerinde belirgin bir iyileşme sağlanmıştır.
+
+Bu iyileştirmeler, çeşitli optimizasyonlarla elde edilmiştir. Kirli bölge yönetimi ve kısmi yeniden boyama gibi teknikler kullanılarak performans artırılmıştır. Aynı zamanda metin oluşturma süreçleri iyileştirilmiş, dışbükey şekiller için hızlı bir yol eklenmiş, hesaplama gölgelendiricileri kullanılmaya başlanmış ve çizim işlemleri daha etkin hale getirilmiştir.
+
+*** Gamut Renk Desteği:
+Impeller'ın 3.10 sürümüyle birlikte geniş gamut renklerinin kullanımı desteklenmiştir. Kullanıcılardan gelen geri bildirimler sonrasında, Impeller kullanılırken iOS platformunda geniş gamut renkler varsayılan olarak kullanılıyor.
+
+*** Android İlerlemesi:
+Android platformunda da Impeller geliştirmeleri devam etmektedir. Vulkan arka ucunda kaydedilen ilerlemeye rağmen, henüz resmi bir önizleme dönemine geçilecek kalite seviyesine ulaşılmamıştır. Android'de Impeller'ın yüksek kaliteli bir deneyim sunması hedeflenmektedir. Impeller'ın OpenGL ve Vulkan arka uçları, Impeller'ın HAL'ındaki optimizasyonlardan yararlanarak performans iyileştirmeleri sağlamıştır.
+
+*** macOS Üzerinde Impeller:
+Impeller, macOS platformunda da önizleme sürümü olarak sunulmaktadır. Bu sayede Impeller'ı macOS uygulamalarında test etmek ve geliştirmek mümkün hale gelmiştir. Impeller'ı test etmek ve geri bildirimde bulunmak için önerilen yol, SkSL ısınmasını önlemek ve performans ölçümleri yapmak için DevTools'u kullanmaktır. Ayrıca Impeller'ı kullanarak uygulamaların test edilmesi ve hataların dosyalanması teşvik edilmektedir.
+
+Impeller projesinin gelişimini GitHub'daki proje panosu üzerinden takip etmek mümkündür. Topluluktan gelen geri bildirimler, Impeller'ın doğruluğunu ve performansını artırmak için değerli kabul edilmektedir. Kullanıcılar, aslına uygunluk ve performans sorunlarını sorun izleyicisine dosyalayarak Impeller'ın gelişimine katkıda bulunabilirler.
+
+** Çerçeve (Framework) Güncellemeleri
+Flutter'ın Material çerçevesi de bu sürümde pek çok önemli güncelleme aldı. Bu güncellemeler hem platforma uyum sağlama hem de daha fazla özelleştirme imkanı sunma konusunda odaklandı.
+
+TextField için karakter tanıma özelliği eklendi. iOS platformunda kullanıcılar, cihaz kamerasını kullanarak karakterleri tanıyabilir ve bunları otomatik olarak metin alanına ekleyebilirler.
+
+#+CAPTION: TextField Camera
+[[file://textfield_camera.png]]
+
+AlertDialog'a adaptif yapılandırıcı eklendi. Bu sayede mevcut platforma göre hem Material hem de Cupertino diyalogları gösterebilirsiniz.
+
+#+caption: AlertDialog platform adaptasyonu
+[[file://flutter_alert_dialog_platform_adaptive.png]]
+
+CupertinoDatePicker'a monthYear modu eklendi, kullanıcılar artık ay ve yıl seçimini daha rahat bir şekilde yapabilirler.
+
+#+CAPTION: Takvim Component'i
+[[file://flutter_cupertino_takvim_component.png]]
+
+- Material bileşenlerini özelleştirmek daha da kolaylaştırıldı. Örneğin,
+  */InputDecoration/* için artık hata öğesini (string yerine)
+  özelleştirmek için */error/* özelliğini kullanabilirsiniz.
+
+- Chips bileşenlerinin renklerini farklı durumlar için özelleştirmek
+  mümkün hale geldi.
+
+- Material 3 tasarım özelliklerine uygun olarak */Elevated Chips,
+  FilterChip.elevated, ChoiceChip.elevated ve ActionChip.elevated/*
+  varyantları eklendi.
+
+** Uygulama Yaşam Döngüsü Değişiklikleri
+Uygulama yaşam döngüsündeki değişiklikleri algılamak ve uygulamanın
+kapatılma isteklerine yanıt vermek amacıyla AppLifecycleListener sınıfı
+eklendi.
+
+#+CAPTION: Application Life-cycle
+[[file://flutter_application_life_cycle.png]]
+
+** Scrolling ve Accessibility İyileştirmeleri
+Flutter 3.13 ile birlikte, */iki boyutlu (2D)/* kaydırma yeteneğini
+getirerek kullanıcılara daha fazla esneklik sunuyor. Bu özellik ile
+birlikte, farklı yönlerde kaydırma işlemleri oluşturabilirsiniz.
+
+CupertinoSwitch için onOffSwitchLabels erişebilirlik özelliği eklendi ve
+IconButton'un isSelected özelliği artık görüntülenebiliyor.
+
+** Platform Desteği
+Flutter 3.13 ile birlikte, /Android Jelly Bean/ API seviyelerini (16, 17
+ve 18) artık desteklenmiyor. */Android 14/API34/* ve */iOS 17/Xcode 15/*
+desteklenmeye başlandı. Bu güncellemelerle birlikte, daha yeni
+özelliklere erişim sağlanıyor.
+
+** Oyun Geliştirme Araçları
+Flutter 3.13 ile birlikte güncellenen oyun geliştirme araçları,
+geliştiricilere daha fazla kaynak ve örnek oyun sunarak desteğini
+arttırmaya devam ediyor.
+
+** DevTools
+DevTools */2.25.0/* ve */2.24.0/* sürümleriyle yeni özellikler ve
+iyileştirmeler geliştiricilere sunuldu.
+
+** Kaynaklar
+- [[https://docs.flutter.dev/release/release-notes/release-notes-3.13.0][Flutter 3.13 Release Notes]]
+- [[https://medium.com/flutter/whats-new-in-flutter-3-13-479d9b11df4d][What's new in Flutter?]]

@@ -1,5 +1,8 @@
 #+title: Mobilen 1
 
+#+ATTR_HTML: :width 100%
+[[volume_1_cover.jpg]]
+
 /Mobilen'in ilk dergisi./
 
 * Konular
@@ -13,6 +16,3 @@
 
 #+begin_cta
 #+end_cta
-
-#+ATTR_HTML: :width 100%
-[[volume_1_cover.jpg]]

@@ -1,5 +1,8 @@
 #+title: Mobilen 3
 
+#+ATTR_HTML: :width 100%
+[[volume_3_cover.jpg]]
+
 /Mobilen'in 3. dergisi./
 
 * Konular
@@ -11,6 +14,3 @@
 
 #+begin_cta
 #+end_cta
-
-#+ATTR_HTML: :width 100%
-[[volume_3_cover.jpg]]

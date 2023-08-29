@@ -1,4 +1,7 @@
-#+title: Mobilen 1
+#+title: Mobilen 2
+
+#+ATTR_HTML: :width 100%
+[[volume_2_cover.jpg]]
 
 /Mobilen'in 2. dergisi./
 
@@ -25,6 +28,3 @@ Keyifli okumalar ;).
 
 #+begin_cta
 #+end_cta
-
-#+ATTR_HTML: :width 100%
-[[volume_2_cover.jpg]]

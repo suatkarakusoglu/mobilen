@@ -5,9 +5,9 @@
 .org-cache/
 
 ; Do not ignore docs inside gh-pages
-docs/
-tags/
-content/news.org
+# docs/
+# tags/
+# content/news.org
 
 ; Ignore Gemini output
 gemini/

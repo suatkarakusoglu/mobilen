@@ -27,6 +27,6 @@ Jamie [[http://www.catb.org/jargon/html/Z/Zawinskis-Law.html][Zawinski's Law]] b
 Bu tuzağa çok yakalanmadan ürünlerin karakteristiğinin ve sınırlarının çizilmesi gerekiyor.
 Burada işin içine elbette sunulan özelliklerin düzgün bir kullanıcı deneyim tasarımı ile kullanıcının karşısına çıkması gibi derin konulara doğru ilerliyor.
 
-** Kaynaklar
+** Kaynakça
 - [[https://medium.com/@katiemay36/transforming-burbn-to-instagram-b66245881d02][Burbn'in Instagram'a dönüşümü]]
 - [[http://www.catb.org/jargon/html/Z/Zawinskis-Law.html][Zawinski's law]]

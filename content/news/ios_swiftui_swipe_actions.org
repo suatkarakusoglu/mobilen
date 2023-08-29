@@ -95,7 +95,7 @@ Daha detaylı anlamak için [[https://swiftwithmajid.com/2020/01/15/the-magic-of
   }
 #+end_src
 
-** Kaynaklar
+** Kaynakça
 1. [[https://github.com/aheze/SwipeActions][SwipeActions Repo]]
 2. [[https://developer.apple.com/documentation/swiftui/preferences?changes=_7][Apple PreferenceKey Dokümantasyonu]]
 3. [[https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/][Magic of View Preferences in SwiftUI]]

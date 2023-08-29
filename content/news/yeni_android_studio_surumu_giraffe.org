@@ -84,7 +84,7 @@ Giraffe'den itibaren yeni projeler veya modüller oluştururken, varsayılan ola
 
 Android Studio Giraffe geliştirici deneyimini artırmayı amaçlayan birçok yeni özellik ve iyileştirme ile hayatımıza girdi. Canlı Düzenleme iyileştirmelerinden Compose animasyon preview, yeni Device Explorer'nden SDK yükseltme asistanına kadar pek çok araç mevcuttur; bu araçlar geliştiricilerin Android uygulamalarını oluştururken daha üretken ve verimli olmalarına yardımcı olabilirler. Bu özelliklerin yanı sıra diğer birçok özellik, Android geliştiricileri için heyecan verici bir sürüm haline getirir Android Studio Giraffe'yi.
 
-** Kaynaklar
+** Kaynakça
 - [[https://developer.android.com/studio/releases][Android Releases]]
 - [[https://android-developers.googleblog.com/2023/07/android-studio-giraffe-is-stable.html][Stable Giraffe Version]]
 - [[https://www.jetbrains.com/help/idea/new-ui.html][New UI]]

@@ -37,6 +37,6 @@ Gelelim =Xcodes='u kullanmaya. Bunun iki farklı yöntemi bulunmaktadır.
 
 Artık Xcode'un farklı sürümlerini kolaylıkla yönetebilir, istediğiniz sürüme hızlıca erişebilir ve projelerinizde esnek bir şekilde çalışabilirsiniz. Bir sonraki yazıda tekrar buluşmak dileğiyle.
 
-** Kaynaklar
+** Kaynakça
 1. https://www.xcodes.app/
 2. https://github.com/XcodesOrg

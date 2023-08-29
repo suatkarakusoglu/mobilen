@@ -65,5 +65,5 @@ Nicedir bildiğim ama röportajdan sonra daha emin olduğum şey ise verimlilik 
 
 Son olarak da Jake'in bir tavsiyesi ile sonlandıralım yazımızı. Takıldığınız yerde mutlaka mola verin, yürüyüş yapın, çay-kahve için, film izleyin, sonra geri gelin bir daha uğraşın. Çünkü programlama yaratıcılık isteyen bir şeydir, zorlamayın.
 
-** Kaynaklar
+** Kaynakça
 [[https://newsletter.jorgecastillo.dev/p/effective-interviews-jake-wharton][Jack Wharton Röportajı]]

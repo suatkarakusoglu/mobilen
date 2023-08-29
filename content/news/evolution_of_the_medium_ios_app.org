@@ -25,5 +25,5 @@ Modüler mimarinin faydaları şunlardır:
 - Ölçeklenebilirlik: Projeyi büyütme veya değiştirme gerektiğinde, modüller arasındaki etkileşim minimum düzeyde olduğu için ölçeklenebilirlik sağlanır.
 ** Medium Uygulamasının Evrimi
 Bu bilgiler ışığında Medium'un iOS uygulamasının mimarisinin evrim serüveninin inceleyebiliriz. Kullanılan yeni teknikler ve yaklaşımlar, bu süreçte yaşanan zorluklar ve çıkarılan dersler bakımından faydalı bir yayın olduğunu düşünüyorum. Keyifli okumalar dilerim.
-** Kaynaklar
+** Kaynakça
 1. [[https://medium.com/medium-eng/evolution-of-the-medium-ios-app-architecture-8b6090f4508e][Evolution of the Medium iOS App Architecture]]

@@ -120,5 +120,5 @@ Bu yazıda, "breakpoint"'leri ve kullanım senaryolarını ele aldık. Ardından
 
 "Breakpoints"’leri kullanmak geliştirme sırasında zaman kazanmanıza yardımcı olabilir ve uygulamanızı her test ettiğinizde oturum açma bilgilerinizi manuel yazmak zorunda kalmadan zaman kazanabilirsiniz.
 
-** Kaynaklar
+** Kaynakça
 [[https://www.danijelavrzan.com/posts/2023/04/login-xcode-breakpoint][Login XCode Breakpoints]]

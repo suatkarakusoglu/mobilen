@@ -163,6 +163,6 @@ Son olarak, tüm bu bilgileri özetleyen bir diyagramı incelemek, konsepti daha
 #+ATTR_HTML: :width 100%
 [[file:6.jpg]]
 
-** Kaynaklar
+** Kaynakça
 1. [[https://medium.com/@ydemirkoparan/swift-ile-deep-linking-nas%C4%B1l-yap%C4%B1l%C4%B1r-e815fee93b97][Swift ile DeepLinking nasıl yapılır?]]
 2. [[https://medium.com/wolox/ios-deep-linking-url-scheme-vs-universal-links-50abd3802f97][iOS Deep Linking Scheme vs Universal Links]]

@@ -26,7 +26,6 @@ Uygulama, çeşitli hazır component'leri içeriyor ve topluluk desteği sayesin
 Ayrıca, SFSymbols'u doğrudan tasarımlarda kullanabiliyorsunuz. Bu sayede, tasarım süreciniz daha hızlı ve verimli bir şekilde ilerliyor.
 
 #+CAPTION: Tasarım oluşturma ekranı
-#+ATTR_LATEX: :width 280px
 [[file:../../assets/img/20230724T113245.488053_details_pro_create_design.jpg]]
 
 Basit bir örnek template'i inceleyelim. Sol tarafta, sürükleyip bırakma menüsüyle kullanabileceğimiz item'ları görüyoruz. Sağ tarafta ise seçtiğimiz item'a özellikler ekleyebiliyoruz ve bunun yanı sıra uygulama kendi içerisinde modifier önerileride sunuyor.

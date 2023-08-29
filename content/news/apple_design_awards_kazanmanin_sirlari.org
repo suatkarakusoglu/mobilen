@@ -1,0 +1,227 @@
+#+title: Apple Design Awards Kazanmanın Sırları
+#+date: [2023-08-29 Tue]
+#+author: Alper Cem Öztürk
+#+filetags: :iOS:Yazılım:Apple:Tasarım:
+
+[[https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8][Alper Cem Öztürk]] yazdı.
+
+#+CAPTION: Apple Design Award 2023
+[[file://apple_design_award_2023.png]]
+
+* İçerik
+Merhaba sevgili Mobilen okurları,
+
+Bildiğiniz gibi, Apple her yıl WWDC zamanı en üstün tasarım ve
+yenilikçilik örneklerini *Apple Design Awards (ADA)* ile ödüllendiriyor.
+Bu sayıda Apple Design Awards özelinde mobil dünyanın sınırlarını
+zorlayan, yaratıcılığın, yenilikçi ruhun, kullanıcı deneyiminin ön
+planda olduğu bir serüvenin öne çıkanlarını konuşacağız. Sonrasında ise
+bu ödülü kazanmanın gerektirdiklerinden derinlemesine bahsedeceğiz.
+
+Öncelikle Apple Design Awards, nam-ı diğer ADA, nedir biraz bundan
+bahsedelim. ADA, aslında mobil uygulama ve oyun dünyasının en prestijli
+ödüllerinden biridir. Her yıl *WWDC* etkinliği sırasında sahiplerini
+bulan bu ödüller, üstün tasarım, yenilikçilik ve kullanıcı deneyimine
+sahip projelere verilir. ADA, mobil geliştiricilerin yaratıcılıklarını
+ve teknolojik yeteneklerini sergileyebilecekleri önemli bir platformdur.
+Bu ödülleri kazanmak, sadece bir başarı belgesi değil, aynı zamanda
+sektörde öne çıkan bir isim olmanın da bir kanıtı niteliğindedir desek
+yanılmış olmayız.
+
+Apple, bu ödülleri toplam altı kategoriye ayırmış: Kapsayıcılık, Keyif
+ve Eğlence, Etkileşim, Sosyal Etki, Görseller ve Grafikler ve son olarak
+İnovasyon.
+
+Sizi fazla sıkmamak adına her bir kategoriye göz atmayacağız. Amacımız,
+bu uygulamaların diğerlerinden farklı olarak neler yaptıklarını anlamak
+ve belki de bize ilham olmalarını sağlamak olacak. Üzerine konuşmanın
+bize daha çok katkı sağlayacağını düşündüğüm için Keyif ve Eğlence,
+Sosyal Etki ve İnovasyon olmak üzere üç kategoriden çıkarımlar yapmaya
+çalışacağız. Daha sonrasında uygulama bağımsız, bu ödüllerin
+verilmesinde önemli rol aldığını düşündüğüm detaylı bir incelemeyi sizle
+paylaşacağım.
+
+Şimdi hep beraber bu üç kategoride göz önünde bulundurulan kriterlere ve
+bu kriterler doğrultusunda bu yılın kazananlarına bakalım. Bu yazıda
+analizi daha düzgün yapabilmek adına kapsamı küçültüp, yalnızca mobil
+uygulamalara göz atacağımızı unutmadan belirteyim.
+
+** Apple Design Awards Kategorileri
+*** Keyif ve Eğlence Kategorisi
+*Keyif ve Eğlence* kategorisi, kullanıcılara keyifli anlar yaşatan ve
+eğlenceyi teknolojiyle buluşturan uygulamalara odaklanıyor. Bu kategori,
+tasarımın, kullanıcı deneyiminin ve eğlencenin birleşimini sergileyen
+uygulamaları öne çıkarırken, finalistler arasında yer alan uygulamalar
+da her biri kendi alanında dikkat çekici deneyimler sunuyor. Bu yılın
+finalistleri arasında, benzersiz içerikleri ve yaratıcı tasarımlarıyla
+öne çıkan *CREME*, *Chantlings*, *Pocket Card Jockey: Ride On!* ve
+*Knotwords* yer alıyor.
+
+Yine de, bu yılın kazananı tüm bu özellikleri bir adım öteye taşıyarak
+dil öğrenimini yeniden tanımlayan *Duolingo* oldu.
+
+*** Duolingo
+#+CAPTION: Duolingo
+[[file://ada_duolingo.png]]
+
+Hepimiz dil öğrenme adımlarını atarken, ücretsiz uygulamaların en az
+birini test etmişizdir. Eğer denedikleriniz arasında *Duolingo* varsa,
+diğer uygulamalardan deneyim olarak ne kadar sıyrıldığını siz de
+farketmişsinizdir.
+
+#+CAPTION: Duolingo in App Images
+[[file://duolingo_in_app_images.png]]
+
+Duolingo'nun diğer dil öğrenme uygulamalarından farklılaştığı kısım,
+şüphesiz öğrenme deneyimini sıkıcı bir rutinden çıkarıp eğlenceli ve
+keyifli bir aktiviteye dönüştürmesidir. Uygulama, eğlenceli mini oyunlar
+aracılığıyla dil becerilerinizi geliştirme şansı sunarak öğrenme
+sürecini motive edici hale getiriyor. Ayrıca, kullanıcılara kulüplere
+katılma ve diğer öğrencilerle etkileşim kurma imkanı tanıyarak sosyal
+bir boyut ekliyor. Tüm bunlar, kullanıcıların öğrenirken keyif almasını
+sağlayarak Duolingo'yu *Keyif ve Eğlence* kategorisinde birincilikle
+taçlandırmış.
+
+*** Sosyal Etki Kategorisi
+Günümüz hızla dijitalleşen dünyasında, zihinsel sağlığın korunması ve
+geliştirilmesi her zamankinden daha büyük bir önem kazandı. Modern
+yaşamın getirdiği yoğun stres ve kaygı, bireyleri içsel dengeyi bulmaya
+ve zihinsel refaha daha fazla önem veren bir yaşam tarzı arayışına itti.
+Bu yılki *Sosyal Etki* finalistleri de bunun üzerinde yoğunlaşarak,
+zihinsel sağlık alanında fark yaratan uygulamaların ne denli değerli ve
+etkili olduğunu bir kez daha gözler önüne serdi.
+
+Bu yılın *Sosyal Etki* finalistleri arasında *Duolingo*, *Sago Mini
+First Words*, *Hindsight* ve *Beecarbonize* gibi güçlü adaylar yer aldı.
+Ancak en parlak yıldız, ödülü evine götüren *Headspace* oldu.
+
+*** Headspace
+#+CAPTION: Headspace Logo
+[[file://headspace_logo.png]]
+
+Daha önce birkaç meditasyon ve mental sağlık uygulamasını deneyimlemiş
+birisi olarak, *Headspace*'i kullanmaya başladığımda önceki
+deneyimlerimden daha farklı bir deneyim yaşadığımı söyleyebilirim.
+Farklılıktan kastımın ne olduğunu soracak olursanız, buna uygulamanın
+sunduğu tam rehberlik cevabını verebilirim. En basitinden bir nefes
+egzersizinde dahi uygulama sizi yalnız bırakmıyor. Bu gibi konularda
+görsel tasarım ve =haptic feedback= (bkz: [[https://builtin.com/hardware/haptic-technology][Haptic feedback]])
+kullanımlarının ustaca yapılması, kullanıcıya tam rehberlik edilmesini
+kolaylaştırmış.
+
+#+CAPTION: Headspace in App Images
+[[file://headspace_in_app_images.png]]
+
+Buraya bir parantez açıp, *Headspace* gibi mental sağlık uygulamalarının
+kronik sorunu olduğunu düşündüğüm bir noktaya değinmek istiyorum. Eğer
+kötü bir moddaysanız, asla yüzlerce seçenek arasında boğulup, sonsuza
+kadar kaydırmak istemiyorsunuz. Bu çok can sıkıcı ve zaman çalan bir
+deneyim. İşte bu nedenle birçok kullanıcı, bununla vakit kaybetmek
+yerine uygulamayı kapatmayı tercih ediyor.
+
+Bu temel soruna dikkat çektikten sonra bir adım daha ilerleyelim ve
+*Headspace*'in neden bu kategorinin önde gelen ismi olduğuna bakalım.
+
+*Headspace*'i *Sosyal Etki* kategorisinin kazananı yapanın, uygulamanın
+farkındalık ve zihinsel sağlık konularında geniş kitlelere ulaşması ve
+bu alanlarda gözle görülebilir olumlu etkiler yaratması olduğunu
+düşünüyorum. Bunu App Store puanlamaları ve yorumları üzerinden de çok
+net bir şekilde gözlemleyebiliyoruz. Uygulama aynı zamanda, meditasyon
+ve zihinsel sağlık pratiğini erişilebilir ve anlaşılır bir şekilde
+sunarak, insanların stresi azaltmalarına, zihinsel dengeyi bulmalarına
+ve daha iyi bir yaşam kalitesi elde etmelerine yardımcı oluyor. Başka
+bir deyişle, *Headspace* sadece bireysel kullanıcıların değil, toplumun
+genel sağlık ve mutluluğu üzerinde de gözle görülebilir olumlu bir etki
+yaratıyor diyebiliriz.
+
+*** İnovasyon Kategorisi
+Kullanıcı deneyimini kökten değiştiren, teknolojinin yeni alanlarında
+çığır açan ve beklenmedik yaklaşımlarla öne çıkan uygulamaların
+değerlendirildiği bu kategoride, öne çıkan uygulamalar arasında *Camo
+Studio*, *Rise: Energy & Sleep Tracker*, *Resident Evil Village* ve
+*stitch* gibi harika projeler yer aldı.
+
+Öte yandan inovatif yaklaşımıyla en dikkat çeken ve tenis deneyimini
+baştan aşağı değiştiren *SwingVision: A.I. Tennis App*, ödülün sahibi
+oldu.
+
+*** SwingVision: A.I. Tennis App
+#+CAPTION: SwingVision Logo
+[[file://swingvision_logo.png]]
+
+Her ne kadar sıkı bir tenis izleyicisi olsam da, iyi bir oyuncu değilim.
+Daha iyi bir oyuncu olabilmek adına kurs alma, özel antrenörlerle
+çalışma gibi bir arayış içine hiç girmedim. Bu yıl Apple Design Awards
+açıklandığında *SwingVision* ile tanıştım ve oldukça etkilendiğimi de
+söylemeliyim. Şimdi de sizinle tanıştırmak istiyorum.
+
+*SwingVision*, A.I. ve Neural Engine'in gücünü birleştirerek kullanan,
+tenis oyunumuza her yönden katkı sağlamayı hedef alan bir tenis koçu
+olarak karşımıza çıkıyor. Bu teknolojiler sayesinde her vuruşu, hareketi
+ve taktik tercihlerini analiz ederek kullanıcısına rehberlik ediyor.
+Tenis oyununu daha akıllı, daha stratejik ve daha keyifli hale getirmek
+için kullanılan bu teknolojiler, uygulamayı inovasyonun zirvesine
+taşıyor.
+
+#+caption: SwingVision in App Images (1)
+[[file://swingvision_in_app_images.png]]
+
+Peki bunu nasıl yapıyor? Öncelikle uygulama sizden telefonunuzu kortu
+düzgün bir açıyla görebilecek şekilde yerleştirmenizi istiyor. Tripot
+yardımıyla telefonunuzu yerleştirip, gerekli adımları tamamladıktan
+sonra ise yapmanız gereken tek şey oyununuza odaklanmak. Geriye kalan
+işi *SwingVision* tamamlayacak.
+
+#+CAPTION: SwingVision in App Images (2)
+[[file://swingvision_in_app_images_2.png]]
+
+Oyun sırasında içerde mi dışarda mı emin olamadığımız durumlarda *Apple
+Watch* veya başka bir iOS cihazı ile *line call* ([[https://www.topendsports.com/sport/tennis/hawkeye.htm][Line call]])
+yapabiliyoruz. Özellikle bu, çok tatlı bir özellik olmuş. Oyun sonunda
+ise bütün oyuna dair tüm istatistikler, görselleştirilerek bir döküm
+halinde kullanıcıya sunuluyor. A.I. ve Neural Engine teknolojileri
+sayesinde, maçın önemli anları video kaydı olarak tutuluyor. Böylelikle
+maçtaki en uzun rallilerimizi veya break point'lerimizi ([[https://thetennisbros.com/tennis-tips/tactics/break-point-in-tennis/][Break point]]) sonradan izleyebiliyoruz.
+
+#+CAPTION: SwingVision in App Images (3)
+[[file://swingvision_in_app_images_3.png]]
+
+Tenis uzun soluklu ve yorucu bir spor. Dolayısıyla telefonumun şarjı,
+ortalama bir kullanım için yeterli olur mu diye düşünüyor olabilirsiniz.
+Buna yanıtım kısmen evet olacak. Eğer profesyonel bir oyuncu değilseniz
+ve uygulamayı çoğunlukla antrenmanlarınızı analiz etmek amacıyla
+kullanıyorsanız, uygulamanın pil tüketimini minimumda tutarak antrenman
+sonuna kadar size eşlik edebildiğini söylemek mümkün. Ancak geliştirici
+ekip tarafından sonraki sürümlerde uygulama üzerinden tenis maçlarının
+canlı yayınının yapılabileceğinin müjdesi verildi. Bunu göz önünde
+bulundurduğumuzda, yeni sürümlerde pil konusunun daha endişe verici
+olabileceğini söyleyebiliriz.
+
+Ancak tüm bu teknik detaylar, *SwingVision*'ın tenis deneyimine nasıl
+dokunduğunu görmemizi engellemesin. Geniş bir perspektiften bakacak
+olursak, *SwingVision*'ın tenis tutkunlarına sunduğu inovasyon ve
+teknoloji dolu deneyimin, sadece kullanıcıların oyununu geliştirmekle
+kalmadığını, aynı zamanda tenis sporuna yeni bir bakış açısı
+kazandırdığını görüyoruz. İşte bu nedenle, *SwingVision*'ın Apple Design
+Awards'ta inovasyon kategorisinde ödül kazanmasının şaşırtıcı olmadığını
+söyleyebilirim.
+
+Ayrıca, *SwingVision*'ın hikayesini öğrenmek ilgi çekici geliyorsa,
+Apple'ın [[https://nr.apple.com/d2I0Z990m6][Swupnil Sahai ve kurucu ortağı, gücünü yapay zekadan alan SwingVision ile servis kırıyor]]
+yazısını okumanızı tavsiye ederim.
+
+** Son
+Hep beraber bu yılın *Apple Design Awards* ödüllerinin öne çıkanlarını
+ve bu öne çıkanların neyi farklı yaptıklarını konuştuk. Umarım
+yolculuğumuz boyunca yeni fikirler ve bakış açıları bulabilmişsinizdir.
+
+Eğer uygulama bağımsız bir şekilde Apple Design Awards kazanmanın
+tasarım dilinden, renk şemasına kadar neleri gerektirdiğinin
+derinlemesine analizini görmek istiyorsanız, Joseph Russel'ın bu
+muhteşem [[https://dreamwalk.com.au/blog/what-it-takes-to-win-an-apple-design-award][blog yazısına]] kesinlikle bir göz atın. Bir sonraki sayıda görüşmek üzere.
+Hoşça kalın :)
+
+** Kaynakça
+- [[https://developer.apple.com/design/awards/][Apple Design Awards]]
+- [[https://www.apple.com/tr/newsroom/2022/05/swupnil-sahai-and-his-co-founder-serve-an-ace-with-ai-powered-swingvision/][AI powered tennis]]
+- [[https://dreamwalk.com.au/blog/what-it-takes-to-win-an-apple-design-award][What it takes to win an apple design award?]]

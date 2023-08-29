@@ -11,11 +11,11 @@ Merhabalar,
 
 Yetmedi /etiket/'ler ile artık sitede daha rahat gezinebiliyoruz.
 
-Bu sayımızda apple tasarım ödüllerinden, güvenlik konularına, yardımcı araçlardan yeni android studio sürümüne kadar bir çok içerikten oluşuyor.
-
-🇹🇷  Zafer bayramımız kutlu olsun 🇹🇷
+Bu sayımız apple tasarım ödüllerinden, güvenlik konularına, yardımcı araçlardan yeni android studio sürümüne kadar bir çok içerikten oluşuyor.
 
 Herkese iyi okumalar.
+
+🇹🇷  Zafer bayramımız kutlu olsun 🇹🇷
 
 * Konular
 1. [[file:../../news/ssl_pinning.org][SSL Pinning]]

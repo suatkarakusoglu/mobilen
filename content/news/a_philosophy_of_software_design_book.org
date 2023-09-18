@@ -5,7 +5,7 @@
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 
-#+CAPTION: Kitap: A Philosophy of Software Design
+#+CAPTION: A Philosophy of Software Design Kitap Kapağı
 [[file://A_Philosophy_of_sw_design.jpg]]
 
 * İçerik

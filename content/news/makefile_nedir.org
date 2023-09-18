@@ -1,0 +1,9 @@
+#+title: Makefile'ın Faydaları
+#+date: [2023-09-08 Fri]
+#+author: Suat Karakuşoğlu
+#+filetags: :Terminal_Komutları:Araçlar:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+* İçerik
+TO BE ADDED.

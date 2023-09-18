@@ -1,5 +1,7 @@
 #+TITLE: Yazılım
 
+[[file:../../news/a_philosophy_of_software_design_book.org][A Philosophy of Software Design by John Ousterhout]]
+
 [[file:../../news/android_contexti_anlamak.org][Android Context'i Anlamak : Çarpıcı Başlıklar ve ClickBait]]
 
 [[file:../../news/android_de_neden_main_function_yok.org][Android'de Neden Bir Main Function Yok ?]]

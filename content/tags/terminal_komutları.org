@@ -1,5 +1,7 @@
 #+TITLE: Terminal Komutları
 
+[[file:../../news/makefile_nedir.org][Makefile'ın Faydaları]]
+
 [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]
 
 [[file:../../news/xcrun_komutu.org][Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi]]

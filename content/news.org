@@ -1,5 +1,7 @@
 #+TITLE: Yazılar
 
+- [[file:a_philosophy_of_software_design_book.org][A Philosophy of Software Design by John Ousterhout]] - Suat Karakuşoğlu · September 18, 2023
+- [[file:makefile_nedir.org][Makefile'ın Faydaları]] - Suat Karakuşoğlu · September 08, 2023
 - [[file:apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]] - Alper Cem Öztürk · August 29, 2023
 - [[file:yeni_android_studio_surumu_giraffe.org][Yeni Android Studio sürümü "Giraffe"]] - Özkan Tuncel · August 26, 2023
 - [[file:the_art_of_readable_code_2.org][Okuma Notları: The Art Of Readable Code (2)]] - Yusuf Kaya · August 26, 2023

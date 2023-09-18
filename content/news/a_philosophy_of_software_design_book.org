@@ -1,0 +1,25 @@
+#+title: A Philosophy of Software Design by John Ousterhout
+#+date: [2023-09-18 Mon]
+#+author: Suat Karakuşoğlu
+#+filetags: :Kitap:Yazılım:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+* İçerik
+[[https://www.youtube.com/watch?v=bmSAYlu0NcY&ab_channel=TalksatGoogle][John Ousterhout Google Konuşması]]'nda kendi yazdığı kitaptan bahsediyordu. Bu kitabı yazmadaki motivasyonunu değerli buldum.
+
+[[https://www.reddit.com/r/programming/comments/lb8zrn/an_alternative_to_clean_code_a_philosophy_of/][Reddit yorumları]]'nda hem John hem kitap üzerine olan yorumları okuyup inceledikten sonrada kitabı okumaya karar verdim ve gerçekten güzel tavsiyelerle karşılaştım.
+
+Günümüz dünyasında kullanılan araçlara böyle etkin katkılarda bulunmuş kimselerin tavsiyelerini okurken, karşılaştıkları problemlerin sebeplerini nasıl yorumladıklarını ve pratikte çözümlere giderken hangi akıl çerçevesinde hareket ettiklerini görebilmek çok değerli.
+
+[[https://en.wikipedia.org/wiki/John_Ousterhout][John Ousterhout]] bu kitabında =karmaşıklık='ın temelleri hakkında konuşarak başlıyor.
+
+=Code Amplification= yanı değişiklik gerektiğinde çok fazla yerin aynı anda akıl süzgecinden geçirilmesi ve değiştirilmesi ihtiyacından, =Cognitive Load= yani ihtiyaç duyulan değişiklik için geliştiricilerin çok fazla zihinsel yük taşımasına, bir de =Unknown unknowns= dediği hangi değişikliklerin yapılmasının tespitindeki bilinmezliklerin zorluklardan bahsediyor.
+
+Yaklaşım olarak önerdiği ve ilgimi çeken başlıklarin birkaçından bahsedeceğim, bunlardan birincisi =Deep/Shallow= geliştirme yaklaşımı. Burada soyutlanan özelliğin olabildiğince yeteneği yalın bir arayüzle sağlayıp iç derinliğinin fazla olmasından bahsediyor. Çok fazla =layer= katmanın olduğu ve yeterince yetkin olmayan birbirine refere ettiği yaklaşımlar yerine, =cohesion='i yüksek anlaşılabilir bir arayüzle sunulmuş gerçekten iş yapan birimlerin tercih edilmesi gerektiğini anlatıyor.
+
+Ayrıca kodun dokümantasyonu ile ilgili olan başlık ilgimi çekti. Soyut düşünme ve sistem =compose= edebilmeyi ilk olarak sistem hakkında düşünürken veriyoruz. Herhangi bir =class=, =function= veya =property= yazmadan önce, dokümantasyonunu yazarak aklımızdaki soyutlamanın bir kademe daha olgunlaştığına şahit olabiliriz. Bu nedenle kodunu yazmadan önce dokümantasyonunu koda en yakın yerde keşfedilebilir/görünebilir olarak yazmaya özen göstermenin faydalarından bahsediyor.
+
+Yazılımda karmaşıklığı yönetmeye dair daha bir çok başka önerinin olduğu [[https://literal.club/book/a-philosophy-of-software-design-u58xx][A Philosophy of Software Design]] kitabını okumanızı öneriyorum, kısa [171 sayfa] ve öz bir anlatımı var.
+
+Görüşmek üzere.

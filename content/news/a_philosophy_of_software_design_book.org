@@ -5,6 +5,9 @@
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 
+#+CAPTION: Kitap: A Philosophy of Software Design
+[[file://A_Philosophy_of_sw_design.jpg]]
+
 * İçerik
 [[https://www.youtube.com/watch?v=bmSAYlu0NcY&ab_channel=TalksatGoogle][John Ousterhout Google Konuşması]]'nda kendi yazdığı kitaptan bahsediyordu. Bu kitabı yazmadaki motivasyonunu değerli buldum.
 

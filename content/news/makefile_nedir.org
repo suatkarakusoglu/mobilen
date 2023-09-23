@@ -28,6 +28,15 @@ sync_certificates:
 # Sertifikaların locale indirilip yüklenmesine dair komut.
 #+end_src
 
+Örnek bir çağırım, Makefile dosyasının olduğu dizinde iken:
+#+begin_src shell
+make release_to_test
+#+end_src
+
+#+begin_src shell
+make sync_certificates
+#+end_src
+
 Özetle, kullanım ihtiyacı derlemeye yönelik olsa bile proje içinde ortak kullanılma ihtiyacı olan komutların yerleştirildiği böyle bir dosya çalışmalarımızda çok faydalı olabilir.
 
 ** Kaynakça

@@ -6,4 +6,29 @@
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 
 * İçerik
-TO BE ADDED.
+[[https://makefiletutorial.com/][Makefile]], unix tabanlı işletim sistemlerinde program derlemek için kullanılan bir terminal aracıdır.
+
+Genel itibariyle =makefile= bir kod derleme aracı olsa bile, içerisinde başka komutları çalıştırmanızı sağlayan bir sentaks'i vardır.
+
+Bu araç sayesinde projelerinizde ortak çalıştırılması gereken bazı terminal komutlarını tek bir dosyada tanımlayıp isimlendirebiliyorsunuz.
+
+Biz kendi projelerimizde ortak olarak kullanılacak komutları hem dökümente etmek hem de hızlıca kullanabilmek amacıyla =Makefile= dosyasını aktif bir şekilde kullanıyoruz.
+
+Anadizine koyduğunuz Makefile =ide='ler tarafından otomatik keşfedilebiliyor, ekibinizle bu yaklaşımınızı proje başında konuşursanız herkesin ihtiyaç duyabileceği temel komutların gruplandırıldığı bir dosyaya sahip olursunuz.
+
+#+CAPTION: Örnek makefile komutları
+#+begin_src makefile
+release_to_test:
+# Test'e uygulama gönderen muhtemel bir fastlane komutu
+
+generate_localization_files:
+# Auto-generate eden bir kod'un çalıştırılması.
+
+sync_certificates:
+# Sertifikaların locale indirilip yüklenmesine dair komut.
+#+end_src
+
+Özetle, kullanım ihtiyacı derlemeye yönelik olsa bile proje içinde ortak kullanılma ihtiyacı olan komutların yerleştirildiği böyle bir dosya çalışmalarımızda çok faydalı olabilir.
+
+** Kaynakça
+[[https://makefiletutorial.com/][Makefile Tutorial]]

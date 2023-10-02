@@ -1,0 +1,70 @@
+#+title: Apple Wonderlust Eylül 2023 Etkinliği
+#+date: [2023-10-02 Mon]
+#+author: Alper Cem Öztürk
+#+filetags: :Apple:
+
+[[https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8][Alper Cem Öztürk]] yazdı.
+
+[[file://wonderlust_cover.png]]
+
+* İçerik
+Merhaba sevgili Mobilen okuyucuları,
+
+Büyük gün nihayet geldi ve Apple Wonderlust etkinliği düzenlendi. Üzerinden biraz zaman geçse de etkinliği takip edemeyen okurlarımız için kısa bir özet geçmenin kimseye bir zararı olmaz diye düşündüm. İşte kaçırmamanız gereken tüm detaylar:
+
+** Apple Watch Series 9
+[[file://watch_series_9.png]]
+
+Apple, tasarımıyla bir önceki modeli aratmayan yeni nesil Apple Watch'u, yani Apple Watch Series 9'u duyurdu. Yeni nesil işlemci olan S9'a sahip olan Apple Watch Series 9'un, önceki birkaç nesle kıyasla performansını önemli ölçüde arttırdığı söyleniyor. S9'un, iPhone 13'te tanıtılan Apple'ın A15 Bionic çipiyle aynı teknoloji üzerine inşa edildiği söyleniyor ve 18 saatlik pil ömrü sunuyor. S9'da, S8'e göre özellikle iki kat daha hızlı makine öğrenimi görevlerini işleyen dört çekirdekli bir sinir motoru bulunuyor. Bu, Siri isteklerinin cihazda işlenmesini sağlıyor. Örneğin, bu sayede Siri'ye dün gece ne kadar uyku aldığınızı veya kan oksijen seviyenizi sorabilirsiniz.
+
+Teknik detaylardan bahsettiğimize göre, şimdi biraz da yeni özelliklerden bahsedelim. Bu yılki WWDC etkinliğinde duyurulan iOS 17'nin göze çarpan özelliklerinden biri olan NameDrop, Apple Watch'lara da gelmiş. Artık NameDrop özelliği sayesinde Apple Watch kullanıcıları bilgilerini kolay bir şekilde paylaşabilecekler.
+
+Apple'ın watchOS 9'daki erişilebilirlik özelliği olan Assistive Touch, artık Apple Watch uyarılarına el hareketleriyle yanıt vermenizi sağlayan Quick Actions ile yeni bir seviyeye ulaşıyor. Yeni Quick Actions özelliği sayesinde, üst vücut uzuv farklılıkları olan kullanıcılar, Apple Watch'larındaki uyarılara yanıt vermek için çift dokunma hareketiyle daha fazla işlem yapabilirler. Örnek olarak, telefon çağrısını yanıtlama veya sonlandırma, vizör ve deklanşör düğmesi görünürken fotoğraf çekme gibi işlemler yapabilirler. Ayrıca, bir alarmı ertelemek veya zamanlayıcıyı durdurmak için Quick Actions kullanılabilir. Aslında, Quick Actions hemen hemen herkes için yararlı olabilir. Örneğin, diğer elinizde bir şey tutuyorsanız ve Apple Watch'un ekranına dokunamıyorsanız, saat elinizle çift dokunma hareketi yaparak bir telefon görüşmesini yanıtlayabilir veya sonlandırabilirsiniz. Apple'a göre Apple Watch Series 9, Apple Watch Ultra 2 ve Apple Watch SE'nin belirli kasa ve kordon kombinasyonları *karbon nötr* olacak. Apple, kısmen daha fazla tedarikçisinin temiz enerjiye geçmesini sağlayarak saatlerin üretiminde malzeme, elektrik ve ulaşımdan kaynaklanan emisyonları azaltabildiğini söylüyor. Geriye kalan kirlilik, ormanların daha fazla CO2 tutabilmesi için yenilenmesi gibi doğa temelli projelerle dengelenmiş. Apple ayrıca, karbon nötr Apple Watch modellerini şarj etmek için müşterilerin beklenen elektrik kullanımını yenilenebilir enerji projelerine yapılan yatırımlarla eşleştireceğini de söylüyor.
+
+Apple, karbon nötr hedefini oldukça önemsemiş olacak ki aksesuarlarında kullanılan deri seçeneğini dahi raflardan kaldırmış. En çok eleştirilen yönü şüphesiz Apple Watch'ların batarya ömrüdür. Eğer iyileştirme olup olmadığını merak ediyorsanız, cevap vereyim, hayır. Yine önceki modellerde olduğu gibi, şarjının tüm gün gideceği iddia ediliyor.
+
+** Apple Watch Ultra 2
+[[file://watch_ultra_2.png]]
+
+Yeni Apple Watch Ultra'ların Series 9 ile getirdiklerinin yanı sıra bir önceki modelden neredeyse hiçbir farkı yok. Cihazın, 3000 nit parlaklık değerine ulaşabiliyor olması ve daha geniş yükseklik seviyelerinde kullanılabiliyor olması dışında göze çarpan büyük bir değişiklik olmadığını üzülerek belirtmek isterim.
+
+Eğer daha önce Apple Watch Ultra kullanmadıysanız ve deneyimlemek istiyorsanız, Ultra 2'nin bir önceki modelle aynı fiyattan satışa çıkması dolayısıyla iyi bir seçim olabileceğini söylemeliyim. Ancak hali hazırda Apple Watch Ultra kullanıcısıysanız, Ultra 2'ye geçmek için neredeyse hiçbir sebebiniz yok.
+
+** iPhone 15 ve 15 Plus
+[[file://iPhone_15.png]]
+
+Apple, Dinamik Ada'yı bir yıl boyunca yeni iPhone 15 ve iPhone 15 Plus'tan uzak tuttuktan sonra, nihayet Pro olmayan iPhone'larına hak ettikleri değeri verdi. Artık iPhone 15 serisi dinamik adayla beraber geliyor. Gelin bu ve bunun gibi iyileştirmelere adım adım birlikte göz atalım.
+
+*** Dinamik Ada
+Daha önce bahsettiğimiz gibi, bu yıl iPhone 15'ten başlayarak tüm iPhone modelleri dinamik ada'ya sahip olarak sahneye çıkacak. Bu özellik, geliştiriciler için heyecan verici bir haber. Geçtiğimiz yıl sadece Pro ve Pro Max kullanıcılarına sunulan bu özellik, sınırlı bir kullanıcı kitlesine sahipti. Bu nedenle, geliştiriciler tarafından küçük bir kitle için ek geliştirmeler yapmak pek mantıklı değildi. Bu yıl 15 serisinde yapılan bu düzenleme ile daha çok uygulamada dinamik ada kullanımını göreceğiz gibi görünüyor.
+
+*** Elveda Lightning Hoşgeldin USB-C
+Bir iPhone kullanıcısının hayatını daha da iyi hale getirebilecek şeylerden biri, daha hızlı şarj desteğiydi. Bu yıl iPhone'un USB-C'ye geçmesiyle birlikte, daha iyi bir şarj deneyimi sağlamak için güzel bir fırsat olabilirdi. Ancak böyle bir gelişme olmadı. Ayrıca Apple'ı bu değişikliğe itenin çoğunlukla Avrupa Birliği regülasyonları olduğunu da belirtmek gerek.
+
+Tabii ki, iyileştirmeler yalnızca bunlarla sınırlı değil. Pilin artık %100 geri dönüştürülmüş kobalttan yapılması, güneş ışığında telefonunuzu daha iyi görebilmeniz için 2000 nit parlaklık seviyesinin sunulması ve 48 MP birincil sensöre sahip kamera sistemi gibi birçok yenilik de mevcut.
+
+** iPhone 15 Pro ve Pro Max
+[[file://iPhone_15_pro.png]]
+
+Bu yılın Pro ve Pro Max modelleri, iPhone 15'in sunduklarının yanı sıra birçok ilgi çekici özellikle birlikte geliyor. Şimdi gelin, bu özelliklere adım adım birlikte göz atalım.
+
+*** Titanium
+Yeni Pro ve Pro Max modelleri 5. derece titanyum kaplamayla beraber geliyor. 5. derece titanyum, uzay, havacılık, yarış ve protez üretimi de dahil olmak üzere çok çeşitli endüstrilerde kullanılıyor. Malzemenin hafifliği, sağlamlığı ve sertliği, Apple'ın iPhone 15 Pro ailesi için neden 5. derece titanyum kullanmaya karar verdiğini açıklayabilir. Ancak özellikle mavi titanyum renginin kolaylıkla bükülüp kırılıyor olmasıyla yeni kaplama bir hayli eleştirilere konu oldu. Yine de natürel titanyum renk seçeneğinin mavi renk seçeneğiyle aynı kaderi yaşamadığını söylemekte fayda var. Yeni iPhone'ların zorlu dayanıklılık testlerinden nasıl sonuçlar aldığını merak ediyorsanız [[https://jerryrigeverything.com/videos/][JerryRigEverything'in]] çok konuşulan videolarına göz atabilirsiniz.
+
+*** Aksiyon Butonu
+Sessize alma (veya susturma) butonu kaldırıldı ve yerini bir aksiyon düğmesi aldı. Cihazın sol tarafındaki sessize ama butonunun yerini alan aksiyon düğmesi, kısayolları çalıştırmak, erişilebilirlik özelliklerini getirmek, kamerayı açmak, el fenerini açmak ve daha fazlasını yapmak için özelleştirebileceğiniz yeni bir buton olarak karşımıza çıkıyor. Varsayılan olarak hala bir sessize alma butonu bulunuyor; ancak bunun yanı sıra el fenerini açacak, sesli not kaydedecek ve kamerayı açacak şekilde de özelleştirebilirsiniz.
+
+*** Oyun Performansı
+Apple bu lansmanda, alışılagelmişin dışında bir süreyle, yeni cihazların oyun performansından bahsetti. Yeni donanım ve yazılım iyileştirmelerinin oyun performansına etkilerinden söz ederken, Resident Evil 4 remake, Resident Evil Village ve Death Stranding gibi bazı üst düzey oyunların iPhone'lara geleceğini duyduk. Ayrıca uzun zamandır oyun severler tarafından beklenen bir Ubisoft oyunu olan Assassin's Creed Mirage'ın da iPhone 15 Pro'da piyasaya çıkacağı ve bununla birlikte cihazın donanım hızlandırmalı ışın izleme (bkz: [[https://www.digitaltrends.com/computing/what-is-ray-tracing/][Ray Tracing]]) teknolojisini destekleyeceği söylendi. Özellikle bu oyun severleri oldukça etkiledi.
+
+Bu gelişmelerin etkisiyle iPhone'un nihayet Apple'a büyük bütçeli, büyük stüdyo oyunlarının piyasaya sürülmesi için mutlaka hedeflenmesi gereken bir yer kazanma şansı var gibi gözüküyor. iPhone 15 Pro ve Pro Max'e güç veren A17 Pro, en azından piyasaya çıkan birçok taşınabilir konsol bilgisayarı için kullanılan işlemci türleriyle aynı seviyede görünüyor.
+
+*** Video
+Video tarafında ise cihazlarda 4K60 ProRes video çekebilecek, hatta USB-C bağlantı noktası üzerinden doğrudan harici bir sürücüye çekim yapabileceksiniz. 15 Pro ailesi, Vision Pro için gördüğümüz 3D içerik türlerini *uzamsal (spatial) video* olarak da kaydedebiliyor; ancak bu özellik bu yılın sonlarında gelecek. Bu özellik, özellikle visionPro entegrasyonunda işe yarayacak gibi duruyor. Apple'ın 15 Pro'yu bir tüketici cihazı olmasının yani sıra film yapımcıları için gerçek bir profesyonel araç olarak geliştirdiği de bir hayli ortada.
+
+** Son
+Cupertino, California'da çok beklenen Wonderlust etkinliğinde Apple, bir dizi yenilikçi cihazı ve yazılım güncellemesini tanıttı. Harika kamera geliştirmeleri ve USB-C bağlantısıyla iPhone 15 serisi kayda değer bir çıkış yaptı. A17 Pro destegiyle beraber oyun performansıyla öne çıkan ve son teknoloji özelliklere sahip iPhone 15 Pro ve Pro Max de oldukça dikkat çekti. Apple Watch Ultra 2, artırılmış pil ömrü ve 3000 nit parlaklık seviyesine ulaşan ekran özelliklerine rağmen bir önceki nesilden pek öne çıkamazken, Apple Watch Series 9 ise performans iyileştirmeleri ve karbon nötr seçenekleriyle öne çıktı.
+
+Ancak, her yıl inovasyonun sınırlarını zorlayan Apple, bu kez izleyenleri sürprizlerle sarsamadı. Dolayısıyla etkinlik, büyük bir kesim tarafından pek beğenilmedi. Yine de, Apple'ın gelecekteki yeniliklerle bizi şaşırtacağına dair umutlarımızı koruyoruz.
+
+Eğer daha derinlemesine bilgi sahibi olmak istiyorsanız, [[https://www.youtube.com/watch?v=ZiP1l7jlIIA][Apple Wonderlust Event Keynote]] sunumuna göz atabilirsiniz. Bir sonraki sayıda görüşmek üzere. Hoşça kalın :)

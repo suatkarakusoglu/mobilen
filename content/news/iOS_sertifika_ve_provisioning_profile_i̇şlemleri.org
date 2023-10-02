@@ -1,0 +1,111 @@
+#+title: iOS Sertifika ve Provisioning Profile İşlemleri
+#+date: [2023-09-20 Tue]
+#+author: Ali Mert Tekel
+#+filetags: :iOS:
+
+[[https://linkedin.com/in/alimerttekel][Ali Mert Tekel]] yazdı.
+
+[[file://certificates-ids-profiles.png]]
+
+* İçerik
+Herkese merhaba!
+
+iOS dünyasında sertifika, provisioning, signing gibi tabirler karşımıza çıkınca biraz kafamız karışabiliyor, özellikle dağıtımınızı =ad-hoc= ile gerçekleştiriyorsanız. Ancak endişelenmeyin, bu konuları her adımıyla birlikte ele alacağız!
+
+Öncelikle, bu terimler tam olarak ne anlama geliyor?
+
+** Sertifika (Certificate)
+Dijital olarak imzalanan bir bilgi kümesidir. Bu bilgiler, bir kişi veya kuruluşun kimliğini doğrulama, elektronik iletişim sırasında güvenlik sağlama veya belirli bir yetki veya hizmete erişim hakkı verme gibi çeşitli amaçlar için kullanılabilir.
+
+** Provisioning Profile
+Apple'ın iOS ve macOS uygulamaları için kullanılan bir güvenlik mekanizmasıdır. Bu, belirli bir uygulamanın yalnızca belirli cihazlarda çalışmasına izin veren ve uygulamanın belirli bir sertifika ile imzalandığını doğrulayan bir dosyadır. Genellikle bir uygulamanın geliştirme, test ve dağıtım aşamaları boyunca kullanılır.
+
+** Uygulama İmzalamak nedir, ne işe yarar?
+Bir iOS uygulamasını *imzalamak*, uygulamanızın *kimliğini doğrulamak* ve App Store'a yüklemek için *gereklidir*. Peki, "Apple bunu neden istiyor?" diye soracak olursanız, cihazın güvenliğini ve gizliliğini korumak için olduğunu söyleyebiliriz.
+
+'iOS cihazlar, Android'lere göre daha güvenli' şeklinde bir algı bulunmaktadır, bilirsiniz. Bu algının oluşmasının en önemli sebeplerinden biri Apple'ın uygulama imzalama sürecidir. Apple cihazında çalışacak bir uygulamanın imzalanmamış bir IPA'sını oluşturmak mümkün değildir. Mümkün olsa bile App Store dışından IPA kurmayı kısıtlıyor. Bu nedenle, Android cihazlara APK yükleyerek savunmasız kalma riskiniz Apple'a göre daha yüksektir. Ancak burada Android'in güvensiz olduğunu vurgulamıyorum; asıl vurgulamak istediğim, *işletim sistemi güvenliğinden önce kendi kullanımlarımıza dikkat etmemiz gerektiğidir*.
+
+*Uygulama İmzalamayı* kabaca 3 başlıkta inceleyebiliriz;
+
+1. *Sertifika Oluşturma:* iOS uygulamanızı imzalamak için öncelikle bir geliştirici hesabı oluşturmanız gerekir. Sonrasında ise bu hesapla bir sertifika oluşturabilirsiniz.
+
+2. *Kimlik Doğrulama Profili Oluşturma (Provisioning Profile):* Bu profil, belirli uygulamaların yalnızca belirli cihazlarda çalışmasına izin veren ve uygulamanın Apple sertifikasıyla imzalandığını doğrulayan dosyadır.
+
+3. *Uygulamanın İmzalanması:* Xcode'da oluşturduğunuz sertifika ve kimlik doğrulama profilini kullanarak uygulamanızı imzalayabilirsiniz. Bu, uygulamanızın kim tarafından geliştirildiğini ve Provisioning Profile ile uyumlu olup olmadığını doğrular.
+
+Gelin bu süreci daha detaylı bir şekilde adım adım ele alarak inceleyelim;
+
+[[file://create-certificates.png]]
+
+İlk olarak sertifika oluşturmayı ele alalım. Bu yazıda sadece Software Sertifikalarını inceleyeceğiz. Görseldeki ekran, sertifika oluştur dediğinizde karşınıza çıkan çeşitli seçenekleri barındırıyor. Burada mobil geliştirmeye odaklandığımız için gerekli olan seçenekler ilk dördüdür. Son dört seçenek ise bir Mac uygulaması çıkartmak için kullanılan sertifika türleridir.
+
+Burada dikkat etmemiz gereken en önemli nokta sertifika türünüzün development mi yoksa distribution mı olduğu. Farkı ise; Development sertifikası ile imzalanmış bir uygulamayı sadece Mac'inizde development yaparken test cihazınıza build aldığınız zaman kullanabilirsiniz. IPA'yı aldıktan sonra farklı cihazlara dağıtamazsınız. Distribution'da ise Xcode'dan aldığınız IPA'yı hesap türünüze göre belirli cihaz havuzuna dağıtabilirsiniz.
+
+Sertifika türünüzü belirledikten sonra sonraki adımda Apple bir "*CSR (Certificate Signing Request)*" dosyası talep ediyor. Adından da anlaşılacağı üzere, bu dosya sertifika isteğinizi, sertifika için gerekli bilgileri ve genel anahtarınızı Apple'a iletmenizi sağlıyor. Kafa karışıklığı yaratabilecek bir konu olduğundan, bunu teknik olarak incelemekte fayda var. Teknik olarak ne yaptığına bakarsak, bu dosyayı üç bölüme ayırabiliriz:
+
+1. *Genel Anahtar*: CSR'nin en önemli bileşeni, anahtar çiftinin genel
+   kısmıdır. Bu public key, oluşturulacak dijital sertifikada yer alacak
+   ve bu sertifikayı kullanacak olan sunucu veya istemci tarafından
+   herkese açık bir şekilde paylaşılacaktır.
+
+2. *Kimlik Bilgileri*: Bu, kim olduğunuzu ve/veya kuruluşunuzu tanımlar
+   (örneğin, ad, e-posta, organizasyon, ülke vb.).
+
+3. *İmza*: Tüm bu bilgiler, bir "private key" kullanılarak dijital
+   olarak imzalanır. Bu, CSR'nin bütünlüğünü ve kimlik bilgilerinin
+   sahipliğini doğrular.
+
+CSR oluşturulduğunda, bu dosya bir Sertifika Otoritesi'ne (Certificate Authority - CA) gönderilir. Bizim durumumuzda bu CA, Apple'dır. Apple, CSR'yi değerlendirir ve bilgileri doğru ve güvenilir bulduğunda, CSR içindeki genel anahtarı (public key) içeren bir sertifika oluşturur.
+
+Bu dosyayı yükledikten sonra, Apple bize sertifika dosyasını indirme imkanı sunar. Sertifikamızı indirip Xcode'da veya başka bir platformda kullanabiliriz.
+
+Burada bahsettiğimiz CA, yani Sertifika Otoritesi, dijital sertifikaları yayınlayan ve yöneten bir kuruluştur. Bir sertifika otoritesinin temel görevi, sertifikaları yayınlamaktır, ancak aynı zamanda sertifikaların geçerliliğini kontrol etmek ve gerektiğinde sertifikaları iptal etmek gibi diğer görevleri de vardır. Apple, iOS uygulamaları için kendi sertifika otoritesi görevini üstlenir ve geliştiricilere sertifikalar sağlar. Bu sayede, bir iOS uygulamasının Apple tarafından tanınan bir geliştirici tarafından oluşturulup oluşturulmadığını doğrulayabilir.
+
+- Sertifikayı oluşturduk [TAMAM]
+- Provisioning Profili oluşturduk [SIRADA]
+- Uygulamayı imzaladık [SIRADA]
+
+** Provisioning Profile Detayları
+Provisioning Profile uygulamanızın hangi cihazlarda çalışabileceğini, hangi servislerle etkileşime girebileceğini ve kimler tarafından kullanılabileceğini belirleyen bir dosyadır. Uygulamanızın özelliklerini, yeteneklerini ve bunlara erişimini tanımlar.
+
+Sertifika oluşturma sürecini ele aldıktan sonra şimdi sıra Provisioning Profile oluşturma adımlarında;
+
+1. *Provisioning Profile Tipi Seçimi:* İlk adımda karar vermeniz gereken şey uygulamanızın hangi aşamada olduğudur. Geliştirme aşamasında mı, beta testinde mi yoksa App Store'da mı yayımlanacak? Bu seçim, profil tipini belirler.
+
+   - *Ad Hoc* dağıtımı, beta testleri veya iç dağıtımlar için idealdir. Ancak bu profille uygulamayı sadece belirli cihazlara yükleyebilirsiniz.
+   - *App Store* profili ise uygulamanızın Apple App Store'da dağıtılmasını sağlar. - *Enterprise* dağıtımı ise büyük kuruluşlar için idealdir; bu profil ile uygulamanızı App Store dışında dağıtabilirsiniz.
+
+2. *Uygulama Kimliği (App ID) Seçimi:* Her iOS uygulaması için benzersiz bir kimlik yerine geçen App ID'yi belirtmelisiniz. Bu, uygulamanızın hangi servisleri kullanabileceğini ve cihaz özelliklerine nasıl erişebileceğini tanımlar.
+
+3. *Sertifika ve Cihaz Seçimi:* Hangi sertifika ile bu profili kullanacağınıza karar verdikten sonra önceden eklediğiniz test cihazlarından istediklerinizi bu profile dahil ederek profil oluşturma işlemini tamamlayabilirsiniz.
+
+Profilinizi oluşturduktan sonra, indirip Xcode'a eklemeniz gerekmektedir ya da XCode üzerinden de indirebilirsiniz.
+
+- Sertifikayı oluşturduk [TAMAM]
+- Provisioning Profili oluşturduk [SIRADA]
+- Uygulamayı imzaladık [SIRADA]
+
+** Uygulamayı imzalama
+Bu aşamada, uygulamanızın gerçek cihazlarda çalışabilmesi ve App Store'a
+yüklenmesi için gereken imzalamayı gerçekleştirirsiniz.
+
+1. *Xcode Ayarları:* Xcode projenizde, 'Signing & Capabilities' bölümünü açtıktan sonra 'Team' ve 'Provisioning Profile' ayarlarını doğru bir şekilde tanımlayın.
+
+2. *Anahtar ve Sertifikaların Kontrolü:* Uygulamanızın imzalanabilmesi için ilgili sertifikaların ve anahtarların Mac'inizde yüklü olması gerekir. Sertifika oluşturma adımında oluşturduğunuz sertifika dosyasını indirip açtıysanız *Keychain Access* uygulaması içerisinde bulunmasını bekleriz.
+
+3. *Uygulamanın Arşivlenmesi:* Uygulamanızın tüm özelliklerini ve ayarlarını kontrol ettikten sonra Xcode'daki 'Product' menüsünden
+   'Archive' seçeneğini seçerek uygulamanızı arşivleyebilirsiniz.
+
+4. *İmzalama ve Gönderme:* Archive işlemi bittikten sonra otomatik olarak Xcode'un 'Organizer' penceresi açılır. Burada arşivlediğiniz uygulamayı görebilirsiniz. Bu adımda, uygulamanızı App Store'a gönderebilir veya IPA formatında dışa aktarabilirsiniz. Seçtiğiniz Provisioning Profile ile uygulamanız imzalanarak, dağıtıma hazır hale gelir.
+
+Uygulamanız dağıtıma hazır hale geldikten sonra, App Store'a yükleme veya test dağıtımları için kullanabilirsiniz.
+
+- Sertifikayı oluşturduk [TAMAM]
+- Provisioning Profili oluşturduk [TAMAM]
+- Uygulamayı imzaladık [TAMAM]
+
+Sonuç olarak, iOS uygulamalarını geliştirirken sertifika ve provisioning profile oluşturma süreçlerini doğru bir şekilde anlamak ve uygulamalarımızı güvenli bir şekilde dağıtmak için bu adımları izlemek önemlidir.
+
+Bu süreçler, uygulamalarımızın güvenilirliğini ve kullanıcıların gizliliğini korumamıza yardımcı olur. Etkili bir şekilde sertifika ve provisioning profile yönetimi, iOS uygulama geliştirme sürecinin temel bir parçasıdır ve bu yazıda bu süreci daha iyi anlamaya çalıştık.
+
+Umarım bu bilgiler, mobil uygulama geliştirme yolculuğunuzda size yardımcı olur. Sonraki yazılarda görüşmek üzere!

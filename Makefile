@@ -9,7 +9,7 @@ generate-production-site:
 generate-local-site:
 	PRODUCTION=false make .generate-site
 
-publish-production-site:
+generate-and-publish-production-site:
 	git checkout gh-pages
 	git merge --no-edit main
 	make generate-production-site

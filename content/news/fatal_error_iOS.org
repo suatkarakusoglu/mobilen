@@ -39,7 +39,7 @@ Swift gibi static dillerde derleme zamanında =compiler='i memnun etmemiz gereki
 #+end_src
 
 ** Never Tipi nedir ve ne işimize yarar bu durumda?
-[[https://www.avanderlee.com/swift/never-keyword/][Never]] tipi bir [[https://wiki.c2.com/?BottomType][Bottom]] tiptir. Bu işe class hiyerarşisinde her zaman altta olan, dolayısı ile her dönüş değeri yerine kullanabilecek bir veri tipi anlamına gelir.
+[[https://www.avanderlee.com/swift/never-keyword/][Never]] tipi bir [[https://wiki.c2.com/?BottomType][Bottom]] tiptir. Bu basit anlamda class hiyerarşisinde her zaman altta olan, dolayısı ile her dönüş değeri yerine kullanabilecek bir veri tipi anlamına gelir.
 
 ** fatalError bu işin neresinde?
 [[https://developer.apple.com/documentation/swift/fatalerror(_:file:line:)][fatalError]] fonksiyonu ise [[https://www.avanderlee.com/swift/never-keyword/][Never]] tipi dönen bir fonksiyondur. Dolayısı ile herhangi implementasyonu henüz olmayan bir fonksiyon için çağırılabilecek bir =placeholder= fonksiyon görevi görebilir. Bu sayede =compiler= memnun bir şekilde hayatına devam eder, çünkü fatalError'un döndüğü =Never= bottom tip dönüş değeri için yeterlidir.

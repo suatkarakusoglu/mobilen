@@ -1,9 +1,65 @@
-#+title: iOS: fatalError
+#+title: iOS: fatalError - Never ve Sistem Tasarımı
 #+date: [2023-10-01 Sun]
 #+author: Suat Karakuşoğlu
 #+filetags: :iOS:Yazılım:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 
+[[file:///fatalError_ve_sistem.jpg]]
+
 * İçerik
-Content will be here.
+Merhabalar, geçenlerde sektörün duayenlerinden [[https://tr.wikipedia.org/wiki/Richard_Stallman][Richard Stallman]]'e birisinin sorduğu soruya nasıl cevap verdiği ilgimi çekmişti.
+
+Bu zamana kadar büyük kurguları ve sistemleri tasarladınız, bir probleme nasıl yaklaşıyorsunuz diye sorulduğunda:
+Stallman istenen fonksiyonların ilk tanımlarını yazarım içleri boş bir şekilde sonrada yavaş yavaş gerçeklerim diye bir cevap veriyor.
+
+Bu tabi şu anda bir servis'i tasarlamadan önce interface'i düşünmekle çok paralel bir cevap.
+
+Aslında topdown yaklaşım ile sistemsel uzamları yukarıdan gördükten sonra çözümün örgüsünü implementasyonlar ile bottom-up olarak yazmak. Her iki yaklaşımı tatbik etmek sağlıklı bir çözümün en önemli anahtarları.
+
+Bu yaklaşıma yazılım dillerinde fonksiyon ve class seviyesinde yardımcı olucak bazı yöntemler mevcut.
+
+Python dilinde direkt =pass= keyword'u ile dil'i memnun edebiliyorsunuz.
+
+#+begin_src python
+  class Person:
+     def work(self):
+        # Bu anahtar kelime icerisini by-pass gecmenize yardimci oluyor
+        pass
+#+end_src
+
+Dinamik dillerde bu biraz daha basit olarak bir keyword ile gerçeklenebiliyor.
+
+Swift gibi static dillerde derleme zamanında =compiler='i memnun etmemiz gerekiyor.
+
+#+begin_src swift
+  func createEmployee(name: String, credentials: [Credential]) -> Employee {
+      // İşçi yaratma mantığını şu anda yazmadım bu nedenle compiler projemizi derletmeyecektir.
+  }
+#+end_src
+
+** Never Tipi nedir ve ne işimize yarar bu durumda?
+[[https://www.avanderlee.com/swift/never-keyword/][Never]] tipi bir [[https://wiki.c2.com/?BottomType][Bottom]] tiptir. Bu işe class hiyerarşisinde her zaman altta olan, dolayısı ile her dönüş değeri yerine kullanabilecek bir veri tipi anlamına gelir.
+
+** fatalError bu işin neresinde?
+[[https://developer.apple.com/documentation/swift/fatalerror(_:file:line:)][fatalError]] fonksiyonu ise [[https://www.avanderlee.com/swift/never-keyword/][Never]] tipi dönen bir fonksiyondur. Dolayısı ile herhangi implementasyonu henüz olmayan bir fonksiyon için çağırılabilecek bir =placeholder= fonksiyon görevi görebilir. Bu sayede =compiler= memnun bir şekilde hayatına devam eder, çünkü fatalError'un döndüğü =Never= bottom tip dönüş değeri için yeterlidir.
+
+#+begin_src swift
+  func createEmployee(name: String, credentials: [Credential]) -> Employee {
+      // Burada fırlattığınız hata ile ne yapmadığınızı bilebilirsiniz.
+      // Bu kod artık derlenebilecektir.
+      fatalError("Create employee first.")
+  }
+#+end_src
+
+** Nelere dikkat etmeliyiz?
+=fatalError= fonksiyonun bu yalnızca bir kullanım durumudur. Normalde uygulamanın hiç girmemesi gereken durumlarda bu fonksiyonu çağırabilmektesiniz.
+Ancak bu fonksiyonun direkt olarak uygulamayı =crash= ettireceğini bilmelisiniz.
+
+O nedenle production'da elinizin en son gitmesi gereken, çaresiz kaldığınızda kullanmanız gereken bir fonksiyondur.
+
+Ancak geliştirme aşamasında bu bahsettiğimiz kullanımı ile sizin elinizde sisteminizi tasarlarken yardımcı bir araç görevi görecektir.
+
+** Kaynakca
+- [[https://www.avanderlee.com/swift/never-keyword/][Never Keyword]]
+- [[https://developer.apple.com/documentation/swift/fatalerror(_:file:line:)][FatalError]]

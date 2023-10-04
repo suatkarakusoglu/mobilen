@@ -1,7 +1,8 @@
 #+TITLE: Yazılar
 
 - [[file:apple_event_wonderlust_2023.org][Apple Wonderlust Eylül 2023 Etkinliği]] - Alper Cem Öztürk · October 02, 2023
-- [[file:iOS_sertifika_ve_provisioning_profile_i̇şlemleri.org][iOS Sertifika ve Provisioning Profile İşlemleri]] - Ali Mert Tekel · September 20, 2023
+- [[file:fatal_error_iOS.org][iOS: fatalError - Never ve Sistem Tasarımı]] - Suat Karakuşoğlu · October 01, 2023
+- [[file:iOS_sertifika_ve_provisioning_profile_i̇slemleri.org][iOS Sertifika ve Provisioning Profile İşlemleri]] - Ali Mert Tekel · September 20, 2023
 - [[file:a_philosophy_of_software_design_book.org][A Philosophy of Software Design by John Ousterhout]] - Suat Karakuşoğlu · September 18, 2023
 - [[file:makefile_nedir.org][Makefile'ın Faydaları]] - Suat Karakuşoğlu · September 08, 2023
 - [[file:apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]] - Alper Cem Öztürk · August 29, 2023

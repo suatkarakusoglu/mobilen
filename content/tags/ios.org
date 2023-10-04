@@ -6,7 +6,9 @@
 
 [[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
 
-[[file:../../news/iOS_sertifika_ve_provisioning_profile_i̇şlemleri.org][iOS Sertifika ve Provisioning Profile İşlemleri]]
+[[file:../../news/fatal_error_iOS.org][iOS: fatalError - Never ve Sistem Tasarımı]]
+
+[[file:../../news/iOS_sertifika_ve_provisioning_profile_i̇slemleri.org][iOS Sertifika ve Provisioning Profile İşlemleri]]
 
 [[file:../../news/instagramin_hikayesi.org][Instagram'in Hikayesi]]
 

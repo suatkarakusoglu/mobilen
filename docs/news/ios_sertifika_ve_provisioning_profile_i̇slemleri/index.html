@@ -1,0 +1,186 @@
+<!-- Generated from a7e5db7 on 2023-10-04 @ 11:47 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>iOS Sertifika ve Provisioning Profile İşlemleri - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">iOS Sertifika ve Provisioning Profile İşlemleri</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #18</a><p class="site-post-meta">September 20, 2023</p><div id="content"><p>
+<a href="https://linkedin.com/in/alimerttekel">Ali Mert Tekel</a> yazdı.
+</p>
+
+
+<div id="org74b693b" class="figure">
+<p><img src="/img/certificates-ids-profiles.png" class="content-image" width="100%">
+</p>
+</div>
+
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org11adca0">
+<p>
+Herkese merhaba!
+</p>
+
+<p>
+iOS dünyasında sertifika, provisioning, signing gibi tabirler karşımıza çıkınca biraz kafamız karışabiliyor, özellikle dağıtımınızı <code>ad-hoc</code> ile gerçekleştiriyorsanız. Ancak endişelenmeyin, bu konuları her adımıyla birlikte ele alacağız!
+</p>
+
+<p>
+Öncelikle, bu terimler tam olarak ne anlama geliyor?
+</p>
+</div>
+
+<h3><a id="sertifika-certificate" class="anchor" href="#sertifika-certificate">¶</a>Sertifika (Certificate)</h3><div class="outline-text-3" id="text-org40e9668">
+<p>
+Dijital olarak imzalanan bir bilgi kümesidir. Bu bilgiler, bir kişi veya kuruluşun kimliğini doğrulama, elektronik iletişim sırasında güvenlik sağlama veya belirli bir yetki veya hizmete erişim hakkı verme gibi çeşitli amaçlar için kullanılabilir.
+</p>
+</div>
+
+<h3><a id="provisioning-profile" class="anchor" href="#provisioning-profile">¶</a>Provisioning Profile</h3><div class="outline-text-3" id="text-org1a36d7b">
+<p>
+Apple&rsquo;ın iOS ve macOS uygulamaları için kullanılan bir güvenlik mekanizmasıdır. Bu, belirli bir uygulamanın yalnızca belirli cihazlarda çalışmasına izin veren ve uygulamanın belirli bir sertifika ile imzalandığını doğrulayan bir dosyadır. Genellikle bir uygulamanın geliştirme, test ve dağıtım aşamaları boyunca kullanılır.
+</p>
+</div>
+
+<h3><a id="uygulama-i̇mzalamak-nedir-ne-işe-yarar" class="anchor" href="#uygulama-i̇mzalamak-nedir-ne-işe-yarar">¶</a>Uygulama İmzalamak nedir, ne işe yarar?</h3><div class="outline-text-3" id="text-org4345812">
+<p>
+Bir iOS uygulamasını <b>imzalamak</b>, uygulamanızın <b>kimliğini doğrulamak</b> ve App Store&rsquo;a yüklemek için <b>gereklidir</b>. Peki, &ldquo;Apple bunu neden istiyor?&rdquo; diye soracak olursanız, cihazın güvenliğini ve gizliliğini korumak için olduğunu söyleyebiliriz.
+</p>
+
+<p>
+&rsquo;iOS cihazlar, Android&rsquo;lere göre daha güvenli&rsquo; şeklinde bir algı bulunmaktadır, bilirsiniz. Bu algının oluşmasının en önemli sebeplerinden biri Apple&rsquo;ın uygulama imzalama sürecidir. Apple cihazında çalışacak bir uygulamanın imzalanmamış bir IPA&rsquo;sını oluşturmak mümkün değildir. Mümkün olsa bile App Store dışından IPA kurmayı kısıtlıyor. Bu nedenle, Android cihazlara APK yükleyerek savunmasız kalma riskiniz Apple&rsquo;a göre daha yüksektir. Ancak burada Android&rsquo;in güvensiz olduğunu vurgulamıyorum; asıl vurgulamak istediğim, <b>işletim sistemi güvenliğinden önce kendi kullanımlarımıza dikkat etmemiz gerektiğidir</b>.
+</p>
+
+<p>
+<b>Uygulama İmzalamayı</b> kabaca 3 başlıkta inceleyebiliriz;
+</p>
+
+<ol class="org-ol">
+<li><b>Sertifika Oluşturma:</b> iOS uygulamanızı imzalamak için öncelikle bir geliştirici hesabı oluşturmanız gerekir. Sonrasında ise bu hesapla bir sertifika oluşturabilirsiniz.</li>
+
+<li><b>Kimlik Doğrulama Profili Oluşturma (Provisioning Profile):</b> Bu profil, belirli uygulamaların yalnızca belirli cihazlarda çalışmasına izin veren ve uygulamanın Apple sertifikasıyla imzalandığını doğrulayan dosyadır.</li>
+
+<li><b>Uygulamanın İmzalanması:</b> Xcode&rsquo;da oluşturduğunuz sertifika ve kimlik doğrulama profilini kullanarak uygulamanızı imzalayabilirsiniz. Bu, uygulamanızın kim tarafından geliştirildiğini ve Provisioning Profile ile uyumlu olup olmadığını doğrular.</li>
+</ol>
+
+<p>
+Gelin bu süreci daha detaylı bir şekilde adım adım ele alarak inceleyelim;
+</p>
+
+
+<div id="org5ccc56b" class="figure">
+<p><img src="/img/create-certificates.png" class="content-image" width="100%">
+</p>
+</div>
+
+<p>
+İlk olarak sertifika oluşturmayı ele alalım. Bu yazıda sadece Software Sertifikalarını inceleyeceğiz. Görseldeki ekran, sertifika oluştur dediğinizde karşınıza çıkan çeşitli seçenekleri barındırıyor. Burada mobil geliştirmeye odaklandığımız için gerekli olan seçenekler ilk dördüdür. Son dört seçenek ise bir Mac uygulaması çıkartmak için kullanılan sertifika türleridir.
+</p>
+
+<p>
+Burada dikkat etmemiz gereken en önemli nokta sertifika türünüzün development mi yoksa distribution mı olduğu. Farkı ise; Development sertifikası ile imzalanmış bir uygulamayı sadece Mac&rsquo;inizde development yaparken test cihazınıza build aldığınız zaman kullanabilirsiniz. IPA&rsquo;yı aldıktan sonra farklı cihazlara dağıtamazsınız. Distribution&rsquo;da ise Xcode&rsquo;dan aldığınız IPA&rsquo;yı hesap türünüze göre belirli cihaz havuzuna dağıtabilirsiniz.
+</p>
+
+<p>
+Sertifika türünüzü belirledikten sonra sonraki adımda Apple bir &ldquo;<b>CSR (Certificate Signing Request)</b>&rdquo; dosyası talep ediyor. Adından da anlaşılacağı üzere, bu dosya sertifika isteğinizi, sertifika için gerekli bilgileri ve genel anahtarınızı Apple&rsquo;a iletmenizi sağlıyor. Kafa karışıklığı yaratabilecek bir konu olduğundan, bunu teknik olarak incelemekte fayda var. Teknik olarak ne yaptığına bakarsak, bu dosyayı üç bölüme ayırabiliriz:
+</p>
+
+<ol class="org-ol">
+<li><b>Genel Anahtar</b>: CSR&rsquo;nin en önemli bileşeni, anahtar çiftinin genel
+kısmıdır. Bu public key, oluşturulacak dijital sertifikada yer alacak
+ve bu sertifikayı kullanacak olan sunucu veya istemci tarafından
+herkese açık bir şekilde paylaşılacaktır.</li>
+
+<li><b>Kimlik Bilgileri</b>: Bu, kim olduğunuzu ve/veya kuruluşunuzu tanımlar
+(örneğin, ad, e-posta, organizasyon, ülke vb.).</li>
+
+<li><b>İmza</b>: Tüm bu bilgiler, bir &ldquo;private key&rdquo; kullanılarak dijital
+olarak imzalanır. Bu, CSR&rsquo;nin bütünlüğünü ve kimlik bilgilerinin
+sahipliğini doğrular.</li>
+</ol>
+
+<p>
+CSR oluşturulduğunda, bu dosya bir Sertifika Otoritesi&rsquo;ne (Certificate Authority - CA) gönderilir. Bizim durumumuzda bu CA, Apple&rsquo;dır. Apple, CSR&rsquo;yi değerlendirir ve bilgileri doğru ve güvenilir bulduğunda, CSR içindeki genel anahtarı (public key) içeren bir sertifika oluşturur.
+</p>
+
+<p>
+Bu dosyayı yükledikten sonra, Apple bize sertifika dosyasını indirme imkanı sunar. Sertifikamızı indirip Xcode&rsquo;da veya başka bir platformda kullanabiliriz.
+</p>
+
+<p>
+Burada bahsettiğimiz CA, yani Sertifika Otoritesi, dijital sertifikaları yayınlayan ve yöneten bir kuruluştur. Bir sertifika otoritesinin temel görevi, sertifikaları yayınlamaktır, ancak aynı zamanda sertifikaların geçerliliğini kontrol etmek ve gerektiğinde sertifikaları iptal etmek gibi diğer görevleri de vardır. Apple, iOS uygulamaları için kendi sertifika otoritesi görevini üstlenir ve geliştiricilere sertifikalar sağlar. Bu sayede, bir iOS uygulamasının Apple tarafından tanınan bir geliştirici tarafından oluşturulup oluşturulmadığını doğrulayabilir.
+</p>
+
+<ul class="org-ul">
+<li>Sertifikayı oluşturduk [TAMAM]</li>
+<li>Provisioning Profili oluşturduk [SIRADA]</li>
+<li>Uygulamayı imzaladık [SIRADA]</li>
+</ul>
+</div>
+
+<h3><a id="provisioning-profile-detayları" class="anchor" href="#provisioning-profile-detayları">¶</a>Provisioning Profile Detayları</h3><div class="outline-text-3" id="text-org1ec9ed4">
+<p>
+Provisioning Profile uygulamanızın hangi cihazlarda çalışabileceğini, hangi servislerle etkileşime girebileceğini ve kimler tarafından kullanılabileceğini belirleyen bir dosyadır. Uygulamanızın özelliklerini, yeteneklerini ve bunlara erişimini tanımlar.
+</p>
+
+<p>
+Sertifika oluşturma sürecini ele aldıktan sonra şimdi sıra Provisioning Profile oluşturma adımlarında;
+</p>
+
+<ol class="org-ol">
+<li><b>Provisioning Profile Tipi Seçimi:</b> İlk adımda karar vermeniz gereken şey uygulamanızın hangi aşamada olduğudur. Geliştirme aşamasında mı, beta testinde mi yoksa App Store&rsquo;da mı yayımlanacak? Bu seçim, profil tipini belirler.
+
+<ul class="org-ul">
+<li><b>Ad Hoc</b> dağıtımı, beta testleri veya iç dağıtımlar için idealdir. Ancak bu profille uygulamayı sadece belirli cihazlara yükleyebilirsiniz.</li>
+<li><b>App Store</b> profili ise uygulamanızın Apple App Store&rsquo;da dağıtılmasını sağlar. - <b>Enterprise</b> dağıtımı ise büyük kuruluşlar için idealdir; bu profil ile uygulamanızı App Store dışında dağıtabilirsiniz.</li>
+</ul></li>
+
+<li><b>Uygulama Kimliği (App ID) Seçimi:</b> Her iOS uygulaması için benzersiz bir kimlik yerine geçen App ID&rsquo;yi belirtmelisiniz. Bu, uygulamanızın hangi servisleri kullanabileceğini ve cihaz özelliklerine nasıl erişebileceğini tanımlar.</li>
+
+<li><b>Sertifika ve Cihaz Seçimi:</b> Hangi sertifika ile bu profili kullanacağınıza karar verdikten sonra önceden eklediğiniz test cihazlarından istediklerinizi bu profile dahil ederek profil oluşturma işlemini tamamlayabilirsiniz.</li>
+</ol>
+
+<p>
+Profilinizi oluşturduktan sonra, indirip Xcode&rsquo;a eklemeniz gerekmektedir ya da XCode üzerinden de indirebilirsiniz.
+</p>
+
+<ul class="org-ul">
+<li>Sertifikayı oluşturduk [TAMAM]</li>
+<li>Provisioning Profili oluşturduk [SIRADA]</li>
+<li>Uygulamayı imzaladık [SIRADA]</li>
+</ul>
+</div>
+
+<h3><a id="uygulamayı-imzalama" class="anchor" href="#uygulamayı-imzalama">¶</a>Uygulamayı imzalama</h3><div class="outline-text-3" id="text-org2e624a8">
+<p>
+Bu aşamada, uygulamanızın gerçek cihazlarda çalışabilmesi ve App Store&rsquo;a
+yüklenmesi için gereken imzalamayı gerçekleştirirsiniz.
+</p>
+
+<ol class="org-ol">
+<li><b>Xcode Ayarları:</b> Xcode projenizde, &rsquo;Signing &amp; Capabilities&rsquo; bölümünü açtıktan sonra &rsquo;Team&rsquo; ve &rsquo;Provisioning Profile&rsquo; ayarlarını doğru bir şekilde tanımlayın.</li>
+
+<li><b>Anahtar ve Sertifikaların Kontrolü:</b> Uygulamanızın imzalanabilmesi için ilgili sertifikaların ve anahtarların Mac&rsquo;inizde yüklü olması gerekir. Sertifika oluşturma adımında oluşturduğunuz sertifika dosyasını indirip açtıysanız <b>Keychain Access</b> uygulaması içerisinde bulunmasını bekleriz.</li>
+
+<li><b>Uygulamanın Arşivlenmesi:</b> Uygulamanızın tüm özelliklerini ve ayarlarını kontrol ettikten sonra Xcode&rsquo;daki &rsquo;Product&rsquo; menüsünden
+&rsquo;Archive&rsquo; seçeneğini seçerek uygulamanızı arşivleyebilirsiniz.</li>
+
+<li><b>İmzalama ve Gönderme:</b> Archive işlemi bittikten sonra otomatik olarak Xcode&rsquo;un &rsquo;Organizer&rsquo; penceresi açılır. Burada arşivlediğiniz uygulamayı görebilirsiniz. Bu adımda, uygulamanızı App Store&rsquo;a gönderebilir veya IPA formatında dışa aktarabilirsiniz. Seçtiğiniz Provisioning Profile ile uygulamanız imzalanarak, dağıtıma hazır hale gelir.</li>
+</ol>
+
+<p>
+Uygulamanız dağıtıma hazır hale geldikten sonra, App Store&rsquo;a yükleme veya test dağıtımları için kullanabilirsiniz.
+</p>
+
+<ul class="org-ul">
+<li>Sertifikayı oluşturduk [TAMAM]</li>
+<li>Provisioning Profili oluşturduk [TAMAM]</li>
+<li>Uygulamayı imzaladık [TAMAM]</li>
+</ul>
+
+<p>
+Sonuç olarak, iOS uygulamalarını geliştirirken sertifika ve provisioning profile oluşturma süreçlerini doğru bir şekilde anlamak ve uygulamalarımızı güvenli bir şekilde dağıtmak için bu adımları izlemek önemlidir.
+</p>
+
+<p>
+Bu süreçler, uygulamalarımızın güvenilirliğini ve kullanıcıların gizliliğini korumamıza yardımcı olur. Etkili bir şekilde sertifika ve provisioning profile yönetimi, iOS uygulama geliştirme sürecinin temel bir parçasıdır ve bu yazıda bu süreci daha iyi anlamaya çalıştık.
+</p>
+
+<p>
+Umarım bu bilgiler, mobil uygulama geliştirme yolculuğunuzda size yardımcı olur. Sonraki yazılarda görüşmek üzere!
+</p>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #21</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #18</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #6</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #4</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #3</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #2</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #2</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

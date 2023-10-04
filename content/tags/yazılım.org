@@ -10,6 +10,8 @@
 
 [[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
 
+[[file:../../news/fatal_error_iOS.org][iOS: fatalError - Never ve Sistem Tasarımı]]
+
 [[file:../../news/ios_app_push_certificate_yenileme.org][iOS uygulama bildirim sertifikası oluşturma/yenileme]]
 
 [[file:../../news/ios_deep_link.org][iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı]]

@@ -1,0 +1,4 @@
+#+TITLE: İletişim
+
+[[file:../../news/how_to_ask.org][Soru Sormak]]
+

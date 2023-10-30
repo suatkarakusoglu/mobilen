@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:how_to_ask.org][Soru Sormak]] - Suat Karakuşoğlu · October 27, 2023
 - [[file:apple_event_wonderlust_2023.org][Apple Wonderlust Eylül 2023 Etkinliği]] - Alper Cem Öztürk · October 02, 2023
 - [[file:fatal_error_iOS.org][iOS: fatalError - Never ve Sistem Tasarımı]] - Suat Karakuşoğlu · October 01, 2023
 - [[file:iOS_sertifika_ve_provisioning_profile_i̇slemleri.org][iOS Sertifika ve Provisioning Profile İşlemleri]] - Ali Mert Tekel · September 20, 2023

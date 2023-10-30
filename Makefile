@@ -23,3 +23,6 @@ see-production-site:
 
 see-local-site:
 	open http://localhost:8080
+
+follow-up-deployment-to-production:
+	open https://github.com/suatkarakusoglu/mobilen/actions 

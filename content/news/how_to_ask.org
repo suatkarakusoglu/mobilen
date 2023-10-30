@@ -92,7 +92,7 @@ Uzaktan çalışma ile bu konu biraz daha önemli hale geldi. Çünkü toplantı
 Bu kadar dinamiklik daha iyi yönetilmeyi gerektiriyor. Bir anda 100 kişinin içinde bulunduğu bir toplantıda kendimizi bulurken, aynı dakika içerisinde 2 kişinin sorusunada muhattap olabiliyoruz.
 
 #+begin_quote
-Hızlı ve ücretsiz iletişim'in gerçek maliyeti, iletişim yükü biriktiren kişilerin ortaya çıkmasına sebep oluyor.
+Hızlı ve ücretsiz iletişim'in gerçek maliyeti, iletişim yükü biriktiren kişilerin ortaya çıkmasına sebep olmasıdır.
 #+end_quote
 
 Cevabı tüm ekibi ilgilendiren veya muhtemel bir başkasının da yakın zamanda karşılabileceği sorunlar için ilgili kişilerin bulunduğu bir gruptan soru iletilebilir.

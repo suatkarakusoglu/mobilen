@@ -1,0 +1,135 @@
+#+title: Soru Sormak
+#+date: [2023-10-27 Fri]
+#+author: Suat Karakuşoğlu
+#+filetags: :İletişim:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Fotoğraf [[https://unsplash.com/@derobi][Dominik]]
+[[file:wisdom_how_to_ask.jpg]]
+
+* İçerik
+Merhaba, ufak bir kızım var biraz büyüyüp ayaklanmaya başladı ve hemen *bu ne?* soruları ile muhattap olmaya başladık :).
+
+Merak ve öğrenme ihtiyacı ne kadar da erkenden başlıyor.
+
+Hayatımızda bu kadar erken başlayan bir ihtiyacı nasıl verimli ve etkin bir şekilde beslemeliyiz diyince bocalayabiliyoruz.
+
+İşte soru sormanın en saf hali olan *bu ne?* den, karmaşıklaşan ilişkilerimizi yönetmeye başladığımız yetişkinliğe geçişte hepimiz farklı bir dönüşüm geçişiyoruz; bunun arkasında elbette tecrübelerimiz ve türlü psikolojiler büyük rol oynuyor.
+
+Bir de yazılım gibi bir dünyada iseniz sorunuzun cevabına hangi kaynaklardan, nasıl faydalanarak erişebileceğimiz gibi konular çok çatallı bir yola gidebiliyor.
+
+** Neyi sormak?
+Sormak çok ucuz ve basit bir eylem. Efor alan ise cevaba erişebilmek.
+
+Tek taraflı bir eylem kesinlikle değil, muhattabından efor isteyen bir eylem.
+
+O nedenle bu çabayı neden sizin için göstermeli? Sorumuzu sorarken nasıl karşımızdakine yardımcı olabiliriz?
+
+** Kendimize sormak != Deli misin?
+Kişinin kendisi ile konuşma ihtiyacı kafasındaki fikirleri ve soruları netleştirmesine yardımcı olan çok faydalı bir yol.
+
+O nedenle sorunun muhatabı ilk önce kendimiziz.
+
+Bu durumda düşüncelerimizi daha berrak hale getirebilmek için onu kendimize anlatmaya çalışabiliriz.
+
+Literatürde [[https://en.wikipedia.org/wiki/The_Pragmatic_Programmer][The Pragmatic Programmer]] kitabında da ele alınan [[https://rubberduckdebugging.com/][rubber duck debugging/talking]] olarak geçen bu sohbet bizim kültürümüze nedense *deli misin* olarak evrilmiş.
+
+*** Deliyiz.
+Karşılaştığımız bir sorunu karşımıza bir oyuncak ördek alıp ona anlatmaya çalışarak sorunla ilgili daha güzel bir zemin oluşturabiliriz.
+
+Ya da kafamıza bir huni takip ayna karşısına geçip sorunla ilgili sesli bir şekilde kendimizle konuşabiliriz.
+
+Bu alışkanlığı normalleştirene kadar dillendireceğim sanırım.
+
+** Sormadan önce nelere dikkat etmeliyiz?
+Kendimizle olan sohbetimiz bir yerde tat vermemeye başladığında başka bir muhattap arayabiliriz.
+
+Ancak araştırmamızı netleştirip, hazırlıklı sorduğumuz sorular kişilerin vaktine saygı duyduğumuzu ve aklımıza gelen her soruyu öyle gelişigüzel sormadığımızı hissettirmemiz önemli.
+
+En yakınımızdan uzağa doğru araştırmaya başlamalıyız.
+
+Bunun için önce netleştirdiğimiz sorunun bağlamına dokunan dokümanlara erişip, kurcalamalıyız.
+
+Örnek kullanımlarını görebileceğin, aynı sorunla karşılaşmış veya ihtiyacı olması muhtemel, takım içinde veya cross takımlardaki diğer projeleri inceleyebiliriz. Bu sayede diğer takımlara erişerek çözümü nasıl tatbik ettikleri konusunda yardım alma ihtimalinizde yüksek olacaktır.
+
+Elimizin altındaki hızlıca sistemin manuel/kitapçığında tarama yapabiliriz; bu çağırdığımız bir fonksiyonun dokümantasyonuna bakmak ve hatta kaynak koduna erişip nasıl çalıştığını yorumlayabilmek olabilir.
+
+Sonrasında ise açık kaynak repolarda araştırma yaparak oralardaki çözümleri görebilmek bakış açımızı genişletecektir.
+En çok çıkan bilgi kaynaklarından 'Large Language Model'ler de danışılabilecek birer kaynak olarak hayatımıza girdi. Bu araçları günlük çalışma hayatımıza entegre etmenin yollarını bulmalıyız.
+
+İnternet üzerinden bulduğunuz ve sizin probleminize çözüm olabilecek seçeneklerinizi not alarak belki hangisini seçmenin sizin projenizin/şirketin stratejinize uyup uymadığını değerlendirebileceksiniz.
+Sorduğunuz sorunun zihinleri tetikleyecek tatta olması, çözümü daha keyifli kılacaktır.
+
+** Araştırmaları paylaşmak
+Soruna dair araştırmalarımızı tamamladıktan sonra bunları paylaşmamız gerekiyor.
+
+Dikkat etmemiz gereken noktalardan bir tanesi yakın hissettiğimiz çözümü savunarak konuya başlamamak.
+
+#+begin_quote
+Kendi aklımızdaki çözüme yönelik şekilde soruyu aktarmamalıyız.
+#+end_quote
+
+Soru en yalın şekliyle aktarılmaz ise istemedende olsa çözüm havuzunu daraltmaya sebep olabilir.
+
+Sorun ile ilgili mümkün mertebe ekran görüntüleri yerine kopyalanabilir metinler paylaşmalıyız.
+
+Soru ve cevapların sonradan tekrar dönülüp bakılabilmesi ve referans olarak arşivlenebilmesi için yazılı mecrada olması daha uygundur.
+
+** Nerede sormak?
+Sorunun tartışılacağı ortamı doğru bulabilme için ise bir dua ile başlıyoruz:
+
+#+begin_quote
+Sorumun *gürültüye sebep vermeyecek* şekilde tartışılacağı kadar =dar= çevreyi bulmak için güç;
+
+*Cevaba en yakın zamanda erişebilmeyi* sağlayabilecek kadar =geniş= çevreyi bulmak için sabır;
+
+İkisini yapabilmek için akıl ver.
+#+end_quote
+
+*** Ne kadar dar/geniş çerçevede soruyu tartışabiliriz?
+Uzaktan çalışma ile bu konu biraz daha önemli hale geldi. Çünkü toplantı mecraları ve zamanları çok daha dinamik hale geldi.
+Bu kadar dinamiklik daha iyi yönetilmeyi gerektiriyor. Bir anda 100 kişinin içinde bulunduğu bir toplantıda kendimizi bulurken, aynı dakika içerisinde 2 kişinin sorusunada muhattap olabiliyoruz.
+
+#+begin_quote
+Hızlı ve ücretsiz iletişim'in gerçek maliyeti, iletişim yükü biriktiren kişilerin ortaya çıkmasına sebep oluyor.
+#+end_quote
+
+Cevabı tüm ekibi ilgilendiren veya muhtemel bir başkasının da yakın zamanda karşılabileceği sorunlar için ilgili kişilerin bulunduğu bir gruptan soru iletilebilir.
+
+Gruba sorulan sorularda cevaplar hem başkaları tarafından takip edilebilir hem de geleceğe referans olması açısından sonradan arama yapılabilecek bir alanda bilgi dolaylı yoldan arşivlenmiş olur.
+
+
+** Dil kurallarına uymak
+Soru sormak iletişimin en iyi olması gereken zeminlerinden bir tanesi. O nedenle dilin etkin kullanılması konusunda özen göstermek gerekiyor. Muğlak ifadelerden kaçınmak, edilgen kullanmamak, kısaltmaları dikkatlice kullanmak gibi konulardan bahsedebiliriz.
+
+William Strunk'ın [[https://gutenberg.org/ebooks/37134][The elements of style]] adlı kitabı yazım dili konusunda detaylı örnekleriyle bana çok faydalı olmuş bir kaynak.
+
+** Eşzamanlı ve Eşzamansız iletişimde soru sormak
+Eşzamanlı iletişim ile karşınızdakine anlık olarak soru yöneltip fikirlerini alabilirsiniz. Bu hızlı cevap almanızı sağlayabilir. Soru sorduğunuz kişi ve kişilerin o an müsait olmasını gerektirir. Acil durumlarda veya cevabının net olabileceği sorularda, hemen cevap almaya çalışırken bu eşzamanlı soru/cevap yolu uygundur.
+
+Ancak, üzerine düşünülmesi gereken sorularda, eşzamanlı iletişim cevapları bulmak için karşı tarafın konu hakkında araştırma yapmasına imkan vermez, müsait zaman aralığını ayıramadığı bir takvimi var ise aklındakini tam olarak o sürede anlatamayabilir.
+
+** *No Hello* Politikası.
+Yazı iletişimdeki diğer bir problem ise soruyu sormadan önce duyulan endişedir.
+
+ChitChat denilen bir konuya girebilmek için rahat ortam sağlamaya çalışmak yazılı soru sormada bir bariyere sebep oluyor.
+
+Bu bariyeri en iyi anlatan örnekler [[https://nohello.net/en/][No Hello]] politikasını anlatırken izah edilmiş.
+Yazılı iletişimin en güzel yanlarından biri, konuya dair cevap verebilecek kişilerin de hazırlanabilmesine imkan vermesidir.
+
+Soru sormayı rahat hale getirmek için gereken ChitChat ortamları takım toplantılarında ve başka denkleşmelerde yapılabilir.
+O nedenle yazışmalarımızda 'Merhaba, nasılsın dedikten sonra direkt olarak sorumuzu yalın bir şekilde yazmalıyız'.
+
+** Nezaket
+Sizin için birisi vakit ayırıp cevap vermeye çabaladığı noktada teşekkürü eksik etmemek gerekir.
+
+Soru/cevap sonrası, konu hakkında bilgilendirme mesajlarını paylaşmak eğer çözümlendiyse çözüme giden yolda başka nelerle karşılaştığınızı ve nihayetinde nasıl bir çözüme kavuştuğunuzu belirtmek soruyu askıda bırakmamak adına önemlidir.
+
+Marifet ve iltifat birbirine tabidir. Bunları yaparken size yol göstermiş kişileri takdir ederseniz o kişilerin de faydalı olmanın verdiği keyfi çıkarmasını sağlayabilirsiniz.
+
+** Özetle
+Burada bahsi geçen tüm yöntemler soru sormayı daha akışkan hale getirme çabası. Umarım size faydalı bir bakış açısı sağlamıştır.
+
+** Kaynakça
+Eric Steven Raymond'in bloğundaki [[http://www.catb.org/~esr/faqs/smart-questions.html][Smart questions]] yazısı biraz eski kalmış olsa da bana ilham olmuştur.

@@ -32,6 +32,8 @@
 
 [[file:../../news/the_art_of_readable_code_2.org][Okuma Notları: The Art Of Readable Code (2)]]
 
+[[file:../../news/the_art_of_readable_code_3_final.org][Okuma Notları: The Art Of Readable Code (3) Son]]
+
 [[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]]
 
 [[file:../../news/wwdc_2023_geldi.org][WWDC 2023 geldi!]]

@@ -1,0 +1,340 @@
+#+title: Sembol Dünyasının Büyüsü: SF Symbols
+#+date: [2023-10-31 Tue]
+#+author: Burak Ceylan
+#+filetags: :Apple:iOS:Yazılım:Tasarım:
+
+[[https://www.linkedin.com/in/burak-ceylan-828abb181/][Burak Ceylan]] yazdı.
+
+[[file:sf-symbols-og-twitter.jpg]]
+
+* İçerik
+Merhaba Mobilen okurları, bu yazımda sizlere SF Symbols'ün büyüleyici
+dünyasına adım atarken nelerin beklediğini elimden geldiğince anlatmaya
+çalışacağım.
+
+** SF Symbols Nedir?
+SF Symbols, Apple'ın geliştiricilere sunmuş olduğu güçlü bir sembol
+kitaplığıdır. Kitaplığın sunmuş olduğu bu semboller, ıOS, maçOS veya
+ipadOS platformları için geliştirilen uygulamaların kullanıcı arayüzünü
+zenginleştirmek ve daha etkileyici hale getirmek için harika bir imkan
+sunmaktadır.
+
+** SF Symbols ile Neler Yapabiliriz?
+SF Symbols kitaplığının yetkinliklerini uyumluluk, oluşturma modları
+(rendering modes), değişken renk (multicolor), boyutlar ve ağırlık
+(weight and scales), tasarım çeşitleri (designt variants) ve
+animasyonlar (animations) konu başlıkları üzerinde durarak anlatmaya
+çalışacağım.
+
+*** Uyumluluk
+SF Symbols, San Francisco sistem yazı tipiyle sorunsuz bir şekilde
+bütünleşen, tüm ağırlık ve boyutlardaki metinlerle otomatik olarak
+hizalanan binlerce tutarlı ve yüksek düzeyde yapılandırılabilir sembol
+sağlar.
+
+*** Görüntüleme Modları (Rendering Modes)
+SF Symbols 3 ve sonrası, sembollerin görünüm yönetimi için oluşturma
+modları =Rendering Modes= adı verilen bir dizi, tek renkli =monochrome=,
+hiyerarşik =hierarchical=, palet =palette= ve çok renkli =multicolor=,
+seçenek sunar. Bu seçeneklerin bize sağlamış olduğu çeşitliliği aşağıda
+yazmış olduğum kod bloğu ile örnekleyerek açıklayacağım.
+
+#+begin_src swift
+  import SwiftUI
+
+  struct ContentView: View {
+      var symbols: [String] =
+        [
+          "square.and.arrow.up",
+          "folder.badge.plus",
+          "trash.slash",
+          "calendar.day.timeline.right",
+          "list.number",
+          "textformat.abc.dottedunderline",
+          "iphone.gen3.radiowaves.left.and.right",
+          "pc",
+        ]
+
+      var body: some View {
+          HStack {
+              ForEach(symbols, id: \.self) { symbol in
+                  Image(systemName: symbol)
+              }
+          }
+      }
+  }
+#+end_src
+
+Yukarıdaki kod bloğunda SF Symbols kütüphanesindeki isimlere göre
+oluşturulmuş sekiz adet sembol ekrana çizdirilmektedir.
+
+*Tek Renkli (Monochrome):* Sembolün oluşturulma modunu monochrome (tek
+renkli) olarak ayarlamamız sonucunda sembolün tüm katmanlarına
+istediğimiz renk uygulanarak oluşturulmaktadır.
+
+#+begin_src swift
+  ForEach(symbols, id: \.self) { symbol in
+      Image(systemName: symbol)
+        .symbolRenderingMode(.monochrome)
+        .foregroundStyle(.blue)
+  }
+#+end_src
+
+#+caption: Monochrome
+[[file:sf-monochrome@2x.png]]
+
+*Hiyerarşik (Hierarchical):* Semboldeki tüm katmanlara verilen renk
+uygulanmakta ve katmanlardaki rengin opaklığı katmanların hiyerarşi
+düzeyine göre otomatik olarak ayarlanarak oluşturulmaktadır.
+
+#+begin_src swift
+  ForEach(symbols, id: \.self) { symbol in
+      Image(systemName: symbol)
+        .symbolRenderingMode(.hierarchical)
+        .foregroundStyle(.blue)
+  }
+#+end_src
+
+#+caption: Hiyerarşik
+[[file:sf-hierarchical@2x.png]]
+
+*Palet (Palette):* Hiyerarşideki her katman icin bir belirtilen renk
+kullanılarak sembolün iki veya daha fazla renkten oluşmasını
+sağlamaktadır.
+
+#+begin_src swift
+  ForEach(symbols, id: \.self) { symbol in
+      Image(systemName: symbol)
+        .symbolRenderingMode(.palette)
+        .foregroundStyle(.blue, .gray)
+  }
+#+end_src
+
+#+caption: Palet
+[[file:sf-palette@2x.png]]
+
+*Çok Renkli (Multicolor):* Sembolun taban (base) katmanındaki rengi
+belirtilir ve diger katmanlarindaki renkler sistem tarafindan konfigüre
+edilir.
+
+#+begin_src swift
+  ForEach(symbols, id: \.self) { symbol in
+      Image(systemName: symbol)
+        .symbolRenderingMode(.multicolor)
+        .foregroundStyle(.blue)
+  }
+#+end_src
+
+#+caption: Çok Renkli
+[[file:sf-multicolor@2x.png]]
+
+*BONUS:*
+
+#+begin_src swift
+  // Yukarıda açıkladığım oluşturma modlarında belirttiğimiz renkler yerine
+  // linear gradient kullanılarak semboller kullanıcılar için
+  // daha ilgi çekici bir hale getirilebilmektedir.
+
+  Image(systemName: "person.3.sequence.fill")
+    .symbolRenderingMode(.palette)
+    .foregroundStyle(
+      .linearGradient(colors: [.red, .black], startPoint: .top, endPoint: .bottomTrailing),
+      .linearGradient(colors: [.green, .black], startPoint: .top, endPoint: .bottomTrailing),
+      .linearGradient(colors: [.blue, .black], startPoint: .top, endPoint: .bottomTrailing)
+    )
+#+end_src
+
+#+caption: Bonus: Gradientli
+[[file:how-to-get-custom-colors-and-transparency-with-sf-symbols-5@2x.webp]]
+
+*** Değişken Renk (Variable color)
+SF Symbols 4 ile birlikte gelen değişken renk özelliği sayesinde
+uygulama içerisindeki sembollerin oluşturma modundan bağımsız olarak
+kapasite veya güç gibi zaman içerisinde değişkenlik gösterebilen
+özellikleri temsil edilebilir oldu. Sembole verilen yüzde değer ile
+sembolün katmanlarının opaklığı ayarlanarak kullanıcıya sunulmaktadır.
+
+#+begin_src swift
+  import SwiftUI
+
+  struct ContentView: View {
+      @State var progress: Double = 0
+
+      var formattedProgress : String {
+          String(format: "%.0f", progress/0.33)
+      }
+
+      var symbols: [String] =
+        [
+          "speaker.wave.3.fill",
+          "wifi",
+          "chart.bar.fill",
+          "touchid",
+        ]
+
+      var body: some View {
+          VStack {
+              HStack {
+                  ForEach(symbols, id: \.self) { symbol in
+                      Image(systemName: symbol, variableValue: progress)
+                        .imageScale(.large)
+                        .foregroundStyle(.red)
+                  }
+              }
+                .padding()
+
+              Text("Current Progress: \(formattedProgress)")
+                .font(.system(size: 25, weight: .bold, design: .rounded))
+
+              Slider(value: $progress, in: 0...1, step: 0.33){
+              } minimumValueLabel: {
+                  Text("0").font(.title).fontWeight(.bold)
+              } maximumValueLabel: {
+                  Text("3").font(.title).fontWeight(.bold)
+              }
+                .padding()
+
+          }
+            .foregroundStyle(.blue)
+            .font(.system(size: 100))
+      }
+  }
+
+#+end_src
+
+#+caption: Değişken Renk-1
+[[file:variable_color.gif]]
+
+#+caption: Değişken Renk-2
+[[file:sf-variable-color@2x.png]]
+
+*** Boyutlar ve Ağırlık (Scales and Weights)
+SF Symbols, barındırdığı semboller için sağladığı üç adet boyut (small,
+medium (the default), large) ve dokuz adet ağırlık (ultralight, thin,
+light, regular, medium, semibold, bold, heavy, black) çeşitliliği ile
+uyarlanabilir (adaptable) tasarımlar oluşturmaya yardımcı olmaktadir.
+
+ImageScale ve fontWeight view modifierları aracılığı ile sembolün boyut
+ve yazı tipi ağırlığı ayarlanabilmektedir.
+
+#+caption: Boyutlar
+[[file:Scales.png]]
+
+#+caption: Ağırlıklar
+[[file:Weights.png]]
+
+#+begin_src swift
+  import SwiftUI
+
+  struct ContentView: View {
+
+      var body: some View {
+          Image(systemName: "folder.badge.plus")
+            .foregroundStyle(.blue)
+            .imageScale(.large)
+            .fontWeight(.bold)
+
+      }
+  }
+
+#+end_src
+
+Aşağıda bulunan sınıflandırma görseli Apple'ın resmi sitesinden
+alıntılanmış olup kullanımların sembole etkisini detaylıca
+göstermektedir.
+
+#+caption: SF Boyut ve Ağırlıklar
+[[file:sf-scales-weights@2x.png]]
+
+#+begin_quote
+Boyutlar San Francisco sistem yazı tipinin  başlık yüksekliğine (yazı tipindeki büyük harfin satır taban çizgisi üzerindeki yüksekliği) göre tanımlanmaktadır.
+#+end_quote
+
+*** Tasarım çeşitleri (Design variants)
+SF Symbols iOS15 ile birlikte gelen symbolVariant view modifierı
+sayesinde barındırdığı sembollerin anlamını çeşitlendirebimektedir. Bu
+çeşitler daire (circle), kare (square), dörtgen (rectangle), doldurma
+(fill) ve çizgidir (slash).
+
+#+caption: Çeşitler
+[[file:sf-variants@2x.png]]
+
+#+begin_src swift
+  // Örnekte kullanmış olduğum symbolVariant view modifierları
+  // birbiri ardindan kullanılarak cumulatif bir sonuc elde edilebilmektedir.
+
+  import SwiftUI
+
+  struct ContentView: View {
+
+      var body: some View {
+          Image(systemName: "heart")
+            .imageScale(.large)
+            .symbolVariant(.circle)
+            .symbolVariant(.slash)
+
+      }
+  }
+
+#+end_src
+
+*** Animasyonlar (Animations)
+SF Symbols, barındırdığı sembolleri mecazen canlandırmak için
+kullanılabilecek ve konfigure edilerek kişiselleştirilebilecek animasyon
+dizisi sunmaktadır. SF Symbols 5 ve sonrasında, başlıca =appear=
+(görünme), =disappear= (kaybolma), =bounce= (zıplama), =scale= (büyüyüp
+küçülme), =pulse= (nabız), =variable color= (değiken renk) ve =replace= (yer
+değiştirme) animasyonlarını sunmaktadır.
+
+SymbolEffect view modifierı aracılığı animasyon efekti ayarlanabilmektedir.
+
+#+begin_src swift
+  import SwiftUI
+
+  struct ContentView: View {
+
+      var body: some View {
+          VStack {
+              Image(systemName: "folder.badge.plus")
+                .symbolEffect(.appear)
+                .frame(width:  100, height: 100)
+          }
+            .padding()
+      }
+  }
+#+end_src
+
+*Görünme (Appear):* Sembolün yavaş bir şekilde ortaya çıkmasını
+sağlamaktadır.
+[[file:sf-animation-appear.gif]]
+
+*Kaybolma (Disappear):* Sembolün yavaş bir şekilde görünmez hale gelmesini sağlamaktadır.
+[[file:sf-animation-disappear.gif]]
+
+*Zıplama (Bounce):* Sembolün yukarı aşağı hareketi ile elastik bir zıplama efekti meydana getirilmektedir.
+[[file:sf-animation-bounce.gif]]
+
+*Boyut (Scale):* Sembolün büyütülüp küçültülerek boyut değişikliğini gerçekleştirmektedir.
+[[file:sf-animation-scale.gif]]
+
+*Nabız (Pulse):* Sembolün belirli katmanlarındaki opaklığı periyodik
+olarak değiştirerek nabız atımı görünümü sağlar.
+[[file:sf-animation-pulse.gif]]
+
+*Değişken Renk (Variable color):* Sembol içerisindeki katmanların
+opaklığını artımlı olarak değiştirmektedir.
+[[file:sf-animation-variable-color.gif]]
+
+*Yer Değiştirme (Replace):* Bir sembolün diğeri ile yer değiştirmesinin
+geçişinin animasyonunu sağlamaktadır.
+[[file:sf-animation-replace.gif]]
+
+Artık SF Symbols kitaplığını kullanarak uygulamanızın arayüzünü daha
+anlaşılır ve tutarlı hale getirebilirsiniz.
+
+Bir sonraki yazıda tekrar buluşmak dileğiyle.
+
+** Kaynakça
+- [[https://www.hackingwithswift.com/quick-start/swiftui/how-to-animate-sf-symbols][Animate SF Symbols]]
+- [[https://developer.apple.com/design/human-interface-guidelines/sf-symbols][Apple Human Interface Guideline for SF Symbols]]
+- [[https://www.hackingwithswift.com/quick-start/swiftui/how-to-get-custom-colors-and-transparency-with-sf-symbols][Custom color and Transparency]]

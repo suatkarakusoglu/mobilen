@@ -345,7 +345,7 @@
   (let ((exported-link (org-export-custom-protocol-maybe link contents 'html info)))
     (cond
      (exported-link exported-link)
-     ((string-match-p "\\(.*\\.\\(jpg\\|png\\)\\)" (org-element-property :raw-link link))
+     ((string-match-p "\\(.*\\.\\(jpg\\|png\\|webp\\|gif\\)\\)" (org-element-property :raw-link link))
       (format "<img src=\"/img/%s\" class=\"content-image\" width=\"%s\">"
               (file-name-nondirectory (org-element-property :path link))
               ;; (org-export-read-attribute :attr_html link)
@@ -575,7 +575,7 @@ holding contextual information."
               :with-timestamps nil)
             '("systemcrafters:assets"
               :base-directory "./assets"
-              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|woff2\\|ttf"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|woff2\\|ttf\\|webp"
               :publishing-directory "./docs"
               :recursive t
               :publishing-function org-publish-attachment)

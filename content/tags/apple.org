@@ -4,5 +4,7 @@
 
 [[file:../../news/apple_event_wonderlust_2023.org][Apple Wonderlust Eylül 2023 Etkinliği]]
 
+[[file:../../news/apple_search_engine_calismalari.org][Apple Arama Motoru Çalışmaları]]
+
 [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]
 

@@ -6,9 +6,8 @@
 [[https://www.linkedin.com/in/ugurcan-durak/][Uğurcan Durak]] yazdı.
 
 * İçerik
-#+CAPTION: [[https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif][Netfox'u İzlemek için tıkla]]
 #+ATTR_HTML: :width 400px :style float:center;
-[[file:NetFoxImage.jpg]]
+[[file:netfox_overview1_5_3.gif]]
 
 Merhabalar, bu yazıda mobil cihazda network isteklerini detaylı şekilde görüntülemek için kullanılan faydalı olduğunu düşündüğüm *[[https://github.com/kasketis/netfox][Netfox]]* kütüphanesinden bahsedicem.
 
@@ -65,4 +64,3 @@ Daha detaylı incelemek isteyenler için aşağıya link bırakıyorum. Umarım 
 
 ** Kaynakça
 1. [[https://github.com/kasketis/netfox][Netfox Github Kütüphanesi]]
-2. [[https://raw.githubusercontent.com/kasketis/netfox/master/assets/overview1_5_3.gif][Örnek Kullanım Vidyosu]]

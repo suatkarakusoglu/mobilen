@@ -144,3 +144,6 @@ Kodu daha açık bir şekilde yazmamıza yardımcı olabilecek basit süreç şu
 3 bölümlük bu seride *The Art Of Readable Code* kitabının okuma
 notlarını beraber inceledik. Umarım bu seri okuyucularımız için faydalı
 olmuştur. Başka okuma notları serilerinde görüşmek dileğiyle.
+
+** Kaynakça
+[[https://www.goodreads.com/en/book/show/8677004][The Art of Readable Code]]

@@ -1,0 +1,196 @@
+#+title: Genericlerle Kodumuzu Biraz Esnetelim
+#+date: [2023-10-27 Fri]
+#+author: Sevban Bayır
+#+filetags: :Kotlin:Yazılım:
+
+[[https://www.linkedin.com/in/sevban-bayir][Sevban Bayır]] yazdı.
+
+* İçerik
+Adları üzerinde Genericler kodlarımızı daha esnek kılar ve aynı zamanda
+yazdığımız class'ları farklı veri tipleriyle kullanabilmek için
+boilerplate kod yazmaktan bizleri kurtarırlar.
+
+Örneğin, kodumuzda bir liste oluştururken onun içerisine o an istediğimiz veri tipini
+koyabilmeyi bekleriz yani o an bize kullanıcıların yaşlarının olduğu bir
+liste gerekiyorsa bir integer listesi; eğer isimleri gerekiyorsa bir
+string listesi oluşturabilmeliyizdir ve çoğu dilde de bunu yapabiliriz.
+Peki ama hiç merak ettiniz mi bunu yapabilmemizi sağlayan mekanizma
+nedir, kullandığımız programlama dili bu özelliği bize nasıl sağlıyor?
+
+Bu yazımızda Kotlin özelinde bunlara cevaplar arayacağız. Önce bahsettiğimiz örneği kanlı canlı görelim:
+
+#+begin_src kotlin
+  val names: List<String> = listOf("Sevban", "Bayır")
+  val ages: List<Int> = listOf(20, 23)
+  val gpas: List<Double> = listOf(2.5, 3.6)
+#+end_src
+
+Ve hikayenin ana kahramanı olan List arayüzünün Kotlin'de nasıl tanımlandığına bakalım:
+
+#+begin_src kotlin
+  public interface List<out E> : Collection<E> {...}
+#+end_src
+
+Burada bizim generic tip parametremizi temsil ediyor. Generic tip
+parametresiyle compiler'a "Bu arayüz herhangi bir tip(Int, Double,
+String) ile çağırılabilir", outvariance anahtar kelimesine sonraki
+bölümde değineceğiz ancak şimdilik List'e verdiğimiz tip parametresinin
+alt tipleriyle kendisi arasında bir değişebilirlik anlaşması imzalıyoruz
+diyebiliriz.
+
+** Variance
+List arayüzünün tanımlanışını ilk gördüğümüzde
+out anahtar kelimesini elbette sorguluyoruz. Neden sadece List olarak
+tanımlanmamış ki diyebiliyoruz. İçgüdüsel olarak, aşağıdaki kod
+parçacığının sorunsuz bir şekilde compile etmesini bekleyebiliriz:
+
+#+begin_src kotlin
+  var numberList : List<Number> = listOf(1,2,3)
+  val intList : List<Int> = listOf(1,2,3)
+  numberList = intList
+#+end_src
+
+Çünkü Int, Number ın alt tipidir, değil mi ? Evet öyledir, fakat gerekli
+variance anahtar kelimesi kullanılmadığı sürece List, List in alt tipi
+değildir.
+
+Şimdi gelin Kotlinde var olan 3 tip variance durumunu inceleyelim:
+
+- Invariance
+- Covariance
+- Contravariance
+
+** Invariance
+Classınızı tanımlarken generic tip parametresinden önce herhangi bir
+anahtar kelime kullanmazsanız classınızı invariant yapmış olursunuz.
+Variance'lar arasında en basit olanıdır ve bize o classı herhangi bir
+tiple oluşturabilmekten başka, yani generic yapıların en temel
+özelliğini sunmaktan başka bir şey sağlamaz.
+
+#+begin_src kotlin
+  // Parent
+  abstract class Car
+
+  // Child
+  class Audi : Car()
+
+  // Child
+  class Mercedes : Car()
+
+  class CarMechanic<T: Car>
+
+  fun main() {
+      var mechanic = CarMechanic<Audi>()
+      // Buradan itibaren bu property'nin tipi CarMechanic<Audi>'dir
+      // ve ona başka tipte bir şey(mesela CarMechanic<Mercedes> atanamaz.
+      val genericMechanic: CarMechanic<Car> = mechanic // 👈🏻 Compiler hatası !
+  }
+#+end_src
+
+Dikkat ederseniz invariance'ta generic kullanarak elde etmeyi
+beklediğimiz tek esneklik CarMechanic classını tanımlarken içerisine Car
+classı veya ondan türetilmiş olan diğer classları verebilmemizdir.
+
+Tanımlanan class ile onun diğer türevleri arasında herhangi bir değişebilirlik ilkesi söz konusu değildir ve gördüğünüz üzere bunu yapmaya çalışmak compile time'da hataya sebep olur.
+
+** Covariance: out
+Covariance, bir class'ın alt tiplerini tıpkı kendisiymiş gibi kullanabilmek istediğimizde generic tip parametremizin
+yanına =out= anahtar kelimesini ekleyerek elde ettiğimiz bir variance tipidir. Bu şekilde, yukarıdaki List tanımında bahsettiğimiz değişebilirlik anlaşmasını imzalamış oluruz.
+
+#+begin_src kotlin
+  //Parent
+  abstract class Car
+
+  //Child
+  class Audi : Car()
+
+  //Child
+  class Mercedes : Car()
+
+  class CarMechanic<out T: Car> {
+      fun repair() {}
+  }
+
+  class Workshop {
+      // Bu fonksiyon bizden bir Car tipiyle tanımlanmış bir
+      // CarMechanic paslamamızı istiyor.
+      fun addMechanic(mechanic: CarMechanic<Car>) { }
+  }
+  fun main() {
+      val mechanic = CarMechanic<Audi>()
+      val workshop = Workshop()
+
+      // Eğer CarMechanic class'ımız covariant(out) olarak
+      // tanımlanmasaydı bu satırdaki atamayı yapamayacaktık.
+      workshop.addMechanic(mechanic)
+  }
+#+end_src
+
+** Contravariance: 'in'
+Contravariance, covariance'ın tam tersidir. Classımızın generic tip parametresine =in= anahtar kelimesini ekleyerek bu classın belirttiğimiz generic tip parametresi ve onun üst tipleriyle tanımlanabileceğini belirtmiş oluruz.
+
+#+begin_src kotlin
+  interface Comparable<in T> {
+      fun compareTo(other: T) : Int
+  }
+
+  fun doSomething(
+      comparable: Comparable<Number>
+  ) {
+      val x : Comparable<Double> = comparable
+  }
+#+end_src
+
+** Unsafe Variance
+Dikkat ettiyseniz buraya kadar verdiğimiz örneklerde contravariance(in)
+olarak tanımladığımız type parametreleri classlarımızın içerisindeki
+fonksiyonlarda gerekiyorsa parametre olarak aldık fakat return type
+olarak atamadık; tam tersi covariance olarak tanımladığımız type
+parametrelerini de gerekiyorsa return type olarak verdik ancak parametre
+olarak almadık.
+
+Eğer bunları yapsaydık kodumuzda "Unsafe Variance" olarak adlandırılan bir tür tutarsızlığa sebep olmuş olacaktık. Gelin
+bir örnekle inceleyelim:
+
+#+begin_src kotlin
+  abstract class ReadOnlyBox<out T>(){
+      abstract fun getItem(a:@UnsafeVariance T) :T
+  }
+
+  fun main(){
+      val intBox: ReadOnlyBox<Int> = object : ReadOnlyBox<Int>() {
+          override fun getItem(a: Int): Int {
+              return a
+          }
+      }
+
+      val anyBox: ReadOnlyBox<Number> = intBox
+      val value: Number = anyBox.getItem(10.454434234324234)
+      println(value)
+  }
+
+  //Output: 10
+#+end_src
+
+ReadOnlyBox adında covariant bir class tanımladık ve içerisinde Unsafe
+Variance içeren bir fonksiyon oluşturduk. Daha sonra intBox ve numberBox
+şeklinde 2 adet ReadOnlyBox objesi oluşturduk ve intBox'ı numberBox'a
+atadık.
+
+Daha doğrusu atayabildik çünkü ReadOnlyBox bir covariant class
+ve Number ile oluşturduğumuz bir objesine Int olanını yani alt
+tiplerinden biriyle oluşturulmuş olanını atayabiliriz.
+
+Nihayetinde numberBox'ımızın getItem fonksiyonuna bir float gönderdiğimizde onu
+gizlice integer'a dönüştürmüş olduk. Burada bu basit örnek üzerinden çok
+açık bir şekilde ortada gibi görünebilir fakat yine de Unsafe Variance
+kullanımında karşılaşabileceğimiz bir hatayı önceden görmek bize
+debuglarımızda zaman kazandırabilir.
+
+** Kapanış
+Sonuç olarak, Generic yapılar programlamada çok temel ve önemli bir konsepttir. Genericler sayesinde az bir kodla proje genelinde kullanacağımız yapılar oluşturabilir ve projemize bir bütünlük sağlayabiliriz.
+
+Bir sonraki yazıda görüşmek üzere. Bugsız kodlamalar :)
+
+** Kaynakça
+- [[https://kotlinlang.org/docs/generics.html#declaration-site-variance][Kotlin Dokümantasyonu]]

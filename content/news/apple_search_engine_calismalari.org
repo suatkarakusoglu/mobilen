@@ -1,0 +1,26 @@
+#+title: Apple Arama Motoru Çalışmaları
+#+date: [2023-10-31 Tue]
+#+author: Mehmet Güven
+#+filetags: :Apple:Haber:
+
+[[https://www.linkedin.com/in/mehmetguvenn/][Mehmet Güven]] yazdı.
+
+[[file://google_vs_apple.jpg]]
+
+* İçerik
+Teknoloji devi Apple, arama motoru pazarında önemli bir hamle yaparak Google'ı ciddi bir rakip olmayı hedefliyor. Apple, yıllık milyar dolarlık bağımlılığını sonlandırmak amacıyla kendi arama motoru Pegasus'u geliştirmeye başladı. Pegasus, yapay zeka ve makine öğrenimi alanındaki uzmanlar tarafından geliştiriliyor.
+
+Apple, Spotlight arama özelliğini geliştirerek, kullanıcılara web sonuçlarından uygulama detaylarına ve belgelere kadar birçok farklı içeriği Pegasus ile sunmayı hedefliyor.
+
+Pegasus, sadece iPhone'larla sınırlı kalmayacak; aynı zamanda App Store ve diğer uygulamalarda da
+kullanılacak. Pegasus ile birlikte, kullanıcılar istedikleri uygulamaları daha kolay bir şekilde bulabilecek. Apple, Pegasus ile
+reklam gelirlerini de artırmayı hedefliyor.
+
+Google, Apple ekosisteminde varsayılan arama motoru olarak kalmak için yıllık milyar dolarlar seviyesinde ödeme yapmaya devam ediyor. Ancak Apple'ın kendi arama motorunu geliştirmesi, bu anlaşmanın sona ermesine veya yeniden değerlendirilmesine yol açabilir. Ayrıca, Apple'ın reklam gelirlerini artırma potansiyeli, Google'ı olumsuz etkileyebilir.
+
+Apple'ın Pegasus arama motorunun tam olarak ne zaman piyasaya sürüleceği henüz belirsizliğini koruyor. Apple'ın bu adımı ile teknoloji dünyasında büyük bir rekabetin başladığı görülüyor. Apple ve Google arasındaki arama motoru pazarındaki rekabet, kullanıcılara daha fazla seçenek sunabilir ve teknoloji dünyasında önemli bir değişim yaratabilir.
+
+Sonuç olarak; Apple'ın Pegasus projesi, Google ile olan rekabeti daha da kızıştırabilir ve her iki şirketin stratejilerini ve rekabetini etkileyebilir.
+
+* Kaynakça
+- [[https://superchargednews.com/2023/10/01/apple-pegasus-search-google/][Apple's Pegasus Search Engine]]

@@ -1,0 +1,146 @@
+#+title: Okuma Notları: The Art Of Readable Code (3) Son
+#+date: [2023-10-30 Mon]
+#+author: Yusuf Kaya
+#+filetags: :Kitap:Yazılım:
+
+[[https://linkedin.com/in/myusufka][Yusuf Kaya]] yazdı.
+
+* İçerik
+Merhabalar, bu sayıda *The Art Of Readable Code* kitabının okuma
+notlarının son bölümünü paylaşacağım.
+
+** Kodu Yeniden Düzenleme
+Bu bölümde, kodunuzu fonksiyon düzeyinde yeniden düzenleyebileceğimiz
+değişiklikleri tartışacağız. Özellikle, kodumuzu yeniden düzenlemenin üç
+yolunu ele alacağız:
+
+1. Ana hedefinizle ilgisi olmayan "ilgisiz alt sorunları" çıkarın.
+2. Kodunuzu sadece bir görevi yerine getirecek şekilde yeniden
+   düzenleyin.
+3. Önce kodunuzu kelimelerle tanımlayın ve bu tanımı daha temiz bir
+   çözüme rehberlik etmek için kullanın.
+
+*** İlgisiz Alt Sorunları Çıkarmak
+Mühendislik, büyük sorunları küçük parçalara bölmek ve bu sorunların
+çözümlerini bir araya getirmekle ilgilidir. Bu prensibi kodumuza
+uygulamak, onu daha sağlam ve okunaklı hale getirir:
+
+1. Bir fonksiyonu veya kod bloğunu inceleyin ve kendinize şu soruyu
+   sorun: "Bu kodun hedefi nedir?"
+2. Her kod satırı için kendinize şu soruyu sorun: "Bu kod, belirlenen
+   hedefe doğrudan katkıda bulunuyor mu? Yoksa bu hedefe ulaşmak için
+   gerekli olan ilgisiz bir alt sorunu mu çözüyor?"
+3. Eğer yeterli sayıda kod satırı ilgisiz bir alt sorunu çözüyorsa, bu
+   kodu ayrı bir fonksiyona çıkarın.
+
+Şimdi, bu tekniği fark etmek kolaydır ancak birçok programcı bu tekniği
+yeterince kullanmaz. İlgisiz alt sorunları aktif olarak aramak önemli
+bir yöntemdir.
+
+#+begin_src swift
+  func findClosestLocation(lat: Double, lng: Double, array: [Location]) -> Location? {
+      var closest: Location?
+      var closestDist = Double.greatestFiniteMagnitude
+      for location in array {
+          let dist = sphericalDistance(lat1: lat, lng1: lng, lat2: location.latitude, lng2: location.longitude)
+          if dist < closestDist {
+              closest = location
+              closestDist = dist
+          }
+      }
+      return closest
+  }
+
+  func sphericalDistance(lat1: Double, lng1: Double, lat2: Double, lng2: Double) -> Double {
+      let lat1Rad = radians(lat1)
+      let lng1Rad = radians(lng1)
+      let lat2Rad = radians(lat2)
+      let lng2Rad = radians(lng2)
+
+      let dist = acos(sin(lat1Rad) * sin(lat2Rad) + cos(lat1Rad) * cos(lat2Rad) * cos(lng2Rad - lng1Rad))
+
+      return dist
+  }
+#+end_src
+
+Bu kod içindeki sphericalDistance, iki lat/long noktası arasındaki
+küresel mesafeyi hesaplamakla ilgili ilgisiz bir alt sorunu çözmektedir.
+Bu nedenle, bu kodu ayrı bir fonksiyona çıkarmak mantıklıdır.
+
+Bunun sonucunda, kod daha okunaklı hale gelir ve hedefe odaklanmak daha
+kolaydır. Ayrıca, "sphericalDistance" işlevi izole bir şekilde test
+etmek daha kolay olacaktır ve gelecekte yeniden kullanılabilir. Bu
+nedenle, bu "ilgisiz" bir alt sorundur.
+
+*** Sadece Bir Görev
+Kod, birden fazla şeyi aynı anda yaparsa anlamak daha zor olur. Tek bir
+kod bloğu, yeni nesneleri başlatma, verileri temizleme, girişleri
+ayrıştırma ve iş mantığını uygulama gibi çok sayıda işlemi aynı anda
+yapabilir. Eğer tüm bu kodlar bir araya gelmişse, her "görev" tek tek
+başlatılmadıkça anlamak zor olacaktır.
+
+#+begin_quote
+Kod, sadece bir görevi yerine getirecek şekilde düzenlenmelidir.
+#+end_quote
+
+Muhtemelen "fonksiyonlar sadece bir şey yapmalıdır" önerisini
+duymuşsunuzdur. Önerimiz benzerdir, ancak her zaman fonksiyon
+sınırlarıyla ilgili değildir. Elbette büyük bir fonksiyonu birden fazla
+küçük fonksiyona bölmek iyi bir yaklaşım olabilir. Ancak bunu yapmasanız
+bile, kodunuzu hala bu büyük fonksiyon içinde ayrı mantıklı bölümler
+gibi hissettirecek şekilde düzenleyebilirsiniz.
+
+Kodunuzu "bir görev bir kez" yapmasını sağlamak için aşağıdaki adımları
+izleyebilirsiniz:
+
+1. Kodunuzun yaptığı tüm "görevleri" listeleyin. "Görev" kelimesini
+   oldukça serbest bir şekilde kullanıyoruz - bu, "bu nesnenin geçerli
+   olduğundan emin olun" gibi küçük olabilir veya "ağaçtaki her düğümü
+   yineleyin" gibi belirsiz olabilir.
+2. Bu görevleri mümkün olduğunca farklı işlevlere veya en azından kodun
+   farklı bölümlerine ayırmaya çalışın.
+
+Şimdi örnekle bunu inceleyelim:
+
+#+begin_src swift
+  // Örnek: Bir görevi birden fazla işlevle ayırmak
+  func validateObject(_ object: SomeObject) -> Bool {
+      // İlgili nesnenin geçerli olup olmadığını kontrol edin
+      // ...
+  }
+
+  func parseInput(_ input: String) -> ParsedData {
+      // Girişi ayrıştırın ve işleyin
+      // ...
+  }
+
+  func applyBusinessLogic(_ data: ParsedData) -> Result {
+      // İş mantığını uygulayın
+      // ...
+  }
+#+end_src
+
+Bu şekilde, kodunuzun karmaşıklığını azaltabilir ve her bir görevi daha
+açık ve bağımsız hale getirebilirsiniz. Temel olarak, genel işlevleri
+ayırarak projenizin temel kısmına odaklanabilirsiniz.
+
+*** Düşünceleri Koda Dönüştürmek
+Bu bölümde, kodu daha açık ve anlaşılır bir şekilde yazmamıza yardımcı
+olabilecek basit bir teknik olan düşüncelerinizi açık bir şekilde ifade
+etme konusu ele alınmıştır. Açık bir dille bir düşünceyi ifade edebilme
+yeteneği, başkalarına karmaşık fikirleri anlatma becerisini içerir. Bu,
+bir fikri en önemli kavramlara yoğurmak anlamına gelir. Bu sadece
+başkasının anlamasına yardımcı olmakla kalmaz, aynı zamanda kendi
+fikirlerinizi daha net bir şekilde düşünmenize de yardımcı olur.
+
+Kodu daha açık bir şekilde yazmamıza yardımcı olabilecek basit süreç şu
+şekildedir:
+
+1. Kodun ne yapması gerektiğini, meslektaşınıza anlattığınız gibi, açık
+   bir İngilizce olarak açıklayın.
+2. Bu açıklamada kullanılan anahtar kelimelere ve ifadelere dikkat edin.
+3. Kodunuzu bu açıklamayla eşleştirmek üzere yazın.
+
+3 bölümlük bu seride *The Art Of Readable Code* kitabının okuma
+notlarını beraber inceledik. Umarım bu seri okuyucularımız için faydalı
+olmuştur. Başka okuma notları serilerinde görüşmek dileğiyle.

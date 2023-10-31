@@ -1,0 +1,442 @@
+<!-- Generated from 0582ee1 on 2023-10-31 @ 14:30 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Sembol Dünyasının Büyüsü: SF Symbols - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Sembol Dünyasının Büyüsü: SF Symbols</h1><a class="tag" href="https://mobilen.art/tags/apple/">Apple #3</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #19</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #22</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #3</a><p class="site-post-meta">October 31, 2023</p><div id="content"><p>
+<a href="https://www.linkedin.com/in/burak-ceylan-828abb181/">Burak Ceylan</a> yazdı.
+</p>
+
+
+<div id="orgfbd01dc" class="figure">
+<p><img src="/img/sf-symbols-og-twitter.jpg" class="content-image" width="100%">
+</p>
+</div>
+
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org4a26b5e">
+<p>
+Merhaba Mobilen okurları, bu yazımda sizlere SF Symbols&rsquo;ün büyüleyici
+dünyasına adım atarken nelerin beklediğini elimden geldiğince anlatmaya
+çalışacağım.
+</p>
+</div>
+
+<h3><a id="sf-symbols-nedir" class="anchor" href="#sf-symbols-nedir">¶</a>SF Symbols Nedir?</h3><div class="outline-text-3" id="text-orgb718f06">
+<p>
+SF Symbols, Apple&rsquo;ın geliştiricilere sunmuş olduğu güçlü bir sembol
+kitaplığıdır. Kitaplığın sunmuş olduğu bu semboller, ıOS, maçOS veya
+ipadOS platformları için geliştirilen uygulamaların kullanıcı arayüzünü
+zenginleştirmek ve daha etkileyici hale getirmek için harika bir imkan
+sunmaktadır.
+</p>
+</div>
+
+<h3><a id="sf-symbols-ile-neler-yapabiliriz" class="anchor" href="#sf-symbols-ile-neler-yapabiliriz">¶</a>SF Symbols ile Neler Yapabiliriz?</h3><div class="outline-text-3" id="text-orge1a94c8">
+<p>
+SF Symbols kitaplığının yetkinliklerini uyumluluk, oluşturma modları
+(rendering modes), değişken renk (multicolor), boyutlar ve ağırlık
+(weight and scales), tasarım çeşitleri (designt variants) ve
+animasyonlar (animations) konu başlıkları üzerinde durarak anlatmaya
+çalışacağım.
+</p>
+</div>
+
+<h4><a id="uyumluluk" class="anchor" href="#uyumluluk">¶</a>Uyumluluk</h4><div class="outline-text-4" id="text-org79ebfc6">
+<p>
+SF Symbols, San Francisco sistem yazı tipiyle sorunsuz bir şekilde
+bütünleşen, tüm ağırlık ve boyutlardaki metinlerle otomatik olarak
+hizalanan binlerce tutarlı ve yüksek düzeyde yapılandırılabilir sembol
+sağlar.
+</p>
+</div>
+
+<h4><a id="görüntüleme-modları-rendering-modes" class="anchor" href="#görüntüleme-modları-rendering-modes">¶</a>Görüntüleme Modları (Rendering Modes)</h4><div class="outline-text-4" id="text-orgcad3b10">
+<p>
+SF Symbols 3 ve sonrası, sembollerin görünüm yönetimi için oluşturma
+modları <code>Rendering Modes</code> adı verilen bir dizi, tek renkli <code>monochrome</code>,
+hiyerarşik <code>hierarchical</code>, palet <code>palette</code> ve çok renkli <code>multicolor</code>,
+seçenek sunar. Bu seçeneklerin bize sağlamış olduğu çeşitliliği aşağıda
+yazmış olduğum kod bloğu ile örnekleyerek açıklayacağım.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">import</span> <span class="nc">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nv">symbols</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">]</span> <span class="p">=</span>
+        <span class="p">[</span>
+          <span class="s">&quot;square.and.arrow.up&quot;</span><span class="p">,</span>
+          <span class="s">&quot;folder.badge.plus&quot;</span><span class="p">,</span>
+          <span class="s">&quot;trash.slash&quot;</span><span class="p">,</span>
+          <span class="s">&quot;calendar.day.timeline.right&quot;</span><span class="p">,</span>
+          <span class="s">&quot;list.number&quot;</span><span class="p">,</span>
+          <span class="s">&quot;textformat.abc.dottedunderline&quot;</span><span class="p">,</span>
+          <span class="s">&quot;iphone.gen3.radiowaves.left.and.right&quot;</span><span class="p">,</span>
+          <span class="s">&quot;pc&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+
+      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+          <span class="n">HStack</span> <span class="p">{</span>
+              <span class="n">ForEach</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">symbol</span> <span class="k">in</span>
+                  <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+Yukarıdaki kod bloğunda SF Symbols kütüphanesindeki isimlere göre
+oluşturulmuş sekiz adet sembol ekrana çizdirilmektedir.
+</p>
+
+<p>
+<b>Tek Renkli (Monochrome):</b> Sembolün oluşturulma modunu monochrome (tek
+renkli) olarak ayarlamamız sonucunda sembolün tüm katmanlarına
+istediğimiz renk uygulanarak oluşturulmaktadır.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="n">ForEach</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">symbol</span> <span class="k">in</span>
+      <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">symbolRenderingMode</span><span class="p">(.</span><span class="n">monochrome</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(.</span><span class="n">blue</span><span class="p">)</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<div id="org4067675" class="figure">
+<p><img src="/img/sf-monochrome@2x.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span>Monochrome</p>
+</div>
+
+<p>
+<b>Hiyerarşik (Hierarchical):</b> Semboldeki tüm katmanlara verilen renk
+uygulanmakta ve katmanlardaki rengin opaklığı katmanların hiyerarşi
+düzeyine göre otomatik olarak ayarlanarak oluşturulmaktadır.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="n">ForEach</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">symbol</span> <span class="k">in</span>
+      <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">symbolRenderingMode</span><span class="p">(.</span><span class="n">hierarchical</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(.</span><span class="n">blue</span><span class="p">)</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<div id="orgb39aef2" class="figure">
+<p><img src="/img/sf-hierarchical@2x.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 2: </span>Hiyerarşik</p>
+</div>
+
+<p>
+<b>Palet (Palette):</b> Hiyerarşideki her katman icin bir belirtilen renk
+kullanılarak sembolün iki veya daha fazla renkten oluşmasını
+sağlamaktadır.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="n">ForEach</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">symbol</span> <span class="k">in</span>
+      <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">symbolRenderingMode</span><span class="p">(.</span><span class="n">palette</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(.</span><span class="n">blue</span><span class="p">,</span> <span class="p">.</span><span class="n">gray</span><span class="p">)</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<div id="orgefa7deb" class="figure">
+<p><img src="/img/sf-palette@2x.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 3: </span>Palet</p>
+</div>
+
+<p>
+<b>Çok Renkli (Multicolor):</b> Sembolun taban (base) katmanındaki rengi
+belirtilir ve diger katmanlarindaki renkler sistem tarafindan konfigüre
+edilir.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="n">ForEach</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">symbol</span> <span class="k">in</span>
+      <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="n">symbol</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">symbolRenderingMode</span><span class="p">(.</span><span class="n">multicolor</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(.</span><span class="n">blue</span><span class="p">)</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<div id="org6455fc4" class="figure">
+<p><img src="/img/sf-multicolor@2x.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 4: </span>Çok Renkli</p>
+</div>
+
+<p>
+<b>BONUS:</b>
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="c1">// Yukarıda açıkladığım oluşturma modlarında belirttiğimiz renkler yerine</span>
+  <span class="c1">// linear gradient kullanılarak semboller kullanıcılar için</span>
+  <span class="c1">// daha ilgi çekici bir hale getirilebilmektedir.</span>
+
+  <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="s">&quot;person.3.sequence.fill&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">symbolRenderingMode</span><span class="p">(.</span><span class="n">palette</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(</span>
+      <span class="p">.</span><span class="n">linearGradient</span><span class="p">(</span><span class="n">colors</span><span class="p">:</span> <span class="p">[.</span><span class="n">red</span><span class="p">,</span> <span class="p">.</span><span class="n">black</span><span class="p">],</span> <span class="n">startPoint</span><span class="p">:</span> <span class="p">.</span><span class="n">top</span><span class="p">,</span> <span class="n">endPoint</span><span class="p">:</span> <span class="p">.</span><span class="n">bottomTrailing</span><span class="p">),</span>
+      <span class="p">.</span><span class="n">linearGradient</span><span class="p">(</span><span class="n">colors</span><span class="p">:</span> <span class="p">[.</span><span class="n">green</span><span class="p">,</span> <span class="p">.</span><span class="n">black</span><span class="p">],</span> <span class="n">startPoint</span><span class="p">:</span> <span class="p">.</span><span class="n">top</span><span class="p">,</span> <span class="n">endPoint</span><span class="p">:</span> <span class="p">.</span><span class="n">bottomTrailing</span><span class="p">),</span>
+      <span class="p">.</span><span class="n">linearGradient</span><span class="p">(</span><span class="n">colors</span><span class="p">:</span> <span class="p">[.</span><span class="n">blue</span><span class="p">,</span> <span class="p">.</span><span class="n">black</span><span class="p">],</span> <span class="n">startPoint</span><span class="p">:</span> <span class="p">.</span><span class="n">top</span><span class="p">,</span> <span class="n">endPoint</span><span class="p">:</span> <span class="p">.</span><span class="n">bottomTrailing</span><span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+
+
+<div id="org1efc550" class="figure">
+<p><img src="/img/how-to-get-custom-colors-and-transparency-with-sf-symbols-5@2x.webp" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 5: </span>Bonus: Gradientli</p>
+</div>
+</div>
+
+<h4><a id="değişken-renk-variable-color" class="anchor" href="#değişken-renk-variable-color">¶</a>Değişken Renk (Variable color)</h4><div class="outline-text-4" id="text-orgb5f7135">
+<p>
+SF Symbols 4 ile birlikte gelen değişken renk özelliği sayesinde
+uygulama içerisindeki sembollerin oluşturma modundan bağımsız olarak
+kapasite veya güç gibi zaman içerisinde değişkenlik gösterebilen
+özellikleri temsil edilebilir oldu. Sembole verilen yüzde değer ile
+sembolün katmanlarının opaklığı ayarlanarak kullanıcıya sunulmaktadır.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">import</span> <span class="nc">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+      <span class="p">@</span><span class="n">State</span> <span class="kd">var</span> <span class="nv">progress</span><span class="p">:</span> <span class="nb">Double</span> <span class="p">=</span> <span class="mi">0</span>
+
+      <span class="kd">var</span> <span class="nv">formattedProgress</span> <span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+          <span class="nb">String</span><span class="p">(</span><span class="n">format</span><span class="p">:</span> <span class="s">&quot;%.0f&quot;</span><span class="p">,</span> <span class="n">progress</span><span class="o">/</span><span class="mf">0.33</span><span class="p">)</span>
+      <span class="p">}</span>
+
+      <span class="kd">var</span> <span class="nv">symbols</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">]</span> <span class="p">=</span>
+        <span class="p">[</span>
+          <span class="s">&quot;speaker.wave.3.fill&quot;</span><span class="p">,</span>
+          <span class="s">&quot;wifi&quot;</span><span class="p">,</span>
+          <span class="s">&quot;chart.bar.fill&quot;</span><span class="p">,</span>
+          <span class="s">&quot;touchid&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+
+      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+          <span class="n">VStack</span> <span class="p">{</span>
+              <span class="n">HStack</span> <span class="p">{</span>
+                  <span class="n">ForEach</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="err">\</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">symbol</span> <span class="k">in</span>
+                      <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">variableValue</span><span class="p">:</span> <span class="n">progress</span><span class="p">)</span>
+                        <span class="p">.</span><span class="n">imageScale</span><span class="p">(.</span><span class="n">large</span><span class="p">)</span>
+                        <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(.</span><span class="n">red</span><span class="p">)</span>
+                  <span class="p">}</span>
+              <span class="p">}</span>
+                <span class="p">.</span><span class="n">padding</span><span class="p">()</span>
+
+              <span class="n">Text</span><span class="p">(</span><span class="s">&quot;Current Progress: </span><span class="si">\(</span><span class="n">formattedProgress</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">font</span><span class="p">(.</span><span class="n">system</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="n">weight</span><span class="p">:</span> <span class="p">.</span><span class="n">bold</span><span class="p">,</span> <span class="n">design</span><span class="p">:</span> <span class="p">.</span><span class="n">rounded</span><span class="p">))</span>
+
+              <span class="n">Slider</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="err">$</span><span class="n">progress</span><span class="p">,</span> <span class="k">in</span><span class="p">:</span> <span class="mf">0.</span><span class="p">..</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="mf">0.33</span><span class="p">){</span>
+              <span class="p">}</span> <span class="n">minimumValueLabel</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="n">Text</span><span class="p">(</span><span class="s">&quot;0&quot;</span><span class="p">).</span><span class="n">font</span><span class="p">(.</span><span class="n">title</span><span class="p">).</span><span class="n">fontWeight</span><span class="p">(.</span><span class="n">bold</span><span class="p">)</span>
+              <span class="p">}</span> <span class="n">maximumValueLabel</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="n">Text</span><span class="p">(</span><span class="s">&quot;3&quot;</span><span class="p">).</span><span class="n">font</span><span class="p">(.</span><span class="n">title</span><span class="p">).</span><span class="n">fontWeight</span><span class="p">(.</span><span class="n">bold</span><span class="p">)</span>
+              <span class="p">}</span>
+                <span class="p">.</span><span class="n">padding</span><span class="p">()</span>
+
+          <span class="p">}</span>
+            <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(.</span><span class="n">blue</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">font</span><span class="p">(.</span><span class="n">system</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<div id="org86d8821" class="figure">
+<p><img src="/img/variable_color.gif" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 6: </span>Değişken Renk-1</p>
+</div>
+
+
+<div id="orgcea3e23" class="figure">
+<p><img src="/img/sf-variable-color@2x.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 7: </span>Değişken Renk-2</p>
+</div>
+</div>
+
+<h4><a id="boyutlar-ve-ağırlık-scales-and-weights" class="anchor" href="#boyutlar-ve-ağırlık-scales-and-weights">¶</a>Boyutlar ve Ağırlık (Scales and Weights)</h4><div class="outline-text-4" id="text-org42dd7bf">
+<p>
+SF Symbols, barındırdığı semboller için sağladığı üç adet boyut (small,
+medium (the default), large) ve dokuz adet ağırlık (ultralight, thin,
+light, regular, medium, semibold, bold, heavy, black) çeşitliliği ile
+uyarlanabilir (adaptable) tasarımlar oluşturmaya yardımcı olmaktadir.
+</p>
+
+<p>
+ImageScale ve fontWeight view modifierları aracılığı ile sembolün boyut
+ve yazı tipi ağırlığı ayarlanabilmektedir.
+</p>
+
+
+<div id="org61fd751" class="figure">
+<p><img src="/img/Scales.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 8: </span>Boyutlar</p>
+</div>
+
+
+<div id="orgfc9cbfe" class="figure">
+<p><img src="/img/Weights.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 9: </span>Ağırlıklar</p>
+</div>
+
+<div class="highlight"><pre><span></span>  <span class="kd">import</span> <span class="nc">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+
+      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+          <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="s">&quot;folder.badge.plus&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">foregroundStyle</span><span class="p">(.</span><span class="n">blue</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">imageScale</span><span class="p">(.</span><span class="n">large</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">fontWeight</span><span class="p">(.</span><span class="n">bold</span><span class="p">)</span>
+
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+Aşağıda bulunan sınıflandırma görseli Apple&rsquo;ın resmi sitesinden
+alıntılanmış olup kullanımların sembole etkisini detaylıca
+göstermektedir.
+</p>
+
+
+<div id="org6a90b24" class="figure">
+<p><img src="/img/sf-scales-weights@2x.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 10: </span>SF Boyut ve Ağırlıklar</p>
+</div>
+
+<blockquote>
+<p>
+Boyutlar San Francisco sistem yazı tipinin  başlık yüksekliğine (yazı tipindeki büyük harfin satır taban çizgisi üzerindeki yüksekliği) göre tanımlanmaktadır.
+</p>
+</blockquote>
+</div>
+
+<h4><a id="tasarım-çeşitleri-design-variants" class="anchor" href="#tasarım-çeşitleri-design-variants">¶</a>Tasarım çeşitleri (Design variants)</h4><div class="outline-text-4" id="text-org486de85">
+<p>
+SF Symbols iOS15 ile birlikte gelen symbolVariant view modifierı
+sayesinde barındırdığı sembollerin anlamını çeşitlendirebimektedir. Bu
+çeşitler daire (circle), kare (square), dörtgen (rectangle), doldurma
+(fill) ve çizgidir (slash).
+</p>
+
+
+<div id="orgbde14f4" class="figure">
+<p><img src="/img/sf-variants@2x.png" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 11: </span>Çeşitler</p>
+</div>
+
+<div class="highlight"><pre><span></span>  <span class="c1">// Örnekte kullanmış olduğum symbolVariant view modifierları</span>
+  <span class="c1">// birbiri ardindan kullanılarak cumulatif bir sonuc elde edilebilmektedir.</span>
+
+  <span class="kd">import</span> <span class="nc">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+
+      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+          <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="s">&quot;heart&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">imageScale</span><span class="p">(.</span><span class="n">large</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">symbolVariant</span><span class="p">(.</span><span class="n">circle</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">symbolVariant</span><span class="p">(.</span><span class="n">slash</span><span class="p">)</span>
+
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+
+<h4><a id="animasyonlar-animations" class="anchor" href="#animasyonlar-animations">¶</a>Animasyonlar (Animations)</h4><div class="outline-text-4" id="text-orgd266f48">
+<p>
+SF Symbols, barındırdığı sembolleri mecazen canlandırmak için
+kullanılabilecek ve konfigure edilerek kişiselleştirilebilecek animasyon
+dizisi sunmaktadır. SF Symbols 5 ve sonrasında, başlıca <code>appear</code>
+(görünme), <code>disappear</code> (kaybolma), <code>bounce</code> (zıplama), <code>scale</code> (büyüyüp
+küçülme), <code>pulse</code> (nabız), <code>variable color</code> (değiken renk) ve <code>replace</code> (yer
+değiştirme) animasyonlarını sunmaktadır.
+</p>
+
+<p>
+SymbolEffect view modifierı aracılığı animasyon efekti ayarlanabilmektedir.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">import</span> <span class="nc">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+
+      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+          <span class="n">VStack</span> <span class="p">{</span>
+              <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="s">&quot;folder.badge.plus&quot;</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">symbolEffect</span><span class="p">(.</span><span class="n">appear</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">frame</span><span class="p">(</span><span class="n">width</span><span class="p">:</span>  <span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+          <span class="p">}</span>
+            <span class="p">.</span><span class="n">padding</span><span class="p">()</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+<b>Görünme (Appear):</b> Sembolün yavaş bir şekilde ortaya çıkmasını
+sağlamaktadır.
+<img src="/img/sf-animation-appear.gif" class="content-image" width="100%">
+</p>
+
+<p>
+<b>Kaybolma (Disappear):</b> Sembolün yavaş bir şekilde görünmez hale gelmesini sağlamaktadır.
+<img src="/img/sf-animation-disappear.gif" class="content-image" width="100%">
+</p>
+
+<p>
+<b>Zıplama (Bounce):</b> Sembolün yukarı aşağı hareketi ile elastik bir zıplama efekti meydana getirilmektedir.
+<img src="/img/sf-animation-bounce.gif" class="content-image" width="100%">
+</p>
+
+<p>
+<b>Boyut (Scale):</b> Sembolün büyütülüp küçültülerek boyut değişikliğini gerçekleştirmektedir.
+<img src="/img/sf-animation-scale.gif" class="content-image" width="100%">
+</p>
+
+<p>
+<b>Nabız (Pulse):</b> Sembolün belirli katmanlarındaki opaklığı periyodik
+olarak değiştirerek nabız atımı görünümü sağlar.
+<img src="/img/sf-animation-pulse.gif" class="content-image" width="100%">
+</p>
+
+<p>
+<b>Değişken Renk (Variable color):</b> Sembol içerisindeki katmanların
+opaklığını artımlı olarak değiştirmektedir.
+<img src="/img/sf-animation-variable-color.gif" class="content-image" width="100%">
+</p>
+
+<p>
+<b>Yer Değiştirme (Replace):</b> Bir sembolün diğeri ile yer değiştirmesinin
+geçişinin animasyonunu sağlamaktadır.
+<img src="/img/sf-animation-replace.gif" class="content-image" width="100%">
+</p>
+
+<p>
+Artık SF Symbols kitaplığını kullanarak uygulamanızın arayüzünü daha
+anlaşılır ve tutarlı hale getirebilirsiniz.
+</p>
+
+<p>
+Bir sonraki yazıda tekrar buluşmak dileğiyle.
+</p>
+</div>
+
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orga1844ef">
+<ul class="org-ul">
+<li><a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-animate-sf-symbols">Animate SF Symbols</a></li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols">Apple Human Interface Guideline for SF Symbols</a></li>
+<li><a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-get-custom-colors-and-transparency-with-sf-symbols">Custom color and Transparency</a></li>
+</ul>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #22</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #19</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #6</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #4</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #3</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #3</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

@@ -22,6 +22,8 @@
 
 [[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]
 
+[[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]
+
 [[file:../../news/ssl_pinning.org][SSL Pinning]]
 
 [[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]]

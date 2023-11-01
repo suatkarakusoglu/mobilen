@@ -1,0 +1,156 @@
+#+title: Apple Scary Fast Etkinliği
+#+date: [2023-11-01 Wed]
+#+author: Alper Cem Öztürk
+#+filetags: :Apple:Haber:
+
+[[https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8][Alper Cem Öztürk]] yazdı.
+
+[[file://m3_chip_cover.jpg]]
+
+* İçerik
+Merhaba sevgili Mobilen okuyucuları,
+
+Apple'ın *Scary Fast* isimli etkinliği sona erdi ve beklendiği gibi hem
+M3 çipleri hem de yeni Mac modelleri tanıtıldı. Tüm bu heyecan verici
+yeniliklere hızlıca bir göz atmak için gelin, Mac dünyasının yeni
+başyapıtlarına birlikte göz atalım!
+
+** Apple M3 Çip Ailesi
+Etkinlik yeni nesil M serisi çipi olan M3 ailesinin tanıtımı ile
+başladı. Apple'ın M3 çip ailesi, Mac bilgisayarlarının grafik
+performansını uçuracak bir dönüm noktası olacak gibi gözüküyor. Yepyeni
+M3 ailesi, Apple Silicon için getirdiği devrim niteliğindeki grafik
+mimarisi ile profesyonellerin hayatını kolaylaştıracak teknik
+geliştirmeler sunuyor.
+
+*** GPU Dünyasında Devrim
+M3 ailesi, GPU'da büyük bir yenilik sunuyor. Yeni nesil GPU, Apple
+Silicon için getirilen grafik mimarisi alanında tarihi bir değişimi
+temsil ediyor. İşte bu değişim *Dinamik önbellekleme (Dynamic caching)*
+adını verdiğimiz muhteşem bir yenilikle başlıyor.
+
+Geleneksel grafik mimarisi yazılımı, derleme zamanında gelecekteki
+görevler için yerel GPU belleğinin miktarını belirler. Bu, her görev
+için aynı miktarda belleğin tahsis edilmesine yol açar. Bu durum,
+özellikle karmaşık programlarda GPU'nun gereksiz yere kullanıldığı
+anlamına gelir. Ancak yeni nesil GPU'da, yerel bellek, donanımda dinamik
+olarak tahsis ediliyor. Böylece her görev için tam olarak gerektiği
+kadar bellek miktarı kullanılıyor. Bu, GPU'nun performansını inanılmaz
+bir şekilde arttıyor. Apple bunun, endüstride bir ilk olduğunu ve yeni
+GPU mimarisinin temelini oluşturduğunu belirtiyor.
+
+Bu yeni GPU mimarisi, ayrıca Apple Silicon için donanım hızlandırmalı
+*Mesh shading* gibi yeni render özellikleri getiriyor. Mesh shading,
+sahnedeki her bir nesnenin ayrıntılarını daha iyi ele alıyor ve bu
+sayede daha gerçekçi ve göz alıcı görseller oluşturuyor. Bu teknoloji,
+özellikle oyunlar ve 3D uygulamalar için daha fazla görsel zenginlik ve
+performans oluşturması için geliştirilmiş.
+
+Son olarak, yeni GPU mimarisi, Mac için ilk kez donanım hızlandırmalı
+*Ray tracing*'i getiriyor. Oyun dünyasına hakim olanların bileceği gibi,
+Ray tracing, ışığın fiziksel özelliklerini simüle etmek için kullanılan
+bir teknoloji olup oyunlarda daha gerçekçi gölgeler ve yansımalar
+yaratıyor. Ray tracing gibi yüksek performanslı grafik teknolojilerinin
+Mac'e getirilmesi, Apple'ın oyun dünyasında daha büyük bir rol oynamayı
+hedeflediğinin bir göstergesi. Bu, Mac'in sadece profesyonel iş
+kullanımı için değil, aynı zamanda bir oyun bilgisayarı olarak da tercih
+edilebileceğini düşündürtüyor. Apple'ın oyun dünyasına bu kadar ilgi
+göstermesi, gelecekte oyun severlere daha fazla heyecanlı gelişmelerin
+kapısını aralayabilir.
+
+*** Yeniden Tasarlanmış CPU Çekirdekleri
+Apple'ın son teknoloji M3 işlemcileri, bilgisayar performansı ve enerji
+verimliliği konusunda dikkat çekici bir ilerleme sunuyor. M1 ailesine
+kıyasla %30 daha fazla performans sunarken enerji verimliliğini de
+sürdürmeyi başarıyor. Üstelik, bu yeni mimari, verimlilik çekirdekleri
+sayesinde tipik görevlerde %50'ye kadar daha hızlı bir performans vaat
+ediyor.
+
+M1 işlemcisine kıyasla, M3 sadece *yarı güçle* aynı CPU ve GPU
+performansını sunabilmesiyle dikkat çekiyor. Bu güç verimliliği
+açısından inanılmaz büyük bir adım.
+
+*** Hızlandırılmış Yapay Zeka
+M3 ailesi, aynı zamanda çok daha hızlı ve verimli bir yapay zeka
+motoruna sahip. Bu motor, verileri cihazda tutarak gizliliği korurken
+yapay zeka uygulamalarının hızını artırıyor. Ayrıca, en popüler video
+kodeklerini donanım hızlandırma özelliğiyle destekliyor, bu da YouTube,
+Netflix gibi platformlarda daha verimli video izleme deneyimi sunuyor.
+
+** 14 inç ve 16 inç MacBook Pro
+Etkinlikte, MacBook Pro serisinin en son M3 çipine sahip modelleri de
+tanıtıldı, böylece Apple, MacBook Pro ailesini yıl içinde ikinci kez
+yenilemiş oldu. Şimdi, bu yeni modellerin detaylarına daha yakından
+bakalım.
+
+[[file://macbook_pro_m3_details.jpg]]
+
+Her iki cihazda da M3 çipinin desteğinin yanı sıra Mini LED ekran, altı
+hoparlörlü ses sistemi, 22 saatlik batarya ömrü, 1080p kamera ve 128
+GB'a kadar RAM bulunuyor. Ayrıca daha az parmak izi bırakan uzay siyahı
+renginde yeni bir kaplama da mevcut.
+
+En uygun model olan 14 inç MacBook Pro, M3 çipli versiyonu 63 bin
+TL'den, M3 Pro çipli modeli ise 79 bin TL'den başlayan fiyatlarla satışa
+sunuldu. 16 inç MacBook Pro'nun M3 Pro çipli versiyonu 95 bin TL'den
+başlarken, en üst seviye M3 Max çipli modeli 130 bin TL'den başlayan
+fiyatlarla müşterilere sunuldu.
+
+Bu yeni MacBook Pro modelleri için ön siparişler alınmaya başlandı ve 7
+Kasım'da ise Apple Store'larda resmi olarak satışa sunulacaklar.
+
+** Yeni M3 çipli 24 inç iMac
+Uzun bir bekleyişin ardından Apple'ın en çok satan hepsi bir arada
+bilgisayarı olan iMac, sonunda M3 serisi çip ile beklenen güncellemeyi
+aldı. Yani neredeyse 👀
+
+#+caption: M3 Chip iMac
+[[file://m3_iMax.jpg]]
+
+Yeni M3 iMac duyurulmadan önce, yüksekliği ayarlanabilir olan bir stand
+ve daha ince alt çerçeve gibi bazı tasarımsal değişikliklerle geleceği
+konusunda dedikodular dolaşıyordu. Ancak, görünüşe göre bu değişiklikler
+bir süre daha gerçekleşmeyecek. Apple, tasarım açısından herhangi bir
+yeniliğe gitmeyerek, yeni M3 iMac'i M1 modeliyle tamamen aynı tasarıma
+ve renklere sahip bir şekilde sundu.
+
+Önceki modelle aynı yeşil, sarı, turuncu, pembe, mor, mavi ve gümüş renk
+seçenekleri sunuluyor ancak bu sefer renk uyumlu aksesuarlar ve duvar
+kağıtları ile sunuluyor.
+
+M3 serisinin sunduklarıyla haricinde, yeni iMac'in özellikleri de
+öncekiyle hemen hemen aynı. Yeni iMac, bir önceki seriden alışık
+olduğumuz gibi parlaklığı 500 nit'e kadar yükselten 4,5K retina ekran,
+altı hoparlörlü ses sistemi, 1080p FaceTime kamera ve daha fazlası ile
+beraber geliyor.
+
+Bunların üzerine yeni iMac, önceki nesle kıyasla iki kata kadar daha
+yüksek indirme hızlarına ulaşan Wi-Fi 6E ve en yeni bluetooth
+teknolojisi olan Bluetooth 5.3 güncellemelerini içeriyor.
+
+Bu yıl iMac, için gelen yeniliklerin M3 çipinin desteği haricinde
+beklentileri karşılayamaması ileriki dönemlerde duyurulacak olan yeni
+bir iMac Pro'ya işaret ediyor olabilir. O zamana kadar hep beraber
+bekleyip göreceğiz.
+
+Ayrıca yeni iMac için ön siparişler alınmaya başlandı. iMac'ler 10
+Kasım'da ise Apple Store'larda resmi olarak satışa sunulacaklar.
+
+** Son
+Apple'ın *Scary Fast* etkinliği, M3 çipleri ve yeni Mac modellerinin
+tanıtımı ile sona erdi. Apple, özellikle M3 çip ailesinin sunduğu
+teknolojilerle büyük bir yankı bıraktı ve belki de oyuncu bilgisayarları
+piyasasına göz kırptı. M3 çiplerinin getirdiği güçlü grafik performansı,
+CPU çekirdeklerinin hızı, hızlandırılmış yapay zeka ve diğer özellikler,
+Apple'ın teknolojik liderliğini bir kez daha gösterdi.
+
+Her ne kadar Apple, yeniliklerini azar azar gösteriyor gibi görünse de,
+bu tarz etkinliklerde biz izleyenlerin heyecanını diri tutmayı hala
+beceriyor. Bu heyecanı yaşayacağımız sonraki etkinlikleri sabırsızlıkla
+bekliyoruz.
+
+Ayrıca etkinlikte duyurulanlara daha detaylı göz atmak isterseniz, [[https://www.youtube.com/watch?v=ctkW3V0Mh-k][Apple Scary Fast Event]] sunumuna göz atabilirsiniz.
+Yeniliklerle dolu etkinliklerde tekrar buluşmak dileğiyle, Hoşça kalın :)
+
+** Kaynakça
+- [[https://www.youtube.com/watch?v=ctkW3V0Mh-k][Apple Scary Fast Event]]

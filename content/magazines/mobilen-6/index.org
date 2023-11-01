@@ -1,0 +1,20 @@
+#+title: Mobilen 6
+
+file://volume_6_cover.jpg
+
+Merhabalar,
+
+Öncelikle 100. yılındaki Cumhuriyetimizin en büyük bayramını kutlarım.
+
+Gazi Mustafa Kemal Atatürk ve arkadaşlarına bağımsızlık yolunda verdiği mücadele ve açtığı yol için minnetarız. Özlemle anıyoruz.
+
+/Mobilen'in 6. sayısı/'nda ekip içi iletişime dokunan konulardan, tasarımda yardımcımız olabilecek SF Symbols'a, Apple'ın Scary Fast etkinliğinden başka bir kaç habere daha yer verdik.
+
+Herkese iyi okumalar.
+
+* Konular
+1. [[file:../../news/how_to_ask.org][Soru Sormak]]
+2. [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]
+3. [[file:../../news/apple_search_engine_calismalari.org][Apple Arama Motoru Çalışmaları]]
+4. [[file:../../news/the_art_of_readable_code_3_final.org][Okuma Notları: The Art Of Readable Code (3) Son]]
+5. [[file:../../news/october_30_2023_apple_event.org][Apple Scary Fast Etkinliği]]

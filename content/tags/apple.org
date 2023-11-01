@@ -6,5 +6,7 @@
 
 [[file:../../news/apple_search_engine_calismalari.org][Apple Arama Motoru Çalışmaları]]
 
+[[file:../../news/october_30_2023_apple_event.org][Apple Scary Fast Etkinliği]]
+
 [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]
 

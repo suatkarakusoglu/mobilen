@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:october_30_2023_apple_event.org][Apple Scary Fast Etkinliği]] - Alper Cem Öztürk · November 01, 2023
 - [[file:apple_search_engine_calismalari.org][Apple Arama Motoru Çalışmaları]] - Mehmet Güven · October 31, 2023
 - [[file:sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]] - Burak Ceylan · October 31, 2023
 - [[file:the_art_of_readable_code_3_final.org][Okuma Notları: The Art Of Readable Code (3) Son]] - Yusuf Kaya · October 30, 2023

@@ -1,0 +1,59 @@
+#+title: Deklaratif Tasarım
+#+date: [2023-10-01 Sun]
+#+author: Suat Karakuşoğlu
+#+filetags: :Tasarım:Yazılım:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+* İçerik
+Merhabalar,
+
+Arayüz tasarlamak yazıyla resim yapabilmek.
+Yalnızca, resmi sürekli güncel bilgilere göre düzenlemeniz,
+bazen de interaktif hale getirmeniz gibi bir artistten daha fazlasını ister :).
+
+Türlü diller ve araçlar ile farklı tuvallare yıllardır arayüz tasarımları yapmaktayız.
+
+Bu araçlar hakkında ve arayüz tasarımında değişen pratiklerin nihayetinde nasıl deklaratif yaklaşımda bulustugundan bahsedeceğim.
+
+** Deklaratif Tasarım ve Veri'nin ilişkisi
+Deklaratif tasarım matematiksel ifadeyle veriyi alıp arayüze dönüştüren bir fonksiyon:
+#+begin_quote swift
+deklaratifTasarim(veri) -> Arayuz
+#+end_quote
+
+** Facebook'un etkisi
+Siyasal mecrada skandallara varabilecek derecede toplumu yonlendirme gucune sebep olabilecek buyuklukte veriyi elinde bulunduran firma diyince diyince ilk akla gelen sirket elbette Facebook.
+
+[[https://www.youtube.com/watch?v=8pDqJVdNa44][React belgeseli]]'nde geçen, reklam takımında ortaya çıkan arayüz geliştirme süreçlerindeki hantallık ve hatalar facebookta kökten bir çözümü gerekli kılmış.
+
+** React ve devamı
+Reklam takimindaki bir product engineer'a garip gozlerle bakilmasina sebep olan sorusu yaklasik olarak soyle:
+
+#+begin_src
+'Tüm' arayüzü herhangi bir 'veri' değiştiğinde silip en baştan çizelim.
+#+end_src
+
+Bu soru
+
+** TODO Talk about FB React approach and its birth and why
+All ui states are not responding correctly
+https://legacy.reactjs.org/docs/reconciliation.html
+
+** State Management Approach
+** TODO Efficiency Diffing
+https://rensbr.eu/blog/swiftui-diffing/
+
+** TODO Tell Heuristic Diffing
+** Nelere dikkat etmeliyiz
+** Key based approach
+When that’s not the case, you can add a new ID property to your model or hash some parts of the content to generate a key. The key only has to be unique among its siblings, not globally unique.
+*** Do not use item's index as key
+As a last resort, you can pass an item’s index in the array as a key. This can work well if the items are never reordered, but reorders will be slow.
+
+Reorders can also cause issues with component state when indexes are used as keys. Component instances are updated and reused based on their key. If the key is an index, moving an item changes it. As a result, component state for things like uncontrolled inputs can get mixed up and updated in unexpected ways. *** Keys should be stable, predictable, and unique.
+Unstable keys (like those produced by Math.random()) will cause many component instances and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components.
+** Different Frameworks
+*** React
+*** Flutter
+**** TODO Talk about Flutter is inspired from React

@@ -1,0 +1,4 @@
+#+TITLE: React
+
+[[file:../../news/declarative_ui.org][Declarative Yaklaşım ve Tasarım]]
+

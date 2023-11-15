@@ -8,6 +8,8 @@
 
 [[file:../../news/apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]]
 
+[[file:../../news/declarative_ui.org][Declarative Yaklaşım ve Tasarım]]
+
 [[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
 
 [[file:../../news/fatal_error_iOS.org][iOS: fatalError - Never ve Sistem Tasarımı]]

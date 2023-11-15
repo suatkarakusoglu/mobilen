@@ -2,6 +2,8 @@
 
 [[file:../../news/apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]]
 
+[[file:../../news/declarative_ui.org][Declarative Yaklaşım ve Tasarım]]
+
 [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 
 [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]

@@ -1,4 +1,6 @@
 #+TITLE: SwiftUI
 
+[[file:../../news/declarative_ui.org][Declarative Yaklaşım ve Tasarım]]
+
 [[file:../../news/ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]]
 

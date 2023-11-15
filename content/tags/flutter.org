@@ -1,4 +1,6 @@
 #+TITLE: Flutter
 
+[[file:../../news/declarative_ui.org][Declarative Yaklaşım ve Tasarım]]
+
 [[file:../../news/flutter_3_13_version.org][Flutter 3.13 ile Gelen Yenilikler]]
 

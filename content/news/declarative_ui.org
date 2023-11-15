@@ -1,0 +1,169 @@
+#+title: Declarative Yaklaşım ve Tasarım
+#+date: [2023-11-15 Wed]
+#+author: Suat Karakuşoğlu
+#+filetags: :Tasarım:Yazılım:React:SwiftUI:Flutter:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/@art_maltsev?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash][Artem Maltsev]]
+[[file:declarative_ui_magic.jpg]]
+
+* İçerik
+Merhabalar,
+
+Arayüz tasarlamak yazıyla resim yapabilmek.
+
+Yalnızca, resmi sürekli güncel bilgilere göre düzenlemeniz, bazende etkileşimli hale getirmeniz gibi bir ressamdan daha fazlasını gerektirebiliyor.
+
+Uzun zamandır türlü diller ve araçlar ile farklı tuvallare arayüz tasarımları yapmaktayız.
+
+Bu araçlar hakkında ve arayüz tasarımında değişen pratiklerin nihayetinde nasıl declarative yaklaşımda buluştuğundan bahsedeceğim.
+
+** Imperative Tasarım
+Declarative taraftan bahsetmeden önce daha çok pratik ettiğimiz =imperative= yaklaşımdan bahsedelim.
+
+Bir ekranın nasıl çizilmesi gerektiğine dair tüm adımları özellikle belirterek uyguladığımız tasarım yaklaşımı =imperative= tasarım olarak değerlendirilebilir.
+
+Declarative veya Imperative yaklaşım yalnızca UI'da karşımıza çıkmıyor.
+
+Henüz üniversite yıllarında sıralama algoritmalarına denk geldiğimde heyecanlanmıştım, bubble'indan merge sort'una, timsort'undan quick sort'una.
+
+Hepsi ile örnekler yapmış görselleştirmeler yapmaya çalışmıştım. Sonrasında ilk staja başladığım yerde kullanıcıları hangi algoritma ile nasıl sıralıyorsunuz gibi bir soru sorduğumda 'SORT' yazıyoruz SQL'de ve o bu işi yapıyor diye cevap almıştım :).
+
+** Beyan ve Indirection
+Sadece beyan / =declare= ederek işinizin ne olduğunu belirtip, sistemin bunu yapmasını beklemenin elbette bir çok avantajı var.
+
+=Protocol= veya =Interface= dediğimiz yapılar ile dependency inversion yapıyorsunuz ve daha sonra yeni bir sıralama algoritması keşfedildiğinde, sistem sizi herhangi bir değişikliğe gerek bırakmadan daha verimli hale geliyor.
+
+Declarative yani 'ol' de olsun 'sırala' de sıralasın ve nasıl yaptığına çok karışma felsefesini orada daha iyi anlamıştım.
+
+Görsel tasarımdan örnek vermemiz gerekir ise; bir alert popup'i tasarlayıp ekranda istediğiniz hangi noktadan çıkacağını hesaplayıp animasyonlarını belirleyip gerçeklemek =imperative= iken, sisteme ben alert göstereceğim ve verilerim şunlar gerisini sen hallet demekte =declarative= tarafı.
+
+Bu sayede belki büyük ekran'lı iPad'de farklı bir yerden çıkarabilecekken popup, ufak ekranda daha uygun bir yerden çıkarma kararını işletim sistemi kendisi verebilir.
+
+[[https://en.wikipedia.org/wiki/Fundamental_theorem_of_software_engineering][Yazılım'ın temel teoremi indirection]] beyan'a dayalı =declarative= yaklaşımın izdüşümü.
+#+begin_quote
+"We can solve any problem by introducing an extra level of indirection."
+
+--- [[https://en.wikipedia.org/wiki/Andrew_Koenig_(programmer)][Andrew Koenig]]
+#+end_quote
+
+** Declarative Tasarım ve Veri'nin ilişkisi
+=Declarative tasarım= matematiksel ifadeyle veriyi alıp arayüze dönüştüren bir fonksiyondur:
+#+begin_quote swift
+declarativeTasarim(veri) -> Arayuz
+#+end_quote
+
+** Facebook'un etkisi
+Siyasal mecrada skandallara varabilecek derecede toplumu yönlendirme gücüne sebep olabilecek büyüklükte veriyi elinde bulunduran firma diyince diyince ilk akla gelen şirket elbette Facebook.
+
+[[https://www.youtube.com/watch?v=8pDqJVdNa44][React belgeseli]]nde geçen, reklam takımında ortaya çıkan arayüz geliştirme süreçlerindeki hantallık ve hatalar facebookta radikal bir çözümü gerekli kılmış.
+
+** React ve devamı
+Reklam takımındaki bir product engineer'a garip gözlerle bakılmasına sebep olan sorusu şöyle:
+
+#+begin_quote
+'Tüm' arayüzü herhangi bir 'veri' değiştiğinde silip en baştan çizelim.
+#+end_quote
+
+Declaratıve tasarım fonksiyonu için olan bu matematiksel yaklaşımların gerçek dünyada ekonomik bir şekilde tatbik edilebilir hale getirmek zor olabiliyor.
+
+Performanslı bir şekilde tüm tuvali tek bir değişiklikte sil baştan çizmek delice gelsede kulağa, pratikte bunu yapıcak yolların keşfiyle hiçte mantıksız değilmiş ampulunu kafalarda yakmıştır.
+
+** Diffing ve Faydası
+Ekonomik bir şekilde verinin istenilen görüntüye dönüşmesini sağlamanın en önemli yolu olabilecek en az değişiklik ile bunu başarabilmek.
+
+React'in kabaca karmaşıklığı =O(n)3= ten =heuristic= yaklaşımla =O(n)='e cektigi ve [[https://legacy.reactjs.org/docs/reconciliation.html][ilham aldığı]] bazı pratikler bunu mümkün kıldı.
+
+Buradaki =diffing='e yardımcı olarak daha akıcı olarak veriyi ekrana yansıtabilecek yazılımı ortaya çıkabiliriz.
+
+** Nelere dikkat etmeliyiz
+O nedenle kullandığınız framework'un buna yardımcı olan yaklaşımlarını iyi anlamamız gerekiyor.
+
+[[https://legacy.reactjs.org/docs/reconciliation.html][Reconcilation]] olarak geçen bu yaklaşımda yeniden kullanalabilecek tipte elemanlar var ise yok edilmiyor. Listeler gibi tekrarlı görsellerin olduğu noktalarda =key='ler kullanılıyor.
+
+SwiftUI kütüphanesi ise yine static typing'den faydalanarak view'lerin yokedilmesi ve tekrar kullanılabilir olması konusundan faydalanıyor. View'lerin animasyonlu bir şekilde ekranda görüntülenmesini sağlamak istiyorsak ilgili tiplerin yeni renderde kaybolmadığına dikkat etmek önemli.
+
+Çok basit iki örnekle açıklayalım:
+#+begin_src swift
+  // Burada farklı bir branching izlediğinden
+  // yok olması ve oluşturulması gereken view'ler oluyor
+  // Animasyon verdiğinizde düzgün geçiş göremezsiniz.
+  struct AnswerStateView: View {
+      @State var isCorrect: Bool
+
+      var body: some View {
+          if isCorrect {
+              Text("Correct").foregroundColor(Color.green)
+          } else {
+              Text("Wrong").foregroundColor(Color.red)
+          }
+      }
+  }
+#+end_src
+
+#+begin_src swift
+  // Burada farklı bir branching izlemeden aynı view olduğunu
+  // anlayan sistem rahatlıkla animasyonu gerçekler ve gereksiz bir view yaratıp yok etmez.
+  struct AnswerStateView: View {
+      @State var isCorrect: Bool
+
+      var body: some View {
+          Text(isCorrect ? "Correct" : "Wrong")
+            .foregroundColor(isCorrect ? Color.green : Color.red)
+      }
+  }
+#+end_src
+
+Bu örneklerde görüldüğü üzere view eşlemeleri tipler üzerinden gerçekleşebilir.
+
+** Key/Id kullanımı
+Listeler gibi view elemanlarında ise =id='ler üzerinden dinamik arayüz elemanları çizip eşleştirilebilir.
+
+O nedenle ForEach gibi viewlerde SwiftUI =Identifiable= protokolu ile =id= parametresi gerektiriyor, ve onun uzerinden =reconciliation= yapiyor.
+
+#+begin_src swift
+
+  import SwiftUI
+
+  struct City: Identifiable {
+      let id: Int
+      let name: String
+  }
+
+  struct ContentView: View {
+      let cities = [
+        City(id: 34, name: "Istanbul"),
+        City(id: 6, name: "Ankara"),
+        City(id: 35, name: "Izmir"),
+        City(id: 16, name: "Bursa"),
+        City(id: 7, name: "Antalya")
+      ]
+
+      var body: some View {
+          List {
+              ForEach(cities) { city in
+                  Text(city.name)
+              }
+          }
+      }
+  }
+#+end_src
+
+=Flutter= gibi kütüphanelerde ise =key='ler üzerinden ilgili veri için yeni bir view widget'i gerekiyor mu sorusu cevaplanıyor.
+Dikkat edilmesi gereken noktalardan bir tanesi liste elemanlarında =index='i =id= veya =key= olarak *kullanmamak*. Reorder durumlarında hatalara sebep olucaktır.
+
+Bazende eşsiz rastgele bir id kullanarak bunu yapabiliriz diye düşünebiliriz. O durumda ilgili framework'e yardım etmemiş ve performansı düşük bir kod yazmış oluruz.
+
+Eğer elimizde bir 'id' yok ise mümkün mertebe veri'ye ait bir 'key' çıkarma yoluna gidebiliriz, misal şehrin 'id'leri yok ise şehir ismini 'id' olarak düşünüp diğer verilerle =hash='leyip kullanabiliriz.
+
+Verilerin declarative yaklaşımlı framework'lerle çizilmesinde =state management= yani veri yönetimi bir başka saç ayağı.
+
+Bu yazıda Veriden => Ekrana giden yolda tasarımın declarative yollar ile görselleştirilmesinden bahsettik.
+
+İyi eğlenceler.
+
+** Kaynakça
+- [[https://www.youtube.com/watch?v=8pDqJVdNa44][React belgeseli]]
+- [[https://legacy.reactjs.org/docs/reconciliation.html][React Framework Heuristic Diffing]]
+- [[https://rensbr.eu/blog/swiftui-diffing/][SwiftUI Diffing]]

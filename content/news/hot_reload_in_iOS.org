@@ -1,0 +1,77 @@
+#+title: iOS Uygulamalarda Hot Reload
+#+date: [2023-11-27 Mon]
+#+author: Suat Karakuşoğlu
+#+filetags: :Araç:Yazılım:SwiftUI:Xcode:iOS:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/@tangerinenewt][Tangerine Newt]]
+[[file:how_reloading.jpg]]
+
+* İçerik
+Geliştiriciler için daha hızlı iterasyonlar yapmak, yaptıkları işin nasıl çalıştığını görüp ona göre değişikliklere gidip istediği özelliklere sahip sistemleri tasarlayabilmesini sağlar.
+
+Böyle çalışma alışkanlıklarını sağlayan bir ortamda yani ne kadar kolay deneme yanılma yapabileceğiniz bir sistemin içinde daha zevkli bir ürün geliştirme ve aklınızdaki diğer seçenekleri deneyimleme fırsatı bulursunuz.
+
+** Read -> Evaluate -> Print and Loop
+Repl geri besleme dongusunun desteklendigi dillerdeki kodlama deneyimine verilen isim. Repl destegi saglayan dillerde dinamik bir sekilde kod'un implementasyonunu degistirip programin calismasina devam etmesini ve davranisini gozlemleyebilirsiniz. Python, scale veya lisp gibi dillerde rastlayabilirsiniz bu pratiklere.
+
+Repl driven development ile bu yetenek uzerinden istediginiz yetenekleri daha hizli gelistirebiliyorsunuz.
+
+** Hot Reload nedir?
+Arayuz iceren yerlerdeki gelistirmelerde REPL aslinda 'hot reloading' ile ayni pratikleri kapsiyor.
+
+Flutter gibi bazi frameworkler en basindan beri hotreloading destekler sekilde gelistiricilerine bu yetenegi sagladi.
+
+Basitce ekranin navigasyon hiyerarsini bozmadan, bulundugunuz yerde, degisikliklerinizi hizlica arayuzde gormenizi saglayan yetenege 'Hot Reloading' adini veriyoruz.
+
+*** Arayuz icin olan REPL'a Hot Reloading demistik.
+Arayuz icin dusundugumuzde buradaki dongude 'print' -> 'render' ile yer degistiriyor.
+Verilen state ile tasariminizin ekranda nasil gorundugunu bu sayede hizli bir rendering ile gorebiliyoruz.
+
+** iOS gelistirmede hotreloading mumkun mu?
+iOS ve Apple'in baska ekosistemlerinde yeni gelen SwiftUI frameworku ile preview'ler desteklenir halde Xcode uzerinde tasarimin canli olarak nasil bir view ciktisi verdigini gorebilir hale geldik.
+
+Basit viewler icin basarili sonuclar verse bile, gorece buyuk projelerde bu preview'lerin derlenmesinde cogu zaman hatalar ile karsilasiliyor ve verimli bir gelistirme ortamina cokta yardimci oldugu soylenemez.
+
+*** Preview yeterli mi?
+Previewler duzgun bile calisiyor olsa, uygulama icinde hizlice test yapmanizi saglayan verilere ve hangi sayfada degisiklik yapma ihtiyaciniza gore o sayfaya yonlenmeniz yine vakit alan bir surec. O nedenle preview'ler hotreloading'in yerini pek tutmuyor.
+
+** iOS'e hot reloading yetenegi kazandirmak
+Hot reloading yapabilmek icin belli basli yeteneklerimiz olmasi gerekiyor.
+1. Dosya/Kod degisimini farketmek.
+2. Degisiklikleri derleyip calisma zamaninda yeni kodun calisabilmesini saglaycak =code injection= yapabilmek.
+3. Arayuzde yeni kodlar ile renderingi saglatabilecek degisikligi tetikletebilmek.
+
+*** Code Injection nedir?
+Derlenen kod'un calisma zamaninda baska bir implementasyon ile yer degistirebilmesine =code injection= diyebiliriz.
+iOS icin bu olay objective c donemlerinden =code swizzling= olarak adlandiriliyordu.
+
+Swift ile birlikte ==interposable== secenegi geldi. Burada static olarak cagirimin arasinda derleyicide bu secenegi actiginizda araya girebilme ve istediginiz yeni kod blogunu verebilme yetenegi kazandirabiliyorsunuz.
+
+** iOS icin hot reloading pratiklerine gecelim
+Bu bahsettigimiz adimlarda bize yardimci olan kutuphaneleri biraz taniyalim.
+*** InjectionIII
+[[https://github.com/johnno1962/InjectionIII][InjectionIII uygulamasi]] bahsettigimiz code injection'i saglayan kutuphane, ayni zamanda ilk adim olarak bahsettigimiz projede hangi dosyalarin degisikligi oldugunu algilama konusunu da sagliyor.
+
+*** Inject
+[[https://github.com/krzysztofzablocki/Inject][Inject kutuphanesi]] InjectionIII uygulamasi ile butunlesik calisarak bu derleme sonrasi bahsettigimiz en son tetiklemeyi saglayan ufak bir wrapper kutuphane.
+
+*** Bu kutuphaneleri nasil kullaniyoruz?
+**** InjectionIII
+[[https://github.com/johnno1962/InjectionIII/releases][InjectionIII]] linkinden uygulamayi indiriyoruz. Uygulamayi "/Applications" klasor'une surukluyoruz.
+Sonra uygulamayi calistirdiktan sonra bir tane =igne ikonu= bar'da gorunecektir.
+Ikon'a tiklayip: "Open project" dedikten sonra iOS projenizin klasor'unu sececeksiniz.
+Bu noktadan sonra artik projedeki dosyalari uygulama takip eder duruma gelecektir. Yani degisiklikleriniz dosya kaydedildikten sonra algilanacak ve tekrar derlenebilecektir.
+
+**** Inject Kutuphanesi
+SPM paketi olarak ekleyebilirsiniz
+https://github.com/krzysztofzablocki/Inject
+
+** Kaynakça
+https://github.com/krzysztofzablocki/Inject
+https://github.com/johnno1962/InjectionIII
+https://github.com/johnno1962/HotReloading
+https://www.merowing.info/hot-reloading-in-swift/
+https://levelup.gitconnected.com/hot-reloading-a-swiftui-app-77ba6ade1df7
+https://swiftlyanand.medium.com/hot-reloading-swift-and-swiftui-25cce2f35edc

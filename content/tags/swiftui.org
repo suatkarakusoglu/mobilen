@@ -2,5 +2,7 @@
 
 [[file:../../news/declarative_ui.org][Declarative Yaklaşım ve Tasarım]]
 
+[[file:../../news/hot_reload_in_iOS.org][iOS Uygulamalarda Hot Reload]]
+
 [[file:../../news/ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]]
 

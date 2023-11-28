@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:hot_reload_in_iOS.org][iOS Uygulamalarda Hot Reload]] - Suat Karakuşoğlu · November 27, 2023
 - [[file:declarative_ui.org][Declarative Yaklaşım ve Tasarım]] - Suat Karakuşoğlu · November 15, 2023
 - [[file:october_30_2023_apple_event.org][Apple Scary Fast Etkinliği]] - Alper Cem Öztürk · November 01, 2023
 - [[file:apple_search_engine_calismalari.org][Apple Arama Motoru Çalışmaları]] - Mehmet Güven · October 31, 2023

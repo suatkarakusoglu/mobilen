@@ -1,7 +1,7 @@
-#+title: iOS Uygulamalarda Hot Reload
+#+title: iOS Uygulaması Geliştirmede Hot Reload
 #+date: [2023-11-27 Mon]
 #+author: Suat Karakuşoğlu
-#+filetags: :Araç:Yazılım:SwiftUI:Xcode:iOS:
+#+filetags: :iOS:Yazılım:SwiftUI:Xcode:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 
@@ -45,7 +45,6 @@ Bu ne demek, Xcode üzerinde tasarımın canlı olarak nasıl bir view çıktıs
 
 Şu anki haliyle, basit viewler için başarılı sonuçlar verse bile, görece büyük projelerde bu preview'lerin derlenmesinde çoğu zaman hatalar ile karşılaşılıyor. Bu hatalar çokta verimli bir geliştirme ortamı sağlamıyor.
 
-*** Preview düzgün çalışsa bile hot reloading yeteneğini sağlayabilir mi?
 Previewler düzgün bile çalışıyor olsa, uygulama içinde hızlıca test yapmanızı sağlayan verilere ve hangi sayfada değişiklik yapma ihtiyacınıza göre, o sayfaya tekrar yönlenebilmeniz yine vaktinizi alan bir süreç.
 
 Örnek veriyorum, bir eticaret uygulaması için, giriş yapma ihtiyacınız, ilgili ürünü listede bulmanız, ürünün detaylarına bakacak sayfayı açmanız sonrasında sepete ekleme butonunu görmeniz için bir çok adımı geçmeniz gerekiyor.
@@ -58,22 +57,22 @@ Hot reloading yapabilmek için belli başlı yeteneklerimiz olması gerekiyor.
 2. Değişiklikleri derleyip çalışma zamanında yeni kodun çalışabilmesini sağlayacak =code injection= yapabilmek.
 3. Arayüzde yeni kodlar ile renderingi sağlatabilecek değişikliği tetikletebilmek.
 
-*** Code Injection nedir?
+** Code Injection nedir?
 Derlenen kod'un çalışma zamanında başka bir implementasyon ile yer değiştirebilmesine =code injection= diyebiliriz.
 iOS için bu olay objective c dönemlerinden =code swizzling= olarak adlandırılıyordu.
 
 Swift ile birlikte ==interposable== seçeneği geldi. Bununla static olan çağırımın arasına derleyici artık bu seçeneği açtığınızda dinamik olarak girebiliyor ve değiştirdiğiniz yeni kod bloğunu çalıştırabilme yeteneği kazandırabiliyorsunuz.
 
-** iOS için hot reloading pratiklerine geçelim
-Bu bahsettiğimiz adımlarda bize yardımcı olan kütüphaneleri biraz tanıyalım.
-*** InjectionIII
+iOS için hot reloading pratiklerinde bize yardımcı olan kütüphaneleri biraz tanıyalım.
+
+** InjectionIII
 [[https://github.com/johnno1962/InjectionIII][InjectionIII uygulaması]] bahsettiğimiz code injection'ı sağlayan kütüphane. Aynı zamanda ilk adım olarak bahsettiğimiz, projede hangi dosyaların değiştiğini algılamayı sağlıyor.
 
-*** Inject
+** Inject
 [[https://github.com/krzysztofzablocki/Inject][Inject kütüphanesi]] InjectionIII uygulaması ile bütünleşik çalışarak bu derleme sonrası bahsettiğimiz en son tetiklemeyi sağlayan ufak bir wrapper kütüphane.
 
-*** Bu kütüphaneleri nasıl kullanıyoruz?
-**** InjectionIII
+** Bu kütüphaneleri nasıl kullanıyoruz?
+*** InjectionIII
 - [[https://github.com/johnno1962/InjectionIII/releases][InjectionIII]] linkinden uygulamayı indiriyoruz. Uygulamayı "/Applications" klasör'üne sürüklüyoruz.
 - Sonra uygulamayı çalıştırdıktan sonra bir tane =iğne ikonu= bar'da görünecektir.
 - İkon'a tıklayıp: "Open project" dedikten sonra iOS projenizin klasör'ünü seçeceksiniz.
@@ -82,19 +81,19 @@ Bu noktadan sonra artık projedeki dosyaları uygulama takip eder duruma gelecek
 
 Yani değişiklikleriniz dosya kaydedildikten sonra algılanacak ve tekrar derlenebilecektir.
 
-**** Proje ayarları
+*** Proje ayarları
 #+begin_src shell
-# Simülatör üzerinde hot reloading çalışabiliyor, bunun için bir =flag= tanımlanması gerekiyor.
-Target -> Build Settings -> Other Linking Flags -> "Debug scheme" icin "+" diyerek "-Xlinker -interposable" =flag= eklemesi yapıyorsunuz.
+  # Simülatör üzerinde hot reloading çalışabiliyor, bunun için bir =flag= tanımlanması gerekiyor.
+  Target -> Build Settings -> Other Linking Flags -> "Debug scheme" icin "+" diyerek "-Xlinker -interposable" =flag= eklemesi yapıyorsunuz.
 #+end_src
 
 #+CAPTION: Linker flag eklemesi
 [[file:HotReloadLinkerFlag.jpg]]
 
-**** Inject Kütüphanesi
+*** Inject Kütüphanesi
 [[https://github.com/krzysztofzablocki/Inject][Inject kütüphanesi]]'ni =SPM= paketini Project -> Package Dependencies -> "+" diyerek ekleyebilirsiniz.
 
-Bu wrapper degisiklikler sonrası yenilenmesini tetiklemeyen bağımlılık.
+Bu wrapper değişiklikler sonrası yenilenmesini tetikleyen bağımlılık.
 
 #+begin_src swift
   import SwiftUI

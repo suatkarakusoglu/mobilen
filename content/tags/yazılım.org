@@ -14,7 +14,7 @@
 
 [[file:../../news/fatal_error_iOS.org][iOS: fatalError - Never ve Sistem Tasarımı]]
 
-[[file:../../news/hot_reload_in_iOS.org][iOS Uygulamalarda Hot Reload]]
+[[file:../../news/hot_reload_in_iOS.org][iOS Uygulaması Geliştirmede Hot Reload]]
 
 [[file:../../news/ios_app_push_certificate_yenileme.org][iOS uygulama bildirim sertifikası oluşturma/yenileme]]
 

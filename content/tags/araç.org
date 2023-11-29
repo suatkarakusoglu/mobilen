@@ -1,4 +1,0 @@
-#+TITLE: Araç
-
-[[file:../../news/hot_reload_in_iOS.org][iOS Uygulamalarda Hot Reload]]
-

@@ -1,16 +1,16 @@
-<!-- Generated from 5379cbb on 2023-11-28 @ 19:00 with Emacs 30.0.50 (Org mode 9.6.8) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>iOS Uygulamalarda Hot Reload - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">iOS Uygulamalarda Hot Reload</h1><a class="tag" href="https://mobilen.art/tags/araç/">Araç #1</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #25</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #4</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #20</a><p class="site-post-meta">November 27, 2023</p><div id="content"><p>
+<!-- Generated from 277fd7d on 2023-11-29 @ 14:52 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>iOS Uygulaması Geliştirmede Hot Reload - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">iOS Uygulaması Geliştirmede Hot Reload</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #20</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #25</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #4</a><p class="site-post-meta">November 27, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
-<div id="orgc9fd5c4" class="figure">
+<div id="org4b4e512" class="figure">
 <p><img src="/img/how_reloading.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/@tangerinenewt">Tangerine Newt</a></p>
 </div>
 
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org5851739">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org5d463df">
 <p>
 Geliştiriciler için daha hızlı deneme yanılma yapabilmek, yaptıkları işin nasıl çalıştığını daha hızlı görmeyi sağlar.
 Ona göre değişikliklere gidebilir, istediği özelliklere sahip sistemi böylece deneyimleyerek tasarlayabilir.
@@ -22,7 +22,7 @@ Aklınızdaki diğer seçenekleri deneyimleme fırsatı bulursunuz.
 </p>
 </div>
 
-<h3><a id="read--gt-evaluate--gt-print-ve-loop" class="anchor" href="#read--gt-evaluate--gt-print-ve-loop">¶</a>Read -&gt; Evaluate -&gt; Print ve Loop</h3><div class="outline-text-3" id="text-org4d40ca5">
+<h3><a id="read--gt-evaluate--gt-print-ve-loop" class="anchor" href="#read--gt-evaluate--gt-print-ve-loop">¶</a>Read -&gt; Evaluate -&gt; Print ve Loop</h3><div class="outline-text-3" id="text-org0e4e086">
 <p>
 <code>Repl</code> geri besleme döngüsünün desteklendiği dillerdeki kodlama deneyimine verilen isim.
 </p>
@@ -40,7 +40,7 @@ Repl Driven Development pratikleri üzerinden istediğiniz özellikleri daha int
 </p>
 </div>
 
-<h3><a id="hot-reload-nedir" class="anchor" href="#hot-reload-nedir">¶</a>Hot Reload nedir?</h3><div class="outline-text-3" id="text-orgcf08ce6">
+<h3><a id="hot-reload-nedir" class="anchor" href="#hot-reload-nedir">¶</a>Hot Reload nedir?</h3><div class="outline-text-3" id="text-org35cfee6">
 <p>
 Arayüz geliştirmeleri içeren uygulamalarda REPL yaklaşımı &rsquo;hot reloading&rsquo;e denk geliyor.
 </p>
@@ -68,7 +68,7 @@ Verilen state ile tasarımınızın ekranda nasıl göründüğünü hot reloadi
 </p>
 </div>
 
-<h3><a id="ios-geliştirmede-hot-reloading-mümkün-mü" class="anchor" href="#ios-geliştirmede-hot-reloading-mümkün-mü">¶</a>iOS geliştirmede hot reloading mümkün mü?</h3><div class="outline-text-3" id="text-org66ee2c1">
+<h3><a id="ios-geliştirmede-hot-reloading-mümkün-mü" class="anchor" href="#ios-geliştirmede-hot-reloading-mümkün-mü">¶</a>iOS geliştirmede hot reloading mümkün mü?</h3><div class="outline-text-3" id="text-org7bf60b4">
 <p>
 Apple&rsquo;ın arayüz geliştirme ekosisteminde yeni gelen <code>SwiftUI</code> frameworku ile preview&rsquo;ler desteklenir halde.
 Bu ne demek, Xcode üzerinde tasarımın canlı olarak nasıl bir view çıktısı verdiğini görebilir hale geldik.
@@ -77,9 +77,7 @@ Bu ne demek, Xcode üzerinde tasarımın canlı olarak nasıl bir view çıktıs
 <p>
 Şu anki haliyle, basit viewler için başarılı sonuçlar verse bile, görece büyük projelerde bu preview&rsquo;lerin derlenmesinde çoğu zaman hatalar ile karşılaşılıyor. Bu hatalar çokta verimli bir geliştirme ortamı sağlamıyor.
 </p>
-</div>
 
-<h4><a id="preview-düzgün-çalışsa-bile-hot-reloading-yeteneğini-sağlayabilir-mi" class="anchor" href="#preview-düzgün-çalışsa-bile-hot-reloading-yeteneğini-sağlayabilir-mi">¶</a>Preview düzgün çalışsa bile hot reloading yeteneğini sağlayabilir mi?</h4><div class="outline-text-4" id="text-orga112f6f">
 <p>
 Previewler düzgün bile çalışıyor olsa, uygulama içinde hızlıca test yapmanızı sağlayan verilere ve hangi sayfada değişiklik yapma ihtiyacınıza göre, o sayfaya tekrar yönlenebilmeniz yine vaktinizi alan bir süreç.
 </p>
@@ -93,7 +91,7 @@ Bu yüzden preview&rsquo;ler hot reloading&rsquo;in yerini pek tutmuyor.
 </p>
 </div>
 
-<h3><a id="iosrsquoe-hot-reloading-yeteneği-kazandırmak" class="anchor" href="#iosrsquoe-hot-reloading-yeteneği-kazandırmak">¶</a>iOS&rsquo;e hot reloading yeteneği kazandırmak</h3><div class="outline-text-3" id="text-orgcc2dd65">
+<h3><a id="iosrsquoe-hot-reloading-yeteneği-kazandırmak" class="anchor" href="#iosrsquoe-hot-reloading-yeteneği-kazandırmak">¶</a>iOS&rsquo;e hot reloading yeteneği kazandırmak</h3><div class="outline-text-3" id="text-org1b9c958">
 <p>
 Hot reloading yapabilmek için belli başlı yeteneklerimiz olması gerekiyor.
 </p>
@@ -104,7 +102,7 @@ Hot reloading yapabilmek için belli başlı yeteneklerimiz olması gerekiyor.
 </ol>
 </div>
 
-<h4><a id="code-injection-nedir" class="anchor" href="#code-injection-nedir">¶</a>Code Injection nedir?</h4><div class="outline-text-4" id="text-orge12348f">
+<h3><a id="code-injection-nedir" class="anchor" href="#code-injection-nedir">¶</a>Code Injection nedir?</h3><div class="outline-text-3" id="text-org89c318c">
 <p>
 Derlenen kod&rsquo;un çalışma zamanında başka bir implementasyon ile yer değiştirebilmesine <code>code injection</code> diyebiliriz.
 iOS için bu olay objective c dönemlerinden <code>code swizzling</code> olarak adlandırılıyordu.
@@ -113,26 +111,25 @@ iOS için bu olay objective c dönemlerinden <code>code swizzling</code> olarak 
 <p>
 Swift ile birlikte <code>=interposable=</code> seçeneği geldi. Bununla static olan çağırımın arasına derleyici artık bu seçeneği açtığınızda dinamik olarak girebiliyor ve değiştirdiğiniz yeni kod bloğunu çalıştırabilme yeteneği kazandırabiliyorsunuz.
 </p>
-</div>
 
-<h3><a id="ios-için-hot-reloading-pratiklerine-geçelim" class="anchor" href="#ios-için-hot-reloading-pratiklerine-geçelim">¶</a>iOS için hot reloading pratiklerine geçelim</h3><div class="outline-text-3" id="text-orgadf9484">
 <p>
-Bu bahsettiğimiz adımlarda bize yardımcı olan kütüphaneleri biraz tanıyalım.
+iOS için hot reloading pratiklerinde bize yardımcı olan kütüphaneleri biraz tanıyalım.
 </p>
 </div>
-<h4><a id="injectioniii" class="anchor" href="#injectioniii">¶</a>InjectionIII</h4><div class="outline-text-4" id="text-org2c7d1ee">
+
+<h3><a id="injectioniii" class="anchor" href="#injectioniii">¶</a>InjectionIII</h3><div class="outline-text-3" id="text-orge511e21">
 <p>
 <a href="https://github.com/johnno1962/InjectionIII">InjectionIII uygulaması</a> bahsettiğimiz code injection&rsquo;ı sağlayan kütüphane. Aynı zamanda ilk adım olarak bahsettiğimiz, projede hangi dosyaların değiştiğini algılamayı sağlıyor.
 </p>
 </div>
 
-<h4><a id="inject" class="anchor" href="#inject">¶</a>Inject</h4><div class="outline-text-4" id="text-org5b2bace">
+<h3><a id="inject" class="anchor" href="#inject">¶</a>Inject</h3><div class="outline-text-3" id="text-org65c6fc1">
 <p>
 <a href="https://github.com/krzysztofzablocki/Inject">Inject kütüphanesi</a> InjectionIII uygulaması ile bütünleşik çalışarak bu derleme sonrası bahsettiğimiz en son tetiklemeyi sağlayan ufak bir wrapper kütüphane.
 </p>
 </div>
 
-<h4><a id="bu-kütüphaneleri-nasıl-kullanıyoruz" class="anchor" href="#bu-kütüphaneleri-nasıl-kullanıyoruz">¶</a>Bu kütüphaneleri nasıl kullanıyoruz?</h4><ul><li>InjectionIII<div class="outline-text-5" id="text-orgf572848">
+<h3><a id="bu-kütüphaneleri-nasıl-kullanıyoruz" class="anchor" href="#bu-kütüphaneleri-nasıl-kullanıyoruz">¶</a>Bu kütüphaneleri nasıl kullanıyoruz?</h3><h4><a id="injectioniii" class="anchor" href="#injectioniii">¶</a>InjectionIII</h4><div class="outline-text-4" id="text-org5111de1">
 <ul class="org-ul">
 <li><a href="https://github.com/johnno1962/InjectionIII/releases">InjectionIII</a> linkinden uygulamayı indiriyoruz. Uygulamayı &ldquo;/Applications&rdquo; klasör&rsquo;üne sürüklüyoruz.</li>
 <li>Sonra uygulamayı çalıştırdıktan sonra bir tane <code>iğne ikonu</code> bar&rsquo;da görünecektir.</li>
@@ -147,29 +144,27 @@ Bu noktadan sonra artık projedeki dosyaları uygulama takip eder duruma gelecek
 Yani değişiklikleriniz dosya kaydedildikten sonra algılanacak ve tekrar derlenebilecektir.
 </p>
 </div>
-</li>
 
-<li>Proje ayarları<div class="outline-text-5" id="text-orge666a9e">
-<div class="highlight"><pre><span></span><span class="c1"># Simülatör üzerinde hot reloading çalışabiliyor, bunun için bir =flag= tanımlanması gerekiyor.</span>
-Target<span class="w"> </span>-&gt;<span class="w"> </span>Build<span class="w"> </span>Settings<span class="w"> </span>-&gt;<span class="w"> </span>Other<span class="w"> </span>Linking<span class="w"> </span>Flags<span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;Debug scheme&quot;</span><span class="w"> </span>icin<span class="w"> </span><span class="s2">&quot;+&quot;</span><span class="w"> </span>diyerek<span class="w"> </span><span class="s2">&quot;-Xlinker -interposable&quot;</span><span class="w"> </span><span class="o">=</span><span class="nv">flag</span><span class="o">=</span><span class="w"> </span>eklemesi<span class="w"> </span>yapıyorsunuz.
+<h4><a id="proje-ayarları" class="anchor" href="#proje-ayarları">¶</a>Proje ayarları</h4><div class="outline-text-4" id="text-orga4630a2">
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># Simülatör üzerinde hot reloading çalışabiliyor, bunun için bir =flag= tanımlanması gerekiyor.</span>
+<span class="w">  </span>Target<span class="w"> </span>-&gt;<span class="w"> </span>Build<span class="w"> </span>Settings<span class="w"> </span>-&gt;<span class="w"> </span>Other<span class="w"> </span>Linking<span class="w"> </span>Flags<span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;Debug scheme&quot;</span><span class="w"> </span>icin<span class="w"> </span><span class="s2">&quot;+&quot;</span><span class="w"> </span>diyerek<span class="w"> </span><span class="s2">&quot;-Xlinker -interposable&quot;</span><span class="w"> </span><span class="o">=</span><span class="nv">flag</span><span class="o">=</span><span class="w"> </span>eklemesi<span class="w"> </span>yapıyorsunuz.
 </pre></div>
 
 
-<div id="org06ad500" class="figure">
+<div id="org5c04500" class="figure">
 <p><img src="/img/HotReloadLinkerFlag.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 2: </span>Linker flag eklemesi</p>
 </div>
 </div>
-</li>
 
-<li>Inject Kütüphanesi<div class="outline-text-5" id="text-org4a20f40">
+<h4><a id="inject-kütüphanesi" class="anchor" href="#inject-kütüphanesi">¶</a>Inject Kütüphanesi</h4><div class="outline-text-4" id="text-orgf620944">
 <p>
 <a href="https://github.com/krzysztofzablocki/Inject">Inject kütüphanesi</a>&rsquo;ni <code>SPM</code> paketini Project -&gt; Package Dependencies -&gt; &ldquo;+&rdquo; diyerek ekleyebilirsiniz.
 </p>
 
 <p>
-Bu wrapper degisiklikler sonrası yenilenmesini tetiklemeyen bağımlılık.
+Bu wrapper değişiklikler sonrası yenilenmesini tetikleyen bağımlılık.
 </p>
 
 <div class="highlight"><pre><span></span>  <span class="kd">import</span> <span class="nc">SwiftUI</span>
@@ -200,7 +195,7 @@ Bu wrapper degisiklikler sonrası yenilenmesini tetiklemeyen bağımlılık.
 </pre></div>
 
 
-<div id="org50594d8" class="figure">
+<div id="orgc4d954f" class="figure">
 <p><img src="/img/CodeInjectionLogs.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 3: </span>Code injection logları</p>
@@ -215,9 +210,8 @@ Unutmamanız gereken noktalar özetle:
 <li>Sonra hot reload etmek istediğiniz view&rsquo;ın body&rsquo;sinin sonuna .enableInjection demeniz gerekiyor.</li>
 </ul>
 </div>
-</li></ul>
 
-<h3><a id="özetle" class="anchor" href="#özetle">¶</a>Özetle</h3><div class="outline-text-3" id="text-org72692bf">
+<h3><a id="özetle" class="anchor" href="#özetle">¶</a>Özetle</h3><div class="outline-text-3" id="text-org08d251b">
 <p>
 Bu ayarları yaptıktan sonra simülatorünüzde artık herhangi bir kod değişikliğinde ilgili ekranın güncellendiğini görecekseniz.
 Elbette gönül isterdi ki bu yetenek native olarak bulunsun ancak buna da şükür diyoruz.
@@ -229,11 +223,11 @@ Evet, hot reload hız kazandırabilirken geliştirmeyi eğlenceli hale getiriyor
 </p>
 </div>
 
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org8a24d32">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orga65f961">
 <ul class="org-ul">
 <li><a href="https://github.com/johnno1962/InjectionIII">Injection Uygulaması</a></li>
 <li><a href="https://github.com/krzysztofzablocki/Inject">Inject Kütüphanesi</a></li>
 <li><a href="https://www.merowing.info/hot-reloading-in-swift/">Inject Kütüphane Kullanımı</a></li>
 </ul>
 </div>
-</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #25</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #20</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #6</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #4</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/araç/">Araç #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #25</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #20</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #6</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #5</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

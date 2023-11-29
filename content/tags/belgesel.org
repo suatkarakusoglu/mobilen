@@ -1,4 +1,6 @@
 #+TITLE: Belgesel
 
+[[file:../../news/half_life_25_year.org][Half-Life 25. Yıl Belgeseli]]
+
 [[file:../../news/steve_jobs_the_man_in_the_machine.org][Steve Jobs The Man in The Machine]]
 

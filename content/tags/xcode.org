@@ -1,6 +1,6 @@
 #+TITLE: Xcode
 
-[[file:../../news/hot_reload_in_iOS.org][iOS Uygulamalarda Hot Reload]]
+[[file:../../news/hot_reload_in_iOS.org][iOS Uygulaması Geliştirmede Hot Reload]]
 
 [[file:../../news/xcode_breakpoints_ile_otomatizasyon.org][Xcode Breakpoints ile Otomatizasyon]]
 

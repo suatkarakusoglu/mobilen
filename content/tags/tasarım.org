@@ -6,5 +6,7 @@
 
 [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 
+[[file:../../news/half_life_25_year.org][Half-Life 25. Yıl Belgeseli]]
+
 [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]
 

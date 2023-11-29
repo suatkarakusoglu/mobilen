@@ -8,7 +8,7 @@
 
 [[file:../../news/fatal_error_iOS.org][iOS: fatalError - Never ve Sistem Tasarımı]]
 
-[[file:../../news/hot_reload_in_iOS.org][iOS Uygulamalarda Hot Reload]]
+[[file:../../news/hot_reload_in_iOS.org][iOS Uygulaması Geliştirmede Hot Reload]]
 
 [[file:../../news/iOS_sertifika_ve_provisioning_profile_i̇slemleri.org][iOS Sertifika ve Provisioning Profile İşlemleri]]
 

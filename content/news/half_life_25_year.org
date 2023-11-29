@@ -1,0 +1,40 @@
+#+title: Half-Life 25. Yıl Belgeseli
+#+date: [2023-11-28 Tue]
+#+author: Suat Karakuşoğlu
+#+filetags: :Belgesel:Tasarım:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+[[file:half_life_start.jpg]]
+
+* İçerik
+Merhabalar, bu ay beni heyecanlandiran bir [[https://www.youtube.com/watch?v=TbZ3HzvFEto][belgesel]] izledim.
+
+Küçükken oyun oynamayı her çocuk gibi ben de çok severdim. Benim şansıma o aralar dayım internet kafa işletti bir müddet, bize yakın bir yerde, dayıma yardım etme bahanesi ile kafeden çıkmadığım bir dönem oldu.
+
+Bu dönemden beni en çok heyecanlandıran oyun half-life oyunuydu. Özellikle ses efektleri, kostümler, silah tasarımları, etkileşim ve daha ötesi.
+
+Bu yaratılan evrende inanılmaz keyifli saatlarim geçti.
+
+Oyunun ardındaki ekibin oyunun çıkışından 25 sene sonra belgeselini çıkarması, çalışanlarla röportajları beni biraz geçmişe götürdü.
+
+[[https://www.youtube.com/watch?v=TbZ3HzvFEto][Half-Life belgeseli]]'nde oyuncu ve oyun evren etkileşimi, yazılımın ve tasarımın harmanlanması, game level tasarımları ile ilgili bir çok konuda ilham alınabilecek konulardan bahsediliyor.
+
+[[https://en.wikipedia.org/wiki/Gabe_Newell][Gabe Newell]]'in microsofttan ayrıldıktan sonra Valve'nin kurucusu olarak çıkardığı ilk başarılı oyun olan Half-Life için bahsettiği oyuncu ve evren arasındaki temel etkileşim sırrı çok değerli.
+
+#+CAPTION: Favori Silahım Gauss Gun, Nam-ı Diğer Delici
+[[file:half_life_gauss_gun.jpg]]
+
+Gabe tüm evrenin kullanıcının davranışlarına tepki vermesi gerektiğini, misal tüm kutuların levye ile parçalabilir olması, duvarlara veya konteynerlara ateş ettiğinizde duvarların kararması, konteynerlardan ses gelmesi gibi konuları çok değerli görüyor.
+
+Diğer oyunlarında da Counter-Strike gibi aynı her şeyle etkileşimli evren tasarımı devam ettiriliyor.
+[[file:cs_chicken.jpg]]
+
+** Özetle
+Oyuncu/Kullanıcı ile olan etkileşimlerde bu belgeselden de alacağımız ilhamla minik micro etkileşimler, animasyonlar eklemek, kullanıcıların tüm duyularına hitap edicek belki haptic titreşim geri beslemeleri kullanmak kullanıcının evrenini daha lezzetli hale getirecektir.
+
+Ayrıca incelemek isteyenler için [[https://github.com/ValveSoftware/halflife][Half-Life 1 Kaynak Kod]]'larını Valve github'da yayınladı.
+
+** Kaynakça
+- [[https://www.youtube.com/watch?v=TbZ3HzvFEto][Half-Life belgeseli]]
+- [[https://github.com/ValveSoftware/halflife][Half-Life 1 Kaynak Kod]]

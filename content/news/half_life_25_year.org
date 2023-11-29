@@ -10,7 +10,9 @@
 * İçerik
 Merhabalar, bu ay beni heyecanlandıran bir [[https://www.youtube.com/watch?v=TbZ3HzvFEto][belgesel]] izledim.
 
-Küçükken oyun oynamayı her çocuk gibi ben de çok severdim. Benim şansıma o aralar dayım internet kafa işletti bir müddet, bize yakın bir yerde, dayıma yardım etme bahanesi ile kafeden çıkmadığım bir dönem oldu.
+Küçükken bilgisayar oyunları oynamayı her çocuk gibi ben de çok severdim.
+
+Benim şansıma o aralar dayım internet kafa işletti bir müddet, bize yakın bir yerde, dayıma yardım etme bahanesi ile kafeden çıkmadığım bir dönem oldu.
 
 Bu dönemden beni en çok heyecanlandıran oyun half-life oyunuydu. Özellikle ses efektleri, kostümler, silah tasarımları, etkileşim ve daha ötesi.
 
@@ -31,10 +33,10 @@ Diğer oyunlarında da Counter-Strike gibi aynı her şeyle etkileşimli evren t
 [[file:cs_chicken.jpg]]
 
 ** Özetle
-Oyuncu/Kullanıcı ile olan etkileşimlerde bu belgeselden de alacağımız ilhamla minik micro etkileşimler, animasyonlar eklemek, kullanıcıların tüm duyularına hitap edicek belki haptic titreşim geri beslemeleri kullanmak kullanıcının evrenini daha lezzetli hale getirecektir.
+Oyuncu/Kullanıcı ile olan etkileşimlerde bu belgeselden de alacağımız ilhamla minik etkileşimler tasarlamak, animasyonlar eklemek, kullanıcıların tüm duyularına hitap edebilecek belki haptic titreşim geri beslemeleri kullanmak kullanıcının evrenini daha lezzetli hale getirecektir.
 
 Ayrıca incelemek isteyenler için [[https://github.com/ValveSoftware/halflife][Half-Life 1 Kaynak Kod]]'larını Valve github'da yayınladı.
 
 ** Kaynakça
 - [[https://www.youtube.com/watch?v=TbZ3HzvFEto][Half-Life belgeseli]]
-- [[https://github.com/ValveSoftware/halflife][Half-Life 1 Kaynak Kod]]
+- [[https://github.com/ValveSoftware/halflife][Half-Life 1 Kaynak Kodları]]

@@ -1,11 +1,11 @@
-<!-- Generated from 277fd7d on 2023-11-29 @ 14:52 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!-- Generated from 2c7ced8 on 2023-11-29 @ 22:00 with Emacs 30.0.50 (Org mode 9.6.8) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Flutter 3.13 ile Gelen Yenilikler - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Flutter 3.13 ile Gelen Yenilikler</h1><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><p class="site-post-meta">August 23, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/mehmetguvenn">Mehmet Güven</a> yazdı.
 </p>
 
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org8b9b318">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org75b028f">
 
-<div id="orgca3f49d" class="figure">
+<div id="orgfe70f27" class="figure">
 <p><img src="/img/flutter_3_13.png" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Flutter 3.13</p>
@@ -20,13 +20,13 @@ Detaylı bilgi için <a href="https://docs.flutter.dev/release/release-notes/rel
 </p>
 </div>
 
-<h3><a id="impeller-yeni-nesil-grafik-i̇şleyici-ve-motor-geliştirmeleri" class="anchor" href="#impeller-yeni-nesil-grafik-i̇şleyici-ve-motor-geliştirmeleri">¶</a>Impeller: Yeni Nesil Grafik İşleyici ve Motor Geliştirmeleri</h3><div class="outline-text-3" id="text-orgfe4b6f3">
+<h3><a id="impeller-yeni-nesil-grafik-i̇şleyici-ve-motor-geliştirmeleri" class="anchor" href="#impeller-yeni-nesil-grafik-i̇şleyici-ve-motor-geliştirmeleri">¶</a>Impeller: Yeni Nesil Grafik İşleyici ve Motor Geliştirmeleri</h3><div class="outline-text-3" id="text-org67b996e">
 <p>
 Impeller, katlanabilir cihazlar için tasarlanmış yeni bir grafik işleyici ve motorun adıdır. Bu yeni gelişmeler, Impeller&rsquo;ın getirdiği önemli iyileştirmeleri ve özellikleri içeriyor. İşte Impeller hakkındaki ana noktalar:
 </p>
 </div>
 
-<h4><a id="ios-performans-i̇yileştirmeleri" class="anchor" href="#ios-performans-i̇yileştirmeleri">¶</a>iOS Performans İyileştirmeleri:</h4><div class="outline-text-4" id="text-org33cd6c5">
+<h4><a id="ios-performans-i̇yileştirmeleri" class="anchor" href="#ios-performans-i̇yileştirmeleri">¶</a>iOS Performans İyileştirmeleri:</h4><div class="outline-text-4" id="text-orga8863a2">
 <p>
 Flutter kullanıcılarından gelen geri bildirimlere dayanarak, Impeller ekibi iOS platformunda performans iyileştirmeleri yaptı. Bu iyileştirmeler, Impeller&rsquo;ın iOS üzerindeki performansını artırmayı hedefliyor. Gecikme süresini azaltmanın yanı sıra, derleme sorunlarını ortadan kaldırarak daha düşük gecikme süreleri elde edilmiştir. Aynı zamanda, kıyaslamalara göre daha yüksek ortalama verim sağlanmıştır. Flutter/galeri geçişleri performansında da Skia ile kıyaslandığında ortalama kare rasterleştirme sürelerinde belirgin bir iyileşme sağlanmıştır.
 </p>
@@ -36,19 +36,19 @@ Bu iyileştirmeler, çeşitli optimizasyonlarla elde edilmiştir. Kirli bölge y
 </p>
 </div>
 
-<h4><a id="gamut-renk-desteği" class="anchor" href="#gamut-renk-desteği">¶</a>Gamut Renk Desteği:</h4><div class="outline-text-4" id="text-org63b3edf">
+<h4><a id="gamut-renk-desteği" class="anchor" href="#gamut-renk-desteği">¶</a>Gamut Renk Desteği:</h4><div class="outline-text-4" id="text-org5e21c01">
 <p>
 Impeller&rsquo;ın 3.10 sürümüyle birlikte geniş gamut renklerinin kullanımı desteklenmiştir. Kullanıcılardan gelen geri bildirimler sonrasında, Impeller kullanılırken iOS platformunda geniş gamut renkler varsayılan olarak kullanılıyor.
 </p>
 </div>
 
-<h4><a id="android-i̇lerlemesi" class="anchor" href="#android-i̇lerlemesi">¶</a>Android İlerlemesi:</h4><div class="outline-text-4" id="text-org610d393">
+<h4><a id="android-i̇lerlemesi" class="anchor" href="#android-i̇lerlemesi">¶</a>Android İlerlemesi:</h4><div class="outline-text-4" id="text-org0e81fc5">
 <p>
 Android platformunda da Impeller geliştirmeleri devam etmektedir. Vulkan arka ucunda kaydedilen ilerlemeye rağmen, henüz resmi bir önizleme dönemine geçilecek kalite seviyesine ulaşılmamıştır. Android&rsquo;de Impeller&rsquo;ın yüksek kaliteli bir deneyim sunması hedeflenmektedir. Impeller&rsquo;ın OpenGL ve Vulkan arka uçları, Impeller&rsquo;ın HAL&rsquo;ındaki optimizasyonlardan yararlanarak performans iyileştirmeleri sağlamıştır.
 </p>
 </div>
 
-<h4><a id="macos-üzerinde-impeller" class="anchor" href="#macos-üzerinde-impeller">¶</a>macOS Üzerinde Impeller:</h4><div class="outline-text-4" id="text-org99ff89d">
+<h4><a id="macos-üzerinde-impeller" class="anchor" href="#macos-üzerinde-impeller">¶</a>macOS Üzerinde Impeller:</h4><div class="outline-text-4" id="text-org7f1e2e8">
 <p>
 Impeller, macOS platformunda da önizleme sürümü olarak sunulmaktadır. Bu sayede Impeller&rsquo;ı macOS uygulamalarında test etmek ve geliştirmek mümkün hale gelmiştir. Impeller&rsquo;ı test etmek ve geri bildirimde bulunmak için önerilen yol, SkSL ısınmasını önlemek ve performans ölçümleri yapmak için DevTools&rsquo;u kullanmaktır. Ayrıca Impeller&rsquo;ı kullanarak uygulamaların test edilmesi ve hataların dosyalanması teşvik edilmektedir.
 </p>
@@ -58,7 +58,7 @@ Impeller projesinin gelişimini GitHub&rsquo;daki proje panosu üzerinden takip 
 </p>
 </div>
 
-<h3><a id="çerçeve-framework-güncellemeleri" class="anchor" href="#çerçeve-framework-güncellemeleri">¶</a>Çerçeve (Framework) Güncellemeleri</h3><div class="outline-text-3" id="text-orge3cca2d">
+<h3><a id="çerçeve-framework-güncellemeleri" class="anchor" href="#çerçeve-framework-güncellemeleri">¶</a>Çerçeve (Framework) Güncellemeleri</h3><div class="outline-text-3" id="text-org7614fd5">
 <p>
 Flutter&rsquo;ın Material çerçevesi de bu sürümde pek çok önemli güncelleme aldı. Bu güncellemeler hem platforma uyum sağlama hem de daha fazla özelleştirme imkanı sunma konusunda odaklandı.
 </p>
@@ -68,7 +68,7 @@ TextField için karakter tanıma özelliği eklendi. iOS platformunda kullanıc�
 </p>
 
 
-<div id="orgf287002" class="figure">
+<div id="org6d8b972" class="figure">
 <p><img src="/img/textfield_camera.png" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 2: </span>TextField Camera</p>
@@ -79,7 +79,7 @@ AlertDialog&rsquo;a adaptif yapılandırıcı eklendi. Bu sayede mevcut platform
 </p>
 
 
-<div id="orgfdd95ac" class="figure">
+<div id="org79ea455" class="figure">
 <p><img src="/img/flutter_alert_dialog_platform_adaptive.png" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 3: </span>AlertDialog platform adaptasyonu</p>
@@ -90,7 +90,7 @@ CupertinoDatePicker&rsquo;a monthYear modu eklendi, kullanıcılar artık ay ve 
 </p>
 
 
-<div id="org3503c43" class="figure">
+<div id="org984c823" class="figure">
 <p><img src="/img/flutter_cupertino_takvim_component.png" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 4: </span>Takvim Component&rsquo;i</p>
@@ -110,7 +110,7 @@ varyantları eklendi.</li>
 </ul>
 </div>
 
-<h3><a id="uygulama-yaşam-döngüsü-değişiklikleri" class="anchor" href="#uygulama-yaşam-döngüsü-değişiklikleri">¶</a>Uygulama Yaşam Döngüsü Değişiklikleri</h3><div class="outline-text-3" id="text-orgbfe4d49">
+<h3><a id="uygulama-yaşam-döngüsü-değişiklikleri" class="anchor" href="#uygulama-yaşam-döngüsü-değişiklikleri">¶</a>Uygulama Yaşam Döngüsü Değişiklikleri</h3><div class="outline-text-3" id="text-org92eee15">
 <p>
 Uygulama yaşam döngüsündeki değişiklikleri algılamak ve uygulamanın
 kapatılma isteklerine yanıt vermek amacıyla AppLifecycleListener sınıfı
@@ -118,14 +118,14 @@ eklendi.
 </p>
 
 
-<div id="org5bba2cd" class="figure">
+<div id="orgf18ae80" class="figure">
 <p><img src="/img/flutter_application_life_cycle.png" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 5: </span>Application Life-cycle</p>
 </div>
 </div>
 
-<h3><a id="scrolling-ve-accessibility-i̇yileştirmeleri" class="anchor" href="#scrolling-ve-accessibility-i̇yileştirmeleri">¶</a>Scrolling ve Accessibility İyileştirmeleri</h3><div class="outline-text-3" id="text-org36c16f7">
+<h3><a id="scrolling-ve-accessibility-i̇yileştirmeleri" class="anchor" href="#scrolling-ve-accessibility-i̇yileştirmeleri">¶</a>Scrolling ve Accessibility İyileştirmeleri</h3><div class="outline-text-3" id="text-orgfa52d91">
 <p>
 Flutter 3.13 ile birlikte, <b><i>iki boyutlu (2D)</i></b> kaydırma yeteneğini
 getirerek kullanıcılara daha fazla esneklik sunuyor. Bu özellik ile
@@ -138,7 +138,7 @@ IconButton&rsquo;un isSelected özelliği artık görüntülenebiliyor.
 </p>
 </div>
 
-<h3><a id="platform-desteği" class="anchor" href="#platform-desteği">¶</a>Platform Desteği</h3><div class="outline-text-3" id="text-orgf43f178">
+<h3><a id="platform-desteği" class="anchor" href="#platform-desteği">¶</a>Platform Desteği</h3><div class="outline-text-3" id="text-orga54c9ae">
 <p>
 Flutter 3.13 ile birlikte, <i>Android Jelly Bean</i> API seviyelerini (16, 17
 ve 18) artık desteklenmiyor. <b><i>Android 14/API34</i></b> ve <b><i>iOS 17/Xcode 15</i></b>
@@ -147,7 +147,7 @@ desteklenmeye başlandı. Bu güncellemelerle birlikte, daha yeni
 </p>
 </div>
 
-<h3><a id="oyun-geliştirme-araçları" class="anchor" href="#oyun-geliştirme-araçları">¶</a>Oyun Geliştirme Araçları</h3><div class="outline-text-3" id="text-org1b353ac">
+<h3><a id="oyun-geliştirme-araçları" class="anchor" href="#oyun-geliştirme-araçları">¶</a>Oyun Geliştirme Araçları</h3><div class="outline-text-3" id="text-orgb6837b3">
 <p>
 Flutter 3.13 ile birlikte güncellenen oyun geliştirme araçları,
 geliştiricilere daha fazla kaynak ve örnek oyun sunarak desteğini
@@ -155,14 +155,14 @@ arttırmaya devam ediyor.
 </p>
 </div>
 
-<h3><a id="devtools" class="anchor" href="#devtools">¶</a>DevTools</h3><div class="outline-text-3" id="text-org47aa7e5">
+<h3><a id="devtools" class="anchor" href="#devtools">¶</a>DevTools</h3><div class="outline-text-3" id="text-orge5c607b">
 <p>
 DevTools <b><i>2.25.0</i></b> ve <b><i>2.24.0</i></b> sürümleriyle yeni özellikler ve
 iyileştirmeler geliştiricilere sunuldu.
 </p>
 </div>
 
-<h3><a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h3><div class="outline-text-3" id="text-org89a474a">
+<h3><a id="kaynaklar" class="anchor" href="#kaynaklar">¶</a>Kaynaklar</h3><div class="outline-text-3" id="text-orgc4c1739">
 <ul class="org-ul">
 <li><a href="https://docs.flutter.dev/release/release-notes/release-notes-3.13.0">Flutter 3.13 Release Notes</a></li>
 <li><a href="https://medium.com/flutter/whats-new-in-flutter-3-13-479d9b11df4d">What&rsquo;s new in Flutter?</a></li>

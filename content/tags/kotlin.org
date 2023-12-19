@@ -1,0 +1,4 @@
+#+TITLE: Kotlin
+
+[[file:../../news/generics_kotlin.org][Genericlerle Kodumuzu Biraz Esnetelim]]
+

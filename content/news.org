@@ -7,6 +7,7 @@
 - [[file:apple_search_engine_calismalari.org][Apple Arama Motoru Çalışmaları]] - Mehmet Güven · October 31, 2023
 - [[file:sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]] - Burak Ceylan · October 31, 2023
 - [[file:the_art_of_readable_code_3_final.org][Okuma Notları: The Art Of Readable Code (3) Son]] - Yusuf Kaya · October 30, 2023
+- [[file:generics_kotlin.org][Genericlerle Kodumuzu Biraz Esnetelim]] - Sevban Bayır · October 27, 2023
 - [[file:how_to_ask.org][Soru Sormak]] - Suat Karakuşoğlu · October 27, 2023
 - [[file:apple_event_wonderlust_2023.org][Apple Wonderlust Eylül 2023 Etkinliği]] - Alper Cem Öztürk · October 02, 2023
 - [[file:fatal_error_iOS.org][iOS: fatalError - Never ve Sistem Tasarımı]] - Suat Karakuşoğlu · October 01, 2023

@@ -1,4 +1,3 @@
--*- mode: org -*-
 #+title: Genericlerle Kodumuzu Biraz Esnetelim
 #+date: [2023-10-27 Fri]
 #+author: Sevban Bayır

@@ -2,17 +2,10 @@
 
 /Mobilen Dergilerin sıralı listesi./
 
-* Mobilen 6
-[[../mobilen-6/][file:volume_6_cover.jpg]]
-* Mobilen 5
-[[../mobilen-5/][file:volume_5_cover.jpg]]
-* Mobilen 4
-[[../mobilen-4/][file:volume_4_cover.jpg]]
-* Mobilen 3
-[[../mobilen-3/][file:volume_3_cover.jpg]]
-
-* Mobilen 2
-[[../mobilen-2/][file:volume_2_cover.jpg]]
-
-* Mobilen 1
-[[../mobilen-1/][file:volume_1_cover.jpg]]
+- [[../mobilen-7/][Mobilen 7]]
+- [[../mobilen-6/][Mobilen 6]]
+- [[../mobilen-5/][Mobilen 5]]
+- [[../mobilen-4/][Mobilen 4]]
+- [[../mobilen-3/][Mobilen 3]]
+- [[../mobilen-2/][Mobilen 2]]
+- [[../mobilen-1/][Mobilen 1]]

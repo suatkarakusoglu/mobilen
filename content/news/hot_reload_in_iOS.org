@@ -27,7 +27,7 @@ Repl Driven Development pratikleri üzerinden istediğiniz özellikleri daha int
 ** Hot Reload nedir?
 Arayüz geliştirmeleri içeren uygulamalarda REPL yaklaşımı 'hot reloading'e denk geliyor.
 
-Flutter gibi bazı frameworkler en başından beri hot reloading destekler şekilde geliştiricilerine bu yeteneği sağlıyor.
+Flutter gibi bazı frameworkler [[https://ln.hixie.ch/?start=1470157939&count=1][en başından beri]] hot reloading destekler şekilde geliştiricilerine bu yeteneği sağlıyor.
 
 #+begin_quote
 Basitçe ekranın navigasyon hiyerarşini bozmadan, bulunduğunuz yerde, değişikliklerinizi arayüzde hızlıca görmenizi sağlayan yeteneğe 'Hot Reloading' adını veriyoruz.
@@ -142,3 +142,4 @@ Evet, hot reload hız kazandırabilirken geliştirmeyi eğlenceli hale getiriyor
 - [[https://github.com/johnno1962/InjectionIII][Injection Uygulaması]]
 - [[https://github.com/krzysztofzablocki/Inject][Inject Kütüphanesi]]
 - [[https://www.merowing.info/hot-reloading-in-swift/][Inject Kütüphane Kullanımı]]
+- [[https://ln.hixie.ch/?start=1470157939&count=1][Flutter Hot Reload Başlangıcı]]

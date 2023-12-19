@@ -1,0 +1,15 @@
+#+title: Mobilen 7
+
+Merhabalar,
+
+Mobilen 7. sayısında hot reload nedirden, tasarım ve kodlamayla ilgili konulara yer verdik.
+
+Ayrıca oyun dünyasına damga vuran Half-Life'in özenle hazırlanmış 25. yıl belgeselini de paylaştık.
+
+Herkese iyi okumalar.
+
+* Konular
+1. [[file:../../news/hot_reload_in_ios.org][iOS Uygulaması Geliştirmede Hot Reload]]
+2. [[file:../../news/declarative_ui.org][Declarative Yaklaşım ve Tasarım]]
+3. [[file:../../news/generics_kotlin.org][Genericlerle Kodumuzu Biraz Esnetelim]]
+4. [[file:../../news/half_life_25_year.org][Half-Life 25. Yıl Belgeseli]]

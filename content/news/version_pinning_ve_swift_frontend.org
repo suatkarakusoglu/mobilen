@@ -1,0 +1,64 @@
+#+title: Versiyon Pinlemenin Önemi
+#+date: [2024-02-07 Wed]
+#+author: Suat Karakuşoğlu
+#+filetags: :iOS:Swift:Tüyo:Yazılım:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/@mitchel3uo][Mitchell Luo]]
+[[file:version-pinning-cover.jpg]]
+
+* İçerik
+Merhabalar,
+
+Geçen haftalarda bir iOS projemizde geliştirici arkadaşlarımızdan biri derleme aşamasında takılmaya başladı.
+
+Buna dair pek post-mortem'lik bir durum olmasada neden böyle bir durumla karşılaştık ve nasıl çözdük üzerinden geçip tarihe not düşmek istedim.
+
+Neden derlemenin takıldığına dair derlemeyi =stop= ettiğimizde build loglarından bir ipucu elde edemiyorduk.
+
+Burada hangi process'in takıldığını anlamak gerekiyordu ve kaynak tüketen top process'leri listelediğimizde xcode'a dair processler'in yanısıra derlemede rol oynayan =swift-frontend= process'inin çalıştığını ve kaynak tüketiminin yüksek olduğunu farkettik.
+
+** Swift-Frontend Processi nedir?
+Geliştiricinin yazdığı Swift kodunun makine koduna derleme aşamasında geçtiği bir çok faz bulunmaktadır. Bu süreçte =parsing=, =type checking= gibi süreçleri işletip makine koduna doğru ilerlenir.
+
+[[https://modocache.io/the-swift-frontend-lexing-and-parsing][Swift derleme aşamaları]]nda bazen ilerleyemediği ve takıldığı noktalar olabiliyor. Ancak process'i normal yollardan xcode üzerinden stop'a bastığında hangi aşamada nerede kaldığına dair bilgileri loglara basmamakta.
+
+O nedenle swift-frontend process'ine =Kill Signal='i gönderip bu processi bitirmek gerekiyormuş. Bu sinyali alan =swift-frontend= process'i hangi yerde takıldığına dair logları build loglarına basıyor.
+
+Bunu yaptıktan sonra olayın GraphQL için auto generate edilmiş olan dosyaların derleme aşamasında takıldığını farkettik.
+
+** GraphQL'in rolü
+GraphQL facebook'un data aktarımını daha optimize etmek için yarattığı bir iletişim standardı.
+
+Bu protokol ile haberleşmek için Apollo adlı bir bağımlılıktan faydalanıyoruz. Tanımlanan istekler için auto generate dosyalar oluşturuluyor ve servise istek atabiliyoruz.
+
+** Neden derleme esnasında takılıyorduk?
+Apollo'nun oluşturduğu *class*'lara baktığımızda *class*'larının klasörlenme yapısının farklı olduğunu farkettik.
+
+Burada önceki versiyonla auto generate edilen dosyalar, güncel versiyonu çekilen bağımlılık ile uyumlu değilmiş.
+
+** Versiyon Pinleme neydi ve neden gerekliydi?
+Versiyon pinleme, geliştiricinin kullandığı bağımlılıkları, tanımlandığı yerde hangi versiyonlarını ile yüklemesi gerektiğini belirtmesi anlamına geliyor.
+
+#+CAPTION: Versiyon Ekleme/Pinleme
+[[file:version-pinning.jpg]]
+
+Burada görüldüğü üzere [[https://semver.org/][Semantic Versiyonlama]]'ya uygun =major= / =minor= değişimlerinde güncellemeye izin verebilecek seçenekler mevcut.
+
+Bununla beraber tercih ettiğimiz yöntem olan =*exact*= [tam istediğin] versiyon ve hatta =commit= ve =branch='e göre bile pinleme seçeneklerimiz var.
+
+Ancak Apollo bağımlılığı [[https://www.swift.org/documentation/package-manager/][SPM]] üzerinden =exact= olarak pinlenmediğinden ötürü yeni bilgisayarında repoyu indirip derlemeye çalışan arkadaşımızın tıkanmasına sebep olmuş.
+
+** Özetle
+Versiyon pinleme bağımlılık eklenmesi durumunda aktif olarak düşünülüp mümkün mertebe =exact= versiyon ile pinlenmeli.
+
+Güncelleme gereksinimleri belli periyotlarla takip edilip yapılmalı, sonrasinda =build= veya =runtime='da beklenmedik bir davranışa sebep *olmadığı* garanti altına alınmalı.
+
+Eğlenceli bir problem çözme süreciydi.
+
+Görüşmek üzere.
+
+** Kaynakça
+- [[https://semver.org/][Semantik Versiyonlama]]
+- [[https://www.apollographql.com/][Apollo GraphQL]]

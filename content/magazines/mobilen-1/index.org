@@ -13,6 +13,3 @@
 5. [[file:../../news/xcode_project_custom_file_templates.org][XCode Project Custom File Templates]]
 6. [[file:../../news/ios_deep_link.org][iOS Deep Link: Mobil Uygulamaların Gizli Kahramanı]]
 7. [[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]
-
-#+begin_cta
-#+end_cta

@@ -3,9 +3,9 @@
 #+CAPTION: Photo by [[https://unsplash.com/@mehdisepehri][Mehdi Sepehri]]
 [[file:volume_7_cover.jpg]]
 
-Merhabalar,
+*Merhabalar*
 
-Mobilen 7. sayısında hot reload nedirden, tasarım ve kodlamayla ilgili konulara yer verdik.
+Mobilen 7. sayısında =hot reload= nedirden, =tasarım= ve =kodlama=yla ilgili konulara yer verdik.
 
 Ayrıca oyun dünyasına damga vuran Half-Life'in özenle hazırlanmış 25. yıl belgeselini de paylaştık.
 

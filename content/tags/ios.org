@@ -28,6 +28,8 @@
 
 [[file:../../news/ssl_pinning.org][SSL Pinning]]
 
+[[file:../../news/version_pinning_ve_swift_frontend.org][Versiyon Pinlemenin Önemi]]
+
 [[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]]
 
 [[file:../../news/wwdc_2023_geldi.org][WWDC 2023 geldi!]]

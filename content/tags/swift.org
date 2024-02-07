@@ -1,0 +1,4 @@
+#+TITLE: Swift
+
+[[file:../../news/version_pinning_ve_swift_frontend.org][Versiyon Pinlemenin Önemi]]
+

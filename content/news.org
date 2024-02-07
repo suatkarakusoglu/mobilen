@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:version_pinning_ve_swift_frontend.org][Versiyon Pinlemenin Önemi]] - Suat Karakuşoğlu · February 07, 2024
 - [[file:half_life_25_year.org][Half-Life 25. Yıl Belgeseli]] - Suat Karakuşoğlu · November 28, 2023
 - [[file:hot_reload_in_iOS.org][iOS Uygulaması Geliştirmede Hot Reload]] - Suat Karakuşoğlu · November 27, 2023
 - [[file:declarative_ui.org][Declarative Yaklaşım ve Tasarım]] - Suat Karakuşoğlu · November 15, 2023

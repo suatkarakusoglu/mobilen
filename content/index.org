@@ -5,6 +5,3 @@ Mobil yazılım ürünleri, kullanıcıların hayatlarında büyük bir öneme s
 Bu pratikleri daha yakından takip edebilmek için içerik yaratıyor ve paylaşıyoruz.
 
 [[file:magazines.org][Dergiler]] ve [[file:news.org][Tüm içerikler]]'e erişebilirsiniz
-
-#+begin_cta
-#+end_cta

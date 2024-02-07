@@ -25,6 +25,3 @@ Keyifli okumalar ;).
 5. [[file:../../news/kitap_make_something_wonderful.org][Kitap: Make Something Wonderful]]
 6. [[file:../../news/wwdc23_hakkinda_bilmeniz_gerekenler.org][WWDC 23 Hakkında Bilmeniz Gerekenler]]
 7. [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]
-
-#+begin_cta
-#+end_cta

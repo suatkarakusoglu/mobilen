@@ -26,6 +26,3 @@ Herkese iyi okumalar.
 6. [[file:../../news/flutter_3_13_version.org][Flutter 3.13 ile Gelen Yenilikler]]
 7. [[file:../../news/the_art_of_readable_code_2.org][Okuma Notları: The Art Of Readable Code (2)]]
 8. [[file:../../news/yeni_android_studio_surumu_giraffe.org][Yeni Android Studio sürümü “Giraffe”]]
-
-#+begin_cta
-#+end_cta

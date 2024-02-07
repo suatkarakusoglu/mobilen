@@ -11,6 +11,3 @@
 3. [[file:../../news/ios_app_push_certificate_yenileme.org][iOS uygulama bildirim sertifikası oluşturma/yenileme]]
 4. [[file:../../news/the_art_of_readable_code_1.org][Okuma Notları: The Art Of Readable Code (Part 1)]]
 5. [[file:../../news/android_file_template.org][Android File Template]]
-
-#+begin_cta
-#+end_cta

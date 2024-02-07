@@ -1,5 +1,8 @@
 #+title: Mobilen 7
 
+#+CAPTION: Photo by [[https://unsplash.com/@mehdisepehri][Mehdi Sepehri]]
+[[file:volume_7_cover.jpg]]
+
 Merhabalar,
 
 Mobilen 7. sayısında hot reload nedirden, tasarım ve kodlamayla ilgili konulara yer verdik.

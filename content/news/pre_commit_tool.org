@@ -1,0 +1,100 @@
+#+title: Pre-Commit Aracının Faydaları
+#+date: [2024-03-27 Wed]
+#+author: Suat Karakuşoğlu
+#+filetags: :Araçlar:Yazılım:
+
+#+language: tr
+#+LATEX_CLASS_OPTIONS: [24pt]
+#+LATEX_HEADER: \usepackage{babel}
+#+LATEX_HEADER: \usepackage{parskip}
+#+LATEX_HEADER: \setlength{\parindent}{15pt}
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \onehalfspacing
+#+LATEX_HEADER: \usepackage{unicode-math}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{qrcode}
+#+LaTeX_HEADER: \usemintedstyle{emacs}
+#+LATEX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
+#+LATEX_HEADER: \hypersetup{colorlinks = true}
+#+LATEX_HEADER: \usepackage[export]{adjustbox}
+#+LATEX_HEADER: \usepackage{pdfpages}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancyplain}
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+* İçerik
+Merhabalar, işlerimizin elle yönetilen taraflarını daha otomatize etmek,  gerçekten fark/değer yaratan işlerimize odaklanabilmemiz için bize daha çok zaman sağlar.
+
+** Neden Pre Commit kontrolu gerekli?
+Ortaya koyduğumuz işlerde commit aşaması artık yaptığımız işin düzgün bir çerçeveye oturduğunu netleştirdiğimiz noktaları ifade ediyor. Bu aşamada güzel bir açıklama ile işimizi repomuza kaydediyoruz.
+
+Commit öncesi kontrol etmemiz gereken bazı noktalar olabiliyor. =Git= bu noktada bize =pre-commit= müdahale fazını sunuyor. Ancak ekip içinde çalışması gereken bu fazları paylaşabilmek ve belki de konfigürasyonları hızlıca bir projeden diğerine taşıyabilmek hayatımızda git'in altyapısını kullanan bir başka araca yer açıyor: https://pre-commit.com/.
+
+** Pre Commit ayarlarının yapılması
+*** Pre Commit Yüklenmesi
+Pre-commit, bilgisayara yüklememiz gereken bir araç. =pip= üzerinden veya =brew= üzerinden yükleyebiliyoruz.
+
+#+begin_src shell
+  # Python üzerinden yükleme komutu
+  pip install pre-commit
+#+end_src
+
+#+begin_src shell
+  # Apple makinelerde yükleme komutu
+  brew install pre-commit
+#+end_src
+
+*** Proje içerisinde ayarlanması
+=.pre-commit-config.yaml= dosyasının ana dizinde yaratılması gerekiyor.
+
+Misal =SwiftFormat= komutunun her commit öncesi çalışması için bu dosyada yapılacak olan ayarlama şöyle:
+#+begin_src yaml
+    repos:
+      - repo: https://github.com/nicklockwood/SwiftFormat
+        rev: 0.53.5
+        hooks:
+          - id: swiftformat
+            name: SwiftFormat
+            entry: swiftformat
+            language: system
+            types: [swift]
+            stages: [commit]
+            args: ["--config", ".swiftformat", ".", "--swiftversion", "5.9.2"]
+#+end_src
+
+Pre-commit desteği olan repoları buraya ekleyebiliyoruz. =rev= ile hangi branch/commit'e bakacağını söylüyoruz.
+
+*** Projedeki pre-commitlerin git hooklara eklenmesi
+Artık configüration yapıldıktan sonra git hooklarına eklenmesi için bu ayarların yüklenmesi gerekiyor.
+
+#+begin_src shell
+  # Bu komut ile '.git/hooks' klasörü altına .pre-commit-config.yaml yüklenir.
+  pre-commit install
+#+end_src
+
+** Pre-Commit aracının faydaları
+Herkes commitlemeden önce kodun belirli kurallara göre formatlandığından ve kontrolden geçtiğinden emin oluyoruz.
+
+Bir standart belirlenip herkesin o standarda uygun yazması ve tutarlığlığı sağlar.
+
+Geliştirici zamanından ve PR'ların ilerlemesinde zaman tasarrufu sağlanır.
+
+En güzel taraflarından bir tanesi bu paylaşılan ayarlar sayesinde hem yeni geliştirici onboardınglerinde yönlendirici ve eğitici bir araç olabilir.
+
+Biz projelerimiz genelindeki böyle araçları/komutları [[https://mobilen.art/news/makefile_nedir/][Makefile]] dosyasının içerisine adım olarak ekleyerek daha kolay keşfedilebilir ve kullanılabilir kılmaya özen gösteriyoruz.
+
+#+begin_src makefile
+  install_pre_commit_hook:
+  pre-commit install
+
+  run_pre_commit_phases_manually:
+  pre-commit run --all-files
+#+end_src
+
+** Kaynakça
+- [[https://pre-commit.com/][Pre Commit Tool Websitesi]]
+- [[https://mobilen.art/news/makefile_nedir/][Makefile]]
+- [[https://github.com/nicklockwood/SwiftFormat][Swift Format Tool]]

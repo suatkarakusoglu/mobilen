@@ -1,11 +1,11 @@
-<!-- Generated from 7af30ae on 2024-02-07 @ 18:38 with Emacs 30.0.50 (Org mode 9.6.8) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>SSL Pinning - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">SSL Pinning</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #21</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #27</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><p class="site-post-meta">August  8, 2023</p><div id="content"><p>
+<!-- Generated from d7d2873 on 2024-03-28 @ 15:00 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>SSL Pinning - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">SSL Pinning</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #21</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #28</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><p class="site-post-meta">August  8, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org5533436">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgdd8667c">
 
-<div id="org5cf16e3" class="figure">
+<div id="org95f423e" class="figure">
 <p><img src="/img/ssl_and_pinning_certificate_topology.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span><a href="https://docs.wavemaker.com/learn/blog/2020/12/15/certificate-pinning/">SSL Pinleme</a></p>
@@ -20,7 +20,7 @@ SSL Pinning verinin iki parti arasında iletim esnasındaki güvenliğini koruma
 </p>
 </div>
 
-<h3><a id="sslrsquoin-kısa-tarihçesi" class="anchor" href="#sslrsquoin-kısa-tarihçesi">¶</a>SSL&rsquo;in Kısa tarihçesi</h3><div class="outline-text-3" id="text-orgca2771c">
+<h3><a id="sslrsquoin-kısa-tarihçesi" class="anchor" href="#sslrsquoin-kısa-tarihçesi">¶</a>SSL&rsquo;in Kısa tarihçesi</h3><div class="outline-text-3" id="text-org1d0084b">
 <p>
 Güvenli Geçiş Katmanları diye türkçeleştirebileceğimiz bir tabir olan SSL websitelerinin doğması ile beraber 1990&rsquo;ların ortasında bağlanılan sitelerin güvenliğini teyit etmek için kullandığı bir güvenlik yöntemidir.
 </p>
@@ -34,13 +34,13 @@ Sertifika otoritelerinin (CA Authorities) verdiği sertifikalar ile (chain of ce
 </p>
 </div>
 
-<h3><a id="mi̇tm-man-in-the-middle-atağı" class="anchor" href="#mi̇tm-man-in-the-middle-atağı">¶</a>MİTM (Man in the Middle) Atağı</h3><div class="outline-text-3" id="text-orgf5b7ce4">
+<h3><a id="mi̇tm-man-in-the-middle-atağı" class="anchor" href="#mi̇tm-man-in-the-middle-atağı">¶</a>MİTM (Man in the Middle) Atağı</h3><div class="outline-text-3" id="text-orgf42edbd">
 <p>
 SSL&rsquo;in eksik kaldığı noktada kötü niyetli birinin de sertifika sahibi olduğunda istemci ve sunucu arasında zaafiyet meydana gelebilir. İletişim&rsquo;in ortasına kendisini yerleştirip ortamı dinleyerek bilgi elde etmeye çalışan atak türüdür.
 </p>
 </div>
 
-<h3><a id="pinning-pinlemek-nedir" class="anchor" href="#pinning-pinlemek-nedir">¶</a>Pinning (Pinlemek) nedir?</h3><div class="outline-text-3" id="text-orgcc6dbad">
+<h3><a id="pinning-pinlemek-nedir" class="anchor" href="#pinning-pinlemek-nedir">¶</a>Pinning (Pinlemek) nedir?</h3><div class="outline-text-3" id="text-orgdd18def">
 <p>
 Pinlemenin ne olduğunu öğrenmeden önce neyi pinleyeceğimizden biraz bahsedelim.
 Pinlenecek olan dosyaya Sertifika (Certificate) diyoruz.
@@ -74,7 +74,7 @@ Pinleme yaptığınız vakit ise direkt olarak bu iletişim garantisini istemci/
 </p>
 </div>
 
-<h3><a id="mobil-uygulama-entegrasyonları" class="anchor" href="#mobil-uygulama-entegrasyonları">¶</a>Mobil Uygulama Entegrasyonları</h3><div class="outline-text-3" id="text-orgf54a273">
+<h3><a id="mobil-uygulama-entegrasyonları" class="anchor" href="#mobil-uygulama-entegrasyonları">¶</a>Mobil Uygulama Entegrasyonları</h3><div class="outline-text-3" id="text-orgdeb2b3a">
 <ol class="org-ol">
 <li>İlk adım olarak sunucunun <code>public</code> anahtarini veya SSL sertifikasını çıkarmanız gerekiyor.</li>
 
@@ -114,11 +114,11 @@ Android tarafında ise OKHttpClient ve Retrofit gibi popüler kütüphanelerde b
 </p>
 </div>
 
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgc93443a">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgf6069bc">
 <ul class="org-ul">
 <li><a href="https://owasp.org/www-community/controls/Certificate_and_Public_Key_Pinning">OWASP SSL Pinleme</a></li>
 <li><a href="https://mas.owasp.org/MASTG/">OWASP Mobil Uygulama Güvenlik Test Kitabı</a></li>
 <li><a href="https://docs.wavemaker.com/learn/blog/2020/12/15/certificate-pinning/">Certificate Pinning</a></li>
 </ul>
 </div>
-</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #27</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #21</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #6</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #5</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #28</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #21</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #7</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #5</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

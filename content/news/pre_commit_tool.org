@@ -23,9 +23,10 @@
 #+LATEX_HEADER: \usepackage{fancyhdr}
 #+LATEX_HEADER: \pagestyle{fancyplain}
 
-[[file:pre-commit-hook.jpg]]
-
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/@polarmermaid][Anne Nygård]]
+[[file:pre-commit-hook.jpg]]
 
 * İçerik
 Merhabalar, işlerimizin elle yönetilen taraflarını daha otomatize etmek,  gerçekten fark/değer yaratan işlerimize odaklanabilmemiz için bize daha çok zaman sağlar.

@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:xcode_build_tool.org]["xcodebuild" Komutları ve Kullanım Örnekleri]] - Uğurcan Durak · April 01, 2024
 - [[file:pre_commit_tool.org][Pre-Commit Aracının Faydaları]] - Suat Karakuşoğlu · March 27, 2024
 - [[file:version_pinning_ve_swift_frontend.org][Versiyon Pinlemenin Önemi]] - Suat Karakuşoğlu · February 07, 2024
 - [[file:half_life_25_year.org][Half-Life 25. Yıl Belgeseli]] - Suat Karakuşoğlu · November 28, 2023

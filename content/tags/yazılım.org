@@ -50,6 +50,8 @@
 
 [[file:../../news/xcode_breakpoints_ile_otomatizasyon.org][Xcode Breakpoints ile Otomatizasyon]]
 
+[[file:../../news/xcode_build_tool.org]["xcodebuild" Komutları ve Kullanım Örnekleri]]
+
 [[file:../../news/xcode_project_custom_file_templates.org][XCode Project Custom File Templates]]
 
 [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]

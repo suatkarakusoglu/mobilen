@@ -1,27 +1,27 @@
-<!-- Generated from aa57c4a on 2024-03-29 @ 15:04 with Emacs 30.0.50 (Org mode 9.6.8) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #21</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #28</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #4</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #7</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><p class="site-post-meta">August 22, 2023</p><div id="content"><p>
+<!-- Generated from e4ce142 on 2024-04-01 @ 19:23 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #22</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #29</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><p class="site-post-meta">August 22, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgb9139df">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgba8bf4f">
 <p>
 Merhabalar, iOS uygulaması geliştirirken bazen Xcode&rsquo;un komut satırı üzerinden terminal komutlarını kullanmaya ihtiyaç duyarız. <code>xcrun</code> komutu bize çatı bir komut olarak altında bir çok yardımcı komuta erişim sağlar, bunlardan en kullanışlılarından <code>simctl</code> üzerine inceleme yapacağız.
 </p>
 </div>
 
-<h3><a id="codexcruncode-komutu-nedir" class="anchor" href="#codexcruncode-komutu-nedir">¶</a><code>xcrun</code> komutu nedir?</h3><div class="outline-text-3" id="text-orge662658">
+<h3><a id="codexcruncode-komutu-nedir" class="anchor" href="#codexcruncode-komutu-nedir">¶</a><code>xcrun</code> komutu nedir?</h3><div class="outline-text-3" id="text-orgb0f451c">
 <p>
 Xcode&rsquo;un kullandığı bir çok komuta erişim için kullanılan çatı <code>wrapper</code> bir komuttur.
 </p>
 </div>
 
-<h3><a id="codesimctlcode-komutu-ne-işe-yarar" class="anchor" href="#codesimctlcode-komutu-ne-işe-yarar">¶</a><code>simctl</code> komutu ne işe yarar?</h3><div class="outline-text-3" id="text-orgad48aa8">
+<h3><a id="codesimctlcode-komutu-ne-işe-yarar" class="anchor" href="#codesimctlcode-komutu-ne-işe-yarar">¶</a><code>simctl</code> komutu ne işe yarar?</h3><div class="outline-text-3" id="text-org5a08481">
 <p>
 Xcode&rsquo;un sağladığı simülatörlere erişimi ve yönetimi kolaylaştıran bir araçtır. Aktif olarak kullanılan Xcode&rsquo;un toolchain&rsquo;ini kullanarak iOS veya macOS simülatörleri ayağa kaldırılabilir.
 </p>
 </div>
 
-<h4><a id="simulator-listeleme" class="anchor" href="#simulator-listeleme">¶</a>Simulator listeleme</h4><div class="outline-text-4" id="text-orgc6f7ca4">
+<h4><a id="simulator-listeleme" class="anchor" href="#simulator-listeleme">¶</a>Simulator listeleme</h4><div class="outline-text-4" id="text-org35b1918">
 <div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># Tüm simülatörleri listeleme</span>
 <span class="w">  </span>xcrun<span class="w"> </span>simctl<span class="w"> </span>list
 </pre></div>
@@ -45,7 +45,7 @@ Bu listeden farklı filtrelemeler yapabiliyoruz, misal tıp filtreleme seçenekl
 </pre></div>
 </div>
 
-<h4><a id="simülatör-ayağa-kaldırma" class="anchor" href="#simülatör-ayağa-kaldırma">¶</a>Simülatör ayağa kaldırma</h4><div class="outline-text-4" id="text-org45425b0">
+<h4><a id="simülatör-ayağa-kaldırma" class="anchor" href="#simülatör-ayağa-kaldırma">¶</a>Simülatör ayağa kaldırma</h4><div class="outline-text-4" id="text-org3f97551">
 <p>
 Yeni bir simülatör ayağa kaldırmak için:
 </p>
@@ -54,7 +54,7 @@ Yeni bir simülatör ayağa kaldırmak için:
 </pre></div>
 </div>
 
-<h4><a id="link-açma" class="anchor" href="#link-açma">¶</a>Link açma</h4><div class="outline-text-4" id="text-orga70c37d">
+<h4><a id="link-açma" class="anchor" href="#link-açma">¶</a>Link açma</h4><div class="outline-text-4" id="text-org3418f83">
 <p>
 Çoğu zaman bir <a href="ios_deep_link">universal link</a> veya <code>custom-scheme</code> açmayı denemek isteyebiliyoruz simülatörde o durumda şöyle bir komut bize yardımcı oluyor:
 </p>
@@ -63,7 +63,7 @@ Yeni bir simülatör ayağa kaldırmak için:
 </pre></div>
 </div>
 
-<h4><a id="uygulama-yükleme" class="anchor" href="#uygulama-yükleme">¶</a>Uygulama yükleme</h4><div class="outline-text-4" id="text-org8e540ae">
+<h4><a id="uygulama-yükleme" class="anchor" href="#uygulama-yükleme">¶</a>Uygulama yükleme</h4><div class="outline-text-4" id="text-orgfdf7c1e">
 <p>
 Eğer elimizde bir ipa var işe bunu yüklemek için:
 </p>
@@ -74,7 +74,7 @@ Eğer elimizde bir ipa var işe bunu yüklemek için:
 </pre></div>
 </div>
 
-<h4><a id="lokasyon-simule-etme" class="anchor" href="#lokasyon-simule-etme">¶</a>Lokasyon simule etme</h4><div class="outline-text-4" id="text-org59f6fbc">
+<h4><a id="lokasyon-simule-etme" class="anchor" href="#lokasyon-simule-etme">¶</a>Lokasyon simule etme</h4><div class="outline-text-4" id="text-org51004e8">
 <p>
 Lokasyon testleri yapıyor isek:
 </p>
@@ -85,7 +85,7 @@ Lokasyon testleri yapıyor isek:
 </pre></div>
 </div>
 
-<h4><a id="diğer-codesimctlcode-komutlarını-keşfetme" class="anchor" href="#diğer-codesimctlcode-komutlarını-keşfetme">¶</a>Diğer <code>simctl</code> komutlarını keşfetme</h4><div class="outline-text-4" id="text-org266cf46">
+<h4><a id="diğer-codesimctlcode-komutlarını-keşfetme" class="anchor" href="#diğer-codesimctlcode-komutlarını-keşfetme">¶</a>Diğer <code>simctl</code> komutlarını keşfetme</h4><div class="outline-text-4" id="text-org9340879">
 <p>
 Burada üzerinden geçemeyeceğimiz kadar çok yardımcı alt komutlar sağlıyor <code>xcrun simctl</code>.
 </p>
@@ -134,7 +134,7 @@ Bu komutların neler olduğunu keşfetmek için:
 </pre></div>
 </div>
 
-<h3><a id="sonuç" class="anchor" href="#sonuç">¶</a>Sonuç</h3><div class="outline-text-3" id="text-org45489de">
+<h3><a id="sonuç" class="anchor" href="#sonuç">¶</a>Sonuç</h3><div class="outline-text-3" id="text-org0cfab68">
 <p>
 Bu komutları üstünkörü bile olsa denemeniz, yaptığınız geliştirmeleri simülatörde test ederken daha atik olmanıza yardımcı olabilir.
 </p>
@@ -147,4 +147,4 @@ Bir çok işlem simülatör <i>gui</i>&rsquo;si üzerinden sağlanmış olsada h
 Görüşmek üzere!
 </p>
 </div>
-</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #28</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #21</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #7</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #5</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #29</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #22</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #5</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

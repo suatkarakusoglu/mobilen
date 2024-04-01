@@ -1,0 +1,367 @@
+#+title: "xcodebuild" Komutları ve Kullanım Örnekleri
+#+date: [2024-04-01 Mon]
+#+author: Uğurcan Durak
+#+filetags: :iOS:Yazılım:Araçlar:Xcode:
+
+[[file:xcode_build_cover.jpg]]
+
+[[https://www.linkedin.com/in/ugurcan-durak/][Uğurcan Durak]] yazdı.
+
+* İçerik
+Merhabalar, bu yazımda Xcode üzerinden yaptığımız bazı aksiyonların
+(build, archive, test vb.) arka tarafta hangi terminal komutu olarak
+çalıştığını ve bu komutların nerelerde kullanıldığına değineceğim.
+Faydalı olması dileğiyle haydi başlayalım :)
+
+** Ne Yapacağız?
+En çok kullanılan ve ihtiyaç olabileceğini düşündüğüm komutları adım
+adım açıklayarak örnekler vereceğim. Daha sonra, hangi süreçlerde
+kullanabileceğimizi inceleyerek, local ortamda basit bir örnek üzerinden
+nasıl uygulayabileceğimizi göstereceğim.
+
+** "xcodebuild" Nedir?
+xcodebuild” komutu, Xcode'un kullanıcı arayüzündeki (GUI) yapabildiğimiz
+işlemleri terminal üzerinden gerçekleştirmemizi sağlar. Bu sayede build,
+test ve dağıtım gibi süreçleri otomatize edebilir, kendi oluşturduğumuz
+script'ler ile projelerimizi komut satırı üzerinden yönetebiliriz.
+
+** Komutlar
+xcodebuild, hedef configuration, scheme, cihaz, gibi bir çok parametreyi
+destekler. Şimdi en çok kullanılan komutlara ve parametrelere değinip
+örneklerine bakalım. Burada anlatacaklarımın dışındaki yeteneklerini
+incelemek için terminalde /"xcodebuild -help"/ yazarak daha detaylı
+inceleyebilirsiniz.
+
+Komutların kullanımı en temelinde, projenizin bir workspace veya bir
+project olmasına göre değişiklik gösterir. Burada farklılık aslında
+sadece proje tipini belirtmekle ilgili. Vereceğim örneklerde "project"
+üzerinden devam ediyor olacağım eğer siz workspace bir proje
+hedefliyorsanız "project" olan yerleri workspace olarak değiştirmeniz
+yeterli. Aşağıda farklılığı anlamak için iki basit örnek ekliyorum.
+
+Workspace
+
+#+begin_src shell
+  xcodebuild -workspace **ProjeAdı.xcworkspace**
+#+end_src
+
+Project
+
+#+begin_src shell
+  xcodebuild -project **ProjeAdı.xcodeproj**
+#+end_src
+
+Farkı anladığımıza göre sırasıyla komutları inceleyelim.
+
+*** Build
+Build, basit anlamda kaynak kodun derlenerek çalıştırılabilir program
+dosyalarına dönüştürülmesi işlemi diyebiliriz. Xcode'da üst menüden
+/Product->Build/ ile veya /"command + B"/ tuş kombinasyonlarıyla build
+işlemini başlatabiliriz.
+
+Terminalde şu komut ile gerçekleştirilir;
+
+#+begin_src shell
+  xcodebuild -project ProjeAdı.xcodeproj -scheme ŞemaAdı -destination "platform=iOS Simulator,name=iPhone 15"
+#+end_src
+
+Daha önceden de belirttiğim gibi /"xcodebuild"/ komutu bir çok parametre
+destekler. Build almak istediğimiz şemayı, hedef cihaz modeli ve işletim
+sistemini belirtebiliriz. Aynı zamanda "/configuration/" parametresi
+ekleyerek /Debug/ ya da /Release/ olarak build almasını sağlayabiliriz.
+
+#+begin_src shell
+  xcodebuild -project XcodeBuildCommands.xcodeproj -scheme XcodeBuildCommands -destination "platform=iOS Simulator,name=iPhone 15,OS=latest"
+#+end_src
+
+Herhangi bir configuration eklemezsek default olarak /Debug/ modda build
+gerçekleşir.
+
+*** Archive Oluşturma
+Archive, projenin kaynak kodunu ve gerekli olan tüm dosyaları tek bir
+pakette birleştirme işlemidir. /Ipa/ oluşturabilmek için gerekli bir
+adımdır. Xcode'da üst menüden Product->archive ile işlemi
+başlatabiliriz.
+
+Terminalde şu komutla gerçekleştirilir;
+
+#+begin_src shell
+  xcodebuild archive -project ProjeAdı.xcodeproj -scheme ŞemaAdınız -archivePath Yolunuz/ArşivAdı.xcarchive
+#+end_src
+
+Burada isteğe ve ihtiyaca göre kullanabileceğiniz bazı parametreler
+mevcut. Bu parametrelere kısaca değinelim.
+
+*configuration*: Projenin hangi yapılandırma ile archive alınacağını
+belirtiyoruz. Custom bir yapınız yoksa default olarak /"Debug" ve
+"Release"/ olarak iki seçenek vardır.
+
+*CODE_SIGN_IDENTITY*: Hangi tür
+sertifikayla /(Developer, Distribution)/ archive alacağımızı
+belirtiyoruz.
+
+*PROVISIONING_PROFILE*: Burada ise hangi tür profile'ile
+(/App Store, Ad hoc, Enterprise, Development)/ archive alacağımızı
+belirtiyoruz.
+
+Bu parametrelerden herhangi birini belirtmezsen default olarak xcode
+üzerindeki ayarları uygulacaktır.
+
+*** IPA Oluşturma
+Ipa oluşturmak, projemizin son halini cihazlarda çalıştırılabilir hale
+getirdiğimiz adımdır. Bu adımda daha öncesinde oluşturduğumuz archive'ı
+kullanılır ve işlemin sonunda /.ipa/ uzantılı bir dosya üretilir.
+
+Komuta geçmeden önce ihtiyacımız olan /"exportOptions"/ dosyamızı
+oluşturmamız gerekiyor. Bu dosya içerisinde oluşturacağımız /ipa/'nın
+nasıl ve hangi amaçla oluşacağını belirtiyoruz.
+
+Dosyayı oluşturmak için, Xcode üzerinden oluşturmak istediğimiz folder'a
+sağ tıklayıp /"New File"/ diyerek açılan pencerede /"Property List" /i
+seçiyoruz. Dosyayı oluşturduktan sonra aşağıdaki gibi dolduruyoruz.
+
+[[file:export_options.jpg]]
+
+Source Code görünümü:
+#+begin_src xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+  <plist version="1.0">
+    <dict>
+      <key>method</key>
+      <string>app-store</string>
+      <key>provisioningProfiles</key>
+      <dict>
+        <key>com.xxx.test</key>
+        <string>ProvisingProfileName</string>
+        <key>com.xxx.test.NotificationService</key>
+        <string>ProvisingProfileNameForNotificationService</string>
+      </dict>
+      <key>signingCertificate</key>
+      <string>Apple Distribution</string>
+      <key>signingStyle</key>
+      <string>manual</string>
+      <key>teamID</key>
+      <string>YoutTeamID</string>
+    </dict>
+  </plist>
+#+end_src
+
+#+CAPTION: Property List görünümü
+[[file:export_option_plist.jpg]]
+
+** ExportOptions Field'ların Tanımı
+Şimdi eklediğimiz değerlerin ne anlama geldiğine bakalım.
+
+- *method* :: Hangi türde dağıtım yapacağımızı belirttiğimiz parametre
+/(app-store, ad-hoc, enterprise, development)/
+
+- *signingStyle* ::
+İmzalamayı otomatik mi yoksa manuel mi yapacağımızı belirttiğimiz
+parametre.
+
+- *signingCertificate* :: İmza için hangi tür sertifika
+kullanacağımızı belirttiğimiz parametre. /(Apple Distribution, Apple
+Developer)/
+
+- *provisioning profiles* :: Dağıtım yapacağımız türe ait
+provisioning profile ismini belirtiyoruz. Eğer projenizde ek olarak
+/NotificationService/ target'ınız varsa bunun için ayrıca profile
+belirtmemiz gerekiyor. Bu durumu sizler için /"exportOptions"/ dosyasına
+örnek olarak ekledim :)
+
+- *teamID* :: teamID'mizi belirttiğimiz parametre.
+Her takımın kendine ait sertifikaları, provisioning profile'ları
+bulunduğundan uygulamanın hangi takım için imzalanacağını belirtmiş
+oluyoruz.
+
+Genel anlamda önemli gördüğüm alanları belirttim. Burada olmayan bir çok
+parametre mevcut. İhtiyaç ve isteğe göre bu alanları
+düzenleyebilirsiniz.
+
+Terminalde şu kodu çalıştırarak /ipa/ oluşturma işlemini başlatabiliriz;
+
+#+begin_src shell
+  xcodebuild -exportArchive -archivePath OluşturulmuşArchiveYolu/ArchiveAdı.xcarchive -exportPath ExportEdilecekIpaYolu -exportOptionsPlist ExportOptionsFileYolu
+#+end_src
+
+Komut içerisinde ihtiyacımız olanlar; - Bir önceki adımda oluşturduğumuz
+archive path'i ve ismi - Oluşturmuş olduğumuz “exportOptions” dosyanın
+path'i - Ipa'nın oluşturulacağı yol
+
+Bunları komuta ekleyerek /ipa/ oluşturma işlemini başlatabiliriz.
+
+** Test Süreci
+Test, projemizin beklediğimiz gibi çalışıp çalışmadığını kontrol etmek
+için kullanılır. Herhangi bir ekranda veya bir akışta problem olup
+olmadığını ilgili testi çalıştırıp tespit edebiliriz. Xcode'üzerinde
+command + U kısayolu veya üst menüden Product->test ile
+çalıştırabiliriz. Komut ile nasıl yaparız hangi özellikleri
+kullanabiliriz ona bakalım.
+
+Terminalde şu komutla gerçekleştirilir;
+
+#+begin_src shell
+  xcodebuild test -project ProjeAdı.xcodeproj -scheme ŞemaAdı -destination "name=iPhone 15,OS=latest"
+#+end_src
+
+/"destination"/ kısmında testi çalıştırmak istediğimiz simulator'ü
+yazıyoruz.
+
+Komut çalıştırıldıktan sonra, öncelikle projenin build işlemi
+gerçekleşir ve ardından projedeki hem Unit hem de UI testlerini (UI Test
+Xcode üzerinden devre dışı bırakılmadıysa) çalıştırmaya başlar. Bu
+süreçte, testler üzerinde çeşitli özelleştirmeler yapabiliriz. Örneğin,
+yalnızca Unit testlerin çalıştırılması, belirli bir test sınıfının ya da
+sınıf içindeki spesifik bir test fonksiyonunun çalıştırılması gibi.
+
+Yalnız Unit Test'lerin çalıştırılması: /"-skip"/ ardından
+/"-testing"/ parametrelerini ekleyerek sonuna UI test target adımızı
+giriyoruz. Target adımıza aşağıdaki resimdeki gibi TARGETS bölümünden
+öğrenebiliriz.
+
+[[file:xcode_build_skip_test.jpg]]
+
+#+begin_src shell
+  xcodebuild test -project ProjeAdı.xcodeproj -scheme ŞemaAdı -destination "name=iPhone 15,OS=17.2" -skip-testing:UITestTargetAdı
+#+end_src
+
+Bu komutu çalıştırdığımızda UI testleri haricinde tüm testler
+çalışacaktır.
+
+Spesifik bir sınıfın veya fonksiyonun test edilmesi: Bir önceki
+örnekte /"-skip"/ parametresini eklemiştik şimdi ise /"-only"/
+parametresini ekliyoruz. Parametreleri ekledikten sonra çalıştırmak
+istediğimiz test sınıfını ya da fonksiyonu yazıyoruz.
+
+Daha iyi anlamak adına basit bir “/CalculatorTest”/ sınıfı üzerinden
+örneklere bakalım.
+
+#+begin_src swift
+  import XCTest
+  @testable import XcodeBuildCommands
+
+  final class CalculatorTest: XCTestCase {
+      var calculator: CalculatorHelper!
+      override func setUpWithError() throws {
+          calculator = .shared
+      }
+
+      override func tearDownWithError() throws {
+
+      }
+
+      func test_calculate() throws {
+          let val1: Int = 5
+          let val2: Int = 10
+          let expected: Int = 15
+
+          let result = self.calculator.sum(val1, val2)
+
+          XCTAssertEqual(result, expected)
+      }
+
+      func test_multiply() throws {
+          let val1: Int = 5
+          let val2: Int = 10
+          let expected: Int = 50
+
+          let result = self.calculator.multiply(val1, val2)
+
+          XCTAssertEqual(result, expected)
+      }
+  }
+#+end_src
+
+Yalnızca /CalculatorTest/'i çalıştırmak istersek,
+#+begin_src shell
+  xcodebuild test -project XcodeBuildCommands.xcodeproj -scheme
+  XcodeBuildCommands -destination "name=iPhone 15,OS=17.2"
+  -only-testing:XcodeBuildCommandsTests/CalculatorTest
+#+end_src
+
+Sonuç,
+[[file:xcodebuild_test_calculator.jpg]]
+
+CalculatorTest sınıfındaki bir test fonksiyonunu çalıştırmak istersek,
+#+begin_src shell
+  xcodebuild test -project XcodeBuildCommands.xcodeproj -scheme
+  XcodeBuildCommands -destination "name=iPhone 15,OS=17.2"
+  -only-testing:XcodeBuildCommandsTests/CalculatorTest/test_calculate
+
+#+end_src
+
+[[file:xcodebuild_test_only_function.jpg]]
+
+Görüldüğü üzere sadece /test_calculate()/ fonksiyonu çalıştı.
+
+Temel mantığı anlamak amacıyla birkaç senaryo için örnekler ekledim.
+Bundan sonrası sizin ihtiyaçlarınıza ve gereksinimlerinize bağlı olarak
+değişiklik gösterebilir.
+
+** "xcodebuild" Komutlarının Çeşitli Kullanım Senaryoları
+*** Otomasyon Pipeline Süreçleri
+En yaygın kullanım alanlarından biri, Jenkins gibi platformlarda build,
+test, archive ve ipa oluşturma süreçlerini otomatize etmektir. Jenkins,
+sürekli entegrasyon ve sürekli dağıtım (CI/CD) süreçlerinde merkezi bir
+rol oynar. Bu araç, projenin düzenli olarak derlenmesini, testlerin
+çalıştırılmasını ve uygulamanın dağıtımının yapılmasını sağlar, böylece
+manuel müdahale gereksinimini azaltır.
+
+Aynı zamanda /Fastlane/ otomasyon programı arka tarafta xcodebuild
+komutlarını kullanır. Fastlane işlemi sırasında loglara detaylı bakarsak
+xcodebuild komutlarını görebiliriz. Örnek olması açısından aşağıya
+ekliyorum;
+
+#+begin_src shell
+  Resolving Swift Package Manager dependencies...
+  xcodebuild -resolvePackageDependencies -scheme XXX -project ./XXX.xcodeproj
+
+  xcodebuild -showBuildSettings -scheme XXX -project ./XXX.xcodeproj 2>&1
+  Detected provisioning profile mapping: {:"com.xxx.xxx"=>"match AppStore com.xxx.xxx", :"com.xxx.xxx.NotificationService"=>"match AppStore com.xxx.xxx.NotificationService"}
+
+  XXX/fastlane/2.219.0_2/libexec/gems/fastlane-2.219.0/gym/lib/assets/wrap_xcodebuild/xcbuild-safe.sh -exportArchive -exportOptionsPlist '/var/folders/xn/_f_jvlhx113805tyb7xpsz4c0000gn/T/gym_config20240312-10649-j54z7f.plist' -archivePath /Users/XXX/Library/Developer/Xcode/Archives/2024-03-12/Tami\ Alpha\ 2024-03-12\ 13.39.16.xcarchive -exportPath '/var/folders/xn/_f_jvlhx113805tyb7xpsz4c0000gn/T/gym_output20240312-10649-pgtuac'
+#+end_src
+
+** Local Ortamda Otomasyon İşlemleri
+Jenkins gibi araçların yanı sıra, local geliştirme ortamımızda da
+“/xcodebuild”/ komutlarını kullanarak kendimize özel otomasyonlar
+oluşturabiliriz. Örnek olarak, test çalıştırıp sonucunda “/Slather”/
+aracı ile rapor oluşturma sürecini otomatize etmeye çalışalım. Xcode'da
+bu işlemi adım adım yapmak yerine, tek bir komutla hızlıca
+tamamlayabiliriz. Peki nasıl yaparız?
+
+Öncelikle projemizin bulunduğu dizinde /"Makefile"/ adında bir dosya
+oluşturarak başlayalım. Makefile, belirli komutları ve iş akışlarını
+tanımlayarak tekrar eden görevleri otomatize etmemizi sağlar. Şimdi, bu
+Makefile içerisine ekleyeceğimiz kodları inceleyelim.
+
+- Test çalıştırmak için aşağıdaki kodu ekliyoruz
+  #+begin_src shell
+
+    (xcodebuild test -project XcodeBuildCommands.xcodeproj -scheme
+     XcodeBuildCommands -destination "name=iPhone 15,OS=17.2"
+     -skip-testing:XcodeBuildCommandsUITests)
+  #+end_src
+
+UI testleri dahil etmek istemediğimden "/-skip/" komutu ile ignore
+ediyorum.
+
+** Xcode Problemleriyle Başa Çıkmak
+/"xcodebuild"/ komutları, otomasyon süreçlerinin yanı sıra Xcode ile
+ilgili karşılaşılan hataların çözümünde de faydalı olabilir. Örneğin
+bazı durumlarda, özellikle bir branch değiştirme veya birleştirme
+(merge) işlemi sonrasında Xcode beklenmedik bir şekilde kapanıp tekrar
+açıldığında build alamayıp kapanabiliyor. Bu gibi durumlarda, terminal
+üzerinden build almak Xcode'un yeniden düzgün bir şekilde çalışmasını
+sağlar ve geliştirme sürecinizin kesintiye uğramasını önler.
+
+** Son olarak
+Elimden geldiğince çoğu komutu açıklayıp örnekler vermeye çalıştım.
+Umarım sizler için faydalı olur. Okuduğunuz ve vakit ayırdığınız için
+teşekkürler :)
+
+** Kaynakça
+- [[https://developer.apple.com/library/archive/technotes/tn2339/_index.html][Building from the Command Line with Xcode FAQ]]
+- [[https://medium.com/trendyol-tech/building-an-ios-distribution-pipeline-local-poc-with-command-line-tools-part-1-d9f443c7dbb5][Building an iOS Distribution Pipeline]]
+- [[https://m2pfintech.com/blog/ci-cd-pipeline-for-ios-build-generation-using-jenkins/][Pipeline for iOS build generation using Jenkins]]

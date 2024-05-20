@@ -1,0 +1,268 @@
+<!-- Generated from da04cd2 on 2024-05-21 @ 00:00 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Tasarım, Deneyim ve Mobil - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Tasarım, Deneyim ve Mobil</h1><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #6</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #30</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #6</a><p class="site-post-meta">May 10, 2024</p><div id="content"><p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+
+<div id="org17dfbbc" class="figure">
+<p><img src="/img/content_design_cover.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/@santesson89?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Andrea De Santis</a></p>
+</div>
+
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org8c5d494">
+<p>
+Merhabalar,
+</p>
+
+<p>
+Tasarım ve kullanıcı deneyimi ile ilgili Apple bir çok anlamda devrim yaptı.
+</p>
+
+<p>
+Bu devrimi yaparken deneyimi <code>User</code> yerine <code>Human</code> isimlendirmesiyle &rsquo;Human Interface Guideline&rsquo;lar yayınladılar. <code>Human</code> odağı daha çok insana yakın ürünler yapmayı vurgulamak adına özellikle kullandıkları bir jargon.
+</p>
+
+
+<div id="org68d1540" class="figure">
+<p><img src="/img/mac_hig_1993.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 2: </span>Human Interface Guideline 1993</p>
+</div>
+
+<p>
+<a href="http://interface.free.fr/Archives/Apple_HIGuidelines.pdf">Macintosh Human Interface Guideline</a>&rsquo;inin temellendigi ve uygulamanın insan ile olan ilişkisini 360 derece bakış açısıyla değerlendirirken dikkat edilmesi gereken bir çok konu var.
+</p>
+
+<p>
+Bu konu ve kıstaslara biraz değinelim istiyorum.
+</p>
+</div>
+
+<h3><a id="geribildirim-ve-i̇nsan" class="anchor" href="#geribildirim-ve-i̇nsan">¶</a>Geribildirim ve İnsan</h3><div class="outline-text-3" id="text-org11afbb0">
+<p>
+Bütün canlılık sensörler ile bezeli. 5 temel duyumuz olarak ifade ettiğimiz bu duyuların temel amacı etraftan geribildirim alabilmek.
+</p>
+
+<p>
+Yaptığınız veya yapmadığınız herhangi bir eylem sonrasında etkilerinden anlam çıkarmamızı sağlayan; anlık durum, uyarı veya hata durumlarının iletişimini düzgün kurabildiğimiz bu döngüye geribildirim diyoruz.
+</p>
+
+
+<div id="orgb0f4fb3" class="figure">
+<p><img src="/img/coffee_machine.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 3: </span>Photo by <a href="https://unsplash.com/@louishansel?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Louis Hansel</a></p>
+</div>
+
+<p>
+Bir kahve makinasını ele alalım, türlü geribildirimler görürüz:
+</p>
+
+<p>
+Kahve hazır olduğunda işin bitimine dair ses çıkarması <code>completion feedback</code>&rsquo;tir.
+</p>
+
+<p>
+Kahve makinesinin anlık durumunu size bildirmesi <code>status feedback</code>&rsquo;tir, suyunun az olduğunu veya temizlenmesi gerektiğine dair verdiği bilgiler <code>error/warning feedbacks</code>&rsquo;tir.
+</p>
+
+<p>
+Bu geribildirimler sayesinde lezzetli kahveler içebiliyoruz.
+</p>
+
+<p>
+Mobil uygulamalar için ise en temel geribildirim yöntemleri:
+</p>
+</div>
+<h4><a id="sesli-geribildirim" class="anchor" href="#sesli-geribildirim">¶</a>Sesli Geribildirim</h4><div class="outline-text-4" id="text-org0fb5cb0">
+<p>
+En aşina olduğumuz geribildirim çeşidi sesli geribildirimdir.
+</p>
+
+<p>
+Herhangi bir başarı/başarısız durumda sesli bildirmek.
+</p>
+
+<p>
+Mesaj gelmesi, alarm tetiklenmesi ve benzeri konularda kullanıcıya haber vermek için kullanılıyor.
+</p>
+</div>
+
+<h4><a id="titreşimli-geribildirim-codehaptic-feedbackcode" class="anchor" href="#titreşimli-geribildirim-codehaptic-feedbackcode">¶</a>Titreşimli Geribildirim <code>Haptic Feedback</code></h4><div class="outline-text-4" id="text-org9487998">
+<p>
+<a href="https://developer.apple.com/design/human-interface-guidelines/playing-haptics">Haptics Konusu</a> standart komponentler için varsayılan olarak tanımlı olabiliyor.
+</p>
+
+<p>
+Bunlardan <code>toggle</code>, <code>slider</code> veya <code>picker</code> komponentlerinde görüyoruz.
+Ancak kendi özel yarattığımız komponentler içerisinden de <code>haptic feedback</code> kütüphanesi ile bu özelliği sağlayabiliyoruz.
+</p>
+</div>
+
+<h4><a id="animatif-geribildirimler" class="anchor" href="#animatif-geribildirimler">¶</a>Animatif Geribildirimler</h4><div class="outline-text-4" id="text-org13a191c">
+<p>
+Yapılan işlemler sonrasında veya süreli işlemlerde kullanıcıya durum hakkında bilgi verebilmek için ufak animasyonlar ile uygulamayı daha geribildirim odaklı hale getirebiliriz.
+</p>
+
+<p>
+Bir elektrikli araba uygulamasında şarj olduğunu belli edebilmek adına akan bir elektrik akımı araca doğru animatif şekilde gösterilebilir.
+</p>
+
+<p>
+Ayrıca state değişikliklerinde hangi stateler arası değişim olduğu animatif olarak görüntülenip içinde bulunulan durum daha anlaşılır hale getirilir.
+</p>
+</div>
+
+<h3><a id="yolunu-bulmak-codewayfindingnavigationcode" class="anchor" href="#yolunu-bulmak-codewayfindingnavigationcode">¶</a>Yolunu Bulmak <code>Wayfinding/Navigation</code></h3><div class="outline-text-3" id="text-orgcea1b42">
+<p>
+Her ortam kendi haritasına sahiptir.
+</p>
+
+<p>
+Harita erişilebileceklerin, yapılabileceklerin <code>sınırlar</code>&rsquo;ını belirler; hangi noktalardan diğer noktalara <code>geçiş</code> olabileceğini ifade eder.
+</p>
+
+<p>
+Kaliteli ortamlar, orada yaşayacak veya oradan faydalanacak olan kimselerin yolunu doğru ve kolay bulabildigi yollara sahiptir.
+</p>
+
+<p>
+Uygulama içerisindeki gezintimizde karşımıza ne geleceğini hissedebilmek, yapacağımız işlem sonrası geriye dönüp dönemeyeceğini anlayabilmek gibi konular, konforlu bir etkileşimin anahtarlarıdır.
+</p>
+
+<p>
+Bunu gerçekleştirebilmek için, dijital etkileşimin olduğu web-sitesi, mobil uygulama gibi mecralarda <a href="https://musemind.agency/blog/why-ux-sitemap-is-important-for-designing">UX sitemap</a>&rsquo;e göre bilgi hiyerarşisi oluşturulmalıdır.
+</p>
+
+<p>
+<a href="https://frankrausch.com/ios-navigation">Temel navigasyon çeşitleri</a>ni anlayarak uygulamanın tabiatına en uygun yolu çizmek uygulamanın başarısındaki temel basamaklardan biridir.
+</p>
+
+
+<div id="orga108de2" class="figure">
+<p><img src="/img/ContentDrivenNavigation.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 4: </span>Content Temelli Navigasyon: <code>Oyunlar</code> ve <code>İçerik Yoğun</code> uygulamalar</p>
+</div>
+
+
+<div id="orge55e668" class="figure">
+<p><img src="/img/FlatNavigation.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 5: </span>Yatayda Navigasyon: <code>Apple Music</code> veya <code>App Store</code> Uygulamaları</p>
+</div>
+
+
+<div id="org3351080" class="figure">
+<p><img src="/img/HierarchicalNavigation.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 6: </span>Hiyerarşik Dikeyde Navigasyon: <code>Mail</code> veya <code>Ayarlar</code> Uygulamaları</p>
+</div>
+
+<p>
+Yolunu kaybeden veya hızlıca istediği yere gidecek bağlantıları göremeyen birisi bir daha o ortama gelmekten kaçınacaktır; isterse bir mobil uygulamada, isterse bir alışveriş merkezinde olsun.
+</p>
+</div>
+
+<h4><a id="tahmin-edilebilir-ve-kolay-anlaşılabilir-bir-akış-sunmak" class="anchor" href="#tahmin-edilebilir-ve-kolay-anlaşılabilir-bir-akış-sunmak">¶</a>Tahmin Edilebilir ve Kolay Anlaşılabilir Bir Akış Sunmak</h4><div class="outline-text-4" id="text-org5068db1">
+<p>
+Cihaz-insan etkileşilerimde net olmayan ifadeler kullanmak tedirginlik yaratır, çünkü ifadeyi netleştirmek için ikinci bir soru soramayacağımız bir ekranla karşı karşıyayızdır.
+</p>
+
+<p>
+O nedenle <b>sohbet</b>&rsquo;in nereye doğru gittiğini tahmin edilebilir kılmak daha rahat bir deneyime vesile olucaktır.
+</p>
+</div>
+
+<h3><a id="yazılı-i̇çerik" class="anchor" href="#yazılı-i̇çerik">¶</a>Yazılı İçerik</h3><div class="outline-text-3" id="text-orge9fb5e6">
+<p>
+Bilgi hiyerarşisinde yazının ne derece iyi kullanıldığı iletişim açısından çok önem arz ediyor.
+</p>
+
+<p>
+İçeriğin en kritik taraflarını yazılı olarak ifade ediyoruz.
+</p>
+
+<p>
+Her sayfada, bilgiyi; konu odağını dağıtmaden vermek, mesajınızı daha doğru iletmek için yardımcı olabilir.
+</p>
+
+<p>
+Bu durum yine her ekranın bir amacı olması ve yazılı ve görsel içeriklerin yalnızca o amaç doğrultusunda kullanılması gereğini ifade ediyor.
+</p>
+
+
+<div id="org2dcc786" class="figure">
+<p><img src="/img/writing_content_modal.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 7: </span>Örnek Popup İletişimi</p>
+</div>
+
+<p>
+Bu alarm kapatma diyaloğunda başlık sade bir şekilde kendini ifade ederken seçenekler tıklandığında belirsizliğe mahal vermeyecek şekilde yazılmış.
+</p>
+
+<p>
+Burada başlıkta &rsquo;Cancel Alarm&rsquo; yazıp sonra standart buton seçeneklerinde &rsquo;OK&rsquo; ve &rsquo;Cancel&rsquo; yazıldığında olabilecek kargaşanın önüne geçilmiş.
+</p>
+</div>
+
+<h3><a id="aşamalı-bilgi-sunmak-codeprogressive-disclosurecode" class="anchor" href="#aşamalı-bilgi-sunmak-codeprogressive-disclosurecode">¶</a>Aşamalı Bilgi Sunmak <code>Progressive Disclosure</code></h3><div class="outline-text-3" id="text-orgda59909">
+<p>
+Yalnızca gereği kadar bilgi sunmak olarakta söyleyebiliriz.
+</p>
+
+<p>
+Kısa yazabilmek gerçek bir zanaattır.
+</p>
+
+<p>
+<a href="https://www.goodreads.com/quotes/21422-i-didn-t-have-time-to-write-a-short-letter-so">Mark Twain</a> <span class="underline">kısa olarak yazacak vaktim yoktu</span> diyerek özür dilediği deyişinde, bilginin karmaşıklaşmadan, düzgün zamanda ve yerde, ancak ihtiyacı kadarıyla karşıya verilmesi gerektiğini söyler.
+</p>
+
+<p>
+Bir etkileşim ve bilgi mecrası olan uygulamalarımızda karmaşıklığı azaltmanın, yeri ve zamanını düzgün belirlemenin prensibi <code>progressive disclosure</code> olarak söylenebilir.
+</p>
+
+<p>
+Aşamalı bilgi sunmak karşıdakine daha az zihinsel yük yükler.
+</p>
+
+<p>
+Diğer bir avantajı ise sistemin acemisi olan kimselerin ilk etapta gelişmiş seçenekler ile sistemi bozabilme ihtimalini ortadan kaldırmaktır.
+</p>
+
+<p>
+Elbetteki bir anda uçak kokpitindeki tüm tuşlarla karşılaşmak kullanıcıyı ürkütecektir.
+</p>
+
+<p>
+O nedenle olabildiğince odaklı ve mümkün mertebe en çok kullanılan yetenekleri düzgünce sunmak, <a href="https://tr.wikipedia.org/wiki/Pareto_ilkesi">Pareto prensibi</a>&rsquo;ne göre bu zaten yüzde 80&rsquo;lik kullanımı karşılayacaktır, daha ileri ihtiyaçları ise aşamalı olarak kullanıcıya açmak gerekir.
+</p>
+</div>
+
+<h3><a id="sonuç-olarak" class="anchor" href="#sonuç-olarak">¶</a>Sonuç Olarak</h3><div class="outline-text-3" id="text-orgfd4bd35">
+<p>
+Önemli gördüğüm bu tasarım pratiklerinin yanı sıra, daha detaylı olarak <code>Apple</code> bu ve daha çok pratiği bir yol haritasında göstermeye başladı.
+</p>
+
+<p>
+<a href="https://developer.apple.com/design/pathway/">Apple Design Pathway</a> başlıkları altında bahsettiğimiz konulara dair detaylı içeriklere erişebilirsiniz.
+</p>
+
+<p>
+Görüşmek üzere.
+</p>
+</div>
+
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org4ef1a23">
+<ul class="org-ul">
+<li><a href="https://developer.apple.com/design/pathway/">Apple Design Pathway</a></li>
+<li><a href="https://developer.apple.com/videos/play/wwdc2022/10037/">Writing for Interfaces WWDC Session</a></li>
+<li><a href="https://developer.apple.com/videos/play/wwdc2017/802/">Essential Design Principles WWDC</a></li>
+<li><a href="https://musemind.agency/blog/why-ux-sitemap-is-important-for-designing">UX Sitemap</a></li>
+<li><a href="https://frankrausch.com/ios-navigation">Temel navigasyon çeşitleri</a></li>
+</ul>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #30</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #22</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #6</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #6</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #1</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

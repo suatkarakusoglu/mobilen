@@ -1,15 +1,15 @@
-<!-- Generated from c48a699 on 2024-05-20 @ 23:22 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!-- Generated from da04cd2 on 2024-05-21 @ 00:00 with Emacs 30.0.50 (Org mode 9.6.8) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>iOS Sertifika ve Provisioning Profile İşlemleri - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">iOS Sertifika ve Provisioning Profile İşlemleri</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #22</a><p class="site-post-meta">September 20, 2023</p><div id="content"><p>
 <a href="https://linkedin.com/in/alimerttekel">Ali Mert Tekel</a> yazdı.
 </p>
 
 
-<div id="org343cfb3" class="figure">
+<div id="orgf3f87e3" class="figure">
 <p><img src="/img/certificates-ids-profiles.png" class="content-image" width="100%">
 </p>
 </div>
 
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgd34a1db">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org745e27e">
 <p>
 Herkese merhaba!
 </p>
@@ -23,19 +23,19 @@ iOS dünyasında sertifika, provisioning, signing gibi tabirler karşımıza ç�
 </p>
 </div>
 
-<h3><a id="sertifika-certificate" class="anchor" href="#sertifika-certificate">¶</a>Sertifika (Certificate)</h3><div class="outline-text-3" id="text-org8a2fc65">
+<h3><a id="sertifika-certificate" class="anchor" href="#sertifika-certificate">¶</a>Sertifika (Certificate)</h3><div class="outline-text-3" id="text-orgc582096">
 <p>
 Dijital olarak imzalanan bir bilgi kümesidir. Bu bilgiler, bir kişi veya kuruluşun kimliğini doğrulama, elektronik iletişim sırasında güvenlik sağlama veya belirli bir yetki veya hizmete erişim hakkı verme gibi çeşitli amaçlar için kullanılabilir.
 </p>
 </div>
 
-<h3><a id="provisioning-profile" class="anchor" href="#provisioning-profile">¶</a>Provisioning Profile</h3><div class="outline-text-3" id="text-orgcabd9d6">
+<h3><a id="provisioning-profile" class="anchor" href="#provisioning-profile">¶</a>Provisioning Profile</h3><div class="outline-text-3" id="text-org9dc6d64">
 <p>
 Apple&rsquo;ın iOS ve macOS uygulamaları için kullanılan bir güvenlik mekanizmasıdır. Bu, belirli bir uygulamanın yalnızca belirli cihazlarda çalışmasına izin veren ve uygulamanın belirli bir sertifika ile imzalandığını doğrulayan bir dosyadır. Genellikle bir uygulamanın geliştirme, test ve dağıtım aşamaları boyunca kullanılır.
 </p>
 </div>
 
-<h3><a id="uygulama-i̇mzalamak-nedir-ne-işe-yarar" class="anchor" href="#uygulama-i̇mzalamak-nedir-ne-işe-yarar">¶</a>Uygulama İmzalamak nedir, ne işe yarar?</h3><div class="outline-text-3" id="text-org1c18cb8">
+<h3><a id="uygulama-i̇mzalamak-nedir-ne-işe-yarar" class="anchor" href="#uygulama-i̇mzalamak-nedir-ne-işe-yarar">¶</a>Uygulama İmzalamak nedir, ne işe yarar?</h3><div class="outline-text-3" id="text-orgbc4a918">
 <p>
 Bir iOS uygulamasını <b>imzalamak</b>, uygulamanızın <b>kimliğini doğrulamak</b> ve App Store&rsquo;a yüklemek için <b>gereklidir</b>. Peki, &ldquo;Apple bunu neden istiyor?&rdquo; diye soracak olursanız, cihazın güvenliğini ve gizliliğini korumak için olduğunu söyleyebiliriz.
 </p>
@@ -61,7 +61,7 @@ Gelin bu süreci daha detaylı bir şekilde adım adım ele alarak inceleyelim;
 </p>
 
 
-<div id="org0469971" class="figure">
+<div id="org406607a" class="figure">
 <p><img src="/img/create-certificates.png" class="content-image" width="100%">
 </p>
 </div>
@@ -111,7 +111,7 @@ Burada bahsettiğimiz CA, yani Sertifika Otoritesi, dijital sertifikaları yayı
 </ul>
 </div>
 
-<h3><a id="provisioning-profile-detayları" class="anchor" href="#provisioning-profile-detayları">¶</a>Provisioning Profile Detayları</h3><div class="outline-text-3" id="text-orgaeafbdd">
+<h3><a id="provisioning-profile-detayları" class="anchor" href="#provisioning-profile-detayları">¶</a>Provisioning Profile Detayları</h3><div class="outline-text-3" id="text-org7e1d061">
 <p>
 Provisioning Profile uygulamanızın hangi cihazlarda çalışabileceğini, hangi servislerle etkileşime girebileceğini ve kimler tarafından kullanılabileceğini belirleyen bir dosyadır. Uygulamanızın özelliklerini, yeteneklerini ve bunlara erişimini tanımlar.
 </p>
@@ -144,7 +144,7 @@ Profilinizi oluşturduktan sonra, indirip Xcode&rsquo;a eklemeniz gerekmektedir 
 </ul>
 </div>
 
-<h3><a id="uygulamayı-imzalama" class="anchor" href="#uygulamayı-imzalama">¶</a>Uygulamayı imzalama</h3><div class="outline-text-3" id="text-org6016504">
+<h3><a id="uygulamayı-imzalama" class="anchor" href="#uygulamayı-imzalama">¶</a>Uygulamayı imzalama</h3><div class="outline-text-3" id="text-orgfa02f14">
 <p>
 Bu aşamada, uygulamanızın gerçek cihazlarda çalışabilmesi ve App Store&rsquo;a
 yüklenmesi için gereken imzalamayı gerçekleştirirsiniz.

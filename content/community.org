@@ -2,8 +2,6 @@
 
 /*N* elin nesi var, *N+1* elin sesi var./
 
-*Slack*: [[https://join.slack.com/t/mobilenworkspace/shared_invite/zt-20y4seim9-ghMryV_uv_FqGqM32i6H7w][Mobilen Slack]] takımına katılın.
-
 *Github*: [[https://github.com/suatkarakusoglu/mobilen][Mobilen Github]] üzerinden paylaşın.
 
 *RSS*: [[http://mobilen.art/rss/news.xml][Mobilen RSS]] üzerinden takip edin.

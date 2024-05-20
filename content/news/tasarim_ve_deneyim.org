@@ -1,0 +1,107 @@
+#+title: Tasarım ve Deneyim
+#+date: [2024-05-10 Fri]
+#+author: Suat Karakuşoğlu
+#+filetags: :Tasarım:Yazılım:Apple:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/@santesson89?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash][Andrea De Santis]]
+[[file:content_design_cover.jpg]]
+
+* İçerik
+Merhabalar,
+
+Tasarım ve kullanıcı deneyimi ile ilgili Apple bir çok anlamda devrim yaptı.
+
+Bu devrimi yaparken deneyimi 'User' yerine 'Human' isimlendirmesiyle 'Human İnterface Guideline'lar yayınladılar. 'Human' odağı daha çok insana yakın ürünler yapmayı vurgulamak adına özellikle kullandıkları bir jargon.
+
+#+CAPTION: Human Interface Guideline 1993
+[[file://mac_hig_1993.jpg]]
+
+[[http://interface.free.fr/Archives/Apple_HIGuidelines.pdf][Macintosh Human Interface Guideline]]'inin temellendigi ve uygulamanın insan ile olan ilişkisini 360 derece bakış açısıyla değerlendirirken dikkat edilmesi gereken bir çok konu var.
+
+Bu konu ve kıstaslara biraz değinelim istiyorum.
+
+** Geribesleme ve İnsan
+Bütün canlılık sensörler ile bezeli. Biz bu sensörleri biyolojik olarak 5 temel duyumuz olarak ifade ediyoruz.
+
+Bu duyuların temel amacı etraftan geribeslenebilmek. Yaptığınız veya yapmadığınız herhangi bir eylem sonrasında etkilerinden anlam çıkarabilmek.
+
+Anlık durum, uyarı veya hata durumlarının iletişimini düzgün kurmak.
+
+#+CAPTION: Photo by [[https://unsplash.com/@louishansel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash][Louis Hansel]]
+[[file://coffee_machine.jpg]]
+
+Bir kahve makinasını ele aldığımızda iletişimimizde türlü geribeslemeler görürüz:
+
+Kahve hazır olduğunda işin bitimine dair ses çıkarması =completion feedback=.
+
+Kahve makinesinin anlık durumunu size bildirmesi =status feedback=, suyunun az olduğunu veya temizlenmesi gerektiğine dair verdiği bilgiler =error/warning feedbacks=.
+
+Bu geribildirimler sayesinde lezzetli kahveler içebiliyoruz.
+
+** Yolunu Bulmak
+Her ortam kendi haritasına sahiptir.
+
+Harita erişilebileceklerin, yapılabileceklerin sınırlarını belirler; hangi noktalardan diğer noktalara geçiş olabileceğini ifade eder.
+
+Kaliteli ortamlar, orada yaşayacak veya oradan faydalanacak olan kimselerin yolunu doğru ve kolay bulabildigi yollara sahiptir.
+
+Uygulama içerisindeki gezintimizde karşımıza ne geleceğini hissedebilmek, yapacağımız işlem sonrası geriye dönüp dönemeyeceğini anlayabilmek gibi konular, konforlu bir etkileşimin anahtarları oluyor.
+
+Bunu gerçekleştirebilmek için, dijital etkileşimin olduğu web-sitesi, mobil uygulama gibi mecralarda [[https://musemind.agency/blog/why-ux-sitemap-is-important-for-designing][UX sitemap]]'e göre bilgi hiyerarşisi oluşturulmalıdır.
+
+[[https://frankrausch.com/ios-navigation][Temel navigasyon çeşitleri]]ni anlayarak uygulamanın tabiatına en uygun yolu çizmek uygulamanın başarısındaki temel basamaklardan biridir.
+
+#+CAPTION: Content Temelli Navigasyon: Oyunlar ve İçerik Yoğun uygulamalar
+[[file:ContentDrivenNavigation.jpg]]
+
+#+CAPTION: Yatayda Navigasyon: Apple Music veya App Store Uygulamaları
+[[file:FlatNavigation.jpg]]
+
+#+CAPTION: Hiyerarşik Dikeyde Navigasyon: Mail veya Ayarlar Uygulamaları
+[[file:HierarchicalNavigation.jpg]]
+
+Yolunu kaybeden veya hızlıca istediği yere gidecek bağlantıları göremeyen birisi bir daha o ortama gelmekten kaçınacaktır; isterse bir mobil uygulamada, isterse bir alışveriş merkezinde olsun.
+
+*** Tahmin Edilebilir ve Kolay Anlaşılabilir Bir Akış Sunmak
+Cihaz-insan etkileşilerimde net olmayan ifadeler kullanmak tedirginlik yaratır, çünkü ifadeyi netleştirmek için ikinci bir soru soramayacağımız bir ekranla karşı karşıyayızdır.
+
+O nedenle 'sohbet'in nereye doğru gittiğini tahmin edilebilir kılmak daha rahat bir deneyime vesile olucaktır.
+
+** Yazılı İçerik
+Bilgi hiyerarşisinde yazının ne derece iyi kullanıldığı iletişim açısından çok önem arz ediyor.
+
+İçeriğin en kritik taraflarını yazılı olarak ifade ediyoruz.
+
+Her sayfada, bilgiyi; konu odağını dağıtmaden vermek, mesajınızı daha doğru iletmek için yardımcı olabilir.
+
+Bu durum yine her ekranın bir amacı olması ve yazılı ve görsel içeriklerin yalnızca o amaç doğrultusunda kullanılması gereğini ifade ediyor.
+
+** Aşamalı Bilgi Sunmak =Progressive Disclosure=
+Yalnızca gereği kadar bilgi sunmak olarakta söyleyebiliriz.
+Kısa yazmak büyük zanaat ister.
+
+[[https://www.goodreads.com/quotes/21422-i-didn-t-have-time-to-write-a-short-letter-so][Mark Twain]] kısa olarak yazacak vaktim yoktu diyerek özür dilediği vecizesinde, bilginin karmaşıklaşmadan, düzgün zamanda ve yerde, ancak ihtiyaç kadarıyla karşıya verilmesi gerektiğini söyler.
+
+Bir etkileşim ve bilgi mecrası olan uygulamalarımızda karmaşıklığı azaltmanın, yeri ve zamanını düzgün belirlemenin prensibi =progressive disclosure= olarak yerini bulmuştur.
+
+Etkileşimde olan insana daha az zihinsel yük yükler.
+
+Diğer bir avantajı ise sistemin acemisi olan kimselerin ilk etapta gelişmiş seçenekler ile sistemi bozabilme ihtimalini ortadan kaldırmak.
+Elbetteki bir anda tüm uçak kokpitinde tuşlarla karşılaşmak kullanıcıyı ürkütecektir.
+
+O nedenle olabildiğince odaklı ve mümkün mertebe en çok kullanılan yetenekleri düzgünce sunmak, [[https://tr.wikipedia.org/wiki/Pareto_ilkesi][Pareto prensibi]]'ne göre bu zaten yüzde 80'lik kullanımı karşılayacaktır, daha ileri ihtiyaçları ise aşamalı olarak kullanıcıya açmak gerekir.
+
+** Sonuç Olarak
+Bu bahsettiğim tasarım deneyimi pratikleri biraz benim merakımı celbeden konulardı.
+
+Daha detaylı olarak =Apple= pratiklerini bir yol haritasında göstermeye başladı, tasarım özelinde [[https://developer.apple.com/design/pathway/][Apple Design Pathway]] başlıkları altında bahsettiğimiz konulara dair detaylı içeriklere erişebilirsiniz.
+
+Görüşmek üzere.
+
+** Kaynakça
+- [[https://developer.apple.com/design/pathway/][Apple Design Pathway]]
+- [[https://developer.apple.com/videos/play/wwdc2022/10037/][Writing for Interfaces WWDC Session]]
+- [[https://developer.apple.com/videos/play/wwdc2017/802/][Essential Design Principles WWDC]]
+- [[https://musemind.agency/blog/why-ux-sitemap-is-important-for-designing][UX Sitemap]]

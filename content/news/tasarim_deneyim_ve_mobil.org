@@ -1,4 +1,4 @@
-#+title: Tasarım ve Deneyim
+#+title: Tasarım, Deneyim ve Mobil
 #+date: [2024-05-10 Fri]
 #+author: Suat Karakuşoğlu
 #+filetags: :Tasarım:Yazılım:Apple:
@@ -13,7 +13,7 @@ Merhabalar,
 
 Tasarım ve kullanıcı deneyimi ile ilgili Apple bir çok anlamda devrim yaptı.
 
-Bu devrimi yaparken deneyimi 'User' yerine 'Human' isimlendirmesiyle 'Human İnterface Guideline'lar yayınladılar. 'Human' odağı daha çok insana yakın ürünler yapmayı vurgulamak adına özellikle kullandıkları bir jargon.
+Bu devrimi yaparken deneyimi =User= yerine =Human= isimlendirmesiyle 'Human Interface Guideline'lar yayınladılar. =Human= odağı daha çok insana yakın ürünler yapmayı vurgulamak adına özellikle kullandıkları bir jargon.
 
 #+CAPTION: Human Interface Guideline 1993
 [[file://mac_hig_1993.jpg]]
@@ -23,34 +23,32 @@ Bu devrimi yaparken deneyimi 'User' yerine 'Human' isimlendirmesiyle 'Human İnt
 Bu konu ve kıstaslara biraz değinelim istiyorum.
 
 ** Geribildirim ve İnsan
-Bütün canlılık sensörler ile bezeli. Biz bu sensörleri biyolojik olarak 5 temel duyumuz olarak ifade ediyoruz.
+Bütün canlılık sensörler ile bezeli. 5 temel duyumuz olarak ifade ettiğimiz bu duyuların temel amacı etraftan geribildirim alabilmek.
 
-Bu duyuların temel amacı etraftan geribildirim alabilmek.
-
-Yaptığınız veya yapmadığınız herhangi bir eylem sonrasında etkilerinden anlam çıkarabilmek.
-
-Anlık durum, uyarı veya hata durumlarının iletişimini düzgün kurmak.
+Yaptığınız veya yapmadığınız herhangi bir eylem sonrasında etkilerinden anlam çıkarmamızı sağlayan; anlık durum, uyarı veya hata durumlarının iletişimini düzgün kurabildiğimiz bu döngüye geribildirim diyoruz.
 
 #+CAPTION: Photo by [[https://unsplash.com/@louishansel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash][Louis Hansel]]
 [[file://coffee_machine.jpg]]
 
-Bir kahve makinasını ele aldığımızda iletişimimizde türlü geribildirimler görürüz:
+Bir kahve makinasını ele alalım, türlü geribildirimler görürüz:
 
-Kahve hazır olduğunda işin bitimine dair ses çıkarması =completion feedback=.
+Kahve hazır olduğunda işin bitimine dair ses çıkarması =completion feedback='tir.
 
-Kahve makinesinin anlık durumunu size bildirmesi =status feedback=, suyunun az olduğunu veya temizlenmesi gerektiğine dair verdiği bilgiler =error/warning feedbacks=.
+Kahve makinesinin anlık durumunu size bildirmesi =status feedback='tir, suyunun az olduğunu veya temizlenmesi gerektiğine dair verdiği bilgiler =error/warning feedbacks='tir.
 
 Bu geribildirimler sayesinde lezzetli kahveler içebiliyoruz.
 
-Mobil uygulamalar için en temel geribildirim yöntemlerine değinmemiz gerekirse:
+Mobil uygulamalar için ise en temel geribildirim yöntemleri:
 *** Sesli Geribildirim
-En aşina olduğumuz geribildirim çeşidi sesli geribildirim.
+En aşina olduğumuz geribildirim çeşidi sesli geribildirimdir.
 
-Herhangi bir başarı/başarısız durumda ses çıkarmak.
-Bildirim geldiğinde, gerisayım bittiğinde ve benzeri konularda kullanıcıya haber vermek için kullanılıyor.
+Herhangi bir başarı/başarısız durumda sesli bildirmek.
+
+Mesaj gelmesi, alarm tetiklenmesi ve benzeri konularda kullanıcıya haber vermek için kullanılıyor.
 
 *** Titreşimli Geribildirim =Haptic Feedback=
 [[https://developer.apple.com/design/human-interface-guidelines/playing-haptics][Haptics Konusu]] standart komponentler için varsayılan olarak tanımlı olabiliyor.
+
 Bunlardan =toggle=, =slider= veya =picker= komponentlerinde görüyoruz.
 Ancak kendi özel yarattığımız komponentler içerisinden de =haptic feedback= kütüphanesi ile bu özelliği sağlayabiliyoruz.
 
@@ -58,28 +56,29 @@ Ancak kendi özel yarattığımız komponentler içerisinden de =haptic feedback
 Yapılan işlemler sonrasında veya süreli işlemlerde kullanıcıya durum hakkında bilgi verebilmek için ufak animasyonlar ile uygulamayı daha geribildirim odaklı hale getirebiliriz.
 
 Bir elektrikli araba uygulamasında şarj olduğunu belli edebilmek adına akan bir elektrik akımı araca doğru animatif şekilde gösterilebilir.
+
 Ayrıca state değişikliklerinde hangi stateler arası değişim olduğu animatif olarak görüntülenip içinde bulunulan durum daha anlaşılır hale getirilir.
 
-** Yolunu Bulmak
+** Yolunu Bulmak =Wayfinding/Navigation=
 Her ortam kendi haritasına sahiptir.
 
-Harita erişilebileceklerin, yapılabileceklerin sınırlarını belirler; hangi noktalardan diğer noktalara geçiş olabileceğini ifade eder.
+Harita erişilebileceklerin, yapılabileceklerin =sınırlar='ını belirler; hangi noktalardan diğer noktalara =geçiş= olabileceğini ifade eder.
 
 Kaliteli ortamlar, orada yaşayacak veya oradan faydalanacak olan kimselerin yolunu doğru ve kolay bulabildigi yollara sahiptir.
 
-Uygulama içerisindeki gezintimizde karşımıza ne geleceğini hissedebilmek, yapacağımız işlem sonrası geriye dönüp dönemeyeceğini anlayabilmek gibi konular, konforlu bir etkileşimin anahtarları oluyor.
+Uygulama içerisindeki gezintimizde karşımıza ne geleceğini hissedebilmek, yapacağımız işlem sonrası geriye dönüp dönemeyeceğini anlayabilmek gibi konular, konforlu bir etkileşimin anahtarlarıdır.
 
 Bunu gerçekleştirebilmek için, dijital etkileşimin olduğu web-sitesi, mobil uygulama gibi mecralarda [[https://musemind.agency/blog/why-ux-sitemap-is-important-for-designing][UX sitemap]]'e göre bilgi hiyerarşisi oluşturulmalıdır.
 
 [[https://frankrausch.com/ios-navigation][Temel navigasyon çeşitleri]]ni anlayarak uygulamanın tabiatına en uygun yolu çizmek uygulamanın başarısındaki temel basamaklardan biridir.
 
-#+CAPTION: Content Temelli Navigasyon: Oyunlar ve İçerik Yoğun uygulamalar
+#+CAPTION: Content Temelli Navigasyon: =Oyunlar= ve =İçerik Yoğun= uygulamalar
 [[file:ContentDrivenNavigation.jpg]]
 
-#+CAPTION: Yatayda Navigasyon: Apple Music veya App Store Uygulamaları
+#+CAPTION: Yatayda Navigasyon: =Apple Music= veya =App Store= Uygulamaları
 [[file:FlatNavigation.jpg]]
 
-#+CAPTION: Hiyerarşik Dikeyde Navigasyon: Mail veya Ayarlar Uygulamaları
+#+CAPTION: Hiyerarşik Dikeyde Navigasyon: =Mail= veya =Ayarlar= Uygulamaları
 [[file:HierarchicalNavigation.jpg]]
 
 Yolunu kaybeden veya hızlıca istediği yere gidecek bağlantıları göremeyen birisi bir daha o ortama gelmekten kaçınacaktır; isterse bir mobil uygulamada, isterse bir alışveriş merkezinde olsun.
@@ -87,7 +86,7 @@ Yolunu kaybeden veya hızlıca istediği yere gidecek bağlantıları göremeyen
 *** Tahmin Edilebilir ve Kolay Anlaşılabilir Bir Akış Sunmak
 Cihaz-insan etkileşilerimde net olmayan ifadeler kullanmak tedirginlik yaratır, çünkü ifadeyi netleştirmek için ikinci bir soru soramayacağımız bir ekranla karşı karşıyayızdır.
 
-O nedenle 'sohbet'in nereye doğru gittiğini tahmin edilebilir kılmak daha rahat bir deneyime vesile olucaktır.
+O nedenle *sohbet*'in nereye doğru gittiğini tahmin edilebilir kılmak daha rahat bir deneyime vesile olucaktır.
 
 ** Yazılı İçerik
 Bilgi hiyerarşisinde yazının ne derece iyi kullanıldığı iletişim açısından çok önem arz ediyor.
@@ -98,25 +97,34 @@ Her sayfada, bilgiyi; konu odağını dağıtmaden vermek, mesajınızı daha do
 
 Bu durum yine her ekranın bir amacı olması ve yazılı ve görsel içeriklerin yalnızca o amaç doğrultusunda kullanılması gereğini ifade ediyor.
 
+#+CAPTION: Örnek Popup İletişimi
+[[file://writing_content_modal.jpg]]
+
+Bu alarm kapatma diyaloğunda başlık sade bir şekilde kendini ifade ederken seçenekler tıklandığında belirsizliğe mahal vermeyecek şekilde yazılmış.
+
+Burada başlıkta 'Cancel Alarm' yazıp sonra standart buton seçeneklerinde 'OK' ve 'Cancel' yazıldığında olabilecek kargaşanın önüne geçilmiş.
+
 ** Aşamalı Bilgi Sunmak =Progressive Disclosure=
 Yalnızca gereği kadar bilgi sunmak olarakta söyleyebiliriz.
-Kısa yazmak büyük zanaat ister.
 
-[[https://www.goodreads.com/quotes/21422-i-didn-t-have-time-to-write-a-short-letter-so][Mark Twain]] kısa olarak yazacak vaktim yoktu diyerek özür dilediği vecizesinde, bilginin karmaşıklaşmadan, düzgün zamanda ve yerde, ancak ihtiyaç kadarıyla karşıya verilmesi gerektiğini söyler.
+Kısa yazabilmek gerçek bir zanaattır.
 
-Bir etkileşim ve bilgi mecrası olan uygulamalarımızda karmaşıklığı azaltmanın, yeri ve zamanını düzgün belirlemenin prensibi =progressive disclosure= olarak yerini bulmuştur.
+[[https://www.goodreads.com/quotes/21422-i-didn-t-have-time-to-write-a-short-letter-so][Mark Twain]] _kısa olarak yazacak vaktim yoktu_ diyerek özür dilediği deyişinde, bilginin karmaşıklaşmadan, düzgün zamanda ve yerde, ancak ihtiyacı kadarıyla karşıya verilmesi gerektiğini söyler.
 
-Etkileşimde olan insana daha az zihinsel yük yükler.
+Bir etkileşim ve bilgi mecrası olan uygulamalarımızda karmaşıklığı azaltmanın, yeri ve zamanını düzgün belirlemenin prensibi =progressive disclosure= olarak söylenebilir.
 
-Diğer bir avantajı ise sistemin acemisi olan kimselerin ilk etapta gelişmiş seçenekler ile sistemi bozabilme ihtimalini ortadan kaldırmak.
-Elbetteki bir anda tüm uçak kokpitinde tuşlarla karşılaşmak kullanıcıyı ürkütecektir.
+Aşamalı bilgi sunmak karşıdakine daha az zihinsel yük yükler.
+
+Diğer bir avantajı ise sistemin acemisi olan kimselerin ilk etapta gelişmiş seçenekler ile sistemi bozabilme ihtimalini ortadan kaldırmaktır.
+
+Elbetteki bir anda uçak kokpitindeki tüm tuşlarla karşılaşmak kullanıcıyı ürkütecektir.
 
 O nedenle olabildiğince odaklı ve mümkün mertebe en çok kullanılan yetenekleri düzgünce sunmak, [[https://tr.wikipedia.org/wiki/Pareto_ilkesi][Pareto prensibi]]'ne göre bu zaten yüzde 80'lik kullanımı karşılayacaktır, daha ileri ihtiyaçları ise aşamalı olarak kullanıcıya açmak gerekir.
 
 ** Sonuç Olarak
-Bu bahsettiğim tasarım deneyimi pratikleri biraz benim merakımı celbeden konulardı.
+Önemli gördüğüm bu tasarım pratiklerinin yanı sıra, daha detaylı olarak =Apple= bu ve daha çok pratiği bir yol haritasında göstermeye başladı.
 
-Daha detaylı olarak =Apple= pratiklerini bir yol haritasında göstermeye başladı, tasarım özelinde [[https://developer.apple.com/design/pathway/][Apple Design Pathway]] başlıkları altında bahsettiğimiz konulara dair detaylı içeriklere erişebilirsiniz.
+[[https://developer.apple.com/design/pathway/][Apple Design Pathway]] başlıkları altında bahsettiğimiz konulara dair detaylı içeriklere erişebilirsiniz.
 
 Görüşmek üzere.
 
@@ -125,3 +133,4 @@ Görüşmek üzere.
 - [[https://developer.apple.com/videos/play/wwdc2022/10037/][Writing for Interfaces WWDC Session]]
 - [[https://developer.apple.com/videos/play/wwdc2017/802/][Essential Design Principles WWDC]]
 - [[https://musemind.agency/blog/why-ux-sitemap-is-important-for-designing][UX Sitemap]]
+- [[https://frankrausch.com/ios-navigation][Temel navigasyon çeşitleri]]

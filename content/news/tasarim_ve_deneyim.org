@@ -22,23 +22,43 @@ Bu devrimi yaparken deneyimi 'User' yerine 'Human' isimlendirmesiyle 'Human İnt
 
 Bu konu ve kıstaslara biraz değinelim istiyorum.
 
-** Geribesleme ve İnsan
+** Geribildirim ve İnsan
 Bütün canlılık sensörler ile bezeli. Biz bu sensörleri biyolojik olarak 5 temel duyumuz olarak ifade ediyoruz.
 
-Bu duyuların temel amacı etraftan geribeslenebilmek. Yaptığınız veya yapmadığınız herhangi bir eylem sonrasında etkilerinden anlam çıkarabilmek.
+Bu duyuların temel amacı etraftan geribildirim alabilmek.
+
+Yaptığınız veya yapmadığınız herhangi bir eylem sonrasında etkilerinden anlam çıkarabilmek.
 
 Anlık durum, uyarı veya hata durumlarının iletişimini düzgün kurmak.
 
 #+CAPTION: Photo by [[https://unsplash.com/@louishansel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash][Louis Hansel]]
 [[file://coffee_machine.jpg]]
 
-Bir kahve makinasını ele aldığımızda iletişimimizde türlü geribeslemeler görürüz:
+Bir kahve makinasını ele aldığımızda iletişimimizde türlü geribildirimler görürüz:
 
 Kahve hazır olduğunda işin bitimine dair ses çıkarması =completion feedback=.
 
 Kahve makinesinin anlık durumunu size bildirmesi =status feedback=, suyunun az olduğunu veya temizlenmesi gerektiğine dair verdiği bilgiler =error/warning feedbacks=.
 
 Bu geribildirimler sayesinde lezzetli kahveler içebiliyoruz.
+
+Mobil uygulamalar için en temel geribildirim yöntemlerine değinmemiz gerekirse:
+*** Sesli Geribildirim
+En aşina olduğumuz geribildirim çeşidi sesli geribildirim.
+
+Herhangi bir başarı/başarısız durumda ses çıkarmak.
+Bildirim geldiğinde, gerisayım bittiğinde ve benzeri konularda kullanıcıya haber vermek için kullanılıyor.
+
+*** Titreşimli Geribildirim =Haptic Feedback=
+[[https://developer.apple.com/design/human-interface-guidelines/playing-haptics][Haptics Konusu]] standart komponentler için varsayılan olarak tanımlı olabiliyor.
+Bunlardan =toggle=, =slider= veya =picker= komponentlerinde görüyoruz.
+Ancak kendi özel yarattığımız komponentler içerisinden de =haptic feedback= kütüphanesi ile bu özelliği sağlayabiliyoruz.
+
+*** Animatif Geribildirimler
+Yapılan işlemler sonrasında veya süreli işlemlerde kullanıcıya durum hakkında bilgi verebilmek için ufak animasyonlar ile uygulamayı daha geribildirim odaklı hale getirebiliriz.
+
+Bir elektrikli araba uygulamasında şarj olduğunu belli edebilmek adına akan bir elektrik akımı araca doğru animatif şekilde gösterilebilir.
+Ayrıca state değişikliklerinde hangi stateler arası değişim olduğu animatif olarak görüntülenip içinde bulunulan durum daha anlaşılır hale getirilir.
 
 ** Yolunu Bulmak
 Her ortam kendi haritasına sahiptir.

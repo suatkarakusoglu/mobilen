@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:switch_expression.org][Swift 5.9: If ve Switch Gelişmeleri]] - Suat Karakuşoğlu · June 27, 2024
 - [[file:tasarim_deneyim_ve_mobil.org][Tasarım, Deneyim ve Mobil]] - Suat Karakuşoğlu · May 10, 2024
 - [[file:xcode_build_tool.org]["xcodebuild" Komutları ve Kullanım Örnekleri]] - Uğurcan Durak · April 01, 2024
 - [[file:pre_commit_tool.org][Pre-Commit Aracının Faydaları]] - Suat Karakuşoğlu · March 27, 2024

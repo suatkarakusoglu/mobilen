@@ -1,0 +1,91 @@
+#+title: Swift 5.9: If ve Switch Gelişmeleri
+#+date: [2024-06-27 Thu]
+#+author: Suat Karakuşoğlu
+#+filetags: :Swift:iOS:Yazılım:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Karar
+[[file:if_else.jpg]]
+
+* İçerik
+=Switch= ve =if= karar grameri fonksiyonel programlama dinamiklerine daha yakın olması adına ufak yetenekler kazandı.
+
+[[https://github.com/swiftlang/swift-evolution/blob/main/proposals/0380-if-switch-expressions.md][Swift Evolution 380]] önerisi ile Swift 5.9 ile kullanmaya başladığımız bu özelliği biraz tanıyalım.
+
+=Expression='lar dönüş değeri olan fonksiyonel programlamaya uygun ifadelerdir.
+
+** If Expression
+=If Expression= karar ifadesinde hızlı atama yapmayı sağlayan bir yetenek kazandı.
+
+#+begin_src swift
+  let weightStatus =  if weight > 100.0 {"Overweight"} else {"Fit"}
+#+end_src
+
+Bu aşağıdaki ternary expression ile çok yakın bir yazıma sahip ancak daha okunabilir.
+#+begin_src swift
+  // Sample ternary expression
+  let weightStatus =  weight > 100.0 ? "Overweight" : "Fit"
+#+end_src
+
+** Switch Expression
+Switch expression olmasıyla çok daha güzel hale geldi.
+
+Önceden =calculatedPenalty= ile yaptığımız iş şimdi yeni Switch yeteneği ile bu örnek kodlarda gördüğümüz üzere =calculatedPenalty='ye direkt atama yapabilir durumda.
+
+#+begin_src swift
+  typealias Dollar = Double
+  func calculatePenaltyTicket(speed: Int) -> Dollar {
+      let maxSpeed = 80
+      let basePenalty = 100.0
+
+      if speed <= maxSpeed {
+          return 0.0
+      }
+
+      let exceedingSpeed = speed - maxSpeed
+      let exceedingPercentage = (Double(exceedingSpeed) / Double(maxSpeed)) * 100
+
+      // Eski yöntem ile yapılması böyleydi.
+      var calculatedPenalty = 0.0
+      switch exceedingPercentage {
+      case 10...20:
+          calculatedPenalty = basePenalty * 1.25
+      case 20...40:
+          calculatedPenalty = basePenalty * 1.50
+      case 40...80:
+          calculatedPenalty = basePenalty * 2.0
+      case 80...:
+          calculatedPenalty = basePenalty * 3.0
+      default:
+          calculatedPenalty = basePenalty
+      }
+
+      return calculatedPenalty
+  }
+#+end_src
+*** Switch Yeni Yöntem
+#+begin_src swift
+  // Yeni switch ifadesi direkt =calculatedPenalty='ye atama yapabilir
+  let calculatedPenalty = switch exceedingPercentage {
+  case 10...20: basePenalty * 1.25
+  case 20...40: basePenalty * 1.50
+  case 40...80: basePenalty * 2.0
+  case 80...: basePenalty * 3.0
+  default: basePenalty
+  }
+#+end_src
+** Return Inference
+Burada aynı zamanda return etmenin gerekmemesi de dikkatinizi çekmiştir.
+Bu yetenek [[https://github.com/swiftlang/swift-evolution/blob/main/proposals/0255-omit-return.md][Return ifadesinin =infer= edilmesi]] ile Swift 5.1'de gelmişti.
+
+Swift'in =inference= motoru, derleyici zamanında kodun doğru çalışmasını garantilerken aynı zamanda geliştiricinin de daha az ve öz kod yazmasına yardımcı oluyor.
+
+** Sonuç olarak
+=Swift= dili fonksiyonel yaklaşımları çoğu zaman yol haritasına alıp uygulayan bir yaklaşımla ilerliyor.
+
+Bu yol haritası [[https://github.com/swiftlang/swift-evolution/tree/main?tab=readme-ov-file][Swift Evolution]] üzerinden takip edilen bir yönetime sahip. Buradaki tartışmaları ve önerileri takip etmek dile hakim olabilmek adına güzel içgörüler sağlayabilir.
+
+** Kaynakça
+- [[https://github.com/swiftlang/swift-evolution/blob/main/proposals/0380-if-switch-expressions.md][Switch ve If Evolution Proposal]]
+- [[https://developer.apple.com/videos/play/wwdc2023/10164/?time=178][What's new in Swift?]]

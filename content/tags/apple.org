@@ -8,6 +8,8 @@
 
 [[file:../../news/october_30_2023_apple_event.org][Apple Scary Fast Etkinliği]]
 
+[[file:../../news/privacy_manifest_apple.org][Apple Uygulama Gizlilik Manifestosu (Privacy Manifest)]]
+
 [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]
 
 [[file:../../news/tasarim_deneyim_ve_mobil.org][Tasarım, Deneyim ve Mobil]]

@@ -1,0 +1,306 @@
+<!-- Generated from d0387b4 on 2024-07-16 @ 14:56 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Apple Uygulama Gizlilik Manifestosu (Privacy Manifest) - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Apple Uygulama Gizlilik Manifestosu (Privacy Manifest)</h1><a class="tag" href="https://mobilen.art/tags/apple/">Apple #7</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #24</a><p class="site-post-meta">July 16, 2024</p><div id="content"><p>
+<a href="https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8">Alper Cem Öztürk</a> yazdı.
+</p>
+
+
+<div id="orgc43e965" class="figure">
+<p><img src="/img/privacy_rules.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span>Apple Uygulama Gizlilik Manifestosu</p>
+</div>
+
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org2dd4708">
+<p>
+Bildiğiniz gibi Apple WWDC23&rsquo;de yeni gizlilik kurallarını açıkladı. Bazı geliştiriciler, bu yenilikleri etkinlikten sonra keşfettiler ve hemen aksiyon aldılar. Bazıları ise 13 Mart 2024 tarihinden sonra Apple&rsquo;ın &ldquo;<b>Eksik API Beyanı</b>&rdquo; olarak da bilinen <b>ITMS-91053</b> bildirim e-postası ile bu yenilikleri öğrendiler ya da hatırladılar.
+</p>
+
+<p>
+Apple&rsquo;ın gizlilik konusunda attığı yeni adımlar, geliştiriciler için önemli değişiklikleri beraberinde getirdi.
+</p>
+
+<p>
+13 Mart 2024 tarihinden itibaren, belirli API&rsquo;leri kullanan ancak bu kullanımın nedenlerini açıkça belirtmeyen uygulamalar veya SDK&rsquo;ler için Apple <b>ITMS-91053 Missing API Declaration</b> adında bir bildirim e-postası göndermeye başlamıştı.
+</p>
+
+<p>
+1 Mayıs 2024 tarihinden itibaren ise, Privacy Manifest App Review&rsquo;ın bir parçası oldu ve App Store Connect&rsquo;e geçerli bir privacy manifest dosyası içermeyen yeni veya güncellenmiş bir uygulama yüklemek <b>rejection</b> ile sonuçlanmaya başladı.
+</p>
+
+<p>
+İşte bu yazıda Apple&rsquo;ın kısıtlamalarına takılmak istemeyen sizlerle beraber yeni gizlilik kurallarını anlamaya çalışacağız. Yazı genelinde konuşacağımız başlıkları meraklısı için hemen aşağıya bırakıyorum.
+</p>
+</div>
+
+<h3><a id="projenize-privacy-manifest-eklemek-zorunda-mısınız" class="anchor" href="#projenize-privacy-manifest-eklemek-zorunda-mısınız">¶</a>Projenize Privacy Manifest eklemek zorunda mısınız?</h3><div class="outline-text-3" id="text-org4fedba9">
+<p>
+Evet, <b>çoğu durumda</b> privacy manifest&rsquo;i projenize eklemek <b>zorundasınız</b>. App Store Connect&rsquo;e şu durumlarda privacy manifest eklemeniz gerekecek:
+</p>
+
+<p>
+Yeni veya mevcut uygulamaların güncellemeleri için:
+</p>
+
+<ul class="org-ul">
+<li>Apple tarafından <a href="https://developer.apple.com/support/third-party-SDK-requirements">belirtilen SDK&rsquo;leri</a> <b>kullanıyorsanız</b></li>
+<li>&ldquo;Required Reason API&rdquo; olarak sınıflandırılmış API&rsquo;lerin <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">belirli özelliklerini</a> <b>kullanıyorsanız</b></li>
+</ul>
+
+<p>
+Bu durumların herhangi birinde, kullandığınız her SDK ve Required Reason API için privacy manifest&rsquo;i eklemelisiniz.
+</p>
+
+<p>
+Ancak App Store&rsquo;da privacy manifest gerektiren SDK&rsquo;lerin kullanıldığı bir uygulamanız var ama yakın zamanda <b>yeni bir güncelleme planınız yoksa</b>, bu konuda bir aksiyon almanıza <b>gerek yok</b>. Apple tüm SDK&rsquo;lerin Privacy Manifest içeren son sürümlerine güncellemenin birçok eski uygulama için maliyetli olacağını bildiğinden bunu zorunlu kılmıyor. Yine de, gelecekteki güncellemelerinizde bu gereklilikleri göz önünde bulundurmanız önemlidir.
+</p>
+</div>
+
+<h3><a id="privacy-manifest-nedir" class="anchor" href="#privacy-manifest-nedir">¶</a>Privacy Manifest nedir?</h3><div class="outline-text-3" id="text-orgcc234ca">
+<p>
+Öncelikle Privacy Manifest&rsquo;in ne olduğuyla başlayalım. Apple&rsquo;ın tanımlamasına göre Privacy Manifest, uygulamamızın veya entegre ettiğimiz üçüncü parti SDK&rsquo;nin topladığı veri türlerini ve kullandığı API&rsquo;leri kaydeden bir listedir (yani kısaca bir plist). Bu liste, hangi verilerin toplandığını ve hangi API&rsquo;lerin kullanıldığını nedenleriyle birlikte net bir şekilde belirtir.
+</p>
+
+<p>
+Bu listenin dolu hali kabaca aşağıdaki gibi gözüküyor.
+</p>
+
+
+<div id="orgf27a1be" class="figure">
+<p><img src="/img/privacy_manifest_ornek.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 2: </span>Privacy Manifest Dosyası Örneği</p>
+</div>
+
+<p>
+Yukarıdaki görseli, dolu bir privacy manifest dosyasının nasıl gözüktüğüyle ilgili size bir fikir vermesi icin ekledim ancak bu kafanızı karıştırmasın. Hemen aşağıda, belirtmemiz gereken kritik bilgileri açıklıyorum.
+</p>
+</div>
+
+<h4><a id="privacy-tracking-enabled" class="anchor" href="#privacy-tracking-enabled">¶</a>Privacy Tracking Enabled:</h4><div class="outline-text-4" id="text-orgf3062c7">
+<p>
+Uygulamamızın veya üçüncü parti SDK&rsquo;lerin, <b><i>App Tracking Transparency (ATT)</i></b> çerçevesinde takip edilip edilmediğini belirten bir Boolean değeri.
+</p>
+</div>
+
+<h4><a id="privacy-tracking-domains" class="anchor" href="#privacy-tracking-domains">¶</a>Privacy Tracking Domains:</h4><div class="outline-text-4" id="text-orgc27bdc3">
+<p>
+Uygulamamızın veya üçüncü parti SDK&rsquo;lerin bağlanıp, takip ettiği domain&rsquo;leri belirtmemiz istenen bir string listesi. Kullanıcı, <b><i>ATT</i></b> çerçevesi aracılığıyla izleme (tracking) izni vermediyse bu domainlere yönelik ağ istekleri başarısız olur. <b>Privacy Tracking Enabled</b> kısmını <b><i>true</i></b> olarak ayarlarsanız buraya da <b>en az bir domain</b> belirtmeniz gerekir. Aksi halde boş bırakabilirsiniz.
+</p>
+</div>
+
+<h4><a id="privacy-nutrition-label-types" class="anchor" href="#privacy-nutrition-label-types">¶</a>Privacy Nutrition Label Types:</h4><div class="outline-text-4" id="text-orge0d82d4">
+
+<div id="org72a588c" class="figure">
+<p><img src="/img/privacy_manifest_labels.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 3: </span>Privacy Nutrition Labels</p>
+</div>
+
+<p>
+<b>Privacy Nutrition Label</b>, Apple cihazlarında, uygulamaların kullanıcı verilerini toplayıp toplamadığı veya nasıl kullandığı konusunda şeffaflık sağlamak üzere tasarlanmış bir özelliktir. Bu bilgiler her uygulamanın App Store sayfasında kullanıcıların erişebileceği şekilde sunulur.
+</p>
+
+<p>
+Bildiğiniz gibi artık Nutrition Label&rsquo;ları Privacy Manifest içerisinde belirtiyoruz. Böylelikle uygulamamız App Store&rsquo;a yüklendiğinde bu kısımlar uygulama sayfasında otomatik olarak sergileniyor.
+</p>
+
+<p>
+Label&rsquo;ları doldururken kullanıcıdan aldığınız her veri tipi için belirtmemiz gereken dört anahtar-değer ikilisi <b>(key value pair)</b> var.
+</p>
+
+<ul class="org-ul">
+<li><b>Collected Data Type:</b> Veri tipi</li>
+
+<li><b>Linked To User(Yes/No):</b> Verinin kullanıcıya bağlı olup olmadığının
+bilgisi.</li>
+
+<li><b>Used for Tracking(Yes/No):</b> Verinin izleme (tracking) için kullanılıp
+kullanılmadığının bilgisi.</li>
+
+<li><b>Collection Purposes:</b> Verinin kullanım nedeni veya nedenlerini
+belirten liste.</li>
+</ul>
+
+<p>
+Detaylı bilgi için Apple&rsquo;ın bu <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests">dokümanına</a> göz atabilirsiniz.
+</p>
+</div>
+
+<h4><a id="veri-toplamaktan-kasıt-ne" class="anchor" href="#veri-toplamaktan-kasıt-ne">¶</a>Veri toplamaktan kasıt ne?</h4><div class="outline-text-4" id="text-orgb27d272">
+<p>
+Veri toplamaktan bahsettik ama toplamak derken gerçekten neyi kastediyoruz? Toplamak tam anlamıyla nerede devreye giriyor? diye soracak olursanız, Apple bunun için bir <a href="https://developer.apple.com/app-store/app-privacy-details/">rehber</a> yayınlamış.
+</p>
+
+<p>
+Kısacası buradaki veri toplama, verilerin sizin ve/veya üçüncü taraf ortaklarınızın iletilen request&rsquo;e <b>gerçek zamanlı</b> hizmet vermek için <b>gerekli olandan daha uzun süre</b> erişmesine izin verecek şekilde cihazdan çıkması anlamına gelir. Yani cihazdan çıkan bir veri, bir sunucuya gidiyor ve orada <b>belli bir sürenin üzerinde</b> erişim sağlanıyorsa, o veri toplanıyordur ve belirtilmesi gerekir. Aksi halde veri toplanıyor denilemez.
+</p>
+</div>
+
+<h4><a id="privacy-accessed-api-types" class="anchor" href="#privacy-accessed-api-types">¶</a>Privacy Accessed API Types:</h4><div class="outline-text-4" id="text-orge76a3c9">
+<p>
+Uygulamamızın veya veya üçüncü parti SDK&rsquo;lerin eriştiği API türlerini ve erişim nedenlerini belirten anahtar-değer ikililerinden oluşan bir liste. Apple&rsquo;ın erişim nedeni belirtmemizi zorunlu kıldığı bu API&rsquo;ler ayrıca <b>Required Reason API</b> olarak isimlendirilmiş.
+</p>
+
+<p>
+Buraya kadar sizlerle beraber Privacy Manifest dosyasının şemasını dört ana hattıyla beraber incelemiş olduk. Kısaca söylemek gerekirse bu gizlilik bildirilerinin amacı, uygulamaların anlaşılmasını ve raporlanmasını kolaylaştırarak kullanıcılara verilerinin kullanımı konusunda netlik kazandırmaktır diyebiliriz.
+</p>
+
+<p>
+Şimdi ise işin asıl kritik kısmı olan Required Reason API&rsquo;lerden ve onların nasıl deklare edilmesi gerektiğinden detaylıca bahsedeceğiz.
+</p>
+</div>
+
+<h3><a id="required-reason-api-nedir" class="anchor" href="#required-reason-api-nedir">¶</a>Required Reason API nedir?</h3><div class="outline-text-3" id="text-org5614492">
+<p>
+Required Reason API, Apple tarafından cihazı veya kullanıcıyı benzersiz bir kimlik ile tanımlamaya çalışmak için kullanılabilecek, kategorize edilmiş API&rsquo;lere denir.
+</p>
+
+<p>
+Bu tanıma uyan API&rsquo;ler aşağıdaki gibi belirlenmiş. Bizim manifest dosyamızda belirtirken yapmamız gereken ise çok basit. Uygulamamızda aşağıdaki API&rsquo;lerin özelliklerinin kullanılıp kullanılmadığının kontrolünü yapıp, eğer kullanılıyorsa Apple tarafından onaylanan nedenler içerisinden kullanım nedenimizi belirtmek.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278393">File timestamp APIs</a></li>
+<li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278394">System boot time APIs</a></li>
+<li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278397">Disk space APIs</a></li>
+<li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278400">Active keyboard APIs</a></li>
+<li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278401">User defaults APIs</a></li>
+</ul>
+</div>
+
+<h4><a id="ufak-bir-demo" class="anchor" href="#ufak-bir-demo">¶</a>Ufak bir demo</h4><div class="outline-text-4" id="text-org4c301cd">
+<p>
+Çoğumuz uygulamamızda <b>User Defaults</b> kullanıyoruz. Bu yüzden onun üzerinden bir örnek vereyim. Diyelim ki:
+</p>
+
+<p>
+Kullanıcı ilk defa uygulamamızı açtığında bir karşılama (onboarding) ekranı görecek.
+</p>
+
+<p>
+Bu karşılama ekranı sonrası kullanıcı giriş yapma veya kayıt olma sayfalarına gidecek. Ancak bir kere karşılama ekranından çıkarsa uygulamaya sonraki girişlerinde, bir daha karşılama ekranını göremeyecek.
+</p>
+
+<p>
+Kullanıcının daha önceden karşılama ekranını görüp görmediğinin bilgisini User Defaults&rsquo;da bir boolean değer olarak tutuyor olalım. UserDefaults, Required Reason API&rsquo;lerden biri olduğu için, Bu API kullanımına geçerli bir sebep belirtmeliyim. Apple, User Defaults kullanımı için geçerli sebepleri <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278401">bağlantıda</a> ki gibi listelemiş.
+</p>
+
+<p>
+Uygulamamızın yalnızca kendisinin erişebildiği bilgileri okumak ve yazmak üzere eriştiğini varsayacak olursak. Örneğin bu bilgileri herhangi bir widget ile paylaşmadığını, yalnızca uygulamanın kendisinde işlevselliği sağlamak amacıyla kullanıldığını varsayalım.
+</p>
+
+<p>
+O zaman <b>Privacy Accessed API Types</b> aşağıdaki gibi belirtilmeli:
+</p>
+
+<ul class="org-ul">
+<li>Privacy Accessed API Type: User Defaults</li>
+<li>Privacy Accessed API Reasons: <code>CA92.1</code>: Access info from same app, per documentation.</li>
+</ul>
+</div>
+
+<h3><a id="uygulama-geliştiricilerinin-sdk-kullanımları" class="anchor" href="#uygulama-geliştiricilerinin-sdk-kullanımları">¶</a>Uygulama geliştiricilerinin SDK kullanımları</h3><div class="outline-text-3" id="text-orgfe0439f">
+<p>
+Uygulama geliştiricileri olarak hepimiz, işlerimizi kolaylaştıran birçok üçüncü parti SDK&rsquo;nin sunduklarından yararlanıyoruz. Çünkü Amerikayı yeniden keşfetmeye gerek yok. Yapılacak bir işi, bizden daha önce düşünmüş, yapmış, defalarca optimize etmiş ve bunu başkalarınında kullanabilmesi için SDK haline getirmiş birileri her zaman var. Bizde uygulamalarımızda sektör tarafından beğenilen ve güvenilen SDK&rsquo;leri sıkça kullanıyoruz.
+</p>
+
+<p>
+Peki kaçımız SDK&rsquo;nin gerçekte bu problemi nasıl çözdüğüyle ilgileniyoruz? Hadi dürüst olalım. Çoğumuz problemin arka planda nasıl ele alındığına bakmıyoruz. Apple da tam olarak bundan bahsediyor. Evet belki bu bağımlılıkların arkada neler yaptığıyla pek ilgilenmiyoruz ancak bu kodlardan da bizler sorumluyuz.
+</p>
+</div>
+
+<h4><a id="device-fingerprinting" class="anchor" href="#device-fingerprinting">¶</a>Device Fingerprinting</h4><div class="outline-text-4" id="text-org0e4d6d0">
+<p>
+Uygulamamızda reklam göstermek için kullandığımız bir SDK, arka planda kullanıcının kullandığı klavyenin diline erişip, bunu kullanıcı kimliği oluştururken etnik köken bilgisi için kullanabilir. Daha sonra gösterilecek reklamların daha isabetli olması için bu etnik köken bilgisini kullanabilir. İşte tam da buna Cihaz Kimliklendirme (Device Fingerprinting) deniyor.
+</p>
+
+
+<div id="orga1ce526" class="figure">
+<p><img src="/img/device_fingerprinting.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 4: </span>Cihaz Kimliklendirme (Device Fingerprinting)</p>
+</div>
+
+<p>
+Cihaz Kimliklendirme konusu Apple&rsquo;ın uzun zamandır uğraştığı ve savaş açtığı bi konu. Bugünün konusu olan Privacy Manifest&rsquo;in de çıkış noktası, tam da buna engel olmak için atılan ilk adım niteliğini taşıyor.
+</p>
+
+<p>
+Cihaz Kimliklendirme ile ilgili verilebilecek daha birçok bilgi var ancak ancak burada detayına girmeyeceğim. Meraklısı için buraya biri daha magazinsel olmak üzere iki bağlantı bırakıyorum.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://9to5mac.com/2024/01/25/spy-on-iphone-users/">Spy on iPhone Users</a></li>
+
+<li><a href="https://www.nytimes.com/2017/04/23/technology/travis-kalanick-pushes-uber-and-himself-to-the-precipice.html">Uber&rsquo;s C.E.O. Plays With Fire</a></li>
+</ul>
+</div>
+
+<h3><a id="gereklilikler-sdkrsquoler-için-nasıl-yerine-getirilmeli" class="anchor" href="#gereklilikler-sdkrsquoler-için-nasıl-yerine-getirilmeli">¶</a>Gereklilikler SDK&rsquo;ler için nasıl yerine getirilmeli?</h3><div class="outline-text-3" id="text-org2384522">
+<p>
+Apple, Privacy Manifest gerektiren SDK&rsquo;ler için bir <a href="https://developer.apple.com/support/third-party-SDK-requirements/">liste</a> hazırladı. Bu listede hepimizin yakından tanıdığı <b><i>Firebase, Alamofire, Lottie</i></b> gibi birçok SDK mevcut.
+</p>
+
+<p>
+Bu bağımlılıklar, Apple için şüphe uyandıran bağımlılıklarmış gibi düşünebilirsiniz ancak pek öyle durmuyor. Bağımlılıkların source code larını kontrol edince bazılarının privacy manifest içermesi icin bir nedeni bile olmadığını görebilirsiniz. Apple muhtemelen bize en çok kullanılan framework&rsquo;lerin bir listesini sunmuş.
+</p>
+
+<p>
+Eğer listede ki SDK&rsquo;lerden bir veya daha fazlasını uygulamanızda kullanıyorsanız yapmanız gerekenler aşağıdaki gibi.
+</p>
+
+<ul class="org-ul">
+<li>Kullandığınız SDK&rsquo;nin Privacy Manifest içeren son sürümünü kontrol edin ve bunun çok maliyetli olmayacağını umarak bu sürüme geçin.</li>
+
+<li>Kullandığınız SDK artık desteklenmiyor veya bir Privacy Manifest dosyası içermiyor olabilir. Bu durumda repoyu fork edip Privacy Manifest ekleyen birisi var mı bakmalısınız. Eğer yoksa repoyu siz fork edip, source code&rsquo;u okuyarak bir manifest dosyası oluşturabilirsiniz.</li>
+</ul>
+
+<p>
+Ancak korkmanıza gerek yok. Listede ki çoğu SDK sağlayıcı yeni sürümlerinde Privacy Manifest eklemesini gerçekleştirdi.
+</p>
+
+<p>
+Bir noktada Firebase gibi alt bağımlılıkları olan SDK&rsquo;leri güncellemenize rağmen SPM olarak kullandığınız bu SDK&rsquo;lerin alt bağımlılıklarının istenilen sürüme geçmediğini görecek olursanız, <b>Project Navigator → Package Dependencies &#x2014; sağ click → Update to Latest Package Versions</b> aksiyonu ile bu sorunun üstesinden gelebilirsiniz.
+</p>
+
+<p>
+SDK&rsquo;lerinizden gelen ve sizin uygulamanıza eklediğiniz Privacy Manifest dosyası en sonunda derlenip tek bir dosya haline getiriliyor. Yani bir sorunla karşılaşmanız halinde Apple size hangi API kullanımında sorun olduğunu bildirecek ancak bu eksik bildiriyi yapanın hangi SDK olduğunu anlamak kolay olmayacak. Bu yüzden titiz çalışmakta fayda var.
+</p>
+
+
+<div id="org2797559" class="figure">
+<p><img src="/img/spm_package_update.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 5: </span>SPM En Son Paket Sürümlerine Güncelleme</p>
+</div>
+</div>
+
+<h3><a id="özetle" class="anchor" href="#özetle">¶</a>Özetle</h3><div class="outline-text-3" id="text-org43f6d02">
+<p>
+Bu yazıda sizlerle Apple&rsquo;ın yeni gizlilik gerekliliklerinden bahsettik. Apple&rsquo;ın cihaz kimliklendirme gibi gizlilik ihlali uygulamalarına en başından beri karşı çıktığını hepimiz biliyoruz. Bu gibi uygulamalara engel olabilmek için atılan adımlardan birisi olan Privacy Manifest düzenlemesi de hemen biz geliştiricilerin gündemine oturdu.
+</p>
+
+<p>
+Apple cihaz kimliklendirmeye engel olmak için ilk adım olarak kendisi için en basit yol olan, geliştiricilere buna sebep olabilecek API&rsquo;lerin kullanımını zorlaştırmayı veya kullanımı halinde geçerli bir neden belirtlemelerini zorun kıldı.
+</p>
+
+<p>
+Aksiyon almaya hazırlanan bizler ise Apple&rsquo;ın dokümanlarını okuduğumuzda yanıtı olmayan bazı sorularla baş başa kaldık. Kafamızdaki soru işaretlerini gidermek için geliştiriciler olarak birbirimizin tecrübelerinden yararlandık. Bende çoğumuza göre angarya olan bu iş için bütün bu süreçlerden geçtikten sonra bildiklerimi türkçe bir rehber niteliğinde sizlerle paylaşmak istedim.
+</p>
+
+<p>
+Umarım bu yazı işinize yaramış ve bu süreci hızlandırmanızda sizlere yardımcı olmuştur. Her türlü geri bildiriminizi bekliyorum. Sonraki yazılarda görüşmek üzere, Hoşça kalın! 🏄🏼‍♂️
+</p>
+</div>
+
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org0d5a455">
+<ul class="org-ul">
+<li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests">Describing data use in Privacy Manifests</a></li>
+<li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Describing use of Required Reason API</a></li>
+<li><a href="https://developer.apple.com/support/third-party-SDK-requirements/">Third-party SDK requirements</a></li>
+<li><a href="https://developer.apple.com/app-store/app-privacy-details/">App privacy details on the App Store</a></li>
+<li><a href="https://9to5mac.com/2024/01/25/spy-on-iphone-users/">Spy on iPhone Users</a></li>
+<li><a href="https://www.nytimes.com/2017/04/23/technology/travis-kalanick-pushes-uber-and-himself-to-the-precipice.html">Uber&rsquo;s C.E.O. Plays With Fire</a></li>
+</ul>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #31</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #24</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #7</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #6</a><a class="tag" href="https://mobilen.art/tags/android/">Android #6</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #3</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a></div></div></footer></body></html>

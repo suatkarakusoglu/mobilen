@@ -24,6 +24,8 @@
 
 [[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]
 
+[[file:../../news/privacy_manifest_apple.org][Apple Uygulama Gizlilik Manifestosu (Privacy Manifest)]]
+
 [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]
 
 [[file:../../news/ssl_pinning.org][SSL Pinning]]

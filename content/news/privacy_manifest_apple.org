@@ -1,0 +1,166 @@
+#+title: Apple Uygulama Gizlilik Manifestosu (Privacy Manifest)
+#+date: [2024-07-16 Tue]
+#+author: Alper Cem Öztürk
+#+filetags: :Apple:iOS:
+
+[[https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8][Alper Cem Öztürk]] yazdı.
+
+#+caption: Apple Uygulama Gizlilik Manifestosu
+[[file:privacy_rules.jpg]]
+
+* İçerik
+Bildiğiniz gibi Apple WWDC23'de yeni gizlilik kurallarını açıkladı. Bazı geliştiriciler, bu yenilikleri etkinlikten sonra keşfettiler ve hemen aksiyon aldılar. Bazıları ise 13 Mart 2024 tarihinden sonra Apple'ın "*Eksik API Beyanı*" olarak da bilinen *ITMS-91053* bildirim e-postası ile bu yenilikleri öğrendiler ya da hatırladılar.
+
+Apple'ın gizlilik konusunda attığı yeni adımlar, geliştiriciler için önemli değişiklikleri beraberinde getirdi.
+
+13 Mart 2024 tarihinden itibaren, belirli API'leri kullanan ancak bu kullanımın nedenlerini açıkça belirtmeyen uygulamalar veya SDK'ler için Apple *ITMS-91053 Missing API Declaration* adında bir bildirim e-postası göndermeye başlamıştı.
+
+1 Mayıs 2024 tarihinden itibaren ise, Privacy Manifest App Review'ın bir parçası oldu ve App Store Connect'e geçerli bir privacy manifest dosyası içermeyen yeni veya güncellenmiş bir uygulama yüklemek *rejection* ile sonuçlanmaya başladı.
+
+İşte bu yazıda Apple'ın kısıtlamalarına takılmak istemeyen sizlerle beraber yeni gizlilik kurallarını anlamaya çalışacağız. Yazı genelinde konuşacağımız başlıkları meraklısı için hemen aşağıya bırakıyorum.
+
+** Projenize Privacy Manifest eklemek zorunda mısınız?
+Evet, *çoğu durumda* privacy manifest'i projenize eklemek *zorundasınız*. App Store Connect'e şu durumlarda privacy manifest eklemeniz gerekecek:
+
+Yeni veya mevcut uygulamaların güncellemeleri için:
+
+- Apple tarafından [[https://developer.apple.com/support/third-party-SDK-requirements][belirtilen SDK'leri]] *kullanıyorsanız*
+- "Required Reason API" olarak sınıflandırılmış API'lerin [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api][belirli özelliklerini]] *kullanıyorsanız*
+
+Bu durumların herhangi birinde, kullandığınız her SDK ve Required Reason API için privacy manifest'i eklemelisiniz.
+
+Ancak App Store'da privacy manifest gerektiren SDK'lerin kullanıldığı bir uygulamanız var ama yakın zamanda *yeni bir güncelleme planınız yoksa*, bu konuda bir aksiyon almanıza *gerek yok*. Apple tüm SDK'lerin Privacy Manifest içeren son sürümlerine güncellemenin birçok eski uygulama için maliyetli olacağını bildiğinden bunu zorunlu kılmıyor. Yine de, gelecekteki güncellemelerinizde bu gereklilikleri göz önünde bulundurmanız önemlidir.
+
+** Privacy Manifest nedir?
+Öncelikle Privacy Manifest'in ne olduğuyla başlayalım. Apple'ın tanımlamasına göre Privacy Manifest, uygulamamızın veya entegre ettiğimiz üçüncü parti SDK'nin topladığı veri türlerini ve kullandığı API'leri kaydeden bir listedir (yani kısaca bir plist). Bu liste, hangi verilerin toplandığını ve hangi API'lerin kullanıldığını nedenleriyle birlikte net bir şekilde belirtir.
+
+Bu listenin dolu hali kabaca aşağıdaki gibi gözüküyor.
+
+#+caption: Privacy Manifest Dosyası Örneği
+[[file:privacy_manifest_ornek.jpg]]
+
+Yukarıdaki görseli, dolu bir privacy manifest dosyasının nasıl gözüktüğüyle ilgili size bir fikir vermesi icin ekledim ancak bu kafanızı karıştırmasın. Hemen aşağıda, belirtmemiz gereken kritik bilgileri açıklıyorum.
+
+*** Privacy Tracking Enabled:
+Uygulamamızın veya üçüncü parti SDK'lerin, */App Tracking Transparency (ATT)/* çerçevesinde takip edilip edilmediğini belirten bir Boolean değeri.
+
+*** Privacy Tracking Domains:
+Uygulamamızın veya üçüncü parti SDK'lerin bağlanıp, takip ettiği domain'leri belirtmemiz istenen bir string listesi. Kullanıcı, */ATT/* çerçevesi aracılığıyla izleme (tracking) izni vermediyse bu domainlere yönelik ağ istekleri başarısız olur. *Privacy Tracking Enabled* kısmını */true/* olarak ayarlarsanız buraya da *en az bir domain* belirtmeniz gerekir. Aksi halde boş bırakabilirsiniz.
+
+*** Privacy Nutrition Label Types:
+#+caption: Privacy Nutrition Labels
+[[file:privacy_manifest_labels.jpg]]
+
+*Privacy Nutrition Label*, Apple cihazlarında, uygulamaların kullanıcı verilerini toplayıp toplamadığı veya nasıl kullandığı konusunda şeffaflık sağlamak üzere tasarlanmış bir özelliktir. Bu bilgiler her uygulamanın App Store sayfasında kullanıcıların erişebileceği şekilde sunulur.
+
+Bildiğiniz gibi artık Nutrition Label'ları Privacy Manifest içerisinde belirtiyoruz. Böylelikle uygulamamız App Store'a yüklendiğinde bu kısımlar uygulama sayfasında otomatik olarak sergileniyor.
+
+Label'ları doldururken kullanıcıdan aldığınız her veri tipi için belirtmemiz gereken dört anahtar-değer ikilisi *(key value pair)* var.
+
+- *Collected Data Type:* Veri tipi
+
+- *Linked To User(Yes/No):* Verinin kullanıcıya bağlı olup olmadığının
+  bilgisi.
+
+- *Used for Tracking(Yes/No):* Verinin izleme (tracking) için kullanılıp
+  kullanılmadığının bilgisi.
+
+- *Collection Purposes:* Verinin kullanım nedeni veya nedenlerini
+  belirten liste.
+
+Detaylı bilgi için Apple'ın bu [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests][dokümanına]] göz atabilirsiniz.
+
+*** Veri toplamaktan kasıt ne?
+Veri toplamaktan bahsettik ama toplamak derken gerçekten neyi kastediyoruz? Toplamak tam anlamıyla nerede devreye giriyor? diye soracak olursanız, Apple bunun için bir [[https://developer.apple.com/app-store/app-privacy-details/][rehber]] yayınlamış.
+
+Kısacası buradaki veri toplama, verilerin sizin ve/veya üçüncü taraf ortaklarınızın iletilen request'e *gerçek zamanlı* hizmet vermek için *gerekli olandan daha uzun süre* erişmesine izin verecek şekilde cihazdan çıkması anlamına gelir. Yani cihazdan çıkan bir veri, bir sunucuya gidiyor ve orada *belli bir sürenin üzerinde* erişim sağlanıyorsa, o veri toplanıyordur ve belirtilmesi gerekir. Aksi halde veri toplanıyor denilemez.
+
+*** Privacy Accessed API Types:
+Uygulamamızın veya veya üçüncü parti SDK'lerin eriştiği API türlerini ve erişim nedenlerini belirten anahtar-değer ikililerinden oluşan bir liste. Apple'ın erişim nedeni belirtmemizi zorunlu kıldığı bu API'ler ayrıca *Required Reason API* olarak isimlendirilmiş.
+
+Buraya kadar sizlerle beraber Privacy Manifest dosyasının şemasını dört ana hattıyla beraber incelemiş olduk. Kısaca söylemek gerekirse bu gizlilik bildirilerinin amacı, uygulamaların anlaşılmasını ve raporlanmasını kolaylaştırarak kullanıcılara verilerinin kullanımı konusunda netlik kazandırmaktır diyebiliriz.
+
+Şimdi ise işin asıl kritik kısmı olan Required Reason API'lerden ve onların nasıl deklare edilmesi gerektiğinden detaylıca bahsedeceğiz.
+
+** Required Reason API nedir?
+Required Reason API, Apple tarafından cihazı veya kullanıcıyı benzersiz bir kimlik ile tanımlamaya çalışmak için kullanılabilecek, kategorize edilmiş API'lere denir.
+
+Bu tanıma uyan API'ler aşağıdaki gibi belirlenmiş. Bizim manifest dosyamızda belirtirken yapmamız gereken ise çok basit. Uygulamamızda aşağıdaki API'lerin özelliklerinin kullanılıp kullanılmadığının kontrolünü yapıp, eğer kullanılıyorsa Apple tarafından onaylanan nedenler içerisinden kullanım nedenimizi belirtmek.
+
+- [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278393][File timestamp APIs]]
+- [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278394][System boot time APIs]]
+- [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278397][Disk space APIs]]
+- [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278400][Active keyboard APIs]]
+- [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278401][User defaults APIs]]
+
+*** Ufak bir demo
+Çoğumuz uygulamamızda *User Defaults* kullanıyoruz. Bu yüzden onun üzerinden bir örnek vereyim. Diyelim ki:
+
+Kullanıcı ilk defa uygulamamızı açtığında bir karşılama (onboarding) ekranı görecek.
+
+Bu karşılama ekranı sonrası kullanıcı giriş yapma veya kayıt olma sayfalarına gidecek. Ancak bir kere karşılama ekranından çıkarsa uygulamaya sonraki girişlerinde, bir daha karşılama ekranını göremeyecek.
+
+Kullanıcının daha önceden karşılama ekranını görüp görmediğinin bilgisini User Defaults'da bir boolean değer olarak tutuyor olalım. UserDefaults, Required Reason API'lerden biri olduğu için, Bu API kullanımına geçerli bir sebep belirtmeliyim. Apple, User Defaults kullanımı için geçerli sebepleri [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278401][bağlantıda]] ki gibi listelemiş.
+
+Uygulamamızın yalnızca kendisinin erişebildiği bilgileri okumak ve yazmak üzere eriştiğini varsayacak olursak. Örneğin bu bilgileri herhangi bir widget ile paylaşmadığını, yalnızca uygulamanın kendisinde işlevselliği sağlamak amacıyla kullanıldığını varsayalım.
+
+O zaman *Privacy Accessed API Types* aşağıdaki gibi belirtilmeli:
+
+- Privacy Accessed API Type: User Defaults
+- Privacy Accessed API Reasons: =CA92.1=: Access info from same app, per documentation.
+
+** Uygulama geliştiricilerinin SDK kullanımları
+Uygulama geliştiricileri olarak hepimiz, işlerimizi kolaylaştıran birçok üçüncü parti SDK'nin sunduklarından yararlanıyoruz. Çünkü Amerikayı yeniden keşfetmeye gerek yok. Yapılacak bir işi, bizden daha önce düşünmüş, yapmış, defalarca optimize etmiş ve bunu başkalarınında kullanabilmesi için SDK haline getirmiş birileri her zaman var. Bizde uygulamalarımızda sektör tarafından beğenilen ve güvenilen SDK'leri sıkça kullanıyoruz.
+
+Peki kaçımız SDK'nin gerçekte bu problemi nasıl çözdüğüyle ilgileniyoruz? Hadi dürüst olalım. Çoğumuz problemin arka planda nasıl ele alındığına bakmıyoruz. Apple da tam olarak bundan bahsediyor. Evet belki bu bağımlılıkların arkada neler yaptığıyla pek ilgilenmiyoruz ancak bu kodlardan da bizler sorumluyuz.
+
+*** Device Fingerprinting
+Uygulamamızda reklam göstermek için kullandığımız bir SDK, arka planda kullanıcının kullandığı klavyenin diline erişip, bunu kullanıcı kimliği oluştururken etnik köken bilgisi için kullanabilir. Daha sonra gösterilecek reklamların daha isabetli olması için bu etnik köken bilgisini kullanabilir. İşte tam da buna Cihaz Kimliklendirme (Device Fingerprinting) deniyor.
+
+#+caption: Cihaz Kimliklendirme (Device Fingerprinting)
+[[file:device_fingerprinting.jpg]]
+
+Cihaz Kimliklendirme konusu Apple'ın uzun zamandır uğraştığı ve savaş açtığı bi konu. Bugünün konusu olan Privacy Manifest'in de çıkış noktası, tam da buna engel olmak için atılan ilk adım niteliğini taşıyor.
+
+Cihaz Kimliklendirme ile ilgili verilebilecek daha birçok bilgi var ancak ancak burada detayına girmeyeceğim. Meraklısı için buraya biri daha magazinsel olmak üzere iki bağlantı bırakıyorum.
+
+- [[https://9to5mac.com/2024/01/25/spy-on-iphone-users/][Spy on iPhone Users]]
+
+- [[https://www.nytimes.com/2017/04/23/technology/travis-kalanick-pushes-uber-and-himself-to-the-precipice.html][Uber's C.E.O. Plays With Fire]]
+
+** Gereklilikler SDK'ler için nasıl yerine getirilmeli?
+Apple, Privacy Manifest gerektiren SDK'ler için bir [[https://developer.apple.com/support/third-party-SDK-requirements/][liste]] hazırladı. Bu listede hepimizin yakından tanıdığı */Firebase, Alamofire, Lottie/* gibi birçok SDK mevcut.
+
+Bu bağımlılıklar, Apple için şüphe uyandıran bağımlılıklarmış gibi düşünebilirsiniz ancak pek öyle durmuyor. Bağımlılıkların source code larını kontrol edince bazılarının privacy manifest içermesi icin bir nedeni bile olmadığını görebilirsiniz. Apple muhtemelen bize en çok kullanılan framework'lerin bir listesini sunmuş.
+
+Eğer listede ki SDK'lerden bir veya daha fazlasını uygulamanızda kullanıyorsanız yapmanız gerekenler aşağıdaki gibi.
+
+- Kullandığınız SDK'nin Privacy Manifest içeren son sürümünü kontrol edin ve bunun çok maliyetli olmayacağını umarak bu sürüme geçin.
+
+- Kullandığınız SDK artık desteklenmiyor veya bir Privacy Manifest dosyası içermiyor olabilir. Bu durumda repoyu fork edip Privacy Manifest ekleyen birisi var mı bakmalısınız. Eğer yoksa repoyu siz fork edip, source code'u okuyarak bir manifest dosyası oluşturabilirsiniz.
+
+Ancak korkmanıza gerek yok. Listede ki çoğu SDK sağlayıcı yeni sürümlerinde Privacy Manifest eklemesini gerçekleştirdi.
+
+Bir noktada Firebase gibi alt bağımlılıkları olan SDK'leri güncellemenize rağmen SPM olarak kullandığınız bu SDK'lerin alt bağımlılıklarının istenilen sürüme geçmediğini görecek olursanız, *Project Navigator → Package Dependencies --- sağ click → Update to Latest Package Versions* aksiyonu ile bu sorunun üstesinden gelebilirsiniz.
+
+SDK'lerinizden gelen ve sizin uygulamanıza eklediğiniz Privacy Manifest dosyası en sonunda derlenip tek bir dosya haline getiriliyor. Yani bir sorunla karşılaşmanız halinde Apple size hangi API kullanımında sorun olduğunu bildirecek ancak bu eksik bildiriyi yapanın hangi SDK olduğunu anlamak kolay olmayacak. Bu yüzden titiz çalışmakta fayda var.
+
+#+caption: SPM En Son Paket Sürümlerine Güncelleme
+[[file:spm_package_update.jpg]]
+
+** Özetle
+Bu yazıda sizlerle Apple'ın yeni gizlilik gerekliliklerinden bahsettik. Apple'ın cihaz kimliklendirme gibi gizlilik ihlali uygulamalarına en başından beri karşı çıktığını hepimiz biliyoruz. Bu gibi uygulamalara engel olabilmek için atılan adımlardan birisi olan Privacy Manifest düzenlemesi de hemen biz geliştiricilerin gündemine oturdu.
+
+Apple cihaz kimliklendirmeye engel olmak için ilk adım olarak kendisi için en basit yol olan, geliştiricilere buna sebep olabilecek API'lerin kullanımını zorlaştırmayı veya kullanımı halinde geçerli bir neden belirtlemelerini zorun kıldı.
+
+Aksiyon almaya hazırlanan bizler ise Apple'ın dokümanlarını okuduğumuzda yanıtı olmayan bazı sorularla baş başa kaldık. Kafamızdaki soru işaretlerini gidermek için geliştiriciler olarak birbirimizin tecrübelerinden yararlandık. Bende çoğumuza göre angarya olan bu iş için bütün bu süreçlerden geçtikten sonra bildiklerimi türkçe bir rehber niteliğinde sizlerle paylaşmak istedim.
+
+Umarım bu yazı işinize yaramış ve bu süreci hızlandırmanızda sizlere yardımcı olmuştur. Her türlü geri bildiriminizi bekliyorum. Sonraki yazılarda görüşmek üzere, Hoşça kalın! 🏄🏼‍♂️
+
+** Kaynakça
+- [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests][Describing data use in Privacy Manifests]]
+- [[https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api][Describing use of Required Reason API]]
+- [[https://developer.apple.com/support/third-party-SDK-requirements/][Third-party SDK requirements]]
+- [[https://developer.apple.com/app-store/app-privacy-details/][App privacy details on the App Store]]
+- [[https://9to5mac.com/2024/01/25/spy-on-iphone-users/][Spy on iPhone Users]]
+- [[https://www.nytimes.com/2017/04/23/technology/travis-kalanick-pushes-uber-and-himself-to-the-precipice.html][Uber's C.E.O. Plays With Fire]]

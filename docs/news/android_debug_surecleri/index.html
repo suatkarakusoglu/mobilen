@@ -1,16 +1,16 @@
-<!-- Generated from 277d96e on 2024-08-02 @ 12:22 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!-- Generated from 5ebf70c on 2024-08-02 @ 13:20 with Emacs 30.0.50 (Org mode 9.6.8) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>ADB ile Android Debug Süreçleri - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">ADB ile Android Debug Süreçleri</h1><a class="tag" href="https://mobilen.art/tags/android/">Android #7</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #32</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a><p class="site-post-meta">August  2, 2024</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/sevban-bayir">Sevban Bayır</a> yazdı.
 </p>
 
 
-<div id="org3a1aef5" class="figure">
+<div id="org32b5e76" class="figure">
 <p><img src="/img/android_debug_surecleri_cover.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/@ubahnverleih">C M</a></p>
 </div>
 
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org787164e">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgadc2c11">
 <p>
 Uygulama geliştirme sırasında bazı evreler vardır; feature’ımız tamamdır, formumuz için çiçek gibi bir UI hazırlamışızdır fakat inatçı bir bug sürekli bu hazırladığımız formu en baştan doldurup durmamızı gerektiriyordur ya da tüm caseleri manuel test etmek istiyoruzdur.
 </p>
@@ -32,7 +32,7 @@ Bunun bizden gereksiz yere efor ve zaman çalmasına rağmen otomatize edildiği
 </p>
 </div>
 
-<h3><a id="android-debug-bridge-adb" class="anchor" href="#android-debug-bridge-adb">¶</a>Android Debug Bridge (ADB)</h3><div class="outline-text-3" id="text-org529d236">
+<h3><a id="android-debug-bridge-adb" class="anchor" href="#android-debug-bridge-adb">¶</a>Android Debug Bridge (ADB)</h3><div class="outline-text-3" id="text-orgd8493c9">
 <p>
 Bu yazıda emulatorlerimize en low level’da hükmetmekle kalmayıp o formları tekrar tekrar doldurma içgüdülerimize de bir ket vuracağız ve bunu ADB(Android Debug Bridge) komutlarını kullanarak yapacağız.
 </p>
@@ -46,7 +46,7 @@ Eğer bir Mac kullanıcısıysanız tüm bu otomasyon işlerini kendi belirledi�
 </p>
 </div>
 
-<h3><a id="otomatize-edilmiş-özel-form-akışları-oluşturmak" class="anchor" href="#otomatize-edilmiş-özel-form-akışları-oluşturmak">¶</a>Otomatize Edilmiş Özel Form Akışları Oluşturmak</h3><div class="outline-text-3" id="text-org454a126">
+<h3><a id="otomatize-edilmiş-özel-form-akışları-oluşturmak" class="anchor" href="#otomatize-edilmiş-özel-form-akışları-oluşturmak">¶</a>Otomatize Edilmiş Özel Form Akışları Oluşturmak</h3><div class="outline-text-3" id="text-org6c78e62">
 <p>
 Öncelikle yukarıda bahsettiğimiz temel komutlara bir göz atalım:
 </p>
@@ -66,7 +66,7 @@ Bu komutları ilk gördüğünüzde aklınıza statik olmaları gibi onları kul
 </p>
 </div>
 
-<h3><a id="uiautomator-aracı" class="anchor" href="#uiautomator-aracı">¶</a>UIAutomator Aracı</h3><div class="outline-text-3" id="text-org564431d">
+<h3><a id="uiautomator-aracı" class="anchor" href="#uiautomator-aracı">¶</a>UIAutomator Aracı</h3><div class="outline-text-3" id="text-org8ae2721">
 <p>
 Bu araçlardan birisi <a href="https://github.com/appium/appium-uiautomator2-driver">uiautomator2</a>. Aslında direkt uiautomator diyebiliriz çünkü 2. versiyon birincinin python ile sarmalanmış ve hızlandırılmış bir hâli.
 </p>
@@ -83,7 +83,7 @@ Uiautomator’un ne iş yaptığına gelecek olursak, ekranda gördüğü UI ele
 </pre></div>
 
 
-<div id="org5ca9461" class="figure">
+<div id="orgc502a8a" class="figure">
 <p><img src="/img/uiautomator_output.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 2: </span>Kırmızı kare içerisine alınan alan ilgili UI elemanının emülatör ekranındaki koordinatı.</p>
@@ -163,7 +163,7 @@ Yazının başında bahsettiğim üzere bu işlemi Mac’lerde tek bir kısayola
 
 <p>
 #+CAPTION Mac Automator Aracı
-<a href="file://mac_automator_ss">file://mac_automator_ss</a>
+<img src="/img/mac_automator_ss.jpg" class="content-image" width="100%">
 </p>
 
 <div class="highlight"><pre><span></span><span class="w">  </span><span class="nx">on</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="p">{</span><span class="nx">input</span><span class="p">,</span><span class="w"> </span><span class="nx">parameters</span><span class="p">}</span>
@@ -215,14 +215,14 @@ Tam <code>adb</code> yolu verilmiş scriptimizi Applescripte verdikten sonra kı
 </p>
 
 
-<div id="org9bcd97c" class="figure">
+<div id="org14a5344" class="figure">
 <p><img src="/img/automator_auto_fill_demo.gif" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 3: </span>Demo</p>
 </div>
 </div>
 
-<h3><a id="sonuç-olarak" class="anchor" href="#sonuç-olarak">¶</a>Sonuç olarak</h3><div class="outline-text-3" id="text-org591ce5d">
+<h3><a id="sonuç-olarak" class="anchor" href="#sonuç-olarak">¶</a>Sonuç olarak</h3><div class="outline-text-3" id="text-org9808480">
 <p>
 Android geliştirmede hata ayıklama sürecini iyileştirmek sıkıcı olmak zorunda değil.
 </p>
@@ -232,7 +232,7 @@ Android geliştirmede hata ayıklama sürecini iyileştirmek sıkıcı olmak zor
 </p>
 </div>
 
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orge59182e">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgb41e879">
 <ul class="org-ul">
 <li><a href="https://github.com/appium/appium-uiautomator2-driver">UIAutomator</a></li>
 <li><a href="https://developer.android.com/tools/adb">Android ADB Tool</a></li>

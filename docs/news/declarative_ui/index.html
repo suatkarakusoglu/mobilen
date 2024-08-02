@@ -1,16 +1,16 @@
-<!-- Generated from 208d181 on 2024-08-02 @ 12:11 with Emacs 30.0.50 (Org mode 9.6.8) -->
+<!-- Generated from 277d96e on 2024-08-02 @ 12:22 with Emacs 30.0.50 (Org mode 9.6.8) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Declarative Yaklaşım ve Tasarım - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Declarative Yaklaşım ve Tasarım</h1><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #6</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #32</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><p class="site-post-meta">November 15, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
-<div id="orgc39e56d" class="figure">
+<div id="org9399a97" class="figure">
 <p><img src="/img/declarative_ui_magic.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/@art_maltsev?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Artem Maltsev</a></p>
 </div>
 
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org91cc58d">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org3cd6d0c">
 <p>
 Merhabalar,
 </p>
@@ -32,7 +32,7 @@ Bu araçlar hakkında ve arayüz tasarımında değişen pratiklerin nihayetinde
 </p>
 </div>
 
-<h3><a id="imperative-tasarım" class="anchor" href="#imperative-tasarım">¶</a>Imperative Tasarım</h3><div class="outline-text-3" id="text-org0f72e31">
+<h3><a id="imperative-tasarım" class="anchor" href="#imperative-tasarım">¶</a>Imperative Tasarım</h3><div class="outline-text-3" id="text-org4caf102">
 <p>
 Declarative taraftan bahsetmeden önce daha çok pratik ettiğimiz <code>imperative</code> yaklaşımdan bahsedelim.
 </p>
@@ -54,7 +54,7 @@ Hepsi ile örnekler yapmış görselleştirmeler yapmaya çalışmıştım. Sonr
 </p>
 </div>
 
-<h3><a id="beyan-ve-indirection" class="anchor" href="#beyan-ve-indirection">¶</a>Beyan ve Indirection</h3><div class="outline-text-3" id="text-orgfb2018f">
+<h3><a id="beyan-ve-indirection" class="anchor" href="#beyan-ve-indirection">¶</a>Beyan ve Indirection</h3><div class="outline-text-3" id="text-orgde1b964">
 <p>
 Sadece beyan / <code>declare</code> ederek işinizin ne olduğunu belirtip, sistemin bunu yapmasını beklemenin elbette bir çok avantajı var.
 </p>
@@ -89,7 +89,7 @@ Bu sayede belki büyük ekran&rsquo;lı iPad&rsquo;de farklı bir yerden çıkar
 </blockquote>
 </div>
 
-<h3><a id="declarative-tasarım-ve-verirsquonin-ilişkisi" class="anchor" href="#declarative-tasarım-ve-verirsquonin-ilişkisi">¶</a>Declarative Tasarım ve Veri&rsquo;nin ilişkisi</h3><div class="outline-text-3" id="text-orgdd4653b">
+<h3><a id="declarative-tasarım-ve-verirsquonin-ilişkisi" class="anchor" href="#declarative-tasarım-ve-verirsquonin-ilişkisi">¶</a>Declarative Tasarım ve Veri&rsquo;nin ilişkisi</h3><div class="outline-text-3" id="text-org1a10e8c">
 <p>
 <code>Declarative tasarım</code> matematiksel ifadeyle veriyi alıp arayüze dönüştüren bir fonksiyondur:
 </p>
@@ -100,7 +100,7 @@ declarativeTasarim(veri) -&gt; Arayuz
 </blockquote>
 </div>
 
-<h3><a id="facebookrsquoun-etkisi" class="anchor" href="#facebookrsquoun-etkisi">¶</a>Facebook&rsquo;un etkisi</h3><div class="outline-text-3" id="text-org081d92a">
+<h3><a id="facebookrsquoun-etkisi" class="anchor" href="#facebookrsquoun-etkisi">¶</a>Facebook&rsquo;un etkisi</h3><div class="outline-text-3" id="text-org5868d90">
 <p>
 Siyasal mecrada skandallara varabilecek derecede toplumu yönlendirme gücüne sebep olabilecek büyüklükte veriyi elinde bulunduran firma diyince diyince ilk akla gelen şirket elbette Facebook.
 </p>
@@ -110,7 +110,7 @@ Siyasal mecrada skandallara varabilecek derecede toplumu yönlendirme gücüne s
 </p>
 </div>
 
-<h3><a id="react-ve-devamı" class="anchor" href="#react-ve-devamı">¶</a>React ve devamı</h3><div class="outline-text-3" id="text-org2ef62d7">
+<h3><a id="react-ve-devamı" class="anchor" href="#react-ve-devamı">¶</a>React ve devamı</h3><div class="outline-text-3" id="text-org33aef26">
 <p>
 Reklam takımındaki bir product engineer&rsquo;a garip gözlerle bakılmasına sebep olan sorusu şöyle:
 </p>
@@ -130,7 +130,7 @@ Performanslı bir şekilde tüm tuvali tek bir değişiklikte sil baştan çizme
 </p>
 </div>
 
-<h3><a id="diffing-ve-faydası" class="anchor" href="#diffing-ve-faydası">¶</a>Diffing ve Faydası</h3><div class="outline-text-3" id="text-orga912071">
+<h3><a id="diffing-ve-faydası" class="anchor" href="#diffing-ve-faydası">¶</a>Diffing ve Faydası</h3><div class="outline-text-3" id="text-org0df18bd">
 <p>
 Ekonomik bir şekilde verinin istenilen görüntüye dönüşmesini sağlamanın en önemli yolu olabilecek en az değişiklik ile bunu başarabilmek.
 </p>
@@ -144,7 +144,7 @@ Buradaki <code>diffing</code>&rsquo;e yardımcı olarak daha akıcı olarak veri
 </p>
 </div>
 
-<h3><a id="nelere-dikkat-etmeliyiz" class="anchor" href="#nelere-dikkat-etmeliyiz">¶</a>Nelere dikkat etmeliyiz</h3><div class="outline-text-3" id="text-org63190d0">
+<h3><a id="nelere-dikkat-etmeliyiz" class="anchor" href="#nelere-dikkat-etmeliyiz">¶</a>Nelere dikkat etmeliyiz</h3><div class="outline-text-3" id="text-org86538fb">
 <p>
 O nedenle kullandığınız framework&rsquo;un buna yardımcı olan yaklaşımlarını iyi anlamamız gerekiyor.
 </p>
@@ -193,7 +193,7 @@ Bu örneklerde görüldüğü üzere view eşlemeleri tipler üzerinden gerçekl
 </p>
 </div>
 
-<h3><a id="keyid-kullanımı" class="anchor" href="#keyid-kullanımı">¶</a>Key/Id kullanımı</h3><div class="outline-text-3" id="text-org5b88538">
+<h3><a id="keyid-kullanımı" class="anchor" href="#keyid-kullanımı">¶</a>Key/Id kullanımı</h3><div class="outline-text-3" id="text-org478324b">
 <p>
 Listeler gibi view elemanlarında ise <code>id</code>&rsquo;ler üzerinden dinamik arayüz elemanları çizip eşleştirilebilir.
 </p>
@@ -254,7 +254,7 @@ Bu yazıda Veriden =&gt; Ekrana giden yolda tasarımın declarative yollar ile g
 </p>
 </div>
 
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgc8044b2">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgd454966">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/watch?v=8pDqJVdNa44">React belgeseli</a></li>
 <li><a href="https://legacy.reactjs.org/docs/reconciliation.html">React Framework Heuristic Diffing</a></li>

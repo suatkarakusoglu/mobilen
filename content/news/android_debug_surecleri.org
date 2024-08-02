@@ -3,6 +3,8 @@
 #+author: Sevban Bayır
 #+filetags: :Android:Yazılım:Terminal_Komutları:Debugging:
 
+[[https://tr.linkedin.com/in/sevban-bayir][Sevban Bayır]] yazdı.
+
 #+CAPTION: Photo by [[https://unsplash.com/@ubahnverleih][C M]]
 [[file://android_debug_surecleri_cover.jpg]]
 

@@ -1,0 +1,22 @@
+#+title: Mobilen 8
+
+#+CAPTION: Photo by [[https://unsplash.com/@travelergeek][T R A V E L E R G E E K]]
+[[file:volume_8_cover.jpg]]
+
+*Merhabalar*
+
+Mobilen 8. sayısında, =Pre-Commit= aracının kod kalitesini artırma yöntemlerine, =ADB ile Android debug süreçler='ine ve xcodebuild komutlarının kullanımına baktık.
+
+Tasarım tarafındaki deneyimlera dair önemli noktlardan bahsettik.
+
+Ayrıca apple gizlilik manifestosuna dair gelişmeleri de ele aldık.
+
+Herkese iyi okumalar.
+
+* Konular
+1. [[file:../../news/tasarim_deneyim_ve_mobil.org][Tasarım, Deneyim ve Mobil]]
+2. [[file:../../news/pre_commit_tool.org][Pre-Commit Aracının Faydaları]]
+3. [[file:../../news/android_debug_surecleri.org][ADB ile Android Debug Süreçleri]]
+4. [[file:../../news/xcode_build_tool.org][xcodebuild Komutları ve Kullanım Örnekleri]]
+5. [[file:../../news/privacy_manifest_apple.org][Apple Uygulama Gizlilik Manifestosu (Privacy Manifest)]]
+6. [[file:../../news/switch_expression.org][Swift 5.9: If ve Switch Gelişmeleri]]

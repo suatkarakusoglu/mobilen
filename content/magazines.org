@@ -2,6 +2,7 @@
 
 /Mobilen Dergilerin sıralı listesi./
 
+- [[../mobilen-8/][Mobilen 8]]
 - [[../mobilen-7/][Mobilen 7]]
 - [[../mobilen-6/][Mobilen 6]]
 - [[../mobilen-5/][Mobilen 5]]

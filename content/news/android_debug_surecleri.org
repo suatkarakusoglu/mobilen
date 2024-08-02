@@ -1,0 +1,179 @@
+#+title: ADB ile Android Debug Süreçleri
+#+date: [2024-08-02 Fri]
+#+author: Sevban Bayır
+#+filetags: :Android:Yazılım:Terminal_Komutları:Debugging:
+
+#+CAPTION: Photo by [[https://unsplash.com/@ubahnverleih][C M]]
+[[file://android_debug_surecleri_cover.jpg]]
+
+* İçerik
+Uygulama geliştirme sırasında bazı evreler vardır; feature’ımız tamamdır, formumuz için çiçek gibi bir UI hazırlamışızdır fakat inatçı bir bug sürekli bu hazırladığımız formu en baştan doldurup durmamızı gerektiriyordur ya da tüm caseleri manuel test etmek istiyoruzdur.
+
+Bunun yanında çoğu zaman “oldu” , “olacak” derken kendimizi o formları tekrar tekrar doldururken buluyoruzdur.
+
+Bu gibi süreçlerin bizlerin developer olma ve dolayısıyla bir şeyleri otomatize etme içgüdülerini körelttiği ya da boğazımıza bir düğüm gibi takılıp “Şu form kendi kendini doldurmalı” dedirtiyor.
+
+Bunun bizden gereksiz yere efor ve zaman çalmasına rağmen otomatize edildiği halinden daha tutarsız ve buglara hâlâ açık olduğunu görüyoruz.
+
+Özellikle form ya da sürekli input gerektiren featureları manuel test ederken kolaylık sağlaması adına bu başlıkta bir yazıyla karşınızdayım :).
+
+** Android Debug Bridge (ADB)
+Bu yazıda emulatorlerimize en low level’da hükmetmekle kalmayıp o formları tekrar tekrar doldurma içgüdülerimize de bir ket vuracağız ve bunu ADB(Android Debug Bridge) komutlarını kullanarak yapacağız.
+
+=ADB=, bilgisayarımız ile emulatorler (sanal makineler) arasında iletişim kurmamızı sağlayan bir yazılımdır. Elbette bazı temel komutlar var ve bunları bilmemiz zaman zaman işlerimizi normalde olduğundan çok daha fazla kolaylaştırabilir ancak bu yazı sonunda yine de bunların hiçbirini ezberlemeniz gerekmeyecek.
+
+Eğer bir Mac kullanıcısıysanız tüm bu otomasyon işlerini kendi belirlediğimiz tek bir kısayola kadar indirgeyeceğiz.
+
+** Otomatize Edilmiş Özel Form Akışları Oluşturmak
+Öncelikle yukarıda bahsettiğimiz temel komutlara bir göz atalım:
+
+#+begin_src shell
+  # Açık olan emulator içerisinde bir terminal başlatmaya yarar.
+  adb shell
+
+  # Verdiğimiz String'i ekranda bulduğu input alanına girer.
+  adb shell input text "Hello World!"
+
+  # Verdiğimiz koordinatlara dokunma hareketini simüle eder.
+  adb shell input tap 700 1500
+#+end_src
+
+Bu komutları ilk gördüğünüzde aklınıza statik olmaları gibi onları kullanışsız gösteren negatif yanları gelebilir fakat amacımız farklı araçları bu komutlarla birleştirerek ortaya bir zanaat çıkarmak :).
+
+** UIAutomator Aracı
+Bu araçlardan birisi [[https://github.com/appium/appium-uiautomator2-driver][uiautomator2]]. Aslında direkt uiautomator diyebiliriz çünkü 2. versiyon birincinin python ile sarmalanmış ve hızlandırılmış bir hâli.
+
+Uiautomator’u kurmak için python3'e ihtiyacınız var kurulum işlemleri konusunda yardıma ihtiyaç duyarsanız [[https://www.linkedin.com/in/sevban-bayir/][bana ulaşabilirsiniz]].
+
+Uiautomator’un ne iş yaptığına gelecek olursak, ekranda gördüğü UI elemanlarının bir çıktısını birçok metadatalarıyla birlikte (bunlardan birisi elemanın ekrandaki koordinatı) XML formatında bizlere veriyor. Emülatörünüzde uygulamanız açıkken aşağıdaki komutu çalıştırırsanız terminalinizde bahsettiğim XML dosyasının içeriğini göreceksiniz:
+
+#+begin_src shell
+  adb exec-out uiautomator dump /dev/tty
+#+end_src
+
+#+CAPTION: Kırmızı kare içerisine alınan alan ilgili UI elemanının emülatör ekranındaki koordinatı.
+[[file://uiautomator_output.jpg]]
+
+#+begin_quote
+Not: Uiautomator kullandığınız ui kit’inden bağımsızdır yani XML’de de Compose’da da istediğiniz sonuçları elde edebilirsiniz.
+#+end_quote
+
+Şimdi bu XML çıktısını parse ederek label ya da placeholder’ını verdiğimiz TextFieldlara tıklayıp istediğimiz texti oralara giren bir script yazalım:
+#+begin_src shell
+  # UI öğesi varsa tıklama fonksiyonu
+  function tapIfExists(){
+      # UI öğesinin koordinatlarını al
+      coords=$(getCoords "${1}")
+
+      # Koordinatlar bulundu mu kontrol et
+      if [[ "$coords" != "-" ]]; then
+          # adb kullanarak koordinatlara tıkla
+          adb shell input tap "$coords"
+      fi
+  }
+
+  # Metne göre bir UI öğesinin koordinatlarını alma fonksiyonu
+  function getCoords(){
+      # UI hiyerarşisini dök ve bir değişkende sakla
+      fastdump=$(/usr/bin/python3 -c "import uiautomator2 as u2;d=u2.connect(); out=d.dump_hierarchy(); print(out)")
+
+      # Belirtilen metne sahip öğenin var olup olmadığını kontrol et
+      present=$(echo "$fastdump" | grep "text=\"${1}\"")
+
+      # Eğer öğe bulunursa
+      if [[ $? -eq 0 ]]; then
+          # Dump'tan koordinatları çıkar
+          arr=($(echo "$fastdump" | sed 's/></>\n</g' | grep "text=\"${1}\"" | grep -o "\[.*\]" | sed 's/\]\[/,/g' | sed 's/\]//g;s/\[//g;s/,/\n/g'))
+
+          # Merkez x-koordinatını hesapla
+          x=$(echo "(${arr[0]}+${arr[2]})/2" | bc)
+
+          # Merkez y-koordinatını hesapla
+          y=$(echo "(${arr[1]}+${arr[3]})/2" | bc)
+
+          # Koordinatları çıktı olarak ver
+          echo "$x $y"
+      else
+          # Eğer öğe bulunamazsa, "-" çıktı ver
+          echo "-"
+      fi
+  }
+#+end_src
+
+Bu scriptle beraber artık “placeholder”ını bildiğimiz input alanlarının koordinatlarını bulabiliyoruz. Uçtan uca bir akış oluşturmak ise aşağıdaki kadar basit:
+#+begin_src shell
+  # ... Yukarıdaki script kodları
+  # Sonuna kendi akışımızı ekliyoruz:
+  tapIfExists "E-mail"
+  adb shell input text "sevbanbuyer@gmail.com"
+  tapIfExists "Password"
+  adb shell input text "asdasdfasd"
+  tapIfExists "SIGN IN" #Formu doldurduktan sonra giriş yap butonuna tıklıyoruz
+#+end_src
+
+İşin pratiğine gelecek olursak da artık tek yapmamız gereken terminalde bu script dosyasını çalıştırmak:
+
+#+begin_src shell
+  ./<script-dosyanızın-adı>
+#+end_src
+
+Yazının başında bahsettiğim üzere bu işlemi Mac’lerde tek bir kısayola indirgeyebiliyoruz. Bunun için Maclerde ön yüklü olarak gelen =Automator= uygulamasını kullanabiliriz.
+
+#+CAPTION Mac Automator Aracı
+[[file://mac_automator_ss]]
+
+#+begin_src js
+  on run {input, parameters}
+  do shell script "<script-dosyanızın-pathı>"
+  end run
+#+end_src
+
+#+begin_quote
+ÖNEMLİ: Apple Script ile bir komut çalıştırmaya çalışırken o komutun tam dosya yolunu vermeliyiz.
+#+end_quote
+
+Bunun için yazdığımız tapIfExists scriptini şu şekilde güncellemeliyiz:
+#+begin_src shell
+  #!/bin/bash
+  DB_PATH="<adb-komutunun-tam-pathi>" # DİKKAT !
+
+  function tapIfExists(){
+      coords=$(getCoords "${1}")
+      if [[ "$coords" != "-" ]]; then
+          $DB_PATH shell input tap "$coords" # DİKKAT !
+      fi
+  }
+
+  function getCoords(){
+      fastdump=$(/usr/bin/python3 -c "import uiautomator2 as u2;d=u2.connect(); out=d.dump_hierarchy(); print(out)")
+      present=$(echo "$fastdump" | grep "text\=\"${1}\"")
+      if [[ $? -eq 0 ]]; then
+          arr=($(echo "$fastdump" | sed 's/></>\n</g' | grep "text\=\"${1}\"" | grep -o "\[.*\]" | sed 's/\]\[/,/g' | sed 's/\]//g;s/\[//g;s/,/\n/g'))
+          x=$(echo "(${arr[0]}+${arr[2]})/2" | bc)
+          y=$(echo "(${arr[1]}+${arr[3]})/2" | bc)
+          echo "$x $y"
+      else
+          echo "-"
+      fi
+  }
+
+  tapIfExists "E-mail"
+  $DB_PATH shell input text "sevbanbuyer@gmail.com" # DİKKAT !
+  tapIfExists "Password"
+  $DB_PATH input text "asdasdfasd"  # DİKKAT !
+  tapIfExists "SIGN IN"
+#+end_src
+
+Tam =adb= yolu verilmiş scriptimizi Applescripte verdikten sonra kısayol atamak için Mac’imizde =Ayarlar > Klavye > Klavye Kısayolları > Servisler > Genel= kısmına giriyoruz burada Apple scriptlerimizi göreceğiz. Buradan onlara tıklayıp istediğimiz kısayolu atayabiliriz.
+
+#+CAPTION: Demo
+[[file://automator_auto_fill_demo.gif]]
+
+** Sonuç olarak
+Android geliştirmede hata ayıklama sürecini iyileştirmek sıkıcı olmak zorunda değil.
+
+=ADB= ve =uiautomator= ve =automator= gibi araçları kullanarak, form doldurma gibi tekrarlayan görevleri otomatikleştirebilir ve uygulamamızın davranışını daha derinlemesine anlayabiliriz.
+
+** Kaynakça
+- [[https://github.com/appium/appium-uiautomator2-driver][UIAutomator]]
+- [[https://developer.android.com/tools/adb][Android ADB Tool]]

@@ -122,7 +122,7 @@ Bu scriptle beraber artık “placeholder”ını bildiğimiz input alanlarını
 Yazının başında bahsettiğim üzere bu işlemi Mac’lerde tek bir kısayola indirgeyebiliyoruz. Bunun için Maclerde ön yüklü olarak gelen =Automator= uygulamasını kullanabiliriz.
 
 #+CAPTION Mac Automator Aracı
-[[file://mac_automator_ss]]
+[[file://mac_automator_ss.jpg]]
 
 #+begin_src js
   on run {input, parameters}

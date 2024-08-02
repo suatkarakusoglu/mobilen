@@ -13,7 +13,7 @@ Uygulama geliştirme sırasında bazı evreler vardır; feature’ımız tamamd�
 
 Bunun yanında çoğu zaman “oldu” , “olacak” derken kendimizi o formları tekrar tekrar doldururken buluyoruzdur.
 
-Bu gibi süreçlerin bizlerin developer olma ve dolayısıyla bir şeyleri otomatize etme içgüdülerini körelttiği ya da boğazımıza bir düğüm gibi takılıp “Şu form kendi kendini doldurmalı” dedirtiyor.
+Bu gibi süreçlerin bizlerin developer olma ve dolayısıyla bir şeyleri otomatize etme içgüdülerini körelttiğini ya da boğazımıza bir düğüm gibi takılıp “Şu form kendi kendini doldurmalı” dedirttiğini söylemeliyim.
 
 Bunun bizden gereksiz yere efor ve zaman çalmasına rağmen otomatize edildiği halinden daha tutarsız ve buglara hâlâ açık olduğunu görüyoruz.
 

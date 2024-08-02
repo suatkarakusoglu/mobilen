@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:android_debug_surecleri.org][ADB ile Android Debug Süreçleri]] - Sevban Bayır · August 02, 2024
 - [[file:privacy_manifest_apple.org][Apple Uygulama Gizlilik Manifestosu (Privacy Manifest)]] - Alper Cem Öztürk · July 16, 2024
 - [[file:switch_expression.org][Swift 5.9: If ve Switch Gelişmeleri]] - Suat Karakuşoğlu · June 27, 2024
 - [[file:tasarim_deneyim_ve_mobil.org][Tasarım, Deneyim ve Mobil]] - Suat Karakuşoğlu · May 10, 2024

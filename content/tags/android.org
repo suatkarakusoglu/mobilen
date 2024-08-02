@@ -6,6 +6,8 @@
 
 [[file:../../news/android_de_neden_main_function_yok.org][Android'de Neden Bir Main Function Yok ?]]
 
+[[file:../../news/android_debug_surecleri.org][ADB ile Android Debug Süreçleri]]
+
 [[file:../../news/android_file_template.org][Android File Template]]
 
 [[file:../../news/android_studio_bot.org][Android Studio Bot]]

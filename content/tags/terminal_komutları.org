@@ -1,5 +1,7 @@
 #+TITLE: Terminal Komutları
 
+[[file:../../news/android_debug_surecleri.org][ADB ile Android Debug Süreçleri]]
+
 [[file:../../news/makefile_nedir.org][Makefile'ın Faydaları]]
 
 [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]

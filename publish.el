@@ -210,8 +210,8 @@
                                 (a (@ (class "nav-link") (href "/")) "Anasayfa") " "
                                 (a (@ (class "nav-link") (href "/magazines/")) "Dergiler") " "
                                 (a (@ (class "nav-link") (href "/news/")) "İçerikler") " "
-                                (a (@ (class "nav-link") (href "/community/")) "Topluluk") " "
-                                (a (@ (class "nav-link") (href ,(concat dw/site-url "/rss/"))) "RSS") " "
+                                ;; (a (@ (class "nav-link") (href "/community/")) "Topluluk") " "
+                                ;; (a (@ (class "nav-link") (href ,(concat dw/site-url "/rss/"))) "RSS") " "
                                 ))))))
 
 (defun generate-tags-html (tags)
@@ -647,17 +647,17 @@ holding contextual information."
   (interactive)
   (org-publish-all t)
 
-  (webfeeder-build "rss/news.xml"
-                   "./docs"
-                   dw/site-url
-                   (let ((default-directory (expand-file-name "./docs/")))
-                     (remove "news/index.html"
-                             (directory-files-recursively "news"
-                                                          ".*\\.html$")))
-                   :builder 'webfeeder-make-rss
-                   :title "Mobilen Yazılar"
-                   :description "Mobilen Dünyasından Bilgiler ..."
-                   :author "Suat Karakuşoğlu")
+  ;; (webfeeder-build "rss/news.xml"
+  ;;                  "./docs"
+  ;;                  dw/site-url
+  ;;                  (let ((default-directory (expand-file-name "./docs/")))
+  ;;                    (remove "news/index.html"
+  ;;                            (directory-files-recursively "news"
+  ;;                                                         ".*\\.html$")))
+  ;;                  :builder 'webfeeder-make-rss
+  ;;                  :title "Mobilen Yazılar"
+  ;;                  :description "Mobilen Dünyasından Bilgiler ..."
+  ;;                  :author "Suat Karakuşoğlu")
 
   ;; TODO: No redirects for now.
   ;; (dw/generate-redirects '(("support-the-channel" . "how-to-help")

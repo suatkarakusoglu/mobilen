@@ -229,8 +229,8 @@
                                  ;; TODO: Create Privacy policy.
                                  ;; (a (@ (href ,(concat dw/site-url "/privacy-policy/"))) "Gizlilik Sözleşmesi")
                                  ;; " · "
-                                 (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Bülteni")
-                                 " · "
+                                 ;; (a (@ (href ,(concat dw/site-url "/rss/"))) "RSS Bülteni")
+                                 ;; " · "
                                  (a (@ (href ,(concat dw/site-url "/credits/"))) "Atıflar")
                                  " · "
                                  (a (@ (rel "me") (href "https://tr.linkedin.com/in/suat-karakusoglu")) "s13u"))
@@ -515,7 +515,7 @@ holding contextual information."
 (defun dw/format-news-entry (entry style project)
   "Format posts with author and published data in the index page."
   (cond ((not (directory-name-p entry))
-         (format "[[file:%s][%s]] - %s · %s"
+         (format "[[file:news/%s][%s]] - %s · %s"
                  entry
                  (org-publish-find-title entry project)
                  (car (org-publish-find-property entry :author project))

@@ -63,6 +63,9 @@
 (use-package webfeeder
   :ensure t)
 
+(defun --count-words-string (str)
+  (length (split-string str "\\W+" t)))
+
 ;; Generate tags
 (defun get-org-filetags (org-files)
   (let ((filetags '()))
@@ -313,7 +316,9 @@
                            ,@(when filetags
                                (generate-tags-html filetags))
                            ,(when publish-date
-                              `(p (@ (class "site-post-meta")) ,publish-date))
+                              `(p (@ (class "site-post-meta"))
+                                  ,(format "%d min read | " (max 1 (ceiling (/ (--count-words-string content) 220))))
+                                  ,publish-date))
                            ,(if-let ((video-id (plist-get info :video)))
                                 (dw/embed-video video-id))
                            ,(when pre-content pre-content)

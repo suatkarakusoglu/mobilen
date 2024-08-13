@@ -1,0 +1,163 @@
+#+title: Apple CarPlay'e Giriş
+#+date: [2024-08-12 Mon]
+#+author: Burak Ceylan
+#+filetags: :Apple:iOS:Yazılım:CarPlay:
+
+[[https://www.linkedin.com/in/burak-ceylan-828abb181/][Burak Ceylan]] yazdı.
+
+* İçerik
+Merhaba Mobilen okurları, bu yazımda sizlere Apple’in yenilikçi teknolojilerinden Apple CarPlay’i sizlere aktarmaya çalışacağım.
+
+** Apple CarPlay nedir?
+Apple CarPlay, Apple’in iPhone kullanıcıları icin iPhone’larda bulunan birçok fonksiyonun araç içerisindeki panellere entegre edilmesini sağlayan bir platformdur.
+
+Bu platformun temel amacı sürücünün iPhone’undaki uygulamaları veya özellikleri araç içerisinde sürüş odağı bozulmadan kullanabilmesini sağlamaktır.
+
+** Apple CarPlay Tarihçesi
+Apple CarPlay =2014 yılında= Cenevre Otomobil Fuarı’nda =iOS 7.1= beraberinde piyasaya sürülmüştür.
+
+
+#+CAPTION: 2014 yılında CarPlay’in full versiyonu destekli ilk üretimi gerçekleştirilen =Ferrari FF=.
+[[file://14_carplay.jpg]]
+
+2015 yılında iOS 9 beraberinde podcast ve sesli kitap gibi birçok kategoride third party uygulamalar destek eklendi.
+
+iPhone ve araba arasında kurulan baglantının kablosuz bir sekilde olabilmesi saḡlandı. Araç specific kontrollerin (klima, radio, vs..) uygulamalar tarafından yönetimine olanak sağlandı.
+
+#+CAPTION: CarPlay bağlantı türü seçimi.
+[[file://13_carplay.jpg]]
+
+2016 yılında iOS 10 ile birlikte mesaj uygulamalarında mesajları sesli bir şekilde dinleme, sadece ses barındıran arayüzü aracılığıyla dikte ile cevap verme ve CarPlay ekranındaki uygulamaların yerini değiştirme ve kaldırma yetkinliği eklendi.
+
+#+CAPTION: Mesajları sesli dinleme özelliğinin aktifleştirilmesi.
+[[file://12_carplay.jpg]]
+
+2018 yılında =iOS 12='nin gelişiyle beraber üçüncü parti navigasyon uygulamarına destek vermeye başlarken, Mesafe Tahmini ve navigasyon rehberliği özelliklerini getirdi.
+
+2019 yılında =iOS 13= beraberinde CarPlay’in ana sayfasına alternatif olarak dashboard adı altında yeni bir ekran yaklaşımına geçildi. Dashboard ile birçok uygulama tek bir ekran üzerinden görüntülenerek yönetilebilmeye başlandı.
+
+
+#+CAPTION: Örnek CarPlay dashboard ekranı.
+[[file://11_carplay.jpg]]
+
+=iOS 14= ile birlikte 2020 yılında Widgetlar, sesli aramalar, ve apple musicte şarkı çalma istasyonu gibi yeni özelleştirmeler platforma kazandırıldı. Bunların yanı sıra park ve yemek siparişi uygulama kategorileri eklendi.
+
+=iOS 15= ile birlikte 2021 yılında Focus modları (araç kullanımı sırasında bildirimleri önceliklendirme vb.), uygulamalarda harita ve facetime aramaları gibi yeni özellikler eklendi.
+
+=iOS 16= ile beraber genişletilmiş arayüz, enstrüman kümesi(dock) güncellemelerini aldı. Buna ek olarak widgetlar için yeniden tasarlanmış bir düzen ve araç kameralarında görüntülere erişim gibi ekstralar eklendi. Mesaj gönderimindeki onaylama süreci ortadan kaldırıldı.
+
+Yukarıda bahsetmiş olduğum yenilikler ilgili iOS versiyonlarının çıkışı ile tanıtılan bütün yenilikler değildir.
+
+Sadece köklü olarak adlandırabileceğimiz CarPlay platformunun yaklaşımına yeni bir bakış açısı katan yenilikler olarak nitelendirebiliriz.
+
+Bunların yanı sıra getirilen yenilikler için [[https://developer.apple.com/videos/all-videos/?q=CarPlay][wwdc-playlist]]’ine veya [[https://developer.apple.com/documentation/carplay][car-play dokümantasyonuna]] göz atabilirsiniz.
+
+** Apple CarPlay Nasıl Çalışır
+iPhone’u CarPlay’e bağlamak için USB ve Kablosuz olmak üzere iki farklı yöntem bulunmaktadır. CarPlay piyasaya sürülürken USB ile araca bağlanılabiliyordu.
+
+2015 yılında iOS 9 ile beraber Apple iPhone’u CarPlay’e Kablosuz bir şekilde de bağlanabilme özellliği getirdi.
+
+USB bağlatısı aracın CarPlay uyumlu portu ile iPhone arasında kablolu bir bağlantı kurarak gerçekleştirilebilmektedir. Kablosuz bağlantı ise wireless ve bluetooth yardımı ile gerçekleştirilmektedir.
+
+Bluetooth CarPlay’in aranması ve aralarında gerçekleşecek olan handshake işlemi için kullanılırken bluetooth bağlantısının başarılı olması sonucunda bağlantı wireles üzerine aktarılır ve bluetooth devreden çıkarılır.
+
+Bağlantı sağlandıktan sonra CarPlay’in sahip olduğu İP (İnternet Protokolu) ve iAP2 (Application Protocol Versiyon 2) protokolleri aracılığı ile veri aktarımının yönetimini gerçekleştirir.
+
+iAP2 protokolü aracılığı ile sensörler ve metadata verileri yönetilirken, İP aracılığı ile hoperlör, mikrofon ve ekran arasındaki veri aktarımı gerçekleştirilir.
+
+Bu veri alışverişi USB bağlantısında İP protokolü üzerinde Kablosuz bağlantıda ise iAP2 ve İP protokülünün her ikisinde de Communication Plug-In adı verilen yardımcı yazılım eklentisi ile gerçekleştirilir.
+
+#+CAPTION: CarPlay ve cihaz arasindaki veri aktarımı.
+[[file://10_carplay.jpg]]
+
+Bağlantı kurduktan sonra iPhone içerisindeki bilgiler CarPlay arayüzüne berlirli standart ve templatelere uygun şekilde aktarılır.
+
+Bu aktarım sonrası CarPlay üzerinden media player kontrolü, arama, mesaj gönderme, navigasyonu kullanma ve Siri ile sesli komut verme gibi birçok özelliği aktif olarak kullanabiliriz.
+
+*** Apple CarPlay’de hangi uygulama türlerine yer verebiliriz?
+Apple CarPlay’de Müzik, telefon, navigasyon, sesli kitaplar, podcastler, haberler ve sesli asistan uygulama türleri yer alabilmektedir.
+
+*** Apple CarPlay uygulaması geliştirirken karşılaşacağımız kısıtlamalar neler?
+Yukarıda belirttiğim gibi CarPlay içerisinde barındırılabilecek uygulama türleri apple tarafından belirlenmektedir.
+
+Arayüzdeki konum ve simge gibi özelleştirmeler Apple’ın belirlediği templatelerle sınırlıdır.
+
+*** Apple CarPlay’i Projemizde nasıl aktif hale getirebiliriz?
+Gelelim Apple CarPlay için hali hazırda geliştirmesini yaptığımız veya sıfırdan başlayacağımız uygulamalarımızı CarPlay destekli hale getirmeye.
+
+CarPlay’in yönetimini gerçekleştirmek için bir =CPTemplateApplicationSceneDelegate= interfaceini implement eden bir CarPlay scene delegate oluşturmamız ve oluşturduğumuz bu sınıfın tanımını projemizin =Info.plist= dosyasında vermemiz gerekmektedir.
+
+#+CAPTION: Info.plist konfigürasyon görüntüsü.
+[[file://9_carplay.jpg]]
+
+#+begin_src swift
+  import CarPlay
+  import UIKit
+
+  class CarPlayTemplateApplicationSceneDelegate: NSObject, CPTemplateApplicationSceneDelegate {
+
+      func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
+          OrderingService.service.inCarPlay = true
+          MemoryLogger.shared.appendEvent("Template application scene did connect.")
+          TemplateManager.mananger.interfaceControllerDidConnect(interfaceController, scene: templateApplicationScene)
+      }
+
+      func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene,
+                                    didDisconnectInterfaceController interfaceController: CPInterfaceController) {
+          OrderingService.service.inCarPlay = false
+          MemoryLogger.shared.appendEvent("Template application scene did disconnect.")
+          TemplateManager.mananger.interfaceControllerDidDisconnect(interfaceController, scene: templateApplicationScene)
+      }
+  }
+#+end_src
+
+Bu delegete sınıf içerisinde yukarıda görüldüğü gibi carplay’e bağlanma ve bağlantının kopması durumlarını temsil eden delege fonksiyonların implementasyonları gerçekleştirilmelidir.
+
+Bu tanımlama aşamasını geçtikten uygulamanın yetkilerini belirten bir =Entitlements.plist= dosyası oluşturmamız ve bu dosya içerisinde apple’ın bize sunmuş olduğu entitlements tablosunda bulunan entitlementlardan uygulama içerisinde barındıracaklarımızı eklememiz gerekmektedir.
+
+#+CAPTION: Örnek entitlements dosyası.
+[[file://8_carplay.jpg]]
+
+Dosyayı oluşturduktan sonra projemizin build ayarlarından =CODE_SIGN_ENTITLEMENTS= ayarını hazırladığımız bu dosyaya işaret edecek şekilde değiştirmemiz gerekmektedir.
+
+#+CAPTION: Entitlement dosya işaretçisinin konfigürasyonu.
+[[file://7_carplay.jpg]]
+
+Bu aşamaları başarılı bir şekilde tamamladıktan sonra projemizi ilgili iOS simülatöründe çalıştırıp, simülatörün toolbarından =I/O > External Displays > CarPlay= seçeneğine tıklayarak carPlay görünümünü external olarak açarak uygulamanın carplay üzerindeki geliştirmelerine başlayabiliriz.
+
+#+CAPTION: CarPlay ekranının açılması.
+[[file://6_carplay.jpg]]
+
+#+CAPTION: CarPlay ekran görseli.
+[[file://5_carplay.jpg]]
+
+Uygulamamızı gerçek cihaz üzerinden test etmek istiyorsak Apple’ın developer programına üye olduğumuz ve ilgili projenin bundle’inin kaydını gerçekleştirdiğimiz hesap içerisinde ilgili bundle’ın CarPlay capability’sini =Additional Capabilities= tab'ı altından aktif etmemiz gerekmektedir.
+
+#+CAPTION: CarPlay capabilities ekleme.
+[[file://4_carplay.jpg]]
+
+Bu tab veya CarPlay capability'si gözükmüyor ise henüz bu hesap üzerinden çar play uygulaması başvurusu yapılmmamış veya yapılan başvuru onaylanmamış anlamına gelmektedir.
+
+Apple bu yetkinliğin açılımı için kendisine başvuru yapılması önkoşulunu koymuştur. Bu başvuru carPlay [[https://developer.apple.com/contact/request/carplay/][entitlement request link]] üzerinden gerçekleştirilebilmektedir.
+
+#+CAPTION: Başvuru Sayfası
+[[file://3_carplay.jpg]]
+
+Başvurunun kabulü ve gerekli entitlement’in enable edilmesinden sonra imzalama işlemimimiz automatic ise direkt olarak gerçek cihaz üzerinde çalışmalarımızı sürdürebiliriz. Eğer imzalama işlemimiz manuel ise provision dosyamızı güncelleyerek geliştirmelerimize devam edebiliriz.
+
+*** CarPlay Simulatoru
+Bildiğimiz gibi yapacağımız gerçek cihaz geliştirmeleri için CarPlay’e sahip bir araç bulmak iPhone temin etmekten zor olabilmektedir.
+
+Bu nedenle apple CarPlay simülatör isimli bir uygulama geliştirmiştir. Bu uygulamayı sisteme yüklü olan XCode versiyonuna uygun olan [[https://developer.apple.com/download/all/?q=Additional+Tools+for+Xcode][Additional tools]] paketini indirerek içerisinde bulunan Hardware klasörü altından erişebilirsiniz. Uygulamayı çalıştırıp telefonumuzu kablolu veya kablosuz şekilde bağlayarak gerçek Carplay simülasyonu gerçekleştirilebilmektedir.
+
+#+CAPTION: CarPlay Simülatör uygulamasının konumu.
+[[file://2_carplay.jpg]]
+
+#+CAPTION: CarPlay simülatör bağlantı görseli.
+[[file://1_carplay.jpg]]
+
+** Kaynakça
+- [[https://developer.apple.com/videos/all-videos/?q=CarPlay][WWDC CarPlay Videos]]
+- [[https://developer.apple.com/documentation/carplay][CarPlay dokümantasyonu]]
+- [[https://developer.apple.com/contact/request/carplay/][Entitlements Request]]
+- [[https://developer.apple.com/download/all/?q=Additional+Tools+for+Xcode][XCode Additional Tools for CarPlay]]

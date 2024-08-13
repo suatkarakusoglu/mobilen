@@ -1,0 +1,4 @@
+#+TITLE: CarPlay
+
+[[file:../../news/apple_carplay_intro.org][Apple CarPlay'e Giriş]]
+

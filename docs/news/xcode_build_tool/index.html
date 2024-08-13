@@ -1,6 +1,6 @@
-<!-- Generated from 180e5dc on 2024-08-02 @ 15:29 with Emacs 30.0.50 (Org mode 9.6.8) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>&ldquo;xcodebuild&rdquo; Komutları ve Kullanım Örnekleri - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> <a class="nav-link" href="/community/">Topluluk</a> <a class="nav-link" href="https://mobilen.art/rss/">RSS</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">&ldquo;xcodebuild&rdquo; Komutları ve Kullanım Örnekleri</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #24</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #32</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><p class="site-post-meta">April  1, 2024</p><div id="content">
-<div id="org282f639" class="figure">
+<!-- Generated from 16b34f9 on 2024-08-13 @ 13:14 with Emacs 30.0.60 (Org mode 9.7.9) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>&ldquo;xcodebuild&rdquo; Komutları ve Kullanım Örnekleri - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">&ldquo;xcodebuild&rdquo; Komutları ve Kullanım Örnekleri</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #25</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #33</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><p class="site-post-meta">April  1, 2024</p><div id="content">
+<div id="orgfb9a90f" class="figure">
 <p><img src="/img/xcode_build_cover.jpg" class="content-image" width="100%">
 </p>
 </div>
@@ -8,8 +8,7 @@
 <p>
 <a href="https://www.linkedin.com/in/ugurcan-durak/">Uğurcan Durak</a> yazdı.
 </p>
-
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgadf44ab">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgefb331c">
 <p>
 Merhabalar, bu yazımda Xcode üzerinden yaptığımız bazı aksiyonların
 (build, archive, test vb.) arka tarafta hangi terminal komutu olarak
@@ -17,8 +16,7 @@ Merhabalar, bu yazımda Xcode üzerinden yaptığımız bazı aksiyonların
 Faydalı olması dileğiyle haydi başlayalım :)
 </p>
 </div>
-
-<h3><a id="ne-yapacağız" class="anchor" href="#ne-yapacağız">¶</a>Ne Yapacağız?</h3><div class="outline-text-3" id="text-orgfdfcb4d">
+<h3><a id="ne-yapacağız" class="anchor" href="#ne-yapacağız">¶</a>Ne Yapacağız?</h3><div class="outline-text-3" id="text-org7634370">
 <p>
 En çok kullanılan ve ihtiyaç olabileceğini düşündüğüm komutları adım
 adım açıklayarak örnekler vereceğim. Daha sonra, hangi süreçlerde
@@ -26,8 +24,7 @@ kullanabileceğimizi inceleyerek, local ortamda basit bir örnek üzerinden
 nasıl uygulayabileceğimizi göstereceğim.
 </p>
 </div>
-
-<h3><a id="ldquoxcodebuildrdquo-nedir" class="anchor" href="#ldquoxcodebuildrdquo-nedir">¶</a>&ldquo;xcodebuild&rdquo; Nedir?</h3><div class="outline-text-3" id="text-org7be7710">
+<h3><a id="ldquoxcodebuildrdquo-nedir" class="anchor" href="#ldquoxcodebuildrdquo-nedir">¶</a>&ldquo;xcodebuild&rdquo; Nedir?</h3><div class="outline-text-3" id="text-org503e44a">
 <p>
 xcodebuild” komutu, Xcode&rsquo;un kullanıcı arayüzündeki (GUI) yapabildiğimiz
 işlemleri terminal üzerinden gerçekleştirmemizi sağlar. Bu sayede build,
@@ -35,8 +32,7 @@ test ve dağıtım gibi süreçleri otomatize edebilir, kendi oluşturduğumuz
 script&rsquo;ler ile projelerimizi komut satırı üzerinden yönetebiliriz.
 </p>
 </div>
-
-<h3><a id="komutlar" class="anchor" href="#komutlar">¶</a>Komutlar</h3><div class="outline-text-3" id="text-orgbef9a65">
+<h3><a id="komutlar" class="anchor" href="#komutlar">¶</a>Komutlar</h3><div class="outline-text-3" id="text-orgda45221">
 <p>
 xcodebuild, hedef configuration, scheme, cihaz, gibi bir çok parametreyi
 destekler. Şimdi en çok kullanılan komutlara ve parametrelere değinip
@@ -72,8 +68,7 @@ Project
 Farkı anladığımıza göre sırasıyla komutları inceleyelim.
 </p>
 </div>
-
-<h4><a id="build" class="anchor" href="#build">¶</a>Build</h4><div class="outline-text-4" id="text-org046c3e1">
+<h4><a id="build" class="anchor" href="#build">¶</a>Build</h4><div class="outline-text-4" id="text-orgfbb6e9a">
 <p>
 Build, basit anlamda kaynak kodun derlenerek çalıştırılabilir program
 dosyalarına dönüştürülmesi işlemi diyebiliriz. Xcode&rsquo;da üst menüden
@@ -103,8 +98,7 @@ Herhangi bir configuration eklemezsek default olarak <i>Debug</i> modda build
 gerçekleşir.
 </p>
 </div>
-
-<h4><a id="archive-oluşturma" class="anchor" href="#archive-oluşturma">¶</a>Archive Oluşturma</h4><div class="outline-text-4" id="text-orgf1d4ed5">
+<h4><a id="archive-oluşturma" class="anchor" href="#archive-oluşturma">¶</a>Archive Oluşturma</h4><div class="outline-text-4" id="text-org07cdeb5">
 <p>
 Archive, projenin kaynak kodunu ve gerekli olan tüm dosyaları tek bir
 pakette birleştirme işlemidir. <i>Ipa</i> oluşturabilmek için gerekli bir
@@ -147,8 +141,7 @@ Bu parametrelerden herhangi birini belirtmezsen default olarak xcode
 üzerindeki ayarları uygulacaktır.
 </p>
 </div>
-
-<h4><a id="ipa-oluşturma" class="anchor" href="#ipa-oluşturma">¶</a>IPA Oluşturma</h4><div class="outline-text-4" id="text-orga5fcdaf">
+<h4><a id="ipa-oluşturma" class="anchor" href="#ipa-oluşturma">¶</a>IPA Oluşturma</h4><div class="outline-text-4" id="text-org455ff42">
 <p>
 Ipa oluşturmak, projemizin son halini cihazlarda çalıştırılabilir hale
 getirdiğimiz adımdır. Bu adımda daha öncesinde oluşturduğumuz archive&rsquo;ı
@@ -168,7 +161,7 @@ seçiyoruz. Dosyayı oluşturduktan sonra aşağıdaki gibi dolduruyoruz.
 </p>
 
 
-<div id="org9d507b5" class="figure">
+<div id="org3015645" class="figure">
 <p><img src="/img/export_options.jpg" class="content-image" width="100%">
 </p>
 </div>
@@ -200,14 +193,13 @@ Source Code görünümü:
 </pre></div>
 
 
-<div id="orgf5d2f47" class="figure">
+<div id="orga4836f5" class="figure">
 <p><img src="/img/export_option_plist.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Property List görünümü</p>
 </div>
 </div>
-
-<h3><a id="exportoptions-fieldrsquoların-tanımı" class="anchor" href="#exportoptions-fieldrsquoların-tanımı">¶</a>ExportOptions Field&rsquo;ların Tanımı</h3><div class="outline-text-3" id="text-org90db872">
+<h3><a id="exportoptions-fieldrsquoların-tanımı" class="anchor" href="#exportoptions-fieldrsquoların-tanımı">¶</a>ExportOptions Field&rsquo;ların Tanımı</h3><div class="outline-text-3" id="text-org6de15c8">
 <p>
 Şimdi eklediğimiz değerlerin ne anlama geldiğine bakalım.
 </p>
@@ -277,8 +269,7 @@ path&rsquo;i - Ipa&rsquo;nın oluşturulacağı yol
 Bunları komuta ekleyerek <i>ipa</i> oluşturma işlemini başlatabiliriz.
 </p>
 </div>
-
-<h3><a id="test-süreci" class="anchor" href="#test-süreci">¶</a>Test Süreci</h3><div class="outline-text-3" id="text-orgcc05a10">
+<h3><a id="test-süreci" class="anchor" href="#test-süreci">¶</a>Test Süreci</h3><div class="outline-text-3" id="text-org648830a">
 <p>
 Test, projemizin beklediğimiz gibi çalışıp çalışmadığını kontrol etmek
 için kullanılır. Herhangi bir ekranda veya bir akışta problem olup
@@ -317,7 +308,7 @@ giriyoruz. Target adımıza aşağıdaki resimdeki gibi TARGETS bölümünden
 </p>
 
 
-<div id="org0eba7df" class="figure">
+<div id="orgbd89a06" class="figure">
 <p><img src="/img/xcode_build_skip_test.jpg" class="content-image" width="100%">
 </p>
 </div>
@@ -399,7 +390,7 @@ CalculatorTest sınıfındaki bir test fonksiyonunu çalıştırmak istersek,
 </pre></div>
 
 
-<div id="orgbcbe347" class="figure">
+<div id="org550bd48" class="figure">
 <p><img src="/img/xcodebuild_test_only_function.jpg" class="content-image" width="100%">
 </p>
 </div>
@@ -414,8 +405,7 @@ Bundan sonrası sizin ihtiyaçlarınıza ve gereksinimlerinize bağlı olarak
 değişiklik gösterebilir.
 </p>
 </div>
-
-<h3><a id="ldquoxcodebuildrdquo-komutlarının-çeşitli-kullanım-senaryoları" class="anchor" href="#ldquoxcodebuildrdquo-komutlarının-çeşitli-kullanım-senaryoları">¶</a>&ldquo;xcodebuild&rdquo; Komutlarının Çeşitli Kullanım Senaryoları</h3><h4><a id="otomasyon-pipeline-süreçleri" class="anchor" href="#otomasyon-pipeline-süreçleri">¶</a>Otomasyon Pipeline Süreçleri</h4><div class="outline-text-4" id="text-org6e3b718">
+<h3><a id="ldquoxcodebuildrdquo-komutlarının-çeşitli-kullanım-senaryoları" class="anchor" href="#ldquoxcodebuildrdquo-komutlarının-çeşitli-kullanım-senaryoları">¶</a>&ldquo;xcodebuild&rdquo; Komutlarının Çeşitli Kullanım Senaryoları</h3><h4><a id="otomasyon-pipeline-süreçleri" class="anchor" href="#otomasyon-pipeline-süreçleri">¶</a>Otomasyon Pipeline Süreçleri</h4><div class="outline-text-4" id="text-orgf61684d">
 <p>
 En yaygın kullanım alanlarından biri, Jenkins gibi platformlarda build,
 test, archive ve ipa oluşturma süreçlerini otomatize etmektir. Jenkins,
@@ -441,8 +431,7 @@ ekliyorum;
 <span class="w">  </span>XXX/fastlane/2.219.0_2/libexec/gems/fastlane-2.219.0/gym/lib/assets/wrap_xcodebuild/xcbuild-safe.sh<span class="w"> </span>-exportArchive<span class="w"> </span>-exportOptionsPlist<span class="w"> </span><span class="s1">&#39;/var/folders/xn/_f_jvlhx113805tyb7xpsz4c0000gn/T/gym_config20240312-10649-j54z7f.plist&#39;</span><span class="w"> </span>-archivePath<span class="w"> </span>/Users/XXX/Library/Developer/Xcode/Archives/2024-03-12/Tami<span class="se">\ </span>Alpha<span class="se">\ </span><span class="m">2024</span>-03-12<span class="se">\ </span><span class="m">13</span>.39.16.xcarchive<span class="w"> </span>-exportPath<span class="w"> </span><span class="s1">&#39;/var/folders/xn/_f_jvlhx113805tyb7xpsz4c0000gn/T/gym_output20240312-10649-pgtuac&#39;</span>
 </pre></div>
 </div>
-
-<h3><a id="local-ortamda-otomasyon-i̇şlemleri" class="anchor" href="#local-ortamda-otomasyon-i̇şlemleri">¶</a>Local Ortamda Otomasyon İşlemleri</h3><div class="outline-text-3" id="text-org64b87d3">
+<h3><a id="local-ortamda-otomasyon-i̇şlemleri" class="anchor" href="#local-ortamda-otomasyon-i̇şlemleri">¶</a>Local Ortamda Otomasyon İşlemleri</h3><div class="outline-text-3" id="text-org1527125">
 <p>
 Jenkins gibi araçların yanı sıra, local geliştirme ortamımızda da
 “/xcodebuild”/ komutlarını kullanarak kendimize özel otomasyonlar
@@ -474,8 +463,7 @@ UI testleri dahil etmek istemediğimden &ldquo;<i>-skip</i>&rdquo; komutu ile ig
 ediyorum.
 </p>
 </div>
-
-<h3><a id="xcode-problemleriyle-başa-çıkmak" class="anchor" href="#xcode-problemleriyle-başa-çıkmak">¶</a>Xcode Problemleriyle Başa Çıkmak</h3><div class="outline-text-3" id="text-org222be31">
+<h3><a id="xcode-problemleriyle-başa-çıkmak" class="anchor" href="#xcode-problemleriyle-başa-çıkmak">¶</a>Xcode Problemleriyle Başa Çıkmak</h3><div class="outline-text-3" id="text-org586299b">
 <p>
 <i>&ldquo;xcodebuild&rdquo;</i> komutları, otomasyon süreçlerinin yanı sıra Xcode ile
 ilgili karşılaşılan hataların çözümünde de faydalı olabilir. Örneğin
@@ -486,20 +474,18 @@ açıldığında build alamayıp kapanabiliyor. Bu gibi durumlarda, terminal
 sağlar ve geliştirme sürecinizin kesintiye uğramasını önler.
 </p>
 </div>
-
-<h3><a id="son-olarak" class="anchor" href="#son-olarak">¶</a>Son olarak</h3><div class="outline-text-3" id="text-org9e13f04">
+<h3><a id="son-olarak" class="anchor" href="#son-olarak">¶</a>Son olarak</h3><div class="outline-text-3" id="text-orgadff306">
 <p>
 Elimden geldiğince çoğu komutu açıklayıp örnekler vermeye çalıştım.
 Umarım sizler için faydalı olur. Okuduğunuz ve vakit ayırdığınız için
 teşekkürler :)
 </p>
 </div>
-
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org5cad814">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org3206b1a">
 <ul class="org-ul">
 <li><a href="https://developer.apple.com/library/archive/technotes/tn2339/_index.html">Building from the Command Line with Xcode FAQ</a></li>
 <li><a href="https://medium.com/trendyol-tech/building-an-ios-distribution-pipeline-local-poc-with-command-line-tools-part-1-d9f443c7dbb5">Building an iOS Distribution Pipeline</a></li>
 <li><a href="https://m2pfintech.com/blog/ci-cd-pipeline-for-ios-build-generation-using-jenkins/">Pipeline for iOS build generation using Jenkins</a></li>
 </ul>
 </div>
-</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/rss/">RSS Bülteni</a> · <a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #32</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #24</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #7</a><a class="tag" href="https://mobilen.art/tags/android/">Android #7</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #6</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #33</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #25</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #8</a><a class="tag" href="https://mobilen.art/tags/android/">Android #7</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #6</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

@@ -8,6 +8,8 @@
 
 [[file:../../news/android_debug_surecleri.org][ADB ile Android Debug Süreçleri]]
 
+[[file:../../news/apple_carplay_intro.org][Apple CarPlay'e Giriş]]
+
 [[file:../../news/apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]]
 
 [[file:../../news/declarative_ui.org][Declarative Yaklaşım ve Tasarım]]

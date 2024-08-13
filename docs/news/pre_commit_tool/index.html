@@ -1,20 +1,20 @@
-<!-- Generated from 16b34f9 on 2024-08-13 @ 13:14 with Emacs 30.0.60 (Org mode 9.7.9) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Pre-Commit Aracının Faydaları - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Pre-Commit Aracının Faydaları</h1><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #33</a><p class="site-post-meta">March 27, 2024</p><div id="content"><p>
+<!-- Generated from 6a46dd3 on 2024-08-13 @ 18:32 with Emacs 30.0.60 (Org mode 9.7.9) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Pre-Commit Aracının Faydaları - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Pre-Commit Aracının Faydaları</h1><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #33</a><p class="site-post-meta">5 min read | March 27, 2024</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
-<div id="org3075abd" class="figure">
+<div id="org88d0417" class="figure">
 <p><img src="/img/pre-commit-hook.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Şekil 1: </span>Photo by <a href="https://unsplash.com/@polarmermaid">Anne Nygård</a></p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org88a2245">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgdf2ec0a">
 <p>
 Merhabalar, işlerimizin elle yönetilen taraflarını daha otomatize etmek,  gerçekten fark/değer yaratan işlerimize odaklanabilmemiz için bize daha çok zaman sağlar.
 </p>
 </div>
-<h3><a id="neden-pre-commit-kontrolu-gerekli" class="anchor" href="#neden-pre-commit-kontrolu-gerekli">¶</a>Neden Pre Commit kontrolu gerekli?</h3><div class="outline-text-3" id="text-org4463df8">
+<h3><a id="neden-pre-commit-kontrolu-gerekli" class="anchor" href="#neden-pre-commit-kontrolu-gerekli">¶</a>Neden Pre Commit kontrolu gerekli?</h3><div class="outline-text-3" id="text-orgb6de07d">
 <p>
 Ortaya koyduğumuz işlerde commit aşaması artık yaptığımız işin düzgün bir çerçeveye oturduğunu netleştirdiğimiz noktaları ifade ediyor. Bu aşamada güzel bir açıklama ile işimizi repomuza kaydediyoruz.
 </p>
@@ -23,7 +23,7 @@ Ortaya koyduğumuz işlerde commit aşaması artık yaptığımız işin düzgü
 Commit öncesi kontrol etmemiz gereken bazı noktalar olabiliyor. <code>Git</code> bu noktada bize <code>pre-commit</code> müdahale fazını sunuyor. Ancak ekip içinde çalışması gereken bu fazları paylaşabilmek ve belki de konfigürasyonları hızlıca bir projeden diğerine taşıyabilmek hayatımızda git'in altyapısını kullanan bir başka araca yer açıyor: <a href="https://pre-commit.com/">https://pre-commit.com/</a>.
 </p>
 </div>
-<h3><a id="pre-commit-ayarlarının-yapılması" class="anchor" href="#pre-commit-ayarlarının-yapılması">¶</a>Pre Commit ayarlarının yapılması</h3><h4><a id="pre-commit-yüklenmesi" class="anchor" href="#pre-commit-yüklenmesi">¶</a>Pre Commit Yüklenmesi</h4><div class="outline-text-4" id="text-org7569a4d">
+<h3><a id="pre-commit-ayarlarının-yapılması" class="anchor" href="#pre-commit-ayarlarının-yapılması">¶</a>Pre Commit ayarlarının yapılması</h3><h4><a id="pre-commit-yüklenmesi" class="anchor" href="#pre-commit-yüklenmesi">¶</a>Pre Commit Yüklenmesi</h4><div class="outline-text-4" id="text-orgee0df3d">
 <p>
 Pre-commit, bilgisayara yüklememiz gereken bir araç. <code>pip</code> üzerinden veya <code>brew</code> üzerinden yükleyebiliyoruz.
 </p>
@@ -36,7 +36,7 @@ Pre-commit, bilgisayara yüklememiz gereken bir araç. <code>pip</code> üzerind
 <span class="w">  </span>brew<span class="w"> </span>install<span class="w"> </span>pre-commit
 </pre></div>
 </div>
-<h4><a id="proje-içerisinde-ayarlanması" class="anchor" href="#proje-içerisinde-ayarlanması">¶</a>Proje içerisinde ayarlanması</h4><div class="outline-text-4" id="text-orgdf1ef44">
+<h4><a id="proje-içerisinde-ayarlanması" class="anchor" href="#proje-içerisinde-ayarlanması">¶</a>Proje içerisinde ayarlanması</h4><div class="outline-text-4" id="text-orgea1ec92">
 <p>
 <code>.pre-commit-config.yaml</code> dosyasının ana dizinde yaratılması gerekiyor.
 </p>
@@ -61,7 +61,7 @@ Misal <code>SwiftFormat</code> komutunun her commit öncesi çalışması için 
 Pre-commit desteği olan repoları buraya ekleyebiliyoruz. <code>rev</code> ile hangi branch/commit'e bakacağını söylüyoruz.
 </p>
 </div>
-<h4><a id="projedeki-pre-commitlerin-git-hooklara-eklenmesi" class="anchor" href="#projedeki-pre-commitlerin-git-hooklara-eklenmesi">¶</a>Projedeki pre-commitlerin git hooklara eklenmesi</h4><div class="outline-text-4" id="text-orge1c6d87">
+<h4><a id="projedeki-pre-commitlerin-git-hooklara-eklenmesi" class="anchor" href="#projedeki-pre-commitlerin-git-hooklara-eklenmesi">¶</a>Projedeki pre-commitlerin git hooklara eklenmesi</h4><div class="outline-text-4" id="text-org7272bec">
 <p>
 Artık configüration yapıldıktan sonra git hooklarına eklenmesi için bu ayarların yüklenmesi gerekiyor.
 </p>
@@ -70,7 +70,7 @@ Artık configüration yapıldıktan sonra git hooklarına eklenmesi için bu aya
 <span class="w">  </span>pre-commit<span class="w"> </span>install
 </pre></div>
 </div>
-<h3><a id="pre-commit-aracının-faydaları" class="anchor" href="#pre-commit-aracının-faydaları">¶</a>Pre-Commit aracının faydaları</h3><div class="outline-text-3" id="text-orgcf44052">
+<h3><a id="pre-commit-aracının-faydaları" class="anchor" href="#pre-commit-aracının-faydaları">¶</a>Pre-Commit aracının faydaları</h3><div class="outline-text-3" id="text-org17a28f7">
 <p>
 Herkes commitlemeden önce kodun belirli kurallara göre formatlandığından ve kontrolden geçtiğinden emin oluyoruz.
 </p>
@@ -98,7 +98,7 @@ Biz projelerimiz genelindeki böyle araçları/komutları <a href="https://mobil
 <span class="w">  </span>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 </pre></div>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org9084136">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgb51bc43">
 <ul class="org-ul">
 <li><a href="https://pre-commit.com/">Pre Commit Tool Websitesi</a></li>
 <li><a href="https://mobilen.art/news/makefile_nedir/">Makefile</a></li>

@@ -1,0 +1,350 @@
+<!-- Generated from d968c36 on 2024-09-04 @ 20:05 with Emacs 30.0.60 (Org mode 9.7.9) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Kotlin Flows - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Kotlin Flows</h1><a class="tag" href="https://mobilen.art/tags/android/">Android #8</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #34</a><p class="site-post-meta">16 min read | September  4, 2024</p><div id="content"><p>
+<a href="https://linkedin.com/in/emir-k-516788215">Emir Kaya</a> yazdı.
+</p>
+
+
+<div id="org37b03ee" class="figure">
+<p><img src="/img/kotlin_flows_cover.jpg" class="content-image" width="100%">
+</p>
+</div>
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org5490838">
+<p>
+Kotlin’de Flows, Kotlin Coroutines kütüphanesinin bir parçasıdır. Veri akışlarını asenkron olarak sürdürmemize olanak tanır.
+</p>
+
+<p>
+Yani, aslında bir veri kaynağından sürekli veri alırken, bu veriyi farklı noktalarda kullanabilmemize yarayan yapılardır.
+</p>
+
+<p>
+Bu yapılar, asenkron veri işleme ve akış yönetimi problemlerine daha basit ve anlaşılır bir çözüm sunmak amacıyla geliştirilmiştir.
+</p>
+
+<p>
+Özellikle, karmaşık ve zorlu veri akışı işlemlerini sadeleştirir ve performanslı bir şekilde yönetilmesine olanak tanır.
+</p>
+
+<p>
+Kotlin’de flow yapılarını anlamaya çalışmadan önce, <code>Asenkron Programlama</code> ve <code>Coroutines</code> kavramlarını iyi anlamak gerektiğini düşünüyorum.
+</p>
+
+<p>
+Gelin size kısaca bu kavramlardan bahsetmeye çalışayım.
+</p>
+</div>
+<h3><a id="asenkron-programlama-nedir" class="anchor" href="#asenkron-programlama-nedir">¶</a>Asenkron Programlama Nedir?</h3><div class="outline-text-3" id="text-org48220f7">
+<p>
+Asenkron programlama aslında, aynı anda çalışan birden fazla görevin birbirlerini veya main thread’i bloklamadan çalışabildiği programlama yapısıdır.
+</p>
+
+<p>
+Örnek vermek gerekirse, arka planda webden çekilmesi gereken bir verinin, bu işlemi yaparken programın diğer işlevlerini veya main thread’i bloklamadan işlevini sürdürebilmesi ve kullanıcıya sunulabilmesidir.
+</p>
+
+<p>
+Yani bir işlevin sonucunun beklemeden öbür işlevlerin sağlıklı bir şekilde sürdürülebilmesidir diyebiliriz.
+</p>
+</div>
+<h3><a id="coroutines-nedir" class="anchor" href="#coroutines-nedir">¶</a>Coroutines Nedir?</h3><div class="outline-text-3" id="text-orgff8bbcc">
+
+<div id="org73956ed" class="figure">
+<p><img src="/img/kotlin_flow_threads.gif" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span>Coroutines ve Threads</p>
+</div>
+
+<p>
+Coroutines, Kotlin’de asenkron programlamayı sağlayabilmek için kullandığımız bir kütüphanedir. Threadlerin içinde çalışan iş parçacıklarıdır.
+</p>
+
+<p>
+Bir Thread birden fazla Coroutine çalıştırabilir. Coroutinleri durdurabilir ve kaldıkları yerden devam ettirebiliriz. Bir Coroutini farklı Threadlerde de çalıştırabiliriz.
+</p>
+
+<p>
+Coroutine’in tercih edilme sebebi ise <code>Thread</code> yapısına kıyasla çok daha az maliyetli olmasıdır. Fazla dağıtmadan asıl konumuza dönmek istiyorum.
+</p>
+
+<p>
+Coroutinler hakkında daha detaylı bilgi için Kotlin’in <a href="https://kotlinlang.org/docs/coroutines-overview.html">bu konu hakkındaki dökümantasyonunu</a> inceleyebilirsiniz.
+</p>
+</div>
+<h3><a id="flows" class="anchor" href="#flows">¶</a>Flows</h3><div class="outline-text-3" id="text-orge85d534">
+<p>
+Flows, verilerin asenkron olarak arka planda yüklendiği ve ihtiyaçlara göre işlenip sonuçlarını gözlemleyebileceğimiz yapılardır. Flow’un kullanımı aslında oldukça basittir.
+</p>
+
+<p>
+Flow sınıfından bir nesne oluşturduktan sonra <code>flow{ }</code> bloğu içerisinde <code>emit()</code> metodu ile verileri yayabiliriz. Daha sonra bu verileri kullanmak veya işlemek istediğimiz yerlerde, <code>collect()</code> metodu ile verileri toplayabiliriz.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">numbersFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flow</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1.</span><span class="p">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">emit</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">          </span><span class="n">delay</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">numbersFlow</span><span class="p">.</span><span class="na">collect</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">      </span><span class="n">println</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Yukarıdaki kod örneğinde basit bir şekilde Flow nesnesi oluşturarak for döngüsü ile 1&rsquo;den 5&rsquo;e kadar olan sayıları <code>emit()</code> metodu ile yayınlıyoruz. Her bir eleman yayınlandıktan sonra <code>delay()</code> metodu ile 1 saniye gecikme sağlıyoruz. Daha sonrasında <code>collect()</code> metodu ile verilere erişip yazdırıyoruz.
+</p>
+
+<p>
+Flow tarafından sağlanan verileri, ihtiyaçlarımıza bağlı olarak değiştirerek veya dönüştürerek kullanabiliriz. Bunun için bazı operatörler bulunuyor.
+</p>
+
+<dl class="org-dl">
+<dt>map</dt><dd>Flow üzerindeki her bir elemanı başka bir değere dönüştürür.</dd>
+<dt>filter</dt><dd>Flow üzerindeki belirli bir koşulu sağlayan verilerin filtrelenmesi için kullanılır.</dd>
+<dt>zip</dt><dd>Farklı Flow’ları birbirine bağlamak için kullanılır.</dd>
+<dt>reduce</dt><dd>Flow’daki verileri birleştirmek için kullanılır.</dd>
+<dt>take</dt><dd><p>
+Belirli bir sayıdaki veriyi Flowdan almak için kullanılır.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">numbersFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flow</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1.</span><span class="p">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">emit</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">numbersFlow</span><span class="p">.</span><span class="na">map</span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="n">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span>
+<span class="w">    </span><span class="p">}.</span><span class="na">collect</span><span class="p">{</span><span class="w"> </span><span class="n">newNumbersFlow</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="n">newNumbersFlow</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Yukarıdaki kod örneğinde oluşturduğumuz Flow’un her bir elemanını <code>map</code> operatörü ile dönüştürüyoruz. Her elemanın 2 ile çarpılmış halini kullanabiliyoruz.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">numbersFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flow</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1.</span><span class="p">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">emit</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">numbersFlow</span><span class="p">.</span><span class="na">filter</span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="n">value</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="p">}.</span><span class="na">collect</span><span class="p">{</span><span class="w"> </span><span class="n">evenNumbers</span><span class="o">-&gt;</span>
+<span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="n">evenNumbers</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Önceki örneğe benzer bir şekilde oluşturduğumuz yapıda, <code>filter</code> operatörü ile çift sayıları filtreleyerek çekebiliyoruz.
+</p></dd>
+</dl>
+</div>
+<h3><a id="flows-vs-livedata" class="anchor" href="#flows-vs-livedata">¶</a>Flows vs LiveData</h3><div class="outline-text-3" id="text-org52a754f">
+<p>
+Kotlin Flow, bir veri akışı sağlar ve verileri bir kanal aracılığıyla iletir. Buna karşılık, LiveData yalnızca canlı bir veri deposu olarak hizmet eder ve verileri bir kanal üzerinden iletmez. Flow’lar, verilerin iletildiği bir kanal olarak görev yaparken, LiveData verilerin depolandığı bir alandır.
+</p>
+
+<p>
+Flow’lar, veri akışını kontrol etme olanağı sunar. Yani, verilerin akışa ne zaman dahil edileceğine biz karar verebiliriz. LiveData ise daha pasif bir veri deposu olup, verilerin ne zaman ekleneceğini biz belirleyemeyiz.
+</p>
+
+<p>
+Flow’lar eşzamanlı çalışabilir, yani birden fazla suspandable fonksiyonu paralel olarak yürütülebilir. Ancak LiveData, yalnızca UI thread’inde çalışan tek threadli bir yapıya sahiptir.
+</p>
+
+<p>
+LiveData, Android’in yaşam döngüsü farkındalığına sahip olduğu için, gözlemcilerini otomatik olarak Lifecycle değişikliklerine göre yönetir; yani, gözlemcileri yaşam döngüsüne uygun olarak bağlar veya ayırır. Bu sayede, LiveData yalnızca uygulama etkin olduğunda güncellemeleri iletir ve bellek sızıntılarını önler. Flow’lar ise Lifecycle’ı otomatik olarak yönetmez; bu nedenle, Flow’ları Lifecycle’a duyarlı hale getirmek için“lifecycleScope” gibi araçlar kullanmak gerekir.
+</p>
+</div>
+<h3><a id="flow-cancellation" class="anchor" href="#flow-cancellation">¶</a>Flow Cancellation</h3><div class="outline-text-3" id="text-org6bfb40d">
+<p>
+Flowları Coroutine yapılarına entegre olarak kullandığımız için Flowlar iptal edilebilir yapılardır.
+</p>
+
+<p>
+Flow iptal edildiğinde veri akışı durdurulur. Bu, örneğin uzun süren bir işlemi kullanıcı iptal ettiğinde gereksiz işlem yükünden kurtulmayı sağlar.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="n">runBlocking</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">launch</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">numbersFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flow</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1.</span><span class="p">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">emit</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+
+<span class="w">          </span><span class="n">numbersFlow</span><span class="p">.</span><span class="na">collect</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">              </span><span class="n">println</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="n">cancel</span><span class="p">()</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+
+<span class="w">      </span><span class="n">job</span><span class="p">.</span><span class="na">join</span><span class="p">()</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Yukarıdaki örnekte coroutine içinde çalışan bir Flow’un akıştan çekilen veri 3&rsquo;e eşit olduğunda <code>cancel()</code> metodu ile durdurulmasını sağlıyoruz.
+</p>
+</div>
+<h3><a id="hot-stream" class="anchor" href="#hot-stream">¶</a>Hot Stream</h3><div class="outline-text-3" id="text-org3dc7a85">
+<p>
+Hot Stream, sürekli ve aktif bir veri akışı anlamına gelir. Veriler, kaynağından sürekli olarak üretilir ve bu veriler üzerinde anında işlem yapılır. Yani akışı gözlemlemeye başlamadan da verilerin var olmasıdır.
+</p>
+
+<p>
+Bu tür akışları, genellikle gerçek zamanlı veri işleme senaryolarında kullanırız. StateFlow ve SharedFlow Hot Stream olarak yayın yaparlar.
+</p>
+</div>
+<h3><a id="cold-stream" class="anchor" href="#cold-stream">¶</a>Cold Stream</h3><div class="outline-text-3" id="text-org2954b6a">
+<p>
+Cold Stream ise verilerin depolandığı ve ihtiyaç duyulduğunda bu verilere erişilip işlem yapıldığı bir akış türüdür. Yani biz akışı collect ettiğimiz zaman akışın başladığı bir akış türüdür.
+</p>
+
+<p>
+Akışın aldığı her yeni abonelik için, akışın yeni bir örneği oluşturulur. Birbirinden bağımsız birden fazla örneğe sahip olabiliriz.
+</p>
+</div>
+<h3><a id="stateflow" class="anchor" href="#stateflow">¶</a>StateFlow</h3><div class="outline-text-3" id="text-org0920304">
+<p>
+StateFlow, özellikle MVVM (Model-View-ViewModel) gibi mimarilerde, UI durumlarını yönetmek için oldukça kullanışlıdır. StateFlow ile ViewModel içinde durumları takip edebilir, bu durumları UI bileşenlerine sorunsuz bir şekilde iletebiliriz.
+</p>
+
+<p>
+StateFlow, “Hot Stream” dediğimiz sıcak akıştır. Yani StateFlow’lar oluşturulduğu andan itibaren veri üretirler. Herhangi bi yerden veri istenmese bile veri üretmeye devam ederler.
+</p>
+
+<p>
+StateFlow, her zaman bir başlangıç değeri ile başlamalıdır. Ve her zaman en son değeri saklarlar. Yeni bir yerde kullanılmak istenildiğinde son değere ulaşılabilir.
+</p>
+
+<p>
+Bir kullanım senaryosu üzerine konuşmak gerekirse, StateFlow yapısını kullanıcının giriş yapıp yapmadığını kontrol etmek için kullanabiliriz. Gelin basit bir örneğini gözlemleyelim.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">LoginViewModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">_loginState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MutableStateFlow</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">loginState</span><span class="p">:</span><span class="w"> </span><span class="n">StateFlow</span><span class="o">&lt;</span><span class="n">LoginState</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_loginState</span><span class="p">.</span><span class="na">asStateFlow</span><span class="p">()</span>
+
+<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">login</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">_loginState</span><span class="p">.</span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">      </span><span class="p">}</span>
+
+<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">logout</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">_loginState</span><span class="p">.</span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Bu örnekte basit bir ViewModel oluşturuyoruz. StateFlow’umuzu Mutable olarak tanımlayıp private olarak tutuyoruz. Çünkü StateFlow’umuzun değerini ViewModel’ın dışından değiştirilmesini istemiyoruz.
+</p>
+
+<p>
+Dışarıdan veriye erişip okuyabilmek için ayrı olarak loginState StateFlow’u oluşturuyoruz. Yukarıda bahsettiğim gibi StateFlow’un bir başlangıç değerine sahip olması gerekiyor. Bu sebeple başlangıç değeri olarak false veriyoruz.
+</p>
+
+<p>
+Eğer login methodu kullanılırsa, StateFlow’umuzun değeri true olarak değişiyor. logout methodu kullanılırsa false olarak değişiyor. Bu şekilde ViewModel’ımızın içinde kullanıcı giriş bilgisini gözlemleyebiliyoruz.
+</p>
+
+<p>
+Peki biz bu işlevi UI’da yani kullanıcının etkileşime girdiği tarafta nasıl kullanabiliriz? Oluşturduğum senaryado basitçe eğer kullanıcı giriş yaptıysa “Çıkış Yap” butonu, eğer henüz giriş yapmadıysa “Giriş Yap” butonu gösteriliyor. Gelin beraber inceleyelim.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="nd">@Composable</span>
+<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">LoginScreen</span><span class="p">(</span><span class="n">viewModel</span><span class="p">:</span><span class="w"> </span><span class="n">LoginViewModel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">loginState</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">loginState</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">()</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">loginState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">logout</span><span class="p">()</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Çıkış Yap&quot;</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">login</span><span class="p">()</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Giriş Yap&quot;</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Composable olarak tanımladığımız ekranımızda, <code>collectAsState()</code> metodu ile StateFlow’u gözlemliyoruz. Sonrasında ViewModel’da tanımladığımız loginState StateFlow’unun true veya false olma durumlarına göre “Giriş Yap” veya “Çıkış Yap” butonlarını kullanıcıya gösteriyoruz.
+</p>
+</div>
+<h3><a id="sharedflow" class="anchor" href="#sharedflow">¶</a>SharedFlow</h3><div class="outline-text-3" id="text-org62da421">
+<p>
+SharedFlow, birden çok kaynaktan akışımıza veri girişinin olduğu ve yine birden çok kaynağa veri paylaşımının olduğu bir Flow türüdür. Yani SharedFlow’umuzda birden çok üretici ve birden çok tüketici olabilir. SharedFlow da StateFlow gibi “Hot Stream” olarak yayın yapar. Yani herhangi bir yerden veri istenmese bile veri üretmeye devam eder.
+</p>
+
+<p>
+SharedFlow, veri yayını için event-based (olay tabanlı) bir mekanizma sağlar ve bu sayede veri, yayınlandığı andan itibaren mevcut olan tüm abonelere iletilir.
+</p>
+
+<p>
+SharedFlow, StateFlowdan farklı olarak, Flow’a abone olunduktan sonra akışa giren verileri sağlar. Ancak StateFlow’da bu durum her yeni aboneye en son durumun bildirilmesi şeklindedir.
+</p>
+
+<p>
+Gelin SharedFlow için bir örnek inceleyelim.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">MyViewModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">_eventFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MutableSharedFlow</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span>
+
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">eventFlow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_eventFlow</span><span class="p">.</span><span class="na">asSharedFlow</span><span class="p">()</span>
+
+<span class="w">      </span><span class="kd">fun</span><span class="w"> </span><span class="nf">sendEvent</span><span class="p">(</span><span class="n">event</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">viewModelScope</span><span class="p">.</span><span class="na">launch</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">_eventFlow</span><span class="p">.</span><span class="na">emit</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Yine Mutable yapıda olacak şekilde SharedFlow oluşturuyoruz. Bu MutableSharedFlow’u private olarak tutuyoruz. Çünkü UI’dan sadece SharedFlow’a erişilmesini istiyoruz. MutableSharedFlow ViewModel’da gizli tutulmalı. sendEvent fonksiyonu ile “emit()” methodunu kullanarak event’i yayıyoruz.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="nd">@Composable</span>
+<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">MyScreen</span><span class="p">(</span><span class="n">viewModel</span><span class="p">:</span><span class="w"> </span><span class="n">MyViewModel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rememberCoroutineScope</span><span class="p">()</span>
+
+<span class="w">      </span><span class="n">LaunchedEffect</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">scope</span><span class="p">.</span><span class="na">launch</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">viewModel</span><span class="p">.</span><span class="na">eventFlow</span><span class="p">.</span><span class="na">collect</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">                  </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Alınan Olay: </span><span class="si">$</span><span class="n">event</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+
+
+<span class="w">      </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">sendEvent</span><span class="p">(</span><span class="s">&quot;Butona tıklandı&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Olay Gönder&quot;</span><span class="p">)</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+UI tarafı için yine bir Composable ekran tanımlıyoruz. Ekran açıldığında LaunchEffect bloğu çalışıyor. Bu bloğun içerisindeki Coroutine ile “collect()” methodunu kullanarak Flow’umuzdan veriyi topluyoruz. Daha sonra bunu yazdırıyoruz.
+</p>
+
+<p>
+Butona tıkladığımızda ise ViewModel’ımızda tanımladığımız sendEvent fonksiyonunu çağırıyoruz.
+Bu şekilde olay tabanlı bir veri akışı sağlamış oluyoruz.
+</p>
+
+<p>
+Bu yazımda sizlere elimden geldiğince açık bir dille Kotlin’de Flow yapılarını anlatmaya çalıştım. Umarım sizlere yararlı olmuştur. Okuduğunuz için teşekkür ederim.
+</p>
+</div>
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgd994102">
+<p>
+<a href="https://kotlinlang.org/docs/coroutines-overview.html">Kotlin Coroutine Overview</a>
+</p>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #34</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #25</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #8</a><a class="tag" href="https://mobilen.art/tags/android/">Android #8</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #6</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

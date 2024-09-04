@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:news/kotlin_flows.org][Kotlin Flows]] - Emir Kaya · September 04, 2024
 - [[file:news/apple_carplay_intro.org][Apple CarPlay'e Giriş]] - Burak Ceylan · August 12, 2024
 - [[file:news/android_debug_surecleri.org][ADB ile Android Debug Süreçleri]] - Sevban Bayır · August 02, 2024
 - [[file:news/privacy_manifest_apple.org][Apple Uygulama Gizlilik Manifestosu (Privacy Manifest)]] - Alper Cem Öztürk · July 16, 2024

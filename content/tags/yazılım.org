@@ -30,6 +30,8 @@
 
 [[file:../../news/kitap_make_something_wonderful.org][Kitap: Make Something Wonderful]]
 
+[[file:../../news/kotlin_flows.org][Kotlin Flows]]
+
 [[file:../../news/navigation_desenleri.org][Navigation Desenleri]]
 
 [[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]

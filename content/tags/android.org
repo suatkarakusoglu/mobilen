@@ -12,5 +12,7 @@
 
 [[file:../../news/android_studio_bot.org][Android Studio Bot]]
 
+[[file:../../news/kotlin_flows.org][Kotlin Flows]]
+
 [[file:../../news/yeni_android_studio_surumu_giraffe.org][Yeni Android Studio sürümü "Giraffe"]]
 

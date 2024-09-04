@@ -317,7 +317,7 @@
                                (generate-tags-html filetags))
                            ,(when publish-date
                               `(p (@ (class "site-post-meta"))
-                                  ,(format "%d min read | " (max 1 (ceiling (/ (--count-words-string content) 220))))
+                                  ,(format "%d min read | " (max 1 (ceiling (/ (--count-words-string content) 260))))
                                   ,publish-date))
                            ,(if-let ((video-id (plist-get info :video)))
                                 (dw/embed-video video-id))

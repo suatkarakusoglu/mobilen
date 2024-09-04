@@ -1,0 +1,252 @@
+#+title: Kotlin Flows
+#+date: [2024-09-04 Wed]
+#+author: Emir Kaya
+#+filetags: :Android:Yazılım:
+
+[[https://linkedin.com/in/emir-k-516788215][Emir Kaya]] yazdı.
+
+[[file:kotlin_flows_cover.jpg]]
+
+* İçerik
+Kotlin’de Flows, Kotlin Coroutines kütüphanesinin bir parçasıdır. Veri akışlarını asenkron olarak sürdürmemize olanak tanır.
+
+Yani, aslında bir veri kaynağından sürekli veri alırken, bu veriyi farklı noktalarda kullanabilmemize yarayan yapılardır.
+
+Bu yapılar, asenkron veri işleme ve akış yönetimi problemlerine daha basit ve anlaşılır bir çözüm sunmak amacıyla geliştirilmiştir.
+
+Özellikle, karmaşık ve zorlu veri akışı işlemlerini sadeleştirir ve performanslı bir şekilde yönetilmesine olanak tanır.
+
+Kotlin’de flow yapılarını anlamaya çalışmadan önce, =Asenkron Programlama= ve =Coroutines= kavramlarını iyi anlamak gerektiğini düşünüyorum.
+
+Gelin size kısaca bu kavramlardan bahsetmeye çalışayım.
+
+** Asenkron Programlama Nedir?
+Asenkron programlama aslında, aynı anda çalışan birden fazla görevin birbirlerini veya main thread’i bloklamadan çalışabildiği programlama yapısıdır.
+
+Örnek vermek gerekirse, arka planda webden çekilmesi gereken bir verinin, bu işlemi yaparken programın diğer işlevlerini veya main thread’i bloklamadan işlevini sürdürebilmesi ve kullanıcıya sunulabilmesidir.
+
+Yani bir işlevin sonucunun beklemeden öbür işlevlerin sağlıklı bir şekilde sürdürülebilmesidir diyebiliriz.
+
+** Coroutines Nedir?
+#+CAPTION: Coroutines ve Threads
+[[file:kotlin_flow_threads.gif]]
+
+Coroutines, Kotlin’de asenkron programlamayı sağlayabilmek için kullandığımız bir kütüphanedir. Threadlerin içinde çalışan iş parçacıklarıdır.
+
+Bir Thread birden fazla Coroutine çalıştırabilir. Coroutinleri durdurabilir ve kaldıkları yerden devam ettirebiliriz. Bir Coroutini farklı Threadlerde de çalıştırabiliriz.
+
+Coroutine’in tercih edilme sebebi ise =Thread= yapısına kıyasla çok daha az maliyetli olmasıdır. Fazla dağıtmadan asıl konumuza dönmek istiyorum.
+
+Coroutinler hakkında daha detaylı bilgi için Kotlin’in [[https://kotlinlang.org/docs/coroutines-overview.html][bu konu hakkındaki dökümantasyonunu]] inceleyebilirsiniz.
+
+** Flows
+Flows, verilerin asenkron olarak arka planda yüklendiği ve ihtiyaçlara göre işlenip sonuçlarını gözlemleyebileceğimiz yapılardır. Flow’un kullanımı aslında oldukça basittir.
+
+Flow sınıfından bir nesne oluşturduktan sonra =flow{ }= bloğu içerisinde =emit()= metodu ile verileri yayabiliriz. Daha sonra bu verileri kullanmak veya işlemek istediğimiz yerlerde, =collect()= metodu ile verileri toplayabiliriz.
+
+#+begin_src kotlin
+  val numbersFlow = flow {
+      for (i in 1..5) {
+          emit(i)
+          delay(1000)
+      }
+  }
+
+  numbersFlow.collect { value ->
+      println(value)
+  }
+#+end_src
+
+Yukarıdaki kod örneğinde basit bir şekilde Flow nesnesi oluşturarak for döngüsü ile 1'den 5'e kadar olan sayıları =emit()= metodu ile yayınlıyoruz. Her bir eleman yayınlandıktan sonra =delay()= metodu ile 1 saniye gecikme sağlıyoruz. Daha sonrasında =collect()= metodu ile verilere erişip yazdırıyoruz.
+
+Flow tarafından sağlanan verileri, ihtiyaçlarımıza bağlı olarak değiştirerek veya dönüştürerek kullanabiliriz. Bunun için bazı operatörler bulunuyor.
+
+- map :: Flow üzerindeki her bir elemanı başka bir değere dönüştürür.
+- filter :: Flow üzerindeki belirli bir koşulu sağlayan verilerin filtrelenmesi için kullanılır.
+- zip :: Farklı Flow’ları birbirine bağlamak için kullanılır.
+- reduce :: Flow’daki verileri birleştirmek için kullanılır.
+- take :: Belirli bir sayıdaki veriyi Flowdan almak için kullanılır.
+
+  #+begin_src kotlin
+    val numbersFlow = flow {
+        for (i in 1..5) {
+            emit(i)
+        }
+    }
+    numbersFlow.map{ value ->
+        value * 2
+    }.collect{ newNumbersFlow ->
+        println(newNumbersFlow)
+    }
+  #+end_src
+
+  Yukarıdaki kod örneğinde oluşturduğumuz Flow’un her bir elemanını =map= operatörü ile dönüştürüyoruz. Her elemanın 2 ile çarpılmış halini kullanabiliyoruz.
+
+  #+begin_src kotlin
+    val numbersFlow = flow {
+        for (i in 1..5) {
+            emit(i)
+        }
+    }
+    numbersFlow.filter{ value ->
+        value % 2 == 0
+    }.collect{ evenNumbers->
+        println(evenNumbers)
+    }
+  #+end_src
+
+  Önceki örneğe benzer bir şekilde oluşturduğumuz yapıda, =filter= operatörü ile çift sayıları filtreleyerek çekebiliyoruz.
+
+** Flows vs LiveData
+
+Kotlin Flow, bir veri akışı sağlar ve verileri bir kanal aracılığıyla iletir. Buna karşılık, LiveData yalnızca canlı bir veri deposu olarak hizmet eder ve verileri bir kanal üzerinden iletmez. Flow’lar, verilerin iletildiği bir kanal olarak görev yaparken, LiveData verilerin depolandığı bir alandır.
+
+Flow’lar, veri akışını kontrol etme olanağı sunar. Yani, verilerin akışa ne zaman dahil edileceğine biz karar verebiliriz. LiveData ise daha pasif bir veri deposu olup, verilerin ne zaman ekleneceğini biz belirleyemeyiz.
+
+Flow’lar eşzamanlı çalışabilir, yani birden fazla suspandable fonksiyonu paralel olarak yürütülebilir. Ancak LiveData, yalnızca UI thread’inde çalışan tek threadli bir yapıya sahiptir.
+
+LiveData, Android’in yaşam döngüsü farkındalığına sahip olduğu için, gözlemcilerini otomatik olarak Lifecycle değişikliklerine göre yönetir; yani, gözlemcileri yaşam döngüsüne uygun olarak bağlar veya ayırır. Bu sayede, LiveData yalnızca uygulama etkin olduğunda güncellemeleri iletir ve bellek sızıntılarını önler. Flow’lar ise Lifecycle’ı otomatik olarak yönetmez; bu nedenle, Flow’ları Lifecycle’a duyarlı hale getirmek için“lifecycleScope” gibi araçlar kullanmak gerekir.
+
+** Flow Cancellation
+Flowları Coroutine yapılarına entegre olarak kullandığımız için Flowlar iptal edilebilir yapılardır.
+
+Flow iptal edildiğinde veri akışı durdurulur. Bu, örneğin uzun süren bir işlemi kullanıcı iptal ettiğinde gereksiz işlem yükünden kurtulmayı sağlar.
+
+#+begin_src kotlin
+  runBlocking {
+      val job = launch {
+          val numbersFlow = flow {
+              for (i in 1..5) {
+                  emit(i)
+              }
+          }
+
+          numbersFlow.collect { value ->
+              println(value)
+              if (value == 3) cancel()
+          }
+      }
+
+      job.join()
+  }
+#+end_src
+
+Yukarıdaki örnekte coroutine içinde çalışan bir Flow’un akıştan çekilen veri 3'e eşit olduğunda =cancel()= metodu ile durdurulmasını sağlıyoruz.
+
+** Hot Stream
+Hot Stream, sürekli ve aktif bir veri akışı anlamına gelir. Veriler, kaynağından sürekli olarak üretilir ve bu veriler üzerinde anında işlem yapılır. Yani akışı gözlemlemeye başlamadan da verilerin var olmasıdır.
+
+Bu tür akışları, genellikle gerçek zamanlı veri işleme senaryolarında kullanırız. StateFlow ve SharedFlow Hot Stream olarak yayın yaparlar.
+
+** Cold Stream
+Cold Stream ise verilerin depolandığı ve ihtiyaç duyulduğunda bu verilere erişilip işlem yapıldığı bir akış türüdür. Yani biz akışı collect ettiğimiz zaman akışın başladığı bir akış türüdür.
+
+Akışın aldığı her yeni abonelik için, akışın yeni bir örneği oluşturulur. Birbirinden bağımsız birden fazla örneğe sahip olabiliriz.
+
+** StateFlow
+StateFlow, özellikle MVVM (Model-View-ViewModel) gibi mimarilerde, UI durumlarını yönetmek için oldukça kullanışlıdır. StateFlow ile ViewModel içinde durumları takip edebilir, bu durumları UI bileşenlerine sorunsuz bir şekilde iletebiliriz.
+
+StateFlow, “Hot Stream” dediğimiz sıcak akıştır. Yani StateFlow’lar oluşturulduğu andan itibaren veri üretirler. Herhangi bi yerden veri istenmese bile veri üretmeye devam ederler.
+
+StateFlow, her zaman bir başlangıç değeri ile başlamalıdır. Ve her zaman en son değeri saklarlar. Yeni bir yerde kullanılmak istenildiğinde son değere ulaşılabilir.
+
+Bir kullanım senaryosu üzerine konuşmak gerekirse, StateFlow yapısını kullanıcının giriş yapıp yapmadığını kontrol etmek için kullanabiliriz. Gelin basit bir örneğini gözlemleyelim.
+
+#+begin_src kotlin
+  class LoginViewModel : ViewModel() {
+      private val _loginState = MutableStateFlow(false)
+
+      val loginState: StateFlow<LoginState> = _loginState.asStateFlow()
+
+      fun login() {
+          _loginState.value = true
+      }
+
+      fun logout() {
+          _loginState.value = false
+      }
+  }
+#+end_src
+
+Bu örnekte basit bir ViewModel oluşturuyoruz. StateFlow’umuzu Mutable olarak tanımlayıp private olarak tutuyoruz. Çünkü StateFlow’umuzun değerini ViewModel’ın dışından değiştirilmesini istemiyoruz.
+
+Dışarıdan veriye erişip okuyabilmek için ayrı olarak loginState StateFlow’u oluşturuyoruz. Yukarıda bahsettiğim gibi StateFlow’un bir başlangıç değerine sahip olması gerekiyor. Bu sebeple başlangıç değeri olarak false veriyoruz.
+
+Eğer login methodu kullanılırsa, StateFlow’umuzun değeri true olarak değişiyor. logout methodu kullanılırsa false olarak değişiyor. Bu şekilde ViewModel’ımızın içinde kullanıcı giriş bilgisini gözlemleyebiliyoruz.
+
+Peki biz bu işlevi UI’da yani kullanıcının etkileşime girdiği tarafta nasıl kullanabiliriz? Oluşturduğum senaryado basitçe eğer kullanıcı giriş yaptıysa “Çıkış Yap” butonu, eğer henüz giriş yapmadıysa “Giriş Yap” butonu gösteriliyor. Gelin beraber inceleyelim.
+
+#+begin_src kotlin
+  @Composable
+  fun LoginScreen(viewModel: LoginViewModel) {
+
+      val loginState by viewModel.loginState.collectAsState()
+
+      if (loginState == true) {
+          Button(onClick = { viewModel.logout() }) {
+              Text("Çıkış Yap")
+          }
+      } else {
+          Button(onClick = { viewModel.login() }) {
+              Text("Giriş Yap")
+          }
+      }
+  }
+#+end_src
+
+Composable olarak tanımladığımız ekranımızda, =collectAsState()= metodu ile StateFlow’u gözlemliyoruz. Sonrasında ViewModel’da tanımladığımız loginState StateFlow’unun true veya false olma durumlarına göre “Giriş Yap” veya “Çıkış Yap” butonlarını kullanıcıya gösteriyoruz.
+
+** SharedFlow
+SharedFlow, birden çok kaynaktan akışımıza veri girişinin olduğu ve yine birden çok kaynağa veri paylaşımının olduğu bir Flow türüdür. Yani SharedFlow’umuzda birden çok üretici ve birden çok tüketici olabilir. SharedFlow da StateFlow gibi “Hot Stream” olarak yayın yapar. Yani herhangi bir yerden veri istenmese bile veri üretmeye devam eder.
+
+SharedFlow, veri yayını için event-based (olay tabanlı) bir mekanizma sağlar ve bu sayede veri, yayınlandığı andan itibaren mevcut olan tüm abonelere iletilir.
+
+SharedFlow, StateFlowdan farklı olarak, Flow’a abone olunduktan sonra akışa giren verileri sağlar. Ancak StateFlow’da bu durum her yeni aboneye en son durumun bildirilmesi şeklindedir.
+
+Gelin SharedFlow için bir örnek inceleyelim.
+
+#+begin_src kotlin
+  class MyViewModel : ViewModel() {
+      private val _eventFlow = MutableSharedFlow<String>()
+
+      val eventFlow = _eventFlow.asSharedFlow()
+
+      fun sendEvent(event: String) {
+          viewModelScope.launch {
+              _eventFlow.emit(event)
+          }
+      }
+  }
+#+end_src
+
+Yine Mutable yapıda olacak şekilde SharedFlow oluşturuyoruz. Bu MutableSharedFlow’u private olarak tutuyoruz. Çünkü UI’dan sadece SharedFlow’a erişilmesini istiyoruz. MutableSharedFlow ViewModel’da gizli tutulmalı. sendEvent fonksiyonu ile “emit()” methodunu kullanarak event’i yayıyoruz.
+
+#+begin_src kotlin
+  @Composable
+  fun MyScreen(viewModel: MyViewModel) {
+      val scope = rememberCoroutineScope()
+
+      LaunchedEffect() {
+          scope.launch {
+              viewModel.eventFlow.collect { event ->
+                  println("Alınan Olay: $event")
+              }
+          }
+      }
+
+
+      Button(onClick = { viewModel.sendEvent("Butona tıklandı") }) {
+          Text("Olay Gönder")
+      }
+  }
+#+end_src
+
+UI tarafı için yine bir Composable ekran tanımlıyoruz. Ekran açıldığında LaunchEffect bloğu çalışıyor. Bu bloğun içerisindeki Coroutine ile “collect()” methodunu kullanarak Flow’umuzdan veriyi topluyoruz. Daha sonra bunu yazdırıyoruz.
+
+Butona tıkladığımızda ise ViewModel’ımızda tanımladığımız sendEvent fonksiyonunu çağırıyoruz.
+Bu şekilde olay tabanlı bir veri akışı sağlamış oluyoruz.
+
+Bu yazımda sizlere elimden geldiğince açık bir dille Kotlin’de Flow yapılarını anlatmaya çalıştım. Umarım sizlere yararlı olmuştur. Okuduğunuz için teşekkür ederim.
+
+** Kaynakça
+[[https://kotlinlang.org/docs/coroutines-overview.html][Kotlin Coroutine Overview]]

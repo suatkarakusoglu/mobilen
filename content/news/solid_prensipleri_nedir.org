@@ -1,0 +1,261 @@
+#+title: S.O.L.I.D. Prensipleri Nedir?
+#+date: [2024-09-12 Thu]
+#+author: Şevval Mertoğlu
+#+filetags: :Yazılım:
+
+[[https://tr.linkedin.com/in/sevvalmertoglu8][Şevval Mertoglu]] yazdı.
+
+[[file://solid_principles_cover.jpg]]
+
+* İçerik
+=SOLID= prensipleri, nesne yönelimli programlamada yazılım tasarımının temelini oluşturan beş önemli prensibi ifade eder.
+
+Robert C. Martin, diğer adıyla "Uncle Bob" tarafından popüler hale getirilen bu prensipler ilk olarak 2000 yılında yayınlanan "Design Principles and Design Patterns" makalesinde dile getirilmiştir. Kısaltması ise Michael Feathers tarafından tanımlanmıştır.
+
+** SOLID Neden Önemli?
+Bu prensipler, yazdığımız kodun sürdürülebilirliğini, esnekliğini ve anlaşılabilirliğini arttırmamıza yardımcı olur. Böylece temiz bir kod yazmış oluruz. Yaptığımız projeyi bu prensiplere mümkün olduğunca bağlı kalarak yazmaya çalışmalıyız.
+
+*** S: Single Responsibility Principle (Tek Sorumluluk Prensibi)
+[[file://solid_single_responsibility.jpg]]
+
+Yazdığımız sınıf ya da modül isviçre çakısı gibi her işi yapmamalı. Sadece ilgili olduğu tek bir işi yapmalı. Bu şekilde yazdığımız kod karmaşıklıktan daha uzak olur. Ayrıca, kodun daha az bağımlı ve daha esnek olmasını sağlayarak, değişikliklerin daha kolay ve hızlı bir şekilde yapılmasını da sağlar.
+
+Örnek verecek olursak:
+#+begin_src swift
+  class UserService {
+      var userFirstName: String
+      var userLastName: String
+
+      init(userFirstName: String, userLastName: String) {
+          self.userFirstName = userFirstName
+          self.userLastName = userLastName
+      }
+
+      func getName() -> String {
+          return userFirstName + userLastName
+      }
+
+      func login() -> Bool {
+          // Giriş işlemlerini yapmak için
+          return true
+      }
+
+      func logout() -> Bool {
+          // Çıkış işlemlerini yapmak için
+          return true
+      }
+  }
+#+end_src
+
+Bir UserService dosyamızın olduğunu düşünelim. Kullanıcıyı servis etmekle ilgili olan bu sınıf içerisinde oturum işlemleri olmamalı. Bu, kodun Single Responsibility prensibine uymadığı anlamına gelir.
+
+İşte doğru yazımı:
+
+#+begin_src swift
+  class UserService {
+      var userFirstName: String
+      var userLastName: String
+
+      init(userFirstName: String, userLastName: String) {
+          self.userFirstName = userFirstName
+          self.userLastName = userLastName
+      }
+
+      func getName() -> String {
+          return userFirstName + userLastName
+      }
+  }
+
+  class AuthService {
+      func login() -> Bool {
+          // Login process
+          return true
+      }
+
+      func logout() -> Bool {
+          // Logout process
+          return true
+      }
+  }
+#+end_src
+UserService sadece kullanıcı bilgilerini yönetir, AuthService ise oturum işlemlerini yönetir. Böylece herkes kendi görevini yapmış olur.
+*** O: Open/Closed Principle (Açık/Kapalı Prensibi)
+Bu ilkeye göre, sınıfımız gelişime açık değişime kapalı olmalıdır. Bir sınıfın veya fonksiyonun hazırda olan davranışının korunup hiçbir değişiklik yapılmadan sınıfın veya fonksiyonun geliştirilebilir olması anlamına gelir.
+
+Örnek verecek olursak:
+#+begin_src swift
+  class AuthService {
+      func login(LoginType: String) -> Bool {
+          // Login process
+          if LoginType == "Teacher" {
+              // Teacher login process
+          } else if LoginType == "Student" {
+              // Student login process
+          }
+          return true
+      }
+
+      func logout() -> Bool {
+          // Logout process
+          return true
+      }
+  }
+#+end_src
+
+Kullanıcı tipine göre farklı oturum açma seçeneklerimiz varsa ve ileride yeni kullanıcı tipi gelirse aynı şeyleri tekrar yapmamız gerekecek. Yani sınıfı değiştirmemiz gerekecek. Bu ilkeye göre sınıfın değişmesini değil gelişmesini istiyoruz.
+
+İşte doğru kullanımı:
+
+#+begin_src swift
+  protocol IAuthService {
+      func login() -> Bool
+      func logout() -> Bool
+  }
+
+  class TeacherAuth: IAuthService {
+      func login() -> Bool {
+          // Teacher login process
+          return true
+      }
+
+      func logout() -> Bool {
+          // Teacher logout process
+          return true
+      }
+  }
+
+  class StudentAuth: IAuthService {
+      func login() -> Bool {
+          // Student login process
+          return true
+      }
+
+      func logout() -> Bool {
+          // Student logout process
+          return true
+      }
+  }
+#+end_src
+
+Her bir kullanıcı tipi için ayrı sınıf oluşturduk. AuthService protokolü, login ve logout işlevlerinin tanımlarını içerir. Yeni bir kullanıcı tipi eklemek istediğimizde AuthService sınıfını değiştirmeden ekleyebileceğiz.
+
+*** L: Liskov Substitution Principle (Liskov Yerine Geçme Prensibi)
+Bu ilkenin temel amacı, alt sınıfların, üst sınıflarının yerine geçebildiği bir sistem tasarlamaktır. Kısaca bir üst sınıfın tüm davranışlarını ve özelliklerini koruyarak alt sınıfların kendi özelliklerini ve davranışlarını eklemesine olanak tanımaktır.
+
+Bu ilkeye göre bir alt sınıfın, üst sınıfın tüm davranışlarını değiştirmeden veya bozucu bir etki yapmadan genişletebilmesi gerekir.
+
+Örnek olarak, Dikdörtgen ve Kare sınıflarını ele alalım. Kare, bir dikdörtgendir. Ancak, kareyi dikdörtgenden miras alarak oluşturursak, Liskov Yerine Geçme Prensibi’ni ihlal edebiliriz. Bu durumda kare sınıfı, dikdörtgenin yerine geçtiğinde beklenmeyen davranışlar sergileyebilir. (genişlik veya yükseklik değiştirildiğinde)
+
+Bu durumda hem dikdörtgen hem de kare, “shape” protokolünü uygular. Her iki sınıf da şekil türünde kullanılabilir. Bu şekilde, kare ve dikdörtgen arasındaki farklılıklardan oluşan sorunlar giderilir ve Liskov Substitution Prensibi'ne uyulmuş olunur.
+
+*** I: Interface Segregation Principle (Arayüz Ayırma Prensibi)
+Bu ilke bize pek çok görevi olan bir interface yapmamamız gerektiğini söylüyor. İhtiyaçlara göre ayrı görevler için amacına hizmet eden birden çok interface oluşturmalıyız.
+
+Aynı örnek üzerinden anlatacak olursak. Diyelim ki Student sadece giriş işlemi yapabilsin çıkış işlemini kullanmasın. Bu durumda:
+
+#+begin_src swift
+  protocol LoginService {
+      func login() -> Bool
+  }
+
+  protocol LogoutService {
+      func logout() -> Bool
+  }
+#+end_src
+
+Giriş ve çıkış işlemleri için ayrı protokoller tanımladım. Böylece farklı görevler yapan ayrı interface’ler oluşturmuş olduk.
+#+begin_src swift
+  class TeacherAuth: LoginService, LogoutService {
+      func login() -> Bool {
+          // Teacher login process
+          return true
+      }
+
+      func logout() -> Bool {
+          // Teacher logout process
+          return true
+      }
+  }
+
+  class StudentAuth: LoginService {
+      func login() -> Bool {
+          // Student login process
+          return true
+      }
+  }
+#+end_src
+
+Student’a logout fonksiyonunu kullanması için zorlamadan, Interface Segregation Prensibine uyarak kodumuzu yazmış olduk.
+
+*** D: Dependency Inversion Principle (Bağımlılığı Tersine Çevirme Prensibi)
+Bu ilkeye göre, bir alt sınıfta doğabilecek bir değişiklik üst sınıfı etkilememesi gerekiyor. Kısaca üst seviye sınıflar, alt seviye sınıflara doğrudan bağımlı olmamalıdır. Bu ilke ile bir sınıfın somut bir sınıfa veya modüle doğrudan bağımlı olmaması, bunun yerine bir arayüz veya soyutlama üzerinden bağımlılık kurması sağlanır.
+
+Örnek olarak:
+
+Kullanıcıya bir bildirim göndermek istiyoruz. Notification sınıfının email sınıfına doğrudan bağımlı olduğu bir durumda:
+
+#+begin_src swift
+  class Email {
+      func sendEmail() {
+          print("Email gönderiliyor")
+      }
+  }
+
+  class Notification {
+      func send() {
+          let email = Email()
+          email.sendEmail()
+      }
+  }
+#+end_src
+İlerleyen zamanda email sınıfının içindeki herhangi bir değişiklik Notification sınıfını doğrudan etkileyeceği için bu kullanım Dependency Inversion Prensibine uymaz.
+
+Diyelim ki kullanıcıya farklı platformlar üzerinden bir bildirim göndermek istiyoruz. Bu durumda, Message isminde send metodunu içeren bir protokol tanımladık. Bu method, Email, Sms ve PhoneEvent sınıfları tarafından uygulanacak.
+
+#+begin_src swift
+  protocol Message {
+      func send()
+  }
+
+  class Email: Message {
+      func send() {
+          print("Email gönderiliyor")
+      }
+  }
+
+  class Sms: Message {
+      func send() {
+          print("Sms gönderiliyor")
+      }
+  }
+
+  class PhoneEvent: Message {
+      func send() {
+          print("Event gönderiliyor")
+      }
+  }
+
+  class Notification {
+      func send(message: Message) {
+          message.send()
+      }
+  }
+#+end_src
+
+Her bir alt sınıf, send metodunu kendine özgü şekilde tanımlar. Notification sınıfı (üst sınıf) Message protokolüne bağımlıdır. Send metodunu alır ve protokolü uygulayan herhangi bir sınıfın send metodunu çağırır.
+
+#+begin_src swift
+  let email = Email()
+  let sms = Sms()
+  let phoneEvent = PhoneEvent()
+
+  let notification = Notification()
+
+  notification.send(message: email)
+  notification.send(message: sms)
+  notification.send(message: phoneEvent)
+#+end_src
+
+Bu sayede, yeni mesaj türleri eklemek veya mevcut türleri değiştirmek, Notification sınıfını etkilemez. Dependency Inversion prensibine uymuş oluruz.
+
+Bugünlük SOLID Prensiplerinden bahsettiğim yazım bu kadardı bir sonraki yazımda görüşmek üzere! 👋🏻👋🏻

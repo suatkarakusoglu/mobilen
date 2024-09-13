@@ -1,0 +1,318 @@
+<!-- Generated from 9f7d618 on 2024-09-13 @ 14:27 with Emacs 30.0.60 (Org mode 9.7.9) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>S.O.L.I.D. Prensipleri Nedir? - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">S.O.L.I.D. Prensipleri Nedir?</h1><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #35</a><p class="site-post-meta">12 min read | September 12, 2024</p><div id="content"><p>
+<a href="https://tr.linkedin.com/in/sevvalmertoglu8">Şevval Mertoglu</a> yazdı.
+</p>
+
+
+<div id="org4fac258" class="figure">
+<p><img src="/img/solid_principles_cover.jpg" class="content-image" width="100%">
+</p>
+</div>
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org799b93e">
+<p>
+<code>SOLID</code> prensipleri, nesne yönelimli programlamada yazılım tasarımının temelini oluşturan beş önemli prensibi ifade eder.
+</p>
+
+<p>
+Robert C. Martin, diğer adıyla &ldquo;Uncle Bob&rdquo; tarafından popüler hale getirilen bu prensipler ilk olarak 2000 yılında yayınlanan &ldquo;Design Principles and Design Patterns&rdquo; makalesinde dile getirilmiştir. Kısaltması ise Michael Feathers tarafından tanımlanmıştır.
+</p>
+</div>
+<h3><a id="solid-neden-önemli" class="anchor" href="#solid-neden-önemli">¶</a>SOLID Neden Önemli?</h3><div class="outline-text-3" id="text-org87abb5e">
+<p>
+Bu prensipler, yazdığımız kodun sürdürülebilirliğini, esnekliğini ve anlaşılabilirliğini arttırmamıza yardımcı olur. Böylece temiz bir kod yazmış oluruz. Yaptığımız projeyi bu prensiplere mümkün olduğunca bağlı kalarak yazmaya çalışmalıyız.
+</p>
+</div>
+<h4><a id="s-single-responsibility-principle-tek-sorumluluk-prensibi" class="anchor" href="#s-single-responsibility-principle-tek-sorumluluk-prensibi">¶</a>S: Single Responsibility Principle (Tek Sorumluluk Prensibi)</h4><div class="outline-text-4" id="text-org9a1597b">
+
+<div id="org0c78c0b" class="figure">
+<p><img src="/img/solid_single_responsibility.jpg" class="content-image" width="100%">
+</p>
+</div>
+
+<p>
+Yazdığımız sınıf ya da modül isviçre çakısı gibi her işi yapmamalı. Sadece ilgili olduğu tek bir işi yapmalı. Bu şekilde yazdığımız kod karmaşıklıktan daha uzak olur. Ayrıca, kodun daha az bağımlı ve daha esnek olmasını sağlayarak, değişikliklerin daha kolay ve hızlı bir şekilde yapılmasını da sağlar.
+</p>
+
+<p>
+Örnek verecek olursak:
+</p>
+<div class="highlight"><pre><span></span>  <span class="kd">class</span> <span class="nc">UserService</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nv">userFirstName</span><span class="p">:</span> <span class="nb">String</span>
+      <span class="kd">var</span> <span class="nv">userLastName</span><span class="p">:</span> <span class="nb">String</span>
+
+      <span class="kd">init</span><span class="p">(</span><span class="n">userFirstName</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">userLastName</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kc">self</span><span class="p">.</span><span class="n">userFirstName</span> <span class="p">=</span> <span class="n">userFirstName</span>
+          <span class="kc">self</span><span class="p">.</span><span class="n">userLastName</span> <span class="p">=</span> <span class="n">userLastName</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">getName</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="n">userFirstName</span> <span class="o">+</span> <span class="n">userLastName</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">login</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Giriş işlemlerini yapmak için</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Çıkış işlemlerini yapmak için</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+Bir UserService dosyamızın olduğunu düşünelim. Kullanıcıyı servis etmekle ilgili olan bu sınıf içerisinde oturum işlemleri olmamalı. Bu, kodun Single Responsibility prensibine uymadığı anlamına gelir.
+</p>
+
+<p>
+İşte doğru yazımı:
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">class</span> <span class="nc">UserService</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nv">userFirstName</span><span class="p">:</span> <span class="nb">String</span>
+      <span class="kd">var</span> <span class="nv">userLastName</span><span class="p">:</span> <span class="nb">String</span>
+
+      <span class="kd">init</span><span class="p">(</span><span class="n">userFirstName</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">userLastName</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kc">self</span><span class="p">.</span><span class="n">userFirstName</span> <span class="p">=</span> <span class="n">userFirstName</span>
+          <span class="kc">self</span><span class="p">.</span><span class="n">userLastName</span> <span class="p">=</span> <span class="n">userLastName</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">getName</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="n">userFirstName</span> <span class="o">+</span> <span class="n">userLastName</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="nc">AuthService</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">login</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Login process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Logout process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+<p>
+UserService sadece kullanıcı bilgilerini yönetir, AuthService ise oturum işlemlerini yönetir. Böylece herkes kendi görevini yapmış olur.
+</p>
+</div>
+<h4><a id="o-openclosed-principle-açıkkapalı-prensibi" class="anchor" href="#o-openclosed-principle-açıkkapalı-prensibi">¶</a>O: Open/Closed Principle (Açık/Kapalı Prensibi)</h4><div class="outline-text-4" id="text-org40ad670">
+<p>
+Bu ilkeye göre, sınıfımız gelişime açık değişime kapalı olmalıdır. Bir sınıfın veya fonksiyonun hazırda olan davranışının korunup hiçbir değişiklik yapılmadan sınıfın veya fonksiyonun geliştirilebilir olması anlamına gelir.
+</p>
+
+<p>
+Örnek verecek olursak:
+</p>
+<div class="highlight"><pre><span></span>  <span class="kd">class</span> <span class="nc">AuthService</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="n">LoginType</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Login process</span>
+          <span class="k">if</span> <span class="n">LoginType</span> <span class="p">==</span> <span class="s">&quot;Teacher&quot;</span> <span class="p">{</span>
+              <span class="c1">// Teacher login process</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">LoginType</span> <span class="p">==</span> <span class="s">&quot;Student&quot;</span> <span class="p">{</span>
+              <span class="c1">// Student login process</span>
+          <span class="p">}</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Logout process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+Kullanıcı tipine göre farklı oturum açma seçeneklerimiz varsa ve ileride yeni kullanıcı tipi gelirse aynı şeyleri tekrar yapmamız gerekecek. Yani sınıfı değiştirmemiz gerekecek. Bu ilkeye göre sınıfın değişmesini değil gelişmesini istiyoruz.
+</p>
+
+<p>
+İşte doğru kullanımı:
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">protocol</span> <span class="nc">IAuthService</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">login</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span>
+      <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="nc">TeacherAuth</span><span class="p">:</span> <span class="n">IAuthService</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">login</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Teacher login process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Teacher logout process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="nc">StudentAuth</span><span class="p">:</span> <span class="n">IAuthService</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">login</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Student login process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Student logout process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+Her bir kullanıcı tipi için ayrı sınıf oluşturduk. AuthService protokolü, login ve logout işlevlerinin tanımlarını içerir. Yeni bir kullanıcı tipi eklemek istediğimizde AuthService sınıfını değiştirmeden ekleyebileceğiz.
+</p>
+</div>
+<h4><a id="l-liskov-substitution-principle-liskov-yerine-geçme-prensibi" class="anchor" href="#l-liskov-substitution-principle-liskov-yerine-geçme-prensibi">¶</a>L: Liskov Substitution Principle (Liskov Yerine Geçme Prensibi)</h4><div class="outline-text-4" id="text-org2900b31">
+<p>
+Bu ilkenin temel amacı, alt sınıfların, üst sınıflarının yerine geçebildiği bir sistem tasarlamaktır. Kısaca bir üst sınıfın tüm davranışlarını ve özelliklerini koruyarak alt sınıfların kendi özelliklerini ve davranışlarını eklemesine olanak tanımaktır.
+</p>
+
+<p>
+Bu ilkeye göre bir alt sınıfın, üst sınıfın tüm davranışlarını değiştirmeden veya bozucu bir etki yapmadan genişletebilmesi gerekir.
+</p>
+
+<p>
+Örnek olarak, Dikdörtgen ve Kare sınıflarını ele alalım. Kare, bir dikdörtgendir. Ancak, kareyi dikdörtgenden miras alarak oluşturursak, Liskov Yerine Geçme Prensibi’ni ihlal edebiliriz. Bu durumda kare sınıfı, dikdörtgenin yerine geçtiğinde beklenmeyen davranışlar sergileyebilir. (genişlik veya yükseklik değiştirildiğinde)
+</p>
+
+<p>
+Bu durumda hem dikdörtgen hem de kare, “shape” protokolünü uygular. Her iki sınıf da şekil türünde kullanılabilir. Bu şekilde, kare ve dikdörtgen arasındaki farklılıklardan oluşan sorunlar giderilir ve Liskov Substitution Prensibi&rsquo;ne uyulmuş olunur.
+</p>
+</div>
+<h4><a id="i-interface-segregation-principle-arayüz-ayırma-prensibi" class="anchor" href="#i-interface-segregation-principle-arayüz-ayırma-prensibi">¶</a>I: Interface Segregation Principle (Arayüz Ayırma Prensibi)</h4><div class="outline-text-4" id="text-org1054e4b">
+<p>
+Bu ilke bize pek çok görevi olan bir interface yapmamamız gerektiğini söylüyor. İhtiyaçlara göre ayrı görevler için amacına hizmet eden birden çok interface oluşturmalıyız.
+</p>
+
+<p>
+Aynı örnek üzerinden anlatacak olursak. Diyelim ki Student sadece giriş işlemi yapabilsin çıkış işlemini kullanmasın. Bu durumda:
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">protocol</span> <span class="nc">LoginService</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">login</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span>
+  <span class="p">}</span>
+
+  <span class="kd">protocol</span> <span class="nc">LogoutService</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+Giriş ve çıkış işlemleri için ayrı protokoller tanımladım. Böylece farklı görevler yapan ayrı interface’ler oluşturmuş olduk.
+</p>
+<div class="highlight"><pre><span></span>  <span class="kd">class</span> <span class="nc">TeacherAuth</span><span class="p">:</span> <span class="n">LoginService</span><span class="p">,</span> <span class="n">LogoutService</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">login</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Teacher login process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+
+      <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Teacher logout process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="nc">StudentAuth</span><span class="p">:</span> <span class="n">LoginService</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">login</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+          <span class="c1">// Student login process</span>
+          <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+Student’a logout fonksiyonunu kullanması için zorlamadan, Interface Segregation Prensibine uyarak kodumuzu yazmış olduk.
+</p>
+</div>
+<h4><a id="d-dependency-inversion-principle-bağımlılığı-tersine-çevirme-prensibi" class="anchor" href="#d-dependency-inversion-principle-bağımlılığı-tersine-çevirme-prensibi">¶</a>D: Dependency Inversion Principle (Bağımlılığı Tersine Çevirme Prensibi)</h4><div class="outline-text-4" id="text-org63097b9">
+<p>
+Bu ilkeye göre, bir alt sınıfta doğabilecek bir değişiklik üst sınıfı etkilememesi gerekiyor. Kısaca üst seviye sınıflar, alt seviye sınıflara doğrudan bağımlı olmamalıdır. Bu ilke ile bir sınıfın somut bir sınıfa veya modüle doğrudan bağımlı olmaması, bunun yerine bir arayüz veya soyutlama üzerinden bağımlılık kurması sağlanır.
+</p>
+
+<p>
+Örnek olarak:
+</p>
+
+<p>
+Kullanıcıya bir bildirim göndermek istiyoruz. Notification sınıfının email sınıfına doğrudan bağımlı olduğu bir durumda:
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">class</span> <span class="nc">Email</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">sendEmail</span><span class="p">()</span> <span class="p">{</span>
+          <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Email gönderiliyor&quot;</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="nc">Notification</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">send</span><span class="p">()</span> <span class="p">{</span>
+          <span class="kd">let</span> <span class="nv">email</span> <span class="p">=</span> <span class="n">Email</span><span class="p">()</span>
+          <span class="n">email</span><span class="p">.</span><span class="n">sendEmail</span><span class="p">()</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+<p>
+İlerleyen zamanda email sınıfının içindeki herhangi bir değişiklik Notification sınıfını doğrudan etkileyeceği için bu kullanım Dependency Inversion Prensibine uymaz.
+</p>
+
+<p>
+Diyelim ki kullanıcıya farklı platformlar üzerinden bir bildirim göndermek istiyoruz. Bu durumda, Message isminde send metodunu içeren bir protokol tanımladık. Bu method, Email, Sms ve PhoneEvent sınıfları tarafından uygulanacak.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">protocol</span> <span class="nc">Message</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">send</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="nc">Email</span><span class="p">:</span> <span class="n">Message</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">send</span><span class="p">()</span> <span class="p">{</span>
+          <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Email gönderiliyor&quot;</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="nc">Sms</span><span class="p">:</span> <span class="n">Message</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">send</span><span class="p">()</span> <span class="p">{</span>
+          <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Sms gönderiliyor&quot;</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="nc">PhoneEvent</span><span class="p">:</span> <span class="n">Message</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">send</span><span class="p">()</span> <span class="p">{</span>
+          <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Event gönderiliyor&quot;</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">class</span> <span class="nc">Notification</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">send</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">message</span><span class="p">.</span><span class="n">send</span><span class="p">()</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+Her bir alt sınıf, send metodunu kendine özgü şekilde tanımlar. Notification sınıfı (üst sınıf) Message protokolüne bağımlıdır. Send metodunu alır ve protokolü uygulayan herhangi bir sınıfın send metodunu çağırır.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">let</span> <span class="nv">email</span> <span class="p">=</span> <span class="n">Email</span><span class="p">()</span>
+  <span class="kd">let</span> <span class="nv">sms</span> <span class="p">=</span> <span class="n">Sms</span><span class="p">()</span>
+  <span class="kd">let</span> <span class="nv">phoneEvent</span> <span class="p">=</span> <span class="n">PhoneEvent</span><span class="p">()</span>
+
+  <span class="kd">let</span> <span class="nv">notification</span> <span class="p">=</span> <span class="n">Notification</span><span class="p">()</span>
+
+  <span class="n">notification</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">email</span><span class="p">)</span>
+  <span class="n">notification</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">sms</span><span class="p">)</span>
+  <span class="n">notification</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">phoneEvent</span><span class="p">)</span>
+</pre></div>
+
+<p>
+Bu sayede, yeni mesaj türleri eklemek veya mevcut türleri değiştirmek, Notification sınıfını etkilemez. Dependency Inversion prensibine uymuş oluruz.
+</p>
+
+<p>
+Bugünlük SOLID Prensiplerinden bahsettiğim yazım bu kadardı bir sonraki yazımda görüşmek üzere! 👋🏻👋🏻
+</p>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #35</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #25</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #8</a><a class="tag" href="https://mobilen.art/tags/android/">Android #8</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #6</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #3</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

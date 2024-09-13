@@ -40,6 +40,8 @@
 
 [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]
 
+[[file:../../news/solid_prensipleri_nedir.org][S.O.L.I.D. Prensipleri Nedir?]]
+
 [[file:../../news/ssl_pinning.org][SSL Pinning]]
 
 [[file:../../news/switch_expression.org][Swift 5.9: If ve Switch Gelişmeleri]]

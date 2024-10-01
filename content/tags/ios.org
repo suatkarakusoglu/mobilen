@@ -4,6 +4,8 @@
 
 [[file:../../news/apple_design_awards_kazanmanin_sirlari.org][Apple Design Awards Kazanmanın Sırları]]
 
+[[file:../../news/derinlemesine_swiftui.org][SwiftUI'da Arayüz Çizim Kuralları]]
+
 [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 
 [[file:../../news/evolution_of_the_medium_ios_app.org][Evolution of the Medium iOS app architecture]]

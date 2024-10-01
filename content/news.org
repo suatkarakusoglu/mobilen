@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:news/derinlemesine_swiftui.org][SwiftUI'da Arayüz Çizim Kuralları]] - Suat Karakuşoğlu · September 30, 2024
 - [[file:news/solid_prensipleri_nedir.org][S.O.L.I.D. Prensipleri Nedir?]] - Şevval Mertoğlu · September 12, 2024
 - [[file:news/kotlin_flows.org][Kotlin Flows]] - Emir Kaya · September 04, 2024
 - [[file:news/apple_carplay_intro.org][Apple CarPlay'e Giriş]] - Burak Ceylan · August 12, 2024

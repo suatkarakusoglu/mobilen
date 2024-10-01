@@ -1,0 +1,82 @@
+#+title: SwiftUI'da Arayüz Çizim Kuralları
+#+date: [2024-09-30 Mon]
+#+author: Suat Karakuşoğlu
+#+filetags: :iOS:Tasarım:SwiftUI:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/@jneumeyer][Judi]]
+[[file:cover_swiftui_arayuz_cizim_kurallari.jpg]]
+
+* İçerik
+SwiftUI [[https://mobilen.art/news/declarative_ui][deklaratif arayüz]] tasarımında olabilecek en tatlı gramer'i yakalamaya çalışıyor.
+
+SwiftUI'in arkasında temel aldığı çizim dinamiklerini anlamak, uygulamalarımızda daha rahat arayüzler çıkartmamıza yardımcı oluyor.
+
+O nedenle, bu konuyu esas alan, temel olarak [[https://developer.apple.com/videos/play/wwdc2019/237/][Building Custom Views with SwiftUI]] vidyosunda bahsedilen konuları süzgecimden geçirip biraz derledim.
+
+** Temel arayüz sistemleri
+Tüm arayüzler genel olarak bir ağaç yapısından oluşur.
+
+Bu =ağaç= / =tree= kökünden dallanarak içerisinde diğer görsel arayüzleri barındırır.
+
+Bu dallanmadaki =Parent ~ Child= ilişkisinde arayüzün nasıl çizileceğine dair kararlar çıkar.
+
+** Arayüz Çizim Kuralları
+Her büyük hikayede genelde 3 kural/adım olur.
+
+Bu hikayedeki 3 kural ise şöyle:
+
+- *Parent proposes a size for child*
+  - Baba çocuğu için sen bu alanda barınabilirsin, kendine bir boyut belirle der.
+- *Child chooses its own size*
+  - Çocuk bu alanda ne kadar bir yer kaplayacağını bildirir.
+- *Parent places child in parent's coordinate space*
+  - Baba ise o boyuttaki çocuğu istediği uygun yere konumlandırır.
+
+** View'lerin boyutları
+- Fixed Size :: Boyutun net olarak frame uzerinde verilmesidir.
+- Intrinsic Size :: =Text= gibi komponentler kendi icerisinde render edecegi text'in boyutu kadar yer talep ederler.
+- Calculated Size :: =Image= gibi komponentler aspect-ratio'larina göre dinamik boyutlar isteyebilirler.
+
+** Adaptive Sizing
+[[https://www.interaction-design.org/literature/topics/negative-space][Negatif alan]] dediğimiz boşluk sağlayarak içeriğe nefes aldıran arayüz araçları bağlamın büyüklüğüne göre farklı miktarda olmaları gerekebiliyor.
+
+iPadOS veya iOS boyutlarına göre =padding= component'i farklı büyüklükte olabiliyor.
+
+** [H/V]Stack ve çocukların yer için kapışması
+Yatayda ve dikeyde =child= componentleri sıralayan =HStack= ve =VStack= gibi arayüz elemanları mevcut.
+
+Bu =container= view'lerin içerisinde yerlerini kapmaya çalışan child viewler yerin yetersiz geldiği durumlarda veya yerin büyük olduğu durumlarda içeriye nasıl yayılacaklarına dair karar alabilmek lazım. Bu nedenle [[https://developer.apple.com/documentation/swiftui/view/layoutpriority(_:)][LayoutPriority]] kavramıyla tanışıyoruz.
+
+#+begin_src swift
+  HStack {
+      Text("Bu bir metin.")
+        .font(.largeTitle)
+        .border(Color.gray)
+
+      Spacer()
+
+      Text("Bu cok daha oncelikli bir metin")
+        .font(.largeTitle)
+        .layoutPriority(1) // Burada varsayılan priority 0 iken 1'e çekilmiş.
+        .border(Color.gray)
+  }
+#+end_src
+
+#+CAPTION: (Sol)LayoutPriority[0] / (Sağ)LayoutPriority[1]
+[[file://custom_swiftui_layout_prev_later.jpg]]
+
+#+begin_quote
+A parent layout offers the child views with the highest layout priority all the space offered to the parent minus the minimum space required for all its lower-priority children.
+
+Parent olan HStack düşük öncelikli arkadaşların yerleşebileceği en ufak yeri buluyor ve onlardan kalan yerin tamamını yüksek öncelikli olan en torpilli view'e sunuyor.
+#+end_quote
+
+** Sonuç olarak
+SwiftUI tarafında arayüz çiziminde önemli olan noktalara değindik. [[https://developer.apple.com/videos/play/wwdc2019/237/][Building Custom Views with SwiftUI]] izlemenizi tavsiye ederim.
+
+** Kaynakça
+- [[https://developer.apple.com/videos/play/wwdc2019/237/][Building Custom Views with SwiftUI]]
+- [[https://developer.apple.com/documentation/swiftui/view/layoutpriority(_:)][LayoutPriority]]
+- [[https://www.interaction-design.org/literature/topics/negative-space][Negative Space]]

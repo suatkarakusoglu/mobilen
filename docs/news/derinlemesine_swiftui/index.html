@@ -1,15 +1,15 @@
-<!-- Generated from 1cc286d on 2024-10-01 @ 10:54 with Emacs 30.0.60 (Org mode 9.7.9) -->
+<!-- Generated from e6448af on 2024-10-14 @ 15:30 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>SwiftUI&rsquo;da Arayüz Çizim Kuralları - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">SwiftUI&rsquo;da Arayüz Çizim Kuralları</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><p class="site-post-meta">4 min read | September 30, 2024</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
-<div id="org44ef7ee" class="figure">
+<div id="orga19e8e8" class="figure">
 <p><img src="/img/cover_swiftui_arayuz_cizim_kurallari.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/@jneumeyer">Judi</a></p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgc0a762e">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org32b8d26">
 <p>
 SwiftUI <a href="https://mobilen.art/news/declarative_ui">deklaratif arayüz</a> tasarımında olabilecek en tatlı gramer&rsquo;i yakalamaya çalışıyor.
 </p>
@@ -22,7 +22,7 @@ SwiftUI&rsquo;in arkasında temel aldığı çizim dinamiklerini anlamak, uygula
 O nedenle, bu konuyu esas alan, temel olarak <a href="https://developer.apple.com/videos/play/wwdc2019/237/">Building Custom Views with SwiftUI</a> vidyosunda bahsedilen konuları süzgecimden geçirip biraz derledim.
 </p>
 </div>
-<h3><a id="temel-arayüz-sistemleri" class="anchor" href="#temel-arayüz-sistemleri">¶</a>Temel arayüz sistemleri</h3><div class="outline-text-3" id="text-org4b11938">
+<h3><a id="temel-arayüz-sistemleri" class="anchor" href="#temel-arayüz-sistemleri">¶</a>Temel arayüz sistemleri</h3><div class="outline-text-3" id="text-orgf110bfd">
 <p>
 Tüm arayüzler genel olarak bir ağaç yapısından oluşur.
 </p>
@@ -35,7 +35,7 @@ Bu <code>ağaç</code> / <code>tree</code> kökünden dallanarak içerisinde di�
 Bu dallanmadaki <code>Parent ~ Child</code> ilişkisinde arayüzün nasıl çizileceğine dair kararlar çıkar.
 </p>
 </div>
-<h3><a id="arayüz-çizim-kuralları" class="anchor" href="#arayüz-çizim-kuralları">¶</a>Arayüz Çizim Kuralları</h3><div class="outline-text-3" id="text-orgd315d14">
+<h3><a id="arayüz-çizim-kuralları" class="anchor" href="#arayüz-çizim-kuralları">¶</a>Arayüz Çizim Kuralları</h3><div class="outline-text-3" id="text-orgdc5f9b0">
 <p>
 Her büyük hikayede genelde 3 kural/adım olur.
 </p>
@@ -59,14 +59,14 @@ Bu hikayedeki 3 kural ise şöyle:
 </ul></li>
 </ul>
 </div>
-<h3><a id="viewrsquolerin-boyutları" class="anchor" href="#viewrsquolerin-boyutları">¶</a>View&rsquo;lerin boyutları</h3><div class="outline-text-3" id="text-org99373c1">
+<h3><a id="viewrsquolerin-boyutları" class="anchor" href="#viewrsquolerin-boyutları">¶</a>View&rsquo;lerin boyutları</h3><div class="outline-text-3" id="text-org1e2c720">
 <dl class="org-dl">
 <dt>Fixed Size</dt><dd>Boyutun net olarak frame uzerinde verilmesidir.</dd>
 <dt>Intrinsic Size</dt><dd><code>Text</code> gibi komponentler kendi icerisinde render edecegi text&rsquo;in boyutu kadar yer talep ederler.</dd>
 <dt>Calculated Size</dt><dd><code>Image</code> gibi komponentler aspect-ratio&rsquo;larina göre dinamik boyutlar isteyebilirler.</dd>
 </dl>
 </div>
-<h3><a id="adaptive-sizing" class="anchor" href="#adaptive-sizing">¶</a>Adaptive Sizing</h3><div class="outline-text-3" id="text-org763c480">
+<h3><a id="adaptive-sizing" class="anchor" href="#adaptive-sizing">¶</a>Adaptive Sizing</h3><div class="outline-text-3" id="text-org24b1882">
 <p>
 <a href="https://www.interaction-design.org/literature/topics/negative-space">Negatif alan</a> dediğimiz boşluk sağlayarak içeriğe nefes aldıran arayüz araçları bağlamın büyüklüğüne göre farklı miktarda olmaları gerekebiliyor.
 </p>
@@ -75,7 +75,7 @@ Bu hikayedeki 3 kural ise şöyle:
 iPadOS veya iOS boyutlarına göre <code>padding</code> component&rsquo;i farklı büyüklükte olabiliyor.
 </p>
 </div>
-<h3><a id="hvstack-ve-çocukların-yer-için-kapışması" class="anchor" href="#hvstack-ve-çocukların-yer-için-kapışması">¶</a>[H/V]Stack ve çocukların yer için kapışması</h3><div class="outline-text-3" id="text-org1af7209">
+<h3><a id="hvstack-ve-çocukların-yer-için-kapışması" class="anchor" href="#hvstack-ve-çocukların-yer-için-kapışması">¶</a>[H/V]Stack ve çocukların yer için kapışması</h3><div class="outline-text-3" id="text-orge25aa55">
 <p>
 Yatayda ve dikeyde <code>child</code> componentleri sıralayan <code>HStack</code> ve <code>VStack</code> gibi arayüz elemanları mevcut.
 </p>
@@ -99,7 +99,7 @@ Bu <code>container</code> view&rsquo;lerin içerisinde yerlerini kapmaya çalı�
 </pre></div>
 
 
-<div id="org5465f57" class="figure">
+<div id="org653256a" class="figure">
 <p><img src="/img/custom_swiftui_layout_prev_later.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 2: </span>(Sol)LayoutPriority[0] / (Sağ)LayoutPriority[1]</p>
@@ -115,16 +115,16 @@ Parent olan HStack düşük öncelikli arkadaşların yerleşebileceği en ufak 
 </p>
 </blockquote>
 </div>
-<h3><a id="sonuç-olarak" class="anchor" href="#sonuç-olarak">¶</a>Sonuç olarak</h3><div class="outline-text-3" id="text-orgad09080">
+<h3><a id="sonuç-olarak" class="anchor" href="#sonuç-olarak">¶</a>Sonuç olarak</h3><div class="outline-text-3" id="text-orgff24e31">
 <p>
 SwiftUI tarafında arayüz çiziminde önemli olan noktalara değindik. <a href="https://developer.apple.com/videos/play/wwdc2019/237/">Building Custom Views with SwiftUI</a> izlemenizi tavsiye ederim.
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org9f7ad20">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org398baf4">
 <ul class="org-ul">
 <li><a href="https://developer.apple.com/videos/play/wwdc2019/237/">Building Custom Views with SwiftUI</a></li>
 <li><a href="https://developer.apple.com/documentation/swiftui/view/layoutpriority(_:)">LayoutPriority</a></li>
 <li><a href="https://www.interaction-design.org/literature/topics/negative-space">Negative Space</a></li>
 </ul>
 </div>
-</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #35</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #8</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #8</a><a class="tag" href="https://mobilen.art/tags/android/">Android #8</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #35</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #9</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/android/">Android #8</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

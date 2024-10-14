@@ -1,5 +1,7 @@
 #+TITLE: Araçlar
 
+[[file:../../news/brew_bundle.org][Brew Bundle ile Uygulamaları Toplan Yükleme]]
+
 [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 
 [[file:../../news/makefile_nedir.org][Makefile'ın Faydaları]]

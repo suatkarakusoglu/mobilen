@@ -1,0 +1,69 @@
+#+title: Brew Bundle ile Uygulamaları Toplan Yükleme
+#+date:  [2024-10-14 Mon]
+#+author: Suat Karakuşoğlu
+#+filetags: :Apple:Araçlar:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/photos/grayscale-photo-of-person-pouring-water-on-strainer-aHXGRIooMi0][Manki Kim]]
+[[file:brew_cups.jpg]]
+
+* İçerik
+Merhabalar,
+
+Bu ara yeni bilgisayar kurulumu yapma ihtiyacım oldu, yaklaşık 4 senedir kullandığım Intel Mac sonrası M3 Pro'ya geçtim. Bu geçiş sırasında sıfır bilgisayara kurmam gereken uygulamaları daha hızlı kurabilmek için araştırma yaptım.
+
+Mac'te paket yöneticisi olarak yıllardır =brew= kullanıyordum zaten. Brew için [[https://github.com/Homebrew/homebrew-bundle][Brew Bundle]] adlı araç ile bu süreci kolaylaştırmışlar.
+
+#+CAPTION: Brew Bundle komutları
+[[file:brew_bundle_command_tldr.jpg]]
+
+Bunun için =Brewfile= diye bir dosya oluşturuyoruz ve kurmak istediğimiz uygulamaları burada tanımlıyoruz.
+
+Başlangıç olarak eski bilgisayarımızdaki hali hazırdaki kurulu paketleri listelemek isteyeceksinizdir.
+
+Hali hazırda kurulu bağımlılıkların listesini Brewfile'a çıkarma komutu:
+
+#+begin_src shell
+  brew bundle dump
+#+end_src
+
+Örnek Brewfile Dosyası:
+
+#+begin_src shell
+  # Tapped Sources
+  tap "d12frosted/emacs-plus" # Emacs Plus
+  tap "sdkman/tap" # SDK manager
+
+  # Terminal Tools
+  brew "aria2" # Multi Thread Resumable Download Tool
+  brew "atool" # Archive Tool
+  brew "gnu-tar" # Archive Tool
+  brew "clisp" # Common Lisp
+  brew "sbcl" # Common Lisp Tool
+  brew "cmake" # C Build Tool
+  brew "cocoapods" # iOS Dependency Tool
+
+  # GUI Applications
+  cask "sublime-merge" # Git Gui
+  cask "sublime-text" # Text Gui
+  cask "font-iosevka" # Font
+
+  # AppStore applications
+  mas "Xcode", id: 497799835
+#+end_src
+
+Brewfile'i yüklemek için çalıştırılacak komut:
+#+begin_src shell
+  brew bundle
+#+end_src
+
+Bu komutu çalıştırdıktan sonra sırayla tüm bağımlılıklar yüklenmeye başlıyacaktır.
+
+Yüklemelerin bu şekilde yazılı olması hem kurulması hem takip edilmesi açısından sistem kurulumlarında bana çok yardımcı oldu. Sizin için de faydalı olması dileğiyle.
+
+Görüşmek üzere.
+
+** Kaynakça
+- [[https://github.com/Homebrew][Homebrew]]
+- [[https://github.com/Homebrew/homebrew-bundle][Brew Bundle]]

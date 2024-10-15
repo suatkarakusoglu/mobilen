@@ -1,6 +1,6 @@
-<!-- Generated from c2152da on 2024-10-15 @ 13:56 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!-- Generated from f5a9342 on 2024-10-15 @ 14:16 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>&ldquo;xcodebuild&rdquo; Komutları ve Kullanım Örnekleri - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">&ldquo;xcodebuild&rdquo; Komutları ve Kullanım Örnekleri</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #9</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><p class="site-post-meta">14 min read | April  1, 2024</p><div id="content">
-<div id="org2b48111" class="figure">
+<div id="orga94c7f7" class="figure">
 <p><img src="/img/xcode_build_cover.jpg" class="content-image" width="100%">
 </p>
 </div>
@@ -8,7 +8,7 @@
 <p>
 <a href="https://www.linkedin.com/in/ugurcan-durak/">Uğurcan Durak</a> yazdı.
 </p>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org8cbb2a1">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org1319d6c">
 <p>
 Merhabalar, bu yazımda Xcode üzerinden yaptığımız bazı aksiyonların
 (build, archive, test vb.) arka tarafta hangi terminal komutu olarak
@@ -16,7 +16,7 @@ Merhabalar, bu yazımda Xcode üzerinden yaptığımız bazı aksiyonların
 Faydalı olması dileğiyle haydi başlayalım :)
 </p>
 </div>
-<h3><a id="ne-yapacağız" class="anchor" href="#ne-yapacağız">¶</a>Ne Yapacağız?</h3><div class="outline-text-3" id="text-org2efca39">
+<h3><a id="ne-yapacağız" class="anchor" href="#ne-yapacağız">¶</a>Ne Yapacağız?</h3><div class="outline-text-3" id="text-orgf951d62">
 <p>
 En çok kullanılan ve ihtiyaç olabileceğini düşündüğüm komutları adım
 adım açıklayarak örnekler vereceğim. Daha sonra, hangi süreçlerde
@@ -24,7 +24,7 @@ kullanabileceğimizi inceleyerek, local ortamda basit bir örnek üzerinden
 nasıl uygulayabileceğimizi göstereceğim.
 </p>
 </div>
-<h3><a id="ldquoxcodebuildrdquo-nedir" class="anchor" href="#ldquoxcodebuildrdquo-nedir">¶</a>&ldquo;xcodebuild&rdquo; Nedir?</h3><div class="outline-text-3" id="text-org432b42c">
+<h3><a id="ldquoxcodebuildrdquo-nedir" class="anchor" href="#ldquoxcodebuildrdquo-nedir">¶</a>&ldquo;xcodebuild&rdquo; Nedir?</h3><div class="outline-text-3" id="text-org69a639f">
 <p>
 xcodebuild” komutu, Xcode&rsquo;un kullanıcı arayüzündeki (GUI) yapabildiğimiz
 işlemleri terminal üzerinden gerçekleştirmemizi sağlar. Bu sayede build,
@@ -32,7 +32,7 @@ test ve dağıtım gibi süreçleri otomatize edebilir, kendi oluşturduğumuz
 script&rsquo;ler ile projelerimizi komut satırı üzerinden yönetebiliriz.
 </p>
 </div>
-<h3><a id="komutlar" class="anchor" href="#komutlar">¶</a>Komutlar</h3><div class="outline-text-3" id="text-org09fd8b3">
+<h3><a id="komutlar" class="anchor" href="#komutlar">¶</a>Komutlar</h3><div class="outline-text-3" id="text-org222e160">
 <p>
 xcodebuild, hedef configuration, scheme, cihaz, gibi bir çok parametreyi
 destekler. Şimdi en çok kullanılan komutlara ve parametrelere değinip
@@ -68,7 +68,7 @@ Project
 Farkı anladığımıza göre sırasıyla komutları inceleyelim.
 </p>
 </div>
-<h4><a id="build" class="anchor" href="#build">¶</a>Build</h4><div class="outline-text-4" id="text-orgabd6553">
+<h4><a id="build" class="anchor" href="#build">¶</a>Build</h4><div class="outline-text-4" id="text-orgf5ab2a6">
 <p>
 Build, basit anlamda kaynak kodun derlenerek çalıştırılabilir program
 dosyalarına dönüştürülmesi işlemi diyebiliriz. Xcode&rsquo;da üst menüden
@@ -98,7 +98,7 @@ Herhangi bir configuration eklemezsek default olarak <i>Debug</i> modda build
 gerçekleşir.
 </p>
 </div>
-<h4><a id="archive-oluşturma" class="anchor" href="#archive-oluşturma">¶</a>Archive Oluşturma</h4><div class="outline-text-4" id="text-org620b4a8">
+<h4><a id="archive-oluşturma" class="anchor" href="#archive-oluşturma">¶</a>Archive Oluşturma</h4><div class="outline-text-4" id="text-orgfd85622">
 <p>
 Archive, projenin kaynak kodunu ve gerekli olan tüm dosyaları tek bir
 pakette birleştirme işlemidir. <i>Ipa</i> oluşturabilmek için gerekli bir
@@ -141,7 +141,7 @@ Bu parametrelerden herhangi birini belirtmezsen default olarak xcode
 üzerindeki ayarları uygulacaktır.
 </p>
 </div>
-<h4><a id="ipa-oluşturma" class="anchor" href="#ipa-oluşturma">¶</a>IPA Oluşturma</h4><div class="outline-text-4" id="text-org35810f3">
+<h4><a id="ipa-oluşturma" class="anchor" href="#ipa-oluşturma">¶</a>IPA Oluşturma</h4><div class="outline-text-4" id="text-org6f7e83e">
 <p>
 Ipa oluşturmak, projemizin son halini cihazlarda çalıştırılabilir hale
 getirdiğimiz adımdır. Bu adımda daha öncesinde oluşturduğumuz archive&rsquo;ı
@@ -161,7 +161,7 @@ seçiyoruz. Dosyayı oluşturduktan sonra aşağıdaki gibi dolduruyoruz.
 </p>
 
 
-<div id="org5649c21" class="figure">
+<div id="orgcd42273" class="figure">
 <p><img src="/img/export_options.jpg" class="content-image" width="100%">
 </p>
 </div>
@@ -193,13 +193,13 @@ Source Code görünümü:
 </pre></div>
 
 
-<div id="orgfdf3e04" class="figure">
+<div id="org19be9d9" class="figure">
 <p><img src="/img/export_option_plist.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Property List görünümü</p>
 </div>
 </div>
-<h3><a id="exportoptions-fieldrsquoların-tanımı" class="anchor" href="#exportoptions-fieldrsquoların-tanımı">¶</a>ExportOptions Field&rsquo;ların Tanımı</h3><div class="outline-text-3" id="text-orgc69dfc8">
+<h3><a id="exportoptions-fieldrsquoların-tanımı" class="anchor" href="#exportoptions-fieldrsquoların-tanımı">¶</a>ExportOptions Field&rsquo;ların Tanımı</h3><div class="outline-text-3" id="text-org57fa203">
 <p>
 Şimdi eklediğimiz değerlerin ne anlama geldiğine bakalım.
 </p>
@@ -269,7 +269,7 @@ path&rsquo;i - Ipa&rsquo;nın oluşturulacağı yol
 Bunları komuta ekleyerek <i>ipa</i> oluşturma işlemini başlatabiliriz.
 </p>
 </div>
-<h3><a id="test-süreci" class="anchor" href="#test-süreci">¶</a>Test Süreci</h3><div class="outline-text-3" id="text-org0ebf37f">
+<h3><a id="test-süreci" class="anchor" href="#test-süreci">¶</a>Test Süreci</h3><div class="outline-text-3" id="text-org76f7f84">
 <p>
 Test, projemizin beklediğimiz gibi çalışıp çalışmadığını kontrol etmek
 için kullanılır. Herhangi bir ekranda veya bir akışta problem olup
@@ -308,7 +308,7 @@ giriyoruz. Target adımıza aşağıdaki resimdeki gibi TARGETS bölümünden
 </p>
 
 
-<div id="orgd252bfe" class="figure">
+<div id="orgd096490" class="figure">
 <p><img src="/img/xcode_build_skip_test.jpg" class="content-image" width="100%">
 </p>
 </div>
@@ -390,7 +390,7 @@ CalculatorTest sınıfındaki bir test fonksiyonunu çalıştırmak istersek,
 </pre></div>
 
 
-<div id="org3a5b3cf" class="figure">
+<div id="org8ab843f" class="figure">
 <p><img src="/img/xcodebuild_test_only_function.jpg" class="content-image" width="100%">
 </p>
 </div>
@@ -405,7 +405,7 @@ Bundan sonrası sizin ihtiyaçlarınıza ve gereksinimlerinize bağlı olarak
 değişiklik gösterebilir.
 </p>
 </div>
-<h3><a id="ldquoxcodebuildrdquo-komutlarının-çeşitli-kullanım-senaryoları" class="anchor" href="#ldquoxcodebuildrdquo-komutlarının-çeşitli-kullanım-senaryoları">¶</a>&ldquo;xcodebuild&rdquo; Komutlarının Çeşitli Kullanım Senaryoları</h3><h4><a id="otomasyon-pipeline-süreçleri" class="anchor" href="#otomasyon-pipeline-süreçleri">¶</a>Otomasyon Pipeline Süreçleri</h4><div class="outline-text-4" id="text-orgad02dd2">
+<h3><a id="ldquoxcodebuildrdquo-komutlarının-çeşitli-kullanım-senaryoları" class="anchor" href="#ldquoxcodebuildrdquo-komutlarının-çeşitli-kullanım-senaryoları">¶</a>&ldquo;xcodebuild&rdquo; Komutlarının Çeşitli Kullanım Senaryoları</h3><h4><a id="otomasyon-pipeline-süreçleri" class="anchor" href="#otomasyon-pipeline-süreçleri">¶</a>Otomasyon Pipeline Süreçleri</h4><div class="outline-text-4" id="text-orgae06f8c">
 <p>
 En yaygın kullanım alanlarından biri, Jenkins gibi platformlarda build,
 test, archive ve ipa oluşturma süreçlerini otomatize etmektir. Jenkins,
@@ -431,7 +431,7 @@ ekliyorum;
 <span class="w">  </span>XXX/fastlane/2.219.0_2/libexec/gems/fastlane-2.219.0/gym/lib/assets/wrap_xcodebuild/xcbuild-safe.sh<span class="w"> </span>-exportArchive<span class="w"> </span>-exportOptionsPlist<span class="w"> </span><span class="s1">&#39;/var/folders/xn/_f_jvlhx113805tyb7xpsz4c0000gn/T/gym_config20240312-10649-j54z7f.plist&#39;</span><span class="w"> </span>-archivePath<span class="w"> </span>/Users/XXX/Library/Developer/Xcode/Archives/2024-03-12/Tami<span class="se">\ </span>Alpha<span class="se">\ </span><span class="m">2024</span>-03-12<span class="se">\ </span><span class="m">13</span>.39.16.xcarchive<span class="w"> </span>-exportPath<span class="w"> </span><span class="s1">&#39;/var/folders/xn/_f_jvlhx113805tyb7xpsz4c0000gn/T/gym_output20240312-10649-pgtuac&#39;</span>
 </pre></div>
 </div>
-<h3><a id="local-ortamda-otomasyon-i̇şlemleri" class="anchor" href="#local-ortamda-otomasyon-i̇şlemleri">¶</a>Local Ortamda Otomasyon İşlemleri</h3><div class="outline-text-3" id="text-org8bbc6f6">
+<h3><a id="local-ortamda-otomasyon-i̇şlemleri" class="anchor" href="#local-ortamda-otomasyon-i̇şlemleri">¶</a>Local Ortamda Otomasyon İşlemleri</h3><div class="outline-text-3" id="text-org72c8b97">
 <p>
 Jenkins gibi araçların yanı sıra, local geliştirme ortamımızda da
 “/xcodebuild”/ komutlarını kullanarak kendimize özel otomasyonlar
@@ -463,7 +463,7 @@ UI testleri dahil etmek istemediğimden &ldquo;<i>-skip</i>&rdquo; komutu ile ig
 ediyorum.
 </p>
 </div>
-<h3><a id="xcode-problemleriyle-başa-çıkmak" class="anchor" href="#xcode-problemleriyle-başa-çıkmak">¶</a>Xcode Problemleriyle Başa Çıkmak</h3><div class="outline-text-3" id="text-org3dc0b71">
+<h3><a id="xcode-problemleriyle-başa-çıkmak" class="anchor" href="#xcode-problemleriyle-başa-çıkmak">¶</a>Xcode Problemleriyle Başa Çıkmak</h3><div class="outline-text-3" id="text-org93444c2">
 <p>
 <i>&ldquo;xcodebuild&rdquo;</i> komutları, otomasyon süreçlerinin yanı sıra Xcode ile
 ilgili karşılaşılan hataların çözümünde de faydalı olabilir. Örneğin
@@ -474,14 +474,14 @@ açıldığında build alamayıp kapanabiliyor. Bu gibi durumlarda, terminal
 sağlar ve geliştirme sürecinizin kesintiye uğramasını önler.
 </p>
 </div>
-<h3><a id="son-olarak" class="anchor" href="#son-olarak">¶</a>Son olarak</h3><div class="outline-text-3" id="text-org354b261">
+<h3><a id="son-olarak" class="anchor" href="#son-olarak">¶</a>Son olarak</h3><div class="outline-text-3" id="text-org18e38e9">
 <p>
 Elimden geldiğince çoğu komutu açıklayıp örnekler vermeye çalıştım.
 Umarım sizler için faydalı olur. Okuduğunuz ve vakit ayırdığınız için
 teşekkürler :)
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgc102745">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orga5b89b7">
 <ul class="org-ul">
 <li><a href="https://developer.apple.com/library/archive/technotes/tn2339/_index.html">Building from the Command Line with Xcode FAQ</a></li>
 <li><a href="https://medium.com/trendyol-tech/building-an-ios-distribution-pipeline-local-poc-with-command-line-tools-part-1-d9f443c7dbb5">Building an iOS Distribution Pipeline</a></li>

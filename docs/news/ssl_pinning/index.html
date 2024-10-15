@@ -1,10 +1,10 @@
-<!-- Generated from c2152da on 2024-10-15 @ 13:56 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!-- Generated from f5a9342 on 2024-10-15 @ 14:16 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>SSL Pinning - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">SSL Pinning</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><p class="site-post-meta">4 min read | August  8, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgd01dcc4">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org6d9d3eb">
 
-<div id="org0dbd598" class="figure">
+<div id="org69def51" class="figure">
 <p><img src="/img/ssl_and_pinning_certificate_topology.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span><a href="https://docs.wavemaker.com/learn/blog/2020/12/15/certificate-pinning/">SSL Pinleme</a></p>
@@ -18,7 +18,7 @@ Merhabalar, bu yazımızda güvenliğe dokunan bir konudan bahsedeceğiz. Verini
 SSL Pinning verinin iki parti arasında iletim esnasındaki güvenliğini korumak için ortaya çıkmıştır. <code>SSL Pinning</code> dediğimizde iki kavram var birisi <code>SSL</code> diğeri ise <code>Pinning</code> işlemi. O nedenle ilk önce SSL hakkında ufak bir bilgi ile başlayalım.
 </p>
 </div>
-<h3><a id="sslrsquoin-kısa-tarihçesi" class="anchor" href="#sslrsquoin-kısa-tarihçesi">¶</a>SSL&rsquo;in Kısa tarihçesi</h3><div class="outline-text-3" id="text-org89789f3">
+<h3><a id="sslrsquoin-kısa-tarihçesi" class="anchor" href="#sslrsquoin-kısa-tarihçesi">¶</a>SSL&rsquo;in Kısa tarihçesi</h3><div class="outline-text-3" id="text-orgb7b2be5">
 <p>
 Güvenli Geçiş Katmanları diye türkçeleştirebileceğimiz bir tabir olan SSL websitelerinin doğması ile beraber 1990&rsquo;ların ortasında bağlanılan sitelerin güvenliğini teyit etmek için kullandığı bir güvenlik yöntemidir.
 </p>
@@ -31,12 +31,12 @@ Burada <code>istemci (client)</code> <code>ssl</code> sayesinde <code>sunucu (se
 Sertifika otoritelerinin (CA Authorities) verdiği sertifikalar ile (chain of certificate) üzerinden bu sağlanmaktadır. Ancak herhangi kötü niyetli birileride geçerli sertifikalara sahip olabilir; o nedenle bu riski düşürebilmek adına ilgili sertifikalar her iki partide (istemci/sunucu) önceden bulunarak, bağlantının gerçekten doğru istemci ve doğru sunucu ile olduğunu garantiler.
 </p>
 </div>
-<h3><a id="mi̇tm-man-in-the-middle-atağı" class="anchor" href="#mi̇tm-man-in-the-middle-atağı">¶</a>MİTM (Man in the Middle) Atağı</h3><div class="outline-text-3" id="text-orgcb0a070">
+<h3><a id="mi̇tm-man-in-the-middle-atağı" class="anchor" href="#mi̇tm-man-in-the-middle-atağı">¶</a>MİTM (Man in the Middle) Atağı</h3><div class="outline-text-3" id="text-org04ed55a">
 <p>
 SSL&rsquo;in eksik kaldığı noktada kötü niyetli birinin de sertifika sahibi olduğunda istemci ve sunucu arasında zaafiyet meydana gelebilir. İletişim&rsquo;in ortasına kendisini yerleştirip ortamı dinleyerek bilgi elde etmeye çalışan atak türüdür.
 </p>
 </div>
-<h3><a id="pinning-pinlemek-nedir" class="anchor" href="#pinning-pinlemek-nedir">¶</a>Pinning (Pinlemek) nedir?</h3><div class="outline-text-3" id="text-orgd7f9799">
+<h3><a id="pinning-pinlemek-nedir" class="anchor" href="#pinning-pinlemek-nedir">¶</a>Pinning (Pinlemek) nedir?</h3><div class="outline-text-3" id="text-org47db3d6">
 <p>
 Pinlemenin ne olduğunu öğrenmeden önce neyi pinleyeceğimizden biraz bahsedelim.
 Pinlenecek olan dosyaya Sertifika (Certificate) diyoruz.
@@ -69,7 +69,7 @@ Pinleme yaptığınız vakit ise direkt olarak bu iletişim garantisini istemci/
 Özellikle güvenliğin daha temelde olduğu uygulamalarda bankacılık ve finansal enstrüman olarak görev yapan uygulamalarda bu güvenlik önlemi tercih edilmektedir. Mobil uygulamalarda da yoğunluklu olarak kullanılan bir güvenlik tedbiridir.
 </p>
 </div>
-<h3><a id="mobil-uygulama-entegrasyonları" class="anchor" href="#mobil-uygulama-entegrasyonları">¶</a>Mobil Uygulama Entegrasyonları</h3><div class="outline-text-3" id="text-org13cfb43">
+<h3><a id="mobil-uygulama-entegrasyonları" class="anchor" href="#mobil-uygulama-entegrasyonları">¶</a>Mobil Uygulama Entegrasyonları</h3><div class="outline-text-3" id="text-org397523b">
 <ol class="org-ol">
 <li>İlk adım olarak sunucunun <code>public</code> anahtarini veya SSL sertifikasını çıkarmanız gerekiyor.</li>
 
@@ -108,7 +108,7 @@ iOS tarafında <code>NSURLSession</code> veya <code>Alamofire</code> bağımlıl
 Android tarafında ise OKHttpClient ve Retrofit gibi popüler kütüphanelerde bu pratiklerin nasıl yapıldığına dair birçok <a href="https://medium.com/@eniz.bilgin/android-ssl-certificate-pinning-7fd236243f2b">örnek</a> bulabilirsiniz.
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org271ec35">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org62fad95">
 <ul class="org-ul">
 <li><a href="https://owasp.org/www-community/controls/Certificate_and_Public_Key_Pinning">OWASP SSL Pinleme</a></li>
 <li><a href="https://mas.owasp.org/MASTG/">OWASP Mobil Uygulama Güvenlik Test Kitabı</a></li>

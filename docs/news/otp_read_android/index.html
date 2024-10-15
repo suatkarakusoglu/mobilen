@@ -1,14 +1,15 @@
-<!-- Generated from c2152da on 2024-10-15 @ 13:56 with Emacs 31.0.50 (Org mode 9.7.11) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Android&rsquo;de OTP (One Time Password) Okuma - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Android&rsquo;de OTP (One Time Password) Okuma</h1><a class="tag" href="https://mobilen.art/tags/android/">Android #9</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><p class="site-post-meta">18 min read | October 15, 2024</p><div id="content"><p>
+<!-- Generated from f5a9342 on 2024-10-15 @ 14:17 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Android&rsquo;de OTP (One Time Password) Okuma - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Android&rsquo;de OTP (One Time Password) Okuma</h1><a class="tag" href="https://mobilen.art/tags/android/">Android #9</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><p class="site-post-meta">19 min read | October 15, 2024</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/burak-karaduman">Burak Karaduman</a> yazdı.
 </p>
 
 
-<div id="org5af0000" class="figure">
+<div id="orge241f22" class="figure">
 <p><img src="/img/android_otp_cover.jpg" class="content-image" width="100%">
 </p>
+<p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/photos/a-close-up-of-a-metal-plate-with-numbers-on-it-j7mGBT2hyM8">rc.xyz</a></p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><h3><a id="otp-nedir" class="anchor" href="#otp-nedir">¶</a>OTP nedir?</h3><div class="outline-text-3" id="text-org01490d4">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><h3><a id="otp-nedir" class="anchor" href="#otp-nedir">¶</a>OTP nedir?</h3><div class="outline-text-3" id="text-orge040b66">
 <p>
 OTP, bir oturum açarken ya da işlem yaparken kullanılan ve sadece bir kez geçerli olan bir güvenlik kodudur. Bu kod, sahte istekleri engelleyip güvenliği artırmak için ekstra bir koruma sağlar.
 </p>
@@ -17,7 +18,7 @@ OTP, bir oturum açarken ya da işlem yaparken kullanılan ve sadece bir kez ge�
 Böylece her giriş ya da işlem, benzersiz bir kodla doğrulanmış olur. Bu da hem yetkisiz erişimi önlemeye hem de sahte işlemlerin önüne geçmeye yardımcı oluyor.
 </p>
 </div>
-<h3><a id="androidde-otomatik-otp-okumak" class="anchor" href="#androidde-otomatik-otp-okumak">¶</a>Androidde otomatik OTP Okumak</h3><div class="outline-text-3" id="text-org9de1230">
+<h3><a id="androidde-otomatik-otp-okumak" class="anchor" href="#androidde-otomatik-otp-okumak">¶</a>Androidde otomatik OTP Okumak</h3><div class="outline-text-3" id="text-orgef3c96e">
 <p>
 Direkt olarak kodlara erişmek isterseniz kütüphane olarak <a href="https://github.com/burkido/auto-read-otp">auto-read-otp projesinde</a> bulabilirsiniz.
 </p>
@@ -31,10 +32,10 @@ Google bize iki seçenek sunuyor ve aşağıdaki görsel, hangisini kullanacağ�
 </p>
 
 
-<div id="org2f61e7d" class="figure">
+<div id="org80ad03c" class="figure">
 <p><img src="/img/otp_reader_apis_by_android.jpg" class="content-image" width="100%">
 </p>
-<p><span class="figure-number">Figure 1: </span>OTP Reader APIs Provided by Google</p>
+<p><span class="figure-number">Figure 2: </span>OTP Reader APIs Provided by Google</p>
 </div>
 
 <p>
@@ -223,7 +224,7 @@ VerificationScreen composable kullanarak örnek bir uygulamayı <a href="https:/
 Çok uzun değil ama bunlarla uğraşmak istemiyorsanız bunlara bir <a href="https://github.com/burkido/auto-read-otp/tree/main/app/src/main/java/com/burkido/verificationcodereader">kütüphane</a> olarak da erişebilirsiniz.
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgfea1c7f">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org6b2e394">
 <ul class="org-ul">
 <li><a href="https://www.droidcon.com/2021/11/10/one-tap-phone-number-login-with-jetpack-compose/">https://www.droidcon.com/2021/11/10/one-tap-phone-number-login-with-jetpack-compose/</a></li>
 <li><a href="https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose#case-study-broadcastreceivers">https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose#case-study-broadcastreceivers</a></li>

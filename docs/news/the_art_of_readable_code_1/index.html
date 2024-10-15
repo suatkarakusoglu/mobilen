@@ -1,8 +1,8 @@
-<!-- Generated from f5a9342 on 2024-10-15 @ 14:16 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!-- Generated from 26ea66e on 2024-10-15 @ 17:28 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Okuma Notları: The Art Of Readable Code (1) - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Okuma Notları: The Art Of Readable Code (1)</h1><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><p class="site-post-meta">2 min read | July 11, 2023</p><div id="content"><p>
 <a href="https://linkedin.com/in/myusufka">Yusuf Kaya</a> yazdı.
 </p>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org9c7f379">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org421aaaf">
 <p>
 Merhabalar, okumalarımdan çıkarttığım notları seri halinde paylaşmak istiyorum. Bu sayımızda <a href="https://www.goodreads.com/en/book/show/8677004">The Art of Readable Code</a> kitabının notlarının ilk bölümünü inceleyeceğiz.
 </p>
@@ -11,7 +11,7 @@ Merhabalar, okumalarımdan çıkarttığım notları seri halinde paylaşmak ist
 Kod okunurluğu, yazılım geliştirme sürecinde oldukça önemli bir faktördür. Kodun okunabilir olması, geliştiricilerin kodu daha kolay anlamasını ve kodun bakımını ve genişletilmesini kolaylaştırır. Kodun daha okunabilir olması için bazı başlıkları inceleyeceğiz. İlerleyen sayılarda daha fazla başlık incelemeye çalışacağız.
 </p>
 </div>
-<h3><a id="i̇yi-i̇simler-seçmek" class="anchor" href="#i̇yi-i̇simler-seçmek">¶</a>İyi İsimler Seçmek</h3><div class="outline-text-3" id="text-orgc488454">
+<h3><a id="i̇yi-i̇simler-seçmek" class="anchor" href="#i̇yi-i̇simler-seçmek">¶</a>İyi İsimler Seçmek</h3><div class="outline-text-3" id="text-org4c5328b">
 <p>
 Kodun okunurluğunu artırmanın önemli bir yolu, değişken, fonksiyon ve sınıflar için uygun ve açıklayıcı isimler seçmektir. İyi bir isim, o değişkenin veya fonksiyonun amacını ve kullanımını açık bir şekilde ifade eder. Örneğin, belirsiz veya genel isimler yerine, değişkenin değerini veya fonksiyonun amacını daha iyi yansıtan isimler tercih edilmelidir.
 </p>
@@ -20,7 +20,7 @@ Kodun okunurluğunu artırmanın önemli bir yolu, değişken, fonksiyon ve sın
 Örneğin, &ldquo;tmp&rdquo; veya &ldquo;get&rdquo; gibi belirsiz isimler yerine, daha açıklayıcı isimler seçilmelidir. Örneğin, &ldquo;FetchPage()&rdquo; veya &ldquo;DownloadPage()&rdquo; gibi daha anlamlı isimler, &ldquo;GetPage(url)&rdquo; fonksiyonunun amacını daha iyi ifade eder.
 </p>
 </div>
-<h3><a id="genel-i̇simler-ve-kısaltmalardan-kaçınmalıyız" class="anchor" href="#genel-i̇simler-ve-kısaltmalardan-kaçınmalıyız">¶</a>Genel İsimler ve Kısaltmalardan Kaçınmalıyız</h3><div class="outline-text-3" id="text-orge824b95">
+<h3><a id="genel-i̇simler-ve-kısaltmalardan-kaçınmalıyız" class="anchor" href="#genel-i̇simler-ve-kısaltmalardan-kaçınmalıyız">¶</a>Genel İsimler ve Kısaltmalardan Kaçınmalıyız</h3><div class="outline-text-3" id="text-org49a6c72">
 <p>
 Genel isimlerden kaçınılmalıdır. Örneğin, &ldquo;tmp&rdquo;, &ldquo;retval&rdquo; veya &ldquo;foo&rdquo; gibi kısaltma isimler, kodun okunurluğunu azaltabilir ve kodun anlaşılmasını zorlaştırabilir. Bu tür isimler yerine, değişkenin değerini veya amacını açıklayan isimler tercih edilmelidir.
 </p>
@@ -32,17 +32,17 @@ Genel isimlerden kaçınılmalıdır. Örneğin, &ldquo;tmp&rdquo;, &ldquo;retva
   <span class="kd">let</span> <span class="nv">isEligibleForCampaign</span> <span class="p">=</span> <span class="n">someFunction</span><span class="p">()</span>
 </pre></div>
 </div>
-<h3><a id="somut-i̇simleri-soyut-i̇simlere-tercih-etmeliyiz" class="anchor" href="#somut-i̇simleri-soyut-i̇simlere-tercih-etmeliyiz">¶</a>Somut İsimleri Soyut İsimlere Tercih Etmeliyiz</h3><div class="outline-text-3" id="text-org0a310c0">
+<h3><a id="somut-i̇simleri-soyut-i̇simlere-tercih-etmeliyiz" class="anchor" href="#somut-i̇simleri-soyut-i̇simlere-tercih-etmeliyiz">¶</a>Somut İsimleri Soyut İsimlere Tercih Etmeliyiz</h3><div class="outline-text-3" id="text-org0e5824c">
 <p>
 İsimlendirme yaparken amacını doğrudan açıklayan somut isimler tercih edin. Amacı anlamak için daha fazla araştırmaya ihtiyaç duyabilecek soyut isimlerden kaçının. Örneğin, bir sunucunun belirli bir TCP/IP bağlantı noktasını dinleyip dinlemediğini test eden bir yöntem varsa, &ldquo;ServerCanStart()&rdquo; yerine &ldquo;CanListenOnPort()&rdquo; adını kullanmak daha açıklayıcı olacaktır.
 </p>
 </div>
-<h3><a id="i̇sim-uzunluğuna-dikkat-etmeliyiz" class="anchor" href="#i̇sim-uzunluğuna-dikkat-etmeliyiz">¶</a>İsim Uzunluğuna Dikkat Etmeliyiz</h3><div class="outline-text-3" id="text-org3184214">
+<h3><a id="i̇sim-uzunluğuna-dikkat-etmeliyiz" class="anchor" href="#i̇sim-uzunluğuna-dikkat-etmeliyiz">¶</a>İsim Uzunluğuna Dikkat Etmeliyiz</h3><div class="outline-text-3" id="text-org3ce3adb">
 <p>
 Anlamlı isimler seçmek önemlidir, ancak aşırı uzun isimlerden kaçınmak da gereklidir. Kısa kapsama sahip değişkenler için kısa isimler kabul edilebilir, çünkü bağlam zaten yeterli bilgi sağlar. Ancak daha geniş kapsamlı değişkenler için daha uzun isimler, amacını anlamak açısından daha faydalı olacaktır.
 </p>
 </div>
-<h3><a id="bazı-i̇simlendirme-önerileri" class="anchor" href="#bazı-i̇simlendirme-önerileri">¶</a>Bazı İsimlendirme Önerileri</h3><div class="outline-text-3" id="text-org215e340">
+<h3><a id="bazı-i̇simlendirme-önerileri" class="anchor" href="#bazı-i̇simlendirme-önerileri">¶</a>Bazı İsimlendirme Önerileri</h3><div class="outline-text-3" id="text-org753de34">
 <ul class="org-ul">
 <li>Değerlerin üst veya alt sınırlarını belirlerken <code>max_</code> ve <code>min_</code> ön eklerini kullanmak iyidir. Kapsayan aralıklar için <code>first</code> ve <code>last</code>, kapsayan/olamayan aralıklar için <code>begin</code> ve <code>end</code> terimleri tercih edilebilir.</li>
 
@@ -55,7 +55,7 @@ Anlamlı isimler seçmek önemlidir, ancak aşırı uzun isimlerden kaçınmak d
 Özetle, iyi isimler, okuyucunun niyetinizi doğru bir şekilde anlayacağı ve yanlış yorumlamalara neden olmayacağı isimlerdir. Dikkatli ve açıklayıcı isim seçimi, kodun anlaşılabilirliğini artıran önemli bir faktördür. Bir sonraki sayıda notlarımızın devamında görüşmek üzere :)
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgc24873a">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org43e5c0c">
 <p>
 <a href="https://www.goodreads.com/en/book/show/8677004">The Art of Readable Code</a>
 </p>

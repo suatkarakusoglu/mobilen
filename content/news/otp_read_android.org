@@ -11,7 +11,9 @@
 
 * İçerik
 ** OTP nedir?
-OTP, bir oturum açarken ya da işlem yaparken kullanılan ve sadece bir kez geçerli olan bir güvenlik kodudur. Bu kod, sahte istekleri engelleyip güvenliği artırmak için ekstra bir koruma sağlar. Böylece her giriş ya da işlem, benzersiz bir kodla doğrulanmış olur. Bu da hem yetkisiz erişimi önlemeye hem de sahte işlemlerin önüne geçmeye yardımcı oluyor.
+OTP, bir oturum açarken ya da işlem yaparken kullanılan ve sadece bir kez geçerli olan bir güvenlik kodudur. Bu kod, sahte istekleri engelleyip güvenliği artırmak için ekstra bir koruma sağlar.
+
+Böylece her giriş ya da işlem, benzersiz bir kodla doğrulanmış olur. Bu da hem yetkisiz erişimi önlemeye hem de sahte işlemlerin önüne geçmeye yardımcı oluyor.
 
 ** Androidde otomatik OTP Okumak
 Direkt olarak kodlara erişmek isterseniz kütüphane olarak [[https://github.com/burkido/auto-read-otp][auto-read-otp projesinde]] bulabilirsiniz.
@@ -187,6 +189,7 @@ Artık SMS Consent API’sini kullanmaya hazırız. Yukarıdaki kodları bir com
 
 Bunu uyguluyorsanız muhtemelen bir OTP Doğrulama Ekranınız vardır.
 VerificationScreen composable kullanarak örnek bir uygulamayı [[https://github.com/burkido/auto-read-otp/tree/main/app/src/main/java/com/burkido/verificationcodereader][burada]] bulabilirsiniz.
+
 Çok uzun değil ama bunlarla uğraşmak istemiyorsanız bunlara bir [[https://github.com/burkido/auto-read-otp/tree/main/app/src/main/java/com/burkido/verificationcodereader][kütüphane]] olarak da erişebilirsiniz.
 
 ** Kaynakça

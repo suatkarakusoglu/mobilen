@@ -24,7 +24,7 @@ Python dilinde direkt =pass= keyword'u ile dil'i memnun edebiliyorsunuz.
 #+begin_src python
   class Person:
      def work(self):
-        # Bu anahtar kelime icerisini by-pass gecmenize yardimci oluyor
+        # Bu anahtar kelime içerisini by-pass geçmenize yardımcı oluyor.
         pass
 #+end_src
 

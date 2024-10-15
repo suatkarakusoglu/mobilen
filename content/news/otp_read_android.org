@@ -6,7 +6,6 @@
 [[https://tr.linkedin.com/in/burak-karaduman][Burak Karaduman]] yazdı.
 
 #+CAPTION: Photo by [[https://unsplash.com/photos/a-close-up-of-a-metal-plate-with-numbers-on-it-j7mGBT2hyM8][rc.xyz]]
-
 [[file:android_otp_cover.jpg]]
 
 * İçerik

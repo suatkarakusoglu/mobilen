@@ -14,5 +14,7 @@
 
 [[file:../../news/kotlin_flows.org][Kotlin Flows]]
 
+[[file:../../news/otp_read_android.org][Android'de OTP (One Time Password) Okuma]]
+
 [[file:../../news/yeni_android_studio_surumu_giraffe.org][Yeni Android Studio sürümü "Giraffe"]]
 

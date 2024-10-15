@@ -1,0 +1,233 @@
+<!-- Generated from c2152da on 2024-10-15 @ 13:56 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Android&rsquo;de OTP (One Time Password) Okuma - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Android&rsquo;de OTP (One Time Password) Okuma</h1><a class="tag" href="https://mobilen.art/tags/android/">Android #9</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><p class="site-post-meta">18 min read | October 15, 2024</p><div id="content"><p>
+<a href="https://tr.linkedin.com/in/burak-karaduman">Burak Karaduman</a> yazdı.
+</p>
+
+
+<div id="org5af0000" class="figure">
+<p><img src="/img/android_otp_cover.jpg" class="content-image" width="100%">
+</p>
+</div>
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><h3><a id="otp-nedir" class="anchor" href="#otp-nedir">¶</a>OTP nedir?</h3><div class="outline-text-3" id="text-org01490d4">
+<p>
+OTP, bir oturum açarken ya da işlem yaparken kullanılan ve sadece bir kez geçerli olan bir güvenlik kodudur. Bu kod, sahte istekleri engelleyip güvenliği artırmak için ekstra bir koruma sağlar.
+</p>
+
+<p>
+Böylece her giriş ya da işlem, benzersiz bir kodla doğrulanmış olur. Bu da hem yetkisiz erişimi önlemeye hem de sahte işlemlerin önüne geçmeye yardımcı oluyor.
+</p>
+</div>
+<h3><a id="androidde-otomatik-otp-okumak" class="anchor" href="#androidde-otomatik-otp-okumak">¶</a>Androidde otomatik OTP Okumak</h3><div class="outline-text-3" id="text-org9de1230">
+<p>
+Direkt olarak kodlara erişmek isterseniz kütüphane olarak <a href="https://github.com/burkido/auto-read-otp">auto-read-otp projesinde</a> bulabilirsiniz.
+</p>
+
+<p>
+Otomatik OTP mesaj okuma entegrasyonuna başlamak için önce uygun API’yi seçmemiz gerekiyor.
+</p>
+
+<p>
+Google bize iki seçenek sunuyor ve aşağıdaki görsel, hangisini kullanacağımıza karar vermemize yardımcı olacak.
+</p>
+
+
+<div id="org2f61e7d" class="figure">
+<p><img src="/img/otp_reader_apis_by_android.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span>OTP Reader APIs Provided by Google</p>
+</div>
+
+<p>
+Genellikle OTP’ler 4, 5 veya 6 haneli olur. Gönderenin kişinin rehberde kayıtlı olmasına gerek olmadığından ve OTP’yi onaylamak için kullanıcı etkileşimi istediğimizden dolayı SMS User Consent API daha uygun diyebiliriz.
+</p>
+
+<p>
+Öncelikle SMS User Consent API için gerekli olan Google Mobile Services kütüphanesini eklememiz gerek. Güncel versiyonu <a href="https://mvnrepository.com/artifact/com.google.android.gms/play-services-auth">buradan</a> bulabilirsiniz.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.google.android.gms:play-services-auth:21.2.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+<p>
+SMS Retriever’ın dinleme işlemini başlatmamız gerekiyor. Gereksiz yeniden başlatmaları önlemek için bu işlemi <code>LaunchedEffect</code> bloğu içerisinde gerçekleştiriyoruz.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="n">LaunchedEffect</span><span class="p">(</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">SmsRetriever</span>
+<span class="w">          </span><span class="p">.</span><span class="na">getClient</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="w">          </span><span class="p">.</span><span class="na">startSmsUserConsent</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<span class="w">          </span><span class="p">.</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">shouldRegisterReceiver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+SMS Consent API üzerinden gelen sonucu işlemek için ActivityResultLauncher ile SMS’i almamız gerek.
+</p>
+
+<p>
+Bu launcher, SMS Retriever’dan gelen sonucu dinler. Onay öncesinde filtreleme ile kodu alıp kullanıcıya onay için gösterebiliriz. Onay verildiyse doğrulama kodunu alır ve normal bir senaryoda kod ekranda kullanıcı aksiyonu beklenmeden gösterilir.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getVerificationCodeFromSms</span><span class="p">(</span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">smsCodeLength</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="n">message</span><span class="p">.</span><span class="na">filter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">isDigit</span><span class="p">()</span><span class="w"> </span><span class="p">}.</span><span class="na">take</span><span class="p">(</span><span class="n">smsCodeLength</span><span class="p">)</span>
+</pre></div>
+
+<p>
+Bir broadcast receiver kaydetmemiz ve receiver’ın yaşam döngüsünü yönetmemiz gerekiyor.
+</p>
+
+<p>
+Bir composable bileşeni compositiondan çıktığında broadcast receivera ihtiyacımız olmadığından kaydı kaldırmamıza olanak tanıyan DisposableEffect’i kullanmalıyız.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="nd">@Composable</span>
+<span class="w">  </span><span class="kd">internal</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">SystemBroadcastReceiver</span><span class="p">(</span>
+<span class="w">      </span><span class="n">systemAction</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
+<span class="w">      </span><span class="n">onSystemEvent</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">intent</span><span class="p">:</span><span class="w"> </span><span class="n">Intent?)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">currentOnSystemEvent</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">rememberUpdatedState</span><span class="p">(</span><span class="n">onSystemEvent</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c1">// If either context or systemAction changes, unregister and register again</span>
+<span class="w">      </span><span class="n">DisposableEffect</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">systemAction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">intentFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntentFilter</span><span class="p">(</span><span class="n">systemAction</span><span class="p">)</span>
+<span class="w">          </span><span class="kd">val</span><span class="w"> </span><span class="nv">broadcast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">object</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">BroadcastReceiver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onReceive</span><span class="p">(</span><span class="n">context</span><span class="p">:</span><span class="w"> </span><span class="n">Context?,</span><span class="w"> </span><span class="n">intent</span><span class="p">:</span><span class="w"> </span><span class="n">Intent?)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">currentOnSystemEvent</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="na">VERSION</span><span class="p">.</span><span class="na">SDK_INT</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">Build</span><span class="p">.</span><span class="na">VERSION_CODES</span><span class="p">.</span><span class="na">TIRAMISU</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">context</span><span class="p">.</span><span class="na">registerReceiver</span><span class="p">(</span><span class="n">broadcast</span><span class="p">,</span><span class="w"> </span><span class="n">intentFilter</span><span class="p">,</span><span class="w"> </span><span class="n">RECEIVER_EXPORTED</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">context</span><span class="p">.</span><span class="na">registerReceiver</span><span class="p">(</span><span class="n">broadcast</span><span class="p">,</span><span class="w"> </span><span class="n">intentFilter</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span>
+
+<span class="w">          </span><span class="c1">// Unregister the broadcast receiver when the effect leaves the Composition</span>
+<span class="w">          </span><span class="n">onDispose</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">context</span><span class="p">.</span><span class="na">unregisterReceiver</span><span class="p">(</span><span class="n">broadcast</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Gelen intent’i işlememiz ve gerekiyorsa onay penceresini tetiklememiz gerekiyor.
+</p>
+
+<p>
+SystemBroadcastReceiver, bize alınan SMS’i sağlayacak.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">shouldRegisterReceiver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">SystemBroadcastReceiver</span><span class="p">(</span><span class="n">systemAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SmsRetriever</span><span class="p">.</span><span class="na">SMS_RETRIEVED_ACTION</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intent</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">SmsRetriever</span><span class="p">.</span><span class="na">SMS_RETRIEVED_ACTION</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="kd">val</span><span class="w"> </span><span class="nv">extras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">extras</span>
+<span class="w">              </span><span class="kd">val</span><span class="w"> </span><span class="nv">smsRetrieverStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extras</span><span class="o">?.</span><span class="na">parcelable</span><span class="o">&lt;</span><span class="n">Status</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SmsRetriever</span><span class="p">.</span><span class="na">EXTRA_STATUS</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Status</span>
+
+<span class="w">              </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">smsRetrieverStatus</span><span class="p">.</span><span class="na">statusCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">CommonStatusCodes</span><span class="p">.</span><span class="na">SUCCESS</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                      </span><span class="kd">val</span><span class="w"> </span><span class="nv">consentIntent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extras</span><span class="p">.</span><span class="na">parcelable</span><span class="o">&lt;</span><span class="n">Intent</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SmsRetriever</span><span class="p">.</span><span class="na">EXTRA_CONSENT_INTENT</span><span class="p">)</span>
+
+<span class="w">                      </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                          </span><span class="c1">// Start consent dialog. Timeout intent will be sent after 5 minutes</span>
+<span class="w">                          </span><span class="n">consentIntent</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">launcher</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="w">                      </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="w"> </span><span class="n">ActivityNotFoundException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                          </span><span class="n">onError</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">activity_not_found_error</span><span class="p">))</span>
+<span class="w">                      </span><span class="p">}</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                  </span><span class="n">CommonStatusCodes</span><span class="p">.</span><span class="na">TIMEOUT</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">onError</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">sms_timeout_error</span><span class="p">))</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+getParcelable fonksiyonu artık deprecated olduğundan dolayı Bundle için BundleCompat kullanarak bunu alacak basit bir extension fonksiyonu yazabiliriz.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">internal</span><span class="w"> </span><span class="kd">inline</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="o">&lt;</span><span class="k">reified</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Parcelable</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Bundle</span><span class="p">.</span><span class="nf">parcelable</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="n">T? </span><span class="o">=</span>
+<span class="w">      </span><span class="n">BundleCompat</span><span class="p">.</span><span class="na">getParcelable</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">)</span>
+</pre></div>
+
+<p>
+Artık SMS Consent API’sini kullanmaya hazırız. Yukarıdaki kodları bir composable fonksiyonu içerisinde birleştirebiliriz.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="nd">@Composable</span>
+<span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">SmsUserConsent</span><span class="p">(</span>
+<span class="w">      </span><span class="n">smsCodeLength</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span>
+<span class="w">      </span><span class="n">onOTPReceived</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">otp</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span>
+<span class="w">      </span><span class="n">onError</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">,</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalContext</span><span class="p">.</span><span class="na">current</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">shouldRegisterReceiver</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableStateOf</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">      </span><span class="n">LaunchedEffect</span><span class="p">(</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">SmsRetriever</span>
+<span class="w">              </span><span class="p">.</span><span class="na">getClient</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="w">              </span><span class="p">.</span><span class="na">startSmsUserConsent</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<span class="w">              </span><span class="p">.</span><span class="na">addOnSuccessListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">shouldRegisterReceiver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+
+<span class="w">      </span><span class="kd">val</span><span class="w"> </span><span class="nv">launcher</span><span class="w"> </span><span class="o">=</span>
+<span class="w">          </span><span class="n">rememberLauncherForActivityResult</span><span class="p">(</span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">StartActivityForResult</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">it</span><span class="p">.</span><span class="na">resultCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Activity</span><span class="p">.</span><span class="na">RESULT_OK</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">data</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="kd">val</span><span class="w"> </span><span class="nv">message</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">it</span><span class="p">.</span><span class="na">data</span><span class="o">!!</span><span class="p">.</span><span class="na">getStringExtra</span><span class="p">(</span><span class="n">SmsRetriever</span><span class="p">.</span><span class="na">EXTRA_SMS_MESSAGE</span><span class="p">)</span>
+<span class="w">                  </span><span class="n">message</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                      </span><span class="kd">val</span><span class="w"> </span><span class="nv">verificationCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getVerificationCodeFromSms</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">smsCodeLength</span><span class="p">)</span>
+<span class="w">                      </span><span class="n">onOTPReceived</span><span class="p">(</span><span class="n">verificationCode</span><span class="p">)</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                  </span><span class="n">shouldRegisterReceiver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">              </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">onError</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">sms_retriever_error_consent_denied</span><span class="p">))</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">shouldRegisterReceiver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">SystemBroadcastReceiver</span><span class="p">(</span><span class="n">systemAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SmsRetriever</span><span class="p">.</span><span class="na">SMS_RETRIEVED_ACTION</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intent</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">SmsRetriever</span><span class="p">.</span><span class="na">SMS_RETRIEVED_ACTION</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">action</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="kd">val</span><span class="w"> </span><span class="nv">extras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">extras</span>
+<span class="w">                  </span><span class="kd">val</span><span class="w"> </span><span class="nv">smsRetrieverStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extras</span><span class="o">?.</span><span class="na">parcelable</span><span class="o">&lt;</span><span class="n">Status</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SmsRetriever</span><span class="p">.</span><span class="na">EXTRA_STATUS</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Status</span>
+
+<span class="w">                  </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">smsRetrieverStatus</span><span class="p">.</span><span class="na">statusCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                      </span><span class="n">CommonStatusCodes</span><span class="p">.</span><span class="na">SUCCESS</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                          </span><span class="kd">val</span><span class="w"> </span><span class="nv">consentIntent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extras</span><span class="p">.</span><span class="na">parcelable</span><span class="o">&lt;</span><span class="n">Intent</span><span class="o">&gt;</span><span class="p">(</span><span class="n">SmsRetriever</span><span class="p">.</span><span class="na">EXTRA_CONSENT_INTENT</span><span class="p">)</span>
+
+<span class="w">                          </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                              </span><span class="c1">// Start consent dialog. Timeout intent will be sent after 5 minutes</span>
+<span class="w">                              </span><span class="n">consentIntent</span><span class="o">?.</span><span class="na">let</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">launcher</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="w">                          </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="w"> </span><span class="n">ActivityNotFoundException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                              </span><span class="n">onError</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">activity_not_found_error</span><span class="p">))</span>
+<span class="w">                          </span><span class="p">}</span>
+<span class="w">                      </span><span class="p">}</span>
+<span class="w">                      </span><span class="n">CommonStatusCodes</span><span class="p">.</span><span class="na">TIMEOUT</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">onError</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">sms_timeout_error</span><span class="p">))</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Bunu uyguluyorsanız muhtemelen bir OTP Doğrulama Ekranınız vardır.
+VerificationScreen composable kullanarak örnek bir uygulamayı <a href="https://github.com/burkido/auto-read-otp/tree/main/app/src/main/java/com/burkido/verificationcodereader">burada</a> bulabilirsiniz.
+</p>
+
+<p>
+Çok uzun değil ama bunlarla uğraşmak istemiyorsanız bunlara bir <a href="https://github.com/burkido/auto-read-otp/tree/main/app/src/main/java/com/burkido/verificationcodereader">kütüphane</a> olarak da erişebilirsiniz.
+</p>
+</div>
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgfea1c7f">
+<ul class="org-ul">
+<li><a href="https://www.droidcon.com/2021/11/10/one-tap-phone-number-login-with-jetpack-compose/">https://www.droidcon.com/2021/11/10/one-tap-phone-number-login-with-jetpack-compose/</a></li>
+<li><a href="https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose#case-study-broadcastreceivers">https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose#case-study-broadcastreceivers</a></li>
+<li><a href="https://developer.android.com/sdk/api_diff/33/changes/android.os.Bundle">https://developer.android.com/sdk/api_diff/33/changes/android.os.Bundle</a></li>
+</ul>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #9</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/android/">Android #9</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

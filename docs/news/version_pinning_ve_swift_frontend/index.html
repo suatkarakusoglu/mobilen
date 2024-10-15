@@ -1,15 +1,15 @@
-<!-- Generated from e6448af on 2024-10-14 @ 15:29 with Emacs 31.0.50 (Org mode 9.7.11) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Versiyon Pinlemenin Önemi - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Versiyon Pinlemenin Önemi</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #35</a><p class="site-post-meta">2 min read | February  7, 2024</p><div id="content"><p>
+<!-- Generated from c2152da on 2024-10-15 @ 13:56 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Versiyon Pinlemenin Önemi - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Versiyon Pinlemenin Önemi</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><p class="site-post-meta">2 min read | February  7, 2024</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
-<div id="orgbfcd0ac" class="figure">
+<div id="org2cd521d" class="figure">
 <p><img src="/img/version-pinning-cover.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/@mitchel3uo">Mitchell Luo</a></p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orge831cd6">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgf1c2b9f">
 <p>
 Merhabalar,
 </p>
@@ -30,7 +30,7 @@ Neden derlemenin takıldığına dair derlemeyi <code>stop</code> ettiğimizde b
 Burada hangi process&rsquo;in takıldığını anlamak gerekiyordu ve kaynak tüketen top process&rsquo;leri listelediğimizde xcode&rsquo;a dair processler&rsquo;in yanısıra derlemede rol oynayan <code>swift-frontend</code> process&rsquo;inin çalıştığını ve kaynak tüketiminin yüksek olduğunu farkettik.
 </p>
 </div>
-<h3><a id="swift-frontend-processi-nedir" class="anchor" href="#swift-frontend-processi-nedir">¶</a>Swift-Frontend Processi nedir?</h3><div class="outline-text-3" id="text-org6d943df">
+<h3><a id="swift-frontend-processi-nedir" class="anchor" href="#swift-frontend-processi-nedir">¶</a>Swift-Frontend Processi nedir?</h3><div class="outline-text-3" id="text-org6827d06">
 <p>
 Geliştiricinin yazdığı Swift kodunun makine koduna derleme aşamasında geçtiği bir çok faz bulunmaktadır. Bu süreçte <code>parsing</code>, <code>type checking</code> gibi süreçleri işletip makine koduna doğru ilerlenir.
 </p>
@@ -47,7 +47,7 @@ O nedenle swift-frontend process&rsquo;ine <code>Kill Signal</code>&rsquo;i gön
 Bunu yaptıktan sonra olayın GraphQL için auto generate edilmiş olan dosyaların derleme aşamasında takıldığını farkettik.
 </p>
 </div>
-<h3><a id="graphqlrsquoin-rolü" class="anchor" href="#graphqlrsquoin-rolü">¶</a>GraphQL&rsquo;in rolü</h3><div class="outline-text-3" id="text-org40c354d">
+<h3><a id="graphqlrsquoin-rolü" class="anchor" href="#graphqlrsquoin-rolü">¶</a>GraphQL&rsquo;in rolü</h3><div class="outline-text-3" id="text-org51203c9">
 <p>
 GraphQL facebook&rsquo;un data aktarımını daha optimize etmek için yarattığı bir iletişim standardı.
 </p>
@@ -56,7 +56,7 @@ GraphQL facebook&rsquo;un data aktarımını daha optimize etmek için yarattı�
 Bu protokol ile haberleşmek için Apollo adlı bir bağımlılıktan faydalanıyoruz. Tanımlanan istekler için auto generate dosyalar oluşturuluyor ve servise istek atabiliyoruz.
 </p>
 </div>
-<h3><a id="neden-derleme-esnasında-takılıyorduk" class="anchor" href="#neden-derleme-esnasında-takılıyorduk">¶</a>Neden derleme esnasında takılıyorduk?</h3><div class="outline-text-3" id="text-org01ffc94">
+<h3><a id="neden-derleme-esnasında-takılıyorduk" class="anchor" href="#neden-derleme-esnasında-takılıyorduk">¶</a>Neden derleme esnasında takılıyorduk?</h3><div class="outline-text-3" id="text-org9cb2259">
 <p>
 Apollo&rsquo;nun oluşturduğu <b>class</b>&rsquo;lara baktığımızda <b>class</b>&rsquo;larının klasörlenme yapısının farklı olduğunu farkettik.
 </p>
@@ -65,13 +65,13 @@ Apollo&rsquo;nun oluşturduğu <b>class</b>&rsquo;lara baktığımızda <b>class
 Burada önceki versiyonla auto generate edilen dosyalar, güncel versiyonu çekilen bağımlılık ile uyumlu değilmiş.
 </p>
 </div>
-<h3><a id="versiyon-pinleme-neydi-ve-neden-gerekliydi" class="anchor" href="#versiyon-pinleme-neydi-ve-neden-gerekliydi">¶</a>Versiyon Pinleme neydi ve neden gerekliydi?</h3><div class="outline-text-3" id="text-org78ff026">
+<h3><a id="versiyon-pinleme-neydi-ve-neden-gerekliydi" class="anchor" href="#versiyon-pinleme-neydi-ve-neden-gerekliydi">¶</a>Versiyon Pinleme neydi ve neden gerekliydi?</h3><div class="outline-text-3" id="text-org5f559c7">
 <p>
 Versiyon pinleme, geliştiricinin kullandığı bağımlılıkları, tanımlandığı yerde hangi versiyonlarını ile yüklemesi gerektiğini belirtmesi anlamına geliyor.
 </p>
 
 
-<div id="org761dba0" class="figure">
+<div id="org3ef463f" class="figure">
 <p><img src="/img/version-pinning.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 2: </span>Versiyon Ekleme/Pinleme</p>
@@ -89,7 +89,7 @@ Bununla beraber tercih ettiğimiz yöntem olan <code>*exact*</code> [tam istedi�
 Ancak Apollo bağımlılığı <a href="https://www.swift.org/documentation/package-manager/">SPM</a> üzerinden <code>exact</code> olarak pinlenmediğinden ötürü yeni bilgisayarında repoyu indirip derlemeye çalışan arkadaşımızın tıkanmasına sebep olmuş.
 </p>
 </div>
-<h3><a id="özetle" class="anchor" href="#özetle">¶</a>Özetle</h3><div class="outline-text-3" id="text-org1eea5b3">
+<h3><a id="özetle" class="anchor" href="#özetle">¶</a>Özetle</h3><div class="outline-text-3" id="text-orgcaff05e">
 <p>
 Versiyon pinleme bağımlılık eklenmesi durumunda aktif olarak düşünülüp mümkün mertebe <code>exact</code> versiyon ile pinlenmeli.
 </p>
@@ -106,10 +106,10 @@ Eğlenceli bir problem çözme süreciydi.
 Görüşmek üzere.
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org39970f7">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org5d7d1c1">
 <ul class="org-ul">
 <li><a href="https://semver.org/">Semantik Versiyonlama</a></li>
 <li><a href="https://www.apollographql.com/">Apollo GraphQL</a></li>
 </ul>
 </div>
-</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #35</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #9</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/android/">Android #8</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #9</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/android/">Android #9</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

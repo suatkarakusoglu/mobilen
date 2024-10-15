@@ -36,6 +36,8 @@
 
 [[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]
 
+[[file:../../news/otp_read_android.org][Android'de OTP (One Time Password) Okuma]]
+
 [[file:../../news/pre_commit_tool.org][Pre-Commit Aracının Faydaları]]
 
 [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]

@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:news/otp_read_android.org][Android'de OTP (One Time Password) Okuma]] - Burak Karaduman · October 15, 2024
 - [[file:news/brew_bundle.org][Brew Bundle ile Uygulamaları Toplan Yükleme]] - Suat Karakuşoğlu · October 14, 2024
 - [[file:news/derinlemesine_swiftui.org][SwiftUI'da Arayüz Çizim Kuralları]] - Suat Karakuşoğlu · September 30, 2024
 - [[file:news/solid_prensipleri_nedir.org][S.O.L.I.D. Prensipleri Nedir?]] - Şevval Mertoğlu · September 12, 2024

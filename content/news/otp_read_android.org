@@ -1,0 +1,198 @@
+#+title: Android'de OTP (One Time Password) Okuma
+#+date: [2024-10-15 Tue]
+#+author: Burak Karaduman
+#+filetags: :Android:Yazılım:
+
+[[https://tr.linkedin.com/in/burak-karaduman][Burak Karaduman]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/photos/a-close-up-of-a-metal-plate-with-numbers-on-it-j7mGBT2hyM8][rc.xyz]]
+
+[[file:android_otp_cover.jpg]]
+
+* İçerik
+** OTP nedir?
+OTP, bir oturum açarken ya da işlem yaparken kullanılan ve sadece bir kez geçerli olan bir güvenlik kodudur. Bu kod, sahte istekleri engelleyip güvenliği artırmak için ekstra bir koruma sağlar.
+
+Böylece her giriş ya da işlem, benzersiz bir kodla doğrulanmış olur. Bu da hem yetkisiz erişimi önlemeye hem de sahte işlemlerin önüne geçmeye yardımcı oluyor.
+
+** Androidde otomatik OTP Okumak
+Direkt olarak kodlara erişmek isterseniz kütüphane olarak [[https://github.com/burkido/auto-read-otp][auto-read-otp projesinde]] bulabilirsiniz.
+
+Otomatik OTP mesaj okuma entegrasyonuna başlamak için önce uygun API’yi seçmemiz gerekiyor.
+
+Google bize iki seçenek sunuyor ve aşağıdaki görsel, hangisini kullanacağımıza karar vermemize yardımcı olacak.
+
+#+CAPTION: OTP Reader APIs Provided by Google
+[[file:otp_reader_apis_by_android.jpg]]
+
+Genellikle OTP’ler 4, 5 veya 6 haneli olur. Gönderenin kişinin rehberde kayıtlı olmasına gerek olmadığından ve OTP’yi onaylamak için kullanıcı etkileşimi istediğimizden dolayı SMS User Consent API daha uygun diyebiliriz.
+
+Öncelikle SMS User Consent API için gerekli olan Google Mobile Services kütüphanesini eklememiz gerek. Güncel versiyonu [[https://mvnrepository.com/artifact/com.google.android.gms/play-services-auth][buradan]] bulabilirsiniz.
+
+#+begin_src kotlin
+  implementation("com.google.android.gms:play-services-auth:21.2.0")
+#+end_src
+
+SMS Retriever’ın dinleme işlemini başlatmamız gerekiyor. Gereksiz yeniden başlatmaları önlemek için bu işlemi =LaunchedEffect= bloğu içerisinde gerçekleştiriyoruz.
+
+#+begin_src kotlin
+  LaunchedEffect(key1 = true) {
+      SmsRetriever
+          .getClient(context)
+          .startSmsUserConsent(null)
+          .addOnSuccessListener {
+              shouldRegisterReceiver = true
+          }
+  }
+#+end_src
+
+SMS Consent API üzerinden gelen sonucu işlemek için ActivityResultLauncher ile SMS’i almamız gerek.
+
+Bu launcher, SMS Retriever’dan gelen sonucu dinler. Onay öncesinde filtreleme ile kodu alıp kullanıcıya onay için gösterebiliriz. Onay verildiyse doğrulama kodunu alır ve normal bir senaryoda kod ekranda kullanıcı aksiyonu beklenmeden gösterilir.
+
+#+begin_src kotlin
+  private fun getVerificationCodeFromSms(message: String, smsCodeLength: Int): String =
+      message.filter { it.isDigit() }.take(smsCodeLength)
+#+end_src
+
+Bir broadcast receiver kaydetmemiz ve receiver’ın yaşam döngüsünü yönetmemiz gerekiyor.
+
+Bir composable bileşeni compositiondan çıktığında broadcast receivera ihtiyacımız olmadığından kaydı kaldırmamıza olanak tanıyan DisposableEffect’i kullanmalıyız.
+
+#+begin_src kotlin
+  @Composable
+  internal fun SystemBroadcastReceiver(
+      systemAction: String,
+      onSystemEvent: (intent: Intent?) -> Unit,
+  ) {
+      val context = LocalContext.current
+      val currentOnSystemEvent by rememberUpdatedState(onSystemEvent)
+
+      // If either context or systemAction changes, unregister and register again
+      DisposableEffect(context, systemAction) {
+          val intentFilter = IntentFilter(systemAction)
+          val broadcast = object : BroadcastReceiver() {
+              override fun onReceive(context: Context?, intent: Intent?) {
+                  currentOnSystemEvent(intent)
+              }
+          }
+
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+              context.registerReceiver(broadcast, intentFilter, RECEIVER_EXPORTED)
+          } else {
+              context.registerReceiver(broadcast, intentFilter)
+          }
+
+          // Unregister the broadcast receiver when the effect leaves the Composition
+          onDispose {
+              context.unregisterReceiver(broadcast)
+          }
+      }
+  }
+#+end_src
+
+Gelen intent’i işlememiz ve gerekiyorsa onay penceresini tetiklememiz gerekiyor.
+
+SystemBroadcastReceiver, bize alınan SMS’i sağlayacak.
+
+#+begin_src kotlin
+  if (shouldRegisterReceiver) {
+      SystemBroadcastReceiver(systemAction = SmsRetriever.SMS_RETRIEVED_ACTION) { intent ->
+          if (intent != null && SmsRetriever.SMS_RETRIEVED_ACTION == intent.action) {
+              val extras = intent.extras
+              val smsRetrieverStatus = extras?.parcelable<Status>(SmsRetriever.EXTRA_STATUS) as Status
+
+              when (smsRetrieverStatus.statusCode) {
+                  CommonStatusCodes.SUCCESS -> {
+                      val consentIntent = extras.parcelable<Intent>(SmsRetriever.EXTRA_CONSENT_INTENT)
+
+                      try {
+                          // Start consent dialog. Timeout intent will be sent after 5 minutes
+                          consentIntent?.let { launcher.launch(it) }
+                      } catch (e: ActivityNotFoundException) {
+                          onError(context.getString(R.string.activity_not_found_error))
+                      }
+                  }
+                  CommonStatusCodes.TIMEOUT -> onError(context.getString(R.string.sms_timeout_error))
+              }
+          }
+      }
+  }
+#+end_src
+
+getParcelable fonksiyonu artık deprecated olduğundan dolayı Bundle için BundleCompat kullanarak bunu alacak basit bir extension fonksiyonu yazabiliriz.
+
+#+begin_src kotlin
+  internal inline fun <reified T : Parcelable> Bundle.parcelable(key: String): T? =
+      BundleCompat.getParcelable(this, key, T::class.java)
+#+end_src
+
+Artık SMS Consent API’sini kullanmaya hazırız. Yukarıdaki kodları bir composable fonksiyonu içerisinde birleştirebiliriz.
+
+#+begin_src kotlin
+  @Composable
+  fun SmsUserConsent(
+      smsCodeLength: Int,
+      onOTPReceived: (otp: String) -> Unit,
+      onError: (error: String) -> Unit,
+  ) {
+      val context = LocalContext.current
+      var shouldRegisterReceiver by remember { mutableStateOf(false) }
+
+      LaunchedEffect(key1 = true) {
+          SmsRetriever
+              .getClient(context)
+              .startSmsUserConsent(null)
+              .addOnSuccessListener {
+                  shouldRegisterReceiver = true
+              }
+      }
+
+      val launcher =
+          rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+              if (it.resultCode == Activity.RESULT_OK && it.data != null) {
+                  val message: String? = it.data!!.getStringExtra(SmsRetriever.EXTRA_SMS_MESSAGE)
+                  message?.let {
+                      val verificationCode = getVerificationCodeFromSms(message, smsCodeLength)
+                      onOTPReceived(verificationCode)
+                  }
+                  shouldRegisterReceiver = false
+              } else {
+                  onError(context.getString(R.string.sms_retriever_error_consent_denied))
+              }
+          }
+
+      if (shouldRegisterReceiver) {
+          SystemBroadcastReceiver(systemAction = SmsRetriever.SMS_RETRIEVED_ACTION) { intent ->
+              if (intent != null && SmsRetriever.SMS_RETRIEVED_ACTION == intent.action) {
+                  val extras = intent.extras
+                  val smsRetrieverStatus = extras?.parcelable<Status>(SmsRetriever.EXTRA_STATUS) as Status
+
+                  when (smsRetrieverStatus.statusCode) {
+                      CommonStatusCodes.SUCCESS -> {
+                          val consentIntent = extras.parcelable<Intent>(SmsRetriever.EXTRA_CONSENT_INTENT)
+
+                          try {
+                              // Start consent dialog. Timeout intent will be sent after 5 minutes
+                              consentIntent?.let { launcher.launch(it) }
+                          } catch (e: ActivityNotFoundException) {
+                              onError(context.getString(R.string.activity_not_found_error))
+                          }
+                      }
+                      CommonStatusCodes.TIMEOUT -> onError(context.getString(R.string.sms_timeout_error))
+                  }
+              }
+          }
+      }
+  }
+#+end_src
+
+Bunu uyguluyorsanız muhtemelen bir OTP Doğrulama Ekranınız vardır.
+VerificationScreen composable kullanarak örnek bir uygulamayı [[https://github.com/burkido/auto-read-otp/tree/main/app/src/main/java/com/burkido/verificationcodereader][burada]] bulabilirsiniz.
+
+Çok uzun değil ama bunlarla uğraşmak istemiyorsanız bunlara bir [[https://github.com/burkido/auto-read-otp/tree/main/app/src/main/java/com/burkido/verificationcodereader][kütüphane]] olarak da erişebilirsiniz.
+
+** Kaynakça
+- https://www.droidcon.com/2021/11/10/one-tap-phone-number-login-with-jetpack-compose/
+- https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose#case-study-broadcastreceivers
+- https://developer.android.com/sdk/api_diff/33/changes/android.os.Bundle

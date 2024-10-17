@@ -1,7 +1,7 @@
-#+title: Brew Bundle ile Uygulamaları Toplan Yükleme
+#+title: Brew Bundle ile Uygulamaları Toptan Yükleme
 #+date:  [2024-10-14 Mon]
 #+author: Suat Karakuşoğlu
-#+filetags: :Apple:Araçlar:
+#+filetags: :Apple:Araçlar:Kurulum:
 
 [[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
 

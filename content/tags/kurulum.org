@@ -1,0 +1,6 @@
+#+TITLE: Kurulum
+
+[[file:../../news/brew_bundle.org][Brew Bundle ile Uygulamaları Toptan Yükleme]]
+
+[[file:../../news/stow_dotfiles.org][Dotfiles Yönetimi ve GNU Stow Aracı]]
+

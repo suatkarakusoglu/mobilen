@@ -1,15 +1,15 @@
-<!-- Generated from 26ea66e on 2024-10-15 @ 17:28 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!-- Generated from f836916 on 2024-10-17 @ 18:14 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Declarative Yaklaşım ve Tasarım - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Declarative Yaklaşım ve Tasarım</h1><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><p class="site-post-meta">8 min read | November 15, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
-<div id="orgf91770d" class="figure">
+<div id="org58cfb01" class="figure">
 <p><img src="/img/declarative_ui_magic.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/@art_maltsev?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Artem Maltsev</a></p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgafd0520">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org0bb67c8">
 <p>
 Merhabalar,
 </p>
@@ -30,7 +30,7 @@ Uzun zamandır türlü diller ve araçlar ile farklı tuvallare arayüz tasarım
 Bu araçlar hakkında ve arayüz tasarımında değişen pratiklerin nihayetinde nasıl declarative yaklaşımda buluştuğundan bahsedeceğim.
 </p>
 </div>
-<h3><a id="imperative-tasarım" class="anchor" href="#imperative-tasarım">¶</a>Imperative Tasarım</h3><div class="outline-text-3" id="text-org3c0bb84">
+<h3><a id="imperative-tasarım" class="anchor" href="#imperative-tasarım">¶</a>Imperative Tasarım</h3><div class="outline-text-3" id="text-org024027d">
 <p>
 Declarative taraftan bahsetmeden önce daha çok pratik ettiğimiz <code>imperative</code> yaklaşımdan bahsedelim.
 </p>
@@ -51,7 +51,7 @@ Henüz üniversite yıllarında sıralama algoritmalarına denk geldiğimde heye
 Hepsi ile örnekler yapmış görselleştirmeler yapmaya çalışmıştım. Sonrasında ilk staja başladığım yerde kullanıcıları hangi algoritma ile nasıl sıralıyorsunuz gibi bir soru sorduğumda &rsquo;SORT&rsquo; yazıyoruz SQL&rsquo;de ve o bu işi yapıyor diye cevap almıştım :).
 </p>
 </div>
-<h3><a id="beyan-ve-indirection" class="anchor" href="#beyan-ve-indirection">¶</a>Beyan ve Indirection</h3><div class="outline-text-3" id="text-orgb317104">
+<h3><a id="beyan-ve-indirection" class="anchor" href="#beyan-ve-indirection">¶</a>Beyan ve Indirection</h3><div class="outline-text-3" id="text-org7420802">
 <p>
 Sadece beyan / <code>declare</code> ederek işinizin ne olduğunu belirtip, sistemin bunu yapmasını beklemenin elbette bir çok avantajı var.
 </p>
@@ -85,7 +85,7 @@ Bu sayede belki büyük ekran&rsquo;lı iPad&rsquo;de farklı bir yerden çıkar
 </p>
 </blockquote>
 </div>
-<h3><a id="declarative-tasarım-ve-verirsquonin-ilişkisi" class="anchor" href="#declarative-tasarım-ve-verirsquonin-ilişkisi">¶</a>Declarative Tasarım ve Veri&rsquo;nin ilişkisi</h3><div class="outline-text-3" id="text-orga4b9937">
+<h3><a id="declarative-tasarım-ve-verirsquonin-ilişkisi" class="anchor" href="#declarative-tasarım-ve-verirsquonin-ilişkisi">¶</a>Declarative Tasarım ve Veri&rsquo;nin ilişkisi</h3><div class="outline-text-3" id="text-orgb237e70">
 <p>
 <code>Declarative tasarım</code> matematiksel ifadeyle veriyi alıp arayüze dönüştüren bir fonksiyondur:
 </p>
@@ -95,7 +95,7 @@ declarativeTasarim(veri) -&gt; Arayuz
 </p>
 </blockquote>
 </div>
-<h3><a id="facebookrsquoun-etkisi" class="anchor" href="#facebookrsquoun-etkisi">¶</a>Facebook&rsquo;un etkisi</h3><div class="outline-text-3" id="text-orgdc52c1a">
+<h3><a id="facebookrsquoun-etkisi" class="anchor" href="#facebookrsquoun-etkisi">¶</a>Facebook&rsquo;un etkisi</h3><div class="outline-text-3" id="text-org633724f">
 <p>
 Siyasal mecrada skandallara varabilecek derecede toplumu yönlendirme gücüne sebep olabilecek büyüklükte veriyi elinde bulunduran firma diyince diyince ilk akla gelen şirket elbette Facebook.
 </p>
@@ -104,7 +104,7 @@ Siyasal mecrada skandallara varabilecek derecede toplumu yönlendirme gücüne s
 <a href="https://www.youtube.com/watch?v=8pDqJVdNa44">React belgeseli</a>nde geçen, reklam takımında ortaya çıkan arayüz geliştirme süreçlerindeki hantallık ve hatalar facebookta radikal bir çözümü gerekli kılmış.
 </p>
 </div>
-<h3><a id="react-ve-devamı" class="anchor" href="#react-ve-devamı">¶</a>React ve devamı</h3><div class="outline-text-3" id="text-orgc5d18a5">
+<h3><a id="react-ve-devamı" class="anchor" href="#react-ve-devamı">¶</a>React ve devamı</h3><div class="outline-text-3" id="text-org3559d9f">
 <p>
 Reklam takımındaki bir product engineer&rsquo;a garip gözlerle bakılmasına sebep olan sorusu şöyle:
 </p>
@@ -123,7 +123,7 @@ Declaratıve tasarım fonksiyonu için olan bu matematiksel yaklaşımların ger
 Performanslı bir şekilde tüm tuvali tek bir değişiklikte sil baştan çizmek delice gelsede kulağa, pratikte bunu yapıcak yolların keşfiyle hiçte mantıksız değilmiş ampulunu kafalarda yakmıştır.
 </p>
 </div>
-<h3><a id="diffing-ve-faydası" class="anchor" href="#diffing-ve-faydası">¶</a>Diffing ve Faydası</h3><div class="outline-text-3" id="text-org5b1f3bf">
+<h3><a id="diffing-ve-faydası" class="anchor" href="#diffing-ve-faydası">¶</a>Diffing ve Faydası</h3><div class="outline-text-3" id="text-org707ff8f">
 <p>
 Ekonomik bir şekilde verinin istenilen görüntüye dönüşmesini sağlamanın en önemli yolu olabilecek en az değişiklik ile bunu başarabilmek.
 </p>
@@ -136,7 +136,7 @@ React&rsquo;in kabaca karmaşıklığı <code>O(n)3</code> ten <code>heuristic</
 Buradaki <code>diffing</code>&rsquo;e yardımcı olarak daha akıcı olarak veriyi ekrana yansıtabilecek yazılımı ortaya çıkabiliriz.
 </p>
 </div>
-<h3><a id="nelere-dikkat-etmeliyiz" class="anchor" href="#nelere-dikkat-etmeliyiz">¶</a>Nelere dikkat etmeliyiz</h3><div class="outline-text-3" id="text-orgf42737c">
+<h3><a id="nelere-dikkat-etmeliyiz" class="anchor" href="#nelere-dikkat-etmeliyiz">¶</a>Nelere dikkat etmeliyiz</h3><div class="outline-text-3" id="text-orgbb5d56f">
 <p>
 O nedenle kullandığınız framework&rsquo;un buna yardımcı olan yaklaşımlarını iyi anlamamız gerekiyor.
 </p>
@@ -184,7 +184,7 @@ SwiftUI kütüphanesi ise yine static typing&rsquo;den faydalanarak view&rsquo;l
 Bu örneklerde görüldüğü üzere view eşlemeleri tipler üzerinden gerçekleşebilir.
 </p>
 </div>
-<h3><a id="keyid-kullanımı" class="anchor" href="#keyid-kullanımı">¶</a>Key/Id kullanımı</h3><div class="outline-text-3" id="text-org0466d73">
+<h3><a id="keyid-kullanımı" class="anchor" href="#keyid-kullanımı">¶</a>Key/Id kullanımı</h3><div class="outline-text-3" id="text-org34b5909">
 <p>
 Listeler gibi view elemanlarında ise <code>id</code>&rsquo;ler üzerinden dinamik arayüz elemanları çizip eşleştirilebilir.
 </p>
@@ -244,11 +244,11 @@ Bu yazıda Veriden =&gt; Ekrana giden yolda tasarımın declarative yollar ile g
 İyi eğlenceler.
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orga0fab9f">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org1f3aa84">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/watch?v=8pDqJVdNa44">React belgeseli</a></li>
 <li><a href="https://legacy.reactjs.org/docs/reconciliation.html">React Framework Heuristic Diffing</a></li>
 <li><a href="https://rensbr.eu/blog/swiftui-diffing/">SwiftUI Diffing</a></li>
 </ul>
 </div>
-</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #9</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/android/">Android #9</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #10</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/android/">Android #9</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/kurulum/">Kurulum #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

@@ -1,6 +1,6 @@
 #+TITLE: Araçlar
 
-[[file:../../news/brew_bundle.org][Brew Bundle ile Uygulamaları Toplan Yükleme]]
+[[file:../../news/brew_bundle.org][Brew Bundle ile Uygulamaları Toptan Yükleme]]
 
 [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 
@@ -9,6 +9,8 @@
 [[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]
 
 [[file:../../news/pre_commit_tool.org][Pre-Commit Aracının Faydaları]]
+
+[[file:../../news/stow_dotfiles.org][Dotfiles Yönetimi ve GNU Stow Aracı]]
 
 [[file:../../news/xcode_build_tool.org]["xcodebuild" Komutları ve Kullanım Örnekleri]]
 

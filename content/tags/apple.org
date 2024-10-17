@@ -8,7 +8,7 @@
 
 [[file:../../news/apple_search_engine_calismalari.org][Apple Arama Motoru Çalışmaları]]
 
-[[file:../../news/brew_bundle.org][Brew Bundle ile Uygulamaları Toplan Yükleme]]
+[[file:../../news/brew_bundle.org][Brew Bundle ile Uygulamaları Toptan Yükleme]]
 
 [[file:../../news/october_30_2023_apple_event.org][Apple Scary Fast Etkinliği]]
 

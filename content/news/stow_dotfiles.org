@@ -1,0 +1,67 @@
+#+title: Dotfiles Yönetimi ve GNU Stow Aracı
+#+date: [2024-10-17 Thu]
+#+author: Suat Karakuşoğlu
+#+filetags: :Araçlar:Kurulum:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/@stefanheinemann][Stefan Heinemann]]
+[[file:stow_dotfiles_cover.jpg]]
+
+* İçerik
+Merhabalar,
+
+Yeni bilgisayar kurulumlarında uygulama yüklemelerini kolaylaştırmak adına ufak bir [[https://mobilen.art/news/brew_bundle/][brew bundle]] aracından bahsetmiştim.
+
+Önemli diğer bir konu ise ana dizininizde bulunan '.' =dotfiles= dediğimiz, uygulamaların konfigürasyonlarını içeren dosyaların yeni bilgisayara tanımlamasını yapabilmek.
+
+Bu dosyalar örnek vermek gerekirse '.bashrc', '.zshrc', '.zprofile' gibi dosyalar olabilir.
+
+Kendi home dizininizde =ls -ld ~/.*= çalıştırdığınızda tüm =dot= dosyalarını görebilirsiniz.
+
+Bu uygulama konfigürasyonlarına farklı bilgisayarlarda da erişebilmek için =dotfiles='ların tek bir yerden yönetilmesi en uygunu.
+
+Bu nedenle genelde dot dosyaları bir git reposunda tutulup yönetiliyor.
+
+Bu repo kurulum yapılan bilgisayara çekildikten sonra, dot dosyaları ana dizine linklemek gerekiyor.
+
+Linklemekten kastımız =symbolic links= dediğimiz sadece dosyanın yerini gösteren işaretçi dosyaları oluşturmak.
+
+** Symbolic Link nasıl yapılır
+Symbolic link oluşturmak için =ln= komutundan faydalanıyoruz.
+#+begin_src shell
+  # -s : symbolic
+  # -f : forcelamak için, eğer böyle bir dosya var ise targetta üzerine yazar.
+  # ln -sf {source}[~/me/dotfiles/.zshrc] {target}[~/.zshrc]
+  ln -sf ~/me/dotfiles/.zshrc ~/.zshrc
+#+end_src
+
+Ancak tüm folderların için teker teker bunu yapmaya çalışmak yerine =GNU Stow= aracını kullanabiliriz.
+
+** GNU Stow nedir?
+Unix tabanlı =MacOS=, =Linux= gibi işletim sistemlerinde kullanabileceğimiz otomatik sembolik link yaratmada yardımcı olan bir araçtır =stow=.
+
+#+begin_src shell
+  # -v : verbose, yani yaparken ne yaptigini konsola yazar
+  # --target veya -t : '~' nereye
+  # stow -v --target {target-folder}[~] {source-folder}[dotfiles]
+  stow -v --target ~ dotfiles
+#+end_src
+
+Örnek =verbose= çıktı:
+
+#+begin_src shell
+  LINK: .misc => me/dots/dotfiles/.misc
+  LINK: .spacemacs.d => me/dots/dotfiles/.spacemacs.d
+  LINK: .stardict => me/dots/dotfiles/.stardict
+  LINK: .vimrc => me/dots/dotfiles/.vimrc
+  LINK: .zshrc => me/dots/dotfiles/.zshrc
+#+end_src
+
+Bu sayede yalnızce dot files'ini bir klasörde tutup repo olarak barındırabilir ve kurulum yaptığınız bilgisayarda direkt olarak tek bir stow komutuyla konfigürasyonlarınızı bağlayabilirsiniz.
+
+Görüşmek üzere.
+
+** Kaynakça
+- [[https://www.gnu.org/software/stow/manual/stow.html][GNU Stow Documentation]]
+- [[https://en.wikipedia.org/wiki/Symbolic_link][Symbolic Links]]

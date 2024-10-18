@@ -1,0 +1,23 @@
+#+title: Mobilen 9
+
+#+CAPTION: Photo by [[https://unsplash.com/photos/brown-grass-in-closeup-photography-PpDoE1f00KY][Nigel Lo]]
+[[file:volume_9_cover.jpg]]
+
+*Merhabalar*
+
+Mobilen 9. sayısındayız, =SwiftUI= tarafında arayüz çizimindeki temel kurallardan bahsettik, =Apple CarPlay='e giriş konularına değindik.
+
+Android tarafında =Kotlin Flow='lardan, OTP'leri otomatik okuma yöntemlerinden bahsettik.
+
+Son olarakta bilgisayar kurulumlarında işimize yarayabilecek =brew bundle= ve =gnu stow= gibi bir kaç komutu ele aldık.
+
+Herkese iyi okumalar :)
+
+* Konular
+1. [[file:../../news/derinlemesine_swiftui.org][SwiftUI'da Arayüz Çizim Kuralları]]
+2. [[file:../../news/otp_read_android.org][Android'de OTP (One Time Password) Okuma]]
+3. [[file:../../news/apple_carplay_intro.org][Apple CarPlay'e Giriş]]
+4. [[file:../../news/kotlin_flows.org][Kotlin Flows]]
+5. [[file:../../news/solid_prensipleri_nedir.org][S.O.L.I.D. Prensipleri Nedir?]]
+6. [[file:../../news/brew_bundle.org][Brew Bundle ile Uygulamaları Toptan Yükleme]]
+7. [[file:../../news/stow_dotfiles.org][Dotfiles Yönetimi ve GNU Stow Aracı]]

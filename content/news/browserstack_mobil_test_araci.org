@@ -1,0 +1,69 @@
+#+title: BrowserStack Mobil Uygulama Test Aracı
+#+date: [2024-11-11 Mon]
+#+author: Suat Karakuşoğlu
+#+filetags: :Test:Araçlar:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/photos/four-black-and-grey-telephones-rSRWst-IGlA][Eduardo Sánchez]]
+[[file:browserstack_cover.jpg]]
+
+* İçerik
+Merhabalar,
+
+Mobil ürün yaşam döngüsünde canlıya çıkana dek mümkün mertebe gerçek cihazlarda testlerimiz yapılıyor.
+
+Testten canlıya geçiş sonrası ise artık gerçek kullanıcıların envai çeşit cihazlarında uygulamalar yaşamaya başlıyor.
+
+Bu cihazların tüm çeşitliliğine erişmek zor.
+
+IDE'lerde gelen simülatörler gerçek cihaz yeteneklerini tam anlamıyla simüle edemeyebiliyorlar.
+
+Bu cihaz çeşitliliğine erişebilmek için farklı hizmetlerden faydalanbiliyorsunuz.
+
+Bunlardan bir tanesi olan =BrowserStack='ten bahsedeceğiz.
+
+#+CAPTION: BrowserStack App-Live
+[[file:browser_stack_devices_showcase.jpg]]
+
+** Test edilecek uygulamaları yüklemek
+Test etmek istediğimiz uygulamaları türlü kaynaklardan yükleyebiliyoruz.
+
+Bunlardan en popülerleri ile direkt entegrasyon dahi sağlayabiliyoruz.
+
+#+CAPTION: BrowserStack Uygulama Yükleme Seçenekleri
+[[file:browserstack_installation_mediums.jpg]]
+
+*** Uygulama yükleme seçenekleri
+- Firebase Entegrasyonu :: =Firebase App Distribution= yeteneği
+- App Center ::  =Microsoft'un App Center= ile direkt entegrasyon
+- TestFlight :: Cihaz açıldıktan sonra testflight uygulaması açılıyor, hesap bilgileriniz ile uygulamaya erişebiliyorsunuz.
+- Play Store :: Cihaz açıldıktan sonra direkt play-store uygulaması açılır.
+- App Store :: Cihaz açıldıktan sonra direkt app-store uygulaması açılır.
+
+*** Firebase Distribution Entegrasyonu
+Firebase Uygulama Dağıtım entegrasyonu ile direkt olarak uygulamalar sürümleri ile listeleniyor ve istediğiniz cihaza tek tık ile yükleyebiliyorsunuz.
+
+Bunun için öncesinde gerekli yetkilendirmeleri yapmanız gerekiyor.
+
+#+CAPTION: Firebase BrowserStack entegrasyonu
+[[file:browser_stack_firebase_integration.jpg]]
+
+** Bilgisayarınızın ağı üzerinden internete çıkmak
+Test uygulamalarınız yalnızca vpn ile şirket iç ağınızdaki erişimleriniz üzerinden çalışıyor olabilir.
+
+Bu durumda bilgisayaranıza ufak bir browserstack uygulaması yüklemeniz gerekiyor.
+
+#+CAPTION: Local ağ üzerinden test
+[[file:browserstack_local_connection_app.jpg]]
+
+Bu uygulama ile yüklediğiniz mobil uygulama internet erişimini sizin ağınız üzerinden yapmaya başlayacağı için test ortamlarına erişiminiz olacaktır.
+
+#+CAPTION: Local ağ üzerinden erişim
+[[file:browserstack_force_local_network.jpg]]
+Burada 'Force Local' network seçeneğine tıkladığınızda =Force Local: ON= gormeniz gerekiyor. Sonrasında testlerinize başlayabilirsiniz.
+
+** Sonuç olarak
+BrowserStack sayesinde canlı'dan gelebilecek olan problemleri gerçek mobil cihaz havuzundan en yakın cihaz ile test edebilmek, tekrarlayabilmek uygulamanın davranışını daha kolay değerlendirmenizi ve problem var ise çözümüne gidebilmenize yardımcı olacaktır.
+
+İyi çalışmalar.

@@ -2,6 +2,8 @@
 
 [[file:../../news/brew_bundle.org][Brew Bundle ile Uygulamaları Toptan Yükleme]]
 
+[[file:../../news/browserstack_mobil_test_araci.org][BrowserStack Mobil Uygulama Test Aracı]]
+
 [[file:../../news/details_pro_no_code_ui.org][DetailsPro: No-Code ile Swift Tasarımları]]
 
 [[file:../../news/makefile_nedir.org][Makefile'ın Faydaları]]

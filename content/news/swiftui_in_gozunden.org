@@ -1,0 +1,239 @@
+#+title: SwiftUI'in gözünden
+#+date: [2024-12-02 Mon]
+#+author: Ali Mert Tekel
+#+filetags: :iOS:
+
+[[https://linkedin.com/in/alimerttekel][Ali Mert Tekel]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/photos/birds-flying-over-the-street-light-during-daytime-HQ2qxzgvglY][Vika Strawberrika]]
+[[file:swiftui_gozunden_cover.jpg]]
+
+* İçerik
+SwiftUI, bir view oluştururken kodunuza nasıl yaklaşıyor, performansı nasıl optimize ediyor ve en önemlisi view’inizi çizerken nelere dikkat ediyor? Bu yazıda SwiftUI’nin gözünden view’ları inceleyerek bu sorulara yanıtlar arayacağız.
+
+SwiftUI view’ları Identity (Kimlik), Lifetime (Yaşam Süresi) ve Dependencies (Bağımlılıklar) olmak üzere üç temel prensip ile ele alıyor. Uygulamanızdaki view’ların smooth’luğu, hızı, stabilitesi tam olarak buradan geçiyor.
+
+Gelin bu üç prensip altında SwiftUI’nin nasıl çalıştığına birlikte göz atmaya başlayalım
+
+** Identity (Kimlik)
+SwiftUI’da her view bir identity’ye sahiptir; bu identity, bir view’in güncellemeler boyunca aynı mı kalacağı, yoksa farklı bir view olarak mı değerlendirileceği konusunda SwiftUI’ye rehberlik eder. Bir view’in identity’si, onun state’ini de bir noktada tanımlamış olur ve güncellemeler arasında tutarlılığı sağlar. Bu konsepti anlamak, SwiftUI’nin nasıl ve ne zaman değişiklik yapacağına dair kararlarını anlamamıza yardımcı olur.
+
+SwiftUI’de iki tür identity tanımlama yöntemi vardır: Explicit Identity (Açık Kimlik) ve Structural Identity (Yapısal Kimlik).
+
+** Explicit Identity (Açık Kimlik):
+Explicit Identity, her öğeye belirli bir ID atayarak, SwiftUI’nin bu öğeyi tanımasını sağlar. Böylece, özellikle bir view’i başka bir kod bloğunda veya bir ScrollViewReader içinde referans almak gerektiğinde önem kazanır.
+
+#+begin_src swift
+  struct ContentView: View {
+      var items: [Item] = [...]
+
+      var body: some View {
+          ScrollViewReader { proxy in
+              List(items) { item in
+                  Text(item.name)
+                    .id(item.id) // Explicit Identity
+              }
+              Button("Go to last item") {
+                  if let lastItem = items.last {
+                      proxy.scrollTo(lastItem.id)
+                  }
+              }
+          }
+      }
+  }
+#+end_src
+
+Bu örnekte, id(:) modifier'ı ile her Text view'ine explicit identity atıyoruz. Bu sayede, ScrollViewReader içinde scrollTo(:) fonksiyonunu kullanarak belirli bir öğeye kaydırma işlemi yapabiliyoruz.
+
+** Structural Identity (Yapısal Kimlik):
+Explicit bir şekilde tanımlanmasa bile, her view bir identity’ye sahiptir. SwiftUI, view yapınızı analiz ederek implicit (örtük) identity oluşturur. Bu sayede, farklı durumlar arasında optimize edilmiş bir yapı sağlar.
+
+#+begin_src swift
+  struct ContentView: View {
+      @State private var isActive = false
+      var body: some View {
+          VStack {
+              if isActive {
+                  Text("State is active.")
+              } else {
+                  Text("State is passive.")
+              }
+              Button("Change state") {
+                  isActive.toggle()
+              }
+          }
+      }
+  }
+#+end_src
+
+Bu örnekte, =isActive= durumuna bağlı olarak iki farklı Text view'i gösteriliyor. SwiftUI, bu iki Text view'i yapısal olarak farklı identity'ye sahip olarak değerlendirir. Durum değiştiğinde, eski view kaldırılır ve yeni bir view oluşturulur.
+
+Eğer bu view’lerin SwiftUI tarafından tamamen aynı olarak algılanmasını istiyorsanız, bir =conditional modifier= kullanabilirsiniz.
+
+** Conditional Modifier:
+Conditional Modifier’ı, view’in ana işlevselliğini bozmayan, sadece görünüşte değişiklikler yaratan modifier’lar olarak düşünebiliriz.
+#+begin_src swift
+  Text("Hello, World!")
+    .font(isActive ? .headline : .caption)
+    .foregroundColor(isActive ? .red : .blue)
+#+end_src
+
+Bu modifier’lar, view’in identity’sini veya yapısını değiştirmez; sadece görünümünü etkiler. Bu şekilde =if-else= yapısını en tepeden ayırmak yerine aslında sadece değişecek olan değerleri bir condition'a bağlamak tam olarak SwiftUI'nin beklediği ve size ise performans artışı, akıcılık gibi avantajlar sağlayacak kullanım olacaktır.
+
+SwiftUI, AnyView kullanımını optimize etmekte zorlanır. Bu nedenle, mümkün olduğunca AnyView yerine @ViewBuilder kullanmak, SwiftUI'nin identity atamasını daha doğru yapmasını sağlayacaktır.
+
+#+begin_src swift
+  func buildView(isActive: Bool) -> some View {
+      if isActive {
+          return AnyView(Text("Active"))
+      } else {
+          return AnyView(
+            Button("Passive"){
+                print("State changed")
+            }
+          )
+      }
+  }
+#+end_src
+
+SwiftUI buraya baktığında buna benzer bir şey görecek:
+
+#+begin_src swift
+  buildView
+  if
+    AnyView
+  else
+    AnyView
+#+end_src
+
+Burada problem şu ki SwiftUI aslında baktığında AnyView olduğunu gördüğü için ona göre bir optimizasyon yapacak. AnyView’ların içine saklanmış bir Button mı? Text mi? List mi? ne olduğunu runtime’da anlayacak böylece düzgün bir optimizasyon sağlayamamış olacak.
+
+#+begin_src swift
+  @ViewBuilder
+  func buildView(isActive: Bool) -> some View {
+      if isActive {
+          return Text("Active")
+      } else {
+          return Button("Passive"){
+              print("State changed")
+          }
+      }
+  }
+#+end_src
+
+ViewBuilder kullandığımız senaryoda ise şuna benzer bir şey görecek:
+
+#+begin_src swift
+  ViewBuilder
+  buildView
+  if
+    Text
+  else
+    Button
+#+end_src
+
+Bu sefer daha açık bir şekilde ne olduğunu görüp ona göre daha iyi bir optimizasyon sağlamış olacak.
+
+** Lifetime (Yaşam Süresi)
+SwiftUI’de her view’in bir yaşam süresi (lifetime) vardır. Lifetime, view’in identity’sine doğrudan bağlıdır, view’in oluşturulmasından kaybolmasına kadar olan süreyi kapsar. Bir view, lifetime’ı boyunca farklı state’lere sahip olabilir. State’ler değiştiğinde aynı identity ile ilişkilendirilmiş yeni bir view oluşturulur ve eski olanı siler. Burada dikkat edilmesi gereken nokta; silinen view’in lifetime’ı sonlandırmamasıdır, aslında replace’e benzer bir işlem olur. Identity aynı olduğu için SwiftUI daha optimize ve akıcı bir şekilde view’ı günceller.
+
+#+begin_src swift
+  struct CounterView: View {
+      @State private var count = 0
+
+      var body: some View {
+          VStack {
+              Text("Number: \(count)")
+              Button("Increase") {
+                  count += 1
+              }
+          }
+      }
+  }
+#+end_src
+
+count değişkeni =@State= ile işaretlenmiştir ve CounterView‘ın =lifetime=’ı boyunca değerini korur. Her butona tıklandığında count artar ve view güncellenir.
+#+begin_src swift
+  struct ContentView: View {
+      @State private var isChange = false
+
+      var body: some View {
+          VStack {
+              Button("Change") {
+                  isChange.toggle()
+              }
+              if isChange {
+                  CounterView()
+                    .id(UUID().uuidString)
+              } else {
+                  CounterView()
+                    .id(UUID().uuidString)
+              }
+          }
+      }
+  }
+#+end_src
+
+Toggle değeri değiştiğinde CounterView farklı bir id ile yeniden oluşturulur. Böylece yeni bir lifetime başlamış olur ve CounterView içindeki count değeri sıfırlanır.
+
+** Dependencies (Bağımlılıklar)
+SwiftUI’nin performans optimizasyonunda dependency’lerin (bağımlılıkların) yönetimi çok büyük bir rol oynar. SwiftUI, her view’in dependency’lerini takip eden bir dependency graph (bağımlılık grafiği) oluşturur. Dependency’ler, view’in oluşturulması için gereken tüm girdileri ifade eder ve bu girdiler değiştiğinde view yeniden çizilir.
+
+Bir view’in tüm property’leri, dependency olarak kabul edilir. Bu dependency’lerden herhangi biri değiştiğinde, SwiftUI otomatik olarak view’in body’sini yeniden çağırır ve yeni bir view üretir.
+
+#+begin_src swift
+  class DataModel: ObservableObject {
+      @Published var text: String = "Initial Text"
+  }
+
+  struct ContentView: View {
+      @StateObject private var model = DataModel()
+      var body: some View {
+          VStack {
+              Text(model.text)
+              Button("Change Text") {
+                  model.text = "Updated Text"
+              }
+          }
+      }
+  }
+#+end_src
+
+Bu örnekte, DataModel içindeki text değişkeni @Published olarak işaretlendiği için, değiştiğinde ContentView içindeki Text otomatik olarak güncellenir. Bu, SwiftUI'nin dependency graph kullanarak view'leri nasıl güncellediğine dair bir örnektir.
+
+** Identity ve Dependency İlişkisi:
+
+SwiftUI’da bir view’in identity’si, onun dependency’leri ile doğrudan bağlantılıdır. Bu ilişki sayesinde, bir view’in durumu yalnızca dependency’lerde bir değişiklik olduğunda güncellenir. SwiftUI, dependency graph’daki değişiklikleri takip ederek, ihtiyaç duyulan view’leri yeniden oluşturur ve yalnızca bu view’leri günceller. Böylece, uygulama performansı optimize edilmiş olur çünkü gereksiz güncellemelerden kaçınılır ve yalnızca zorunlu olan bileşenler yenilenir.
+
+#+begin_src swift
+  struct ParentView: View {
+      @State private var parentState = 0
+      var body: some View {
+          VStack {
+              Text("Parent State: \(parentState)")
+              Button("Increment Parent State") {
+                  parentState += 1
+              }
+              ChildView()
+          }
+      }
+  }
+
+  struct ChildView: View {
+      @State private var childState = 0
+      var body: some View {
+          VStack {
+              Text("Child State: \(childState)")
+              Button("Increment Child State") {
+                  childState += 1
+              }
+          }
+      }
+  }
+#+end_src
+
+Bu örnekte, ParentView içindeki parentState değiştiğinde sadece ParentView güncellenir; ChildView kendi bağımsız childState'ini korur ve yeniden oluşturulmaz. Bu, SwiftUI'nin dependency'leri ve identity'leri nasıl yönettiğine dair iyi bir örnektir.
+
+Sonuç olarak SwiftUI, Identity, Lifetime ve Dependencies prensipleri altında kodunuzu analiz eder ve her view için en iyi performansı sağlamaya çalışır. Identity’leri doğru atayarak, lifetime’ı iyi yöneterek ve dependency’leri dengeli bir şekilde yapılandırarak SwiftUI’ye yardımcı olabilirsiniz. Bu sayede, hem kullanıcı deneyimi açısından akıcı hem de performans açısından güçlü bir uygulama sunmuş olursunuz.
+
+Bir sonraki yazımızda görüşmek üzere!

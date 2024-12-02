@@ -1,15 +1,15 @@
-<!-- Generated from 66e74e2 on 2024-11-11 @ 12:24 with Emacs 31.0.50 (Org mode 9.7.11) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Apple Uygulama Gizlilik Manifestosu (Privacy Manifest) - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Apple Uygulama Gizlilik Manifestosu (Privacy Manifest)</h1><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><p class="site-post-meta">10 min read | July 16, 2024</p><div id="content"><p>
+<!-- Generated from 11265a3 on 2024-12-02 @ 22:27 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Apple Uygulama Gizlilik Manifestosu (Privacy Manifest) - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Apple Uygulama Gizlilik Manifestosu (Privacy Manifest)</h1><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #28</a><p class="site-post-meta">10 min read | July 16, 2024</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8">Alper Cem Öztürk</a> yazdı.
 </p>
 
 
-<div id="org41e4122" class="figure">
+<div id="orgd29c84f" class="figure">
 <p><img src="/img/privacy_rules.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Apple Uygulama Gizlilik Manifestosu</p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgbf8c893">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org4ddcfdd">
 <p>
 Bildiğiniz gibi Apple WWDC23&rsquo;de yeni gizlilik kurallarını açıkladı. Bazı geliştiriciler, bu yenilikleri etkinlikten sonra keşfettiler ve hemen aksiyon aldılar. Bazıları ise 13 Mart 2024 tarihinden sonra Apple&rsquo;ın &ldquo;<b>Eksik API Beyanı</b>&rdquo; olarak da bilinen <b>ITMS-91053</b> bildirim e-postası ile bu yenilikleri öğrendiler ya da hatırladılar.
 </p>
@@ -30,7 +30,7 @@ Apple&rsquo;ın gizlilik konusunda attığı yeni adımlar, geliştiriciler içi
 İşte bu yazıda Apple&rsquo;ın kısıtlamalarına takılmak istemeyen sizlerle beraber yeni gizlilik kurallarını anlamaya çalışacağız. Yazı genelinde konuşacağımız başlıkları meraklısı için hemen aşağıya bırakıyorum.
 </p>
 </div>
-<h3><a id="projenize-privacy-manifest-eklemek-zorunda-mısınız" class="anchor" href="#projenize-privacy-manifest-eklemek-zorunda-mısınız">¶</a>Projenize Privacy Manifest eklemek zorunda mısınız?</h3><div class="outline-text-3" id="text-org26644f4">
+<h3><a id="projenize-privacy-manifest-eklemek-zorunda-mısınız" class="anchor" href="#projenize-privacy-manifest-eklemek-zorunda-mısınız">¶</a>Projenize Privacy Manifest eklemek zorunda mısınız?</h3><div class="outline-text-3" id="text-org7954fba">
 <p>
 Evet, <b>çoğu durumda</b> privacy manifest&rsquo;i projenize eklemek <b>zorundasınız</b>. App Store Connect&rsquo;e şu durumlarda privacy manifest eklemeniz gerekecek:
 </p>
@@ -52,7 +52,7 @@ Bu durumların herhangi birinde, kullandığınız her SDK ve Required Reason AP
 Ancak App Store&rsquo;da privacy manifest gerektiren SDK&rsquo;lerin kullanıldığı bir uygulamanız var ama yakın zamanda <b>yeni bir güncelleme planınız yoksa</b>, bu konuda bir aksiyon almanıza <b>gerek yok</b>. Apple tüm SDK&rsquo;lerin Privacy Manifest içeren son sürümlerine güncellemenin birçok eski uygulama için maliyetli olacağını bildiğinden bunu zorunlu kılmıyor. Yine de, gelecekteki güncellemelerinizde bu gereklilikleri göz önünde bulundurmanız önemlidir.
 </p>
 </div>
-<h3><a id="privacy-manifest-nedir" class="anchor" href="#privacy-manifest-nedir">¶</a>Privacy Manifest nedir?</h3><div class="outline-text-3" id="text-org3d04d7d">
+<h3><a id="privacy-manifest-nedir" class="anchor" href="#privacy-manifest-nedir">¶</a>Privacy Manifest nedir?</h3><div class="outline-text-3" id="text-orgfdf573e">
 <p>
 Öncelikle Privacy Manifest&rsquo;in ne olduğuyla başlayalım. Apple&rsquo;ın tanımlamasına göre Privacy Manifest, uygulamamızın veya entegre ettiğimiz üçüncü parti SDK&rsquo;nin topladığı veri türlerini ve kullandığı API&rsquo;leri kaydeden bir listedir (yani kısaca bir plist). Bu liste, hangi verilerin toplandığını ve hangi API&rsquo;lerin kullanıldığını nedenleriyle birlikte net bir şekilde belirtir.
 </p>
@@ -62,7 +62,7 @@ Bu listenin dolu hali kabaca aşağıdaki gibi gözüküyor.
 </p>
 
 
-<div id="org340b213" class="figure">
+<div id="orgb4389f4" class="figure">
 <p><img src="/img/privacy_manifest_ornek.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 2: </span>Privacy Manifest Dosyası Örneği</p>
@@ -72,19 +72,19 @@ Bu listenin dolu hali kabaca aşağıdaki gibi gözüküyor.
 Yukarıdaki görseli, dolu bir privacy manifest dosyasının nasıl gözüktüğüyle ilgili size bir fikir vermesi icin ekledim ancak bu kafanızı karıştırmasın. Hemen aşağıda, belirtmemiz gereken kritik bilgileri açıklıyorum.
 </p>
 </div>
-<h4><a id="privacy-tracking-enabled" class="anchor" href="#privacy-tracking-enabled">¶</a>Privacy Tracking Enabled:</h4><div class="outline-text-4" id="text-org81bace6">
+<h4><a id="privacy-tracking-enabled" class="anchor" href="#privacy-tracking-enabled">¶</a>Privacy Tracking Enabled:</h4><div class="outline-text-4" id="text-org2ba1247">
 <p>
 Uygulamamızın veya üçüncü parti SDK&rsquo;lerin, <b><i>App Tracking Transparency (ATT)</i></b> çerçevesinde takip edilip edilmediğini belirten bir Boolean değeri.
 </p>
 </div>
-<h4><a id="privacy-tracking-domains" class="anchor" href="#privacy-tracking-domains">¶</a>Privacy Tracking Domains:</h4><div class="outline-text-4" id="text-org3a0e837">
+<h4><a id="privacy-tracking-domains" class="anchor" href="#privacy-tracking-domains">¶</a>Privacy Tracking Domains:</h4><div class="outline-text-4" id="text-orga550b2b">
 <p>
 Uygulamamızın veya üçüncü parti SDK&rsquo;lerin bağlanıp, takip ettiği domain&rsquo;leri belirtmemiz istenen bir string listesi. Kullanıcı, <b><i>ATT</i></b> çerçevesi aracılığıyla izleme (tracking) izni vermediyse bu domainlere yönelik ağ istekleri başarısız olur. <b>Privacy Tracking Enabled</b> kısmını <b><i>true</i></b> olarak ayarlarsanız buraya da <b>en az bir domain</b> belirtmeniz gerekir. Aksi halde boş bırakabilirsiniz.
 </p>
 </div>
-<h4><a id="privacy-nutrition-label-types" class="anchor" href="#privacy-nutrition-label-types">¶</a>Privacy Nutrition Label Types:</h4><div class="outline-text-4" id="text-org7964fea">
+<h4><a id="privacy-nutrition-label-types" class="anchor" href="#privacy-nutrition-label-types">¶</a>Privacy Nutrition Label Types:</h4><div class="outline-text-4" id="text-org0c0aa99">
 
-<div id="org6eefb40" class="figure">
+<div id="org72f7e4d" class="figure">
 <p><img src="/img/privacy_manifest_labels.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 3: </span>Privacy Nutrition Labels</p>
@@ -119,7 +119,7 @@ belirten liste.</li>
 Detaylı bilgi için Apple&rsquo;ın bu <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests">dokümanına</a> göz atabilirsiniz.
 </p>
 </div>
-<h4><a id="veri-toplamaktan-kasıt-ne" class="anchor" href="#veri-toplamaktan-kasıt-ne">¶</a>Veri toplamaktan kasıt ne?</h4><div class="outline-text-4" id="text-org8bf685b">
+<h4><a id="veri-toplamaktan-kasıt-ne" class="anchor" href="#veri-toplamaktan-kasıt-ne">¶</a>Veri toplamaktan kasıt ne?</h4><div class="outline-text-4" id="text-org0a101a9">
 <p>
 Veri toplamaktan bahsettik ama toplamak derken gerçekten neyi kastediyoruz? Toplamak tam anlamıyla nerede devreye giriyor? diye soracak olursanız, Apple bunun için bir <a href="https://developer.apple.com/app-store/app-privacy-details/">rehber</a> yayınlamış.
 </p>
@@ -128,7 +128,7 @@ Veri toplamaktan bahsettik ama toplamak derken gerçekten neyi kastediyoruz? Top
 Kısacası buradaki veri toplama, verilerin sizin ve/veya üçüncü taraf ortaklarınızın iletilen request&rsquo;e <b>gerçek zamanlı</b> hizmet vermek için <b>gerekli olandan daha uzun süre</b> erişmesine izin verecek şekilde cihazdan çıkması anlamına gelir. Yani cihazdan çıkan bir veri, bir sunucuya gidiyor ve orada <b>belli bir sürenin üzerinde</b> erişim sağlanıyorsa, o veri toplanıyordur ve belirtilmesi gerekir. Aksi halde veri toplanıyor denilemez.
 </p>
 </div>
-<h4><a id="privacy-accessed-api-types" class="anchor" href="#privacy-accessed-api-types">¶</a>Privacy Accessed API Types:</h4><div class="outline-text-4" id="text-org860c1cb">
+<h4><a id="privacy-accessed-api-types" class="anchor" href="#privacy-accessed-api-types">¶</a>Privacy Accessed API Types:</h4><div class="outline-text-4" id="text-org13acf58">
 <p>
 Uygulamamızın veya veya üçüncü parti SDK&rsquo;lerin eriştiği API türlerini ve erişim nedenlerini belirten anahtar-değer ikililerinden oluşan bir liste. Apple&rsquo;ın erişim nedeni belirtmemizi zorunlu kıldığı bu API&rsquo;ler ayrıca <b>Required Reason API</b> olarak isimlendirilmiş.
 </p>
@@ -141,7 +141,7 @@ Buraya kadar sizlerle beraber Privacy Manifest dosyasının şemasını dört an
 Şimdi ise işin asıl kritik kısmı olan Required Reason API&rsquo;lerden ve onların nasıl deklare edilmesi gerektiğinden detaylıca bahsedeceğiz.
 </p>
 </div>
-<h3><a id="required-reason-api-nedir" class="anchor" href="#required-reason-api-nedir">¶</a>Required Reason API nedir?</h3><div class="outline-text-3" id="text-org69c6f7a">
+<h3><a id="required-reason-api-nedir" class="anchor" href="#required-reason-api-nedir">¶</a>Required Reason API nedir?</h3><div class="outline-text-3" id="text-orgd730049">
 <p>
 Required Reason API, Apple tarafından cihazı veya kullanıcıyı benzersiz bir kimlik ile tanımlamaya çalışmak için kullanılabilecek, kategorize edilmiş API&rsquo;lere denir.
 </p>
@@ -158,7 +158,7 @@ Bu tanıma uyan API&rsquo;ler aşağıdaki gibi belirlenmiş. Bizim manifest dos
 <li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278401">User defaults APIs</a></li>
 </ul>
 </div>
-<h4><a id="ufak-bir-demo" class="anchor" href="#ufak-bir-demo">¶</a>Ufak bir demo</h4><div class="outline-text-4" id="text-orgb4b4012">
+<h4><a id="ufak-bir-demo" class="anchor" href="#ufak-bir-demo">¶</a>Ufak bir demo</h4><div class="outline-text-4" id="text-org7f9f0a3">
 <p>
 Çoğumuz uygulamamızda <b>User Defaults</b> kullanıyoruz. Bu yüzden onun üzerinden bir örnek vereyim. Diyelim ki:
 </p>
@@ -188,7 +188,7 @@ O zaman <b>Privacy Accessed API Types</b> aşağıdaki gibi belirtilmeli:
 <li>Privacy Accessed API Reasons: <code>CA92.1</code>: Access info from same app, per documentation.</li>
 </ul>
 </div>
-<h3><a id="uygulama-geliştiricilerinin-sdk-kullanımları" class="anchor" href="#uygulama-geliştiricilerinin-sdk-kullanımları">¶</a>Uygulama geliştiricilerinin SDK kullanımları</h3><div class="outline-text-3" id="text-orgf5928d5">
+<h3><a id="uygulama-geliştiricilerinin-sdk-kullanımları" class="anchor" href="#uygulama-geliştiricilerinin-sdk-kullanımları">¶</a>Uygulama geliştiricilerinin SDK kullanımları</h3><div class="outline-text-3" id="text-org2e18ed5">
 <p>
 Uygulama geliştiricileri olarak hepimiz, işlerimizi kolaylaştıran birçok üçüncü parti SDK&rsquo;nin sunduklarından yararlanıyoruz. Çünkü Amerikayı yeniden keşfetmeye gerek yok. Yapılacak bir işi, bizden daha önce düşünmüş, yapmış, defalarca optimize etmiş ve bunu başkalarınında kullanabilmesi için SDK haline getirmiş birileri her zaman var. Bizde uygulamalarımızda sektör tarafından beğenilen ve güvenilen SDK&rsquo;leri sıkça kullanıyoruz.
 </p>
@@ -197,13 +197,13 @@ Uygulama geliştiricileri olarak hepimiz, işlerimizi kolaylaştıran birçok ü
 Peki kaçımız SDK&rsquo;nin gerçekte bu problemi nasıl çözdüğüyle ilgileniyoruz? Hadi dürüst olalım. Çoğumuz problemin arka planda nasıl ele alındığına bakmıyoruz. Apple da tam olarak bundan bahsediyor. Evet belki bu bağımlılıkların arkada neler yaptığıyla pek ilgilenmiyoruz ancak bu kodlardan da bizler sorumluyuz.
 </p>
 </div>
-<h4><a id="device-fingerprinting" class="anchor" href="#device-fingerprinting">¶</a>Device Fingerprinting</h4><div class="outline-text-4" id="text-orgf1144ff">
+<h4><a id="device-fingerprinting" class="anchor" href="#device-fingerprinting">¶</a>Device Fingerprinting</h4><div class="outline-text-4" id="text-orgc2b8a9c">
 <p>
 Uygulamamızda reklam göstermek için kullandığımız bir SDK, arka planda kullanıcının kullandığı klavyenin diline erişip, bunu kullanıcı kimliği oluştururken etnik köken bilgisi için kullanabilir. Daha sonra gösterilecek reklamların daha isabetli olması için bu etnik köken bilgisini kullanabilir. İşte tam da buna Cihaz Kimliklendirme (Device Fingerprinting) deniyor.
 </p>
 
 
-<div id="orgaa63caa" class="figure">
+<div id="orgaa9badc" class="figure">
 <p><img src="/img/device_fingerprinting.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 4: </span>Cihaz Kimliklendirme (Device Fingerprinting)</p>
@@ -223,7 +223,7 @@ Cihaz Kimliklendirme ile ilgili verilebilecek daha birçok bilgi var ancak ancak
 <li><a href="https://www.nytimes.com/2017/04/23/technology/travis-kalanick-pushes-uber-and-himself-to-the-precipice.html">Uber&rsquo;s C.E.O. Plays With Fire</a></li>
 </ul>
 </div>
-<h3><a id="gereklilikler-sdkrsquoler-için-nasıl-yerine-getirilmeli" class="anchor" href="#gereklilikler-sdkrsquoler-için-nasıl-yerine-getirilmeli">¶</a>Gereklilikler SDK&rsquo;ler için nasıl yerine getirilmeli?</h3><div class="outline-text-3" id="text-orgf9460bc">
+<h3><a id="gereklilikler-sdkrsquoler-için-nasıl-yerine-getirilmeli" class="anchor" href="#gereklilikler-sdkrsquoler-için-nasıl-yerine-getirilmeli">¶</a>Gereklilikler SDK&rsquo;ler için nasıl yerine getirilmeli?</h3><div class="outline-text-3" id="text-org4aa10ed">
 <p>
 Apple, Privacy Manifest gerektiren SDK&rsquo;ler için bir <a href="https://developer.apple.com/support/third-party-SDK-requirements/">liste</a> hazırladı. Bu listede hepimizin yakından tanıdığı <b><i>Firebase, Alamofire, Lottie</i></b> gibi birçok SDK mevcut.
 </p>
@@ -255,13 +255,13 @@ SDK&rsquo;lerinizden gelen ve sizin uygulamanıza eklediğiniz Privacy Manifest 
 </p>
 
 
-<div id="orgb917d08" class="figure">
+<div id="org9c14665" class="figure">
 <p><img src="/img/spm_package_update.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 5: </span>SPM En Son Paket Sürümlerine Güncelleme</p>
 </div>
 </div>
-<h3><a id="özetle" class="anchor" href="#özetle">¶</a>Özetle</h3><div class="outline-text-3" id="text-orga0ea0ca">
+<h3><a id="özetle" class="anchor" href="#özetle">¶</a>Özetle</h3><div class="outline-text-3" id="text-org957ac78">
 <p>
 Bu yazıda sizlerle Apple&rsquo;ın yeni gizlilik gerekliliklerinden bahsettik. Apple&rsquo;ın cihaz kimliklendirme gibi gizlilik ihlali uygulamalarına en başından beri karşı çıktığını hepimiz biliyoruz. Bu gibi uygulamalara engel olabilmek için atılan adımlardan birisi olan Privacy Manifest düzenlemesi de hemen biz geliştiricilerin gündemine oturdu.
 </p>
@@ -278,7 +278,7 @@ Aksiyon almaya hazırlanan bizler ise Apple&rsquo;ın dokümanlarını okuduğum
 Umarım bu yazı işinize yaramış ve bu süreci hızlandırmanızda sizlere yardımcı olmuştur. Her türlü geri bildiriminizi bekliyorum. Sonraki yazılarda görüşmek üzere, Hoşça kalın! 🏄🏼‍♂️
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org97b33b4">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgc0f88bb">
 <ul class="org-ul">
 <li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests">Describing data use in Privacy Manifests</a></li>
 <li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Describing use of Required Reason API</a></li>
@@ -288,4 +288,4 @@ Umarım bu yazı işinize yaramış ve bu süreci hızlandırmanızda sizlere ya
 <li><a href="https://www.nytimes.com/2017/04/23/technology/travis-kalanick-pushes-uber-and-himself-to-the-precipice.html">Uber&rsquo;s C.E.O. Plays With Fire</a></li>
 </ul>
 </div>
-</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #26</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #11</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/android/">Android #9</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #5</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/kurulum/">Kurulum #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/test/">Test #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #36</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #28</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #11</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/android/">Android #9</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #6</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/kurulum/">Kurulum #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/test/">Test #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

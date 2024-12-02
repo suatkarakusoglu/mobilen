@@ -6,6 +6,8 @@
 
 [[file:../../news/xcode_build_tool.org]["xcodebuild" Komutları ve Kullanım Örnekleri]]
 
+[[file:../../news/xcode_spell_checker.org][Xcode Spell Checker]]
+
 [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]
 
 [[file:../../news/xcrun_komutu.org][Xcrun Komutu ve simctl ile iOS Simülatör Yönetimi]]

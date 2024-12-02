@@ -34,6 +34,8 @@
 
 [[file:../../news/ssl_pinning.org][SSL Pinning]]
 
+[[file:../../news/swiftui_in_gozunden.org][SwiftUI'in gözünden]]
+
 [[file:../../news/switch_expression.org][Swift 5.9: If ve Switch Gelişmeleri]]
 
 [[file:../../news/version_pinning_ve_swift_frontend.org][Versiyon Pinlemenin Önemi]]
@@ -47,6 +49,8 @@
 [[file:../../news/xcode_build_tool.org]["xcodebuild" Komutları ve Kullanım Örnekleri]]
 
 [[file:../../news/xcode_project_custom_file_templates.org][XCode Project Custom File Templates]]
+
+[[file:../../news/xcode_spell_checker.org][Xcode Spell Checker]]
 
 [[file:../../news/xcodes_surum_yonetim.org][Xcodes: Xcode'un Sürümlerini Yönetmenin Etkin Yolu]]
 

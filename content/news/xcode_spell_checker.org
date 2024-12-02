@@ -1,0 +1,37 @@
+#+title: Xcode Spell Checker
+#+date: [2024-12-03 Tue]
+#+author: Ali Mert Tekel
+#+filetags: :iOS:Xcode:
+
+[[https://linkedin.com/in/alimerttekel][Ali Mert Tekel]] yazdı.
+
+#+CAPTION: Photo by [[https://unsplash.com/photos/roll-the-drums-painted-on-wall-wMybzaBOaSQ][Marija Zaric]]
+[[file:xcode_spell_check_cover.jpg]]
+
+* İçerik
+Merhaba sevgili okurlar! Bu yazımda, çok küçük ama etkili bir özellikten bahsedeceğim.
+
+Kod yazarken, özellikle değişken ve fonksiyon isimlerinde, bazen küçük yazım hataları yapabiliyoruz. Özellikle odak noktamız farklı yerlere kayınca, bu hataları tamamen gözden kaçırmak çok olası. Hatta bazı yazım hataları o kadar doğal görünüyor ki, PR aşamasından bile fark edilmeden geçebiliyor. Aslında, Xcode’da bu hataları fark etmemize yardımcı olan bir özellik mevcut; ancak, varsayılan olarak kapalı geldiği için çoğu zaman varlığından haberimiz bile olmuyor. Bu özelliği etkinleştirmek için şu adımları izleyebilirsiniz.
+
+1. Xcode’u Açın
+2. Menüden Aktifleştirme:
+
+[[file:xcode_spell_checker_menu.jpg]]
+
+Üst menüden =Edit= > =Format= > =Spelling and Grammar= yolunu izleyin.
+
+Açılan menüde birkaç seçenek göreceksiniz:
+
+- Show Spelling and Grammar :: Yazım ve dilbilgisi denetimini açar.
+- Check Document Now :: Belgedeki yazım ve dilbilgisini hemen kontrol eder.
+- Check Spelling While Typing :: Yazarken otomatik olarak yazım denetimi yapar.
+
+[[file:xcode_spell_checker_sample.jpg]]
+
+Bu şekilde kodunuzda yaptığınız yazım hataları kırmızı dalgalı alt çizgilerle vurgulanır. Böylece hataları anında fark edip düzeltebilirsiniz.
+
+Xcode’un yazım ve dilbilgisi denetimi, kodunuzun doğruluğunu ve okunabilirliğini artırarak daha temiz bir yapı oluşturmanıza yardımcı oluyor. Bu küçük ama faydalı özellikle projelerinizde daha az hata yapmanız mümkün.
+
+Umarım işinize yarar ve kodlama süreciniz daha keyifli hale gelir!
+
+Sonraki yazılarda görüşmek üzere, keyifli kodlamalar!

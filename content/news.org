@@ -1,6 +1,7 @@
 #+TITLE: Yazılar
 
 - [[file:news/xcode_spell_checker.org][Xcode Spell Checker]] - Ali Mert Tekel · December 03, 2024
+- [[file:news/subcomposelayout.org][Subcomposelayout ile Content Ölçümü]] - Emir Kaya · December 03, 2024
 - [[file:news/swiftui_in_gozunden.org][SwiftUI'in gözünden]] - Ali Mert Tekel · December 02, 2024
 - [[file:news/browserstack_mobil_test_araci.org][BrowserStack Mobil Uygulama Test Aracı]] - Suat Karakuşoğlu · November 11, 2024
 - [[file:news/stow_dotfiles.org][Dotfiles Yönetimi ve GNU Stow Aracı]] - Suat Karakuşoğlu · October 17, 2024

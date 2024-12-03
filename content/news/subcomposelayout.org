@@ -1,0 +1,69 @@
+#+title:Subcomposelayout ile Content Ölçümü
+#+date: [2024-12-03 Tue]
+#+author: Emir Kaya
+#+filetags: :Android:Yazılım:
+
+[[https://linkedin.com/in/emir-k-516788215][Emir Kaya]] yazdı.
+
+[[file:subcomposelayout_content_cover.jpg]]
+
+* İçerik
+Merhabalar, bu yazımda =Subcomposelayout= yapısı ile herhangi bir contentin yükseklik ve genişlik değerlerini nasıl ölçebileceğimizi ve nasıl kullanabileceğimizi açık bir şekilde anlatmaya çalışacağım.
+
+Öncelikle neden böyle bir ölçüm yapmaya ihtiyacım olduğunu anlatarak başlamak istiyorum.
+
+Üzerinde çalıştığım bir bottomsheet’te yarım açılma oranının ilk başta açılması gereken contentin uzunluğu ile aynı olmalıydı.
+
+Yani herhangi bir boşluk veya contentin az gözükme gibi bir durumu olmamalıydı. Bu sebepten dolayı kullanıcı etkileşime girip bottomsheet açılmadan önce açılması istenen içerik renderlanıp ölçülmeli ve ölçülen uzunluk değeri bottomsheet’in yarım açıldığındaki yüksekliğine verilmeliydi.
+
+Ve bu içerik her defasında değişebilir bir içerik olduğu için her defasında farklı bir ölçüm yapılmalıydı. Bu sebepten dolayı böyle bir çözüme başvurdum çünkü ölçümü dinamik olarak farklı senaryolarak uygun bir şekilde yapmalıydım.
+
+Bu noktada ölçümü Subcomposelayout ile yapmaya karar verdim ve bu doğrultuda bir ölçüm fonksiyonu oluşturdum.
+
+Peki aslında Subcomposelayout nedir?
+
+** Subcomposelayout
+Subcomposelayout aslında dinamik bir şekilde alt composable’ları yerleştirmemiz için var olan bir yapıdır. Daha anlaşılır bir şekilde açıklamak gerekirse, bir bileşenin yerleşimi başka bir bileşenin boyutlarına bağlıysa bu noktada Subcomposelayout kullanılabilir. Ve tabii ki bizim oluşturduğumuz senaryodaki gibi ölçüm yapmak için de kullanabiliriz.
+
+** Ölçüm nasıl yapılır ve nasıl kullanılır?
+Senaryoda da bahsettiğim gibi kullanıcı butona tıkladıktan sonra bottomsheet açılmadan önce contentimizin yüksekliği ölçülüyor.
+
+Aslında buradaki mantık, kullanıcıya göstermeden contenti ekranda renderlatıp yüksekliğini alıyoruz ve bottomsheet’in içerisine veriyoruz.
+
+Bu işlemi yapabilmek için MeasuredContentHeight olarak isimlendirdiğim bir composable fonksiyon oluşturdum ve içerisinde aşağıda olduğu gibi bu fonksiyon içerisinde Subcomposablelayout kullanıyoruz.
+
+#+begin_src kotlin
+  @Composable
+  fun MeasuredContentHeight(onHeightMeasured: (Float) -> Unit) {
+      SubcomposeLayout { constraints ->
+          val placeables = subcompose("content") {
+              NotExpandedContent()
+          }.map { it.measure(constraints) }
+
+          val totalHeightPx = placeables.sumOf { it.height }
+          val totalHeightDp = totalHeightPx.toDp()
+
+          onHeightMeasured(totalHeightDp.value)
+
+          layout(0, 0){}
+      }
+  }
+#+end_src
+
+Öncelikle ölçüm fonksiyonumuzu oluştururken ölçtüğümüz değeri dışarıya verebilmek için parametre oalrak onHeightMeasured adında bir callback tanımlıyoruz. Bu callback’e fonksiyonun devamında ölçtüğümüz değeri vereceğiz.
+
+Daha sonra Subcomposelayout’ımızı oluşturuyoruz. “placables” adında bir subcompose oluşturuyoruz ve içerisine ölçmek istediğimiz composable’ı yerleştiriyoruz. Senaryomuzda bottomsheet’in tam açılmadığı andaki içeriği ölçmek istediğimiz için oluşturduğum “NotExpandedContent()” composable fonksiyonunu yerleştiriyorum.
+
+Sonrasında ölçümümüzü gerçekleştirebilmek için “.map” koleksiyon fonksiyonunu kullanıyoruz: “.map { it.measure(constraints) }” . Bu sayede subcompose’a yerleştirdiğimiz tüm içerikler ölçülür ve bir listeye yerleştirilir.
+
+Bu senaryoda yalnızca yüksekliğe ihtiyacımız olduğu için fonksiyonun devamında “height” değerini piksel cinsinden hesaplıyorum ve totalHeightPx değerine atıyorum. Daha sonrasında bu değeri “.toDp()”’yi kullanarak DP cinsine dönüştürüyorum ve “totalHeightDp” değerine atıyorum.
+
+Fonksiyonun devamında yaptığımız ölçümü en başta oluşturduğumuz parametreye atıyorum. Bu sayede istediğimiz zaman bu değere dışarıdan erişebileceğiz.
+
+Bana kalırsa bu fonksiyonun en can alıcı kısmı son kısmı yani “layout(0, 0){}” bu kısım. layout ile Subcomposelayout’ımızı yerleştiriyoruz. layout bizden height ve width değerleri bekliyor.
+
+Biz bu senaryoda ikisine de 0 değerini vererek ekrana çizdirmemesini ancak ölçüm için renderlamasını sağlıyoruz. Yani bu kısım bu fonksiyonun sadece ölçüm yapmak için kullanıldığı anlamına geliyor.
+
+Bu yazımda sizlere Subcomposelayout kullanarak composable content’lerin yükseklik ve genişliklerini nasıl ölçebileceğimizi olabildiğince anlaşılır bir şekilde anlatmaya çalıştım.
+
+Umarım faydalı olmuştur. Okuduğunuz için teşekkür ederim.

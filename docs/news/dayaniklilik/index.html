@@ -1,0 +1,180 @@
+<!-- Generated from a806b0a on 2024-12-24 @ 16:28 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Dayanıklılık (Robustness) - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Dayanıklılık (Robustness)</h1><a class="tag" href="https://mobilen.art/tags/prensip/">Prensip #1</a><p class="site-post-meta">5 min read | December 24, 2024</p><div id="content"><p>
+<a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
+</p>
+
+
+<div id="org53b9869" class="figure">
+<p><img src="/img/badger_robustness_cover.jpg" class="content-image" width="100%">
+</p>
+<p><span class="figure-number">Figure 1: </span>Fotoğraf <a href="https://unsplash.com/photos/black-and-white-badger-photo-GvSLkDH7XdI">Vincent van Zalinge</a></p>
+</div>
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgea2f92a">
+<p>
+Merhabalar,
+</p>
+
+<p>
+Dayanıklılık bir ürünün veya servisin hizmet vermesinin önündeki kötücül etkenlerden kendini korumayı becerebilmesine denir.
+</p>
+
+<p>
+Bu yazımda evrensel bir dayanıklılık prensibinden bahsedicem.
+</p>
+</div>
+<h3><a id="robustness-prensibi-ve-rfc-1122" class="anchor" href="#robustness-prensibi-ve-rfc-1122">¶</a>Robustness Prensibi ve RFC 1122</h3><div class="outline-text-3" id="text-org5a1d755">
+<p>
+İnternetin temelleri <code>RFC</code> denilen <code>Request for Comment</code> dokümanları baz alınarak atılmış.
+</p>
+
+<p>
+Ve internet neredeyse günümüzde 30-40 seneyi aşan bu prensiplerin üzerinde çalışmaya devam ediyor.
+</p>
+
+<p>
+Bu sistemler genel olarak üniversitelerin, araştırma merkezlerinin ve askeri kurumların birlikte yaptığı detaylı teknik çalışmalar ile kurulmuş.
+</p>
+
+<p>
+Burada dikkate değer nokta bu sistemlerin zamana karşı halen nasıl hizmet vermeyi başardığını düşünmekten yani <code>dayanıklığından</code> geçiyor.
+</p>
+
+<p>
+<code>RFC1122</code>&rsquo;de internetin oturduğu temel açıklamalar yapılırken, bir çok mühendisin sonrasında da referans verdiği temel bir prensip var: <a href="https://www.freesoft.org/CIE/RFC/1122/9.htm">Robustness Principle</a>.
+</p>
+
+<blockquote>
+<p>
+Be liberal in what you accept, and conservative in what you send.
+</p>
+
+<p>
+Kabul ederken daha affedici/liberal ol, ancak gönderirken daha muhafazakar ol.
+</p>
+
+<p>
+&#x2014; Jon Postel
+</p>
+</blockquote>
+
+<p>
+Okuduğunuzda adeta bir kutsal kitaptan çıkmışçasına görünen bu prensip <a href="https://en.wikipedia.org/wiki/Jon_Postel">Jon Postel</a>&rsquo;e ait.
+</p>
+
+<p>
+<code>Jon Postel</code> bu prensipler üzerine SMTP gibi halen aktif olan Mail protokollerinin ve türlü türlü internet <code>RFC</code>&rsquo;sini hazırlayan abilerimizden.
+</p>
+</div>
+<h3><a id="html-ve-www" class="anchor" href="#html-ve-www">¶</a>HTML ve WWW</h3><div class="outline-text-3" id="text-orge4361bb">
+<p>
+Bu dayanıklılık prensibinin heryere yayılan WWW&rsquo;ı taşıyan HTTP protokolünün yaratıcısı <a href="https://www.w3.org/DesignIssues/Principles.html">Tim Berners Lee&rsquo;nin prensipleri</a>&rsquo;nde de görübiliyoruz.
+</p>
+
+<p>
+Peki, kabul ederken daha affedici/liberal olmak, ancak gönderirken daha muhafazakar olmak ne demek?
+</p>
+
+<ul class="org-ul">
+<li>Etrafınızdan anlamlandırabildiğiniz datalar olduğunda bu dataları alıp kullanabileceğiniz şekile getirip çalışmaya devam ediniz.</li>
+
+<li>Ancak sizden çıkacak olan verilerde mümkün mertebe standart oluşturup onu takip ediniz.</li>
+</ul>
+
+<p>
+İlk yıllarda <code>Tim Berners</code> donanımdan bağımsız bir şekilde görüntülenmeyi sağlayacak bir yapı kurmanın gereğinden hareket ederken bu prensibe de atıfta bulunuyor.
+</p>
+
+<p>
+Dil olarak ortaya koyduğu <code>HTML</code> zaten <code>XML</code> tabanlı halihazırda <a href="https://en.wikipedia.org/wiki/CERN">CERN</a>&rsquo;de kullandığı <code>SGML</code> (Standard generalized markup language)&rsquo;in üzerine yeni componentler eklemeye başlamasıyla şekilleniyor.
+</p>
+
+<p>
+HTML&rsquo;in gelişmesi sürecinde sonraki sürümlerinde yeni gelen değişikliklerin sistemi kırmamasını bu affedicilik ile geliştirmesinden ileri geliyor.
+</p>
+</div>
+<h3><a id="mobil-yansımaları" class="anchor" href="#mobil-yansımaları">¶</a>Mobil Yansımaları</h3><h4><a id="servis-ile-olan-iletişimlerimizde" class="anchor" href="#servis-ile-olan-iletişimlerimizde">¶</a>Servis ile olan iletişimlerimizde</h4><div class="outline-text-4" id="text-org3e4c9ad">
+<p>
+Servisten aldığımız verilerde bazen tipler alıp o tiplere göre uygulamamızda akışlar yapabiliyoruz.
+</p>
+
+<p>
+Ancak ileriki tarihlerde yeni başka tipler göndermeye başladığında servisimiz, bu yeni tiplerin hali hazırdaki uygulamamızı kırmamasına dikkat edecek şekilde yazmaliyiz.
+</p>
+
+<p>
+Yeni tipler icin uygun olabilecek varsayılan davranışlar yazabiliriz, veya loglayabiliriz.
+</p>
+
+<p>
+Bu sayede api yeni bir tip eklediğinde kullanıcılarımız bundan olumsuz etkilenmeyecektir.
+</p>
+</div>
+<h4><a id="failable-initializers" class="anchor" href="#failable-initializers">¶</a>Failable Initializers</h4><div class="outline-text-4" id="text-orgfbe3dfa">
+<p>
+Swift&rsquo;ten örnek vermek gerekirse data&rsquo;yı kabul edip geçersiz durumda <code>failable initilazer</code> üzerinden <code>nil</code> dönebiliriz.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">struct</span> <span class="nc">User</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nv">username</span><span class="p">:</span> <span class="nb">String</span>
+      <span class="kd">init</span><span class="p">?(</span><span class="n">username</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="n">username</span><span class="p">.</span><span class="bp">isEmpty</span> <span class="o">||</span> <span class="n">username</span><span class="p">.</span><span class="bp">count</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">{</span>
+              <span class="k">return</span> <span class="kc">nil</span> <span class="c1">// Geçersiz kullanıcı adı durumunda `nil`</span>
+          <span class="p">}</span>
+          <span class="kc">self</span><span class="p">.</span><span class="n">username</span> <span class="p">=</span> <span class="n">username</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="kd">let</span> <span class="nv">user</span> <span class="p">=</span> <span class="n">User</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="s">&quot;Ali Peyami&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Kullanıcı: </span><span class="si">\(</span><span class="n">user</span><span class="p">.</span><span class="n">username</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Geçersiz kullanıcıı.&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<h4><a id="availability-checks" class="anchor" href="#availability-checks">¶</a>Availability Checks</h4><div class="outline-text-4" id="text-org9a7b419">
+<p>
+Bunu normal kendi mobil dünyamızda uyarlamak gerekirse, yeni gelen özellikleri destekleyen sürümlerde <code>availability</code> kontrolü yapabilir ve desteklenen işletim sistemlerinde yeni özellikleri kullanabilir, desteklenmeyenlerinde <code>fallback view</code>&rsquo;lere düşebiliriz.
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="kd">import</span> <span class="nc">SwiftUI</span>
+
+  <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="cp">#available</span><span class="p">(</span><span class="cp">iOS</span> <span class="mf">15.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+              <span class="n">Text</span><span class="p">(</span><span class="s">&quot;Bordered buton&quot;</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">buttonStyle</span><span class="p">(.</span><span class="n">bordered</span><span class="p">)</span> <span class="c1">// iOS 15 ile özelliği</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="n">Text</span><span class="p">(</span><span class="s">&quot;Düz buton&quot;</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">padding</span><span class="p">()</span>
+                <span class="p">.</span><span class="n">background</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">gray</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">cornerRadius</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="c1">// iOS 15 ve altinda</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<h3><a id="sonuç-olarak" class="anchor" href="#sonuç-olarak">¶</a>Sonuç Olarak</h3><div class="outline-text-3" id="text-orgb362a60">
+<p>
+Hem kabul ederken hem çıktı verirken liberal bir yaklaşım sergilemek sistemi kaosa sürükleyebilecekken, tam tersi durumda ise işlerin tıkanmasına sebep olucaktır.
+</p>
+
+<p>
+Ancak kabul ederken liberal, çıktı verirken konservatif olmaya sevk eden bu dayanıklılık prensibi yalnızca bir RFC1122&rsquo;deki prensip olmaktan çıkıp, gerçek bir hayat felsefesine dönüşüyor.
+</p>
+
+<p>
+Bu dengeyi koruyarak tasarladığımız sistemlerin dayanıklılığına katkıda bulanabiliriz.
+</p>
+
+<p>
+İyi çalışmalar :)
+</p>
+</div>
+<h3><a id="kaynakca" class="anchor" href="#kaynakca">¶</a>Kaynakca</h3><div class="outline-text-3" id="text-orgbdc9649">
+<ul class="org-ul">
+<li><a href="https://www.freesoft.org/CIE/RFC/1122/9.htm">Robustness Principle</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Jon_Postel">Jon Postel</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/borderedbuttonstyle">.bordered style</a></li>
+</ul>
+</div>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #28</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #11</a><a class="tag" href="https://mobilen.art/tags/android/">Android #10</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #6</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/kurulum/">Kurulum #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/prensip/">Prensip #1</a><a class="tag" href="https://mobilen.art/tags/test/">Test #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

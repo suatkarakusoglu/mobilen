@@ -1,0 +1,121 @@
+#+title: Dayanıklılık (Robustness)
+#+date: [2024-12-24 Tue]
+#+author: Suat Karakuşoğlu
+#+filetags: :Prensip:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+#+CAPTION: Fotoğraf [[https://unsplash.com/photos/black-and-white-badger-photo-GvSLkDH7XdI][Vincent van Zalinge]]
+[[file:badger_robustness_cover.jpg]]
+
+* İçerik
+Merhabalar,
+
+Dayanıklılık bir ürünün veya servisin hizmet vermesinin önündeki kötücül etkenlerden kendini korumayı becerebilmesine denir.
+
+Bu yazımda evrensel bir dayanıklılık prensibinden bahsedicem.
+
+** Robustness Prensibi ve RFC 1122
+İnternetin temelleri =RFC= denilen =Request for Comment= dokümanları baz alınarak atılmış.
+
+Ve internet neredeyse günümüzde 30-40 seneyi aşan bu prensiplerin üzerinde çalışmaya devam ediyor.
+
+Bu sistemler genel olarak üniversitelerin, araştırma merkezlerinin ve askeri kurumların birlikte yaptığı detaylı teknik çalışmalar ile kurulmuş.
+
+Burada dikkate değer nokta bu sistemlerin zamana karşı halen nasıl hizmet vermeyi başardığını düşünmekten yani =dayanıklığından= geçiyor.
+
+=RFC1122='de internetin oturduğu temel açıklamalar yapılırken, bir çok mühendisin sonrasında da referans verdiği temel bir prensip var: [[https://www.freesoft.org/CIE/RFC/1122/9.htm][Robustness Principle]].
+
+#+caption: Robustness Principle - RFC 1122 (Requirements for Internet Hosts)
+#+begin_quote
+Be liberal in what you accept, and conservative in what you send.
+
+Kabul ederken daha affedici/liberal ol, ancak gönderirken daha muhafazakar ol.
+
+--- Jon Postel
+#+end_quote
+
+Okuduğunuzda adeta bir kutsal kitaptan çıkmışçasına görünen bu prensip [[https://en.wikipedia.org/wiki/Jon_Postel][Jon Postel]]'e ait.
+
+=Jon Postel= bu prensipler üzerine SMTP gibi halen aktif olan Mail protokollerinin ve türlü türlü internet =RFC='sini hazırlayan abilerimizden.
+
+** HTML ve WWW
+Bu dayanıklılık prensibinin heryere yayılan WWW'ı taşıyan HTTP protokolünün yaratıcısı [[https://www.w3.org/DesignIssues/Principles.html][Tim Berners Lee'nin prensipleri]]'nde de görübiliyoruz.
+
+Peki, kabul ederken daha affedici/liberal olmak, ancak gönderirken daha muhafazakar olmak ne demek?
+
+- Etrafınızdan anlamlandırabildiğiniz datalar olduğunda bu dataları alıp kullanabileceğiniz şekile getirip çalışmaya devam ediniz.
+
+- Ancak sizden çıkacak olan verilerde mümkün mertebe standart oluşturup onu takip ediniz.
+
+İlk yıllarda =Tim Berners= donanımdan bağımsız bir şekilde görüntülenmeyi sağlayacak bir yapı kurmanın gereğinden hareket ederken bu prensibe de atıfta bulunuyor.
+
+Dil olarak ortaya koyduğu =HTML= zaten =XML= tabanlı halihazırda [[https://en.wikipedia.org/wiki/CERN][CERN]]'de kullandığı =SGML= (Standard generalized markup language)'in üzerine yeni componentler eklemeye başlamasıyla şekilleniyor.
+
+HTML'in gelişmesi sürecinde sonraki sürümlerinde yeni gelen değişikliklerin sistemi kırmamasını bu affedicilik ile geliştirmesinden ileri geliyor.
+
+** Mobil Yansımaları
+*** Servis ile olan iletişimlerimizde
+Servisten aldığımız verilerde bazen tipler alıp o tiplere göre uygulamamızda akışlar yapabiliyoruz.
+
+Ancak ileriki tarihlerde yeni başka tipler göndermeye başladığında servisimiz, bu yeni tiplerin hali hazırdaki uygulamamızı kırmamasına dikkat edecek şekilde yazmaliyiz.
+
+Yeni tipler icin uygun olabilecek varsayılan davranışlar yazabiliriz, veya loglayabiliriz.
+
+Bu sayede api yeni bir tip eklediğinde kullanıcılarımız bundan olumsuz etkilenmeyecektir.
+
+*** Failable Initializers
+Swift'ten örnek vermek gerekirse data'yı kabul edip geçersiz durumda =failable initilazer= üzerinden =nil= dönebiliriz.
+
+#+begin_src swift
+  struct User {
+      let username: String
+      init?(username: String) {
+          if username.isEmpty || username.count < 3 {
+              return nil // Geçersiz kullanıcı adı durumunda `nil`
+          }
+          self.username = username
+      }
+  }
+
+  if let user = User(username: "Ali Peyami") {
+      print("Kullanıcı: \(user.username)")
+  } else {
+      print("Geçersiz kullanıcıı.")
+  }
+#+end_src
+
+*** Availability Checks
+Bunu normal kendi mobil dünyamızda uyarlamak gerekirse, yeni gelen özellikleri destekleyen sürümlerde =availability= kontrolü yapabilir ve desteklenen işletim sistemlerinde yeni özellikleri kullanabilir, desteklenmeyenlerinde =fallback view='lere düşebiliriz.
+
+#+begin_src swift
+  import SwiftUI
+
+  struct ContentView: View {
+      var body: some View {
+          if #available(iOS 15.0, *) {
+              Text("Bordered buton")
+                .buttonStyle(.bordered) // iOS 15 ile özelliği
+          } else {
+              Text("Düz buton")
+                .padding()
+                .background(Color.gray)
+                .cornerRadius(8) // iOS 15 ve altinda
+          }
+      }
+  }
+#+end_src
+
+** Sonuç Olarak
+Hem kabul ederken hem çıktı verirken liberal bir yaklaşım sergilemek sistemi kaosa sürükleyebilecekken, tam tersi durumda ise işlerin tıkanmasına sebep olucaktır.
+
+Ancak kabul ederken liberal, çıktı verirken konservatif olmaya sevk eden bu dayanıklılık prensibi yalnızca bir RFC1122'deki prensip olmaktan çıkıp, gerçek bir hayat felsefesine dönüşüyor.
+
+Bu dengeyi koruyarak tasarladığımız sistemlerin dayanıklılığına katkıda bulanabiliriz.
+
+İyi çalışmalar :)
+
+** Kaynakca
+- [[https://www.freesoft.org/CIE/RFC/1122/9.htm][Robustness Principle]]
+- [[https://en.wikipedia.org/wiki/Jon_Postel][Jon Postel]]
+- [[https://developer.apple.com/documentation/swiftui/borderedbuttonstyle][.bordered style]]

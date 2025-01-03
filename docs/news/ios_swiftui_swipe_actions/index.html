@@ -1,16 +1,16 @@
-<!-- Generated from a806b0a on 2024-12-24 @ 16:28 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!-- Generated from 1286c42 on 2025-01-03 @ 14:54 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>iOS SwiftUI Swipe Actions - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">iOS SwiftUI Swipe Actions</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #28</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><p class="site-post-meta">5 min read | June  2, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org7fb70f9">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgacdd172">
 
-<div id="orga7872e9" class="figure">
+<div id="org32119a9" class="figure">
 <p><img src="/img/SwipeActions.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Örnek Swipe Actions</p>
 </div>
 </div>
-<h3><a id="swipe-actions-nedir" class="anchor" href="#swipe-actions-nedir">¶</a>Swipe Actions nedir?</h3><div class="outline-text-3" id="text-orgc451da0">
+<h3><a id="swipe-actions-nedir" class="anchor" href="#swipe-actions-nedir">¶</a>Swipe Actions nedir?</h3><div class="outline-text-3" id="text-org6798c23">
 <p>
 Merhabalar, herhangi bir ui elemanının üzerinden <code>swipe</code> ile çıkan aksiyonlar iOS kullanıcı deneyiminde önemli rol oynuyor.
 </p>
@@ -41,7 +41,7 @@ Ancak iOS-14 destekliyorsanız veya herhangi bir SwiftUI view&rsquo;e swipe aksi
 Bu yazımızda <a href="https://github.com/aheze/SwipeActions">Açık Kaynak SwipeActions Reposu</a>&rsquo;nu inceleyeceğiz.
 </p>
 </div>
-<h3><a id="swipeactions-kullanımı" class="anchor" href="#swipeactions-kullanımı">¶</a>SwipeActions Kullanımı</h3><div class="outline-text-3" id="text-org7a65fec">
+<h3><a id="swipeactions-kullanımı" class="anchor" href="#swipeactions-kullanımı">¶</a>SwipeActions Kullanımı</h3><div class="outline-text-3" id="text-org5f9469f">
 <div class="highlight"><pre><span></span>  <span class="kd">import</span> <span class="nc">SwiftUI</span>
   <span class="kd">import</span> <span class="nc">SwipeActions</span>
 
@@ -63,7 +63,7 @@ Bu yazımızda <a href="https://github.com/aheze/SwipeActions">Açık Kaynak Swi
   <span class="p">}</span>
 </pre></div>
 </div>
-<h3><a id="kaynak-kod-okuma-codepreferencekeycode-kullanımı" class="anchor" href="#kaynak-kod-okuma-codepreferencekeycode-kullanımı">¶</a>Kaynak Kod Okuma: <code>PreferenceKey</code> kullanımı</h3><div class="outline-text-3" id="text-org59084ab">
+<h3><a id="kaynak-kod-okuma-codepreferencekeycode-kullanımı" class="anchor" href="#kaynak-kod-okuma-codepreferencekeycode-kullanımı">¶</a>Kaynak Kod Okuma: <code>PreferenceKey</code> kullanımı</h3><div class="outline-text-3" id="text-org0d44371">
 <p>
 Veri iletişimi view componentleri arasında Environment Objeler uzerinden <code>Parent</code> → <code>Child</code> view yönünde olabiliyor.
 Veya data binding ile <code>@Binding</code> çift taraflı <code>reactive</code> şekilde sağlanabiliyor.
@@ -110,7 +110,7 @@ Ayrıca apple sdk&rsquo;inde de <code>navigationTitle</code> modifier&rsquo;i il
 Daha detaylı anlamak için <a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a> yazısına göz atabilirsiniz.
 </p>
 </div>
-<h3><a id="extension-methodlara-generic-constraint-uygulamak" class="anchor" href="#extension-methodlara-generic-constraint-uygulamak">¶</a>Extension methodlara Generic Constraint Uygulamak</h3><div class="outline-text-3" id="text-orgd5b8176">
+<h3><a id="extension-methodlara-generic-constraint-uygulamak" class="anchor" href="#extension-methodlara-generic-constraint-uygulamak">¶</a>Extension methodlara Generic Constraint Uygulamak</h3><div class="outline-text-3" id="text-orgbea375c">
 <p>
 <code>Generic</code> kullanarak <code>extension method</code>&rsquo;larının yalnızca ilgili tipler ile kullanılmasını derleme seviyesinde sağlamak tatlı bir özellik.
 <a href="https://github.com/aheze/SwipeActions/blob/main/Sources/SwipeActions.swift#L986">Burada</a> ilgili örneği görebilirsiniz.
@@ -122,11 +122,11 @@ Daha detaylı anlamak için <a href="https://swiftwithmajid.com/2020/01/15/the-m
   <span class="p">}</span>
 </pre></div>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgf6dd8e9">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgfec561f">
 <ol class="org-ol">
 <li><a href="https://github.com/aheze/SwipeActions">SwipeActions Repo</a></li>
 <li><a href="https://developer.apple.com/documentation/swiftui/preferences?changes=_7">Apple PreferenceKey Dokümantasyonu</a></li>
 <li><a href="https://swiftwithmajid.com/2020/01/15/the-magic-of-view-preferences-in-swiftui/">Magic of View Preferences in SwiftUI</a></li>
 </ol>
 </div>
-</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #28</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #11</a><a class="tag" href="https://mobilen.art/tags/android/">Android #10</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #6</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/kurulum/">Kurulum #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/prensip/">Prensip #1</a><a class="tag" href="https://mobilen.art/tags/test/">Test #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>
+</div></div></div><footer class="site-footer"><div class="container"><div class="row"><div class="column"><p><a href="https://mobilen.art/credits/">Atıflar</a> · <a rel="me" href="https://tr.linkedin.com/in/suat-karakusoglu">s13u</a></p><p>© 2023-2024 Mobilen</p></div><div class="column align-right"><p><a href="https://github.com/suatkarakusoglu/mobilen"><img src="https://mobilen.art/img/site_github_icon.png" style="width: 80px" alt="Github'da Katkıda Bulun"/></a></p></div></div></div><div class="container"><div class="row site-footer-tags"><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #28</a><a class="tag" href="https://mobilen.art/tags/araçlar/">Araçlar #11</a><a class="tag" href="https://mobilen.art/tags/android/">Android #11</a><a class="tag" href="https://mobilen.art/tags/apple/">Apple #9</a><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #6</a><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/terminal_komutları/">Terminal Komutları #4</a><a class="tag" href="https://mobilen.art/tags/android_studio/">Android Studio #3</a><a class="tag" href="https://mobilen.art/tags/tüyo/">Tüyo #3</a><a class="tag" href="https://mobilen.art/tags/wwdc/">WWDC #2</a><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/belgesel/">Belgesel #2</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><a class="tag" href="https://mobilen.art/tags/kurulum/">Kurulum #2</a><a class="tag" href="https://mobilen.art/tags/haber/">Haber #2</a><a class="tag" href="https://mobilen.art/tags/güvenlik/">Güvenlik #1</a><a class="tag" href="https://mobilen.art/tags/biyografi/">Biyografi #1</a><a class="tag" href="https://mobilen.art/tags/ürün_yönetimi/">Ürün Yönetimi #1</a><a class="tag" href="https://mobilen.art/tags/i̇letişim/">İletişim #1</a><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/prensip/">Prensip #1</a><a class="tag" href="https://mobilen.art/tags/test/">Test #1</a><a class="tag" href="https://mobilen.art/tags/carplay/">CarPlay #1</a><a class="tag" href="https://mobilen.art/tags/ai/">AI #1</a><a class="tag" href="https://mobilen.art/tags/template/">Template #1</a><a class="tag" href="https://mobilen.art/tags/debugging/">Debugging #1</a></div></div></footer></body></html>

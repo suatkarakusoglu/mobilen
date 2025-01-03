@@ -1,0 +1,42 @@
+#+title: Google Developer Play Store APK İndirme
+#+date: [2025-01-03 Fri]
+#+author: Suat Karakuşoğlu
+#+filetags: :Android:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+* İçerik
+Merhabalar,
+
+Bazen uygulamanızın APK'sina hızlıca erişmek istediğinizde bir yerlerden aramak yerine direkt olarak developer console'dan indirebilirsiniz.
+
+Kısaca adımlarına değinicem.
+
+** 1. Play Developer Hesabına Giriş
+[[file://download_apk_1.jpg]]
+
+Giriş yapıldıktan sonra istediğiniz uygulamanın üzerine tıklayın.
+
+** 2. Manage Release Seçeneği
+[[file://download_apk_2.jpg]]
+
+Buradan uygulamanın yayınlanmasının yönetildiği ekrana ulaşıyoruz.
+
+** 3. Uygulama Bundle'ina Erişim
+[[file://download_apk_3.jpg]]
+
+Bundle'ın detaylarına erişiyoruz.
+
+** 4. İndirme Linklerine Erisim
+[[file://download_apk_4.jpg]]
+
+Buradan =Downloads= tabından =APK='lara erişim sağlayabiliyoruz.
+
+** Sonuç
+Kendi uygulamalarınız APK'larını hızlıca bu şekilde indirebilirsiniz.
+
+İndirmek isteyen arkadaşın rolü =Release apps to testing track= izinine sahip olması gerekir.
+
+Apple tarafında ise ne yazikki uygulamaların =IPA='sını indirmek için böyle bir seçenek sunulmuyor.
+
+İyi çalışmalar.

@@ -1,15 +1,15 @@
-<!-- Generated from 1286c42 on 2025-01-03 @ 14:54 with Emacs 31.0.50 (Org mode 9.7.11) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Declarative Yaklaşım ve Tasarım - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Declarative Yaklaşım ve Tasarım</h1><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><p class="site-post-meta">8 min read | November 15, 2023</p><div id="content"><p>
+<!-- Generated from 2d397f1 on 2025-03-28 @ 14:05 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Declarative Yaklaşım ve Tasarım - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Declarative Yaklaşım ve Tasarım</h1><a class="tag" href="https://mobilen.art/tags/tasarım/">Tasarım #7</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><a class="tag" href="https://mobilen.art/tags/react/">React #1</a><a class="tag" href="https://mobilen.art/tags/swiftui/">SwiftUI #4</a><a class="tag" href="https://mobilen.art/tags/flutter/">Flutter #2</a><p class="site-post-meta">10 min read | November 15, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
-<div id="org369d00f" class="figure">
+<div id="orga18188a" class="figure">
 <p><img src="/img/declarative_ui_magic.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/@art_maltsev?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Artem Maltsev</a></p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgcd2f7e8">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgd0ede9e">
 <p>
 Merhabalar,
 </p>
@@ -30,7 +30,7 @@ Uzun zamandır türlü diller ve araçlar ile farklı tuvallare arayüz tasarım
 Bu araçlar hakkında ve arayüz tasarımında değişen pratiklerin nihayetinde nasıl declarative yaklaşımda buluştuğundan bahsedeceğim.
 </p>
 </div>
-<h3><a id="imperative-tasarım" class="anchor" href="#imperative-tasarım">¶</a>Imperative Tasarım</h3><div class="outline-text-3" id="text-orgb6dd48a">
+<h3><a id="imperative-tasarım" class="anchor" href="#imperative-tasarım">¶</a>Imperative Tasarım</h3><div class="outline-text-3" id="text-org1c36de6">
 <p>
 Declarative taraftan bahsetmeden önce daha çok pratik ettiğimiz <code>imperative</code> yaklaşımdan bahsedelim.
 </p>
@@ -51,7 +51,7 @@ Henüz üniversite yıllarında sıralama algoritmalarına denk geldiğimde heye
 Hepsi ile örnekler yapmış görselleştirmeler yapmaya çalışmıştım. Sonrasında ilk staja başladığım yerde kullanıcıları hangi algoritma ile nasıl sıralıyorsunuz gibi bir soru sorduğumda &rsquo;SORT&rsquo; yazıyoruz SQL&rsquo;de ve o bu işi yapıyor diye cevap almıştım :).
 </p>
 </div>
-<h3><a id="beyan-ve-indirection" class="anchor" href="#beyan-ve-indirection">¶</a>Beyan ve Indirection</h3><div class="outline-text-3" id="text-orgbf8739c">
+<h3><a id="beyan-ve-indirection" class="anchor" href="#beyan-ve-indirection">¶</a>Beyan ve Indirection</h3><div class="outline-text-3" id="text-orgda1b916">
 <p>
 Sadece beyan / <code>declare</code> ederek işinizin ne olduğunu belirtip, sistemin bunu yapmasını beklemenin elbette bir çok avantajı var.
 </p>
@@ -85,7 +85,7 @@ Bu sayede belki büyük ekran&rsquo;lı iPad&rsquo;de farklı bir yerden çıkar
 </p>
 </blockquote>
 </div>
-<h3><a id="declarative-tasarım-ve-verirsquonin-ilişkisi" class="anchor" href="#declarative-tasarım-ve-verirsquonin-ilişkisi">¶</a>Declarative Tasarım ve Veri&rsquo;nin ilişkisi</h3><div class="outline-text-3" id="text-org04a52be">
+<h3><a id="declarative-tasarım-ve-verirsquonin-ilişkisi" class="anchor" href="#declarative-tasarım-ve-verirsquonin-ilişkisi">¶</a>Declarative Tasarım ve Veri&rsquo;nin ilişkisi</h3><div class="outline-text-3" id="text-org25226f5">
 <p>
 <code>Declarative tasarım</code> matematiksel ifadeyle veriyi alıp arayüze dönüştüren bir fonksiyondur:
 </p>
@@ -95,7 +95,7 @@ declarativeTasarim(veri) -&gt; Arayuz
 </p>
 </blockquote>
 </div>
-<h3><a id="facebookrsquoun-etkisi" class="anchor" href="#facebookrsquoun-etkisi">¶</a>Facebook&rsquo;un etkisi</h3><div class="outline-text-3" id="text-org54d2bf6">
+<h3><a id="facebookrsquoun-etkisi" class="anchor" href="#facebookrsquoun-etkisi">¶</a>Facebook&rsquo;un etkisi</h3><div class="outline-text-3" id="text-orgc9121b0">
 <p>
 Siyasal mecrada skandallara varabilecek derecede toplumu yönlendirme gücüne sebep olabilecek büyüklükte veriyi elinde bulunduran firma diyince diyince ilk akla gelen şirket elbette Facebook.
 </p>
@@ -104,7 +104,7 @@ Siyasal mecrada skandallara varabilecek derecede toplumu yönlendirme gücüne s
 <a href="https://www.youtube.com/watch?v=8pDqJVdNa44">React belgeseli</a>nde geçen, reklam takımında ortaya çıkan arayüz geliştirme süreçlerindeki hantallık ve hatalar facebookta radikal bir çözümü gerekli kılmış.
 </p>
 </div>
-<h3><a id="react-ve-devamı" class="anchor" href="#react-ve-devamı">¶</a>React ve devamı</h3><div class="outline-text-3" id="text-org6b014e0">
+<h3><a id="react-ve-devamı" class="anchor" href="#react-ve-devamı">¶</a>React ve devamı</h3><div class="outline-text-3" id="text-orga1e8e9b">
 <p>
 Reklam takımındaki bir product engineer&rsquo;a garip gözlerle bakılmasına sebep olan sorusu şöyle:
 </p>
@@ -123,7 +123,7 @@ Declaratıve tasarım fonksiyonu için olan bu matematiksel yaklaşımların ger
 Performanslı bir şekilde tüm tuvali tek bir değişiklikte sil baştan çizmek delice gelsede kulağa, pratikte bunu yapıcak yolların keşfiyle hiçte mantıksız değilmiş ampulunu kafalarda yakmıştır.
 </p>
 </div>
-<h3><a id="diffing-ve-faydası" class="anchor" href="#diffing-ve-faydası">¶</a>Diffing ve Faydası</h3><div class="outline-text-3" id="text-orgb8f3c12">
+<h3><a id="diffing-ve-faydası" class="anchor" href="#diffing-ve-faydası">¶</a>Diffing ve Faydası</h3><div class="outline-text-3" id="text-org732e3ce">
 <p>
 Ekonomik bir şekilde verinin istenilen görüntüye dönüşmesini sağlamanın en önemli yolu olabilecek en az değişiklik ile bunu başarabilmek.
 </p>
@@ -136,7 +136,7 @@ React&rsquo;in kabaca karmaşıklığı <code>O(n)3</code> ten <code>heuristic</
 Buradaki <code>diffing</code>&rsquo;e yardımcı olarak daha akıcı olarak veriyi ekrana yansıtabilecek yazılımı ortaya çıkabiliriz.
 </p>
 </div>
-<h3><a id="nelere-dikkat-etmeliyiz" class="anchor" href="#nelere-dikkat-etmeliyiz">¶</a>Nelere dikkat etmeliyiz</h3><div class="outline-text-3" id="text-org8be85e3">
+<h3><a id="nelere-dikkat-etmeliyiz" class="anchor" href="#nelere-dikkat-etmeliyiz">¶</a>Nelere dikkat etmeliyiz</h3><div class="outline-text-3" id="text-org98dc416">
 <p>
 O nedenle kullandığınız framework&rsquo;un buna yardımcı olan yaklaşımlarını iyi anlamamız gerekiyor.
 </p>
@@ -152,39 +152,39 @@ SwiftUI kütüphanesi ise yine static typing&rsquo;den faydalanarak view&rsquo;l
 <p>
 Çok basit iki örnekle açıklayalım:
 </p>
-<div class="highlight"><pre><span></span>  <span class="c1">// Burada farklı bir branching izlediğinden</span>
-  <span class="c1">// yok olması ve oluşturulması gereken view&#39;ler oluyor</span>
-  <span class="c1">// Animasyon verdiğinizde düzgün geçiş göremezsiniz.</span>
-  <span class="kd">struct</span> <span class="nc">AnswerStateView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
-      <span class="p">@</span><span class="n">State</span> <span class="kd">var</span> <span class="nv">isCorrect</span><span class="p">:</span> <span class="nb">Bool</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// Burada farklı bir branching izlediğinden</span>
+<span class="w">  </span><span class="c1">// yok olması ve oluşturulması gereken view&#39;ler oluyor</span>
+<span class="w">  </span><span class="c1">// Animasyon verdiğinizde düzgün geçiş göremezsiniz.</span>
+<span class="w">  </span><span class="kd">struct</span><span class="w"> </span><span class="nc">AnswerStateView</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">isCorrect</span><span class="p">:</span><span class="w"> </span><span class="nb">Bool</span>
 
-      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="n">isCorrect</span> <span class="p">{</span>
-              <span class="n">Text</span><span class="p">(</span><span class="s">&quot;Correct&quot;</span><span class="p">).</span><span class="n">foregroundColor</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">green</span><span class="p">)</span>
-          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-              <span class="n">Text</span><span class="p">(</span><span class="s">&quot;Wrong&quot;</span><span class="p">).</span><span class="n">foregroundColor</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">)</span>
-          <span class="p">}</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="n">isCorrect</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Correct&quot;</span><span class="p">).</span><span class="n">foregroundColor</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">green</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Wrong&quot;</span><span class="p">).</span><span class="n">foregroundColor</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 
-<div class="highlight"><pre><span></span>  <span class="c1">// Burada farklı bir branching izlemeden aynı view olduğunu</span>
-  <span class="c1">// anlayan sistem rahatlıkla animasyonu gerçekler ve gereksiz bir view yaratıp yok etmez.</span>
-  <span class="kd">struct</span> <span class="nc">AnswerStateView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
-      <span class="p">@</span><span class="n">State</span> <span class="kd">var</span> <span class="nv">isCorrect</span><span class="p">:</span> <span class="nb">Bool</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// Burada farklı bir branching izlemeden aynı view olduğunu</span>
+<span class="w">  </span><span class="c1">// anlayan sistem rahatlıkla animasyonu gerçekler ve gereksiz bir view yaratıp yok etmez.</span>
+<span class="w">  </span><span class="kd">struct</span><span class="w"> </span><span class="nc">AnswerStateView</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">isCorrect</span><span class="p">:</span><span class="w"> </span><span class="nb">Bool</span>
 
-      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
-          <span class="n">Text</span><span class="p">(</span><span class="n">isCorrect</span> <span class="p">?</span> <span class="s">&quot;Correct&quot;</span> <span class="p">:</span> <span class="s">&quot;Wrong&quot;</span><span class="p">)</span>
-            <span class="p">.</span><span class="n">foregroundColor</span><span class="p">(</span><span class="n">isCorrect</span> <span class="p">?</span> <span class="n">Color</span><span class="p">.</span><span class="n">green</span> <span class="p">:</span> <span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">)</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">Text</span><span class="p">(</span><span class="n">isCorrect</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="s">&quot;Correct&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Wrong&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">foregroundColor</span><span class="p">(</span><span class="n">isCorrect</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="n">green</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">)</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 
 <p>
 Bu örneklerde görüldüğü üzere view eşlemeleri tipler üzerinden gerçekleşebilir.
 </p>
 </div>
-<h3><a id="keyid-kullanımı" class="anchor" href="#keyid-kullanımı">¶</a>Key/Id kullanımı</h3><div class="outline-text-3" id="text-org98bb7ba">
+<h3><a id="keyid-kullanımı" class="anchor" href="#keyid-kullanımı">¶</a>Key/Id kullanımı</h3><div class="outline-text-3" id="text-org7e07461">
 <p>
 Listeler gibi view elemanlarında ise <code>id</code>&rsquo;ler üzerinden dinamik arayüz elemanları çizip eşleştirilebilir.
 </p>
@@ -193,30 +193,30 @@ Listeler gibi view elemanlarında ise <code>id</code>&rsquo;ler üzerinden dinam
 O nedenle ForEach gibi viewlerde SwiftUI <code>Identifiable</code> protokolu ile <code>id</code> parametresi gerektiriyor, ve onun uzerinden <code>reconciliation</code> yapiyor.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">import</span> <span class="nc">SwiftUI</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
 
-  <span class="kd">struct</span> <span class="nc">City</span><span class="p">:</span> <span class="n">Identifiable</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nv">id</span><span class="p">:</span> <span class="nb">Int</span>
-      <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="kd">struct</span><span class="w"> </span><span class="nc">City</span><span class="p">:</span><span class="w"> </span><span class="n">Identifiable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span>
+<span class="w">  </span><span class="p">}</span>
 
-  <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nv">cities</span> <span class="p">=</span> <span class="p">[</span>
-        <span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">&quot;Istanbul&quot;</span><span class="p">),</span>
-        <span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">&quot;Ankara&quot;</span><span class="p">),</span>
-        <span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">&quot;Izmir&quot;</span><span class="p">),</span>
-        <span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">&quot;Bursa&quot;</span><span class="p">),</span>
-        <span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s">&quot;Antalya&quot;</span><span class="p">)</span>
-      <span class="p">]</span>
+<span class="w">  </span><span class="kd">struct</span><span class="w"> </span><span class="nc">ContentView</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="nv">cities</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Istanbul&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Ankara&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Izmir&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Bursa&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">City</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Antalya&quot;</span><span class="p">)</span>
+<span class="w">      </span><span class="p">]</span>
 
-      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
-          <span class="n">List</span> <span class="p">{</span>
-              <span class="n">ForEach</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span> <span class="p">{</span> <span class="n">city</span> <span class="k">in</span>
-                  <span class="n">Text</span><span class="p">(</span><span class="n">city</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
-              <span class="p">}</span>
-          <span class="p">}</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">List</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">ForEach</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">in</span>
+<span class="w">                  </span><span class="n">Text</span><span class="p">(</span><span class="n">city</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 
 <p>
@@ -244,7 +244,7 @@ Bu yazıda Veriden =&gt; Ekrana giden yolda tasarımın declarative yollar ile g
 İyi eğlenceler.
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org3565e35">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org3a5921d">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/watch?v=8pDqJVdNa44">React belgeseli</a></li>
 <li><a href="https://legacy.reactjs.org/docs/reconciliation.html">React Framework Heuristic Diffing</a></li>

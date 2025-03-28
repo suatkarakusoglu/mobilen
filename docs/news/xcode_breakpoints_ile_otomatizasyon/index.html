@@ -1,18 +1,18 @@
-<!-- Generated from 1286c42 on 2025-01-03 @ 14:54 with Emacs 31.0.50 (Org mode 9.7.11) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Xcode Breakpoints ile Otomatizasyon - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Xcode Breakpoints ile Otomatizasyon</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #28</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #6</a><p class="site-post-meta">8 min read | May 11, 2023</p><div id="content"><p>
+<!-- Generated from 2d397f1 on 2025-03-28 @ 14:05 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Xcode Breakpoints ile Otomatizasyon - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Xcode Breakpoints ile Otomatizasyon</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #28</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><a class="tag" href="https://mobilen.art/tags/xcode/">Xcode #6</a><p class="site-post-meta">9 min read | May 11, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/alper-cem-%C3%B6zt%C3%BCrk-a625671a8">Alper Cem Öztürk</a> yazdı.
 </p>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgd5232c3">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orga10be0b">
 <p>
 Uygulamanızı her test ettiğinizde oturum açma bilgilerinizi manuel olarak girmekten sıkıldıysanız ve geliştirme sırasında zaman kazanmak istiyorsanız; <code>xcode breakpoints</code> ihtiyacınız olan çözüm olabilir.
 </p>
 </div>
-<h3><a id="breakpoints-nedir" class="anchor" href="#breakpoints-nedir">¶</a>Breakpoints Nedir?</h3><div class="outline-text-3" id="text-orgf559d98">
+<h3><a id="breakpoints-nedir" class="anchor" href="#breakpoints-nedir">¶</a>Breakpoints Nedir?</h3><div class="outline-text-3" id="text-orgba52dca">
 <p>
 <code>Breakpoint</code>, bir programın çalışması sırasında belirli bir kod satırında duraklamasını sağlayan ve geliştiricilere programın çalışmasını izleme ve <code>debug</code> imkanı veren bir araçtır. Bu, değişkenlerin değerlerini incelemenize, kodda satır satır ilerlemenize ve başka işlemler yapmanıza olanak tanır.
 </p>
 </div>
-<h3><a id="breakpoints-nasıl-oluşturulur" class="anchor" href="#breakpoints-nasıl-oluşturulur">¶</a>Breakpoints Nasıl Oluşturulur?</h3><div class="outline-text-3" id="text-orgb93fd89">
+<h3><a id="breakpoints-nasıl-oluşturulur" class="anchor" href="#breakpoints-nasıl-oluşturulur">¶</a>Breakpoints Nasıl Oluşturulur?</h3><div class="outline-text-3" id="text-orgbc249ed">
 <p>
 Bir &ldquo;breakpoint&rdquo; ayarlamak için, duraklatmak istediğiniz kod satırı numarasının yazılı olduğu alana tıklamanız yeterlidir. &ldquo;Breakpoint&rdquo;&rsquo;i belirtmek için sistem ayarlarında seçili olan &ldquo;accent color&rdquo; renginde bir işaretçi görünecektir. Her ne kadar &ldquo;line numbers&rdquo; ayarı varsayılan olarak açık gelse de eğer açıkta kullanmıyosanız, ilgili satırın hemen yanına tıklayabilirsiniz veya text editing ayarlarından açabilirsiniz.
 </p>
@@ -21,7 +21,7 @@ Bir &ldquo;breakpoint&rdquo; ayarlamak için, duraklatmak istediğiniz kod satı
 Bir &ldquo;breakpoint&rdquo; belirledikten sonra kodunuzu çalıştırabilirsiniz. &ldquo;Debugger&rdquo; &ldquo;breakpoint&rdquo;&rsquo;te duraklayacaktır. Daha sonra kodunuzu ve değişkenlerinizi incelemek için &ldquo;debugger&rdquo;&rsquo;ın özelliklerini kullanabilirsiniz.
 </p>
 </div>
-<h3><a id="breakpointrsquolerin-farklı-kullanım-senaryoları" class="anchor" href="#breakpointrsquolerin-farklı-kullanım-senaryoları">¶</a>Breakpoint&rsquo;lerin Farklı Kullanım Senaryoları</h3><div class="outline-text-3" id="text-orgbb31716">
+<h3><a id="breakpointrsquolerin-farklı-kullanım-senaryoları" class="anchor" href="#breakpointrsquolerin-farklı-kullanım-senaryoları">¶</a>Breakpoint&rsquo;lerin Farklı Kullanım Senaryoları</h3><div class="outline-text-3" id="text-orgcb55866">
 <p>
 Geliştiriciler, &ldquo;oturum açma&rdquo; aşamalarını test etmek ve &ldquo;debug&rdquo; yapmak için zaman ve emek harcamalarını gerektiren birçok senaryo ile karşılaşabilirler. <code>Breakpoints</code> ve <code>Watchpoints</code>, bu amaç için oldukça kullanışlıdır. Bu kullanım senaryolarından birkaçına beraber bakalım.
 </p>
@@ -38,7 +38,7 @@ Sadece belirli koşullar altında oturum açmayı otomatikleştirmek istiyorsan�
 Watchpoint&rsquo;ler, oturum açma işlemi sırasında değişkenlerin değerlerini izlemek için kullanılır. &ldquo;Debug&rdquo; işlemi sırasında bir değişkene watchpoint eklenmesiyle, değişkenin değeri değiştiğinde programın çalışması durdurulur. Bu, oturum açma işlemi sırasında belirli değişkenlerin değerlerini izlemek istediğiniz durumlarda faydalı olabilir. Örneğin, bir parola değişkeninin doğru bir şekilde &ldquo;encrypt&rdquo; edilip edilmediğini kontrol etmek isteyebilirsiniz. Bu değişken üzerinde bir watchpoint ayarlayarak, doğru bir şekilde &ldquo;encrypt&rdquo; edildiğinden emin olabilir ve potansiyel güvenlik sorunlarını önleyebilirsiniz.
 </p>
 </div>
-<h3><a id="breakpoint-expressions" class="anchor" href="#breakpoint-expressions">¶</a>Breakpoint Expressions</h3><div class="outline-text-3" id="text-org9310dbf">
+<h3><a id="breakpoint-expressions" class="anchor" href="#breakpoint-expressions">¶</a>Breakpoint Expressions</h3><div class="outline-text-3" id="text-orgfe0a42b">
 <p>
 &ldquo;Breakpoint expressions&rdquo;, &ldquo;debug&rdquo; yapmanın güçlü bir yoludur. Yalnızca programın yürütülmesini durdurup değişkenlerin değerini izlemenin yanı sıra belirli aksiyonlar alabilmenizi sağlar. Tam olarak bu yazının başlığında belirtildiği gibi, oturum açma işlemlerini otomatik hale getirmek buna örnek olarak verilebilir.
 </p>
@@ -55,60 +55,60 @@ Watchpoint&rsquo;ler, oturum açma işlemi sırasında değişkenlerin değerler
 Blog yazısında da bahsedildiği gibi &ldquo;fullscreen modal&rdquo; olarak sunulan iki &ldquo;textfield&rdquo; ile örnek bir login ekranı oluşturalım. Uygulama `launchLogin()` ile başladığında, &ldquo;textfield&rdquo;&rsquo;lar doğru bilgileri içeriyorsa &ldquo;modal screen&rdquo; kapatılsın ve ContentView, başarılı login mesajıyla beraber görüntülensin.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">struct</span> <span class="nc">LoginView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
-      <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">username</span><span class="p">:</span> <span class="nb">String</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
-      <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">password</span><span class="p">:</span> <span class="nb">String</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
-      <span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">dismiss</span><span class="p">)</span> <span class="kd">var</span> <span class="nv">dismiss</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">struct</span><span class="w"> </span><span class="nc">LoginView</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">username</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="w">      </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">password</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="w">      </span><span class="p">@</span><span class="n">Environment</span><span class="p">(</span><span class="err">\</span><span class="p">.</span><span class="n">dismiss</span><span class="p">)</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">dismiss</span>
 
-      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
-          <span class="n">VStack</span><span class="p">(</span><span class="n">alignment</span><span class="p">:</span> <span class="p">.</span><span class="n">center</span><span class="p">,</span> <span class="n">spacing</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
-              <span class="n">HStack</span> <span class="p">{</span>
-                  <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="s">&quot;person&quot;</span><span class="p">)</span>
-                  <span class="n">TextField</span><span class="p">(</span><span class="s">&quot;Enter username&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="err">$</span><span class="n">username</span><span class="p">)</span>
-              <span class="p">}</span>
-              <span class="n">HStack</span> <span class="p">{</span>
-                  <span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span> <span class="s">&quot;key&quot;</span><span class="p">)</span>
-                  <span class="n">TextField</span><span class="p">(</span><span class="s">&quot;Enter password&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="err">$</span><span class="n">password</span><span class="p">)</span>
-              <span class="p">}</span>
-              <span class="n">Button</span><span class="p">(</span><span class="s">&quot;LOG IN&quot;</span><span class="p">)</span> <span class="p">{</span>
-                  <span class="c1">// BREAKPOINT HERE</span>
-                  <span class="n">initiateLogin</span><span class="p">()</span>
-              <span class="p">}</span>
-                <span class="p">.</span><span class="n">buttonStyle</span><span class="p">(.</span><span class="n">borderedProminent</span><span class="p">)</span>
-          <span class="p">}</span>
-            <span class="p">.</span><span class="n">padding</span><span class="p">()</span>
-            <span class="p">.</span><span class="n">textFieldStyle</span><span class="p">(.</span><span class="n">roundedBorder</span><span class="p">)</span>
-      <span class="p">}</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">VStack</span><span class="p">(</span><span class="n">alignment</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">center</span><span class="p">,</span><span class="w"> </span><span class="n">spacing</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">HStack</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;person&quot;</span><span class="p">)</span>
+<span class="w">                  </span><span class="n">TextField</span><span class="p">(</span><span class="s">&quot;Enter username&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="n">username</span><span class="p">)</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">              </span><span class="n">HStack</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">Image</span><span class="p">(</span><span class="n">systemName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;key&quot;</span><span class="p">)</span>
+<span class="w">                  </span><span class="n">TextField</span><span class="p">(</span><span class="s">&quot;Enter password&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="n">password</span><span class="p">)</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">              </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;LOG IN&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="c1">// BREAKPOINT HERE</span>
+<span class="w">                  </span><span class="n">initiateLogin</span><span class="p">()</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">                </span><span class="p">.</span><span class="n">buttonStyle</span><span class="p">(.</span><span class="n">borderedProminent</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">            </span><span class="p">.</span><span class="n">padding</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">textFieldStyle</span><span class="p">(.</span><span class="n">roundedBorder</span><span class="p">)</span>
+<span class="w">      </span><span class="p">}</span>
 
-      <span class="c1">// Login Function</span>
-      <span class="kd">func</span> <span class="nf">initiateLogin</span><span class="p">()</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="n">username</span> <span class="p">==</span> <span class="s">&quot;mobilen&quot;</span> <span class="o">&amp;&amp;</span> <span class="n">password</span> <span class="p">==</span> <span class="s">&quot;dadada&quot;</span> <span class="p">{</span>
-              <span class="c1">// Short pause - dismiss is too fast</span>
-              <span class="n">DispatchQueue</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">asyncAfter</span><span class="p">(</span><span class="n">deadline</span><span class="p">:</span> <span class="p">.</span><span class="n">now</span><span class="p">()</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">{</span>
-                  <span class="n">dismiss</span><span class="p">()</span>
-              <span class="p">}</span>
-          <span class="p">}</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">      </span><span class="c1">// Login Function</span>
+<span class="w">      </span><span class="kd">func</span><span class="w"> </span><span class="nf">initiateLogin</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="s">&quot;mobilen&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="s">&quot;dadada&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="c1">// Short pause - dismiss is too fast</span>
+<span class="w">              </span><span class="n">DispatchQueue</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">asyncAfter</span><span class="p">(</span><span class="n">deadline</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">now</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">dismiss</span><span class="p">()</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 
-<div class="highlight"><pre><span></span>  <span class="kd">import</span> <span class="nc">SwiftUI</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">import</span><span class="w"> </span><span class="nc">SwiftUI</span>
 
-  <span class="kd">struct</span> <span class="nc">ContentView</span><span class="p">:</span> <span class="n">View</span> <span class="p">{</span>
-      <span class="p">@</span><span class="n">State</span> <span class="kd">private</span> <span class="kd">var</span> <span class="nv">isPresented</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="w">  </span><span class="kd">struct</span><span class="w"> </span><span class="nc">ContentView</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">@</span><span class="n">State</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">isPresented</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span>
 
-      <span class="kd">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="n">View</span> <span class="p">{</span>
-          <span class="n">VStack</span> <span class="p">{</span>
-              <span class="n">Text</span><span class="p">(</span><span class="s">&quot;Hello! You&#39;ve successfully logged in.&quot;</span><span class="p">)</span>
-          <span class="p">}</span>
-            <span class="p">.</span><span class="n">onAppear</span> <span class="p">{</span>
-                <span class="n">isPresented</span> <span class="p">=</span> <span class="kc">true</span>
-            <span class="p">}</span>
-            <span class="p">.</span><span class="n">fullScreenCover</span><span class="p">(</span><span class="n">isPresented</span><span class="p">:</span> <span class="err">$</span><span class="n">isPresented</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">LoginView</span><span class="p">()</span>
-            <span class="p">}</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">body</span><span class="p">:</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">VStack</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">Text</span><span class="p">(</span><span class="s">&quot;Hello! You&#39;ve successfully logged in.&quot;</span><span class="p">)</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">            </span><span class="p">.</span><span class="n">onAppear</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">isPresented</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="p">.</span><span class="n">fullScreenCover</span><span class="p">(</span><span class="n">isPresented</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="n">isPresented</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">LoginView</span><span class="p">()</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 
 <p>
@@ -117,7 +117,7 @@ Bizim istediğimiz ise, programın buton aksiyonu ile duraklamasından sonra otu
 </p>
 
 
-<div id="orgc8af0e1" class="figure">
+<div id="orgec3863f" class="figure">
 <p><img src="/img/edit-breakpoint-window.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Xcode edit breakpoint window</p>
@@ -164,7 +164,7 @@ Bu yazıda, &ldquo;breakpoint&rdquo;&rsquo;leri ve kullanım senaryolarını ele
 &ldquo;Breakpoints&rdquo;’leri kullanmak geliştirme sırasında zaman kazanmanıza yardımcı olabilir ve uygulamanızı her test ettiğinizde oturum açma bilgilerinizi manuel yazmak zorunda kalmadan zaman kazanabilirsiniz.
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org0746c3f">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org396db28">
 <p>
 <a href="https://www.danijelavrzan.com/posts/2023/04/login-xcode-breakpoint">Login XCode Breakpoints</a>
 </p>

@@ -1,15 +1,15 @@
-<!-- Generated from 1286c42 on 2025-01-03 @ 14:54 with Emacs 31.0.50 (Org mode 9.7.11) -->
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Okuma Notları: The Art Of Readable Code (2) - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Okuma Notları: The Art Of Readable Code (2)</h1><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><p class="site-post-meta">6 min read | August 26, 2023</p><div id="content"><p>
+<!-- Generated from 2d397f1 on 2025-03-28 @ 14:05 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Okuma Notları: The Art Of Readable Code (2) - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Okuma Notları: The Art Of Readable Code (2)</h1><a class="tag" href="https://mobilen.art/tags/kitap/">Kitap #5</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><p class="site-post-meta">9 min read | August 26, 2023</p><div id="content"><p>
 <a href="https://linkedin.com/in/myusufka">Yusuf Kaya</a> yazdı.
 </p>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org52c36f3">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org4bcb9db">
 <p>
 Merhabalar, geçtiğimiz sayıda <b>The Art Of Readable Code</b> kitabının okuma
 notlarının ilk bölümünü paylaşmıştım. Bu sayıda da ikinci bölümünü
 paylaşacağım.
 </p>
 </div>
-<h4><a id="koşullardaki-argüman-sırası" class="anchor" href="#koşullardaki-argüman-sırası">¶</a>Koşullardaki Argüman Sırası</h4><div class="outline-text-4" id="text-org8b6f7d4">
+<h4><a id="koşullardaki-argüman-sırası" class="anchor" href="#koşullardaki-argüman-sırası">¶</a>Koşullardaki Argüman Sırası</h4><div class="outline-text-4" id="text-orgbf6525c">
 <p>
 Koşullu ifadelerde ve döngülerde, argüman sırasını mantıklı bir şekilde
 düzenlemek okunabilirliği artırır. Örneğin, <b>length &gt;= 10</b> gibi
@@ -18,91 +18,91 @@ değişken oladuğu durumlarda ifadelerde daha değişken olanın solda olması
 okunabilirliği artırır.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">let</span> <span class="nv">length</span> <span class="p">=</span> <span class="mi">10</span>
-  <span class="k">if</span> <span class="n">lengthOfUser</span> <span class="o">&gt;=</span> <span class="n">length</span> <span class="p">{</span>
-      <span class="p">...</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nv">length</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">lengthOfUser</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">...</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h4><a id="ifelse-bloklarının-sırası" class="anchor" href="#ifelse-bloklarının-sırası">¶</a>if/else Bloklarının Sırası</h4><div class="outline-text-4" id="text-orgf818d5f">
+<h4><a id="ifelse-bloklarının-sırası" class="anchor" href="#ifelse-bloklarının-sırası">¶</a>if/else Bloklarının Sırası</h4><div class="outline-text-4" id="text-org5fa0490">
 <p>
 if/else ifadelerini kullanırken, genellikle pozitif senaryoları önce ele
 almak ve daha basit durumları önceden kontrol etmek kodun
 okunabilirliğini artırabilir.
 </p>
 </div>
-<h4><a id="ternary-operator" class="anchor" href="#ternary-operator">¶</a>Ternary Operator</h4><div class="outline-text-4" id="text-org1f88317">
+<h4><a id="ternary-operator" class="anchor" href="#ternary-operator">¶</a>Ternary Operator</h4><div class="outline-text-4" id="text-org29e8f3c">
 <p>
 Ternary Operator, tek satırda koşullu bir ifade yazmak için kullanılır.
 Ancak, karmaşık durumları tek bir satırda ifade etmek, okunabilirliği
 azaltabilir.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">let</span> <span class="nv">firstCard</span> <span class="p">=</span> <span class="mi">11</span>
-  <span class="kd">let</span> <span class="nv">secondCard</span> <span class="p">=</span> <span class="mi">10</span>
-  <span class="bp">print</span><span class="p">(</span><span class="n">firstCard</span> <span class="p">==</span> <span class="n">secondCard</span> <span class="p">?</span> <span class="s">&quot;Kartlar Aynı&quot;</span> <span class="p">:</span> <span class="s">&quot;Kartlar Farklı&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nv">firstCard</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">11</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nv">secondCard</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">  </span><span class="bp">print</span><span class="p">(</span><span class="n">firstCard</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="n">secondCard</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="s">&quot;Kartlar Aynı&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Kartlar Farklı&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<h4><a id="fonksiyonlardan-erken-dönme" class="anchor" href="#fonksiyonlardan-erken-dönme">¶</a>Fonksiyonlardan Erken Dönme</h4><div class="outline-text-4" id="text-org961a2a3">
+<h4><a id="fonksiyonlardan-erken-dönme" class="anchor" href="#fonksiyonlardan-erken-dönme">¶</a>Fonksiyonlardan Erken Dönme</h4><div class="outline-text-4" id="text-orgb1a0ffa">
 <p>
 Fonksiyonun içinde erken return ederek kodun karmaşıklığını azaltabilir ve koruyucu ifadeler kullanarak kodun okunabilirliği arttırılabilir.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">func</span> <span class="nf">calculateXY</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">Int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span> <span class="p">{</span>
-          <span class="k">return</span>
-      <span class="p">}</span>
-           <span class="p">...</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">func</span><span class="w"> </span><span class="nf">calculateXY</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">return</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">           </span><span class="p">...</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 
 <p>
 Swift dilinde <code>early return</code> edebilmek için özellikle <code>guard</code> anahtar kelime olarak bulunmaktadır.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="kc">_</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">?)</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
-      <span class="k">guard</span> <span class="kd">let</span> <span class="nv">name</span> <span class="p">=</span> <span class="n">name</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Hello, Stranger&quot;</span> <span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">func</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">?)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">guard</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello, Stranger&quot;</span><span class="w"> </span><span class="p">}</span>
 
-      <span class="k">return</span> <span class="s">&quot;Hello, </span><span class="si">\(</span><span class="n">name</span><span class="si">)</span><span class="s">&quot;</span>
-  <span class="p">}</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello, </span><span class="si">\(</span><span class="n">name</span><span class="si">)</span><span class="s">&quot;</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h4><a id="i̇ç-i̇çe-geçmiş-kod-bloklarını-azaltma" class="anchor" href="#i̇ç-i̇çe-geçmiş-kod-bloklarını-azaltma">¶</a>İç İçe Geçmiş Kod Bloklarını Azaltma</h4><div class="outline-text-4" id="text-orge80fdb6">
+<h4><a id="i̇ç-i̇çe-geçmiş-kod-bloklarını-azaltma" class="anchor" href="#i̇ç-i̇çe-geçmiş-kod-bloklarını-azaltma">¶</a>İç İçe Geçmiş Kod Bloklarını Azaltma</h4><div class="outline-text-4" id="text-orgdde92f6">
 <p>
 Derinlemesine iç içe geçmiş kod blokları okunabilirliği azaltır. Kodumuzu düzgün ve lineer bir şekilde düzenlemek, İç içe geçmeyi önleyebilir.
 </p>
 </div>
-<h4><a id="değişkenleri-açıklamak" class="anchor" href="#değişkenleri-açıklamak">¶</a>Değişkenleri Açıklamak</h4><div class="outline-text-4" id="text-orgc745d5e">
+<h4><a id="değişkenleri-açıklamak" class="anchor" href="#değişkenleri-açıklamak">¶</a>Değişkenleri Açıklamak</h4><div class="outline-text-4" id="text-org439e51f">
 <p>
 Anlaşılması zor ifadeler için daha açıklayıcı alt değişkenler tanımlayarak okunabilirliği arttırabiliriz.
 Örneğin:
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="k">if</span> <span class="n">line</span><span class="p">.</span><span class="bp">split</span><span class="p">(</span><span class="n">separator</span><span class="p">:</span> <span class="s">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">trimmingCharacters</span><span class="p">(</span><span class="k">in</span><span class="p">:</span> <span class="p">.</span><span class="n">whitespaces</span><span class="p">)</span> <span class="p">==</span> <span class="s">&quot;root&quot;</span> <span class="p">{</span>
-      <span class="c1">// ...</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="bp">split</span><span class="p">(</span><span class="n">separator</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">trimmingCharacters</span><span class="p">(</span><span class="k">in</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">whitespaces</span><span class="p">)</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="s">&quot;root&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">}</span>
 
-  <span class="c1">// YERİNE</span>
-  <span class="kd">let</span> <span class="nv">username</span> <span class="p">=</span> <span class="n">line</span><span class="p">.</span><span class="bp">split</span><span class="p">(</span><span class="n">separator</span><span class="p">:</span> <span class="s">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">trimmingCharacters</span><span class="p">(</span><span class="k">in</span><span class="p">:</span> <span class="p">.</span><span class="n">whitespaces</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">username</span> <span class="p">==</span> <span class="s">&quot;root&quot;</span> <span class="p">{</span>
-      <span class="c1">// ...</span>
-  <span class="p">}</span>
+<span class="w">  </span><span class="c1">// YERİNE</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nv">username</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="bp">split</span><span class="p">(</span><span class="n">separator</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">trimmingCharacters</span><span class="p">(</span><span class="k">in</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">whitespaces</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="s">&quot;root&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h4><a id="değişkenleri-özetlemek" class="anchor" href="#değişkenleri-özetlemek">¶</a>Değişkenleri Özetlemek</h4><div class="outline-text-4" id="text-org5e60b67">
+<h4><a id="değişkenleri-özetlemek" class="anchor" href="#değişkenleri-özetlemek">¶</a>Değişkenleri Özetlemek</h4><div class="outline-text-4" id="text-orgb3d280d">
 <p>
 Bir ifadenin açıklamaya ihtiyacı olmasa bile, ifadeyi daha yönetilebilir ve anlaşılır bir isimle temsil eden özet değişkenleri oluşturmak faydalı olabilir.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">let</span> <span class="nv">userOwnsDocument</span> <span class="p">=</span> <span class="n">request</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">id</span> <span class="p">==</span> <span class="n">document</span><span class="p">.</span><span class="n">ownerId</span>
-  <span class="k">if</span> <span class="n">userOwnsDocument</span> <span class="p">{</span>
-      <span class="c1">// ...</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">// ...</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nv">userOwnsDocument</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="n">document</span><span class="p">.</span><span class="n">ownerId</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">userOwnsDocument</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h4><a id="gereksiz-değişkenlerden-kurtulmak" class="anchor" href="#gereksiz-değişkenlerden-kurtulmak">¶</a>Gereksiz Değişkenlerden Kurtulmak</h4><div class="outline-text-4" id="text-orgf13412f">
+<h4><a id="gereksiz-değişkenlerden-kurtulmak" class="anchor" href="#gereksiz-değişkenlerden-kurtulmak">¶</a>Gereksiz Değişkenlerden Kurtulmak</h4><div class="outline-text-4" id="text-orga12deda">
 <p>
 Yukarıdaki başlıklarda &ldquo;açıklayıcı&rdquo; veya &ldquo;özet&rdquo; değişkenlerin kodu dahaokunabilir hale getirebileceğini gördük. Bu tür değişkenler, devasaifadeleri parçalayarak ve okunabilirliği arttırdığı için faydalıydı.
 </p>
@@ -115,18 +115,18 @@ Ancak bu başlıkta, okunabilirliği artırmayan değişkenleri ortadankaldırma
 Örneğin:
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">func</span> <span class="nf">removeOne</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="p">[</span><span class="nb">Int</span><span class="p">],</span> <span class="n">valueToRemove</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nv">indexToRemove</span><span class="p">:</span> <span class="nb">Int</span><span class="p">?</span> <span class="p">=</span> <span class="kc">nil</span>
-      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">0.</span><span class="p">.&lt;</span><span class="n">array</span><span class="p">.</span><span class="bp">count</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">==</span> <span class="n">valueToRemove</span> <span class="p">{</span>
-              <span class="n">indexToRemove</span> <span class="p">=</span> <span class="n">i</span>
-              <span class="k">break</span>
-          <span class="p">}</span>
-      <span class="p">}</span>
-      <span class="k">if</span> <span class="kd">let</span> <span class="nv">index</span> <span class="p">=</span> <span class="n">indexToRemove</span> <span class="p">{</span>
-          <span class="n">array</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">at</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">func</span><span class="w"> </span><span class="nf">removeOne</span><span class="p">(</span><span class="n">array</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">Int</span><span class="p">],</span><span class="w"> </span><span class="n">valueToRemove</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nv">indexToRemove</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">?</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">nil</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mf">0.</span><span class="p">.&lt;</span><span class="n">array</span><span class="p">.</span><span class="bp">count</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="n">valueToRemove</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">indexToRemove</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">              </span><span class="k">break</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">index</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">indexToRemove</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">array</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">at</span><span class="p">:</span><span class="w"> </span><span class="n">index</span><span class="p">)</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 
 <p>
@@ -135,14 +135,14 @@ tür değişkenler bazen hemen elde edildiğinde sonucu ele alarak ortadan
 kaldırılabilir:
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">func</span> <span class="nf">removeOne</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="p">[</span><span class="nb">Int</span><span class="p">],</span> <span class="n">valueToRemove</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">0.</span><span class="p">.&lt;</span><span class="n">array</span><span class="p">.</span><span class="bp">count</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">==</span> <span class="n">valueToRemove</span> <span class="p">{</span>
-              <span class="n">array</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">at</span><span class="p">:</span> <span class="n">i</span><span class="p">)</span>
-              <span class="k">return</span>
-          <span class="p">}</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">func</span><span class="w"> </span><span class="nf">removeOne</span><span class="p">(</span><span class="n">array</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">Int</span><span class="p">],</span><span class="w"> </span><span class="n">valueToRemove</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mf">0.</span><span class="p">.&lt;</span><span class="n">array</span><span class="p">.</span><span class="bp">count</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="n">valueToRemove</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">array</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">at</span><span class="p">:</span><span class="w"> </span><span class="n">i</span><span class="p">)</span>
+<span class="w">              </span><span class="k">return</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 
 <p>
@@ -151,7 +151,7 @@ oldukça basitleşti. Genel olarak, işi mümkün olan en kısa sürede
 tamamlamak iyi bir stratejidir.
 </p>
 </div>
-<h4><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h4><div class="outline-text-4" id="text-org6c32c0e">
+<h4><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h4><div class="outline-text-4" id="text-org5dd6b38">
 <p>
 <a href="https://www.goodreads.com/en/book/show/8677004">The Art of Readable Code</a>
 </p>

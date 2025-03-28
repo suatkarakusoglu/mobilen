@@ -1,14 +1,14 @@
-<!-- Generated from 1286c42 on 2025-01-03 @ 14:54 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!-- Generated from 2d397f1 on 2025-03-28 @ 14:06 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>iOS: fatalError - Never ve Sistem Tasarımı - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">iOS: fatalError - Never ve Sistem Tasarımı</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #28</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #37</a><p class="site-post-meta">3 min read | October  1, 2023</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
-<div id="orgdcc592f" class="figure">
+<div id="orgf00e212" class="figure">
 <p><img src="/img/fatalError_ve_sistem.jpg" class="content-image" width="100%">
 </p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org3f45a96">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org630b2e9">
 <p>
 Merhabalar, geçenlerde sektörün duayenlerinden <a href="https://tr.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>&rsquo;e birisinin sorduğu soruya nasıl cevap verdiği ilgimi çekmişti.
 </p>
@@ -34,8 +34,8 @@ Bu yaklaşıma yazılım dillerinde fonksiyon ve class seviyesinde yardımcı ol
 Python dilinde direkt <code>pass</code> keyword&rsquo;u ile dil&rsquo;i memnun edebiliyorsunuz.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-     <span class="k">def</span> <span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span>  <span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
+     <span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Bu anahtar kelime içerisini by-pass geçmenize yardımcı oluyor.</span>
         <span class="k">pass</span>
 </pre></div>
@@ -48,29 +48,29 @@ Dinamik dillerde bu biraz daha basit olarak bir keyword ile gerçeklenebiliyor.
 Swift gibi static dillerde derleme zamanında <code>compiler</code>&rsquo;i memnun etmemiz gerekiyor.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">func</span> <span class="nf">createEmployee</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="p">[</span><span class="n">Credential</span><span class="p">])</span> <span class="p">-&gt;</span> <span class="n">Employee</span> <span class="p">{</span>
-      <span class="c1">// İşçi yaratma mantığını şu anda yazmadım bu nedenle compiler projemizi derletmeyecektir.</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">func</span><span class="w"> </span><span class="nf">createEmployee</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">credentials</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Credential</span><span class="p">])</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// İşçi yaratma mantığını şu anda yazmadım bu nedenle compiler projemizi derletmeyecektir.</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h3><a id="never-tipi-nedir-ve-ne-işimize-yarar-bu-durumda" class="anchor" href="#never-tipi-nedir-ve-ne-işimize-yarar-bu-durumda">¶</a>Never Tipi nedir ve ne işimize yarar bu durumda?</h3><div class="outline-text-3" id="text-org2d94acd">
+<h3><a id="never-tipi-nedir-ve-ne-işimize-yarar-bu-durumda" class="anchor" href="#never-tipi-nedir-ve-ne-işimize-yarar-bu-durumda">¶</a>Never Tipi nedir ve ne işimize yarar bu durumda?</h3><div class="outline-text-3" id="text-org5dc6caa">
 <p>
 <a href="https://www.avanderlee.com/swift/never-keyword/">Never</a> tipi bir <a href="https://wiki.c2.com/?BottomType">Bottom</a> tiptir. Bu basit anlamda class hiyerarşisinde her zaman altta olan, dolayısı ile her dönüş değeri yerine kullanabilecek bir veri tipi anlamına gelir.
 </p>
 </div>
-<h3><a id="fatalerror-bu-işin-neresinde" class="anchor" href="#fatalerror-bu-işin-neresinde">¶</a>fatalError bu işin neresinde?</h3><div class="outline-text-3" id="text-org7c163d2">
+<h3><a id="fatalerror-bu-işin-neresinde" class="anchor" href="#fatalerror-bu-işin-neresinde">¶</a>fatalError bu işin neresinde?</h3><div class="outline-text-3" id="text-org3f6faf6">
 <p>
 <a href="https://developer.apple.com/documentation/swift/fatalerror(_:file:line:)">fatalError</a> fonksiyonu ise <a href="https://www.avanderlee.com/swift/never-keyword/">Never</a> tipi dönen bir fonksiyondur. Dolayısı ile herhangi implementasyonu henüz olmayan bir fonksiyon için çağırılabilecek bir <code>placeholder</code> fonksiyon görevi görebilir. Bu sayede <code>compiler</code> memnun bir şekilde hayatına devam eder, çünkü fatalError&rsquo;un döndüğü <code>Never</code> bottom tip dönüş değeri için yeterlidir.
 </p>
 
-<div class="highlight"><pre><span></span>  <span class="kd">func</span> <span class="nf">createEmployee</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="p">[</span><span class="n">Credential</span><span class="p">])</span> <span class="p">-&gt;</span> <span class="n">Employee</span> <span class="p">{</span>
-      <span class="c1">// Burada fırlattığınız hata ile ne yapmadığınızı bilebilirsiniz.</span>
-      <span class="c1">// Bu kod artık derlenebilecektir.</span>
-      <span class="bp">fatalError</span><span class="p">(</span><span class="s">&quot;Create employee first.&quot;</span><span class="p">)</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="kd">func</span><span class="w"> </span><span class="nf">createEmployee</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">credentials</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Credential</span><span class="p">])</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Burada fırlattığınız hata ile ne yapmadığınızı bilebilirsiniz.</span>
+<span class="w">      </span><span class="c1">// Bu kod artık derlenebilecektir.</span>
+<span class="w">      </span><span class="bp">fatalError</span><span class="p">(</span><span class="s">&quot;Create employee first.&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h3><a id="nelere-dikkat-etmeliyiz" class="anchor" href="#nelere-dikkat-etmeliyiz">¶</a>Nelere dikkat etmeliyiz?</h3><div class="outline-text-3" id="text-orgc3bacec">
+<h3><a id="nelere-dikkat-etmeliyiz" class="anchor" href="#nelere-dikkat-etmeliyiz">¶</a>Nelere dikkat etmeliyiz?</h3><div class="outline-text-3" id="text-orgf4ff6cc">
 <p>
 <code>fatalError</code> fonksiyonun bu yalnızca bir kullanım durumudur. Normalde uygulamanın hiç girmemesi gereken durumlarda bu fonksiyonu çağırabilmektesiniz.
 Ancak bu fonksiyonun direkt olarak uygulamayı <code>crash</code> ettireceğini bilmelisiniz.
@@ -84,7 +84,7 @@ O nedenle production&rsquo;da elinizin en son gitmesi gereken, çaresiz kaldığ
 Ancak geliştirme aşamasında bu bahsettiğimiz kullanımı ile sizin elinizde sisteminizi tasarlarken yardımcı bir araç görevi görecektir.
 </p>
 </div>
-<h3><a id="kaynakca" class="anchor" href="#kaynakca">¶</a>Kaynakca</h3><div class="outline-text-3" id="text-org30171cd">
+<h3><a id="kaynakca" class="anchor" href="#kaynakca">¶</a>Kaynakca</h3><div class="outline-text-3" id="text-orgab1cf59">
 <ul class="org-ul">
 <li><a href="https://www.avanderlee.com/swift/never-keyword/">Never Keyword</a></li>
 <li><a href="https://developer.apple.com/documentation/swift/fatalerror(_:file:line:)">FatalError</a></li>

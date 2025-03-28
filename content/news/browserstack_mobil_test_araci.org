@@ -63,7 +63,33 @@ Bu uygulama ile yüklediğiniz mobil uygulama internet erişimini sizin ağını
 [[file:browserstack_force_local_network.jpg]]
 Burada 'Force Local' network seçeneğine tıkladığınızda =Force Local: ON= gormeniz gerekiyor. Sonrasında testlerinize başlayabilirsiniz.
 
+** Login/Register gibi işlemlerde dikkat edilmesi gerekenler
+Login veya register işlemleri sonucu üretilen =token='lar genelde =güvenli= alana yazılır.
+
+Bu keychain gibi alanların uygulama içinden düzgün erişimleri için uygulamanın paketini cihazda ayağa kaldırmadan önce bir ayar gerekiyor.
+
+#+CAPTION: Uygulama paketi ayarlarına giriş
+[[file:browserstack_package_settings.jpg]]
+Buradaki 'ayarlar' üzerinden menüye erişilir.
+
+#+CAPTION: Uygulama paketinin cihazdaki ayarları
+[[file:browserstack_activate_auth.jpg]]
+Menu'de ilgili =biometric authentication= seçeneğini aktifleştiriniz.
+
+** Kamera erişimi ile QR kod okutma gibi işlemler
+Bazen kamera üzerinden QR okutma gereksinimleri olabiliyor.
+
+Bunu karşılamak adına yine aynı ayarlar üzerinden bir =image injection= seçeneğini açıp, yüklenen resmin kameraya otomotik olarak algılanmasını sağlayabilir ve akışınızı ilerletebilirsiniz.
+
+#+CAPTION: Resim okuma ayarını açmak
+[[file:browserstack_image_injection.jpg]]
+
+#+CAPTION: QR resim okunmasını sağlamak
+[[file:browserstack_inject_asset.jpg]]
+
 ** Sonuç olarak
-BrowserStack sayesinde canlı'dan gelebilecek olan problemleri gerçek mobil cihaz havuzundan en yakın cihaz ile test edebilmek, tekrarlayabilmek uygulamanın davranışını daha kolay değerlendirmenizi ve problem var ise çözümüne gidebilmenize yardımcı olacaktır.
+BrowserStack sayesinde canlı'dan gelebilecek olan problemleri gerçek mobil cihaz havuzundan en yakın cihaz ile test edebilir, tekrarlayabiliriz.
+
+Bu sayede uygulamanın davranışını daha kolay değerlendirmenizi ve problem var ise çözümüne gidebilmenize yardımcı olacaktır.
 
 İyi çalışmalar.

@@ -52,6 +52,15 @@ Uygulamamızın eski haliyle devam etmesini sağlayabilmek için [[https://devel
 
 [[https://developer.apple.com/videos/play/wwdc2025/361/][Create icons with Icon Composer - WWDC25]]
 
+** Özetle
+Apple bu yeni tasarım dili ile içeriğin daha çok ön plana çıkarılmasını hedefliyor. Tabi ki bu tasarım, sürekli görsel elemanların arkasındaki içeriklere göre değişim gerektiriyor, ve bu görsel geçişleri hızlı yapabilmek için hesap kitap, yani enerji ve cpu ihtiyacı olucak.
+
+O noktada da Apple yine kendi enerji tasarruflu çiplerine sırtını dayamış gibi görünüyor.
+
+Basit gibi görünen ama Apple'ın farklı bir deneyime imza attığı bir dönüşüm içindeyiz. Kullanıcılarımız için bu dönüşümü şimdiden planlamak faydamıza olacaktır.
+
+Görüşmek üzere.
+
 ** Kaynakça
 - [[https://www.youtube.com/watch?v=jGztGfRujSE][Introducing Liquid Glass | Apple - YouTube]]
 - [[https://developer.apple.com/videos/play/wwdc2025/356/][Get to know the new design system - WWDC25 - Videos - Apple Developer]]

@@ -24,6 +24,8 @@
 
 [[file:../../news/ios_swiftui_swipe_actions.org][iOS SwiftUI Swipe Actions]]
 
+[[file:../../news/liquid_glass_design.org][Tasarımın 4. hali Liquid Glass]]
+
 [[file:../../news/navigation_desenleri.org][Navigation Desenleri]]
 
 [[file:../../news/netfox_ile_iOS_uygulamalarda_network.org][Netfox ile iOS uygulamalarda network izlemek]]

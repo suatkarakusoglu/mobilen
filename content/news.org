@@ -1,5 +1,6 @@
 #+TITLE: Yazılar
 
+- [[file:news/liquid_glass_design.org][Tasarımın 4. hali Liquid Glass]] - Suat Karakuşoğlu · July 08, 2025
 - [[file:news/android_play_store_apk_download.org][Google Developer Play Store APK İndirme]] - Suat Karakuşoğlu · January 03, 2025
 - [[file:news/dayaniklilik.org][Dayanıklılık (Robustness)]] - Suat Karakuşoğlu · December 24, 2024
 - [[file:news/xcode_spell_checker.org][Xcode Spell Checker]] - Ali Mert Tekel · December 03, 2024

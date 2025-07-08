@@ -10,6 +10,8 @@
 
 [[file:../../news/half_life_25_year.org][Half-Life 25. Yıl Belgeseli]]
 
+[[file:../../news/liquid_glass_design.org][Tasarımın 4. hali Liquid Glass]]
+
 [[file:../../news/sf_symbols.org][Sembol Dünyasının Büyüsü: SF Symbols]]
 
 [[file:../../news/tasarim_deneyim_ve_mobil.org][Tasarım, Deneyim ve Mobil]]

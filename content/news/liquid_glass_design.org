@@ -1,0 +1,59 @@
+#+title: Tasarımın 4. hali Liquid Glass
+#+date: [2025-07-08 Tue]
+#+author: Suat Karakuşoğlu
+#+filetags: :iOS:Yazılım:Tasarım:
+
+[[https://tr.linkedin.com/in/suat-karakusoglu][Suat Karakuşoğlu]] yazdı.
+
+[[file://liquid_glass_cover.jpg]]
+
+* İçerik
+9 Haziran'da Apple WWDC 2025 sunumlarını gerçekleştirdi.
+
+Apple'ın Tasarım Yardımcı Başkanı =Alan Dye= [[https://www.youtube.com/watch?v=KBAepbcMm4E][The Vision Behind iOS 26’s Liquid Glass]]'taki sohbetinde bahsettiği üzere; VisionOS için yapılan genel tasarım yaklaşımını günlük cihazlarımız olan Mac ve iPhone'lar üzerine de tatbik etme planı ile çıkageldiler.
+
+LiquidGlass tasarım dili ile Steve başkan'ın 2000'lerde tanıttığı [[https://www.youtube.com/watch?v=SZjTIadjr4M][MacOS'in AQUA]] tasarımına da göz kırpıyorlar.
+
+[[file:steve_jobs_aqua_button.jpg]]
+#+begin_quote
+We made the buttons on the screen look so good you'll want to lick them.
+
+Steve Jobs
+#+end_quote
+
+13 sene sonra 'Sir' Jonny Ive bütün bu gerçekliğe yönelik tasarımdan koparak =flat design= sistemine geçirmeye çalışarak bana göre biraz ruhsuz bir sadeliğe gitmek için büyük bir tasarımsal değişikliğe gittiler. Flat Design ile yer yer butonları dahi tanıyamaz olduk :)
+
+[[file:iOS6_to_iOS7.jpg]]
+
+** Aquanın Reenkarnasyonu: Liquid Glass
+[[https://www.youtube.com/watch?v=IrGYUq1mklk&ab_channel=AppleDeveloper][WWDC25: Meet Liquid Glass]] vidyosunda bu cam tasarım dilinin nasıl çalışacağına dair güzel bir sunum yapılmış. Şahsen ilk duyduğumda kafamda oluşan izlenimden çok daha iyi bir çalışma yapmışlar gibi görünüyor.
+
+[[https://developer.apple.com/documentation/TechnologyOverviews/adopting-liquid-glass][Liquid Glass adaptasyon dokümanı]]nda da bu tasarıma geçişin hangi komponentleri ekleyeceğine dair bir yol haritası sunuyor.
+
+** Versiyon 26 ve yeni versiyonlama yöntemi
+Versiyonlamada karşımıza çıkan hangi sene hangi versiyon çıkmıştı karmaşasına ise bu sefer Samsung'un izinden giderek seneye bağlı olacak şekle getirdi Apple.
+
+** Hali hazırdaki uygulamalarımızdaki etkileri
+Yeni tasarıma geçişi Xcode 26 ile derlediğiniz vakit size süpriz bir görüntü sunabilir. Bir kaç uygulamada denediğimde =custom= olarak native componentler üzerinde yaptığımız değişikliklerin bu tasarım diliyle kırıldığını gördük.
+
+Hızlıca düzenleyebileceğimiz değişiklikler ile bu tasarıma ayak uydurabiliriz. Ancak yetiştiremeyeceğimizi hissedersek bir süre var.
+
+** Liquid Glass tasarım geçişini ertelemek
+Evet, belki uygulamadaki etkilerini hızlıca toparlayamayabiliriz. Bu nedenle Apple adaptasyon süreci için bir süre tanımış.
+
+Uygulamamızın eski haliyle devam etmesini sağlayabilmek için [[https://developer.apple.com/documentation/BundleResources/Information-Property-List/UIDesignRequiresCompatibility][UIDesignRequiresCompatibility]] anahtarını kullanarak bir süre daha uzatabiliriz. Ancak bu süreci uzun tutmamakta hayır var.
+
+[[file://ui_design_requires_compatibility.jpg]]
+
+** İkon Değişiklikleri
+=Icon Composer= uygulaması ile =liquid glass= tasarımına uygun ikon tasarımlarımızı gerçekleştirebilirsiniz.
+
+[[file://icon_liquid_glass.jpg]]
+
+[[https://developer.apple.com/videos/play/wwdc2025/361/][Create icons with Icon Composer - WWDC25]]
+
+** Kaynakça
+- [[https://www.youtube.com/watch?v=jGztGfRujSE][Introducing Liquid Glass | Apple - YouTube]]
+- [[https://developer.apple.com/videos/play/wwdc2025/356/][Get to know the new design system - WWDC25 - Videos - Apple Developer]]
+- [[https://www.donnywals.com/opting-your-app-out-of-the-liquid-glass-redesign-with-xcode-26][Opting your app out of the Liquid Glass redesign with Xcode 26 by Donny Wals]]
+- [[https://developer.apple.com/documentation/Xcode/creating-your-app-icon-using-icon-composer][Creating your app icon using Icon Composer]]

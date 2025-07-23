@@ -1,15 +1,15 @@
-<!-- Generated from d3e8508 on 2025-07-08 @ 17:11 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!-- Generated from 201205d on 2025-07-23 @ 10:58 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Swift 5.9: If ve Switch Gelişmeleri - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Swift 5.9: If ve Switch Gelişmeleri</h1><a class="tag" href="https://mobilen.art/tags/swift/">Swift #2</a><a class="tag" href="https://mobilen.art/tags/ios/">iOS #29</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #38</a><p class="site-post-meta">7 min read | June 27, 2024</p><div id="content"><p>
 <a href="https://tr.linkedin.com/in/suat-karakusoglu">Suat Karakuşoğlu</a> yazdı.
 </p>
 
 
-<div id="org1b9705b" class="figure">
+<div id="org312ff2d" class="figure">
 <p><img src="/img/if_else.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Karar</p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org59e0b2b">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-orgb11e1b8">
 <p>
 <code>Switch</code> ve <code>if</code> karar grameri fonksiyonel programlama dinamiklerine daha yakın olması adına ufak yetenekler kazandı.
 </p>
@@ -22,7 +22,7 @@
 <code>Expression</code>&rsquo;lar dönüş değeri olan fonksiyonel programlamaya uygun ifadelerdir.
 </p>
 </div>
-<h3><a id="if-expression" class="anchor" href="#if-expression">¶</a>If Expression</h3><div class="outline-text-3" id="text-orgd6965a3">
+<h3><a id="if-expression" class="anchor" href="#if-expression">¶</a>If Expression</h3><div class="outline-text-3" id="text-org026fbf5">
 <p>
 <code>If Expression</code> karar ifadesinde hızlı atama yapmayı sağlayan bir yetenek kazandı.
 </p>
@@ -37,7 +37,7 @@ Bu aşağıdaki ternary expression ile çok yakın bir yazıma sahip ancak daha 
 <span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nv">weightStatus</span><span class="w"> </span><span class="p">=</span><span class="w">  </span><span class="n">weight</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">100.0</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="s">&quot;Overweight&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Fit&quot;</span>
 </pre></div>
 </div>
-<h3><a id="switch-expression" class="anchor" href="#switch-expression">¶</a>Switch Expression</h3><div class="outline-text-3" id="text-orgb488ba2">
+<h3><a id="switch-expression" class="anchor" href="#switch-expression">¶</a>Switch Expression</h3><div class="outline-text-3" id="text-org0e97909">
 <p>
 Switch expression olmasıyla çok daha güzel hale geldi.
 </p>
@@ -77,7 +77,7 @@ Switch expression olmasıyla çok daha güzel hale geldi.
 <span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h4><a id="switch-yeni-yöntem" class="anchor" href="#switch-yeni-yöntem">¶</a>Switch Yeni Yöntem</h4><div class="outline-text-4" id="text-orge7baffe">
+<h4><a id="switch-yeni-yöntem" class="anchor" href="#switch-yeni-yöntem">¶</a>Switch Yeni Yöntem</h4><div class="outline-text-4" id="text-org9f5d6d3">
 <div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// Yeni switch ifadesi direkt =calculatedPenalty=&#39;ye atama yapabilir</span>
 <span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nv">calculatedPenalty</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="n">exceedingPercentage</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mf">10.</span><span class="p">..</span><span class="mi">20</span><span class="p">:</span><span class="w"> </span><span class="n">basePenalty</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.25</span>
@@ -88,7 +88,7 @@ Switch expression olmasıyla çok daha güzel hale geldi.
 <span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h3><a id="return-inference" class="anchor" href="#return-inference">¶</a>Return Inference</h3><div class="outline-text-3" id="text-orgeb1ecb4">
+<h3><a id="return-inference" class="anchor" href="#return-inference">¶</a>Return Inference</h3><div class="outline-text-3" id="text-org92e996f">
 <p>
 Burada aynı zamanda return etmenin gerekmemesi de dikkatinizi çekmiştir.
 Bu yetenek <a href="https://github.com/swiftlang/swift-evolution/blob/main/proposals/0255-omit-return.md">Return ifadesinin <code>infer</code> edilmesi</a> ile Swift 5.1&rsquo;de gelmişti.
@@ -98,7 +98,7 @@ Bu yetenek <a href="https://github.com/swiftlang/swift-evolution/blob/main/propo
 Swift&rsquo;in <code>inference</code> motoru, derleyici zamanında kodun doğru çalışmasını garantilerken aynı zamanda geliştiricinin de daha az ve öz kod yazmasına yardımcı oluyor.
 </p>
 </div>
-<h3><a id="sonuç-olarak" class="anchor" href="#sonuç-olarak">¶</a>Sonuç olarak</h3><div class="outline-text-3" id="text-org29e3f83">
+<h3><a id="sonuç-olarak" class="anchor" href="#sonuç-olarak">¶</a>Sonuç olarak</h3><div class="outline-text-3" id="text-org26ae9f0">
 <p>
 <code>Swift</code> dili fonksiyonel yaklaşımları çoğu zaman yol haritasına alıp uygulayan bir yaklaşımla ilerliyor.
 </p>
@@ -107,7 +107,7 @@ Swift&rsquo;in <code>inference</code> motoru, derleyici zamanında kodun doğru 
 Bu yol haritası <a href="https://github.com/swiftlang/swift-evolution/tree/main?tab=readme-ov-file">Swift Evolution</a> üzerinden takip edilen bir yönetime sahip. Buradaki tartışmaları ve önerileri takip etmek dile hakim olabilmek adına güzel içgörüler sağlayabilir.
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org3dabfca">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org1419849">
 <ul class="org-ul">
 <li><a href="https://github.com/swiftlang/swift-evolution/blob/main/proposals/0380-if-switch-expressions.md">Switch ve If Evolution Proposal</a></li>
 <li><a href="https://developer.apple.com/videos/play/wwdc2023/10164/?time=178">What&rsquo;s new in Swift?</a></li>

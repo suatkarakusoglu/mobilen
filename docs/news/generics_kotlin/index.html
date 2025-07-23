@@ -1,8 +1,8 @@
-<!-- Generated from d3e8508 on 2025-07-08 @ 17:11 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!-- Generated from 201205d on 2025-07-23 @ 10:58 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>Genericlerle Kodumuzu Biraz Esnetelim - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">Genericlerle Kodumuzu Biraz Esnetelim</h1><a class="tag" href="https://mobilen.art/tags/kotlin/">Kotlin #1</a><a class="tag" href="https://mobilen.art/tags/yazılım/">Yazılım #38</a><p class="site-post-meta">12 min read | October 27, 2023</p><div id="content"><p>
 <a href="https://www.linkedin.com/in/sevban-bayir">Sevban Bayır</a> yazdı.
 </p>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org4a34f22">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org7b168f7">
 <p>
 Adları üzerinde Genericler kodlarımızı daha esnek kılar ve aynı zamanda yazdığımız class&rsquo;ları farklı veri tipleriyle kullanabilmek için boilerplate kod yazmaktan bizleri kurtarırlar.
 </p>
@@ -31,7 +31,7 @@ Ve hikayenin ana kahramanı olan List arayüzünün Kotlin&rsquo;de nasıl tanı
 Burada bizim generic tip parametremizi temsil ediyor. Generic tip parametresiyle compiler&rsquo;a &ldquo;Bu arayüz herhangi bir tip(Int, Double, String) ile çağırılabilir&rdquo;, outvariance anahtar kelimesine sonraki bölümde değineceğiz ancak şimdilik List&rsquo;e verdiğimiz tip parametresinin alt tipleriyle kendisi arasında bir değişebilirlik anlaşması imzalıyoruz diyebiliriz.
 </p>
 </div>
-<h3><a id="variance" class="anchor" href="#variance">¶</a>Variance</h3><div class="outline-text-3" id="text-orgebcff71">
+<h3><a id="variance" class="anchor" href="#variance">¶</a>Variance</h3><div class="outline-text-3" id="text-orgc41f1e6">
 <p>
 List arayüzünün tanımlanışını ilk gördüğümüzde out anahtar kelimesini elbette sorguluyoruz. Neden sadece List olarak tanımlanmamış ki diyebiliyoruz. İçgüdüsel olarak, aşağıdaki kod parçacığının sorunsuz bir şekilde compile etmesini bekleyebiliriz:
 </p>
@@ -55,7 +55,7 @@ List arayüzünün tanımlanışını ilk gördüğümüzde out anahtar kelimesi
 <li>Contravariance</li>
 </ul>
 </div>
-<h3><a id="invariance" class="anchor" href="#invariance">¶</a>Invariance</h3><div class="outline-text-3" id="text-org8c60e4d">
+<h3><a id="invariance" class="anchor" href="#invariance">¶</a>Invariance</h3><div class="outline-text-3" id="text-org417abe5">
 <p>
 Classınızı tanımlarken generic tip parametresinden önce herhangi bir
 anahtar kelime kullanmazsanız classınızı invariant yapmış olursunuz.
@@ -93,7 +93,7 @@ classı veya ondan türetilmiş olan diğer classları verebilmemizdir.
 Tanımlanan class ile onun diğer türevleri arasında herhangi bir değişebilirlik ilkesi söz konusu değildir ve gördüğünüz üzere bunu yapmaya çalışmak compile time&rsquo;da hataya sebep olur.
 </p>
 </div>
-<h3><a id="covariance-out" class="anchor" href="#covariance-out">¶</a>Covariance: out</h3><div class="outline-text-3" id="text-org0e484f6">
+<h3><a id="covariance-out" class="anchor" href="#covariance-out">¶</a>Covariance: out</h3><div class="outline-text-3" id="text-org4d699c2">
 <p>
 Covariance, bir class&rsquo;ın alt tiplerini tıpkı kendisiymiş gibi kullanabilmek istediğimizde generic tip parametremizin
 yanına <code>out</code> anahtar kelimesini ekleyerek elde ettiğimiz bir variance tipidir. Bu şekilde, yukarıdaki List tanımında bahsettiğimiz değişebilirlik anlaşmasını imzalamış oluruz.
@@ -127,7 +127,7 @@ yanına <code>out</code> anahtar kelimesini ekleyerek elde ettiğimiz bir varian
 <span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h3><a id="contravariance-rsquoinrsquo" class="anchor" href="#contravariance-rsquoinrsquo">¶</a>Contravariance: &rsquo;in&rsquo;</h3><div class="outline-text-3" id="text-org5d3e5dd">
+<h3><a id="contravariance-rsquoinrsquo" class="anchor" href="#contravariance-rsquoinrsquo">¶</a>Contravariance: &rsquo;in&rsquo;</h3><div class="outline-text-3" id="text-orga410485">
 <p>
 Contravariance, covariance&rsquo;ın tam tersidir. Classımızın generic tip parametresine <code>in</code> anahtar kelimesini ekleyerek bu classın belirttiğimiz generic tip parametresi ve onun üst tipleriyle tanımlanabileceğini belirtmiş oluruz.
 </p>
@@ -143,7 +143,7 @@ Contravariance, covariance&rsquo;ın tam tersidir. Classımızın generic tip pa
 <span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>
-<h3><a id="unsafe-variance" class="anchor" href="#unsafe-variance">¶</a>Unsafe Variance</h3><div class="outline-text-3" id="text-org12fd4a2">
+<h3><a id="unsafe-variance" class="anchor" href="#unsafe-variance">¶</a>Unsafe Variance</h3><div class="outline-text-3" id="text-org9e15a4b">
 <p>
 Dikkat ettiyseniz buraya kadar verdiğimiz örneklerde contravariance(in) olarak tanımladığımız type parametreleri classlarımızın içerisindeki fonksiyonlarda gerekiyorsa parametre olarak aldık fakat return type olarak atamadık; tam tersi covariance olarak tanımladığımız type parametrelerini de gerekiyorsa return type olarak verdik ancak parametre olarak almadık.
 </p>
@@ -187,7 +187,7 @@ Daha doğrusu atayabildik çünkü ReadOnlyBox bir covariant class ve Number ile
 Nihayetinde numberBox&rsquo;ımızın getItem fonksiyonuna bir float gönderdiğimizde onu gizlice integer&rsquo;a dönüştürmüş olduk. Burada bu basit örnek üzerinden çok açık bir şekilde ortada gibi görünebilir fakat yine de Unsafe Variance kullanımında karşılaşabileceğimiz bir hatayı önceden görmek bize debuglarımızda zaman kazandırabilir.
 </p>
 </div>
-<h3><a id="kapanış" class="anchor" href="#kapanış">¶</a>Kapanış</h3><div class="outline-text-3" id="text-orgd04efa6">
+<h3><a id="kapanış" class="anchor" href="#kapanış">¶</a>Kapanış</h3><div class="outline-text-3" id="text-org5a07bff">
 <p>
 Sonuç olarak, Generic yapılar programlamada çok temel ve önemli bir konsepttir. Genericler sayesinde az bir kodla proje genelinde kullanacağımız yapılar oluşturabilir ve projemize bir bütünlük sağlayabiliriz.
 </p>
@@ -196,7 +196,7 @@ Sonuç olarak, Generic yapılar programlamada çok temel ve önemli bir konseptt
 Bir sonraki yazıda görüşmek üzere. Bugsız kodlamalar :)
 </p>
 </div>
-<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-orgbc7a348">
+<h3><a id="kaynakça" class="anchor" href="#kaynakça">¶</a>Kaynakça</h3><div class="outline-text-3" id="text-org6cf2526">
 <ul class="org-ul">
 <li><a href="https://kotlinlang.org/docs/generics.html#declaration-site-variance">Kotlin Dokümantasyonu</a></li>
 </ul>

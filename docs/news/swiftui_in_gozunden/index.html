@@ -1,15 +1,15 @@
-<!-- Generated from d3e8508 on 2025-07-08 @ 17:11 with Emacs 31.0.50 (Org mode 9.7.11) -->
+<!-- Generated from 201205d on 2025-07-23 @ 10:57 with Emacs 31.0.50 (Org mode 9.7.11) -->
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Mobilen - Suat Karakuşoğlu"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="alternative" type="application/rss+xml" title="Mobilen Yazılar" href="https://mobilen.art/rss/news.xml"/><link rel="stylesheet" href="https://mobilen.art/fonts/iosevka-aile/iosevka-aile.css"/><link rel="stylesheet" href="https://mobilen.art/fonts/jetbrains-mono/jetbrains-mono.css"/><link rel="stylesheet" href="https://mobilen.art/css/code.css"/><link rel="stylesheet" href="https://mobilen.art/css/site.css"/><link rel="stylesheet" href="https://mobilen.art/css/code_highlighter_dark_theme.css"/><title>SwiftUI&rsquo;in gözünden - Mobilen</title></head><body><header class="site-header"><div class="container"><div class="site-title"><h1>Mobilen</h1></div></div><div class="site-masthead"><div class="container"><nav class="nav"><a class="nav-link" href="/">Anasayfa</a> <a class="nav-link" href="/magazines/">Dergiler</a> <a class="nav-link" href="/news/">İçerikler</a> </nav></div></div></header><div class="container"><div class="site-post"><h1 class="site-post-title">SwiftUI&rsquo;in gözünden</h1><a class="tag" href="https://mobilen.art/tags/ios/">iOS #29</a><p class="site-post-meta">17 min read | December  2, 2024</p><div id="content"><p>
 <a href="https://linkedin.com/in/alimerttekel">Ali Mert Tekel</a> yazdı.
 </p>
 
 
-<div id="orga2f56ac" class="figure">
+<div id="orge074cac" class="figure">
 <p><img src="/img/swiftui_gozunden_cover.jpg" class="content-image" width="100%">
 </p>
 <p><span class="figure-number">Figure 1: </span>Photo by <a href="https://unsplash.com/photos/birds-flying-over-the-street-light-during-daytime-HQ2qxzgvglY">Vika Strawberrika</a></p>
 </div>
-<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org5b092ea">
+<h2><a id="i̇çerik" class="anchor" href="#i̇çerik">¶</a>İçerik</h2><div class="outline-text-2" id="text-org695350d">
 <p>
 SwiftUI, bir view oluştururken kodunuza nasıl yaklaşıyor, performansı nasıl optimize ediyor ve en önemlisi view’inizi çizerken nelere dikkat ediyor? Bu yazıda SwiftUI’nin gözünden view’ları inceleyerek bu sorulara yanıtlar arayacağız.
 </p>
@@ -22,7 +22,7 @@ SwiftUI view’ları Identity (Kimlik), Lifetime (Yaşam Süresi) ve Dependencie
 Gelin bu üç prensip altında SwiftUI’nin nasıl çalıştığına birlikte göz atmaya başlayalım
 </p>
 </div>
-<h3><a id="identity-kimlik" class="anchor" href="#identity-kimlik">¶</a>Identity (Kimlik)</h3><div class="outline-text-3" id="text-orgb791ab8">
+<h3><a id="identity-kimlik" class="anchor" href="#identity-kimlik">¶</a>Identity (Kimlik)</h3><div class="outline-text-3" id="text-org5c5518a">
 <p>
 SwiftUI’da her view bir identity’ye sahiptir; bu identity, bir view’in güncellemeler boyunca aynı mı kalacağı, yoksa farklı bir view olarak mı değerlendirileceği konusunda SwiftUI’ye rehberlik eder. Bir view’in identity’si, onun state’ini de bir noktada tanımlamış olur ve güncellemeler arasında tutarlılığı sağlar. Bu konsepti anlamak, SwiftUI’nin nasıl ve ne zaman değişiklik yapacağına dair kararlarını anlamamıza yardımcı olur.
 </p>
@@ -31,7 +31,7 @@ SwiftUI’da her view bir identity’ye sahiptir; bu identity, bir view’in gü
 SwiftUI’de iki tür identity tanımlama yöntemi vardır: Explicit Identity (Açık Kimlik) ve Structural Identity (Yapısal Kimlik).
 </p>
 </div>
-<h3><a id="explicit-identity-açık-kimlik" class="anchor" href="#explicit-identity-açık-kimlik">¶</a>Explicit Identity (Açık Kimlik):</h3><div class="outline-text-3" id="text-org883e6a6">
+<h3><a id="explicit-identity-açık-kimlik" class="anchor" href="#explicit-identity-açık-kimlik">¶</a>Explicit Identity (Açık Kimlik):</h3><div class="outline-text-3" id="text-org57a6555">
 <p>
 Explicit Identity, her öğeye belirli bir ID atayarak, SwiftUI’nin bu öğeyi tanımasını sağlar. Böylece, özellikle bir view’i başka bir kod bloğunda veya bir ScrollViewReader içinde referans almak gerektiğinde önem kazanır.
 </p>
@@ -59,7 +59,7 @@ Explicit Identity, her öğeye belirli bir ID atayarak, SwiftUI’nin bu öğeyi
 Bu örnekte, id(:) modifier&rsquo;ı ile her Text view&rsquo;ine explicit identity atıyoruz. Bu sayede, ScrollViewReader içinde scrollTo(:) fonksiyonunu kullanarak belirli bir öğeye kaydırma işlemi yapabiliyoruz.
 </p>
 </div>
-<h3><a id="structural-identity-yapısal-kimlik" class="anchor" href="#structural-identity-yapısal-kimlik">¶</a>Structural Identity (Yapısal Kimlik):</h3><div class="outline-text-3" id="text-org90cf8f8">
+<h3><a id="structural-identity-yapısal-kimlik" class="anchor" href="#structural-identity-yapısal-kimlik">¶</a>Structural Identity (Yapısal Kimlik):</h3><div class="outline-text-3" id="text-org0edda36">
 <p>
 Explicit bir şekilde tanımlanmasa bile, her view bir identity’ye sahiptir. SwiftUI, view yapınızı analiz ederek implicit (örtük) identity oluşturur. Bu sayede, farklı durumlar arasında optimize edilmiş bir yapı sağlar.
 </p>
@@ -89,7 +89,7 @@ Bu örnekte, <code>isActive</code> durumuna bağlı olarak iki farklı Text view
 Eğer bu view’lerin SwiftUI tarafından tamamen aynı olarak algılanmasını istiyorsanız, bir <code>conditional modifier</code> kullanabilirsiniz.
 </p>
 </div>
-<h3><a id="conditional-modifier" class="anchor" href="#conditional-modifier">¶</a>Conditional Modifier:</h3><div class="outline-text-3" id="text-org045628f">
+<h3><a id="conditional-modifier" class="anchor" href="#conditional-modifier">¶</a>Conditional Modifier:</h3><div class="outline-text-3" id="text-org24b8745">
 <p>
 Conditional Modifier’ı, view’in ana işlevselliğini bozmayan, sadece görünüşte değişiklikler yaratan modifier’lar olarak düşünebiliriz.
 </p>
@@ -162,7 +162,7 @@ ViewBuilder kullandığımız senaryoda ise şuna benzer bir şey görecek:
 Bu sefer daha açık bir şekilde ne olduğunu görüp ona göre daha iyi bir optimizasyon sağlamış olacak.
 </p>
 </div>
-<h3><a id="lifetime-yaşam-süresi" class="anchor" href="#lifetime-yaşam-süresi">¶</a>Lifetime (Yaşam Süresi)</h3><div class="outline-text-3" id="text-org32e0795">
+<h3><a id="lifetime-yaşam-süresi" class="anchor" href="#lifetime-yaşam-süresi">¶</a>Lifetime (Yaşam Süresi)</h3><div class="outline-text-3" id="text-org62901c2">
 <p>
 SwiftUI’de her view’in bir yaşam süresi (lifetime) vardır. Lifetime, view’in identity’sine doğrudan bağlıdır, view’in oluşturulmasından kaybolmasına kadar olan süreyi kapsar. Bir view, lifetime’ı boyunca farklı state’lere sahip olabilir. State’ler değiştiğinde aynı identity ile ilişkilendirilmiş yeni bir view oluşturulur ve eski olanı siler. Burada dikkat edilmesi gereken nokta; silinen view’in lifetime’ı sonlandırmamasıdır, aslında replace’e benzer bir işlem olur. Identity aynı olduğu için SwiftUI daha optimize ve akıcı bir şekilde view’ı günceller.
 </p>
@@ -208,7 +208,7 @@ count değişkeni <code>@State</code> ile işaretlenmiştir ve CounterView‘ın
 Toggle değeri değiştiğinde CounterView farklı bir id ile yeniden oluşturulur. Böylece yeni bir lifetime başlamış olur ve CounterView içindeki count değeri sıfırlanır.
 </p>
 </div>
-<h3><a id="dependencies-bağımlılıklar" class="anchor" href="#dependencies-bağımlılıklar">¶</a>Dependencies (Bağımlılıklar)</h3><div class="outline-text-3" id="text-orgf251292">
+<h3><a id="dependencies-bağımlılıklar" class="anchor" href="#dependencies-bağımlılıklar">¶</a>Dependencies (Bağımlılıklar)</h3><div class="outline-text-3" id="text-org3a408f1">
 <p>
 SwiftUI’nin performans optimizasyonunda dependency’lerin (bağımlılıkların) yönetimi çok büyük bir rol oynar. SwiftUI, her view’in dependency’lerini takip eden bir dependency graph (bağımlılık grafiği) oluşturur. Dependency’ler, view’in oluşturulması için gereken tüm girdileri ifade eder ve bu girdiler değiştiğinde view yeniden çizilir.
 </p>
@@ -238,7 +238,7 @@ Bir view’in tüm property’leri, dependency olarak kabul edilir. Bu dependenc
 Bu örnekte, DataModel içindeki text değişkeni @Published olarak işaretlendiği için, değiştiğinde ContentView içindeki Text otomatik olarak güncellenir. Bu, SwiftUI&rsquo;nin dependency graph kullanarak view&rsquo;leri nasıl güncellediğine dair bir örnektir.
 </p>
 </div>
-<h3><a id="identity-ve-dependency-i̇lişkisi" class="anchor" href="#identity-ve-dependency-i̇lişkisi">¶</a>Identity ve Dependency İlişkisi:</h3><div class="outline-text-3" id="text-orgf1fff4a">
+<h3><a id="identity-ve-dependency-i̇lişkisi" class="anchor" href="#identity-ve-dependency-i̇lişkisi">¶</a>Identity ve Dependency İlişkisi:</h3><div class="outline-text-3" id="text-org986f4c4">
 <p>
 SwiftUI’da bir view’in identity’si, onun dependency’leri ile doğrudan bağlantılıdır. Bu ilişki sayesinde, bir view’in durumu yalnızca dependency’lerde bir değişiklik olduğunda güncellenir. SwiftUI, dependency graph’daki değişiklikleri takip ederek, ihtiyaç duyulan view’leri yeniden oluşturur ve yalnızca bu view’leri günceller. Böylece, uygulama performansı optimize edilmiş olur çünkü gereksiz güncellemelerden kaçınılır ve yalnızca zorunlu olan bileşenler yenilenir.
 </p>

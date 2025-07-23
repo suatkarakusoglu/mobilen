@@ -44,9 +44,19 @@ Bunlardan en popülerleri ile direkt entegrasyon dahi sağlayabiliyoruz.
 *** Firebase Distribution Entegrasyonu
 Firebase Uygulama Dağıtım entegrasyonu ile direkt olarak uygulamalar sürümleri ile listeleniyor ve istediğiniz cihaza tek tık ile yükleyebiliyorsunuz.
 
-Bunun için öncesinde gerekli yetkilendirmeleri yapmanız gerekiyor.
+Bunun için öncesinde gerekli yetkilendirmeleri yapmanız gerekiyor Google Cloud Console üzerinden.
 
-#+CAPTION: Firebase BrowserStack entegrasyonu
+#+CAPTION: Yetkilendirme için Oauth entegrasyonu
+[[file:browser_stack_add_auth_redirect_url.jpg]]
+
+Sonrasında ekli tüm takımlarla bu entegrasyonu paylaşarak başka hesaplarında bu entegrasyondaki uygulamalara erişimini sağlamanız gerekebilir.
+
+#+CAPTION: Firebase entegrasyonunun takımla paylaşımı
+[[file:browser_stack_share_with_team.jpg]]
+
+Farklı uygulama sürümlerinizi istediğiniz işletim sistemi ve cihaz üzerinde başlatabilirsiniz.
+
+#+CAPTION: Uygulamala ve versiyonlari listelemek
 [[file:browser_stack_firebase_integration.jpg]]
 
 ** Bilgisayarınızın ağı üzerinden internete çıkmak
